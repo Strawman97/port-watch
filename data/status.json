@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-10-18T20:41:11Z",
+ "generated": "2026-10-18T23:11:01Z",
  "repos": {
   "0c0de/splatterhouse-decomp": {
    "assetOs": {},
@@ -228,7 +228,7 @@
     "desc": "Native PC port of Super Smash Bros. Melee (NTSC-U 1.02), built from doldecomp/melee on aurora. No game data; bring your own disc.",
     "full": "999sian/melee-pc",
     "pushed": "2026-10-18T19:42:41Z",
-    "stars": 489
+    "stars": 491
    }
   },
   "999sian/tmc": {
@@ -309,6 +309,7 @@
    "readme": {
     "features": {
      "aspect": "yes",
+     "hdr": "yes",
      "hfr": "yes",
      "kbm": "yes",
      "res": "yes"
@@ -318,16 +319,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-18T08:45:09Z",
+    "date": "2026-10-18T22:06:04Z",
     "pre": false,
-    "tag": "v0.3.2",
-    "url": "https://github.com/abilliontokens/urbz-recomp/releases/tag/v0.3.2"
+    "tag": "v0.5.0",
+    "url": "https://github.com/abilliontokens/urbz-recomp/releases/tag/v0.5.0"
    },
    "repo": {
     "archived": false,
     "desc": "Static recompilation port scaffold for the original Xbox game The Urbz: Sims in the City (USA), built on XboxXBERecomp. No game data.",
     "full": "abilliontokens/urbz-recomp",
-    "pushed": "2026-10-18T20:39:06Z",
+    "pushed": "2026-10-18T22:06:00Z",
     "stars": 6
    }
   },
@@ -363,7 +364,7 @@
     "desc": "Way of the Samurai 2 (PS2) — native Linux decompilation port",
     "full": "acklavidian/decomp_wots2",
     "pushed": "2026-10-16T03:23:32Z",
-    "stars": 14
+    "stars": 15
    }
   },
   "acreteam/forest": {
@@ -462,7 +463,7 @@
     "desc": "A enhanced RE CVX port/recompilation including online co-op and enhanced rendering options",
     "full": "aikatore/recvx-enhanced-port",
     "pushed": "2026-10-18T12:16:22Z",
-    "stars": 38
+    "stars": 43
    }
   },
   "ajncsystem/shadowofthecolossus-pc": {
@@ -494,7 +495,7 @@
     "desc": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
     "full": "AjncSystem/ShadowOfTheColossus-PC",
     "pushed": "2026-10-17T01:41:22Z",
-    "stars": 1056
+    "stars": 1070
    }
   },
   "aknavj/scghost-recomp": {
@@ -643,7 +644,7 @@
     "desc": "Experimental static recompilation of Forza Motorsport 4 using ReXGlue. No game files included.",
     "full": "Alexbeav/fm4-recomp",
     "pushed": "2026-10-15T23:48:16Z",
-    "stars": 96
+    "stars": 99
    }
   },
   "alexbeav/medievil-recomp": {
@@ -698,7 +699,7 @@
     "desc": "Owned-input PSX recompilation project for Parasite Eve",
     "full": "alexbeavs-ps1-ports/parasite-eve-recomp",
     "pushed": "2026-10-02T11:06:01Z",
-    "stars": 16
+    "stars": 17
    }
   },
   "alexbeav/syphon-filter-2-recompiled": {
@@ -1175,7 +1176,7 @@
     "desc": "Owned-input PSX recompilation project for Parasite Eve",
     "full": "alexbeavs-ps1-ports/parasite-eve-recomp",
     "pushed": "2026-10-02T11:06:01Z",
-    "stars": 16
+    "stars": 17
    }
   },
   "alexbeavs-ps1-ports/psxrecomp-ports": {
@@ -1431,7 +1432,7 @@
     "desc": "",
     "full": "alphanu1/daytona-arcade-recomp",
     "pushed": "2026-10-17T21:58:24Z",
-    "stars": 213
+    "stars": 214
    }
   },
   "alphanu1/msg-twinsnakes-recomp": {
@@ -1569,7 +1570,7 @@
     "desc": "Skate 3 on Android: the app shell around the native recompilation. Bring your own disc image.",
     "full": "andrewnakas/skate3-android",
     "pushed": "2026-09-24T15:52:34Z",
-    "stars": 38
+    "stars": 40
    }
   },
   "andrewnakas/skate3-ios-setup": {
@@ -1743,7 +1744,7 @@
     "desc": "A playable preview of Forza Horizon static recompilation",
     "full": "arcanite24/pinyon-shift",
     "pushed": "2026-10-18T20:18:44Z",
-    "stars": 754
+    "stars": 756
    }
   },
   "arefdsg/mk64recomp": {
@@ -1839,7 +1840,7 @@
     "desc": "Completed decompilation of Capcom's 2000 survival horror love letter, Code Veronica, which targets the X release on PS2.",
     "full": "AshfordFamily/recvx-decomp",
     "pushed": "2026-10-18T17:31:12Z",
-    "stars": 288
+    "stars": 289
    }
   },
   "asphaltian/pmd-green": {
@@ -1928,8 +1929,8 @@
     "archived": false,
     "desc": "Bloodborne on Windows in one package: launcher and engine. Bring your own game dump.",
     "full": "Awakenchan/BloodBorneButPc",
-    "pushed": "2026-10-17T07:01:45Z",
-    "stars": 502
+    "pushed": "2026-10-18T22:03:01Z",
+    "stars": 517
    }
   },
   "bailifftrimmer/ship-of-harkinian-pc-port": {
@@ -2069,7 +2070,7 @@
     "desc": "A Recompilation of Project Gotham Racing 4",
     "full": "beatrixzy/PGR4-Recomp",
     "pushed": "2026-10-17T11:17:34Z",
-    "stars": 192
+    "stars": 194
    }
   },
   "beigeceleron/ssb64-dc": {
@@ -2157,7 +2158,7 @@
     "desc": "GalaxyQuest: Super Mario Galaxy in VR on Meta Quest 3, a native port built on the Petari decompilation. Bring your own game files. 100% made by AI (Claude Opus 5.5 in Claude Code).",
     "full": "bigmak94/GalaxyQuest",
     "pushed": "2026-10-03T20:25:15Z",
-    "stars": 97
+    "stars": 101
    }
   },
   "bigyoshi51/glover-decomp": {
@@ -2225,7 +2226,7 @@
     "archived": false,
     "desc": "Eternal Sonata, recompiled for PC.",
     "full": "birabittoh/EternalSonataReprise",
-    "pushed": "2026-10-17T15:18:04Z",
+    "pushed": "2026-10-18T22:18:08Z",
     "stars": 150
    }
   },
@@ -2285,7 +2286,7 @@
     "desc": "Static recompilation of Castlevania: Symphony of the Night (XBLA) for Windows and Linux, built on the ReXGlue SDK.",
     "full": "birabittoh/NocturneRecomp",
     "pushed": "2026-08-27T23:11:36Z",
-    "stars": 370
+    "stars": 371
    }
   },
   "blackandblue95/strikers-wiicompiled": {
@@ -2359,7 +2360,7 @@
     "desc": "Recompilation project for Castlevania: Symphony of the Night",
     "full": "BlackLabelHQ/SymphonyRecomp",
     "pushed": "2026-09-27T18:12:27Z",
-    "stars": 919
+    "stars": 920
    }
   },
   "blacklineinteractive/driveclub-port": {
@@ -2381,7 +2382,7 @@
     "desc": "Driveclub PS4 PC Port",
     "full": "BlackLineInteractive/Driveclub-Port",
     "pushed": "2026-10-18T15:41:58Z",
-    "stars": 83
+    "stars": 86
    }
   },
   "blawar/ooot": {
@@ -2693,7 +2694,7 @@
     "archived": false,
     "desc": "Decompilation of Pepsiman for the PlayStation ",
     "full": "brian-oblivion/pepsiman-decomp",
-    "pushed": "2026-10-18T17:11:45Z",
+    "pushed": "2026-10-18T20:47:47Z",
     "stars": 1
    }
   },
@@ -2779,7 +2780,7 @@
     "desc": "Gen1Recomp - A native Lua / LÖVE2D recreation of Gen 1, 2, and 3 Poke",
     "full": "bryanthaboi/gen1recomp",
     "pushed": "2026-10-18T18:11:25Z",
-    "stars": 3972
+    "stars": 3973
    }
   },
   "bryantmh/rush2recompiled": {
@@ -3043,7 +3044,7 @@
     "desc": "Native macOS and Linux port of GoldenEye 007 (N64) via static recompilation (N64Recomp + RT64). No emulator. Contains no ROM or game assets — you supply your own cartridge dump. Optional builds ship zero game code and recompile from your ROM at launch.",
     "full": "cblock85/GoldenEye64Recomp",
     "pushed": "2026-08-20T07:49:51Z",
-    "stars": 20
+    "stars": 21
    }
   },
   "cdlewis/snowboardkids-recomp": {
@@ -3195,7 +3196,7 @@
     "archived": false,
     "desc": "Native Nintendo Switch port of The Legend of Zelda: The Wind Waker (GameCube). Bring your own game files.",
     "full": "centollOS/SwitchWaker",
-    "pushed": "2026-10-17T14:58:17Z",
+    "pushed": "2026-10-18T21:50:15Z",
     "stars": 65
    }
   },
@@ -3291,7 +3292,7 @@
     "desc": "Super Mario Sunshine Native PC Port",
     "full": "chasem-dev/sms-pc-port",
     "pushed": "2026-10-18T20:12:47Z",
-    "stars": 150
+    "stars": 152
    }
   },
   "chrisking1981/sly1-recomp": {
@@ -3419,7 +3420,7 @@
     "desc": "The Legend of Zelda: The Wind Waker Recompiled. Native for MacOS, iOS, Windows, Linux, and Android.",
     "full": "chrissotraidis/bluewake",
     "pushed": "2026-10-18T07:02:43Z",
-    "stars": 405
+    "stars": 408
    }
   },
   "chrissotraidis/galaxypad": {
@@ -3517,7 +3518,7 @@
     "desc": "Mario Kart Wii and Retro Rewind, native for iOS, iPadOS, macOS, tvOS, and Android.",
     "full": "chrissotraidis/kartpad",
     "pushed": "2026-10-18T01:01:15Z",
-    "stars": 680
+    "stars": 682
    }
   },
   "chrissotraidis/maskpad": {
@@ -3723,7 +3724,7 @@
     "desc": "A recomp of Pokemon Soul Silver for single screen devices",
     "full": "ClickingMaster/ssrecomp",
     "pushed": "2026-10-18T08:19:54Z",
-    "stars": 77
+    "stars": 78
    }
   },
   "clockwork-recompdev/clockwork": {
@@ -4032,7 +4033,7 @@
     "desc": "An official continuation of https://github.com/djoslin0/sm64ex-coop on sm64coopdx for the enhancements and progress it already has.",
     "full": "coop-deluxe/sm64coopdx",
     "pushed": "2026-10-08T20:06:15Z",
-    "stars": 1454
+    "stars": 1456
    }
   },
   "crabinacrabic/armyoftwo40thdayrecomp": {
@@ -4228,7 +4229,7 @@
     "desc": "A native PC port of Call of Duty: Finest Hour (original Xbox) with a remastered renderer",
     "full": "crazyriddler/FinestHourRemastered",
     "pushed": "2026-10-18T18:51:19Z",
-    "stars": 48
+    "stars": 51
    }
   },
   "creativebutterfly/bejeweled3-recomp": {
@@ -4365,7 +4366,7 @@
     "desc": "A Crash Team Racing Decompilation Project",
     "full": "CTR-tools/ctr-native",
     "pushed": "2026-10-12T09:52:18Z",
-    "stars": 419
+    "stars": 420
    }
   },
   "cutarev/sh2-nx": {
@@ -4433,7 +4434,7 @@
     "desc": "Halo: Combat Evolved (for original Xbox) ported to Windows, Linux and Android",
     "full": "OpenCommunityEdition/OpenCE",
     "pushed": "2026-10-18T18:54:51Z",
-    "stars": 1674
+    "stars": 1681
    }
   },
   "cybervisi0n/pokeplatinum": {
@@ -4569,7 +4570,7 @@
     "desc": "Ratchet And Clank 1 (PS2) Native Port",
     "full": "daino-selvatico/rac1-native-game",
     "pushed": "2026-10-18T14:29:54Z",
-    "stars": 58
+    "stars": 59
    }
   },
   "danielgomesvieira2000/beetle-adventure-racing-recomp": {
@@ -4729,7 +4730,7 @@
     "desc": "Fukami: native macOS / Steam Deck port of Ridge Racer V (USA) by static recompilation. No game data.",
     "full": "danisandoval/fukami",
     "pushed": "2026-10-14T11:05:05Z",
-    "stars": 70
+    "stars": 71
    }
   },
   "dantheman11294/gga-recomp": {
@@ -4883,7 +4884,7 @@
     "desc": "",
     "full": "deadinside28/bloodborne_pc",
     "pushed": "2026-10-15T09:18:37Z",
-    "stars": 3239
+    "stars": 3249
    }
   },
   "deivid22srk/dk64-recomp-android": {
@@ -4968,7 +4969,7 @@
     "desc": "Static recompilation of Super Smash Bros. Ultimate 13.0.4 to a native Windows program: tools and runtime only, bring your own dump",
     "full": "Denkishi/ssbu-recomp",
     "pushed": "2026-10-16T12:50:53Z",
-    "stars": 209
+    "stars": 213
    }
   },
   "deprivedpeasant/ape-escape-decomp-port": {
@@ -5253,7 +5254,7 @@
     "desc": "Power Dozer — native Blast Corps PC port using static recompilation. Linux and Windows; bring your own ROM.",
     "full": "djultra64/Power-Dozer",
     "pushed": "2026-10-12T11:40:18Z",
-    "stars": 7
+    "stars": 8
    }
   },
   "doc-haz/infinite-undiscovery-recomp": {
@@ -5326,7 +5327,7 @@
     "desc": "An AI-assisted Wave Race 64 recompilation for Windows, with modern graphics and expanded local multiplayer.",
     "full": "DomazinUS/RaceWave46",
     "pushed": "2026-09-20T01:37:00Z",
-    "stars": 124
+    "stars": 126
    }
   },
   "donovanmontoya/pokemon-xd-decomp": {
@@ -5416,7 +5417,7 @@
     "archived": false,
     "desc": "Static recompilation of AArch64 CPU code to native x86-64, on top of suyu's AOT recompiler and HLE stack.",
     "full": "dougchansan/mk8-recomp",
-    "pushed": "2026-10-18T19:23:12Z",
+    "pushed": "2026-10-18T22:06:42Z",
     "stars": 82
    }
   },
@@ -5450,7 +5451,7 @@
     "desc": "Experimental standalone Time Crisis VR port for Meta Quest 3, based on spacestate1/namco22-decompile. OpenXR, tracked pistol, physical ducking and 120 Hz target.",
     "full": "DR-89/time-crisis-vr",
     "pushed": "2026-10-12T19:47:53Z",
-    "stars": 71
+    "stars": 72
    }
   },
   "drakolordx7/killzonerecomp": {
@@ -5474,7 +5475,7 @@
     "desc": "Native PC port of Killzone (PS2) via static recompilation - mouse/keyboard, 120+ fps, upscaling. Bring your own disc.",
     "full": "drakolordx7/KillzoneRecomp",
     "pushed": "2026-10-01T20:56:37Z",
-    "stars": 53
+    "stars": 56
    }
   },
   "dream-atelier/kl-eod-decomp": {
@@ -5564,7 +5565,7 @@
     "desc": "A native C++ port of Gran Turismo 2 for Web, Steam Deck, MacOS, Windows PC, PCVR and Quest 3 Standalone VR",
     "full": "dubrovskiy-yevhen-stakelogic/gt-2-pc",
     "pushed": "2026-09-30T11:19:02Z",
-    "stars": 129
+    "stars": 130
    }
   },
   "duislingr/cr1-u": {
@@ -5605,7 +5606,7 @@
     "desc": "CR1:U - a from-scratch reimplementation of Chaos Rings (iPad HD 1.0.1, iPhone 2.2.0, PS Vita). Bring your own copy; no game data included.",
     "full": "DuIslingr/CR1-U",
     "pushed": "2026-10-18T14:42:22Z",
-    "stars": 2
+    "stars": 3
    }
   },
   "duislingr/cro-u": {
@@ -5677,8 +5678,8 @@
     "archived": false,
     "desc": "Forza Horizon (Xbox 360) natively on PC, rebuilt around the modern Horizon experience: shared online free roam, leaderboards and rivals, 120/144 fps, and a self-hostable online server.",
     "full": "Dyotson/ForzaHorizon1-ReImagined",
-    "pushed": "2026-10-18T20:25:42Z",
-    "stars": 214
+    "pushed": "2026-10-18T23:08:31Z",
+    "stars": 216
    }
   },
   "dyotson/recompiledhaloreach": {
@@ -5700,7 +5701,7 @@
     "desc": "Native PC port of Halo: Reach (Xbox 360) via static recompilation with ReXGlue. No game code or assets included - bring your own copy.",
     "full": "Dyotson/RecompiledHaloReach",
     "pushed": "2026-10-12T18:45:56Z",
-    "stars": 17
+    "stars": 19
    }
   },
   "dyzz/srw64-recomp": {
@@ -5866,7 +5867,7 @@
     "archived": false,
     "desc": "",
     "full": "Edwin2929/sma3-recomp-android.",
-    "pushed": "2026-10-09T16:07:14Z",
+    "pushed": "2026-10-18T22:41:47Z",
     "stars": 15
    }
   },
@@ -6089,7 +6090,7 @@
     "desc": "",
     "full": "elmasas/lcs-recomp",
     "pushed": "2026-10-18T14:49:50Z",
-    "stars": 239
+    "stars": 240
    }
   },
   "elprogramadorloco-arch/fuc-recomp": {
@@ -6143,7 +6144,7 @@
     "desc": "",
     "full": "elprogramadorloco-arch/jim2-recomp",
     "pushed": "2026-10-03T08:09:37Z",
-    "stars": 16
+    "stars": 17
    }
   },
   "endercodezz/p3p3ds": {
@@ -6590,7 +6591,7 @@
     "desc": "",
     "full": "faligame/Parasite-Eve-2-HD-Remaster",
     "pushed": "2026-10-16T13:51:42Z",
-    "stars": 215
+    "stars": 217
    }
   },
   "faligame/parasite-eve-hd-remaster": {
@@ -6665,7 +6666,7 @@
     "desc": "God of War III Remastered (PS4) for Windows and Linux (experimental AppImage). Original x86-64 code runs directly on the CPU with a custom runtime; graphics use shadPS4's Vulkan video core and cuesta4's fixes. Launcher, in-game menu, controller icons and up to 240 FPS. Requires your own game dump. No game files included.",
     "full": "FelipePrado0/gow3_pc",
     "pushed": "2026-10-18T19:04:43Z",
-    "stars": 3358
+    "stars": 3375
    }
   },
   "fishb0nes98/tekken3recompiled": {
@@ -6691,7 +6692,7 @@
     "desc": "Tekken 3 hybrid recompilation preview with Jun Kazama, widescreen, custom skins and local asset import tools.",
     "full": "FishB0nes98/Tekken3Recompiled",
     "pushed": "2026-09-23T15:07:43Z",
-    "stars": 57
+    "stars": 58
    }
   },
   "flashfire199/armored-core-reanswered": {
@@ -6905,7 +6906,7 @@
     "desc": "Unofficial PC Port of Animal Crossing Gamecube",
     "full": "flyngmt/ACGC-PC-Port",
     "pushed": "2026-08-02T00:56:51Z",
-    "stars": 1503
+    "stars": 1505
    }
   },
   "foreverwip/s1-port": {
@@ -6957,7 +6958,7 @@
     "desc": "Call of Duty 3 (Xbox 360) static recompilation: host runtime, tools and notes",
     "full": "FrankHUN88453/CoD3Recomp",
     "pushed": "2026-10-13T01:23:27Z",
-    "stars": 266
+    "stars": 270
    }
   },
   "franklincg/twisted-metal-2012-ps3-native-port": {
@@ -7036,8 +7037,8 @@
     "archived": false,
     "desc": "Experimental native PC port of Lost Odyssey using static recompilation. No game assets included.",
     "full": "freefrank/LostOdysseyRecomp",
-    "pushed": "2026-10-18T19:33:59Z",
-    "stars": 712
+    "pushed": "2026-10-18T22:16:03Z",
+    "stars": 715
    }
   },
   "gabrick75/fh2-recompiled": {
@@ -7063,8 +7064,8 @@
     "archived": false,
     "desc": "An unofficial static recompilation of Forza Horizon 2 (Xbox 360) for Android",
     "full": "Gabrick75/fh2-recompiled",
-    "pushed": "2026-10-18T18:40:16Z",
-    "stars": 72
+    "pushed": "2026-10-18T22:30:08Z",
+    "stars": 73
    }
   },
   "gabrielnnk/bigodao": {
@@ -7096,7 +7097,7 @@
     "desc": "A static recompilation study and native port of Wario Land: Super Mario Land 3 with native widescreen support, mods support for HD tile and remastered music.",
     "full": "GABRIELNNK/Bigodao",
     "pushed": "2026-10-17T19:10:42Z",
-    "stars": 14
+    "stars": 15
    }
   },
   "gascarcella/dw2003recomp": {
@@ -7272,7 +7273,7 @@
     "desc": "Crash Team Racing: Nitro-Fueled (PS4) running natively on Windows 10/11. Windows fork of SacredFire, built on bbport and shadPS4. No game files included.",
     "full": "GetLostIn/CTR-NitroFueled-PC",
     "pushed": "2026-10-13T23:08:57Z",
-    "stars": 472
+    "stars": 479
    }
   },
   "gillou68310/dukenukemzerohourport": {
@@ -7601,7 +7602,7 @@
     "desc": "EA SPORTS UFC 3 (PS4) native port for Linux and Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
     "full": "GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS",
     "pushed": "2026-10-17T17:03:11Z",
-    "stars": 98
+    "stars": 100
    }
   },
   "goldielegenie/dqiv-recompiled": {
@@ -7629,7 +7630,7 @@
     "desc": "native PC version of dragon quest IV DS ",
     "full": "GoldieLeGenie/DQIV-Recompiled",
     "pushed": "2026-10-17T13:27:21Z",
-    "stars": 38
+    "stars": 39
    }
   },
   "goliathret/edgeoftimerecomp": {
@@ -7663,7 +7664,7 @@
     "desc": "An unofficial PC port of the Xbox 360 version of Spider-Man: Edge of Time created through the process of static recompilation.",
     "full": "goliathret/EdgeOfTimeRecomp",
     "pushed": "2026-10-08T17:50:33Z",
-    "stars": 383
+    "stars": 386
    }
   },
   "goodshepherd23/jetmoto2-recomp": {
@@ -7753,7 +7754,7 @@
     "desc": "TLoZ:TWW HD Recomp",
     "full": "GreenNaugahyde/ZeldaWWHDRecompAndroid",
     "pushed": "2026-10-15T22:05:03Z",
-    "stars": 163
+    "stars": 165
    }
   },
   "griches/ps5_windwakerhd": {
@@ -7804,7 +7805,7 @@
     "desc": "Windows x64 static-recompilation port of US Gran Turismo 2 Simulation and Arcade discs",
     "full": "GTTeancum/OpenGTPS1",
     "pushed": "2026-10-03T18:37:46Z",
-    "stars": 26
+    "stars": 27
    }
   },
   "gtteancum/openh3m": {
@@ -7832,7 +7833,7 @@
     "archived": false,
     "desc": "Open Halo 3 Mythic: native Windows recompilation of the Halo 3 Mythic multiplayer disc.",
     "full": "GTTeancum/OpenH3M",
-    "pushed": "2026-10-18T18:17:00Z",
+    "pushed": "2026-10-18T22:59:28Z",
     "stars": 19
    }
   },
@@ -7919,7 +7920,7 @@
     "desc": "Playable static recompilation of Star Wars: Shadows of the Empire for Nintendo 64",
     "full": "GTTeancum/SotE-Recomp",
     "pushed": "2026-10-13T23:08:01Z",
-    "stars": 38
+    "stars": 39
    }
   },
   "gtteancum/spideyps1recomp": {
@@ -8112,7 +8113,7 @@
     "desc": "A native Windows PC port of The Lord of the Rings: The Two Towers (Xbox, USA, 2002), made by static recompilation. It needs your own copy of the game, either the disc image (ISO) or an extracted folder. No game data is included.",
     "full": "Gumpolas/TooTawersRecomp",
     "pushed": "2026-10-17T14:26:21Z",
-    "stars": 58
+    "stars": 59
    }
   },
   "hajdeo/nhl24pc": {
@@ -8133,7 +8134,7 @@
     "desc": "",
     "full": "HajDEO/nhl24pc",
     "pushed": "2026-10-14T21:42:21Z",
-    "stars": 38
+    "stars": 39
    }
   },
   "halkuncode/anothermind-decomp": {
@@ -8282,7 +8283,7 @@
     "desc": "",
     "full": "HarbourMasters/Ghostship",
     "pushed": "2026-09-11T05:06:37Z",
-    "stars": 832
+    "stars": 833
    }
   },
   "harbourmasters/lighthouse": {
@@ -8349,7 +8350,7 @@
     "desc": "Paper Mario 64 port based on the Paper Mario DX decompilation",
     "full": "HarbourMasters/PaperBoat",
     "pushed": "2026-10-15T20:45:18Z",
-    "stars": 494
+    "stars": 495
    }
   },
   "harbourmasters/shipwright": {
@@ -8372,16 +8373,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-06T02:44:55Z",
+    "date": "2026-10-18T21:06:27Z",
     "pre": false,
-    "tag": "9.3.0",
-    "url": "https://github.com/HarbourMasters/Shipwright/releases/tag/9.3.0"
+    "tag": "9.3.1",
+    "url": "https://github.com/HarbourMasters/Shipwright/releases/tag/9.3.1"
    },
    "repo": {
     "archived": false,
     "desc": "",
     "full": "HarbourMasters/Shipwright",
-    "pushed": "2026-10-18T20:21:01Z",
+    "pushed": "2026-10-18T22:28:33Z",
     "stars": 5670
    }
   },
@@ -8457,7 +8458,9 @@
   "hardkiller2565123123/caferecomp": {
    "noRelease": true,
    "readme": {
-    "features": {},
+    "features": {
+     "dlc": "yes"
+    },
     "os": {
      "Windows": true
     },
@@ -8466,9 +8469,9 @@
    },
    "repo": {
     "archived": false,
-    "desc": "First Working Wii U Recomp",
+    "desc": "First Working Wii U Recomp Tool",
     "full": "hardkiller2565123123/CafeRecomp",
-    "pushed": "2026-09-28T06:30:31Z",
+    "pushed": "2026-10-18T21:39:06Z",
     "stars": 30
    }
   },
@@ -8597,7 +8600,7 @@
     "desc": "Native PC port (Linux/Windows) of inFAMOUS Second Son (PS4, CUSA00223) — in development, playable; runs your own game dump; no game or firmware files included. Motion sensor emulation. | Port nativo para PC de inFAMOUS Second Son (em desenvolvimento) — usa o seu próprio dump.",
     "full": "HayatoG/iss_pc",
     "pushed": "2026-10-18T16:27:24Z",
-    "stars": 579
+    "stars": 591
    }
   },
   "hdmaniak/dishsoap": {
@@ -8664,7 +8667,7 @@
     "desc": "An unofficial PC port of the Xbox 360 version of Sonic Unleashed created through the process of static recompilation.",
     "full": "hedge-dev/UnleashedRecomp",
     "pushed": "2026-06-29T11:05:43Z",
-    "stars": 5219
+    "stars": 5221
    }
   },
   "helmxgaming/skate-3-recompiled--work-in-progress-": {
@@ -8716,7 +8719,7 @@
     "desc": "Super Smash Bros. Melee for Windows as a true Source Port: the game compiled natively from its decompiled C source, no emulation, with unlocked FPS and Slippi rollback online. A Static Recomp of the original code is included as a second engine. Beta. Bring your own NTSC 1.02 ISO.",
     "full": "Hero88go/melee-unlocked",
     "pushed": "2026-10-17T21:38:34Z",
-    "stars": 122
+    "stars": 123
    }
   },
   "heromachine/alienresurrection-recompilation": {
@@ -8869,7 +8872,7 @@
     "desc": "",
     "full": "himdo/Fable-2-Recomp",
     "pushed": "2026-10-18T16:40:58Z",
-    "stars": 481
+    "stars": 484
    }
   },
   "holdmysocks/mcla-recomp": {
@@ -9490,7 +9493,7 @@
     "desc": "Native Windows, Linux and macOS port of Pokémon Snap (N64) by static recompilation. Plays like the cartridge by default; every enhancement is opt-in. Bring your own dump; no game data is included.",
     "full": "JackandBeans/Snap64Recomp",
     "pushed": "2026-10-17T21:05:53Z",
-    "stars": 115
+    "stars": 116
    }
   },
   "jackpoison-prog/ringout": {
@@ -9558,7 +9561,7 @@
     "desc": "Foxhollow: a native port of Star Fox Adventures built on the SFA decompilation and Aurora",
     "full": "JackPriceBurns/foxhollow",
     "pushed": "2026-10-09T19:23:56Z",
-    "stars": 72
+    "stars": 73
    }
   },
   "jackrushante/dbz-super-saiya-densetsu-rust": {
@@ -9669,7 +9672,7 @@
     "desc": "Native recompilation of Final Fantasy Tactics Advance built on the mstan/gbarecomp framework",
     "full": "james2doyle/ffta-recomp",
     "pushed": "2026-10-17T17:06:20Z",
-    "stars": 24
+    "stars": 25
    }
   },
   "jaster111/double-dash-redux": {
@@ -10164,8 +10167,8 @@
     "archived": false,
     "desc": "",
     "full": "JonathanDC64/DemonsSoulsRecomp",
-    "pushed": "2026-10-18T19:39:21Z",
-    "stars": 32
+    "pushed": "2026-10-18T22:44:27Z",
+    "stars": 34
    }
   },
   "jonathandc64/ffcceot-recomp": {
@@ -10217,14 +10220,17 @@
   },
   "jorge262007/fftarecomp": {
    "assetOs": {
+    "Android": true,
     "Linux": true,
     "Windows": true
    },
    "readme": {
     "features": {
-     "aspect": "yes"
+     "aspect": "yes",
+     "kbm": "yes"
     },
     "os": {
+     "Android": true,
      "Linux": true,
      "Steam Deck": true,
      "Windows": true
@@ -10233,17 +10239,17 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-13T09:26:28Z",
+    "date": "2026-10-18T21:18:52Z",
     "pre": false,
-    "tag": "v2.0",
-    "url": "https://github.com/Jorge262007/FFTARecomp/releases/tag/v2.0"
+    "tag": "v3.0",
+    "url": "https://github.com/Jorge262007/FFTARecomp/releases/tag/v3.0"
    },
    "repo": {
     "archived": false,
     "desc": "Native Windows port of Final Fantasy Tactics Advance with widescreen, video/audio options and a one-click installer.",
     "full": "Jorge262007/FFTARecomp",
-    "pushed": "2026-10-18T20:30:38Z",
-    "stars": 101
+    "pushed": "2026-10-18T21:18:52Z",
+    "stars": 107
    }
   },
   "jorjbarbosa/naruto-rise-recomp": {
@@ -10286,8 +10292,8 @@
     "archived": false,
     "desc": "",
     "full": "jorjbarbosa/naruto-rise-recomp",
-    "pushed": "2026-10-18T20:11:57Z",
-    "stars": 74
+    "pushed": "2026-10-18T22:38:38Z",
+    "stars": 76
    }
   },
   "josiahg2502-glitch/mother3recomp": {
@@ -10333,8 +10339,8 @@
     "archived": false,
     "desc": "MOTHER 3 for Windows, Linux and Android, with fan translation patch support.",
     "full": "josiahg2502-glitch/Mother3Recomp",
-    "pushed": "2026-10-18T19:36:14Z",
-    "stars": 39
+    "pushed": "2026-10-18T22:56:43Z",
+    "stars": 44
    }
   },
   "josiahg2502-glitch/scooby-doo-refrightened": {
@@ -10366,8 +10372,8 @@
     "archived": false,
     "desc": "Statically recompiled PC port of Scooby-Doo! Night of 100 Frights (GameCube): true widescreen, up to 4K, HDR, gamepads, launcher.",
     "full": "josiahg2502-glitch/Scooby-Doo-Refrightened",
-    "pushed": "2026-10-18T18:01:25Z",
-    "stars": 14
+    "pushed": "2026-10-18T22:27:27Z",
+    "stars": 15
    }
   },
   "jotd666/xevious": {
@@ -10424,7 +10430,7 @@
     "desc": "A smashin' port for PC, Mac, and Linux!",
     "full": "JRickey/BattleShip",
     "pushed": "2026-10-18T12:38:46Z",
-    "stars": 496
+    "stars": 498
    }
   },
   "jumatt/jetsetradiofuture-unleashed": {
@@ -10462,7 +10468,7 @@
     "desc": "Jet Set Radio Future for all",
     "full": "JuMatt/JetSetRadioFuture-Unleashed",
     "pushed": "2026-10-15T16:51:20Z",
-    "stars": 123
+    "stars": 124
    }
   },
   "junior-jones/adventure-island-ii-nes-static-recomp": {
@@ -10572,17 +10578,17 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-18T06:41:09Z",
-    "pre": true,
-    "tag": "v0.2.2",
-    "url": "https://github.com/K0NL/B2recomp/releases/tag/v0.2.2"
+    "date": "2026-10-18T23:01:30Z",
+    "pre": false,
+    "tag": "v0.2.3",
+    "url": "https://github.com/K0NL/B2recomp/releases/tag/v0.2.3"
    },
    "repo": {
     "archived": false,
     "desc": "Unofficial static recompilation of Bayonetta 2 (Switch) for Windows. Builds the game on your PC from your own legally dumped copy. No game files, keys or SDK code included.",
     "full": "K0NL/B2recomp",
-    "pushed": "2026-10-18T06:41:09Z",
-    "stars": 108
+    "pushed": "2026-10-18T22:55:56Z",
+    "stars": 110
    }
   },
   "kaikoclanworth1/buffy-chaos-bleeds-pc": {
@@ -10709,7 +10715,7 @@
     "desc": "Star Fox Enhanced source and portable platform builds (Assisted by Codex AI)",
     "full": "kandowontu2/starfox-enhanced",
     "pushed": "2026-10-17T14:45:22Z",
-    "stars": 95
+    "stars": 96
    }
   },
   "kawaiibunga/mkvdcu-recomp": {
@@ -10816,7 +10822,7 @@
     "desc": "A Recompilation of Super Mario Galaxy, intended to work on Windows (with MacOS and Android support in plans).",
     "full": "keepvaibin/nebula",
     "pushed": "2026-10-16T21:07:08Z",
-    "stars": 225
+    "stars": 228
    }
   },
   "kernaltrap8/wor-plus": {
@@ -10961,7 +10967,7 @@
     "desc": "Native PC port of God of War (PS2) via static recompilation with PS2Recomp",
     "full": "KIexster/god-of-war-recomp",
     "pushed": "2026-10-18T18:20:07Z",
-    "stars": 119
+    "stars": 122
    }
   },
   "kirby1237/parappatherapperrecomp": {
@@ -11129,7 +11135,7 @@
     "desc": "A recompilation project for Mercenaries: Playground of Destruction",
     "full": "KraftMacAndChee/Mercenaries-Recompiled",
     "pushed": "2026-10-06T02:41:57Z",
-    "stars": 131
+    "stars": 132
    }
   },
   "kyleckroeger/moh-frontline-decomp": {
@@ -11216,7 +11222,7 @@
     "archived": false,
     "desc": "Work-in-progress Resident Evil 4 port for Sega Dreamcast, with native PowerVR rendering, VMU saves and Flycast-tested play builds.",
     "full": "lamb2k/re4dc",
-    "pushed": "2026-10-18T20:34:38Z",
+    "pushed": "2026-10-18T23:06:22Z",
     "stars": 34
    }
   },
@@ -11366,7 +11372,7 @@
     "desc": "",
     "full": "lesca-191204/killzone-shadowfall-pc",
     "pushed": "2026-10-18T08:31:38Z",
-    "stars": 141
+    "stars": 144
    }
   },
   "lfarroco/ogre-battle-64-recomp": {
@@ -11936,7 +11942,7 @@
     "desc": "Native Window port of The Legend of Zelda: The Wind Waker (GameCube). Bring your own game files.",
     "full": "MaskeZenY/WindowWaker",
     "pushed": "2026-10-10T21:46:19Z",
-    "stars": 25
+    "stars": 26
    }
   },
   "masterspike52/redahm": {
@@ -12065,7 +12071,7 @@
     "archived": false,
     "desc": "CrashBandicoot native pc port",
     "full": "Matteo842/CrashBandicoot-Launcher",
-    "pushed": "2026-10-18T18:01:09Z",
+    "pushed": "2026-10-18T20:53:16Z",
     "stars": 278
    }
   },
@@ -12106,7 +12112,7 @@
     "desc": "A bare-bones static recompilation of Crackdown 2.",
     "full": "matty45/Crackdown2-Recomp",
     "pushed": "2026-08-07T23:14:53Z",
-    "stars": 32
+    "stars": 31
    }
   },
   "maxdeadbear/naughtybear_restuff": {
@@ -12296,7 +12302,7 @@
     "desc": "A native recompilation of Skate 3 for Windows, Linux, and macOS.",
     "full": "mchughalex/skate3recomp",
     "pushed": "2026-07-24T21:18:52Z",
-    "stars": 1669
+    "stars": 1671
    }
   },
   "megaman64recomp/megaman64recompiled": {
@@ -12339,7 +12345,7 @@
     "archived": false,
     "desc": "Matching decompilation of Shin Megami Tensei: Digital Devil Saga 1 & 2 (PS2)",
     "full": "Megami-Decomps/dds-decomp",
-    "pushed": "2026-10-18T20:27:14Z",
+    "pushed": "2026-10-18T22:43:42Z",
     "stars": 31
    }
   },
@@ -12580,7 +12586,7 @@
     "desc": "PC Port Of Fatal Frame 1 Based On Himuro",
     "full": "Mikompilation/MikuPan",
     "pushed": "2026-10-05T14:25:59Z",
-    "stars": 122
+    "stars": 123
    }
   },
   "minibandit/mkw-3ds": {
@@ -12609,7 +12615,7 @@
     "desc": "Mario Kart Wii for 3DS: a native port continued from dudewhat's original. Builds a CIA from your own disc (Mac & Windows).",
     "full": "MiniBandit/MKW-3DS",
     "pushed": "2026-10-18T10:19:26Z",
-    "stars": 209
+    "stars": 211
    }
   },
   "missingthepixel/mtr-pgr4": {
@@ -12862,16 +12868,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-18T12:19:13Z",
+    "date": "2026-10-18T21:45:06Z",
     "pre": false,
-    "tag": "v0.6.1",
-    "url": "https://github.com/Mrsuss60/bloodborne_pc_windows_port/releases/tag/v0.6.1"
+    "tag": "v0.6.2",
+    "url": "https://github.com/Mrsuss60/bloodborne_pc_windows_port/releases/tag/v0.6.2"
    },
    "repo": {
     "archived": false,
-    "desc": "Native 64-bit Windows port of Bloodborne (CUSA03173) with Vulkan rendering and Win32 runtime, based on deadinside28's bbport.",
+    "desc": "Native x86-64 Windows loader for Bloodborne (CUSA03173) with native CPU execution, Win32 runtime, and shadPS4-based Vulkan GPU rendering. Based on deadinside28's bbport.",
     "full": "Mrsuss60/bloodborne_pc_windows_port",
-    "pushed": "2026-10-18T20:35:23Z",
+    "pushed": "2026-10-18T21:45:06Z",
     "stars": 423
    }
   },
@@ -13288,16 +13294,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-03T17:52:14Z",
+    "date": "2026-10-18T20:43:48Z",
     "pre": false,
-    "tag": "v0.1.3",
-    "url": "https://github.com/mstan/MegaManX2Recomp/releases/tag/v0.1.3"
+    "tag": "v0.1.4",
+    "url": "https://github.com/mstan/MegaManX2Recomp/releases/tag/v0.1.4"
    },
    "repo": {
     "archived": false,
     "desc": "Static recompilation of Mega Man X2 (SNES) via snesrecomp",
     "full": "mstan/MegaManX2Recomp",
-    "pushed": "2026-10-18T20:21:33Z",
+    "pushed": "2026-10-18T20:43:48Z",
     "stars": 45
    }
   },
@@ -13327,7 +13333,7 @@
     "archived": false,
     "desc": "Mega Man X4 (USA, SLUS-00561) statically recompiled to a native PC executable with PSXRecomp",
     "full": "mstan/MegaManX4Recomp",
-    "pushed": "2026-10-18T20:20:56Z",
+    "pushed": "2026-10-18T22:56:43Z",
     "stars": 101
    }
   },
@@ -13711,16 +13717,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-09-21T22:51:35Z",
+    "date": "2026-10-18T20:44:05Z",
     "pre": false,
-    "tag": "v0.3.1",
-    "url": "https://github.com/mstan/StarFoxSNESRecomp/releases/tag/v0.3.1"
+    "tag": "v0.3.2",
+    "url": "https://github.com/mstan/StarFoxSNESRecomp/releases/tag/v0.3.2"
    },
    "repo": {
     "archived": false,
     "desc": "Star Fox recompiled for the Super Nintendo using snesrecomp · Part of the R.A.I.D. community",
     "full": "mstan/StarFoxSNESRecomp",
-    "pushed": "2026-10-18T20:40:49Z",
+    "pushed": "2026-10-18T20:44:05Z",
     "stars": 28
    }
   },
@@ -13840,7 +13846,7 @@
     "desc": "Super Mario Bros. recompiled for the NES using nesrecomp · Part of the R.A.I.D. community",
     "full": "mstan/SuperMarioBrosNESRecomp",
     "pushed": "2026-10-18T12:06:50Z",
-    "stars": 34
+    "stars": 35
    }
   },
   "mstan/supermarioland2recomp": {
@@ -14077,16 +14083,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-09-22T03:10:55Z",
+    "date": "2026-10-18T20:44:01Z",
     "pre": false,
-    "tag": "v0.6.4",
-    "url": "https://github.com/mstan/ZeldaAlttPSNESRecomp/releases/tag/v0.6.4"
+    "tag": "v0.6.5",
+    "url": "https://github.com/mstan/ZeldaAlttPSNESRecomp/releases/tag/v0.6.5"
    },
    "repo": {
     "archived": false,
     "desc": "The Legend of Zelda: A Link to the Past recompiled for the Super Nintendo using snesrecomp · Part of the R.A.I.D. community",
     "full": "mstan/ZeldaAlttPSNESRecomp",
-    "pushed": "2026-10-18T20:21:34Z",
+    "pushed": "2026-10-18T20:44:01Z",
     "stars": 53
    }
   },
@@ -14201,7 +14207,7 @@
     "desc": "",
     "full": "mzzvxm/LARecomp",
     "pushed": "2026-10-14T19:14:59Z",
-    "stars": 161
+    "stars": 163
    }
   },
   "n0madic/starcraft64-recomp": {
@@ -14261,7 +14267,7 @@
     "desc": "A Super Mario 64 decompilation, brought to you by a bunch of clever folks.",
     "full": "n64decomp/sm64",
     "pushed": "2024-02-04T10:26:16Z",
-    "stars": 8895
+    "stars": 8896
    }
   },
   "naegoxdev/sm64-scratch": {
@@ -14380,7 +14386,7 @@
     "desc": "PC, Android, iOS and macOS port of the ICO (PS2) decompilation (nathanialf/ico): Windows, Linux, Steam Deck, Android, iPhone via LiveContainer and Apple-silicon Mac (contributed). Contains no game data.",
     "full": "nathanialf/ico-pc",
     "pushed": "2026-10-18T04:47:36Z",
-    "stars": 363
+    "stars": 368
    }
   },
   "nathsou/smb": {
@@ -14662,7 +14668,7 @@
     "desc": "Super Mario Strikers for PC, Mac, Linux & Nintendo Switch. Ported from decompiled code. Not a recompilation.",
     "full": "new-coke/strikers",
     "pushed": "2026-10-04T10:47:10Z",
-    "stars": 342
+    "stars": 343
    }
   },
   "nickmass/libsm64-rust": {
@@ -15004,7 +15010,7 @@
     "desc": "Native PC, Mac and Steam Deck port of 50 Cent: Blood on the Sand (Xbox 360), statically recompiled with ReXGlue. Download: https://skullburglar.stz.sh",
     "full": "nlwstein/skullburglar",
     "pushed": "2026-10-17T02:57:12Z",
-    "stars": 30
+    "stars": 34
    }
   },
   "noahvl/birdman64": {
@@ -15055,7 +15061,7 @@
     "desc": "Pilotwings 64 as a native PC game for Windows and Linux: widescreen, 144 Hz+, gamepads. Bring your own ROM, no emulator.",
     "full": "NoahVl/Birdman64",
     "pushed": "2026-10-18T20:00:33Z",
-    "stars": 28
+    "stars": 29
    }
   },
   "norain211/doaxbv-re": {
@@ -15099,7 +15105,7 @@
     "desc": "Native Windows port of Dead or Alive Xtreme Beach Volleyball (Xbox), built by static recompilation with a hand-written runtime. Requires your own copy of the game.",
     "full": "NoRain211/doaxvb-re",
     "pushed": "2026-10-18T03:39:50Z",
-    "stars": 183
+    "stars": 184
    }
   },
   "norain211/doaxvb-re": {
@@ -15143,7 +15149,7 @@
     "desc": "Native Windows port of Dead or Alive Xtreme Beach Volleyball (Xbox), built by static recompilation with a hand-written runtime. Requires your own copy of the game.",
     "full": "NoRain211/doaxvb-re",
     "pushed": "2026-10-18T03:39:50Z",
-    "stars": 183
+    "stars": 184
    }
   },
   "notan127/sm64-pc-port-webgl": {
@@ -15354,16 +15360,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-16T20:15:18Z",
+    "date": "2026-10-18T22:38:07Z",
     "pre": false,
-    "tag": "v1.11.1",
-    "url": "https://github.com/Nycolazs/WindWakerHD-Android-Plus/releases/tag/v1.11.1"
+    "tag": "v1.12",
+    "url": "https://github.com/Nycolazs/WindWakerHD-Android-Plus/releases/tag/v1.12"
    },
    "repo": {
     "archived": false,
     "desc": "The Legend of Zelda: The Wind Waker HD natively on Android (static recompilation, Vulkan). Built-in Brazilian Portuguese translation, HUD editor, .wua support, controller gyro, and more. Bring your own game.",
     "full": "Nycolazs/WindWakerHD-Android-Plus",
-    "pushed": "2026-10-16T20:15:18Z",
+    "pushed": "2026-10-18T22:38:07Z",
     "stars": 56
    }
   },
@@ -15456,7 +15462,7 @@
     "desc": "Native PC port of the 1997 PlayStation game Disney's Hercules (SCES-00893) plus its decompilation. No game data included.",
     "full": "obaidr1/hercules-recompiled",
     "pushed": "2026-10-18T11:19:52Z",
-    "stars": 87
+    "stars": 88
    }
   },
   "odrannnn/metroidprimeport": {
@@ -15485,17 +15491,17 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-17T23:44:22Z",
+    "date": "2026-10-18T21:42:23Z",
     "pre": false,
-    "tag": "v0.29.0",
-    "url": "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.29.0"
+    "tag": "v0.30.0",
+    "url": "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.30.0"
    },
    "repo": {
     "archived": false,
     "desc": "Native port of Metroid Prime (GameCube) for Linux, Windows and Android, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image.",
     "full": "Odrannnn/MetroidPrimePort",
-    "pushed": "2026-10-18T20:39:23Z",
-    "stars": 461
+    "pushed": "2026-10-18T21:56:38Z",
+    "stars": 463
    }
   },
   "official-kryo-to/ctw-native": {
@@ -15607,7 +15613,7 @@
     "desc": "Native port of Skies of Arcadia Legends (GameCube) via static recompilation. Bring your own disc.",
     "full": "ogdanimal/SkiesOfArcadiaLegends-Recomp",
     "pushed": "2026-10-18T15:21:12Z",
-    "stars": 31
+    "stars": 32
    }
   },
   "ohackercego/samsho-recomp": {
@@ -15855,7 +15861,7 @@
     "desc": "",
     "full": "ondrejeder/Driveclub-pc-wrapper",
     "pushed": "2026-10-17T11:51:47Z",
-    "stars": 170
+    "stars": 176
    }
   },
   "open-goal/jak-project": {
@@ -15885,7 +15891,7 @@
     "desc": "Reviving the language that brought us the Jak & Daxter Series",
     "full": "open-goal/jak-project",
     "pushed": "2026-10-16T01:27:52Z",
-    "stars": 3587
+    "stars": 3589
    }
   },
   "open-goal/launcher": {
@@ -15951,7 +15957,7 @@
     "desc": "Halo: Combat Evolved (for original Xbox) ported to Windows, Linux and Android",
     "full": "OpenCommunityEdition/OpenCE",
     "pushed": "2026-10-18T18:54:51Z",
-    "stars": 1674
+    "stars": 1681
    }
   },
   "opendriver2/redriver2": {
@@ -15981,7 +15987,7 @@
     "desc": "Driver 2 Playstation game reverse engineering effort",
     "full": "OpenDriver2/REDRIVER2",
     "pushed": "2026-09-22T12:58:13Z",
-    "stars": 1414
+    "stars": 1415
    }
   },
   "openportroid/armyoftworecompilation": {
@@ -16019,7 +16025,7 @@
     "desc": "Unofficial PC port of the Xbox 360 version of Army of Two (2008). Online co-op supported.",
     "full": "OpenPortroid/ArmyOfTwoRecompilation",
     "pushed": "2026-10-18T19:50:22Z",
-    "stars": 67
+    "stars": 68
    }
   },
   "openrac/openrac": {
@@ -16049,7 +16055,7 @@
     "archived": false,
     "desc": "A matching decompilation and PC port for the Ratchet & Clank series.",
     "full": "OpenRAC/OpenRAC",
-    "pushed": "2026-10-18T19:36:21Z",
+    "pushed": "2026-10-18T21:49:46Z",
     "stars": 23
    }
   },
@@ -16097,7 +16103,7 @@
     "archived": false,
     "desc": "",
     "full": "oric212/BT2-Recomp",
-    "pushed": "2026-10-18T20:08:53Z",
+    "pushed": "2026-10-18T22:43:05Z",
     "stars": 10
    }
   },
@@ -16243,7 +16249,7 @@
     "archived": false,
     "desc": "WIP disassembly of Hummer Team's port of SMW.",
     "full": "palaceswitcher/SMW-NES-Disassembly",
-    "pushed": "2026-10-16T19:34:14Z",
+    "pushed": "2026-10-18T22:36:14Z",
     "stars": 19
    }
   },
@@ -16282,7 +16288,7 @@
     "desc": "Dead or Alive 3 PC Port ",
     "full": "parkerallan/doa3-recomp",
     "pushed": "2026-10-18T02:38:41Z",
-    "stars": 36
+    "stars": 37
    }
   },
   "pascalpixel/alchemy": {
@@ -16305,7 +16311,7 @@
     "archived": false,
     "desc": "A decompilation of both Golden Sun games, preserving the GBA classics as readable code and assets",
     "full": "PascalPixel/alchemy",
-    "pushed": "2026-10-18T13:44:08Z",
+    "pushed": "2026-10-18T22:08:55Z",
     "stars": 182
    }
   },
@@ -16337,7 +16343,7 @@
     "desc": "Wiicompiled",
     "full": "patchzyy/Wiicompiled",
     "pushed": "2026-10-18T17:59:26Z",
-    "stars": 1190
+    "stars": 1191
    }
   },
   "paulcombal/mw2-recompiled": {
@@ -16397,7 +16403,7 @@
     "desc": "Recomp of Asura's Wrath using RexGlue for PC (wip)",
     "full": "PauloUbirajara/asuras-wrath-recomp",
     "pushed": "2026-09-11T20:04:32Z",
-    "stars": 49
+    "stars": 50
    }
   },
   "peiikai/lasrecomp": {
@@ -16435,8 +16441,8 @@
     "archived": false,
     "desc": "Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux",
     "full": "peiikai/LASRecomp",
-    "pushed": "2026-10-18T20:38:14Z",
-    "stars": 1288
+    "pushed": "2026-10-18T22:52:35Z",
+    "stars": 1294
    }
   },
   "perfect-dark-pc-port/perfect_dark": {
@@ -16472,7 +16478,7 @@
     "desc": "work in progress port of n64decomp/perfect_dark to modern platforms",
     "full": "perfect-dark-pc-port/perfect_dark",
     "pushed": "2026-08-13T05:58:19Z",
-    "stars": 2061
+    "stars": 2062
    }
   },
   "phi1ow/mkwii-ps5": {
@@ -16583,9 +16589,12 @@
     "features": {
      "aa": "yes",
      "aspect": "yes",
-     "kbm": "yes"
+     "kbm": "yes",
+     "res": "yes",
+     "tex": "yes"
     },
     "os": {
+     "Linux": true,
      "Windows": true
     },
     "targets": {},
@@ -16601,8 +16610,8 @@
     "archived": false,
     "desc": "Native Windows recompilation of BLACK (2006) for original Xbox. Bring your own game files.",
     "full": "portingpete/Black-2006-Recomp",
-    "pushed": "2026-10-18T00:11:44Z",
-    "stars": 142
+    "pushed": "2026-10-18T21:13:05Z",
+    "stars": 143
    }
   },
   "portingpete/the-darkness-recomp": {
@@ -17245,7 +17254,7 @@
     "archived": false,
     "desc": "",
     "full": "recomp-code/street-recomp-v3",
-    "pushed": "2026-10-18T18:07:27Z",
+    "pushed": "2026-10-18T21:32:34Z",
     "stars": 20
    }
   },
@@ -17345,7 +17354,7 @@
     "desc": "Digimon Rumble Arena (Digimon Tamers: Battle Evolution, PS1, Japan) matching decompilation",
     "full": "ReGame-Labs/dtbe_decomp",
     "pushed": "2026-10-15T00:23:33Z",
-    "stars": 2
+    "stars": 3
    }
   },
   "reindance/ssx-tricky-recomp": {
@@ -17726,7 +17735,7 @@
     "archived": false,
     "desc": "Nintendo DS source port of Super Smash Bros. 64 via the BattleShip decomp.",
     "full": "rockenrooster/Smash64DS_Port",
-    "pushed": "2026-10-18T19:44:49Z",
+    "pushed": "2026-10-18T22:17:12Z",
     "stars": 30
    }
   },
@@ -18050,8 +18059,8 @@
     "archived": false,
     "desc": "My experimental Windows PC port of FIFA Street (2012), built with ReXGlue.",
     "full": "samuelit0davila/fifa-street-pc-port",
-    "pushed": "2026-10-18T19:29:20Z",
-    "stars": 339
+    "pushed": "2026-10-18T22:42:01Z",
+    "stars": 345
    }
   },
   "samyost1/tmc-android": {
@@ -18257,7 +18266,7 @@
     "desc": "Dragon's Crown Pro native PC port for Windows, with direct PS4 PKG installation, TRG launcher and modern graphics options",
     "full": "saulob/dragons-crown-pro-pc",
     "pushed": "2026-10-17T21:37:21Z",
-    "stars": 122
+    "stars": 123
    }
   },
   "saulob/geometry-wars-retro-evolved-2-recompiled": {
@@ -18390,7 +18399,7 @@
     "desc": "Conker's Bad Fur Day Recompiled",
     "full": "sciaschi/CBFD-Recompiled",
     "pushed": "2026-10-17T20:54:25Z",
-    "stars": 283
+    "stars": 284
    }
   },
   "scotho/socom-unzipped": {
@@ -18808,7 +18817,7 @@
     "archived": false,
     "desc": "A static recompilation of Road Trip (Choro Q HG 2) for macOS and Android, built from your own disc",
     "full": "silentsudin/RoadTripAdventure-recomp",
-    "pushed": "2026-10-18T18:27:51Z",
+    "pushed": "2026-10-18T22:09:14Z",
     "stars": 17
    }
   },
@@ -19057,8 +19066,8 @@
     "archived": false,
     "desc": "Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development.",
     "full": "SlickAmogus/silent-hill-decomp",
-    "pushed": "2026-10-18T09:34:54Z",
-    "stars": 720
+    "pushed": "2026-10-18T20:57:41Z",
+    "stars": 721
    }
   },
   "slickamogus/silent-hill-pc-nightly": {
@@ -19244,7 +19253,7 @@
     "desc": "",
     "full": "snesrev/zelda3",
     "pushed": "2026-10-02T23:58:23Z",
-    "stars": 4876
+    "stars": 4877
    }
   },
   "sno2207/windowsmash": {
@@ -19274,7 +19283,7 @@
     "desc": "Experimental Windows x64 native porting toolkit for Super Smash Bros. Ultimate: static AArch64 recompilation, a D3D11 runtime, and Local Wireless relay netplay.",
     "full": "SNO2207/WindowSmash",
     "pushed": "2026-10-18T20:07:14Z",
-    "stars": 136
+    "stars": 160
    }
   },
   "snuri00/psp-web-recomp": {
@@ -19293,7 +19302,7 @@
     "desc": "PSP games in the browser, static recompilation to WebAssembly, an HLE kernel and a WebGL2 renderer",
     "full": "snuri00/psp-web-recomp",
     "pushed": "2026-10-15T09:21:04Z",
-    "stars": 347
+    "stars": 348
    }
   },
   "sojews/fossil-fighters-decomp": {
@@ -19308,7 +19317,7 @@
     "archived": false,
     "desc": "Work-in-progress matching decompilation of Fossil Fighters (Nintendo DS). Bring your own ROM; no game assets included.",
     "full": "Sojews/fossil-fighters-decomp",
-    "pushed": "2026-10-18T20:40:35Z",
+    "pushed": "2026-10-18T23:10:53Z",
     "stars": 0
    }
   },
@@ -19435,7 +19444,7 @@
     "desc": "Recompilation of Duke Nukem Zero Hour",
     "full": "sonicdcer/DNZHRecomp",
     "pushed": "2025-11-03T00:08:08Z",
-    "stars": 191
+    "stars": 192
    }
   },
   "sonicdcer/mariokart64recomp": {
@@ -19540,7 +19549,7 @@
     "desc": "A fully playable, work-in-progress native Sonic Adventure port for Windows, Linux and Steam Deck. Powered by KatanaRecomp.",
     "full": "sonicfreak1337/SARecomp",
     "pushed": "2026-10-18T20:12:44Z",
-    "stars": 94
+    "stars": 95
    }
   },
   "sonicnext-dev/marathonrecomp": {
@@ -19565,7 +19574,7 @@
     "archived": false,
     "desc": "An unofficial PC port of the Xbox 360 version of Sonic the Hedgehog (2006) created through the process of static recompilation",
     "full": "sonicnext-dev/MarathonRecomp",
-    "pushed": "2026-10-18T17:04:13Z",
+    "pushed": "2026-10-18T21:50:20Z",
     "stars": 685
    }
   },
@@ -19597,7 +19606,7 @@
     "desc": "Hyrule Warriors: Definitive Edition Recomp (HWDE) - static recompilation of the Switch game to a native Windows executable",
     "full": "sonsegajp/HWDER",
     "pushed": "2026-10-14T02:46:43Z",
-    "stars": 47
+    "stars": 48
    }
   },
   "sp00nznet/bloodwake": {
@@ -19631,7 +19640,7 @@
     "desc": "A project to statically recompile the original Xbox version of Burnout 3: Takedown (2004, Criterion Games / EA) into a native Windows 11 x86-64 executable.",
     "full": "sp00nznet/burnout3",
     "pushed": "2026-09-30T09:53:20Z",
-    "stars": 122
+    "stars": 123
    }
   },
   "sp00nznet/flow": {
@@ -19711,7 +19720,7 @@
     "archived": false,
     "desc": "A static recompilation of Resident Evil Outbreak for modern Windows.",
     "full": "sp00nznet/reo",
-    "pushed": "2026-10-14T07:16:21Z",
+    "pushed": "2026-10-18T20:52:34Z",
     "stars": 28
    }
   },
@@ -19787,7 +19796,7 @@
     "desc": "A static recompilation of a GameCube game to native PC.",
     "full": "sp00nznet/ww",
     "pushed": "2026-10-14T07:24:58Z",
-    "stars": 16
+    "stars": 17
    }
   },
   "spacefarergames/cv64-recomp": {
@@ -19881,7 +19890,7 @@
     "desc": "Unofficial native Windows port of BLACK (Xbox, NTSC-U). Runs your own copy of the game's code on the PC; no game data included.",
     "full": "Spark198rus/black-pc",
     "pushed": "2026-10-17T10:40:43Z",
-    "stars": 234
+    "stars": 238
    }
   },
   "speedbreakerproject/speedbreaker": {
@@ -19921,7 +19930,7 @@
     "desc": "Unofficial static recompilation of the Xbox 360 version of Need for Speed: Most Wanted (2005): a native port for Steam Deck, Steam Machine, Steam Frame, Linux and Mac (iPhone/iPad: sideload the experimental IPA or build it yourself). Bring your own disc: no game files included. Not affiliated with EA or Valve.",
     "full": "SpeedBreakerProject/speedbreaker",
     "pushed": "2026-10-18T05:25:42Z",
-    "stars": 386
+    "stars": 390
    }
   },
   "spicywonda/castlevania-chronicles-recomp": {
@@ -20288,7 +20297,7 @@
     "desc": "",
     "full": "SunJaycy/GoldenEye-Recomp",
     "pushed": "2026-06-18T18:28:00Z",
-    "stars": 899
+    "stars": 901
    }
   },
   "sunjaycy/goldeneye-recomp-rexglue": {
@@ -20365,17 +20374,17 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-17T19:14:54Z",
+    "date": "2026-10-18T20:42:53Z",
     "pre": false,
-    "tag": "windows-v1.9.1",
-    "url": "https://github.com/Supermedo/bloodborne_pc/releases/tag/windows-v1.9.1"
+    "tag": "windows-v1.9.2",
+    "url": "https://github.com/Supermedo/bloodborne_pc/releases/tag/windows-v1.9.2"
    },
    "repo": {
     "archived": false,
     "desc": "Bloodborne running natively on Windows 10/11: launcher in 13 languages, DLSS, FSR 3.1/4, unlocked FPS, cheats, mods, one-click updates.",
     "full": "Supermedo/bloodborne_pc",
-    "pushed": "2026-10-18T20:40:51Z",
-    "stars": 3729
+    "pushed": "2026-10-18T20:42:52Z",
+    "stars": 3754
    }
   },
   "supermedo/uncharted_pc": {
@@ -20410,7 +20419,7 @@
     "desc": "Uncharted: The Nathan Drake Collection running natively on Windows - by SuperMedo",
     "full": "Supermedo/uncharted_pc",
     "pushed": "2026-10-17T23:37:21Z",
-    "stars": 1426
+    "stars": 1437
    }
   },
   "supermedo/wet-recomp": {
@@ -20931,7 +20940,7 @@
     "desc": "Native PC port of Peter Jackson's King Kong (Xbox 360) via static recompilation",
     "full": "TekRantGaming/king-kong-recompiled",
     "pushed": "2026-10-13T22:17:46Z",
-    "stars": 186
+    "stars": 187
    }
   },
   "tekrantgaming/outpost-kaloki-x-recompiled": {
@@ -21061,7 +21070,7 @@
     "desc": "The Simpsons Wrestling (PS1, USA) recompiled for Windows and Linux with psxrecomp and the TRG Launcher: 16:9, HD, 60 FPS, skip intro, everything unlocked. Bring your own disc.",
     "full": "TekRantGaming/simpsons-wrestling-recompiled",
     "pushed": "2026-10-13T22:17:52Z",
-    "stars": 26
+    "stars": 27
    }
   },
   "tekrantgaming/sms-pc-port": {
@@ -21101,7 +21110,7 @@
     "desc": "Native PC port of Super Mario Sunshine with a launcher: up to 8x resolution, MSAA, fullscreen, HD texture installer, free camera and mouse look. Windows and Linux. Bring your own disc.",
     "full": "TekRantGaming/sms-pc-port",
     "pushed": "2026-10-11T13:41:29Z",
-    "stars": 217
+    "stars": 218
    }
   },
   "testdriveupgrade/tdure": {
@@ -21164,16 +21173,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-11T19:19:36Z",
+    "date": "2026-10-18T21:17:20Z",
     "pre": false,
-    "tag": "V1",
-    "url": "https://github.com/TGP482/SCDA-XBERecomp/releases/tag/V1"
+    "tag": "V2",
+    "url": "https://github.com/TGP482/SCDA-XBERecomp/releases/tag/V2"
    },
    "repo": {
     "archived": false,
     "desc": "An unofficial original Xbox version PC port of Splinter Cell: Double Agent via static recompilation.",
     "full": "TGP482/SCDA-XBERecomp",
-    "pushed": "2026-10-18T20:29:38Z",
+    "pushed": "2026-10-18T21:17:20Z",
     "stars": 269
    }
   },
@@ -21332,7 +21341,7 @@
     "desc": "A playable PC port of Sly Cooper and the Thievius Raccoonus, rebuilt through reverse engineering.",
     "full": "theclub654/ProjectCane",
     "pushed": "2026-10-15T02:39:28Z",
-    "stars": 280
+    "stars": 283
    }
   },
   "thedoffman/timesplitters-future-perfect-pc": {
@@ -21364,8 +21373,8 @@
     "archived": false,
     "desc": "Experimental TimeSplitters: Future Perfect PC integration: keyboard and mouse controls, source patches, and build instructions. Requires your own Xbox game dump.",
     "full": "TheDoffman/timesplitters-future-perfect-pc",
-    "pushed": "2026-10-18T20:25:26Z",
-    "stars": 6
+    "pushed": "2026-10-18T23:10:12Z",
+    "stars": 7
    }
   },
   "theenbywitch/smue5": {
@@ -21626,7 +21635,7 @@
     "desc": "Urban Reign (PS2) static recompilation: native PC port with 60 FPS, high resolution, HD textures and up to 8 players",
     "full": "thiagordsfx/urban-reign-recomp",
     "pushed": "2026-10-13T23:39:48Z",
-    "stars": 40
+    "stars": 41
    }
   },
   "thibautbus/top": {
@@ -21725,7 +21734,7 @@
     "desc": "Fully playable native PC recompilation of Jet Force Gemini for Windows. Download v1.1 and import your own supported ROM. No ROMs or game assets included.",
     "full": "TK22-26/JetForceGemini-Recomp",
     "pushed": "2026-10-18T14:46:35Z",
-    "stars": 22
+    "stars": 23
    }
   },
   "tmcleroy/muscle-march-recomp": {
@@ -21868,7 +21877,7 @@
     "desc": "Pokemon Emerald in 3D (in WebAssembly)",
     "full": "tripplyons/pokeemerald-3d",
     "pushed": "2026-09-25T17:20:50Z",
-    "stars": 48
+    "stars": 47
    }
   },
   "turtlesoupy/opensmash": {
@@ -21939,7 +21948,7 @@
     "desc": "Dusklight brings a classic adventure to PC and mobile platforms with a variety of fixes and improvements.",
     "full": "TwilitRealm/dusklight",
     "pushed": "2026-10-11T11:04:10Z",
-    "stars": 5931
+    "stars": 5936
    }
   },
   "twist84/halo3_cache_release_recomp": {
@@ -22285,7 +22294,7 @@
     "archived": false,
     "desc": "Turning Persona 3 FES into a native PC port",
     "full": "Virtual-AK/fes-pc-recomp",
-    "pushed": "2026-10-18T09:03:59Z",
+    "pushed": "2026-10-18T21:21:50Z",
     "stars": 1
    }
   },
@@ -22301,7 +22310,7 @@
     "archived": false,
     "desc": "Decompilation of \"King's Field: The Ancient City\"",
     "full": "Voicedrew11/kfiv-decomp",
-    "pushed": "2026-10-18T03:24:35Z",
+    "pushed": "2026-10-18T20:52:15Z",
     "stars": 13
    }
   },
@@ -22354,16 +22363,16 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-10T22:05:05Z",
+    "date": "2026-10-18T22:42:32Z",
     "pre": false,
-    "tag": "v0.1.2",
-    "url": "https://github.com/Voicedrew11/verdite3/releases/tag/v0.1.2"
+    "tag": "v0.2.0",
+    "url": "https://github.com/Voicedrew11/verdite3/releases/tag/v0.2.0"
    },
    "repo": {
     "archived": false,
     "desc": "AI driven attempt at porting King's Field II (SLUS-00255) to PC with a variety of improvements ",
     "full": "Voicedrew11/verdite3",
-    "pushed": "2026-10-14T20:34:59Z",
+    "pushed": "2026-10-18T22:37:12Z",
     "stars": 22
    }
   },
@@ -22450,7 +22459,7 @@
     "archived": false,
     "desc": "Def Jam: Fight for NY PC port — static recompilation of the original Xbox game for native Windows and macOS (Direct3D 11 / Vulkan). Bring your own game dump.",
     "full": "vyanhursky/DefJamFFNY-recomp",
-    "pushed": "2026-10-18T20:05:25Z",
+    "pushed": "2026-10-18T22:45:23Z",
     "stars": 78
    }
   },
@@ -22720,7 +22729,7 @@
     "desc": "Native PC port of the Xbox 360 XBLA game Dead Rising 2: Case West, by static recompilation. Windows and Linux, Vulkan, keyboard/mouse and controller. You supply your own copy of the game.",
     "full": "wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
     "pushed": "2026-10-14T08:08:20Z",
-    "stars": 86
+    "stars": 88
    }
   },
   "wivi514/dead_rising_2_case_zero_xenon_recomp": {
@@ -22758,7 +22767,7 @@
     "desc": "Native PC port of the Xbox 360 XBLA game Dead Rising 2: Case Zero, by static recompilation. Windows and Linux, Vulkan, keyboard/mouse and controller. You supply your own copy of the game.",
     "full": "wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp",
     "pushed": "2026-10-14T08:18:55Z",
-    "stars": 95
+    "stars": 96
    }
   },
   "wndwsqrrl/3on3nhl-recomp": {
@@ -23057,7 +23066,7 @@
     "desc": "Unofficial native PC/handheld port of Burnout 3: Takedown (static recompilation). Bring your own disc.",
     "full": "xenophobentx/takedawn",
     "pushed": "2026-10-17T17:15:18Z",
-    "stars": 152
+    "stars": 154
    }
   },
   "xive080/d-w-3-recomp": {
@@ -23143,17 +23152,17 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-18T19:46:01Z",
-    "pre": true,
-    "tag": "test-pr69-42fd0402dc2d",
-    "url": "https://github.com/previouslevelgames/recharged/releases/tag/test-pr69-42fd0402dc2d"
+    "date": "2026-10-18T22:02:02Z",
+    "pre": false,
+    "tag": "v1.0.11",
+    "url": "https://github.com/previouslevelgames/recharged/releases/tag/v1.0.11"
    },
    "repo": {
     "archived": false,
     "desc": "Mario Strikers Charged for PC, Mac & Linux. Ported from decompiled code. Not a recompilation.",
     "full": "previouslevelgames/recharged",
-    "pushed": "2026-10-18T19:46:03Z",
-    "stars": 65
+    "pushed": "2026-10-18T22:02:01Z",
+    "stars": 70
    }
   },
   "yasindevs/imabikisou-pc": {
@@ -23275,7 +23284,7 @@
     "desc": "Experimental native PC runtime for Kingdom Hearts 358/2 Days, developed alongside the matching Nintendo DS decompilation. No copyrighted game data included.",
     "full": "Yokimitsuro/khdays-port",
     "pushed": "2026-10-17T23:06:53Z",
-    "stars": 131
+    "stars": 133
    }
   },
   "yoshicrystal9/re-gh2": {
@@ -23446,8 +23455,8 @@
     "archived": false,
     "desc": "Unofficial static recompilation of Sonic Free Riders for Windows, Linux and Android, with controller/keyboard support, custom VRM avatars, and Kinect v1, Kinect v2 (experimental) and webcam motion controls on Windows.",
     "full": "YuutaTsubasa/Free-Riders-Recompiled",
-    "pushed": "2026-10-18T19:25:32Z",
-    "stars": 90
+    "pushed": "2026-10-18T20:55:28Z",
+    "stars": 91
    }
   },
   "z2442/oot-psp": {
@@ -23535,7 +23544,7 @@
     "desc": "PC port of Dragon Ball Z: Budokai Tenkaichi 3, built on the BT3-Decompiled project.",
     "full": "z3xox/Tenkaichi3Decomp",
     "pushed": "2026-10-18T18:05:58Z",
-    "stars": 474
+    "stars": 477
    }
   },
   "zakypew/epoch-equinox": {
@@ -23597,8 +23606,8 @@
     "archived": false,
     "desc": "Native Pokémon Emerald port for Nintendo 3DS, featuring dual-screen gameplay, stereoscopic 3D, and a fully 3D world.",
     "full": "ZallaxDev/emerald-3ds",
-    "pushed": "2026-10-18T19:49:55Z",
-    "stars": 517
+    "pushed": "2026-10-18T23:10:55Z",
+    "stars": 524
    }
   },
   "zarif98/midnightclub": {
@@ -23706,7 +23715,7 @@
     "archived": false,
     "desc": "Final Fantasy Crystal Chronicles Decompilation",
     "full": "zcanann/FFCC-Decomp",
-    "pushed": "2026-10-18T19:51:04Z",
+    "pushed": "2026-10-18T20:54:48Z",
     "stars": 45
    }
   },
@@ -23775,7 +23784,7 @@
     "v": 2
    },
    "release": {
-    "date": "2026-10-18T19:58:37Z",
+    "date": "2026-10-18T22:50:24Z",
     "pre": true,
     "tag": "devel-build",
     "url": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/tag/devel-build"
@@ -23784,8 +23793,8 @@
     "archived": false,
     "desc": "Zelda Wind Waker HD Recomp",
     "full": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
-    "pushed": "2026-10-18T20:19:51Z",
-    "stars": 758
+    "pushed": "2026-10-18T22:50:23Z",
+    "stars": 761
    }
   },
   "zenit2893-cmyk/project-1944": {
@@ -23977,7 +23986,7 @@
     "desc": "Recompilation of Blue Dragon",
     "full": "zolaware/reblue",
     "pushed": "2026-10-09T14:10:43Z",
-    "stars": 814
+    "stars": 816
    }
   },
   "zoomieszaggy/space-channel-5": {
