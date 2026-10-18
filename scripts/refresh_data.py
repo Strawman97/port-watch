@@ -153,6 +153,17 @@ def load_overrides():
     """Shared fixes from overrides.json in the repository root (title, cover, platform, type, pcRelease, runsOn, hide)."""
     return (load_json(os.path.join(ROOT, "overrides.json"), {}) or {}).get("projects") or {}
 
+def load_added():
+    """Projects the maintainer added for everyone (the "added" section of overrides.json)."""
+    out = []
+    for key, e in ((load_json(os.path.join(ROOT, "overrides.json"), {}) or {}).get("added") or {}).items():
+        if not isinstance(e, dict) or key.startswith("link:"):
+            continue                      # links that aren't GitHub, GitLab or itch.io can't be checked
+        k = key.lower()
+        out.append({"k": k, "id": "shared:" + k, "g": e.get("title") or k.split("/")[-1], "p": e.get("platform") or "Unknown",
+                    "cover": e.get("cover") or ""})
+    return out
+
 def refresh_covers(projects, overrides):
     key = os.environ.get("SGDB_API_KEY", "").strip()
     path = os.path.join(DATA, "covers.json")
@@ -439,9 +450,17 @@ def main():
     overrides = load_overrides()
     if overrides:
         log(f"Shared fixes: {len(overrides)} projects in overrides.json")
+    taken = known | {p["k"] for p in extra}
+    added = [p for p in load_added() if p["k"] not in taken]
+    if added:
+        log(f"Shared added projects: {len(added)}")
+    for p in added:                       # an added project's own cover link works like a pinned cover
+        if p["cover"] and not (overrides.get(p["k"]) or {}).get("cover"):
+            overrides = {**overrides, p["k"]: {**(overrides.get(p["k"]) or {}), "cover": p["cover"]}}
+    extra = extra + added
     refresh_covers(seed + extra, overrides)
     log("itch.io devlogs:")
-    refresh_itch(seed)
+    refresh_itch(seed + added)
     log("Shared update checks:")
     refresh_status([p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))])
 
