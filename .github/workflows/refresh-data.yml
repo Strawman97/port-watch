@@ -1,0 +1,41 @@
+name: Refresh data
+
+# Every 3 hours (at 17 minutes past, to avoid the busy top of the hour), plus a manual "Run workflow" button.
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+# The job only needs to commit the files in data/.
+permissions:
+  contents: write
+
+# Never run two refreshes at once.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Refresh covers and itch.io devlogs
+        env:
+          SGDB_API_KEY: ${{ secrets.SGDB_API_KEY }}
+        run: python3 scripts/refresh_data.py
+
+      - name: Commit changed data
+        run: |
+          if [ -z "$(git status --porcelain -- data)" ]; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "Refresh data"
+          git push
