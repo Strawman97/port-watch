@@ -1,10 +1,17 @@
 name: Refresh data
 
-# Every 3 hours (at 17 minutes past, to avoid the busy top of the hour), plus a manual "Run workflow" button.
+# Every 3 hours (at 17 minutes past, to avoid the busy top of the hour), a manual "Run workflow" button,
+# and right after overrides.json or index.html changes, so shared projects and fixes are checked within minutes.
+# (The workflow's own commits to data/ don't trigger it again.)
 on:
   schedule:
     - cron: "17 */3 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - overrides.json
+      - index.html
 
 # The job only needs to commit the files in data/.
 permissions:
