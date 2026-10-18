@@ -18,12 +18,16 @@
 }
 @media (prefers-color-scheme: dark){
   :root{--bg:#171B23;--surface:#1F2531;--sunk:#252C3A;--ink:#E6E9EF;--muted:#9CA5B5;--line:#323B4C;
-  --action:#3FB3C6;--action-ink:#0C1A1E;--recomp:#7FD3E0;--recomp-bg:#183238;--decomp:#C1AEF0;--decomp-bg:#2D2645;--bad:#F29A9E;--bad-bg:#43232A;}
+  --action:#3FB3C6;--action-ink:#0C1A1E;--recomp:#7FD3E0;--recomp-bg:#183238;--decomp:#C1AEF0;--decomp-bg:#2D2645;--bad:#F29A9E;--bad-bg:#43232A;color-scheme:dark;}
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--body)}
 a{color:var(--action)}
 button,select,input{font:inherit;color:inherit}
+:root{color-scheme:light dark}
+select,textarea{background-color:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--r)}
+select option{background-color:var(--surface);color:var(--ink)}
+dialog select,dialog textarea{width:100%;background-color:var(--sunk);padding:8px 10px}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--action);outline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
