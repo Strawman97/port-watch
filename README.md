@@ -125,4 +125,6 @@ Open an issue with the project's link, the game and its original platform, or de
 
 ## Licence
 
-<!-- Add a LICENSE file and name it here, for example: "Port Watch's code is released under the MIT Licence." The licence covers Port Watch's own code, not the third-party data and images it displays. -->
+Port Watch's own code (`index.html` and the scripts in `scripts/`) is released under the [MIT Licence](LICENSE).
+
+The licence doesn't cover the third-party data and images the site displays, such as project lists, descriptions, box art and covers. Those belong to their respective owners and sources, listed under [Data sources and credits](#data-sources-and-credits).
