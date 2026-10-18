@@ -149,7 +149,11 @@ def sgdb_lookup(title, key):
         return None
     return {"url": imgs[0].get("url"), "thumb": imgs[0].get("thumb"), "name": hit.get("name"), "match": round(score, 3)}
 
-def refresh_covers(projects):
+def load_overrides():
+    """Shared fixes from overrides.json in the repository root (title, cover, platform, type, pcRelease, runsOn, hide)."""
+    return (load_json(os.path.join(ROOT, "overrides.json"), {}) or {}).get("projects") or {}
+
+def refresh_covers(projects, overrides):
     key = os.environ.get("SGDB_API_KEY", "").strip()
     path = os.path.join(DATA, "covers.json")
     data = load_json(path, {"format": "port-watch-covers", "version": 1, "covers": {}, "misses": {}})
@@ -159,16 +163,26 @@ def refresh_covers(projects):
         return False
     todo, seen = [], set()
     for p in projects:
-        if p.get("cv"):
-            continue                      # already has libretro box art
         ck = p.get("k") or p["id"]
-        if ck in seen or ck in covers:
+        fix = overrides.get(ck) or overrides.get(p["id"]) or {}
+        if fix.get("hide") or fix.get("cover"):
+            covers.pop(ck, None)          # hidden, or the maintainer pinned a cover: nothing to look up
+            continue
+        fixed_title = cover_title(fix["title"]) if fix.get("title") else ""
+        if p.get("cv") and not fixed_title:
+            continue                      # already has libretro box art
+        if ck in seen:
             continue
         seen.add(ck)
+        if ck in covers:
+            if not fixed_title or covers[ck].get("title") == fixed_title:
+                continue
+            covers.pop(ck, None)          # the title was corrected: look the cover up again
+            misses.pop(ck, None)
         miss = misses.get(ck)
         if miss and (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(miss.replace("Z", "+00:00"))).days < RETRY_MISSES_DAYS:
             continue
-        title = cover_title(p.get("g", ""))
+        title = fixed_title or cover_title(p.get("g", ""))
         if title:
             todo.append((ck, title))
     log(f"  {len(todo)} games need a cover lookup (max {MAX_LOOKUPS} this run)")
@@ -422,11 +436,14 @@ def main():
     extra = [p for p in awesome_projects() if p["k"] not in known]
     log(f"Port Watch list: {len(seed)} built-in projects, {len(extra)} newer ones from Awesome Decomp Games")
     log("Covers:")
-    refresh_covers(seed + extra)
+    overrides = load_overrides()
+    if overrides:
+        log(f"Shared fixes: {len(overrides)} projects in overrides.json")
+    refresh_covers(seed + extra, overrides)
     log("itch.io devlogs:")
     refresh_itch(seed)
     log("Shared update checks:")
-    refresh_status(seed + extra)
+    refresh_status([p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))])
 
 if __name__ == "__main__":
     main()
