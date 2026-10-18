@@ -7,14 +7,31 @@
       "title": "Metroid Prime Hunters",
       "pcRelease": "Never released on PC"
     },
+    "bailifftrimmer/ship-of-harkinian-pc-port": {
+      "hide": true,
+      "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "bailifftrimmer/zelda64-recomp-hub": {
+      "hide": true,
+      "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
     "bigmak94/galaxyquest": {
       "title": "Super Mario Galaxy",
       "pcRelease": "Never released on PC"
+    },
+    "bluefirecontrol/spaghettikart-mkdd-port": {
+      "hide": true,
+      "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "bluefirecontrol/starship-sf64-port-hub": {
+      "hide": true,
+      "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
     },
     "bnunu/halo-ce-universal": {
       "title": "Halo: Combat Evolved"
     },
     "bruder-grimm/animal_forest_psp": {
+      "_game": "Animal Forest",
       "cover": "https://cdn2.steamgriddb.com/thumb/045c46e3c0c3be46563fc234789b31fb.jpg"
     },
     "chupathingyce/chupathingyce": {
@@ -28,6 +45,7 @@
       "note": "The 2005 game, not the 2012 one"
     },
     "devzer0d4y/mcx360-edition": {
+      "_game": "Minecraft: Xbox 360 Edition",
       "cover": "https://cdn2.steamgriddb.com/thumb/5d0b7689fb494d293633a96f45a16843.jpg"
     },
     "dougchansan/mk8-recomp": {
@@ -45,6 +63,10 @@
       "title": "God of War III Remastered",
       "cover": "https://cdn2.steamgriddb.com/thumb/bc6a17604012da6895c1bacd28cdb9fa.jpg"
     },
+    "flintautocrat/opengoal-jak-pc-port": {
+      "hide": true,
+      "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
     "gillou68310/dukenukemzerohourport": {
       "title": "Duke Nukem: Zero Hour"
     },
@@ -58,9 +80,11 @@
       "title": "EarthBound"
     },
     "invinceble55-wq/estacado": {
+      "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
     },
     "invinceble55-wq/estacado-the-darkness-recomp": {
+      "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
     },
     "jotd666/xevious": {
@@ -90,6 +114,7 @@
       "title": "Dragon Ball Z: Budokai 3"
     },
     "obaidr1/hercules-recompiled": {
+      "_game": "Disney's Hercules",
       "cover": "https://cdn2.steamgriddb.com/thumb/a4256857d2bedfe2545111324296db10.jpg"
     },
     "official-kryo-to/ctw-native": {
@@ -104,6 +129,7 @@
       "pcRelease": "Never released on PC"
     },
     "portingpete/the-darkness-recomp": {
+      "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
     },
     "pranchad/re-sonic06demo": {
@@ -113,6 +139,7 @@
       "title": "Earthbound"
     },
     "rerevvedrecomp/rerevved": {
+      "_game": "Civilization Revolution",
       "cover": "https://cdn2.steamgriddb.com/thumb/fd21f5770b522657a6125e2a00e79c5c.jpg"
     },
     "revan67/doax2-recomp": {
@@ -141,6 +168,7 @@
       "title": "Bloodborne"
     },
     "tekrantgaming/king-kong-recompiled": {
+      "_game": "Peter Jackson's King Kong",
       "cover": "https://cdn2.steamgriddb.com/thumb/94e1efbe349498e6c22ad4f42b236631.jpg"
     },
     "thibautbus/top": {
@@ -162,9 +190,11 @@
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
     },
     "wivi514/dead_rising_2_case_west_xenon_recomp": {
+      "_game": "Dead Rising 2: Case West",
       "cover": "https://cdn2.steamgriddb.com/thumb/3de080c153a4d3d431cd08028f17bf1f.jpg"
     },
     "wivi514/dead_rising_2_case_zero_xenon_recomp": {
+      "_game": "Dead Rising 2: Case Zero",
       "cover": "https://cdn2.steamgriddb.com/thumb/8f84bc859ab19fe4c85b572b458c47ed.jpg"
     },
     "xandoxan65/segarally95-recomp": {
@@ -183,14 +213,14 @@
     "7akeem0/albw-decomp-ai": {
       "link": "https://github.com/7akeem0/albw-decomp-ai",
       "title": "The Legend of Zelda: A Link Between Worlds",
-      "platform": "Unknown",
+      "platform": "3DS",
       "type": "Decompilation",
       "description": "Matching decompilation of The Legend of Zelda: A Link Between Worlds (3DS, USA) - work in progress, 63.7% of functions matched byte-exact"
     },
     "abilliontokens/urbz-recomp": {
       "link": "https://github.com/abilliontokens/urbz-recomp",
-      "title": "urbz",
-      "platform": "Unknown",
+      "title": "The Urbz: Sims in the City",
+      "platform": "Xbox (original)",
       "type": "Recompilation",
       "description": "Static recompilation port scaffold for the original Xbox game The Urbz: Sims in the City (USA), built on XboxXBERecomp. No game data."
     },
@@ -201,48 +231,20 @@
       "type": "Recompilation",
       "description": "Experimental native Windows x64 port of Call of Duty 3 Xbox 360 single-player using ReXGlue static recompilation. Bring your own game assets."
     },
-    "bailifftrimmer/ship-of-harkinian-pc-port": {
-      "link": "https://github.com/BailiffTrimmer/ship-of-harkinian-pc-port",
-      "title": "The Legend of Zelda: Ocarina of Time",
-      "platform": "Unknown",
-      "type": "Recompilation",
-      "description": "Native PC port of Ocarina of Time with modern enhancements"
-    },
-    "bailifftrimmer/zelda64-recomp-hub": {
-      "link": "https://github.com/BailiffTrimmer/zelda64-recomp-hub",
-      "title": "The Legend of Zelda: Majora's Mask",
-      "platform": "Unknown",
-      "type": "Recompilation",
-      "description": "Native PC recompilation of Majora's Mask with modern rendering"
-    },
     "batenkaitos-dev/mh2-decomp": {
       "link": "https://github.com/Batenkaitos-dev/mh2-decomp",
-      "title": "mh2 decomp",
-      "platform": "Unknown",
-      "type": "Recompilation",
+      "title": "Monster Hunter 2 (Dos)",
+      "platform": "PS2",
+      "type": "Decompilation",
       "description": "A 100% byte-matching decompilation of Monster Hunter 2 (Dos) for the PS2."
     },
     "bearhuddleston/lasrecomp": {
       "link": "https://github.com/BearHuddleston/LASRecomp",
       "title": "The Legend of Zelda: Link's Awakening (2019)",
-      "platform": "Unknown",
+      "platform": "Switch",
       "type": "Recompilation",
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
       "description": "Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux"
-    },
-    "bluefirecontrol/spaghettikart-mkdd-port": {
-      "link": "https://github.com/bluefirecontrol/spaghettikart-mkdd-port",
-      "title": "Mario Kart: Double Dash",
-      "platform": "Unknown",
-      "type": "Recompilation",
-      "description": "Native PC port of Mario Kart: Double Dash with online play"
-    },
-    "bluefirecontrol/starship-sf64-port-hub": {
-      "link": "https://github.com/bluefirecontrol/starship-sf64-port-hub",
-      "title": "Star Fox 64",
-      "platform": "Unknown",
-      "type": "Recompilation",
-      "description": "Native PC port of Star Fox 64 with widescreen and mod support"
     },
     "caiuscodes/goldeneye-007-xbla-pc-recomp": {
       "link": "https://github.com/CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
@@ -253,8 +255,8 @@
     },
     "calencyr/slugfestrecompiled": {
       "link": "https://github.com/CalenCyr/SlugfestRecompiled",
-      "title": "Slugfest Recompiled",
-      "platform": "Unknown",
+      "title": "Ken Griffey Jr.'s Slugfest",
+      "platform": "N64",
       "type": "Recompilation",
       "description": "Native PC port of Ken Griffey Jr.'s Slugfest (N64) via static recompilation"
     },
@@ -269,7 +271,7 @@
     "clockwork-recompdev/clockwork": {
       "link": "https://github.com/clockwork-recompdev/clockwork",
       "title": "Yo-kai Watch",
-      "platform": "Unknown",
+      "platform": "3DS",
       "type": "Recompilation",
       "description": "Native PC versions of the Yo-kai Watch 3DS games by static recompilation"
     },
@@ -306,14 +308,14 @@
     "datibrr/ae3-pc": {
       "link": "https://github.com/datibrr/ae3-pc",
       "title": "Ape Escape 3",
-      "platform": "Unknown",
+      "platform": "PS2",
       "type": "Recompilation",
       "description": "Experimental native PC port of Ape Escape 3 through reverse engineering (with Multiplayer)"
     },
     "dawoodtogoo2020-code/folklore-native-port": {
       "link": "https://github.com/dawoodtogoo2020-code/folklore-native-port",
-      "title": "folklore native",
-      "platform": "Unknown",
+      "title": "Folklore",
+      "platform": "PS3",
       "type": "Recompilation",
       "description": "Early-stage Folklore (PS3) native recompilation research and validation tools. Exploring; no playable build."
     },
@@ -321,29 +323,29 @@
       "link": "https://github.com/DeprivedPeasant/ape-escape-decomp-port",
       "title": "Ape Escape",
       "platform": "PS1",
-      "type": "Recompilation",
+      "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Readable decompilation and native port of Ape Escape (PS1, SCUS-94423): hand-ported C verified against the original instructions. No game data included."
     },
     "donovanmontoya/pokemon-xd-decomp": {
       "link": "https://github.com/DonovanMontoya/pokemon-xd-decomp",
       "title": "Pokémon XD: Gale of Darkness",
-      "platform": "Unknown",
-      "type": "Recompilation",
+      "platform": "GameCube",
+      "type": "Decompilation",
       "description": "A matching decompilation of Pokémon XD: Gale of Darkness for the Nintendo GameCube"
     },
     "duislingr/cr1-u": {
       "link": "https://github.com/DuIslingr/CR1-U",
       "title": "Chaos Rings",
       "platform": "Unknown",
-      "type": "Recompilation",
+      "type": "Reimplementation",
       "description": "CR1:U - a from-scratch reimplementation of Chaos Rings (iPad HD 1.0.1, iPhone 2.2.0, PS Vita). Bring your own copy; no game data included."
     },
     "duislingr/cro-u": {
       "link": "https://github.com/DuIslingr/CRO-U",
       "title": "Chaos Rings Omega",
       "platform": "Unknown",
-      "type": "Recompilation",
+      "type": "Reimplementation",
       "description": "CRO-U - a from-scratch reimplementation of Chaos Rings Omega (iPad HD 1.0.0, PS Vita), begun from CR1:U. Bring your own copy; no game data included."
     },
     "eggscantfly/robox-recompiled-3ds": {
@@ -355,17 +357,10 @@
     },
     "ethannicholas/revolt-recomp": {
       "link": "https://github.com/ethannicholas/revolt-recomp",
-      "title": "Revolt",
-      "platform": "Unknown",
+      "title": "Re-Volt",
+      "platform": "Dreamcast",
       "type": "Recompilation",
       "description": "A recompilation of Re-Volt for the Sega Dreamcast"
-    },
-    "flintautocrat/opengoal-jak-pc-port": {
-      "link": "https://github.com/FlintAutocrat/opengoal-jak-pc-port",
-      "title": "Jak and Daxter: The Precursor Legacy",
-      "platform": "Unknown",
-      "type": "Recompilation",
-      "description": "Native PC port of Jak and Daxter with enhanced rendering"
     },
     "getlostin/ctr-nitrofueled-pc": {
       "link": "https://github.com/GetLostIn/CTR-NitroFueled-PC",
@@ -385,7 +380,7 @@
     "gnsb/ufc-3-ps4-port-linux-windows": {
       "link": "https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS",
       "title": "EA SPORTS UFC 3",
-      "platform": "Unknown",
+      "platform": "PS4",
       "type": "Recompilation",
       "description": "EA SPORTS UFC 3 (PS4) native port for Linux and Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer"
     },
@@ -411,7 +406,7 @@
     "heromachine/burnout-recompilation": {
       "link": "https://github.com/Heromachine/Burnout-Recompilation",
       "title": "Burnout",
-      "platform": "Unknown",
+      "platform": "Xbox (original)",
       "type": "Recompilation",
       "description": "Static recompilation of Burnout (Xbox, Criterion 2002) to a native Windows build. Ships the tool, not the game: you supply your own disc image."
     },
@@ -425,7 +420,7 @@
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "link": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
       "title": "Dragon Ball Z: Super Saiya Densetsu",
-      "platform": "Unknown",
+      "platform": "SNES",
       "type": "Recompilation",
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg",
       "description": "Dragon Ball Z: Super Saiya Densetsu (SNES) — Classic, Recompiled and HD Remastered, rewritten in Rust. Bring your own ROM."
@@ -433,7 +428,7 @@
     "jaster111/double-dash-redux": {
       "link": "https://github.com/Jaster111/double-dash-redux",
       "title": "Mario Kart: Double Dash!!",
-      "platform": "Unknown",
+      "platform": "GameCube",
       "type": "Recompilation",
       "description": "Statically recompiled Mario Kart: Double Dash!! as a native Windows game (x64, Direct3D 11). No emulator."
     },
@@ -479,14 +474,14 @@
     "megangrass/bio2-ds": {
       "link": "https://github.com/MeganGrass/bio2-ds",
       "title": "Resident Evil 2",
-      "platform": "Unknown",
+      "platform": "PS1",
       "type": "Decompilation",
       "description": "Resident Evil 2 Dual Shock Ver. (1998/SLUS_007.48/Leon) Disassembly/Decompilation"
     },
     "mikeflare007/wwe2k14-recomp": {
       "link": "https://github.com/mikeflare007/wwe2k14-recomp",
       "title": "WWE 2K14",
-      "platform": "Unknown",
+      "platform": "Xbox 360",
       "type": "Recompilation",
       "description": "Unofficial native PC port of WWE 2K14 (Xbox 360) by static recompilation. 60 FPS, up to 4K. Bring your own game. Based on WWE '13 Recomp and ReXGlue."
     },
@@ -494,7 +489,7 @@
       "link": "https://github.com/nawaf-al-hussain/Tenkaichi3Decomp",
       "title": "Dragon Ball Z: Budokai Tenkaichi 3",
       "platform": "PS2",
-      "type": "Recompilation",
+      "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "cover": "https://cdn2.steamgriddb.com/thumb/2fcd824d9156e24ad1f7344c8723ab5f.jpg",
       "description": "PC port of Dragon Ball Z: Budokai Tenkaichi 3, built on the BT3-Decompiled project. (Mirror of stufno102/Tenkaichi3Decomp)"
@@ -502,8 +497,8 @@
     "nugget1072/dbz-ssw2-godot-port": {
       "link": "https://github.com/Nugget1072/dbz-ssw2-godot-port",
       "title": "Dragon Ball Z Supersonic Warriors 2",
-      "platform": "Unknown",
-      "type": "Recompilation",
+      "platform": "DS",
+      "type": "Reimplementation",
       "cover": "https://cdn2.steamgriddb.com/thumb/24f3f7f630abe81cf2dbf9bdfbfbf13e.jpg",
       "description": "Godot port of DBZ Supersonic Warriors 2 (no ROM data; needs your own dump)"
     },
@@ -547,15 +542,15 @@
     "prathewsh/gravityrush_pc": {
       "link": "https://github.com/Prathewsh/gravityrush_pc",
       "title": "Gravity Rush",
-      "platform": "Unknown",
+      "platform": "PS4",
       "type": "Recompilation",
       "description": "Experimental native runtime for Gravity Rush Remastered and Gravity Rush 2 on Windows 10 and 11 built on the native PC port base by Supermedo and deadinside28"
     },
     "randomno/pinball-decomp": {
       "link": "https://github.com/Randomno/pinball-decomp",
-      "title": "pinball decomp",
+      "title": "3D Pinball for Windows - Space Cadet",
       "platform": "Unknown",
-      "type": "Recompilation",
+      "type": "Decompilation",
       "cover": "https://cdn2.steamgriddb.com/thumb/098b8b9f44bbbc0db5aff108ef93a0e2.jpg",
       "description": "A matching decompilation of Space Cadet Pinball"
     },
@@ -571,13 +566,13 @@
     "sardentrasi/legaiarecomp": {
       "link": "https://github.com/sardentrasi/LegaiaRecomp",
       "title": "Legend of Legaia",
-      "platform": "Unknown",
+      "platform": "PS1",
       "type": "Recompilation"
     },
     "satyasujitpasupuleti/ace-combat-04-static-recompilation": {
       "link": "https://github.com/SatyaSujitPasupuleti/Ace-Combat-04-Static-Recompilation",
       "title": "Ace Combat 04: Shattered Skies",
-      "platform": "Unknown",
+      "platform": "PS2",
       "type": "Recompilation",
       "description": "Experimental Ace Combat 04 static recompilation for Windows, derived from sal063/Ace-Combat-5-Static-recompilation. Bring your own ISO."
     },
@@ -597,14 +592,14 @@
     "sergiomanzur/noble-archimedes-castlevania-cod-recomp": {
       "link": "https://github.com/sergiomanzur/Noble-Archimedes-Castlevania-CoD-Recomp",
       "title": "Castlevania: Curse of Darkness",
-      "platform": "Unknown",
+      "platform": "PS2",
       "type": "Recompilation",
       "description": "Noble Archimedes - Castlevania CoD Recomp. Experimental source-only Windows recompilation host; native and PCSX2 GS paths; 60 FPS gameplay remains a target."
     },
     "silverxkv/sonic3dblastdx-recomp-proj": {
       "link": "https://github.com/SilverXKV/sonic3dblastDX-recomp-proj",
       "title": "Sonic 3D Blast",
-      "platform": "Unknown",
+      "platform": "Mega Drive",
       "type": "Recompilation",
       "description": "Recompilation of Sonic 3D Blast: Directors Cut"
     },
@@ -619,8 +614,8 @@
     "sojews/fossil-fighters-decomp": {
       "link": "https://github.com/Sojews/fossil-fighters-decomp",
       "title": "Fossil Fighters",
-      "platform": "Unknown",
-      "type": "Recompilation",
+      "platform": "DS",
+      "type": "Decompilation",
       "description": "Work-in-progress matching decompilation of Fossil Fighters (Nintendo DS). Bring your own ROM; no game assets included."
     },
     "sp00nznet/bloodwake": {
@@ -639,8 +634,8 @@
     },
     "spark198rus/black-pc": {
       "link": "https://github.com/Spark198rus/black-pc",
-      "title": "black pc",
-      "platform": "Unknown",
+      "title": "Black",
+      "platform": "Xbox (original)",
       "type": "Recompilation",
       "description": "Unofficial native Windows port of BLACK (Xbox, NTSC-U). Runs your own copy of the game's code on the PC; no game data included."
     },
@@ -677,7 +672,7 @@
     "virtual-ak/fes-pc-recomp": {
       "link": "https://github.com/Virtual-AK/fes-pc-recomp",
       "title": "Shin Megami Tensei: Persona 3 FES",
-      "platform": "Unknown",
+      "platform": "PS2",
       "type": "Recompilation",
       "cover": "https://cdn2.steamgriddb.com/thumb/5011c560a9233c63cf0e6cb6d06cf22c.jpg",
       "description": "Turning Persona 3 FES into a native PC port"
@@ -685,7 +680,7 @@
     "vulob1/megamanlegendsrecomp": {
       "link": "https://github.com/VuloB1/MegaManLegendsRecomp",
       "title": "Mega Man Legends",
-      "platform": "Unknown",
+      "platform": "PS1",
       "type": "Recompilation",
       "description": "Mega Man Legends (SLUS-00603) static recompilation with widescreen, modern controls, high frame rate and PGXP, built on psxrecomp"
     },
@@ -699,15 +694,15 @@
     "yasindevs/imabikisou-pc": {
       "link": "https://github.com/yasindevs/imabikisou-pc",
       "title": "Imabikisou",
-      "platform": "Unknown",
+      "platform": "PS3",
       "type": "Recompilation",
       "description": "Experimental Imabikisou PS3-to-PC recompilation using ps3recomp, with script tools and an AI-assisted English machine-translation preview."
     },
     "yeraydien/castaway_recomp": {
       "link": "https://github.com/YerayDien/castaway_recomp",
       "title": "The Sims 2: Castaway",
-      "platform": "Unknown",
-      "type": "Recompilation",
+      "platform": "Wii",
+      "type": "Decompilation",
       "description": "The Sims 2: Castaway (Wii, R42P69) decompilation"
     }
   }

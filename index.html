@@ -1153,7 +1153,7 @@ function detailHTML(v){
       <dl class="kv"><dt>Type</dt><dd>${esc(v.type)}</dd><dt>Original platform</dt><dd>${esc(v.platform)}</dd>
       <dt>Playability</dt><dd>${playPill(v)} <span class="note">${v.play==="yes"?"a public release is available":v.play==="no"?"no public release found yet":"not checked yet"}${(S.ov[p.id]||{}).play?" (set by you)":""}</span></dd>
       <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")})</span></dd>
-      ${v.so&&Object.keys(v.so).length?`<dt>Shared fixes</dt><dd>${esc(Object.keys(v.so).filter(k=>k!=="note").map(k=>({title:"title",cover:"cover",platform:"platform",type:"type",pcRelease:"PC release",runsOn:"runs on"}[k]||k)).join(", "))} set by the maintainer${v.so.note?" · "+esc(v.so.note):""}</dd>`:""}
+      ${v.so&&Object.keys(v.so).some(k=>k!=="note"&&!k.startsWith("_"))?`<dt>Shared fixes</dt><dd>${esc(Object.keys(v.so).filter(k=>k!=="note"&&!k.startsWith("_")).map(k=>({title:"title",cover:"cover",platform:"platform",type:"type",pcRelease:"PC release",runsOn:"runs on"}[k]||k)).join(", "))} set by the maintainer${v.so.note?" · "+esc(v.so.note):""}</dd>`:""}
       <dt>Last updated</dt><dd>${v.updated?esc(fmtDate(v.updated))+" ("+esc(ago(v.updated))+")":"Unknown"}</dd>
       <dt>Latest release</dt><dd>${v.rel&&v.rel.tag?(v.rel.url?`<a href="${esc(v.rel.url)}" target="_blank" rel="noopener">${esc(v.rel.tag)}</a>`:esc(v.rel.tag))+(v.rel.date?" · "+esc(fmtDate(v.rel.date)):""):"None found"}</dd>
       <dt>Last commit</dt><dd>${v.lastCommit?esc(fmtDate(v.lastCommit)):"Unknown"}</dd>
@@ -1543,6 +1543,7 @@ $("#exportBtn").addEventListener("click",()=>{const data=Object.assign({},S,{set
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="port-watch-backup-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();toast("Backup exported (your API keys are left out).");});
 $("#exportFixes").addEventListener("click",async()=>{
   await loadRepoData();const out=JSON.parse(JSON.stringify(REPO.over||{}));let added=0;
+  const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
     if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;
@@ -1556,6 +1557,7 @@ $("#exportFixes").addEventListener("click",async()=>{
     const ro=Array.isArray(o.os)?o.os:(p.po?p.po.split(",").map(x=>x.trim()).filter(Boolean):[]);if(ro.length)e.runsOn=ro;
     if(o.cover)e.cover=o.cover;if(p.d)e.description=String(p.d).slice(0,300);
     if(JSON.stringify(addedOut[key])!==JSON.stringify(e)){addedOut[key]=e;newProjects++;}}
+  for(const [key,f] of Object.entries(out)){const p=byKey.get(key);if(p&&!f.title){const {_game,...rest}=f;out[key]={_game:view(p).game,...rest};}}
   const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b))),
     added:Object.fromEntries(Object.entries(addedOut).sort(([a],[b])=>a.localeCompare(b)))};
   const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="overrides.json";document.body.appendChild(a);a.click();a.remove();
