@@ -24,14 +24,13 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 
 1. Open the site. It starts with a built-in list and doesn't check anything until you ask.
 2. Follow the projects you're interested in with the heart.
-3. Click **Check followed** to refresh just those.
-4. For full checks of every project, add a GitHub token first (see below), then use **Check for updates**.
+3. Click **Check for updates**, or **Check followed** to refresh just those. Both use Port Watch's shared data (see below), so no GitHub account or token is needed.
 
 Everything you do (follows, notes, edits, settings) is saved in your own browser. Use **Settings > Export backup** to keep a copy or move it to another browser.
 
-### Adding a GitHub token (recommended)
+### Adding a GitHub token (optional)
 
-Without a token, GitHub allows 60 requests an hour, so a full check of every project is spread over several hours. With one, it finishes in a single check.
+You only need a token for projects you added yourself, for **Check this project now**, or if the shared data is ever unavailable. Without one, GitHub allows 60 requests an hour.
 
 1. On GitHub, go to **Settings > Developer settings > Personal access tokens > Fine-grained tokens > Generate new token**.
 2. Give it a name and an expiry date. Under **Repository access**, choose **Public repositories (read-only)**. No other permissions are needed.
@@ -45,6 +44,9 @@ Some sources can't be read from a web page, so a scheduled GitHub Actions workfl
 
 - **`data/covers.json`:** SteamGridDB covers for games without libretro box art.
 - **`data/itch.json`:** the latest devlog posts of projects hosted on itch.io, such as Azimuth.
+- **`data/status.json`:** every tracked GitHub and GitLab project's latest release, last activity, what its release files run on, and the features and platforms in its README and `.recomp.json`.
+
+**Check for updates** and **Check followed** apply `status.json` first, then check directly only the projects it doesn't cover. That means projects you added yourself, plus itch.io devlogs when the shared copy is missing. Release alerts work exactly as before. The status line shows how long ago the shared data was refreshed.
 
 Each project's details show where its cover came from, and for itch.io projects, whether the devlog was read and by which route. **Check this project now** re-checks a single project immediately.
 
@@ -97,14 +99,17 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
-| `scripts/refresh_data.py` | Fetches SteamGridDB covers and itch.io devlogs (standard library only) |
+| `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
+| `scripts/pw_analysis.py` | The page's README, release-file and `.recomp.json` detection rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |
 | `scripts/sgdb_covers.py` | Optional helper for adding covers to a downloaded copy |
 
 **Updating the page:** save the new version as `index.html`, then choose **Add file > Upload files** in this repository, describe the change and click **Commit changes**. GitHub Pages republishes within a minute or two; a hard refresh (Ctrl+Shift+R) shows it straight away.
 
-**The SteamGridDB key** is stored as the repository secret `SGDB_API_KEY` (**Settings > Secrets and variables > Actions**). It's never written into files or logs.
+**The SteamGridDB key** is stored as the repository secret `SGDB_API_KEY` (**Settings > Secrets and variables > Actions**). It's never written into files or logs. The status checks use the workflow's own `GITHUB_TOKEN`, which needs no setup. If GitHub ever limits it, add a read-only fine-grained token as the secret `PW_GH_TOKEN`.
+
+**Changing detection rules:** the features, platforms and release-file rules exist twice, in the JavaScript in `index.html` and in `scripts/pw_analysis.py`. Change both together, or the shared data and in-page checks will disagree.
 
 **Running a refresh by hand:** open **Actions > Refresh data > Run workflow**.
 
