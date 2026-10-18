@@ -290,7 +290,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   </label>
   <label class="check"><input type="checkbox" id="notify"> Show desktop notifications for new releases and new projects</label>
   <label class="check"><input type="checkbox" id="itchRelay"> Read itch.io devlogs through a relay when itch.io blocks this page</label>
-  <span class="note" style="display:block;margin:-6px 0 10px">itch.io doesn't let a local page read its devlog feeds, so projects hosted there (such as Azimuth) can't be checked directly. With this on, Port Watch asks rss2json.com, and allorigins.win if that fails. Both are free third-party relays that fetch the public feed for you; they see which itch.io feeds you read.</span>
+  <span class="note" style="display:block;margin:-6px 0 10px">itch.io doesn't let web pages read its devlog feeds. Port Watch's GitHub repository refreshes a copy every few hours, which is used first; this setting is only a backup for when that copy is missing. With it on, Port Watch asks rss2json.com, and allorigins.win if that fails. Both are free third-party relays that fetch the public feed for you; they see which itch.io feeds you read.</span>
   <div class="row2">
     <button class="btn primary" id="saveSettings">Save settings</button>
     <button class="btn" id="exportBtn">Export backup</button>
@@ -330,6 +330,22 @@ const LT = {"N64":"Nintendo_-_Nintendo_64","SNES":"Nintendo_-_Super_Nintendo_Ent
 const LT_ALIAS = {"PS1|crash team racing":"CTR - Crash Team Racing","N64|wave race 64":"Wave Race 64 - Kawasaki Jet Ski","SNES|donkey kong country 2":"Donkey Kong Country 2 - Diddy's Kong Quest","SNES|donkey kong country 3":"Donkey Kong Country 3 - Dixie Kong's Double Trouble!","GBA|pokemon emerald":"Pokemon - Emerald Version","GBA|pokemon firered / leafgreen":"Pokemon - FireRed Version","GBA|pokemon firered and pokemon leafgreen":"Pokemon - FireRed Version","GBA|pokemon ruby / sapphire":"Pokemon - Ruby Version","GBA|pokemon ruby and pokemon sapphire":"Pokemon - Ruby Version","DS|pokemon platinum":"Pokemon - Platinum Version","Game Boy|pokemon red / blue / yellow / gold / silver / crystal":"Pokemon - Red Version","GBA|yoshi's island: super mario advance 3":"Super Mario Advance 3 - Yoshi's Island","Game Boy|super mario land 3: wario land":"Wario Land - Super Mario Land 3","Xbox (original)|burnout 3":"Burnout 3 - Takedown","Xbox (original)|halo: combat evolved":"Halo - Combat Evolved","PS1|ace combat 3":"Ace Combat 3 - Electrosphere","PS1|ace combat 3: electrosphere":"Ace Combat 3 - Electrosphere","SNES|iss deluxe":"International Superstar Soccer Deluxe","N64|n64 classic: rush 2":"Rush 2 - Extreme Racing USA","Game Boy Color|the legend of zelda: oracle of ages / oracle of seasons":"Legend of Zelda, The - Oracle of Ages","SNES|star fox":"Star Fox","SNES|star fox / star fox ex":"Star Fox","N64|extreme-g 2":"Extreme-G XG2","N64|virtual pro wrestling 2":"Virtual Pro Wrestling 2 - Oudou Keishou","N64|pocket monsters stadium":"Pocket Monsters Stadium","PS3|god of war ii hd":"Sony_-_PlayStation_2|God of War II","PS2|dragon quest viii: journey of the cursed king":"Dragon Quest VIII - Journey of the Cursed King","PS2|street fighter iii: 3rd strike":"Street Fighter III - 3rd Strike - Fight for the Future","PSP|monster hunter portable 3rd hd ver.":"Monster Hunter Portable 3rd","Wii U|the legend of zelda: the wind waker hd":"Legend of Zelda, The - The Wind Waker HD","Mega Drive|sonic the hedgehog 3 & knuckles":"Sonic The Hedgehog 3","Mega Drive|sonic 3 & knuckles":"Sonic The Hedgehog 3","NES|super mario bros. / super mario bros.: the lost levels":"Super Mario Bros.","N64|conker's bad fur day reloaded":"Conker's Bad Fur Day","N64|super robot wars 64":"Super Robot Taisen 64","PS1|spider-man & spider-man 2: enter electro":"Spider-Man","PS1|parasite eve hd remaster":"Parasite Eve","PS1|doom":"Doom"};
 const WIKI_HINT = {"saints row":"Saints Row (2006 video game)","saints row (2006)":"Saints Row (2006 video game)","wet":"Wet (video game)","cars":"Cars (video game)","crackdown":"Crackdown (video game)","the darkness":"The Darkness (video game)","dante's inferno":"Dante's Inferno (video game)","daytona usa":"Daytona USA (video game)","sonic the hedgehog (2006)":"Sonic the Hedgehog (2006 video game)","sonic the hedgehog 2006":"Sonic the Hedgehog (2006 video game)","need for speed: most wanted":"Need for Speed: Most Wanted (2005 video game)","forza horizon":"Forza Horizon (video game)","exit 1 & 2":"Exit (video game)","exit / exit 2":"Exit (video game)","halo: combat evolved":"Halo: Combat Evolved","splatterhouse":"Splatterhouse (2010 video game)","perfect dark remaster":"Perfect Dark (2010 video game)","goldeneye 007":"GoldenEye 007 (1997 video game)","civilization revolution":"Sid Meier's Civilization Revolution","the simpsons arcade":"The Simpsons (arcade game)","resident evil code: veronica x hd":"Resident Evil – Code: Veronica","minecraft: xbox 360 edition":"Minecraft","crash of the titans & crash: mind over mutant":"Crash of the Titans","x-men destiny":"X-Men: Destiny","the dishwasher: dead samurai":"The Dishwasher: Dead Samurai","3 on 3 nhl arcade":"3 on 3 NHL Arcade","outpost kaloki x":"Outpost Kaloki","metal slug xx":"Metal Slug XX","halo 3":"Halo 3","twisted metal":"Twisted Metal (2012 video game)","terraria":"Terraria","flow":"Flow (video game)","bloodborne":"Bloodborne","speedbreaker":"Need for Speed: Most Wanted (2005 video game)","king kong":"Peter Jackson's King Kong","fable 2":"Fable II","guitar hero: warriors of rock":"Guitar Hero: Warriors of Rock","forza horizon 2":"Forza Horizon 2","dragon age: origins":"Dragon Age: Origins"};
 const LS = "portwatch.v2";
+// Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
+const DATA_REPO = "strawman97/port-watch";
+const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
+const REPO = {covers:{}, itch:{}, coversAt:"", itchAt:"", loaded:false};
+let repoLoading = null;
+function loadRepoData(){
+  if(repoLoading) return repoLoading;
+  repoLoading = (async()=>{
+    const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
+    const [c,i] = await Promise.all([get("covers.json"),get("itch.json")]);
+    if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
+    if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
+    REPO.loaded=true;
+  })();
+  return repoLoading;
+}
 const AWESOME_URL = "https://raw.githubusercontent.com/SubmitGame/awesome-decomp-games/main/data/games.json";
 const AWESOME_HOME = "https://github.com/SubmitGame/awesome-decomp-games";
 const DEFAULT_FEEDS = ["https://recomp.fyi/feed.xml"];
@@ -634,6 +650,9 @@ async function scanItch(p,m){
   try{const r=await fetch(feed,{cache:"no-store"});if(r.ok){const doc=new DOMParser().parseFromString(await r.text(),"text/xml");
     items=[...doc.querySelectorAll("item")].map(i=>({t:(i.querySelector("title")||{}).textContent||"",d:(i.querySelector("pubDate")||{}).textContent||"",u:(i.querySelector("link")||{}).textContent||""}));m.itchVia="direct";}}catch(e){}
   const tried=["itch.io directly: "+(items?"read":"blocked")];
+  if(!items){await loadRepoData();const f=REPO.itch[p.k];
+    if(f&&Array.isArray(f.items)&&f.items.length){items=f.items.map(i=>({t:i.t||"",d:i.d||"",u:i.u||""}));m.itchVia="Port Watch's GitHub copy (refreshed "+ago(f.fetched||REPO.itchAt)+")";}
+    else tried.push("Port Watch's GitHub copy: "+(REPO.loaded&&REPO.itchAt?"no entry yet":"unavailable"));}
   if(!items&&S.settings.itchRelay){
     try{const r=await fetch("https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(feed),{cache:"no-store"});
       if(r.ok){const j=await r.json();if(j&&j.status==="ok"&&Array.isArray(j.items)){items=j.items.map(i=>({t:i.title||"",d:/\d{4}-\d\d-\d\d \d\d:\d\d/.test(i.pubDate||"")?String(i.pubDate).replace(" ","T")+"Z":(i.pubDate||""),u:i.link||""}));m.itchVia="rss2json.com";}
@@ -958,7 +977,8 @@ async function lookupLibretro(title,platform){
 }
 function coverTitle(v){return stripSuffix(stripParens(v.game));}
 function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
-function coverFor(v){const o=(S.ov[v.p.id]||{}).cover;if(o)return {u:o,s:"you"};const sc=seedCover(v.p);if(sc&&!(S.ov[v.p.id]||{}).game)return sc;const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+function coverFor(v){const o=(S.ov[v.p.id]||{}).cover;if(o)return {u:o,s:"you"};const sc=seedCover(v.p);if(sc&&!(S.ov[v.p.id]||{}).game)return sc;
+  const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];if(rc&&rc.url&&!(S.ov[v.p.id]||{}).game)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
 function sgdbSearchURL(v){return "https://www.steamgriddb.com/search/grids?term="+encodeURIComponent(coverTitle(v));}
 let sgdbBlocked=false;const coverQ=[];let coverActive=0;const coverPending=new Set();
 async function lookupSGDB(title){
@@ -1419,6 +1439,7 @@ $("#importFile").addEventListener("change",async e=>{const f=e.target.files[0];i
 $("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved data and discovered projects? This can't be undone.")){localStorage.removeItem(LS);S=defaults();for(const id in seedAnalysis)delete seedAnalysis[id];dlg.close();renderAll();toast("All data reset.");}});
 
 /* boot */
+if(typeof HOSTED==="undefined"||!HOSTED)loadRepoData().then(()=>{if(UI.tab==="projects")render();});
 renderAll();
 if(!S.settings.autoMode)S.settings.autoMode="off";
 const stale=t=>!t||Date.now()-t>6*3600e3;
