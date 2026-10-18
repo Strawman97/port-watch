@@ -273,7 +273,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <p class="note">Everything is stored in this browser only. Export a backup before clearing browser data.</p>
   <label>GitHub token (optional, recommended)
     <input type="password" id="token" autocomplete="off" placeholder="github_pat_…">
-    <span class="note">Release dates and new projects come from the Awesome Decomp Games list and need no token. A token is only needed to read each repo's README and release files, which is how features and Windows/Linux/Android support are detected. Without one, GitHub allows 60 requests an hour and the scan resumes over several hours. A fine-grained token with public-repository read access raises this to 5,000. It is sent only to api.github.com.</span>
+    <span class="note">Usually not needed: <b>Check for updates</b> and <b>Check followed</b> use Port Watch's shared data, refreshed every few hours on GitHub. A token only matters for projects you added yourself, for <b>Check this project now</b>, and when the shared data is unavailable. Without one, GitHub allows 60 requests an hour; a fine-grained token with public-repository read access raises this to 5,000. It is sent only to api.github.com.</span>
   </label>
   <div style="margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:var(--r)">
     <b>Fill covers from SteamGridDB in bulk</b>
@@ -333,13 +333,14 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, coversAt:"", itchAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, coversAt:"", itchAt:"", statusAt:"", loaded:false};
 let repoLoading = null;
-function loadRepoData(){
-  if(repoLoading) return repoLoading;
+function loadRepoData(force){
+  if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
-    const [c,i] = await Promise.all([get("covers.json"),get("itch.json")]);
+    const [c,i,st] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json")]);
+    if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
     if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
     REPO.loaded=true;
@@ -601,6 +602,19 @@ function applyManifest(m,j){
   m.manifest={game:typeof j.game==="string"?j.game.slice(0,120):"",system:RJ_SYS[sys]||(sys?String(sys).slice(0,30):""),
     type:types.includes("recomp")?"Recompilation":(types.includes("port")||types.includes("decomp"))?"Decompilation":"",
     targets:[].concat(j.targets||[]).map(String).slice(0,8),notes:typeof j.notes==="string"?j.notes.slice(0,600):"",approach:typeof j.approach==="string"?j.approach.slice(0,200):""};
+}
+function applyShared(p,st){
+  const m=S.meta[p.k]||(S.meta[p.k]={});
+  if(st.notFound){if(!m.notFound&&m.scannedAt)logEv("gone",p,"Repository not found: deleted, renamed or made private");m.notFound=true;m.checkedAt=Date.now();m.shared=true;return;}
+  m.notFound=false;
+  if(st.repo){m.repo=Object.assign({},st.repo);
+    if(st.repo.archived&&m.scannedAt&&!m.archivedLogged){logEv("gone",p,"Repository archived (read-only)");m.archivedLogged=true;}}
+  if(st.release&&st.release.tag){m.release=Object.assign({},st.release);m.noRelease=false;seenTag(p,m.release.tag,m.release.date,m.release.pre);}
+  else if(st.noRelease){m.noRelease=true;}
+  if(st.assetOs)m.assetOs=Object.assign({},st.assetOs);else delete m.assetOs;
+  if(st.readme)m.readme=st.readme;
+  if(st.manifest)m.manifest=st.manifest;else if("manifest" in st)delete m.manifest;
+  m.scannedFor=(st.repo&&st.repo.pushed)||m.scannedFor;m.scannedAt=m.scannedAt||Date.now();m.checkedAt=Date.now();m.shared=true;delete m.netErr;
 }
 async function scanGitHub(p,m,force){
   const base="https://api.github.com/repos/"+p.k;const aw=S.aw.data[p.k];
@@ -877,9 +891,8 @@ let running=false;
 async function runCheck(mode){
   mode=mode==="followed"?"followed":"all";
   if(running)return;
-  const list=allProjects().filter(p=>p.k&&(mode==="all"||isFollowed(p.id)));
-  const stampFound=()=>{for(const it of Object.values(S.disc.inbox))if(!it.found)it.found=Date.now();};
-  if(mode==="followed"&&!list.length){toast("You're not following any projects yet. Click the heart on a project to follow it.");return;}
+  const all=allProjects().filter(p=>p.k&&(mode==="all"||isFollowed(p.id)));
+  if(mode==="followed"&&!all.length){toast("You're not following any projects yet. Click the heart on a project to follow it.");return;}
   running=true;newThisRun=0;discErr=false;
   const btn=mode==="followed"?$("#checkFollowBtn"):$("#checkBtn");$("#checkBtn").disabled=true;$("#checkFollowBtn").disabled=true;btn.textContent="Checking…";
   let stopped=null,awErr=false,ghStreak=0;const failed={};
@@ -889,6 +902,11 @@ async function runCheck(mode){
     try{await syncAwesome();}catch(e){awErr=true;}
     save();renderAll(true);
   }
+  setStatus("Reading Port Watch's shared data…");await loadRepoData(true);
+  let sharedN=0;
+  if(REPO.status)for(const p of all){if(p.k.startsWith("itch.io/"))continue;const st=REPO.status[p.k];if(st){applyShared(p,st);sharedN++;}}
+  const list=all.filter(p=>p.k.startsWith("itch.io/")||!(REPO.status&&REPO.status[p.k]));
+  if(sharedN)S.lastShared=REPO.statusAt;
   let i=mode==="all"?(S.cursor||0):0;if(i>=list.length)i=0;
   if(!stopped){
     for(;i<list.length;i+=4){const chunk=list.slice(i,i+4);setStatus((mode==="followed"?"Checking followed projects ":"Reading repos ")+(i+1)+"–"+Math.min(i+4,list.length)+" of "+list.length);$("#prog").style.width=(100*i/list.length)+"%";
@@ -910,6 +928,8 @@ async function runCheck(mode){
   save();running=false;$("#checkBtn").disabled=false;$("#checkFollowBtn").disabled=false;$("#checkBtn").textContent="Check for updates";updateFollowBtn();
   const notes=[];
   if(purged&&(purged.inboxN||purged.removedProjects.length))notes.push("Removed "+[purged.inboxN?purged.inboxN+" unrelated repo"+(purged.inboxN>1?"s":"")+" from Discovered":"",purged.removedProjects.length?purged.removedProjects.length+" from your tracker ("+purged.removedProjects.slice(0,4).join(", ")+(purged.removedProjects.length>4?"…":"")+")":""].filter(Boolean).join(" and ")+".");
+  if(sharedN)notes.push("Used Port Watch's shared data"+(REPO.statusAt?" (refreshed "+ago(REPO.statusAt)+")":"")+" for "+sharedN+" project"+(sharedN>1?"s":"")+(list.length?" and checked "+list.length+" directly":"")+".");
+  else if(!REPO.status)notes.push("Port Watch's shared data wasn't available, so every project was checked directly.");
   if(awErr)notes.push("Awesome Decomp Games couldn't be read this time.");
   if(discErr)notes.push("GitHub's search limit cut the search for new projects short; the next check picks up where it stopped.");
   if(hosts.length&&!(stopped&&stopped.message==="offline"))notes.push("Skipped "+hosts.map(h=>failed[h].length+" project"+(failed[h].length>1?"s":"")+" on "+h).join(" and ")+", which this page couldn't reach.");
@@ -918,7 +938,7 @@ async function runCheck(mode){
   if(stopped instanceof RateLimit)toast(mode==="all"?"GitHub's hourly limit stopped the scan at repo "+(i+1)+" of "+list.length+"; it resumes from there after "+resetAt+". A GitHub token in Settings avoids this."+tail:"GitHub's hourly limit was reached after "+i+" of "+list.length+" followed projects. Try again after "+resetAt+", or add a GitHub token in Settings."+tail);
   else if(stopped instanceof AuthErr)toast("GitHub rejected the token. Update or remove it in Settings, then check again."+tail);
   else if(stopped)toast("api.github.com stopped answering partway through, so the check paused at "+(i+1)+" of "+list.length+(mode==="all"?" and will resume from there":"")+". This usually means the connection dropped or something on the network blocked GitHub."+tail);
-  else toast((mode==="followed"?"Checked "+list.length+" followed project"+(list.length>1?"s":"")+". ":"")+(newThisRun?newThisRun+" update"+(newThisRun>1?"s":"")+" found.":"Everything is up to date.")+tail);
+  else toast((mode==="followed"?"Checked "+all.length+" followed project"+(all.length>1?"s":"")+". ":"")+(newThisRun?newThisRun+" update"+(newThisRun>1?"s":"")+" found.":"Everything is up to date.")+tail);
   if(newThisRun)notifyDesktop(newThisRun);
   renderAll();
 }
@@ -1026,6 +1046,7 @@ function setStatus(extra){
   if(extra)parts.push(esc(extra));
   else{parts.push(S.lastCheck?"Last full check "+ago(new Date(S.lastCheck).toISOString()):"Not checked yet. Data from "+esc(BUILT));
     if(S.lastFollowCheck)parts.push("Followed projects checked "+ago(new Date(S.lastFollowCheck).toISOString()));
+    if(S.lastShared)parts.push("Shared data refreshed "+ago(S.lastShared));
     if(S.cursor)parts.push("README scan resumes at repo "+(S.cursor+1));
     if(S.lastIssues)parts.push("Couldn't reach "+Object.entries(S.lastIssues.hosts).map(([h,n])=>esc(h)+" ("+n+")").join(", ")+" last time");}
   if(S.rate)parts.push("GitHub requests left this hour: "+S.rate.remaining.toLocaleString()+" of "+S.rate.limit.toLocaleString());
@@ -1123,7 +1144,7 @@ function renderProjects(){
   $("#countP").textContent="("+vs.length+")";
   if(!vs.length){$("#view").innerHTML=`<div class="list"><div class="empty">No projects match these filters. <button class="btn" id="emptyClear">Clear filters</button></div></div>`;return;}
   const grid=S.settings.view==="grid";
-  const welcome=(!S.lastCheck&&!S.welcomed)?`<div class="welcome"><div><b>Port Watch starts with data as of ${esc(BUILT)} and doesn't check for updates until you ask.</b><br>Follow the projects you care about with the heart, then use <b>Check followed</b> to refresh just those. A full <b>Check for updates</b> reads hundreds of GitHub repos, so add a GitHub token in Settings first.</div><button class="btn" id="welcomeOk">Got it</button></div>`:"";
+  const welcome=(!S.lastCheck&&!S.welcomed)?`<div class="welcome"><div><b>Port Watch starts with data as of ${esc(BUILT)} and doesn't check for updates until you ask.</b><br>Follow the projects you care about with the heart, then use <b>Check followed</b> to refresh just those. <b>Check for updates</b> uses Port Watch's shared data, refreshed every few hours, so no GitHub token is needed.</div><button class="btn" id="welcomeOk">Got it</button></div>`:"";
   $("#view").innerHTML=welcome+(grid?`<div class="grid">${vs.slice(0,UI.limit).map(v=>tileHTML(v,nid.has(v.p.id))).join("")}</div>`:`<div class="list">${vs.slice(0,UI.limit).map(v=>rowHTML(v,nid.has(v.p.id))).join("")}</div>`)+(vs.length>UI.limit?`<button class="btn more-btn" id="moreBtn">Show ${Math.min(150,vs.length-UI.limit)} more of ${vs.length-UI.limit}</button>`:"");
 }
 function afterProjects(){if(S.settings.view==="grid")observeCovers($("#view"));}
@@ -1378,8 +1399,8 @@ $("#strip").addEventListener("click",e=>{const c=e.target.closest("[data-ev]");i
 $("#markRead").addEventListener("click",()=>{S.log.forEach(e=>e.read=true);Object.values(S.disc.inbox).forEach(i=>i.isNew=false);save();renderAll();});
 $("#seeAll").addEventListener("click",()=>{UI.tab="activity";render();});
 const fullDlg=$("#fullDlg");
-$("#checkBtn").addEventListener("click",()=>{
-  if(!S.settings.token&&!S.noTokenOk){$("#fullFollowed").disabled=!followedCount();$("#fullFollowed").textContent=followedCount()?"Check followed only ("+followedCount()+")":"Check followed only (none followed)";$("#fullDontAsk").checked=false;fullDlg.showModal();return;}
+$("#checkBtn").addEventListener("click",async()=>{
+  if(!S.settings.token&&!S.noTokenOk){await loadRepoData(true);if(REPO.status){runCheck("all");return;}$("#fullFollowed").disabled=!followedCount();$("#fullFollowed").textContent=followedCount()?"Check followed only ("+followedCount()+")":"Check followed only (none followed)";$("#fullDontAsk").checked=false;fullDlg.showModal();return;}
   runCheck("all");});
 $("#checkFollowBtn").addEventListener("click",()=>runCheck("followed"));
 $("#fullCancel").addEventListener("click",()=>fullDlg.close());
