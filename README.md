@@ -130,6 +130,22 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 
 A visitor's own edits in their browser still take priority for them.
 
+**Adding a project for everyone:** add it in Port Watch with **Add project**, or with **Add** in **Find a game**, then use **Export fixes for everyone** and upload the file as above. Added projects go in the file's `added` section, keyed by repository:
+
+```json
+"added": {
+  "k0nl/b2recomp": {
+    "link": "https://github.com/K0NL/B2recomp",
+    "title": "Bayonetta 2",
+    "platform": "Switch",
+    "type": "Recompilation",
+    "pcRelease": "Never released on PC"
+  }
+}
+```
+
+`runsOn`, `cover`, `description` and `note` work here too. Visitors see an added project like any other, can follow it, and get a "new project" alert the first time it appears. The refresh workflow checks its releases, README and cover like a built-in project. Links that aren't on GitHub, GitLab or itch.io (keyed as `link:` plus the URL) are shown but can't be checked automatically. If Awesome Decomp Games later lists the same repository, Port Watch shows it only once.
+
 **Changing detection rules:** the features, platforms and release-file rules exist twice, in the JavaScript in `index.html` and in `scripts/pw_analysis.py`. Change both together, or the shared data and in-page checks will disagree.
 
 **Running a refresh by hand:** open **Actions > Refresh data > Run workflow**.

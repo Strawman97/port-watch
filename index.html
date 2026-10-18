@@ -294,7 +294,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <div class="row2">
     <button class="btn primary" id="saveSettings">Save settings</button>
     <button class="btn" id="exportBtn">Export backup</button>
-    <button class="btn" id="exportFixes" title="For the site's maintainer: a complete overrides.json with the shared fixes plus your own">Export fixes for everyone</button>
+    <button class="btn" id="exportFixes" title="For the site's maintainer: a complete overrides.json with the shared fixes and added projects, plus your own">Export fixes for everyone</button>
     <button class="btn" id="importBtn">Import backup</button>
     <input type="file" id="importFile" accept="application/json" hidden>
     <button class="btn" id="resetBtn">Reset all data</button>
@@ -334,7 +334,7 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, over:{}, coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
 const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
@@ -342,7 +342,8 @@ function loadRepoData(force){
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
     const [c,i,st] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json")]);
-    try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}}}catch(e){}
+    try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
+      if(o&&o.added&&typeof o.added==="object")REPO.added=sharedAddedProjects(o.added);}}catch(e){}
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
     if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
@@ -528,7 +529,28 @@ function displayTitle(p,mf){
 /* ---------------- projects ---------------- */
 const seedAnalysis={};
 function sharedFix(p){return (p.k&&REPO.over[p.k])||REPO.over[p.id]||null;}
-function allProjects(){return SEED.concat(Object.values(S.aw.added),Object.values(S.custom)).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);});}
+function sharedAddedProjects(added){
+  const out=[];
+  for(const [key,e] of Object.entries(added)){if(!e||typeof e!=="object")continue;
+    const link=String(e.link||"");const k=key.startsWith("link:")?null:key.toLowerCase();if(!k&&!/^https?:\/\//i.test(link))continue;
+    out.push({id:"shared:"+(k||link),k,g:String(e.title||(k?k.split("/").pop():link)),tf:1,p:String(e.platform||"Unknown"),t:TYPES.includes(e.type)?e.type:"Recompilation",
+      ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
+      pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
+      sharedCover:e.cover||""});}
+  return out;
+}
+const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
+function allProjects(){
+  const custom=Object.values(S.custom),taken=new Set(custom.map(p=>p.k).filter(Boolean));
+  const shared=REPO.added.filter(p=>!(p.k&&(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k))));
+  return SEED.concat(Object.values(S.aw.added),custom,shared).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);});
+}
+function noteSharedAdded(){
+  if(!REPO.loaded)return;const keys=REPO.added.map(p=>p.id);
+  if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
+  let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
+  if(n){save();renderUpdates();}
+}
 function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnalysis[p.id]=analyze([p.d,p.n,aw&&aw.d!==p.d?aw.d:""].join("\n"));}return seedAnalysis[p.id];}
 function view(p){
   const m=p.k?(S.meta[p.k]||{}):{};const aw=p.k?S.aw.data[p.k]:null;const ov=S.ov[p.id]||{};const sa=analysisOf(p);const ra=m.readme||null;
@@ -908,7 +930,7 @@ async function runCheck(mode){
     try{await syncAwesome();}catch(e){awErr=true;}
     save();renderAll(true);
   }
-  setStatus("Reading Port Watch's shared data…");await loadRepoData(true);
+  setStatus("Reading Port Watch's shared data…");await loadRepoData(true);noteSharedAdded();
   let sharedN=0;
   if(REPO.status)for(const p of all){if(p.k.startsWith("itch.io/"))continue;const st=REPO.status[p.k];if(st){applyShared(p,st);sharedN++;}}
   const list=all.filter(p=>p.k.startsWith("itch.io/")||!(REPO.status&&REPO.status[p.k]));
@@ -1006,6 +1028,7 @@ function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
 function coverFor(v){const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
   if(so.cover&&!lo.game)return {u:so.cover,s:"Port Watch's shared fixes"};
+  if(v.p.sharedCover&&!lo.game)return {u:v.p.sharedCover,s:"Port Watch's maintainer"};
   const renamed=lo.game||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
   const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];
   if(rc&&rc.url&&(!renamed||(!lo.game&&nrmT(rc.title||"")===nrmT(coverTitle(v)))))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
@@ -1472,15 +1495,26 @@ $("#exportFixes").addEventListener("click",async()=>{
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
     if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
-  const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b)))};
+  const addedOut={};
+  try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}
+  let newProjects=0;
+  for(const p of Object.values(S.custom)){const o=S.ov[p.id]||{};const key=p.k||("link:"+p.l);if(!p.l&&!p.k)continue;
+    const e={link:p.l,title:o.game||p.g,platform:o.platform||p.p,type:o.type||p.t};
+    const ps=o.ps||p.ps;if(ps&&ps!=="Not checked")e.pcRelease=ps;
+    const ro=Array.isArray(o.os)?o.os:(p.po?p.po.split(",").map(x=>x.trim()).filter(Boolean):[]);if(ro.length)e.runsOn=ro;
+    if(o.cover)e.cover=o.cover;if(p.d)e.description=String(p.d).slice(0,300);
+    if(JSON.stringify(addedOut[key])!==JSON.stringify(e)){addedOut[key]=e;newProjects++;}}
+  const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b))),
+    added:Object.fromEntries(Object.entries(addedOut).sort(([a],[b])=>a.localeCompare(b)))};
   const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="overrides.json";document.body.appendChild(a);a.click();a.remove();
-  toast(added?added+" of your fixes added. Upload the file to the repository as overrides.json to apply them for everyone.":"Nothing new to add: your fixes already match the shared ones.");});
+  const parts=[added?added+" fix"+(added>1?"es":""):"",newProjects?newProjects+" added project"+(newProjects>1?"s":""):""].filter(Boolean);
+  toast(parts.length?parts.join(" and ")+" included. Upload the file to the repository as overrides.json to share them with everyone.":"Nothing new: your fixes and added projects already match the shared ones.");});
 $("#importBtn").addEventListener("click",()=>$("#importFile").click());
 $("#importFile").addEventListener("change",async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||d.v!==2)throw 0;const tok=S.settings.token;S=Object.assign(defaults(),d);S.settings.token=S.settings.token||tok;S.covers=S.covers||{};S.settings.feeds=S.settings.feeds||DEFAULT_FEEDS.slice();S.disc.feedSeen=S.disc.feedSeen||{};S.disc.filtered=S.disc.filtered||{};S.disc.feedStatus=S.disc.feedStatus||{};for(const id in seedAnalysis)delete seedAnalysis[id];save();dlg.close();renderAll();toast("Backup imported.");}catch(err){toast("That file isn't a Port Watch backup from this version.");}e.target.value="";});
 $("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved data and discovered projects? This can't be undone.")){localStorage.removeItem(LS);S=defaults();for(const id in seedAnalysis)delete seedAnalysis[id];dlg.close();renderAll();toast("All data reset.");}});
 
 /* boot */
-if(typeof HOSTED==="undefined"||!HOSTED)loadRepoData().then(()=>{if(UI.tab==="projects")render();});
+if(typeof HOSTED==="undefined"||!HOSTED)loadRepoData().then(()=>{noteSharedAdded();renderFilters();if(UI.tab==="projects")render();});
 renderAll();
 if(!S.settings.autoMode)S.settings.autoMode="off";
 const stale=t=>!t||Date.now()-t>6*3600e3;
