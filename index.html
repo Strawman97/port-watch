@@ -294,6 +294,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <div class="row2">
     <button class="btn primary" id="saveSettings">Save settings</button>
     <button class="btn" id="exportBtn">Export backup</button>
+    <button class="btn" id="exportFixes" title="For the site's maintainer: a complete overrides.json with the shared fixes plus your own">Export fixes for everyone</button>
     <button class="btn" id="importBtn">Import backup</button>
     <input type="file" id="importFile" accept="application/json" hidden>
     <button class="btn" id="resetBtn">Reset all data</button>
@@ -333,13 +334,15 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, over:{}, coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
   if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
     const [c,i,st] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json")]);
+    try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}}}catch(e){}
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
     if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
@@ -524,12 +527,14 @@ function displayTitle(p,mf){
 
 /* ---------------- projects ---------------- */
 const seedAnalysis={};
-function allProjects(){return SEED.concat(Object.values(S.aw.added),Object.values(S.custom));}
+function sharedFix(p){return (p.k&&REPO.over[p.k])||REPO.over[p.id]||null;}
+function allProjects(){return SEED.concat(Object.values(S.aw.added),Object.values(S.custom)).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);});}
 function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnalysis[p.id]=analyze([p.d,p.n,aw&&aw.d!==p.d?aw.d:""].join("\n"));}return seedAnalysis[p.id];}
 function view(p){
   const m=p.k?(S.meta[p.k]||{}):{};const aw=p.k?S.aw.data[p.k]:null;const ov=S.ov[p.id]||{};const sa=analysisOf(p);const ra=m.readme||null;
   const mf=m.manifest||null;
-  const platform=ov.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p), type=ov.type||(p.custom&&mf&&mf.type?mf.type:p.t);
+  const so=sharedFix(p)||{};
+  const platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p), type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:p.t);
   const mfa=mf?analyze([mf.notes,mf.approach].join("\n")):null;
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
     feats[f.id]=r==="yes"?{st:"yes",src:"README"}:s==="yes"?{st:"yes",src:"project description"}:(r==="planned"||s==="planned")?{st:"planned",src:r?"README":"project description"}:{st:"no"};}
@@ -544,6 +549,7 @@ function view(p){
   let os=Object.keys(strong).length?strong:weak;
   if(os===strong&&(strong.Windows||strong.Linux||strong.macOS))for(const x of ["Windows","Linux","macOS","Steam Deck"]){if(ra&&ra.os[x])put(strong,x,"README");else if(sa.os[x])put(strong,x,"project notes");}
   if(Array.isArray(ov.os)){os={};for(const x of ov.os)os[x]="you";}
+  else if(Array.isArray(so.runsOn)){os={};for(const x of so.runsOn)if(OSLIST.includes(x))os[x]="Port Watch's shared fixes";}
   // latest release + dates
   const cands=[{tag:p.rel,date:p.rd,url:""}];
   if(aw)cands.push({tag:aw.rel,date:aw.rd,url:""});
@@ -553,12 +559,12 @@ function view(p){
   const updated=newest(lastCommit,rel&&rel.date);
   const stars=(m.repo&&m.repo.stars)!=null?m.repo.stars:(aw&&aw.stars!=null?aw.stars:(p.stars||0));
   const gone=m.notFound||(aw&&!aw.linkOk);
-  const ps=ov.ps||p.ps||"Not checked";
+  const ps=ov.ps||so.pcRelease||p.ps||"Not checked";
   let play="unknown";
   if(ov.play)play=ov.play;
   else if(rel&&rel.tag)play="yes";
   else if(m.noRelease||(aw&&!aw.rel)||(/Awesome/.test(p.src||"")&&!p.rel))play="no";
-  return {p,m,aw,ps,play,game:ov.game||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
+  return {p,m,aw,ps,play,so,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
 }
 
 /* ---------------- GitHub / GitLab ---------------- */
@@ -997,8 +1003,12 @@ async function lookupLibretro(title,platform){
 }
 function coverTitle(v){return stripSuffix(stripParens(v.game));}
 function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
-function coverFor(v){const o=(S.ov[v.p.id]||{}).cover;if(o)return {u:o,s:"you"};const sc=seedCover(v.p);if(sc&&!(S.ov[v.p.id]||{}).game)return sc;
-  const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];if(rc&&rc.url&&!(S.ov[v.p.id]||{}).game)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+function coverFor(v){const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
+  if(lo.cover)return {u:lo.cover,s:"you"};
+  if(so.cover&&!lo.game)return {u:so.cover,s:"Port Watch's shared fixes"};
+  const renamed=lo.game||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
+  const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];
+  if(rc&&rc.url&&(!renamed||(!lo.game&&nrmT(rc.title||"")===nrmT(coverTitle(v)))))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
 function sgdbSearchURL(v){return "https://www.steamgriddb.com/search/grids?term="+encodeURIComponent(coverTitle(v));}
 let sgdbBlocked=false;const coverQ=[];let coverActive=0;const coverPending=new Set();
 async function lookupSGDB(title){
@@ -1115,6 +1125,7 @@ function detailHTML(v){
       <dl class="kv"><dt>Type</dt><dd>${esc(v.type)}</dd><dt>Original platform</dt><dd>${esc(v.platform)}</dd>
       <dt>Playability</dt><dd>${playPill(v)} <span class="note">${v.play==="yes"?"a public release is available":v.play==="no"?"no public release found yet":"not checked yet"}${(S.ov[p.id]||{}).play?" (set by you)":""}</span></dd>
       <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")})</span></dd>
+      ${v.so&&Object.keys(v.so).length?`<dt>Shared fixes</dt><dd>${esc(Object.keys(v.so).filter(k=>k!=="note").map(k=>({title:"title",cover:"cover",platform:"platform",type:"type",pcRelease:"PC release",runsOn:"runs on"}[k]||k)).join(", "))} set by the maintainer${v.so.note?" · "+esc(v.so.note):""}</dd>`:""}
       <dt>Last updated</dt><dd>${v.updated?esc(fmtDate(v.updated))+" ("+esc(ago(v.updated))+")":"Unknown"}</dd>
       <dt>Latest release</dt><dd>${v.rel&&v.rel.tag?(v.rel.url?`<a href="${esc(v.rel.url)}" target="_blank" rel="noopener">${esc(v.rel.tag)}</a>`:esc(v.rel.tag))+(v.rel.date?" · "+esc(fmtDate(v.rel.date)):""):"None found"}</dd>
       <dt>Last commit</dt><dd>${v.lastCommit?esc(fmtDate(v.lastCommit)):"Unknown"}</dd>
@@ -1455,6 +1466,15 @@ $("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token
   save();dlg.close();toast("Settings saved.");setStatus();});
 $("#exportBtn").addEventListener("click",()=>{const data=Object.assign({},S,{settings:Object.assign({},S.settings,{token:"",sgdbKey:""})});const blob=new Blob([JSON.stringify(data)],{type:"application/json"});
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="port-watch-backup-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();toast("Backup exported (your API keys are left out).");});
+$("#exportFixes").addEventListener("click",async()=>{
+  await loadRepoData();const out=JSON.parse(JSON.stringify(REPO.over||{}));let added=0;
+  for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
+    const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
+    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;
+    if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
+  const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b)))};
+  const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="overrides.json";document.body.appendChild(a);a.click();a.remove();
+  toast(added?added+" of your fixes added. Upload the file to the repository as overrides.json to apply them for everyone.":"Nothing new to add: your fixes already match the shared ones.");});
 $("#importBtn").addEventListener("click",()=>$("#importFile").click());
 $("#importFile").addEventListener("change",async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||d.v!==2)throw 0;const tok=S.settings.token;S=Object.assign(defaults(),d);S.settings.token=S.settings.token||tok;S.covers=S.covers||{};S.settings.feeds=S.settings.feeds||DEFAULT_FEEDS.slice();S.disc.feedSeen=S.disc.feedSeen||{};S.disc.filtered=S.disc.filtered||{};S.disc.feedStatus=S.disc.feedStatus||{};for(const id in seedAnalysis)delete seedAnalysis[id];save();dlg.close();renderAll();toast("Backup imported.");}catch(err){toast("That file isn't a Port Watch backup from this version.");}e.target.value="";});
 $("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved data and discovered projects? This can't be undone.")){localStorage.removeItem(LS);S=defaults();for(const id in seedAnalysis)delete seedAnalysis[id];dlg.close();renderAll();toast("All data reset.");}});

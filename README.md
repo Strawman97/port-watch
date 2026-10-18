@@ -109,6 +109,27 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 
 **The SteamGridDB key** is stored as the repository secret `SGDB_API_KEY` (**Settings > Secrets and variables > Actions**). It's never written into files or logs. The status checks use the workflow's own `GITHUB_TOKEN`, which needs no setup. If GitHub ever limits it, add a read-only fine-grained token as the secret `PW_GH_TOKEN`.
 
+**Fixing a project for everyone:** `overrides.json` in the repository root holds shared fixes. Every visitor's Port Watch and the refresh workflow read it. The simplest way to update it:
+
+1. In Port Watch, correct the project as usual. Edit its game title, paste a cover image link, or change its platform, type, PC release or what it runs on.
+2. Open **Settings > Export fixes for everyone**. This downloads a complete `overrides.json`: the current shared fixes plus your own. Check it doesn't include personal edits you'd rather keep to yourself.
+3. Upload it to the repository, replacing the old file. Visitors see the fixes on their next visit. A corrected title gets a fresh SteamGridDB cover on the next workflow run, and a pasted cover link is used straight away.
+
+Each entry is keyed by the project's repository (for example `speedbreakerproject/speedbreaker`) and can contain:
+
+| Field | What it does |
+| --- | --- |
+| `title` | The game's name. A year in brackets, such as `(2005)`, is kept and helps the cover lookup pick the right game. |
+| `cover` | A cover image link. It's used instead of any looked-up cover. |
+| `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`. |
+| `type` | `Recompilation`, `Decompilation`, `Reimplementation` or `Compatibility layer`. |
+| `pcRelease` | One of the **PC release** values shown in Port Watch's filters. |
+| `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
+| `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
+| `note` | Optional text shown in the project's details. |
+
+A visitor's own edits in their browser still take priority for them.
+
 **Changing detection rules:** the features, platforms and release-file rules exist twice, in the JavaScript in `index.html` and in `scripts/pw_analysis.py`. Change both together, or the shared data and in-page checks will disagree.
 
 **Running a refresh by hand:** open **Actions > Refresh data > Run workflow**.
