@@ -101,7 +101,7 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
 | `scripts/pw_analysis.py` | The page's README, release-file and `.recomp.json` detection rules, ported to Python |
-| `.github/workflows/refresh-data.yml` | Runs the script every three hours and commits `data/` when it changes |
+| `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |
 | `scripts/sgdb_covers.py` | Optional helper for adding covers to a downloaded copy |
 
@@ -130,7 +130,7 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 
 A visitor's own edits in their browser still take priority for them.
 
-**Adding a project for everyone:** add it in Port Watch with **Add project**, or with **Add** in **Find a game**, then use **Export fixes for everyone** and upload the file as above. Added projects go in the file's `added` section, keyed by repository:
+**Adding a project for everyone:** add it in Port Watch with **Add project**, or with **Add** in **Find a game**, then use **Export fixes for everyone** and upload the file as above. Pasting a GitHub or GitLab link into **Add project** checks the repository straight away. It confirms the repository exists and isn't already tracked, fills in the title, platform and type, and shows its latest release, platforms and features, so you can correct anything before adding. Added projects go in the file's `added` section, keyed by repository:
 
 ```json
 "added": {
@@ -144,11 +144,11 @@ A visitor's own edits in their browser still take priority for them.
 }
 ```
 
-`runsOn`, `cover`, `description` and `note` work here too. Visitors see an added project like any other, can follow it, and get a "new project" alert the first time it appears. The refresh workflow checks its releases, README and cover like a built-in project. Links that aren't on GitHub, GitLab or itch.io (keyed as `link:` plus the URL) are shown but can't be checked automatically. If Awesome Decomp Games later lists the same repository, Port Watch shows it only once.
+`runsOn`, `cover`, `description` and `note` work here too. The file holds only your decisions. Releases, features and platforms come from `data/status.json`, which the workflow refreshes, so they never go stale. Visitors see an added project like any other, can follow it, and get a "new project" alert the first time it appears. The refresh workflow checks its releases, README and cover like a built-in project. Links that aren't on GitHub, GitLab or itch.io (keyed as `link:` plus the URL) are shown but can't be checked automatically. If Awesome Decomp Games later lists the same repository, Port Watch shows it only once.
 
 **Changing detection rules:** the features, platforms and release-file rules exist twice, in the JavaScript in `index.html` and in `scripts/pw_analysis.py`. Change both together, or the shared data and in-page checks will disagree.
 
-**Running a refresh by hand:** open **Actions > Refresh data > Run workflow**.
+**When refreshes run:** every three hours, and also a few minutes after `overrides.json` or `index.html` is updated, so newly shared projects and fixes are checked straight away. To run one by hand, open **Actions > Refresh data > Run workflow**.
 
 **If scheduled refreshes stop:** GitHub pauses scheduled workflows in public repositories after 60 days without activity. Re-enable it from the **Actions** tab.
 

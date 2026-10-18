@@ -313,6 +313,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <h2 id="addTitle">Add a project</h2>
   <p class="note">GitHub and GitLab repos are checked like the rest. itch.io pages are followed through their devlog. Any other link is kept for you to check by hand.</p>
   <label>Project link<input type="text" id="addUrl" placeholder="https://github.com/owner/repo or https://name.itch.io/game"></label>
+  <div id="addCheck" class="note" aria-live="polite" style="margin:-4px 0 6px"></div>
   <label>Game title<input type="text" id="addGame" placeholder="As the game shipped"></label>
   <label>Original platform<select id="addPlat"></select></label>
   <label>Type<select id="addType"><option>Recompilation</option><option>Decompilation</option><option>Compatibility layer</option></select></label>
@@ -1325,7 +1326,8 @@ function addFromUnbaked(slug,i,follow){
     po:(p.runs_on||[]).join(", "),pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):p.name,l:p.url,src:"Added from unbaked.games",custom:true,stars:p.stars||0,lc:p.last_push?p.last_push+"T00:00:00Z":""};
   if(follow){S.follow=S.follow||{};S.follow[id]=Date.now();}
   save();renderFilters();renderFindResults();
-  toast((follow?"Added and followed. ":"Added. ")+(k?"Its release and features are read on the next check.":"This link can't be checked automatically."));
+  toast((follow?"Added and followed. ":"Added. ")+(k?"Checking it now…":"This link can't be checked automatically."));
+  if(k)checkOne(id);
 }
 $("#view").addEventListener("input",e=>{if(e.target.id!=="fq")return;UI.find.q=e.target.value;clearTimeout(findT);findT=setTimeout(()=>{UI.find.open=null;renderFindResults();},140);});
 $("#view").addEventListener("change",e=>{const id=e.target.id,f=UI.find;
@@ -1464,8 +1466,51 @@ $("#importCovers").addEventListener("change",async e=>{const f=e.target.files[0]
 
 /* add project */
 const addDlg=$("#addDlg");
-$("#addBtn").addEventListener("click",()=>{const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");$("#addPlat").innerHTML=plats.concat("Unknown").map(x=>`<option>${esc(x)}</option>`).join("");$("#addPs").innerHTML=PS.map(x=>`<option ${x==="Not checked"?"selected":""}>${esc(x)}</option>`).join("");["#addUrl","#addGame"].forEach(i=>$(i).value="");addDlg.showModal();});
+$("#addBtn").addEventListener("click",()=>{const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");$("#addPlat").innerHTML=plats.concat("Unknown").map(x=>`<option ${x==="Unknown"?"selected":""}>${esc(x)}</option>`).join("");$("#addCheck").innerHTML="";addPre=null;addTouched={};$("#addPs").innerHTML=PS.map(x=>`<option ${x==="Not checked"?"selected":""}>${esc(x)}</option>`).join("");["#addUrl","#addGame"].forEach(i=>$(i).value="");addDlg.showModal();});
 $("#addCancel").addEventListener("click",()=>addDlg.close());
+const PLAT_RULES=[["Xbox 360",/xbox ?360|\bx360\b|\bxbla\b/i],["Xbox One",/xbox one/i],["Xbox (original)",/original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))/i],
+  ["PS4",/\bps4\b|playstation 4/i],["PS3",/\bps3\b|playstation 3/i],["PS2",/\bps2\b|playstation 2/i],["PSP",/\bpsp\b|playstation portable/i],["PS1",/\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))/i],
+  ["Wii U",/wii ?u\b/i],["Wii",/\bwii\b/i],["GameCube",/gamecube|\bgcn\b/i],["Switch",/nintendo switch|\(switch\)|switch (game|version|title|release)/i],["3DS",/\b3ds\b/i],["DS",/\bnds\b|nintendo ds\b/i],
+  ["N64",/\bn64\b|nintendo 64/i],["SNES",/\bsnes\b|super nintendo/i],["NES",/\bnes\b|famicom/i],["GBA",/\bgba\b|game ?boy advance/i],["Game Boy Color",/\bgbc\b|game ?boy colou?r/i],["Game Boy",/game ?boy\b/i],
+  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i]];
+function detectPlatform(text){for(const [p,re] of PLAT_RULES)if(re.test(text||""))return p;return "";}
+function detectType(text){const t=text||"";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
+  if(/decomp|source port|disassembl/i.test(t))return "Decompilation";if(/reimplement|engine recreation|open-?source engine/i.test(t))return "Reimplementation";return "";}
+let addPre=null,addTouched={},addSeq=0,addTimer;
+["#addGame","#addPlat","#addType","#addPs"].forEach(sel=>$(sel).addEventListener("change",()=>{addTouched[sel]=true;}));
+$("#addGame").addEventListener("input",()=>{addTouched["#addGame"]=true;});
+$("#addUrl").addEventListener("input",()=>{clearTimeout(addTimer);addTimer=setTimeout(precheckLink,500);});
+$("#addUrl").addEventListener("paste",()=>{clearTimeout(addTimer);addTimer=setTimeout(precheckLink,50);});
+async function precheckLink(){
+  const box=$("#addCheck"),url=$("#addUrl").value.trim();addPre=null;const seq=++addSeq;
+  if(!/^https?:\/\//i.test(url)){box.innerHTML="";return;}
+  const k=linkKey(url);
+  if(k&&knownKeys().has(k)){const p=allProjects().find(x=>x.k===k);box.innerHTML=`<span class="pill pl-yes">Already in Port Watch</span> as ${esc(p?view(p).game:k)}.`;return;}
+  if(!k){box.textContent="This link isn't on GitHub, GitLab or itch.io, so it can't be checked automatically. It can still be added.";return;}
+  if(k.startsWith("itch.io/")){box.textContent="itch.io pages are checked through their devlog after adding.";return;}
+  box.textContent="Checking the repository…";
+  const tmp={id:"precheck:"+k,k,g:"",p:"Unknown",t:"Recompilation",d:"",n:"",po:"",pr:k,l:url,custom:true};const m={};
+  try{if(k.startsWith("gitlab.com/"))await scanGitLab(tmp,m,true);else await scanGitHub(tmp,m,true);}
+  catch(e){if(seq!==addSeq)return;box.textContent=e instanceof RateLimit?"GitHub's hourly limit was reached, so the repository can't be checked right now. You can still add it; it's checked on the next update check.":e instanceof AuthErr?"GitHub rejected your token (Settings), so the repository couldn't be checked.":"The repository couldn't be reached. You can still add it.";return;}
+  if(seq!==addSeq)return;
+  if(m.notFound||!m.repo){box.innerHTML=`<span class="pill pl-no">Not found</span> There's no public repository at this link. Check it for typos.`;return;}
+  addPre={k,m};
+  const desc=m.repo.desc||"",mf=m.manifest||null,name=k.split("/").pop();
+  const title=(mf&&mf.game)||titleFromDesc(desc)||stripSuffix(stripParens(name.replace(/[-_.]+/g," ").replace(/([a-z])([A-Z])/g,"$1 $2"))).trim();
+  const plat=(mf&&mf.system&&PCOL[mf.system]?mf.system:"")||detectPlatform(desc)||detectPlatform(name.replace(/[-_]/g," "));
+  const type=(mf&&mf.type)||detectType(desc+" "+name);
+  if(!addTouched["#addGame"]&&title)$("#addGame").value=title;
+  if(!addTouched["#addPlat"]&&plat)$("#addPlat").value=plat;
+  if(!addTouched["#addType"]&&type)$("#addType").value=type;
+  const os=new Set([...Object.keys(m.assetOs||{}),...((mf&&mf.targets)||[]).filter(x=>OSLIST.includes(x)),...Object.keys((m.readme&&m.readme.os)||{})]);
+  if(plat&&ORIG_TO_TARGET[plat])os.delete(ORIG_TO_TARGET[plat]);
+  const feats=FEATURES.filter(f=>m.readme&&m.readme.features&&m.readme.features[f.id]==="yes").map(f=>f.label);
+  const rel=m.release?`latest release <b>${esc(m.release.tag)}</b>${m.release.pre?" (pre-release)":""}, ${esc(ago(m.release.date))}`:`<span class="pill pl-no">No public release yet</span>`;
+  box.innerHTML=`<span class="pill pl-yes">Found</span> <b>${esc(m.repo.full||k)}</b>${desc?" · "+esc(desc.slice(0,140)):""}<br>
+    ★ ${Number(m.repo.stars||0).toLocaleString()} · last push ${esc(ago(m.repo.pushed))} · ${rel}${m.repo.archived?' · <span class="pill pl-no">Archived</span>':""}<br>
+    Runs on: ${os.size?esc([...os].join(", ")):"not detected yet"} · Features: ${feats.length?esc(feats.join(", ")):"none detected"}${mf?" · has a .recomp.json":""}<br>
+    <span class="note">Title, platform and type were filled in from the repository. Check them before adding.</span>`;
+}
 $("#addSave").addEventListener("click",()=>{
   const url=$("#addUrl").value.trim();if(!/^https?:\/\//i.test(url)){toast("Enter the project's full link, starting with https://");return;}
   let k=null;const gh_=/^https?:\/\/(?:www\.)?github\.com\/([^/#?]+\/[^/#?]+)/i.exec(url),gl_=/^https?:\/\/(?:www\.)?gitlab\.com\/([^#?]+?)(?:\/-\/.*)?\/?$/i.exec(url),it=itchParts(url);
@@ -1473,10 +1518,13 @@ $("#addSave").addEventListener("click",()=>{
   if(k&&knownKeys().has(k)){toast("That project is already in Port Watch.");return;}
   const link=gh_?"https://github.com/"+gh_[1].replace(/\.git$/,""):it?"https://"+it.user+".itch.io/"+it.game:url;
   const id="custom:"+(k||url);const game=$("#addGame").value.trim()||(k?k.split("/").pop():url);
-  S.custom[id]={id,k,g:game,tf:1,p:$("#addPlat").value,t:$("#addType").value,ps:$("#addPs").value,d:"",n:"",po:"",pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):url,l:link,src:"Added by you",custom:true};
+  const pre=addPre&&addPre.k===k?addPre.m:null;
+  S.custom[id]={id,k,g:game,tf:1,p:$("#addPlat").value,t:$("#addType").value,ps:$("#addPs").value,d:pre&&pre.repo?pre.repo.desc||"":"",n:"",po:"",pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):url,l:link,src:"Added by you",custom:true};
+  if(pre){S.meta[k]=pre;if(pre.release&&pre.release.tag)S.tags[k]=pre.release.tag;}
   if(k&&S.disc.inbox[k])delete S.disc.inbox[k];
   if(addDlg.dataset.from){delete S.disc.inbox[addDlg.dataset.from];delete addDlg.dataset.from;}
-  save();addDlg.close();toast(k?"Added. Its release and features are read on the next check.":"Added. This kind of link can't be checked automatically, so open it to look for updates.");gotoProject(id);});
+  save();addDlg.close();toast(pre?"Added and checked.":k?"Added. It's checked on the next update check.":"Added. This kind of link can't be checked automatically, so open it to look for updates.");gotoProject(id);
+  if(k&&!pre&&!k.startsWith("gitlab.com/")&&!k.startsWith("itch.io/"))checkOne(id);});
 
 /* settings */
 const dlg=$("#settings");
