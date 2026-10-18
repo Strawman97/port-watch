@@ -3,12 +3,16 @@
 
 - data/covers.json  SteamGridDB covers for games without libretro box art (needs the SGDB_API_KEY secret)
 - data/itch.json    the latest devlog posts of projects hosted on itch.io
+- data/status.json  every tracked GitHub/GitLab project's latest release, activity, README features and platforms,
+                    so visitors can check for updates without their own GitHub token (uses the workflow's GITHUB_TOKEN)
 
 Only the Python standard library is used. Files are rewritten only when their contents change,
 so runs with nothing new make no commit.
 """
 import datetime, difflib, json, os, re, sys, time, unicodedata, urllib.error, urllib.parse, urllib.request
 import xml.etree.ElementTree as ET
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import pw_analysis as A
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -230,6 +234,187 @@ def refresh_itch(projects):
     data["generated"] = NOW
     return write_json_if_changed(path, data)
 
+# ---------------------------------------------------------------- shared update checks
+GQL_URL = os.environ.get("PW_GQL_URL", "https://api.github.com/graphql")
+GITLAB_API = os.environ.get("PW_GITLAB_API", "https://gitlab.com/api/v4")
+README_NAMES = ["README.md", "readme.md", "Readme.md", "README.MD", "README", "README.markdown", "README.rst", "README.txt"]
+RELEASE_FIELDS = "tagName publishedAt createdAt isPrerelease url releaseAssets(first: 40) { nodes { name } }"
+
+
+def gql(query, token):
+    body = json.dumps({"query": query}).encode()
+    req = urllib.request.Request(GQL_URL, data=body, headers={"Authorization": "bearer " + token, "Content-Type": "application/json", "User-Agent": UA})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code in (502, 503, 504) and attempt < 2:
+                time.sleep(5 * (attempt + 1))
+                continue
+            raise
+        except urllib.error.URLError:
+            if attempt < 2:
+                time.sleep(5 * (attempt + 1))
+                continue
+            raise
+
+
+def not_found_aliases(resp):
+    return {e["path"][0] for e in (resp.get("errors") or []) if e.get("type") == "NOT_FOUND" and e.get("path")}
+
+
+def repo_ref(k):
+    owner, name = k.split("/", 1)
+    return "repository(owner: %s, name: %s)" % (json.dumps(owner), json.dumps(name))
+
+
+def meta_batch(keys, token):
+    parts = ["r%d: %s { nameWithOwner pushedAt stargazerCount isArchived description "
+             "releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) { nodes { %s } } }" % (i, repo_ref(k), RELEASE_FIELDS)
+             for i, k in enumerate(keys)]
+    resp = gql("query {\n" + "\n".join(parts) + "\n}", token)
+    data, missing = resp.get("data") or {}, not_found_aliases(resp)
+    out = {}
+    for i, k in enumerate(keys):
+        a = "r%d" % i
+        if a in missing:
+            out[k] = {"notFound": True}
+            continue
+        r = data.get(a)
+        if not r:
+            continue                      # some other error: keep the previous entry
+        rel = ((r.get("releases") or {}).get("nodes") or [None])[0]
+        e = {"repo": {"pushed": r.get("pushedAt"), "stars": r.get("stargazerCount"), "archived": bool(r.get("isArchived")),
+                      "full": r.get("nameWithOwner"), "desc": r.get("description") or ""}}
+        if rel:
+            e["release"] = {"tag": rel.get("tagName"), "date": rel.get("publishedAt") or rel.get("createdAt"),
+                            "pre": bool(rel.get("isPrerelease")), "url": rel.get("url")}
+            e["assetOs"] = A.os_from_assets([n["name"] for n in ((rel.get("releaseAssets") or {}).get("nodes") or [])])
+        else:
+            e["noRelease"] = True
+        out[k] = e
+    return out
+
+
+def readme_batch(keys, token):
+    parts = []
+    for i, k in enumerate(keys):
+        files = " ".join('f%d: object(expression: %s) { ... on Blob { text } }' % (j, json.dumps("HEAD:" + n)) for j, n in enumerate(README_NAMES))
+        man = ('m0: object(expression: "HEAD:.recomp.json") { ... on Blob { text } } '
+               'm1: object(expression: "HEAD:.recomp-board.json") { ... on Blob { text } }')
+        parts.append("r%d: %s { %s %s }" % (i, repo_ref(k), files, man))
+    resp = gql("query {\n" + "\n".join(parts) + "\n}", token)
+    data = resp.get("data") or {}
+    out = {}
+    for i, k in enumerate(keys):
+        r = data.get("r%d" % i)
+        if not r:
+            continue
+        text = next(((r.get("f%d" % j) or {}).get("text") for j in range(len(README_NAMES)) if (r.get("f%d" % j) or {}).get("text")), None)
+        man = None
+        for m in ("m0", "m1"):
+            t = (r.get(m) or {}).get("text")
+            if t:
+                try:
+                    man = A.manifest(json.loads(t))
+                    break
+                except ValueError:
+                    pass
+        out[k] = {"readme": A.analyze(text) if text else {"features": {}, "os": {}, "none": True}, "manifest": man}
+    return out
+
+
+def gitlab_status(k, prev):
+    path = k[len("gitlab.com/"):]
+    base = "%s/projects/%s" % (GITLAB_API, urllib.parse.quote(path, safe=""))
+    raw = http_get(base)
+    if raw is None:
+        return {"notFound": True}
+    d = json.loads(raw)
+    e = {"repo": {"pushed": d.get("last_activity_at"), "stars": d.get("star_count"), "archived": bool(d.get("archived")),
+                  "full": d.get("path_with_namespace"), "desc": d.get("description") or ""}}
+    rel = json.loads(http_get(base + "/releases?per_page=1") or b"[]")
+    if rel:
+        r = rel[0]
+        e["release"] = {"tag": r.get("tag_name"), "date": r.get("released_at") or r.get("created_at"),
+                        "pre": bool(r.get("upcoming_release")), "url": (d.get("web_url") or "") + "/-/releases"}
+        e["assetOs"] = A.os_from_assets([l.get("name") or l.get("url") or "" for l in ((r.get("assets") or {}).get("links") or [])])
+    else:
+        e["noRelease"] = True
+    if (prev.get("repo") or {}).get("pushed") == e["repo"]["pushed"] and "readme" in prev:
+        e["readme"], e["manifest"] = prev.get("readme"), prev.get("manifest")
+    else:
+        text, branch = None, urllib.parse.quote(d.get("default_branch") or "main", safe="")
+        for f in README_NAMES:
+            t = http_get("%s/repository/files/%s/raw?ref=%s" % (base, urllib.parse.quote(f, safe=""), branch))
+            if t:
+                text = t.decode("utf-8", "replace")
+                break
+        e["readme"], e["manifest"] = (A.analyze(text) if text else {"features": {}, "os": {}, "none": True}), None
+    return e
+
+
+def refresh_status(projects):
+    token = (os.environ.get("PW_GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "").strip()
+    path = os.path.join(DATA, "status.json")
+    data = load_json(path, {"format": "port-watch-status", "version": 1, "repos": {}})
+    repos = data.setdefault("repos", {})
+    keys = sorted({p["k"] for p in projects if p.get("k") and "/" in p["k"] and not p["k"].startswith("itch.io/")})
+    gh_keys = [k for k in keys if not k.startswith("gitlab.com/")]
+    gl_keys = [k for k in keys if k.startswith("gitlab.com/")]
+    if not token:
+        log("  No GitHub token available; skipping GitHub projects")
+        gh_keys = []
+    fresh, changed = {}, []
+    for i in range(0, len(gh_keys), 40):
+        batch = gh_keys[i:i + 40]
+        try:
+            res = meta_batch(batch, token)
+        except Exception as e:
+            log("  GitHub batch %d failed (%s); keeping previous results for it" % (i // 40 + 1, e))
+            continue
+        for k, e in res.items():
+            prev = repos.get(k) or {}
+            fresh[k] = e
+            if e.get("notFound"):
+                continue
+            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev:
+                changed.append(k)
+            else:
+                e["readme"], e["manifest"] = prev.get("readme"), prev.get("manifest")
+        time.sleep(0.5)
+    log("  GitHub: %d of %d repos read, %d need their README read" % (len(fresh), len(gh_keys), len(changed)))
+    for i in range(0, len(changed), 15):
+        batch = changed[i:i + 15]
+        try:
+            res = readme_batch(batch, token)
+        except Exception as e:
+            log("  README batch failed (%s); keeping previous README results" % e)
+            res = {}
+        for k in batch:
+            if k in res:
+                fresh[k].update(res[k])
+            else:
+                prev = repos.get(k) or {}
+                if "readme" in prev:
+                    fresh[k]["readme"], fresh[k]["manifest"] = prev.get("readme"), prev.get("manifest")
+        time.sleep(0.5)
+    for k in gl_keys:
+        try:
+            fresh[k] = gitlab_status(k, repos.get(k) or {})
+        except Exception as e:
+            log("  %s: GitLab couldn't be read (%s); keeping the previous result" % (k, e))
+    for k, e in fresh.items():
+        repos[k] = {x: v for x, v in e.items() if v is not None}
+    tracked = set(keys)
+    for k in [k for k in repos if k not in tracked]:
+        del repos[k]                      # no longer tracked
+    log("  %d projects in status.json (%d not found)" % (len(repos), sum(1 for e in repos.values() if e.get("notFound"))))
+    data["generated"] = NOW
+    return write_json_if_changed(path, data)
+
+
 # ---------------------------------------------------------------- main
 def main():
     seed = seed_projects()
@@ -240,6 +425,8 @@ def main():
     refresh_covers(seed + extra)
     log("itch.io devlogs:")
     refresh_itch(seed)
+    log("Shared update checks:")
+    refresh_status(seed + extra)
 
 if __name__ == "__main__":
     main()
