@@ -14,7 +14,8 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
   - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, Switch, 3DS, PS Vita, Wii U and PSP.
   - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
-- **List and grid views,** with box art from libretro-thumbnails and other sources.
+- **List and grid views,** with box art from libretro-thumbnails and other sources. Games with several projects (The Darkness, Forza Horizon, Banjo-Kazooie and so on) are grouped into one entry, with a tab for each repository showing its own features, platforms and releases. **Group by game** turns this off.
+- **Malware-lure warnings:** repositories that look like malware disguised as game ports are flagged and hidden (see below).
 - **Follow list:** tap the heart on a project, then use **Check followed** to check only those.
 - **Alerts** for new releases, newly listed projects and repositories that disappear.
 - **Find a game:** search the unbaked.games registry to see whether a recompilation or decompilation exists for a game, and add any project to your list in one click.
@@ -61,6 +62,22 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
   python3 scripts/sgdb_covers.py port-watch-needs-covers.json --key YOUR_SGDB_KEY
   ```
 
+## Malware-lure detection
+
+Fake "PC port" repositories are a known way of spreading malware. Port Watch checks every repository for the warning signs they share:
+
+- almost no content and no code;
+- fake "Downloads" or "Rating" badges in the README;
+- a "Download for Windows/Mac" button, or download links to another site (often another account's GitHub Pages);
+- links to file hosts or link shorteners;
+- password-protected downloads;
+- a name copying a well-known project from a different owner, with few stars;
+- a brand-new repository with almost no stars.
+
+Strong combinations mark a project as **Possible malware**. It's hidden from the list unless you tick **Show suspected malware lures**, and its details explain why. Weaker signs show a **Check before downloading** badge. **Add project** warns before you add a flagged repository.
+
+These are warning signs, not proof. Never run downloads from a project you're unsure about, and report suspicious repositories to GitHub.
+
 ## Privacy
 
 Port Watch has no server, accounts or analytics. Your data never leaves your browser except for these requests, which only fetch public information:
@@ -100,7 +117,7 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
-| `scripts/pw_analysis.py` | The page's README, release-file and `.recomp.json` detection rules, ported to Python |
+| `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json` and malware-lure detection rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |
 | `scripts/sgdb_covers.py` | Optional helper for adding covers to a downloaded copy |

@@ -129,6 +129,15 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .pl-yes{background:var(--recomp-bg);color:var(--ok,#1F7A45)} .pl-no{background:var(--bad-bg);color:var(--bad)} .pl-unk{background:var(--sunk);color:var(--muted);border:1px solid var(--line)}
 .welcome{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--action);border-radius:var(--r);padding:12px 14px;margin-bottom:10px;font-size:13.5px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
 .welcome div{flex:1 1 320px}
+.gcount{font-size:11.5px;font-weight:600;border:1px solid var(--line);border-radius:10px;padding:0 7px;margin-left:6px;vertical-align:2px;color:var(--muted)}
+.repos{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.ptabs{display:flex;gap:4px;flex-wrap:wrap;padding:10px 16px 0;border-top:1px solid var(--line);background:var(--sunk)}
+.ptab{border:1px solid var(--line);border-bottom:0;background:var(--surface);color:var(--muted);border-radius:6px 6px 0 0;padding:6px 10px;font-size:12.5px;text-align:left;display:grid;gap:1px}
+.ptab small{font-size:11px;color:var(--muted)}
+.ptab[aria-selected="true"]{color:var(--ink);font-weight:600;box-shadow:inset 0 3px 0 var(--action)}
+.ptabs + .detail{border-top:1px solid var(--line)}
+.phead{grid-column:1/-1;display:flex;align-items:center;gap:8px;font-size:13.5px}
+.risk-high{background:var(--bad);color:#fff} .risk-med{background:var(--bad-bg);color:var(--bad)}
 .viewtog{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .viewtog button{border:0;background:var(--surface);padding:4px 10px;font-size:13px}
 .viewtog button[aria-pressed="true"]{background:var(--action);color:var(--action-ink)}
@@ -240,6 +249,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <label class="sr" for="q">Search games or projects</label>
     <input class="search" id="q" type="search" placeholder="Game or project">
     <label class="opt" style="margin-top:8px"><input type="checkbox" id="fFollow"> Followed only<span class="n" id="nFollow"></span></label>
+    <label class="opt" title="Repositories that look like malware disguised as game ports are hidden unless this is ticked"><input type="checkbox" id="fRisky"> Show suspected malware lures<span class="n" id="nRisky"></span></label>
     <h3>Playability</h3><div id="fPlay"></div>
     <h3>Type</h3><div id="fType"></div>
     <h3>PC release</h3><div id="fPs"></div>
@@ -259,6 +269,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
       <button class="tab" role="tab" data-tab="activity" aria-selected="false">Activity</button>
       <div class="listbar" id="sortbar">
         <div class="viewtog" role="group" aria-label="View"><button id="vList" aria-pressed="true">List</button><button id="vGrid" aria-pressed="false">Grid</button></div>
+        <label style="display:flex;gap:5px;align-items:center"><input type="checkbox" id="groupTog" checked> Group by game</label>
         <label for="sort">Sort</label>
         <select id="sort">
           <option value="updated">Last updated</option>
@@ -422,7 +433,7 @@ function loadState(){
 let saveFailed=false;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
-const UI={q:"",followed:false,play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
+const UI={q:"",followed:false,showRisky:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
 
 /* ---------------- helpers ---------------- */
 const $=s=>document.querySelector(s);
@@ -485,6 +496,49 @@ function awNormalize(g){
   const p=AW_PLAT_FIX[k]||AW_PLAT[g.platform];if(!p)return null;
   return {k,t,p,title:g.title,url:g.url,d:g.note||g.description||"",rel:g.release||"",rd:g.release_date||"",lc:g.last_commit||"",stars:g.stars,archived:!!g.archived,linkOk:g.link_ok!==false,ai:!!g.ai_flag};
 }
+
+/* ---------------- malware-lure detection ---------------- */
+// README signals (kept in step with scripts/pw_analysis.py LURE_RE)
+const LURE_RE={
+  badges:/img\.shields\.io\/badge\/(downloads?|rating|users|installs|active[-_%20 ]*users)[-_%]/i,
+  dlbutton:/badge\/download[^)\s"']*(windows|mac|now|latest|for)|\bdownload (for windows|for mac|now|the latest version)\b/i,
+  filehost:/(mediafire\.com|mega\.nz|gofile\.io|pixeldrain\.com|anonfiles|dropbox\.com\/s|bit\.ly\/|tinyurl\.com|cutt\.ly|t\.me\/|discord(app)?\.com\/attachments|qiwi\.gg|krakenfiles|sendspace)/i,
+  offsite:/\]\(https?:\/\/[a-z0-9-]+\.github\.io\/[^)\s]*(download|setup|install)[^)\s]*\)|download (for )?(windows|mac(os)?)[^\n]{0,200}?\]\(https?:\/\/(?!github\.com\/|img\.shields\.io\/)[^)\s]+\)/i,
+  password:/(archive|zip|rar|7z|extract)[^\n]{0,60}password|password[^\n]{0,25}[:=]\s*\S{2,}/i
+};
+function lureSignals(text){const out=[];for(const [k,re] of Object.entries(LURE_RE))if(re.test(text||""))out.push(k);return out;}
+const FAMOUS_ALIASES={shipofharkinian:"HarbourMasters/Shipwright",shipwright:"HarbourMasters/Shipwright","2ship2harkinian":"HarbourMasters/2ship2harkinian",zelda64recomp:"Zelda64Recomp/Zelda64Recomp",
+  spaghettikart:"HarbourMasters/SpaghettiKart",starship:"HarbourMasters/Starship",ghostship:"HarbourMasters/Ghostship",opengoal:"open-goal/jak-project",unleashedrecomp:"hedge-dev/UnleashedRecomp",
+  marathonrecomp:"sonicnext-dev/MarathonRecomp",banjorecomp:"BanjoRecomp/BanjoRecomp",sm64coopdx:"coop-deluxe/sm64coopdx",dusklight:"TwilitRealm/dusklight",rexglue:"rexglue/rexglue-sdk",
+  xenonrecomp:"hedge-dev/XenonRecomp",n64recomp:"N64Recomp/N64Recomp",perfectdark:"perfect-dark-pc-port/perfect_dark",skate3recomp:"mchughalex/skate3recomp"};
+let FAMOUS=null;
+function famousList(){
+  if(FAMOUS)return FAMOUS;const out=[];const seen=new Set();
+  for(const [name,full] of Object.entries(FAMOUS_ALIASES)){out.push({name,owner:full.split("/")[0].toLowerCase(),full});seen.add(name);}
+  for(const p of SEED){if(!p.k||p.k.startsWith("itch.io/")||p.k.startsWith("gitlab.com/"))continue;const st=REPO.status&&REPO.status[p.k];const stars=(st&&st.repo&&st.repo.stars)||p.stars||0;
+    if(stars<300)continue;const [owner,repo]=p.k.split("/");const name=repo.replace(/[^a-z0-9]/g,"");if(name.length<6||seen.has(name))continue;seen.add(name);out.push({name,owner,full:p.pr||p.k});}
+  if(REPO.loaded)FAMOUS=out;return out;
+}
+function impersonates(k,stars){
+  if(!k||(stars||0)>=50)return "";const [owner,repo]=k.replace(/^gitlab\.com\//,"").split("/");if(!repo)return "";const name=repo.toLowerCase().replace(/[^a-z0-9]/g,"");
+  for(const f of famousList())if(f.owner!==owner&&f.name.length>=6&&name.includes(f.name))return f.full;return "";
+}
+function lureRiskOf(k,m,stars){
+  if(!k||k.startsWith("itch.io/")||!m)return null;const r=m.repo||{};const sig=m.readmeLure||[];const reasons=[];let sc=0;
+  const noCode=r.size!=null&&r.size<=50&&!r.lang;if(noCode){sc+=2;reasons.push("almost no content and no code");}
+  if(sig.includes("badges")){sc+=3;reasons.push("fake download or rating badges");}
+  if(sig.includes("dlbutton")){sc+=2;reasons.push("a download button in the README");}
+  if(sig.includes("offsite")){sc+=3;reasons.push("download links that lead to another website");}
+  if(sig.includes("filehost")){sc+=3;reasons.push("links to file-hosting or link-shortening sites");}
+  if(sig.includes("password")){sc+=3;reasons.push("a password-protected download");}
+  const imp=impersonates(k,stars);if(imp){sc+=2;reasons.push("its name copies "+imp);}
+  if(r.created&&(Date.now()-new Date(r.created))/864e5<=30&&(stars||0)<=3){sc+=1;reasons.push("created in the last 30 days with almost no stars");}
+  const strong=noCode||sig.length>0;
+  if(sc>=5&&strong)return {level:"high",reasons};
+  if(sc>=3&&strong)return {level:"medium",reasons};
+  return null;
+}
+function riskPill(v){return !v.risk?"":v.risk.level==="high"?`<span class="pill risk-high" title="${esc("Looks like malware disguised as a game port: "+v.risk.reasons.join(", "))}">Possible malware</span>`:`<span class="pill risk-med" title="${esc("Warning signs: "+v.risk.reasons.join(", "))}">Check before downloading</span>`;}
 
 /* ---------------- follow + playability ---------------- */
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.6-4.7-9.4-9.3C1.3 7.9 3.4 4.8 6.7 4.8c2 0 3.5 1.1 4.3 2.6.8-1.5 2.3-2.6 4.3-2.6 3.3 0 5.4 3.1 4.1 6.4-1.8 4.6-9.4 9.3-9.4 9.3z" fill="FILL" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
@@ -553,7 +607,7 @@ function allProjects(){
 function noteSharedAdded(){
   if(!REPO.loaded)return;const keys=REPO.added.map(p=>p.id);
   if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
-  let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
+  let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;const vv=view(p);if(vv.risk&&vv.risk.level==="high")continue;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
   if(n){save();renderUpdates();}
 }
 function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnalysis[p.id]=analyze([p.d,p.n,aw&&aw.d!==p.d?aw.d:""].join("\n"));}return seedAnalysis[p.id];}
@@ -591,7 +645,8 @@ function view(p){
   if(ov.play)play=ov.play;
   else if(rel&&rel.tag)play="yes";
   else if(m.noRelease||(aw&&!aw.rel)||(/Awesome/.test(p.src||"")&&!p.rel))play="no";
-  return {p,m,aw,ps,play,so,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
+  const risk=lureRiskOf(p.k,m,(m.repo&&m.repo.stars)!=null?m.repo.stars:(p.stars||0));
+  return {p,m,aw,ps,play,so,risk,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
 }
 
 /* ---------------- GitHub / GitLab ---------------- */
@@ -646,6 +701,7 @@ function applyShared(p,st){
   else if(st.noRelease){m.noRelease=true;}
   if(st.assetOs)m.assetOs=Object.assign({},st.assetOs);else delete m.assetOs;
   if(st.readme)m.readme=st.readme;
+  if(Array.isArray(st.readmeLure))m.readmeLure=st.readmeLure;
   if(st.manifest)m.manifest=st.manifest;else if("manifest" in st)delete m.manifest;
   m.scannedFor=(st.repo&&st.repo.pushed)||m.scannedFor;m.scannedAt=m.scannedAt||Date.now();m.checkedAt=Date.now();m.shared=true;delete m.netErr;
 }
@@ -655,7 +711,7 @@ async function scanGitHub(p,m,force){
   if(!aw||force){
     const r=await gh(base,{useEtag:!!m.repo});
     if(r.status===404||r.status===451){if(!m.notFound&&m.scannedAt)logEv("gone",p,r.status===451?"Repository blocked for legal reasons (likely DMCA)":"Repository not found: deleted, renamed or made private");m.notFound=true;m.checkedAt=Date.now();return;}
-    if(r.status===200){const d=r.data;m.notFound=false;m.repo={pushed:d.pushed_at,stars:d.stargazers_count,archived:d.archived,full:d.full_name,desc:d.description||""};
+    if(r.status===200){const d=r.data;m.notFound=false;m.repo={pushed:d.pushed_at,stars:d.stargazers_count,archived:d.archived,full:d.full_name,desc:d.description||"",size:d.size,lang:d.language||null,created:d.created_at};
       if(d.archived&&m.scannedAt&&!m.archivedLogged){logEv("gone",p,"Repository archived (read-only)");m.archivedLogged=true;}}
     activity=(m.repo&&m.repo.pushed)||activity;
   }
@@ -669,7 +725,7 @@ async function scanGitHub(p,m,force){
     else{m.noRelease=true;}}
   if(changed){
     const rd=await gh(base+"/readme",{accept:"application/vnd.github.raw",raw:true,useEtag:false});
-    if(rd.status===200)m.readme=analyze(rd.data);else if(rd.status===404)m.readme={features:{},os:{},none:true};
+    if(rd.status===200){m.readme=analyze(rd.data);m.readmeLure=lureSignals(rd.data);}else if(rd.status===404){m.readme={features:{},os:{},none:true};m.readmeLure=[];}
     applyManifest(m,await readManifest(p.k));
     m.scannedFor=activity||new Date().toISOString();m.scannedAt=Date.now();
   }
@@ -1098,6 +1154,7 @@ function renderUpdates(){
   $("#strip").innerHTML=u.slice(0,14).map((e,ix)=>`<button class="cart" style="--pc:${PCOL[e.plat]||"#888"}" data-ev="${ix}"><span class="kind ${e.type==="gone"?"gone":""}">${e.type==="release"?"Release":e.type==="new"?"New project":"Repo change"}</span><b>${esc(e.game||"Discovered repo")}</b><small>${esc(e.text)}</small><small>${esc(ago(new Date(e.t).toISOString()))}</small></button>`).join("");
 }
 function passes(v,skip){
+  if(v.risk&&v.risk.level==="high"&&!UI.showRisky)return false;
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
   if(skip!=="type"&&UI.type.size&&!UI.type.has(v.type))return false;
@@ -1114,28 +1171,75 @@ function filtered(){
   vs.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return vs;
 }
+function groupKeyOf(v){if(S.settings.ungroup)return "p:"+v.p.id;const plat=v.platform==="XBLA (Xbox 360)"?"Xbox 360":v.platform;return nrmT(stripParens(v.game)).replace(/ 1$/,"")+"|"+plat;}
+function rankItems(a,b){return ((b.play==="yes")-(a.play==="yes"))||((b.stars||0)-(a.stars||0))||(b.updated||"").localeCompare(a.updated||"");}
+function groupsOf(vs){
+  const m=new Map();for(const v of vs){const k=groupKeyOf(v);if(!m.has(k))m.set(k,[]);m.get(k).push(v);}
+  const out=[];for(const [key,items] of m){items.sort(rankItems);const upd=items.reduce((x,v)=>(v.updated||"")>x?v.updated:x,"");
+    out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform});}
+  const s=UI.sort;
+  out.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
+  return out;
+}
+function selectedIn(g){const id=UI.sel[g.key];return g.items.find(v=>v.p.id===id)||g.lead;}
+function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io)\//,"")||v.p.l||v.game;}
+function tabsHTML(g,cur,where){
+  if(g.items.length<2)return "";
+  return `<div class="ptabs" role="tablist" aria-label="Projects for ${esc(g.game)}">${g.items.map(v=>{const oss=OSLIST.filter(o=>v.os[o]);
+    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}<small>${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
+}
+function groupDetailHTML(g){const cur=selectedIn(g);
+  const head=g.items.length>1?`<div class="phead">${heartHTML(cur)}<a href="${esc(cur.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(cur))}</a>${riskPill(cur)}</div>`:"";
+  return tabsHTML(g,cur,"list")+detailHTML(cur,head);}
+function groupRowHTML(g,nid){
+  if(g.items.length===1)return rowHTML(g.lead,nid.has(g.lead.p.id),g);
+  const items=g.items,lead=g.lead,isNew=items.some(v=>nid.has(v.p.id));
+  const types=[...new Set(items.map(v=>v.type))];const oss=OSLIST.filter(o=>items.some(v=>v.os[o]));
+  const on=FEATURES.filter(f=>items.some(v=>v.feats[f.id].st==="yes"));const show=on.slice(0,4);
+  const best=items.some(v=>v.play==="yes")?"yes":items.every(v=>v.play==="no")?"no":"unknown";
+  const fol=items.filter(v=>isFollowed(v.p.id)).length;const risky=items.find(v=>v.risk);
+  const relLead=items.slice().sort((a,b)=>(b.updated||"").localeCompare(a.updated||""))[0];
+  return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" aria-expanded="${UI.open===g.key}">
+    <span class="bar"></span>
+    <span class="g"><span class="unk" style="grid-row:1/3;grid-column:2;align-self:center">${fol?"♥ "+fol:""}</span><b>${esc(g.game)}<span class="gcount">${items.length} projects</span>${isNew?'<span class="newtag">NEW</span>':""}</b><span class="repos">${esc(items.slice(0,3).map(repoLabel).join(" · "))}${items.length>3?" · +"+(items.length-3):""}</span></span>
+    <span class="ty">${types.map(t=>`<span class="pill ${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[0]}</span>`).join("")}${playPill({play:best})}${risky?riskPill(risky):""}</span>
+    <span class="plat">${esc(g.platform)}</span>
+    <span class="oss tags">${oss.length?oss.map(o=>`<span class="f os">${o}</span>`).join(""):'<span class="unk">Not detected yet</span>'}</span>
+    <span class="feats tags">${show.map(f=>`<span class="f">${esc(f.label)}</span>`).join("")}${on.length>show.length?`<span class="f more">+${on.length-show.length}</span>`:""}${on.length?"":'<span class="unk">None detected</span>'}</span>
+    <span class="upd">${g.updated?esc(fmtDate(g.updated)):"Unknown"}<small>${g.updated?esc(ago(g.updated)):""}${relLead.rel&&relLead.rel.tag?" · "+esc(relLead.rel.tag):""}</small></span>
+  </div>`+(UI.open===g.key?groupDetailHTML(g):"");
+}
+function groupTileHTML(g,nid){
+  const lead=g.lead,isNew=g.items.some(v=>nid.has(v.p.id));const cv=g.items.find(v=>coverFor(v))||lead;
+  if(g.items.length===1)return tileHTML(lead,isNew,g);
+  const oss=OSLIST.filter(o=>g.items.some(v=>v.os[o]));const best=g.items.some(v=>v.play==="yes")?"yes":g.items.every(v=>v.play==="no")?"no":"unknown";
+  return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" data-id="${esc(lead.p.id)}">${coverHTML(cv,isNew,true)}
+    <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.platform)} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
+}
 function newIds(){const s=new Set();for(const e of unread())if(e.id)s.add(e.id);return s;}
-function rowHTML(v,isNew){
+function rowHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
   const on=FEATURES.filter(f=>v.feats[f.id].st==="yes");const show=on.slice(0,4);
   const oss=OSLIST.filter(o=>v.os[o]);
-  return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}" aria-expanded="${UI.open===v.p.id}">
+  return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}" data-gk="${esc(gk)}" aria-expanded="${UI.open===gk}">
     <span class="bar"></span>
     <span class="g">${heartHTML(v)}<b>${esc(v.game)}${isNew?'<span class="newtag">NEW</span>':""}</b>${v.p.l?`<a href="${esc(v.p.l)}" target="_blank" rel="noopener">${esc(v.p.pr||v.p.l)}</a>`:`<span class="unk">${esc(v.p.pr||"")}</span>`}</span>
-    <span class="ty"><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0]}</span>${playPill(v)}</span>
+    <span class="ty"><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0]}</span>${playPill(v)}${riskPill(v)}</span>
     <span class="plat">${esc(v.platform)}</span>
     <span class="oss tags">${oss.length?oss.map(o=>`<span class="f os">${o}</span>`).join(""):'<span class="unk">Not detected yet</span>'}</span>
     <span class="feats tags">${show.map(f=>`<span class="f">${esc(f.label)}</span>`).join("")}${on.length>show.length?`<span class="f more">+${on.length-show.length}</span>`:""}${on.length?"":'<span class="unk">None detected</span>'}</span>
     <span class="upd">${v.updated?esc(fmtDate(v.updated)):"Unknown"}<small>${v.updated?esc(ago(v.updated)):""}${v.rel&&v.rel.tag?" · "+esc(v.rel.tag):""}${v.gone?" · link broken":""}</small></span>
-  </div>`+(UI.open===v.p.id?detailHTML(v):"");
+  </div>`+(UI.open===gk?detailHTML(v):"");
 }
-function tileHTML(v,isNew){
+function tileHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
   const oss=OSLIST.filter(o=>v.os[o]);
-  return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}">${heartHTML(v)}${coverHTML(v,isNew,true)}
-    <span class="meta2"><b>${esc(v.game)}</b><span>${playPill(v)}</span><small>${esc(v.platform)} · ${v.updated?esc(ago(v.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
+  return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}" data-gk="${esc(gk)}">${heartHTML(v)}${coverHTML(v,isNew,true)}
+    <span class="meta2"><b>${esc(v.game)}</b><span>${playPill(v)}${riskPill(v)}</span><small>${esc(v.platform)} · ${v.updated?esc(ago(v.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
 }
-function detailHTML(v){
+function detailHTML(v,head){
   const p=v.p,m=v.m;
-  const warn=[];if(v.m&&v.m.netErr)warn.push("Port Watch couldn't reach "+v.m.netErr.host+" for this project on the last check, so its details may be out of date.");if(v.gone)warn.push("The repository couldn't be reached on the last check. It may have been deleted, renamed or taken down.");if(v.archived)warn.push("The repository is archived (read-only).");
+  const warn=[];
+  if(v.risk)warn.push(v.risk.level==="high"?"This looks like malware disguised as a game port: "+v.risk.reasons.join(", ")+". Don't download or run anything from it.":"Be careful with this repository. Warning signs: "+v.risk.reasons.join(", ")+".");
+  if(v.m&&v.m.netErr)warn.push("Port Watch couldn't reach "+v.m.netErr.host+" for this project on the last check, so its details may be out of date.");if(v.gone)warn.push("The repository couldn't be reached on the last check. It may have been deleted, renamed or taken down.");if(v.archived)warn.push("The repository is archived (read-only).");
   const feat=FEATURES.map(f=>{const st=v.feats[f.id];return `<span class="${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" (planned)":""}</span>`;}).join("");
   const os=OSLIST.map(o=>`<span class="${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
   const ovOs=Array.isArray((S.ov[p.id]||{}).os);
@@ -1144,7 +1248,7 @@ function detailHTML(v){
     ${ovOs?`<button class="btn" data-osauto="${esc(p.id)}" style="margin-top:6px;padding:2px 8px;font-size:12px">Go back to automatic detection</button>`:""}</details>`;
   const scanned=m.scannedAt?"README and release files read "+ago(new Date(m.scannedAt).toISOString())+".":(p.k?"README and release files not read yet. Run Check for updates.":"No repository to read.");
   const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");
-  return `<div class="detail" data-detail="${esc(p.id)}">
+  return `<div class="detail" data-detail="${esc(p.id)}">${head||""}
     ${warn.map(w=>`<div class="warnbox">${esc(w)}</div>`).join("")}
     <section><h4>Runs on</h4><div class="fgrid">${os}</div>${osEdit}
       <h4 style="margin-top:12px">Features</h4><div class="fgrid">${feat}</div>
@@ -1179,12 +1283,13 @@ function detailHTML(v){
   </div>`;
 }
 function renderProjects(){
-  const vs=filtered();const nid=newIds();
-  $("#countP").textContent="("+vs.length+")";
+  const vs=filtered();const nid=newIds();const groups=groupsOf(vs);
+  $("#countP").textContent=S.settings.ungroup||groups.length===vs.length?"("+vs.length+")":"("+groups.length+" games · "+vs.length+" projects)";
+  $("#groupTog").checked=!S.settings.ungroup;
   if(!vs.length){$("#view").innerHTML=`<div class="list"><div class="empty">No projects match these filters. <button class="btn" id="emptyClear">Clear filters</button></div></div>`;return;}
   const grid=S.settings.view==="grid";
   const welcome=(!S.lastCheck&&!S.welcomed)?`<div class="welcome"><div><b>Port Watch starts with data as of ${esc(BUILT)} and doesn't check for updates until you ask.</b><br>Follow the projects you care about with the heart, then use <b>Check followed</b> to refresh just those. <b>Check for updates</b> uses Port Watch's shared data, refreshed every few hours, so no GitHub token is needed.</div><button class="btn" id="welcomeOk">Got it</button></div>`:"";
-  $("#view").innerHTML=welcome+(grid?`<div class="grid">${vs.slice(0,UI.limit).map(v=>tileHTML(v,nid.has(v.p.id))).join("")}</div>`:`<div class="list">${vs.slice(0,UI.limit).map(v=>rowHTML(v,nid.has(v.p.id))).join("")}</div>`)+(vs.length>UI.limit?`<button class="btn more-btn" id="moreBtn">Show ${Math.min(150,vs.length-UI.limit)} more of ${vs.length-UI.limit}</button>`:"");
+  $("#view").innerHTML=welcome+(grid?`<div class="grid">${groups.slice(0,UI.limit).map(g=>groupTileHTML(g,nid)).join("")}</div>`:`<div class="list">${groups.slice(0,UI.limit).map(g=>groupRowHTML(g,nid)).join("")}</div>`)+(groups.length>UI.limit?`<button class="btn more-btn" id="moreBtn">Show ${Math.min(150,groups.length-UI.limit)} more of ${groups.length-UI.limit}</button>`:"");
 }
 function afterProjects(){if(S.settings.view==="grid")observeCovers($("#view"));}
 function srcGroup(it){const s=it.src||"";return s.startsWith("feed:")?"feed":s.startsWith("search:")?"search":s.startsWith("topic:")?"topic":/recomp\.json/.test(s)?"manifest":"other";}
@@ -1359,7 +1464,8 @@ function renderFilters(){
   const opt=(set,val,n,dot,label)=>`<label class="opt">${dot?`<span class="dot" style="--pc:${PCOL[val]||"#888"}"></span>`:""}<input type="checkbox" data-set="${set}" value="${esc(val)}" ${UI[set].has(val)?"checked":""}> ${esc(label||val)}<span class="n">${n||0}</span></label>`;
   $("#fType").innerHTML=TYPES.map(t=>opt("type",t,tc[t])).join("");
   const plc=cnt("play",v=>v.play);$("#fPlay").innerHTML=["yes","no","unknown"].map(x=>`<label class="opt"><input type="checkbox" data-set="play" value="${x}" ${UI.play.has(x)?"checked":""}> ${PLAY_LABEL[x]}<span class="n">${plc[x]||0}</span></label>`).join("");
-  const fc=followedCount();$("#nFollow").textContent=fc||"";$("#fFollow").checked=UI.followed;updateFollowBtn();
+  const fc=followedCount();$("#nFollow").textContent=fc||"";
+  const rc=allProjects().map(view).filter(v=>v.risk&&v.risk.level==="high").length;$("#nRisky").textContent=rc||"";$("#fRisky").checked=UI.showRisky;$("#fFollow").checked=UI.followed;updateFollowBtn();
   const psc=cnt("ps",v=>v.ps);$("#fPs").innerHTML=PS.map(x=>opt("ps",x,psc[x])).join("");
   $("#fPlat").innerHTML=order.map(k=>opt("plat",k,pc[k],true)).join("");
   const present=new Set();all.forEach(v=>Object.keys(v.os).forEach(o=>present.add(o)));UI.os.forEach(o=>present.add(o));
@@ -1385,21 +1491,24 @@ $("#clearBtn").addEventListener("click",clearFilters);
 $("#sort").addEventListener("change",e=>{UI.sort=e.target.value;render();});
 document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{UI.tab=t.dataset.tab;render();}));
 $("#filtersBtn").addEventListener("click",e=>{const o=$("#rail").classList.toggle("open");e.target.setAttribute("aria-expanded",o);});
+function groupFor(v){const gk=groupKeyOf(v);const items=allProjects().map(view).filter(x=>groupKeyOf(x)===gk&&(passes(x)||x.p.id===v.p.id));items.sort(rankItems);
+  return {key:gk,items,lead:items[0]||v,game:(items[0]||v).game,platform:(items[0]||v).platform};}
 function openProject(id){
-  const p=allProjects().find(x=>x.id===id);if(!p)return;const v=view(p);
+  const p=allProjects().find(x=>x.id===id);if(!p)return;const v=view(p);const g=groupFor(v);UI.sel[g.key]=id;
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
-  $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${heartHTML(v)}</h2><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span> <span class="note">${esc(v.platform)}</span></div><button class="btn x" id="projClose">Close</button></div>`+detailHTML(v);
+  $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span> <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
   const d=$("#projDlg");if(!d.open)d.showModal();observeCovers($("#projBody"));
 }
-function toggleRow(id){UI.open=UI.open===id?null:id;for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();render();
-  if(UI.open){const el=document.querySelector(`[data-id="${CSS.escape(UI.open)}"]`);if(el)el.scrollIntoView({block:"nearest"});}}
+function toggleRow(gk){UI.open=UI.open===gk?null:gk;
+  const ids=new Set(allProjects().map(view).filter(v=>groupKeyOf(v)===gk).map(v=>v.p.id));for(const ev of S.log)if(ids.has(ev.id)&&!ev.read)ev.read=true;save();renderUpdates();render();
+  if(UI.open){const el=document.querySelector(`.row[data-gk="${CSS.escape(UI.open)}"]`);if(el)el.scrollIntoView({block:"nearest"});}}
 function onDetailClick(e){
   const co=e.target.closest("[data-checkone]");if(co){co.disabled=true;co.textContent="Checking…";checkOne(co.dataset.checkone);return true;}
   const oa=e.target.closest("[data-osauto]");if(oa){const o=S.ov[oa.dataset.osauto];if(o){delete o.os;save();}renderFilters();if($("#projDlg").open)openProject(oa.dataset.osauto);else render();return true;}
   const rc=e.target.closest("[data-recover]");if(rc){delete S.covers[rc.dataset.recover];coverPending.delete(rc.dataset.recover);const el=document.createElement("div");(()=>{const el=document.querySelector('[data-ck="'+CSS.escape(rc.dataset.recover)+'"]')||{dataset:{}};return lookupCover(rc.dataset.recover,el.dataset.ct||"",el.dataset.cp||"");})().then(()=>{toast("Cover looked up again.");if($("#projDlg").open){const id=$("#projBody .detail").dataset.detail;openProject(id);}else render();});return true;}
   return false;
 }
-$("#projDlg").addEventListener("click",e=>{const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
+$("#projDlg").addEventListener("click",e=>{const gt=e.target.closest("[data-gtab]");if(gt){openProject(gt.dataset.gtab);return;}const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];$("#projDlg").close();save();renderAll();}}});
 $("#projDlg").addEventListener("change",e=>{if(onOsOverride(e))return;const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const val=e.target.value.trim();if(val)o[f]=val;else delete o[f];save();openProject(id);renderFilters();});
@@ -1414,8 +1523,9 @@ $("#view").addEventListener("click",e=>{
   if(e.target.id==="welcomeOk"){S.welcomed=true;save();render();return;}
   if(e.target.closest("a"))return;
   if(onDetailClick(e))return;
-  const tile=e.target.closest(".tile");if(tile){openProject(tile.dataset.id);return;}
-  const row=e.target.closest(".row");if(row){toggleRow(row.dataset.id);return;}
+  const gt=e.target.closest("[data-gtab]");if(gt){UI.sel[gt.dataset.gk]=gt.dataset.gtab;render();return;}
+  const tile=e.target.closest(".tile");if(tile){openProject(UI.sel[tile.dataset.gk]||tile.dataset.id);return;}
+  const row=e.target.closest(".row");if(row){toggleRow(row.dataset.gk);return;}
   if(e.target.id==="moreBtn"){UI.limit+=150;render();return;}
   if(e.target.id==="emptyClear"){clearFilters();return;}
   const add=e.target.closest("[data-add]");if(add){addFromInbox(add.dataset.add);return;}
@@ -1423,9 +1533,11 @@ $("#view").addEventListener("click",e=>{
   const go=e.target.closest("[data-goto]");if(go){gotoProject(go.dataset.goto);return;}
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];UI.open=null;save();renderAll();}return;}
 });
-$("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("row")){e.preventDefault();toggleRow(e.target.dataset.id);}
+$("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("row")){e.preventDefault();toggleRow(e.target.dataset.gk);}
   else if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("tile")){e.preventDefault();openProject(e.target.dataset.id);}});
 $("#fFollow").addEventListener("change",e=>{UI.followed=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fRisky").addEventListener("change",e=>{UI.showRisky=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#groupTog").addEventListener("change",e=>{S.settings.ungroup=!e.target.checked;UI.open=null;save();render();});
 function onOsOverride(e){const cb=e.target.closest("[data-osov]");if(!cb)return false;const det=cb.closest("[data-detail]");if(!det)return true;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const cur=new Set(Array.isArray(o.os)?o.os:Object.keys(view(allProjects().find(x=>x.id===id)).os));
   cb.checked?cur.add(cb.dataset.osov):cur.delete(cb.dataset.osov);o.os=OSLIST.filter(x=>cur.has(x));save();renderFilters();
@@ -1447,7 +1559,8 @@ $("#fullCancel").addEventListener("click",()=>fullDlg.close());
 $("#fullToken").addEventListener("click",()=>{fullDlg.close();$("#settingsBtn").click();setTimeout(()=>$("#token").focus(),50);});
 $("#fullFollowed").addEventListener("click",()=>{fullDlg.close();runCheck("followed");});
 $("#fullAnyway").addEventListener("click",()=>{if($("#fullDontAsk").checked){S.noTokenOk=true;save();}fullDlg.close();runCheck("all");});
-function gotoProject(id){if(S.settings.view==="grid"){UI.tab="projects";clearFilters();renderAll();openProject(id);return;}UI.tab="projects";clearFilters();UI.open=id;const ix=filtered().findIndex(v=>v.p.id===id);if(ix>=UI.limit)UI.limit=ix+20;renderAll();const el=document.querySelector(`[data-id="${CSS.escape(id)}"]`);if(el)el.scrollIntoView({block:"center"});}
+function gotoProject(id){if(S.settings.view==="grid"){UI.tab="projects";clearFilters();renderAll();openProject(id);return;}UI.tab="projects";clearFilters();const tp=allProjects().find(x=>x.id===id);if(!tp)return;const tv=view(tp);if(tv.risk&&tv.risk.level==="high")UI.showRisky=true;const gk=groupKeyOf(tv);UI.open=gk;UI.sel[gk]=id;
+  const ix=groupsOf(filtered()).findIndex(g=>g.key===gk);if(ix>=UI.limit)UI.limit=ix+20;renderAll();const el=document.querySelector(`.row[data-gk="${CSS.escape(gk)}"]`);if(el)el.scrollIntoView({block:"center"});}
 async function addFromInbox(k){const it=S.disc.inbox[k];if(!it)return;
   if(it.feed&&!it.repo){$("#addBtn").click();$("#addUrl").value="";$("#addUrl").placeholder="Paste the project's own link (from "+(it.url||"the listing")+")";$("#addGame").value=it.game||it.name;addDlg.dataset.from=k;window.open(it.url,"_blank","noopener");return;}const j=await readManifest(k);const name=it.game||(it.name.includes("/")?it.name.split("/")[1]:it.name).replace(/[-_.]+/g," ").replace(/\b(re-?comp(iled|ilation)?|recomp|pc port|port)\b/ig,"").replace(/([a-z])([A-Z])/g,"$1 $2").trim()||it.name;
   const id="custom:"+k;S.custom[id]={id,k,g:it.game||name,tf:it.game?1:undefined,p:it.platform||"Unknown",t:it.type||"Recompilation",d:it.desc||"",n:"",po:"",pr:it.name,l:it.url,src:"Added by you from "+it.src,custom:true};
@@ -1498,7 +1611,7 @@ async function precheckLink(){
   catch(e){if(seq!==addSeq)return;box.textContent=e instanceof RateLimit?"GitHub's hourly limit was reached, so the repository can't be checked right now. You can still add it; it's checked on the next update check.":e instanceof AuthErr?"GitHub rejected your token (Settings), so the repository couldn't be checked.":"The repository couldn't be reached. You can still add it.";return;}
   if(seq!==addSeq)return;
   if(m.notFound||!m.repo){box.innerHTML=`<span class="pill pl-no">Not found</span> There's no public repository at this link. Check it for typos.`;return;}
-  addPre={k,m};
+  addPre={k,m};const risk=lureRiskOf(k,m,m.repo.stars);
   const desc=m.repo.desc||"",mf=m.manifest||null,name=k.split("/").pop();
   const title=(mf&&mf.game)||titleFromDesc(desc)||stripSuffix(stripParens(name.replace(/[-_.]+/g," ").replace(/([a-z])([A-Z])/g,"$1 $2"))).trim();
   const plat=(mf&&mf.system&&PCOL[mf.system]?mf.system:"")||detectPlatform(desc)||detectPlatform(name.replace(/[-_]/g," "));
@@ -1513,7 +1626,8 @@ async function precheckLink(){
   box.innerHTML=`<span class="pill pl-yes">Found</span> <b>${esc(m.repo.full||k)}</b>${desc?" · "+esc(desc.slice(0,140)):""}<br>
     ★ ${Number(m.repo.stars||0).toLocaleString()} · last push ${esc(ago(m.repo.pushed))} · ${rel}${m.repo.archived?' · <span class="pill pl-no">Archived</span>':""}<br>
     Runs on: ${os.size?esc([...os].join(", ")):"not detected yet"} · Features: ${feats.length?esc(feats.join(", ")):"none detected"}${mf?" · has a .recomp.json":""}<br>
-    <span class="note">Title, platform and type were filled in from the repository. Check them before adding.</span>`;
+    <span class="note">Title, platform and type were filled in from the repository. Check them before adding.</span>`+
+    (risk?`<div class="warnbox" style="margin-top:6px">${risk.level==="high"?"<b>This looks like malware disguised as a game port.</b> ":"<b>Be careful with this repository.</b> "}Warning signs: ${esc(risk.reasons.join(", "))}.${risk.level==="high"?" Don't download anything from it, and don't share it.":""}</div>`:"");
 }
 $("#addSave").addEventListener("click",()=>{
   const url=$("#addUrl").value.trim();if(!/^https?:\/\//i.test(url)){toast("Enter the project's full link, starting with https://");return;}
