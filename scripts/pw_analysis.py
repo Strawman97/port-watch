@@ -155,7 +155,7 @@ def manifest(j):
     targets = j.get("targets") if isinstance(j.get("targets"), list) else ([j["targets"]] if j.get("targets") else [])
     return {"game": j["game"][:120] if isinstance(j.get("game"), str) else "",
             "system": RJ_SYS.get(sys_) or (str(sys_)[:30] if sys_ else ""),
-            "type": "Recompilation" if "recomp" in types else ("Decompilation" if ("port" in types or "decomp" in types) else ""),
+            "type": "Recompilation" if "recomp" in types else ("Decompilation" if "decomp" in types else ("Source Port" if "port" in types else "")),
             "targets": [str(t) for t in targets][:8],
             "notes": j["notes"][:600] if isinstance(j.get("notes"), str) else "",
             "approach": j["approach"][:200] if isinstance(j.get("approach"), str) else ""}
@@ -164,8 +164,7 @@ def manifest(j):
 # Malware-lure README signals (kept in step with LURE_RE in index.html). The page combines these with the
 # repository's size, language, age, stars and name to decide whether a project looks like a lure.
 LURE_RE = {
-    "badges": re.compile(r"img\.shields\.io/badge/(downloads?|rating|users|installs|active[-_%20 ]*users)[-_%]", F),
-    "dlbutton": re.compile(r"badge/download[^)\s\"']*(windows|mac|now|latest|for)|\bdownload (for windows|for mac|now|the latest version)\b", F),
+    "badges": re.compile(r"img\.shields\.io/badge/((downloads?|installs?|users|players|active[-_%20 ]*users)[-_]\d|rating[-_]\d)", F),
     "filehost": re.compile(r"(mediafire\.com|mega\.nz|gofile\.io|pixeldrain\.com|anonfiles|dropbox\.com/s|bit\.ly/|tinyurl\.com|cutt\.ly|t\.me/|discord(app)?\.com/attachments|qiwi\.gg|krakenfiles|sendspace)", F),
     "offsite": re.compile(r"\]\(https?://[a-z0-9-]+\.github\.io/[^)\s]*(download|setup|install)[^)\s]*\)|download (for )?(windows|mac(os)?)[^\n]{0,200}?\]\(https?://(?!github\.com/|img\.shields\.io/)[^)\s]+\)", F),
     "password": re.compile(r"(archive|zip|rar|7z|extract)[^\n]{0,60}password|password[^\n]{0,25}[:=]\s*\S{2,}", F),
