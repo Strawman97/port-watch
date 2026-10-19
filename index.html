@@ -101,7 +101,22 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .empty{padding:40px 20px;text-align:center;color:var(--muted)}
 .more-btn{display:block;margin:12px auto}
 
-.detail{border-top:1px solid var(--line);background:var(--sunk);padding:16px 20px 20px 19px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px 26px}
+.detail{border-top:1px solid var(--line);background:var(--sunk);padding:14px 18px 16px;container-type:inline-size}
+.dgrid{display:grid;gap:14px 26px;grid-template-columns:1fr;grid-template-areas:"runs" "feats" "proj" "more"}
+.detail>.phead{margin-bottom:10px}.detail>.warnbox{margin-bottom:10px}
+.d-runs{grid-area:runs}.d-feats{grid-area:feats}.d-proj{grid-area:proj}.d-more{grid-area:more}
+@container (min-width:640px){.dgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"runs proj" "feats proj" "more more"}}
+@container (min-width:980px){.dgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,1.25fr);grid-template-areas:"runs feats proj" "more more more"}}
+.chipset{display:flex;flex-wrap:wrap;gap:5px}
+.chipset .c{font-size:12.5px;line-height:1.5;padding:1px 9px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}
+.chipset .c.yes{color:var(--ink);border-color:var(--recomp);background:var(--recomp-bg);font-weight:500}
+.chipset .c.planned{color:var(--ink);border-style:dashed}
+.chipset .c.no{opacity:.65}
+.d-more{border-top:1px solid var(--line);padding-top:10px}
+.d-more summary{cursor:pointer;font:600 15px/1.2 var(--display)}
+.moregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 22px;margin-top:8px}
+.moregrid .edit{margin-top:0}
+.kv{grid-template-columns:118px 1fr}
 .detail h4{font:600 16px/1.2 var(--display);margin:0 0 6px}
 .detail p{margin:0 0 6px}
 .kv{display:grid;grid-template-columns:120px 1fr;gap:2px 10px;font-size:13px}
@@ -131,8 +146,9 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .welcome div{flex:1 1 320px}
 .gcount{font-size:11.5px;font-weight:600;border:1px solid var(--line);border-radius:10px;padding:0 7px;margin-left:6px;vertical-align:2px;color:var(--muted)}
 .repos{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
-.ptabs{display:flex;gap:4px;flex-wrap:wrap;padding:10px 16px 0;border-top:1px solid var(--line);background:var(--sunk)}
-.ptab{border:1px solid var(--line);border-bottom:0;background:var(--surface);color:var(--muted);border-radius:6px 6px 0 0;padding:6px 10px;font-size:12.5px;text-align:left;display:grid;gap:1px}
+.ptabs{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;padding:8px 16px 0;border-top:1px solid var(--line);background:var(--sunk);scrollbar-width:thin}
+.ptab{flex:0 0 auto;max-width:300px;white-space:nowrap;border:1px solid var(--line);border-bottom:0;background:var(--surface);color:var(--muted);border-radius:6px 6px 0 0;padding:5px 10px;font-size:12.5px;text-align:left;display:grid;gap:1px}
+.ptab small{overflow:hidden;text-overflow:ellipsis}
 .ptab small{font-size:11px;color:var(--muted)}
 .ptab[aria-selected="true"]{color:var(--ink);font-weight:600;box-shadow:inset 0 3px 0 var(--action)}
 .ptabs + .detail{border-top:1px solid var(--line)}
@@ -155,9 +171,10 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .tile .meta2 b{font:600 16px/1.15 var(--display)}
 .tile .meta2 small{color:var(--muted);font-size:12px}
 .tile .newtag{position:absolute;top:8px;right:8px;margin:0}
-dialog.proj{max-width:900px;padding:0}
-dialog.proj .dhead{display:flex;gap:16px;align-items:flex-start;padding:18px 20px 12px}
-dialog.proj .dhead .cover{width:110px;flex:none;border-radius:6px}
+dialog.proj{width:min(1240px,96vw);max-width:none;padding:0}
+dialog.proj .dhead{display:flex;gap:14px;align-items:center;padding:12px 18px 10px}
+dialog.proj .dhead .cover{width:64px;flex:none;border-radius:5px}
+dialog.proj .dhead .cover .ph{font-size:10px;line-height:1.15;padding:5px}
 dialog.proj .dhead h2{margin:0 0 4px}
 dialog.proj .detail{border-top:1px solid var(--line)}
 dialog.proj .x{margin-left:auto}
@@ -1240,8 +1257,10 @@ function detailHTML(v,head){
   const warn=[];
   if(v.risk)warn.push(v.risk.level==="high"?"This looks like malware disguised as a game port: "+v.risk.reasons.join(", ")+". Don't download or run anything from it.":"Be careful with this repository. Warning signs: "+v.risk.reasons.join(", ")+".");
   if(v.m&&v.m.netErr)warn.push("Port Watch couldn't reach "+v.m.netErr.host+" for this project on the last check, so its details may be out of date.");if(v.gone)warn.push("The repository couldn't be reached on the last check. It may have been deleted, renamed or taken down.");if(v.archived)warn.push("The repository is archived (read-only).");
-  const feat=FEATURES.map(f=>{const st=v.feats[f.id];return `<span class="${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" (planned)":""}</span>`;}).join("");
-  const os=OSLIST.map(o=>`<span class="${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
+  const rankSt={yes:0,planned:1,no:2};
+  const feat=FEATURES.slice().sort((x,y)=>rankSt[v.feats[x.id].st]-rankSt[v.feats[y.id].st]).map(f=>{const st=v.feats[f.id];return `<span class="c ${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" · planned":""}</span>`;}).join("");
+  const os=OSLIST.slice().sort((x,y)=>(v.os[y]?1:0)-(v.os[x]?1:0)).map(o=>`<span class="c ${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
+  const nFeat=FEATURES.filter(f=>v.feats[f.id].st==="yes").length;
   const ovOs=Array.isArray((S.ov[p.id]||{}).os);
   const osEdit=`<details style="margin-top:8px"><summary class="note" style="cursor:pointer">${ovOs?"Runs on is set by you. Change":"Wrong? Set what it runs on"}</summary>
     <div class="chips" style="margin-top:6px">${OSLIST.map(o=>`<label class="chip" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" data-osov="${o}" ${v.os[o]?"checked":""}>${o}</label>`).join("")}</div>
@@ -1250,10 +1269,10 @@ function detailHTML(v,head){
   const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");
   return `<div class="detail" data-detail="${esc(p.id)}">${head||""}
     ${warn.map(w=>`<div class="warnbox">${esc(w)}</div>`).join("")}
-    <section><h4>Runs on</h4><div class="fgrid">${os}</div>${osEdit}
-      <h4 style="margin-top:12px">Features</h4><div class="fgrid">${feat}</div>
+    <div class="dgrid"><section class="d-runs"><h4>Runs on</h4><div class="chipset">${os}</div>${osEdit}</section>
+    <section class="d-feats"><h4>Features <span class="note">${nFeat} of ${FEATURES.length} detected</span></h4><div class="chipset">${feat}</div>
       <p class="note" style="margin-top:6px">${esc(scanned)} Hover an item to see where it was found.</p></section>
-    <section><h4>Project</h4>
+    <section class="d-proj"><h4>Project</h4>
       <dl class="kv"><dt>Type</dt><dd>${esc(v.type)}</dd><dt>Original platform</dt><dd>${esc(v.platform)}</dd>
       <dt>Playability</dt><dd>${playPill(v)} <span class="note">${v.play==="yes"?"a public release is available":v.play==="no"?"no public release found yet":"not checked yet"}${(S.ov[p.id]||{}).play?" (set by you)":""}</span></dd>
       <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")})</span></dd>
@@ -1265,6 +1284,11 @@ function detailHTML(v,head){
       ${v.stars?`<dt>Stars</dt><dd>${v.stars.toLocaleString()}</dd>`:""}
       <dt>Listed by</dt><dd>${esc(p.src||"you")}${S.aw.data[p.k]&&!/Awesome/.test(p.src||"")?" + Awesome Decomp Games":""}</dd></dl>
       ${p.d?`<p class="note" style="margin-top:8px">${esc(p.d)}</p>`:""}
+      ${p.k&&!HOSTED_UI?`<p style="margin-top:8px"><button class="btn" data-checkone="${esc(p.id)}" style="padding:3px 10px;font-size:12.5px">Check this project now</button></p>`:""}
+      ${p.k&&p.k.startsWith("itch.io/")&&m.itchTriedAt?`<p class="note">Devlog last tried ${esc(ago(new Date(m.itchTriedAt).toISOString()))}: ${esc((m.itchTried||[]).join("; "))}${m.itchVia?". Read via "+esc(m.itchVia)+".":"."}</p>`:""}
+      ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
+    </section>
+    <details class="d-more"><summary>Your edits, cover and checks</summary><div class="moregrid">
       <div class="edit"><label>Cover image link<input type="text" data-f="cover" placeholder="Paste an image URL to override" value="${esc((S.ov[p.id]||{}).cover||"")}"></label>
         <span class="note">${(()=>{const c=coverFor(v);return c?"Current cover from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+".":"No cover found yet.";})()} <button class="btn" data-recover="${esc(coverKey(v))}" style="padding:2px 8px;font-size:12px">Look up again</button>
         <a class="btn" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener" style="padding:2px 8px;font-size:12px">Find on SteamGridDB</a></span>
@@ -1272,15 +1296,12 @@ function detailHTML(v,head){
       <div class="edit"><label>Game title<input type="text" data-f="game" value="${esc(v.game)}"></label>
         <label>Playability<select data-f="play"><option value="">Automatic</option><option value="yes" ${(S.ov[p.id]||{}).play==="yes"?"selected":""}>Playable</option><option value="no" ${(S.ov[p.id]||{}).play==="no"?"selected":""}>No public release</option></select></label>
         <label>PC release<select data-f="ps">${PS.map(x=>`<option ${v.ps===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label></div>
-      ${p.k&&!HOSTED_UI?`<p style="margin-top:8px"><button class="btn" data-checkone="${esc(p.id)}" style="padding:3px 10px;font-size:12.5px">Check this project now</button></p>`:""}
-      ${p.k&&p.k.startsWith("itch.io/")&&m.itchTriedAt?`<p class="note">Devlog last tried ${esc(ago(new Date(m.itchTriedAt).toISOString()))}: ${esc((m.itchTried||[]).join("; "))}${m.itchVia?". Read via "+esc(m.itchVia)+".":"."}</p>`:""}
-      ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
       ${p.custom?`<div class="edit">
         <label>Original platform<select data-f="platform">${plats.concat("Unknown").map(x=>`<option ${v.platform===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
         <label>Type<select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>
         <button class="btn" data-remove="${esc(p.id)}">Remove from tracker</button></div>`:""}
-    </section>
-  </div>`;
+    </div></details>
+  </div></div>`;
 }
 function renderProjects(){
   const vs=filtered();const nid=newIds();const groups=groupsOf(vs);
@@ -1498,6 +1519,7 @@ function openProject(id){
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
   $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span> <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
   const d=$("#projDlg");if(!d.open)d.showModal();observeCovers($("#projBody"));
+  const st=$("#projBody .ptab[aria-selected=true]");if(st)st.scrollIntoView({block:"nearest",inline:"nearest"});
 }
 function toggleRow(gk){UI.open=UI.open===gk?null:gk;
   const ids=new Set(allProjects().map(view).filter(v=>groupKeyOf(v)===gk).map(v=>v.p.id));for(const ev of S.log)if(ids.has(ev.id)&&!ev.read)ev.read=true;save();renderUpdates();render();
@@ -1523,7 +1545,7 @@ $("#view").addEventListener("click",e=>{
   if(e.target.id==="welcomeOk"){S.welcomed=true;save();render();return;}
   if(e.target.closest("a"))return;
   if(onDetailClick(e))return;
-  const gt=e.target.closest("[data-gtab]");if(gt){UI.sel[gt.dataset.gk]=gt.dataset.gtab;render();return;}
+  const gt=e.target.closest("[data-gtab]");if(gt){const sl=gt.parentElement.scrollLeft;UI.sel[gt.dataset.gk]=gt.dataset.gtab;render();const bar=document.querySelector(`.row[data-gk="${CSS.escape(gt.dataset.gk)}"]`);const nb=bar&&bar.parentElement.querySelector(".ptabs");if(nb)nb.scrollLeft=sl;return;}
   const tile=e.target.closest(".tile");if(tile){openProject(UI.sel[tile.dataset.gk]||tile.dataset.id);return;}
   const row=e.target.closest(".row");if(row){toggleRow(row.dataset.gk);return;}
   if(e.target.id==="moreBtn"){UI.limit+=150;render();return;}
