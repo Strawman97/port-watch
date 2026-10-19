@@ -159,3 +159,18 @@ def manifest(j):
             "targets": [str(t) for t in targets][:8],
             "notes": j["notes"][:600] if isinstance(j.get("notes"), str) else "",
             "approach": j["approach"][:200] if isinstance(j.get("approach"), str) else ""}
+
+
+# Malware-lure README signals (kept in step with LURE_RE in index.html). The page combines these with the
+# repository's size, language, age, stars and name to decide whether a project looks like a lure.
+LURE_RE = {
+    "badges": re.compile(r"img\.shields\.io/badge/(downloads?|rating|users|installs|active[-_%20 ]*users)[-_%]", F),
+    "dlbutton": re.compile(r"badge/download[^)\s\"']*(windows|mac|now|latest|for)|\bdownload (for windows|for mac|now|the latest version)\b", F),
+    "filehost": re.compile(r"(mediafire\.com|mega\.nz|gofile\.io|pixeldrain\.com|anonfiles|dropbox\.com/s|bit\.ly/|tinyurl\.com|cutt\.ly|t\.me/|discord(app)?\.com/attachments|qiwi\.gg|krakenfiles|sendspace)", F),
+    "offsite": re.compile(r"\]\(https?://[a-z0-9-]+\.github\.io/[^)\s]*(download|setup|install)[^)\s]*\)|download (for )?(windows|mac(os)?)[^\n]{0,200}?\]\(https?://(?!github\.com/|img\.shields\.io/)[^)\s]+\)", F),
+    "password": re.compile(r"(archive|zip|rar|7z|extract)[^\n]{0,60}password|password[^\n]{0,25}[:=]\s*\S{2,}", F),
+}
+
+
+def lure_signals(text):
+    return [k for k, r in LURE_RE.items() if r.search(text or "")]
