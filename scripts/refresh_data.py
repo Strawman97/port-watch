@@ -295,7 +295,7 @@ def repo_ref(k):
 
 
 def meta_batch(keys, token):
-    parts = ["r%d: %s { nameWithOwner pushedAt stargazerCount isArchived description "
+    parts = ["r%d: %s { nameWithOwner pushedAt stargazerCount isArchived description diskUsage createdAt primaryLanguage { name } "
              "releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) { nodes { %s } } }" % (i, repo_ref(k), RELEASE_FIELDS)
              for i, k in enumerate(keys)]
     resp = gql("query {\n" + "\n".join(parts) + "\n}", token)
@@ -311,7 +311,8 @@ def meta_batch(keys, token):
             continue                      # some other error: keep the previous entry
         rel = ((r.get("releases") or {}).get("nodes") or [None])[0]
         e = {"repo": {"pushed": r.get("pushedAt"), "stars": r.get("stargazerCount"), "archived": bool(r.get("isArchived")),
-                      "full": r.get("nameWithOwner"), "desc": r.get("description") or ""}}
+                      "full": r.get("nameWithOwner"), "desc": r.get("description") or "", "size": r.get("diskUsage"),
+                      "lang": (r.get("primaryLanguage") or {}).get("name"), "created": r.get("createdAt")}}
         if rel:
             e["release"] = {"tag": rel.get("tagName"), "date": rel.get("publishedAt") or rel.get("createdAt"),
                             "pre": bool(rel.get("isPrerelease")), "url": rel.get("url")}
@@ -346,7 +347,8 @@ def readme_batch(keys, token):
                     break
                 except ValueError:
                     pass
-        out[k] = {"readme": A.analyze(text) if text else {"features": {}, "os": {}, "none": True}, "manifest": man}
+        out[k] = {"readme": A.analyze(text) if text else {"features": {}, "os": {}, "none": True}, "manifest": man,
+                  "readmeLure": A.lure_signals(text) if text else []}
     return out
 
 
@@ -404,10 +406,10 @@ def refresh_status(projects):
             fresh[k] = e
             if e.get("notFound"):
                 continue
-            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev:
-                changed.append(k)
+            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev or "readmeLure" not in prev:
+                changed.append(k)             # new, pushed since last run, or read before lure signals existed
             else:
-                e["readme"], e["manifest"] = prev.get("readme"), prev.get("manifest")
+                e["readme"], e["manifest"], e["readmeLure"] = prev.get("readme"), prev.get("manifest"), prev.get("readmeLure")
         time.sleep(0.5)
     log("  GitHub: %d of %d repos read, %d need their README read" % (len(fresh), len(gh_keys), len(changed)))
     for i in range(0, len(changed), 15):
@@ -424,6 +426,8 @@ def refresh_status(projects):
                 prev = repos.get(k) or {}
                 if "readme" in prev:
                     fresh[k]["readme"], fresh[k]["manifest"] = prev.get("readme"), prev.get("manifest")
+                    if "readmeLure" in prev:
+                        fresh[k]["readmeLure"] = prev["readmeLure"]
         time.sleep(0.5)
     for k in gl_keys:
         try:
