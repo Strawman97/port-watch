@@ -90,8 +90,8 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .row .upd{font-size:12.5px}
 .row .upd small{display:block;color:var(--muted);overflow-wrap:anywhere}
 .pill{display:inline-block;border-radius:4px;padding:1px 7px;font-size:12px;font-weight:600;white-space:nowrap}
-.t-r{background:var(--recomp-bg);color:var(--recomp)} .t-d{background:var(--decomp-bg);color:var(--decomp)} .t-c{background:#FCEFC7;color:#7A5200}
-@media (prefers-color-scheme: dark){.t-c{background:#3A3018;color:#F2C661}}
+.t-r{background:var(--recomp-bg);color:var(--recomp)} .t-d{background:var(--decomp-bg);color:var(--decomp)} .t-c{background:#FCEFC7;color:#7A5200} .t-p{background:#DDF3E4;color:#1E6B3A}
+@media (prefers-color-scheme: dark){.t-c{background:#3A3018;color:#F2C661}.t-p{background:#163A24;color:#8FDCA8}}
 .tags{display:flex;flex-wrap:wrap;gap:4px}
 .f{font-size:11.5px;border:1px solid var(--ink);border-radius:3px;padding:0 5px}
 .f.os{border-color:var(--line);background:var(--sunk)}
@@ -267,6 +267,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <input class="search" id="q" type="search" placeholder="Game or project">
     <label class="opt" style="margin-top:8px"><input type="checkbox" id="fFollow"> Followed only<span class="n" id="nFollow"></span></label>
     <label class="opt" title="Repositories that look like malware disguised as game ports are hidden unless this is ticked"><input type="checkbox" id="fRisky"> Show suspected malware lures<span class="n" id="nRisky"></span></label>
+    <label class="opt" title="Repositories that were deleted, made private or archived are left out of the list unless this is ticked"><input type="checkbox" id="fGone"> Show deleted or archived<span class="n" id="nGone"></span></label>
     <h3>Playability</h3><div id="fPlay"></div>
     <h3>Type</h3><div id="fType"></div>
     <h3>PC release</h3><div id="fPs"></div>
@@ -391,7 +392,7 @@ const FEED_CATS = /decompilations? & recompilations?|console to pc ports?|in the
 const FEED_SKIP = /\b(for android|android port|in browser|\bvr\b|ps vita port|switch port|3ds port|dreamcast port|master system port|saturn port|psp port|wii u port|xbox port|ps4 port|ps5 port|nes port|nintendo 64 port|amiga port|gamecube port|dsi port)\b/i;
 const DEFAULT_TOPICS = ["static-recompilation","rexglue","rexglue-recomp","n64recomp","xenonrecomp","recompilation","native-port","pc-port"];
 
-const PCOL = {"Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
+const PCOL = {"PC":"#5B6B82","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
 const AW_PLAT = {"N64":"N64","N64 / GameCube":"N64","Xbox 360":"Xbox 360","xbox360":"Xbox 360","PS1":"PS1","ps":"PS1","GameCube":"GameCube","GBA":"GBA","PS2":"PS2","NES":"NES","Wii":"Wii","DS":"DS","SNES":"SNES","Game Boy Color":"Game Boy Color","Game Boy":"Game Boy","Genesis":"Mega Drive","Xbox":"Xbox (original)","og xbox":"Xbox (original)","Switch":"Switch","Wii U":"Wii U","PS3":"PS3","PS4":"PS4","Arcade":"Arcade","3DS":"3DS","Dreamcast":"Dreamcast","PSP":"PSP","32X":"32X","Virtual Boy":"Virtual Boy","Game Gear":"Game Gear","Saturn":"Saturn","Master System":"Master System"};
 const AW_PLAT_FIX = {"supermedo/bloodborne_pc":"PS4","chasem-dev/sms-launcher":"GameCube","wurlyfox/c1":"PS1","999sian/melee-pc":"GameCube"};
 const NEG = /\b(not|no|without|planned|todo|missing|unsupported|isn'?t|aren'?t|won'?t|lacks?|future|coming soon|wishlist|roadmap|would like|eventually|broken|disabled|untested)\b/i;
@@ -415,10 +416,10 @@ const FEATURES = [
 ];
 const OSLIST = ["Windows","Linux","macOS","Android","iOS","Steam Deck","Switch","3DS","PS Vita","Wii U","PSP"];
 const CONSOLE_TARGETS = ["Switch","3DS","PS Vita","Wii U","PSP"];
-const TYPES = ["Recompilation","Decompilation","Reimplementation","Compatibility layer"];
-const TYPE_SHORT = {"Recompilation":["Recomp","t-r"],"Decompilation":["Decomp","t-d"],"Reimplementation":["Reimpl","t-d"],"Compatibility layer":["Wrapper","t-c"]};
-const PS = ["Never released on PC","Only a remake or remaster on PC","PC version is a different game","Also on PC (console version ported)","Not checked"];
-const PS_HELP = {"Never released on PC":"console exclusive","Only a remake or remaster on PC":"the original never came to PC","PC version is a different game":"the console version differs in content or design","Also on PC (console version ported)":"same game on PC; the port adds features or runs better","Not checked":"PC history not recorded yet"};
+const TYPES = ["Recompilation","Decompilation","Source Port","Reimplementation","Compatibility layer"];
+const TYPE_SHORT = {"Recompilation":["Recomp","t-r"],"Decompilation":["Decomp","t-d"],"Reimplementation":["Reimpl","t-d"],"Source Port":["Port","t-p"],"Compatibility layer":["Wrapper","t-c"]};
+const PS = ["Never released on PC","Only a remake or remaster on PC","PC version is a different game","Also on PC (console version ported)","Originally a PC game","Not checked"];
+const PS_HELP = {"Never released on PC":"console exclusive","Only a remake or remaster on PC":"the original never came to PC","PC version is a different game":"the console version differs in content or design","Also on PC (console version ported)":"same game on PC; the port adds features or runs better","Originally a PC game":"a PC game brought to modern systems or a new engine","Not checked":"PC history not recorded yet"};
 const OS_TEXT = [
   {id:"Windows",re:/\bwindows\b|\bwin64\b|\.exe\b|direct3d|d3d1[12]|\bpc\b/i},
   {id:"Linux",re:/\blinux\b|appimage|flatpak/i},
@@ -450,7 +451,7 @@ function loadState(){
 let saveFailed=false;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
-const UI={q:"",followed:false,showRisky:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
+const UI={q:"",followed:false,showRisky:false,showGone:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
 
 /* ---------------- helpers ---------------- */
 const $=s=>document.querySelector(s);
@@ -517,8 +518,7 @@ function awNormalize(g){
 /* ---------------- malware-lure detection ---------------- */
 // README signals (kept in step with scripts/pw_analysis.py LURE_RE)
 const LURE_RE={
-  badges:/img\.shields\.io\/badge\/(downloads?|rating|users|installs|active[-_%20 ]*users)[-_%]/i,
-  dlbutton:/badge\/download[^)\s"']*(windows|mac|now|latest|for)|\bdownload (for windows|for mac|now|the latest version)\b/i,
+  badges:/img\.shields\.io\/badge\/((downloads?|installs?|users|players|active[-_%20 ]*users)[-_]\d|rating[-_]\d)/i,
   filehost:/(mediafire\.com|mega\.nz|gofile\.io|pixeldrain\.com|anonfiles|dropbox\.com\/s|bit\.ly\/|tinyurl\.com|cutt\.ly|t\.me\/|discord(app)?\.com\/attachments|qiwi\.gg|krakenfiles|sendspace)/i,
   offsite:/\]\(https?:\/\/[a-z0-9-]+\.github\.io\/[^)\s]*(download|setup|install)[^)\s]*\)|download (for )?(windows|mac(os)?)[^\n]{0,200}?\]\(https?:\/\/(?!github\.com\/|img\.shields\.io\/)[^)\s]+\)/i,
   password:/(archive|zip|rar|7z|extract)[^\n]{0,60}password|password[^\n]{0,25}[:=]\s*\S{2,}/i
@@ -544,15 +544,15 @@ function lureRiskOf(k,m,stars){
   if(!k||k.startsWith("itch.io/")||!m)return null;const r=m.repo||{};const sig=m.readmeLure||[];const reasons=[];let sc=0;
   const noCode=r.size!=null&&r.size<=50&&!r.lang;if(noCode){sc+=2;reasons.push("almost no content and no code");}
   if(sig.includes("badges")){sc+=3;reasons.push("fake download or rating badges");}
-  if(sig.includes("dlbutton")){sc+=2;reasons.push("a download button in the README");}
   if(sig.includes("offsite")){sc+=3;reasons.push("download links that lead to another website");}
-  if(sig.includes("filehost")){sc+=3;reasons.push("links to file-hosting or link-shortening sites");}
+  if(sig.includes("filehost")){sc+=2;reasons.push("links to file-hosting or link-shortening sites");}
   if(sig.includes("password")){sc+=3;reasons.push("a password-protected download");}
   const imp=impersonates(k,stars);if(imp){sc+=2;reasons.push("its name copies "+imp);}
   if(r.created&&(Date.now()-new Date(r.created))/864e5<=30&&(stars||0)<=3){sc+=1;reasons.push("created in the last 30 days with almost no stars");}
-  const strong=noCode||sig.length>0;
-  if(sc>=5&&strong)return {level:"high",reasons};
-  if(sc>=3&&strong)return {level:"medium",reasons};
+  const hasCode=!!r.lang&&(r.size==null||r.size>=200);if(hasCode)sc-=3;   // real projects have real code
+  const strong=noCode||sig.includes("badges")||sig.includes("offsite");
+  if(sc>=6&&strong)return {level:"high",reasons};
+  if(sc>=3&&(sig.length>0||!!imp))return {level:"medium",reasons};
   return null;
 }
 function riskPill(v){return !v.risk?"":v.risk.level==="high"?`<span class="pill risk-high" title="${esc("Looks like malware disguised as a game port: "+v.risk.reasons.join(", "))}">Possible malware</span>`:`<span class="pill risk-med" title="${esc("Warning signs: "+v.risk.reasons.join(", "))}">Check before downloading</span>`;}
@@ -705,7 +705,7 @@ function applyManifest(m,j){
   if(!j){delete m.manifest;return;}
   const sys=Array.isArray(j.system)?j.system[0]:j.system;const types=[].concat(j.type||[]);
   m.manifest={game:typeof j.game==="string"?j.game.slice(0,120):"",system:RJ_SYS[sys]||(sys?String(sys).slice(0,30):""),
-    type:types.includes("recomp")?"Recompilation":(types.includes("port")||types.includes("decomp"))?"Decompilation":"",
+    type:types.includes("recomp")?"Recompilation":types.includes("decomp")?"Decompilation":types.includes("port")?"Source Port":"",
     targets:[].concat(j.targets||[]).map(String).slice(0,8),notes:typeof j.notes==="string"?j.notes.slice(0,600):"",approach:typeof j.approach==="string"?j.approach.slice(0,200):""};
 }
 function applyShared(p,st){
@@ -1147,8 +1147,9 @@ function imgPair(u){return `<img class="bg" src="${esc(u)}" alt="" loading="lazy
 function paintCover(el,c){if(!c||!c.u)return;el.querySelectorAll("img").forEach(i=>i.remove());el.insertAdjacentHTML("afterbegin",imgPair(c.u));}
 const coverIO=("IntersectionObserver" in window)?new IntersectionObserver(ents=>{for(const en of ents){if(!en.isIntersecting)continue;coverIO.unobserve(en.target);const key=en.target.dataset.ck;
   const c=S.covers[key];const stale=c&&!c.u&&Date.now()-c.t>14*864e5;if((c&&!stale)||coverPending.has(key))continue;coverPending.add(key);coverQ.push([key,en.target.dataset.ct,en.target.dataset.cp]);}pumpCovers();},{rootMargin:"300px"}):null;
-function coverHTML(v,isNew,withType){const c=coverFor(v);const key=coverKey(v);
-  return `<div class="cover" style="--pc:${PCOL[v.platform]||"#888"}" data-ck="${esc(key)}" data-ct="${esc(coverTitle(v))}" data-cp="${esc(v.platform)}" data-has="${c?1:0}">${c?imgPair(c.u):""}<span class="ph">${esc(v.game)}</span>${withType?`<span class="ty"><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0]}</span></span>`:""}${isNew?'<span class="newtag">NEW</span>':""}</div>`;}
+function typePills(types){return types.map(t=>`<span class="pill ${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[0]}</span>`).join(" ");}
+function coverHTML(v,isNew,withType){const c=coverFor(v);const key=coverKey(v);const tys=Array.isArray(withType)?withType:[v.type];
+  return `<div class="cover" style="--pc:${PCOL[v.platform]||"#888"}" data-ck="${esc(key)}" data-ct="${esc(coverTitle(v))}" data-cp="${esc(v.platform)}" data-has="${c?1:0}">${c?imgPair(c.u):""}<span class="ph">${esc(v.game)}</span>${withType?`<span class="ty">${typePills(tys)}</span>`:""}${isNew?'<span class="newtag">NEW</span>':""}</div>`;}
 function observeCovers(root){if(!coverIO)return;root.querySelectorAll('.cover[data-ck][data-has="0"]').forEach(el=>{if(!S.covers[el.dataset.ck])coverIO.observe(el);});}
 
 /* ---------------- rendering ---------------- */
@@ -1172,6 +1173,7 @@ function renderUpdates(){
 }
 function passes(v,skip){
   if(v.risk&&v.risk.level==="high"&&!UI.showRisky)return false;
+  if((v.gone||v.archived)&&!UI.showGone)return false;
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
   if(skip!=="type"&&UI.type.size&&!UI.type.has(v.type))return false;
@@ -1230,7 +1232,8 @@ function groupTileHTML(g,nid){
   const lead=g.lead,isNew=g.items.some(v=>nid.has(v.p.id));const cv=g.items.find(v=>coverFor(v))||lead;
   if(g.items.length===1)return tileHTML(lead,isNew,g);
   const oss=OSLIST.filter(o=>g.items.some(v=>v.os[o]));const best=g.items.some(v=>v.play==="yes")?"yes":g.items.every(v=>v.play==="no")?"no":"unknown";
-  return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" data-id="${esc(lead.p.id)}">${coverHTML(cv,isNew,true)}
+  const gtypes=[...new Set(g.items.map(v=>v.type))];
+  return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" data-id="${esc(lead.p.id)}">${coverHTML(cv,isNew,gtypes)}
     <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.platform)} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
 }
 function newIds(){const s=new Set();for(const e of unread())if(e.id)s.add(e.id);return s;}
@@ -1354,6 +1357,7 @@ const UB={status:"idle",games:[],updated:""};const UBG={};const UBG_ERR={};
 UI.find={q:"",plat:"",method:"",runs:"",consoles:true,native:false,sort:"match",open:null};
 function ubPlat(p){return UB_PLAT[p]||p;}
 function ubType(methods){const m=methods||[];if(m.includes("Static recomp"))return "Recompilation";if(m.includes("Runtime port"))return "Compatibility layer";
+  if(m.includes("Source port")&&!m.some(x=>/decomp/i.test(x)))return "Source Port";
   if(m.some(x=>/decomp|source port|disassembly|native port/i.test(x)))return "Decompilation";if(m.includes("Reimplementation"))return "Reimplementation";return "Recompilation";}
 function linkKey(url){const g=/^https?:\/\/(?:www\.)?github\.com\/([^/#?]+\/[^/#?]+)/i.exec(url||"");if(g)return g[1].toLowerCase().replace(/\.git$/,"");
   const l=/^https?:\/\/(?:www\.)?gitlab\.com\/([^#?]+?)(?:\/-\/.*)?\/?$/i.exec(url||"");if(l)return "gitlab.com/"+l[1].toLowerCase();const it=itchParts(url);return it?"itch.io/"+it.user+"/"+it.game:null;}
@@ -1486,7 +1490,8 @@ function renderFilters(){
   $("#fType").innerHTML=TYPES.map(t=>opt("type",t,tc[t])).join("");
   const plc=cnt("play",v=>v.play);$("#fPlay").innerHTML=["yes","no","unknown"].map(x=>`<label class="opt"><input type="checkbox" data-set="play" value="${x}" ${UI.play.has(x)?"checked":""}> ${PLAY_LABEL[x]}<span class="n">${plc[x]||0}</span></label>`).join("");
   const fc=followedCount();$("#nFollow").textContent=fc||"";
-  const rc=allProjects().map(view).filter(v=>v.risk&&v.risk.level==="high").length;$("#nRisky").textContent=rc||"";$("#fRisky").checked=UI.showRisky;$("#fFollow").checked=UI.followed;updateFollowBtn();
+  const rc=allProjects().map(view).filter(v=>v.risk&&v.risk.level==="high").length;$("#nRisky").textContent=rc||"";$("#fRisky").checked=UI.showRisky;
+  const gc=allProjects().map(view).filter(v=>v.gone||v.archived).length;$("#nGone").textContent=gc||"";$("#fGone").checked=UI.showGone;$("#fFollow").checked=UI.followed;updateFollowBtn();
   const psc=cnt("ps",v=>v.ps);$("#fPs").innerHTML=PS.map(x=>opt("ps",x,psc[x])).join("");
   $("#fPlat").innerHTML=order.map(k=>opt("plat",k,pc[k],true)).join("");
   const present=new Set();all.forEach(v=>Object.keys(v.os).forEach(o=>present.add(o)));UI.os.forEach(o=>present.add(o));
@@ -1517,7 +1522,7 @@ function groupFor(v){const gk=groupKeyOf(v);const items=allProjects().map(view).
 function openProject(id){
   const p=allProjects().find(x=>x.id===id);if(!p)return;const v=view(p);const g=groupFor(v);UI.sel[g.key]=id;
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
-  $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span> <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
+  $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2>${g.items.length>1?typePills([...new Set(g.items.map(x=>x.type))]):`<span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span>`} <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
   const d=$("#projDlg");if(!d.open)d.showModal();observeCovers($("#projBody"));
   const st=$("#projBody .ptab[aria-selected=true]");if(st)st.scrollIntoView({block:"nearest",inline:"nearest"});
 }
@@ -1559,6 +1564,7 @@ $("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.t
   else if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("tile")){e.preventDefault();openProject(e.target.dataset.id);}});
 $("#fFollow").addEventListener("change",e=>{UI.followed=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fRisky").addEventListener("change",e=>{UI.showRisky=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fGone").addEventListener("change",e=>{UI.showGone=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#groupTog").addEventListener("change",e=>{S.settings.ungroup=!e.target.checked;UI.open=null;save();render();});
 function onOsOverride(e){const cb=e.target.closest("[data-osov]");if(!cb)return false;const det=cb.closest("[data-detail]");if(!det)return true;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const cur=new Set(Array.isArray(o.os)?o.os:Object.keys(view(allProjects().find(x=>x.id===id)).os));
@@ -1581,7 +1587,7 @@ $("#fullCancel").addEventListener("click",()=>fullDlg.close());
 $("#fullToken").addEventListener("click",()=>{fullDlg.close();$("#settingsBtn").click();setTimeout(()=>$("#token").focus(),50);});
 $("#fullFollowed").addEventListener("click",()=>{fullDlg.close();runCheck("followed");});
 $("#fullAnyway").addEventListener("click",()=>{if($("#fullDontAsk").checked){S.noTokenOk=true;save();}fullDlg.close();runCheck("all");});
-function gotoProject(id){if(S.settings.view==="grid"){UI.tab="projects";clearFilters();renderAll();openProject(id);return;}UI.tab="projects";clearFilters();const tp=allProjects().find(x=>x.id===id);if(!tp)return;const tv=view(tp);if(tv.risk&&tv.risk.level==="high")UI.showRisky=true;const gk=groupKeyOf(tv);UI.open=gk;UI.sel[gk]=id;
+function gotoProject(id){if(S.settings.view==="grid"){UI.tab="projects";clearFilters();renderAll();openProject(id);return;}UI.tab="projects";clearFilters();const tp=allProjects().find(x=>x.id===id);if(!tp)return;const tv=view(tp);if(tv.risk&&tv.risk.level==="high")UI.showRisky=true;if(tv.gone||tv.archived)UI.showGone=true;const gk=groupKeyOf(tv);UI.open=gk;UI.sel[gk]=id;
   const ix=groupsOf(filtered()).findIndex(g=>g.key===gk);if(ix>=UI.limit)UI.limit=ix+20;renderAll();const el=document.querySelector(`.row[data-gk="${CSS.escape(gk)}"]`);if(el)el.scrollIntoView({block:"center"});}
 async function addFromInbox(k){const it=S.disc.inbox[k];if(!it)return;
   if(it.feed&&!it.repo){$("#addBtn").click();$("#addUrl").value="";$("#addUrl").placeholder="Paste the project's own link (from "+(it.url||"the listing")+")";$("#addGame").value=it.game||it.name;addDlg.dataset.from=k;window.open(it.url,"_blank","noopener");return;}const j=await readManifest(k);const name=it.game||(it.name.includes("/")?it.name.split("/")[1]:it.name).replace(/[-_.]+/g," ").replace(/\b(re-?comp(iled|ilation)?|recomp|pc port|port)\b/ig,"").replace(/([a-z])([A-Z])/g,"$1 $2").trim()||it.name;
@@ -1611,9 +1617,10 @@ const PLAT_RULES=[["Xbox 360",/xbox ?360|\bx360\b|\bxbla\b/i],["Xbox One",/xbox 
   ["PS4",/\bps4\b|playstation 4/i],["PS3",/\bps3\b|playstation 3/i],["PS2",/\bps2\b|playstation 2/i],["PSP",/\bpsp\b|playstation portable/i],["PS1",/\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))/i],
   ["Wii U",/wii ?u\b/i],["Wii",/\bwii\b/i],["GameCube",/gamecube|\bgcn\b/i],["Switch",/nintendo switch|\(switch\)|switch (game|version|title|release)/i],["3DS",/\b3ds\b/i],["DS",/\bnds\b|nintendo ds\b/i],
   ["N64",/\bn64\b|nintendo 64/i],["SNES",/\bsnes\b|super nintendo/i],["NES",/\bnes\b|famicom/i],["GBA",/\bgba\b|game ?boy advance/i],["Game Boy Color",/\bgbc\b|game ?boy colou?r/i],["Game Boy",/game ?boy\b/i],
-  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i]];
+  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i]];
 function detectPlatform(text){for(const [p,re] of PLAT_RULES)if(re.test(text||""))return p;return "";}
 function detectType(text){const t=text||"";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
+  if(/source[- ]port|engine port/i.test(t)&&!/decomp/i.test(t))return "Source Port";
   if(/decomp|source port|disassembl/i.test(t))return "Decompilation";if(/reimplement|engine recreation|open-?source engine/i.test(t))return "Reimplementation";return "";}
 let addPre=null,addTouched={},addSeq=0,addTimer;
 ["#addGame","#addPlat","#addType","#addPs"].forEach(sel=>$(sel).addEventListener("change",()=>{addTouched[sel]=true;}));
@@ -1687,7 +1694,10 @@ $("#exportFixes").addEventListener("click",async()=>{
   const addedOut={};
   try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}
   let newProjects=0;
+  let skipped=0;
+  for(const key of Object.keys(addedOut)){const f=out[key]||{};const pv=allProjects().find(x=>x.k===key);const vv=pv&&view(pv);if(f.hide||(vv&&vv.risk&&vv.risk.level==="high")){delete addedOut[key];skipped++;}}
   for(const p of Object.values(S.custom)){const o=S.ov[p.id]||{};const key=p.k||("link:"+p.l);if(!p.l&&!p.k)continue;
+    const vv=view(p),f=out[key]||{};if(f.hide||(vv.risk&&vv.risk.level==="high")||vv.gone){skipped++;continue;}
     const e={link:p.l,title:o.game||p.g,platform:o.platform||p.p,type:o.type||p.t};
     const ps=o.ps||p.ps;if(ps&&ps!=="Not checked")e.pcRelease=ps;
     const ro=Array.isArray(o.os)?o.os:(p.po?p.po.split(",").map(x=>x.trim()).filter(Boolean):[]);if(ro.length)e.runsOn=ro;
@@ -1698,7 +1708,7 @@ $("#exportFixes").addEventListener("click",async()=>{
     added:Object.fromEntries(Object.entries(addedOut).sort(([a],[b])=>a.localeCompare(b)))};
   const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="overrides.json";document.body.appendChild(a);a.click();a.remove();
   const parts=[added?added+" fix"+(added>1?"es":""):"",newProjects?newProjects+" added project"+(newProjects>1?"s":""):""].filter(Boolean);
-  toast(parts.length?parts.join(" and ")+" included. Upload the file to the repository as overrides.json to share them with everyone.":"Nothing new: your fixes and added projects already match the shared ones.");});
+  toast((parts.length?parts.join(" and ")+" included. Upload the file to the repository as overrides.json to share them with everyone.":"Nothing new: your fixes and added projects already match the shared ones.")+(skipped?" Left out "+skipped+" suspected lure"+(skipped>1?"s":"")+", hidden or deleted project"+(skipped>1?"s":"")+".":""));});
 $("#importBtn").addEventListener("click",()=>$("#importFile").click());
 $("#importFile").addEventListener("change",async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||d.v!==2)throw 0;const tok=S.settings.token;S=Object.assign(defaults(),d);S.settings.token=S.settings.token||tok;S.covers=S.covers||{};S.settings.feeds=S.settings.feeds||DEFAULT_FEEDS.slice();S.disc.feedSeen=S.disc.feedSeen||{};S.disc.filtered=S.disc.filtered||{};S.disc.feedStatus=S.disc.feedStatus||{};for(const id in seedAnalysis)delete seedAnalysis[id];save();dlg.close();renderAll();toast("Backup imported.");}catch(err){toast("That file isn't a Port Watch backup from this version.");}e.target.value="";});
 $("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved data and discovered projects? This can't be undone.")){localStorage.removeItem(LS);S=defaults();for(const id in seedAnalysis)delete seedAnalysis[id];dlg.close();renderAll();toast("All data reset.");}});

@@ -10,7 +10,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 
 - **Tracks 500+ projects** across Xbox 360, Xbox, PS1–PS4, N64, GameCube, Wii, Wii U, SNES, GBA, DS, 3DS and more.
 - **Shows what each port offers:**
-  - Type (recompilation, decompilation, reimplementation or compatibility layer) and original platform.
+  - Type (recompilation, decompilation, source port, reimplementation or compatibility layer) and original platform, including PC for games that began there.
   - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, Switch, 3DS, PS Vita, Wii U and PSP.
   - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
@@ -67,16 +67,22 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
 Fake "PC port" repositories are a known way of spreading malware. Port Watch checks every repository for the warning signs they share:
 
 - almost no content and no code;
-- fake "Downloads" or "Rating" badges in the README;
-- a "Download for Windows/Mac" button, or download links to another site (often another account's GitHub Pages);
+- badges claiming download counts, user numbers or ratings;
+- download links that leave GitHub, often to another account's GitHub Pages (buttons pointing at the project's own GitHub releases are fine);
 - links to file hosts or link shorteners;
 - password-protected downloads;
 - a name copying a well-known project from a different owner, with few stars;
 - a brand-new repository with almost no stars.
 
-Strong combinations mark a project as **Possible malware**. It's hidden from the list unless you tick **Show suspected malware lures**, and its details explain why. Weaker signs show a **Check before downloading** badge. **Add project** warns before you add a flagged repository.
+A repository with real code counts against a flag, so genuine projects with download buttons aren't flagged. Strong combinations mark a project as **Possible malware**. It's hidden from the list unless you tick **Show suspected malware lures**, and its details explain why. Weaker signs show a **Check before downloading** badge. **Add project** warns before you add a flagged repository.
+
+**Export fixes for everyone** never includes suspected lures, hidden projects or deleted repositories, so they can't be shared by accident.
 
 These are warning signs, not proof. Never run downloads from a project you're unsure about, and report suspicious repositories to GitHub.
+
+## Deleted and archived repositories
+
+Projects whose repository was deleted, made private or archived are left out of the list. Tick **Show deleted or archived** to see them; some archived projects still have working downloads.
 
 ## Privacy
 
@@ -138,8 +144,8 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | --- | --- |
 | `title` | The game's name. A year in brackets, such as `(2005)`, is kept and helps the cover lookup pick the right game. |
 | `cover` | A cover image link. It's used instead of any looked-up cover. |
-| `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`. |
-| `type` | `Recompilation`, `Decompilation`, `Reimplementation` or `Compatibility layer`. |
+| `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`, or `PC` for games that began on PC. |
+| `type` | `Recompilation`, `Decompilation`, `Source Port`, `Reimplementation` or `Compatibility layer`. **Source Port** is a game's own code brought to modern systems (DevilutionX for Diablo); **Reimplementation** is a new engine written from scratch (SiegeFX for Dungeon Siege). |
 | `pcRelease` | One of the **PC release** values shown in Port Watch's filters. |
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
 | `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
