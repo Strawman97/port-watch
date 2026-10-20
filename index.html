@@ -711,8 +711,13 @@ function adoptShared(){
     S.sharedSeen=S.sharedSeen||{};S.sharedSeen[sp.id]=1;delete S.custom[cid];moved++;}
   if(moved)save();return moved;
 }
+function dropRedundantTitles(){
+  let n=0;for(const p of allProjects()){const lo=S.ov[p.id];if(!lo||!lo.game)continue;
+    if(!localRename(p,lo,sharedFix(p)||{})){delete lo.game;n++;if(!Object.keys(lo).length)delete S.ov[p.id];}}
+  if(n)save();return n;
+}
 function noteSharedAdded(){
-  if(!REPO.loaded)return;adoptShared();const keys=REPO.added.map(p=>p.id);
+  if(!REPO.loaded)return;adoptShared();dropRedundantTitles();const keys=REPO.added.map(p=>p.id);
   if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
   let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;const vv=view(p);if(vv.risk&&vv.risk.level==="high")continue;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
   if(n){save();renderUpdates();}
@@ -1195,15 +1200,18 @@ async function lookupLibretro(title,platform){
 }
 function coverTitle(v){return stripSuffix(stripParens(v.game));}
 function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
+function baseTitle(p,so){return (so&&so.title)||(p.tf?p.g:displayTitle(p,(S.meta[p.k]||{}).manifest||null));}
+function localRename(p,lo,so){return !!(lo.game&&nrmT(bare(lo.game))!==nrmT(bare(baseTitle(p,so))));}
 function coverFor(v){
   if(v.ghost){const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
   const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
-  if(so.cover&&!lo.game)return {u:so.cover,s:"Port Watch's shared fixes"};
-  if(v.p.sharedCover&&!lo.game)return {u:v.p.sharedCover,s:"Port Watch's maintainer"};
-  const renamed=lo.game||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
+  const myRename=localRename(v.p,lo,so);   // a local title only counts if it differs from the shared one
+  if(so.cover&&!myRename)return {u:so.cover,s:"Port Watch's shared fixes"};
+  if(v.p.sharedCover&&!myRename)return {u:v.p.sharedCover,s:"Port Watch's maintainer"};
+  const renamed=myRename||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
   const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];
-  if(rc&&rc.url&&(!renamed||(!lo.game&&nrmT(rc.title||"")===nrmT(coverTitle(v)))))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  if(rc&&rc.url&&(!renamed||(!myRename&&nrmT(bare(rc.title||""))===nrmT(bare(coverTitle(v))))||(!myRename&&!so.title)))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
 function sgdbSearchURL(v){return "https://www.steamgriddb.com/search/grids?term="+encodeURIComponent(coverTitle(v));}
 let sgdbBlocked=false;const coverQ=[];let coverActive=0;const coverPending=new Set();
 async function lookupSGDB(title){
