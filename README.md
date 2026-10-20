@@ -65,11 +65,10 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
 
 ## Screenshots
 
-Each project's details show up to ten screenshots, in this order:
+Each project's details show two rows of screenshots:
 
-1. **The project's README:** images of the port itself, so you see its widescreen, HDR or new renderer. Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
-2. **IGDB:** screenshots of the original game, mainly for newer consoles. The workflow looks each game up on its original platform and only accepts a confident title match.
-3. **libretro-thumbnails:** an in-game shot and the title screen, for games whose box art comes from libretro.
+- **The port:** images from the project's README (its launcher, widescreen, HDR or new renderer). Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
+- **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen where available. The workflow looks each game up on its original platform and only accepts a confident title match.
 
 If a screenshot is wrong, open it and click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
 
@@ -158,14 +157,22 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | --- | --- |
 | `title` | The game's name. A year in brackets, such as `(2005)`, is kept and helps the cover lookup pick the right game. |
 | `cover` | A cover image link. It's used instead of any looked-up cover. |
-| `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`, or `PC` for games that began on PC. |
+| `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`, `XBLA (Xbox 360)`, `Mobile`, or `PC` for games that began on PC. Xbox Live Arcade games recorded as `Xbox 360` are shown as XBLA automatically. |
 | `type` | `Recompilation`, `Decompilation`, `Source Port`, `Reimplementation` or `Compatibility layer`. **Source Port** is a game's own code brought to modern systems (DevilutionX for Diablo); **Reimplementation** is a new engine written from scratch (SiegeFX for Dungeon Siege). |
 | `pcRelease` | One of the **PC release** values shown in Port Watch's filters. |
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
+| `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. The project then appears under each of those games too, with its own cover and screenshots. |
+| `hideScreens` | Screenshot links to leave out. |
 | `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
 | `note` | Optional text shown in the project's details. |
 
 A visitor's own edits in their browser still take priority for them.
+
+**Projects that cover several games** (launchers such as Athelas, or engines such as Riptide that play more than one game): fill in **Other games this project covers** in the project's edits, one per line as `Title | Platform`, then export. The project appears under its main game and under each other game as a tab, and its details list every game with links between them. Edits stay on the main game's entry.
+
+**Grouping:** projects are grouped by game title and platform, ignoring anything in brackets such as years. If two projects for the same game still don't group (for example "Burnout 3" and "Burnout 3: Takedown"), give them the same title with a shared fix.
+
+**Your own copies of shared projects:** if a project you added yourself is later shared, Port Watch switches you to the shared copy, keeping your edits and follow. Exports then can't overwrite the shared entry with an older copy.
 
 **Adding a project for everyone:** add it in Port Watch with **Add project**, or with **Add** in **Find a game**, then use **Export fixes for everyone** and upload the file as above. Pasting a GitHub or GitLab link into **Add project** checks the repository straight away. It confirms the repository exists and isn't already tracked, fills in the title, platform and type, and shows its latest release, platforms and features, so you can correct anything before adding. Added projects go in the file's `added` section, keyed by repository:
 

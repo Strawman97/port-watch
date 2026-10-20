@@ -105,6 +105,7 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .dgrid{display:grid;gap:14px 26px;grid-template-columns:1fr;grid-template-areas:"runs" "feats" "proj" "shots" "more"}
 .d-shots{grid-area:shots;min-width:0}
 .shots{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shotrow+.shotrow{margin-top:10px}.shotlabel{font-size:13px;font-weight:600;margin-bottom:5px}
 .shot{flex:0 0 auto;border:1px solid var(--line);border-radius:6px;padding:0;background:var(--surface);cursor:zoom-in;line-height:0}
 .shot img{height:118px;width:auto;max-width:280px;object-fit:cover;border-radius:5px;display:block}
 .shot:hover{border-color:var(--action)}
@@ -117,6 +118,9 @@ dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 @container (min-width:640px){.dgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"runs proj" "feats proj" "shots shots" "more more"}}
 @container (min-width:980px){.dgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,1.25fr);grid-template-areas:"runs feats proj" "shots shots shots" "more more more"}}
 .chipset{display:flex;flex-wrap:wrap;gap:5px}
+.games-cov{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:8px}
+.chipbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:1px 9px;font-size:12.5px;cursor:pointer}
+.chipbtn small{color:var(--muted)}.chipbtn.cur{border-color:var(--action);font-weight:600;cursor:default}
 .chipset .c{font-size:12.5px;line-height:1.5;padding:1px 9px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}
 .chipset .c.yes{color:var(--ink);border-color:var(--recomp);background:var(--recomp-bg);font-weight:500}
 .chipset .c.planned{color:var(--ink);border-style:dashed}
@@ -405,7 +409,7 @@ const FEED_CATS = /decompilations? & recompilations?|console to pc ports?|in the
 const FEED_SKIP = /\b(for android|android port|in browser|\bvr\b|ps vita port|switch port|3ds port|dreamcast port|master system port|saturn port|psp port|wii u port|xbox port|ps4 port|ps5 port|nes port|nintendo 64 port|amiga port|gamecube port|dsi port)\b/i;
 const DEFAULT_TOPICS = ["static-recompilation","rexglue","rexglue-recomp","n64recomp","xenonrecomp","recompilation","native-port","pc-port"];
 
-const PCOL = {"PC":"#5B6B82","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
+const PCOL = {"PC":"#5B6B82","Mobile":"#7A5AF8","PS Vita":"#2E4E9E","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
 const AW_PLAT = {"N64":"N64","N64 / GameCube":"N64","Xbox 360":"Xbox 360","xbox360":"Xbox 360","PS1":"PS1","ps":"PS1","GameCube":"GameCube","GBA":"GBA","PS2":"PS2","NES":"NES","Wii":"Wii","DS":"DS","SNES":"SNES","Game Boy Color":"Game Boy Color","Game Boy":"Game Boy","Genesis":"Mega Drive","Xbox":"Xbox (original)","og xbox":"Xbox (original)","Switch":"Switch","Wii U":"Wii U","PS3":"PS3","PS4":"PS4","Arcade":"Arcade","3DS":"3DS","Dreamcast":"Dreamcast","PSP":"PSP","32X":"32X","Virtual Boy":"Virtual Boy","Game Gear":"Game Gear","Saturn":"Saturn","Master System":"Master System"};
 const AW_PLAT_FIX = {"supermedo/bloodborne_pc":"PS4","chasem-dev/sms-launcher":"GameCube","wurlyfox/c1":"PS1","999sian/melee-pc":"GameCube"};
 const NEG = /\b(not|no|without|planned|todo|missing|unsupported|isn'?t|aren'?t|won'?t|lacks?|future|coming soon|wishlist|roadmap|would like|eventually|broken|disabled|untested)\b/i;
@@ -528,6 +532,16 @@ function awNormalize(g){
   return {k,t,p,title:g.title,url:g.url,d:g.note||g.description||"",rel:g.release||"",rd:g.release_date||"",lc:g.last_commit||"",stars:g.stars,archived:!!g.archived,linkOk:g.link_ok!==false,ai:!!g.ai_flag};
 }
 
+/* ---------------- Xbox Live Arcade titles (shown as XBLA when recorded as Xbox 360) ---------------- */
+const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","castlevania symphony of the night","crystal defenders","daytona usa","dead rising 2 case west","dead rising 2 case zero",
+  "earthworm jim hd","exit","exit 2","exit 1 and 2","exit exit 2","geometry wars retro evolved","geometry wars retro evolved 2","goldeneye 007","golden eye 007","goldeneye 007 xbla pc recomp","hard corps uprising",
+  "metal slug xx","nba jam on fire edition","naughty bear panic in paradise","outpost kaloki x","perfect dark","perfect dark remaster","super street fighter ii turbo hd remix",
+  "dishwasher dead samurai","dishwasher vampire smile","simpsons arcade","simpsons arcade game","vigilante 8 arcade","burnout crash","minecraft xbox 360 edition","sonic the fighters","rez hd",
+  "ikaruga","braid","trials hd","shadow complex","castle crashers","splosion man","ms splosion man","hydro thunder hurricane","beyond good and evil hd","alan wake s american nightmare",
+  "bomberman live","pac man championship edition dx","pac man championship edition","street fighter iii 3rd strike online edition","marvel vs capcom 2","sonic adventure","sonic adventure 2",
+  "nights into dreams","jet set radio","crazy taxi","space channel 5 part 2","rocket knight","contra rebirth","limbo","bastion","fez","super meat boy","toy soldiers","toy soldiers cold war"]);
+function bare(t){return String(t||"").replace(/\s*\([^)]*\)/g," ").replace(/\s+/g," ").trim();}
+
 /* ---------------- screenshots ---------------- */
 const SHOT_SKIP=/shields\.io|badge|powered-?by|gplv?\d|gnu\.org\/graphics|licen[cs]e|made-?with|built-?with|logo|icon|banner|favicon|box-?art|cover|background|\.svg(\?|$)|discord|invidget|widget|ko-?fi|patreon|paypal|buymeacoffee|sponsor|readme-typing|skillicons|github-readme-stats|star-history|contrib\.rocks|visitor|komarev|wakatime|capsule-render|emoji|avatar|qr-?code|\.mp4|\.webm|\.mov/i;
 function resolveImg(u,full){
@@ -549,26 +563,30 @@ function readmeShots(text,full){
   return out;
 }
 const IGDB_IMG=(id,size)=>"https://images.igdb.com/igdb/image/upload/t_"+size+"/"+id+".jpg";
-function igdbFor(p){const sc=REPO.screens;if(!sc)return null;const q=sc.map[p.k||p.id];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
+function igdbFor(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
 function shotsFor(v){
   if(typeof HOSTED!=="undefined"&&HOSTED)return [];
-  const out=[],seen=new Set();const add=(u,t,src)=>{if(!u||seen.has(u))return;seen.add(u);out.push({u,t:t||u,src});};
+  const out=[],seen=new Set();const add=(u,t,src,kind)=>{if(!u||seen.has(u))return;seen.add(u);out.push({u,t:t||u,src,kind});};
   const lo=S.ov[v.p.id]||{},so=v.so||{};const hide=new Set([...(lo.hideScreens||[]),...(so.hideScreens||[])]);
-  (so.screens||[]).forEach(u=>add(u,u,"Port Watch's maintainer"));
-  if(!v.risk)((v.m&&v.m.shots)||[]).forEach(u=>add(u,u,"the project's README"));
-  const ig=igdbFor(v.p);if(ig)ig.shots.forEach(id=>add(IGDB_IMG(id,"screenshot_huge"),IGDB_IMG(id,"screenshot_med"),"IGDB"));
-  const c=coverFor(v);if(c&&/libretro/.test(c.s||"")&&/\/Named_Boxarts\//.test(c.u)){add(c.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails");add(c.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)");}
-  return out.filter(x=>!hide.has(x.u)).slice(0,10);
+  (so.screens||[]).forEach(u=>add(u,u,"Port Watch's maintainer","port"));
+  if(!v.risk)((v.m&&v.m.shots)||[]).slice(0,6).forEach(u=>add(u,u,"the project's README","port"));
+  const ig=igdbFor(v.p,v);if(ig)ig.shots.slice(0,6).forEach(id=>add(IGDB_IMG(id,"screenshot_huge"),IGDB_IMG(id,"screenshot_med"),"IGDB","orig"));
+  const lb=!v.ghost&&seedCover(v.p)||(()=>{const c=coverFor(v);return c&&/libretro/.test(c.s||"")?c:null;})();
+  if(lb&&/\/Named_Boxarts\//.test(lb.u)){add(lb.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails","orig");add(lb.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)","orig");}
+  return out.filter(x=>!hide.has(x.u));
 }
 function shotsHTML(v){
   const list=shotsFor(v);if(!list.length)return "";
-  const srcs=[...new Set(list.map(x=>x.src.replace(/ \(title screen\)$/,"")))];
-  return `<section class="d-shots"><h4>Screenshots <span class="note">from ${srcs.map(x=>x==="IGDB"?'<a href="https://www.igdb.com" target="_blank" rel="noopener">IGDB</a>':esc(x)).join(", ")}</span></h4>
-    <div class="shots">${list.map((x,i)=>`<button class="shot" data-shot="${i}" data-pid="${esc(v.p.id)}" title="From ${esc(x.src)}. Click to enlarge."><img src="${esc(x.t||x.u)}" alt="Screenshot ${i+1} of ${esc(v.game)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('.shot').remove()"></button>`).join("")}</div></section>`;
+  const row=(kind,label)=>{const items=list.map((x,i)=>[x,i]).filter(([x])=>x.kind===kind);if(!items.length)return "";
+    const srcs=[...new Set(items.map(([x])=>x.src.replace(/ \(title screen\)$/,"")))];
+    return `<div class="shotrow"><div class="shotlabel">${label} <span class="note">from ${srcs.map(x=>x==="IGDB"?'<a href="https://www.igdb.com" target="_blank" rel="noopener">IGDB</a>':esc(x)).join(", ")}</span></div>
+      <div class="shots">${items.map(([x,i])=>`<button class="shot" data-shot="${i}" data-pid="${esc(v.p.id)}" data-gk="${esc(groupKeyOf(v))}" title="From ${esc(x.src)}. Click to enlarge."><img src="${esc(x.t||x.u)}" alt="Screenshot ${i+1} of ${esc(v.game)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('.shot').remove()"></button>`).join("")}</div></div>`;};
+  return `<section class="d-shots"><h4>Screenshots</h4>${row("port","The port")}${row("orig",v.ghost?"The original game: "+esc(v.game):"The original game")}</section>`;
 }
 const SHOTBOX={pid:"",i:0,list:[]};
-function openShot(pid,i){
-  const p=allProjects().find(x=>x.id===pid);if(!p)return;const v=view(p);SHOTBOX.pid=pid;SHOTBOX.list=shotsFor(v);SHOTBOX.i=Math.max(0,Math.min(i,SHOTBOX.list.length-1));paintShot(v);
+function shotView(pid,gk){const p=allProjects().find(x=>x.id===pid);if(!p)return null;const v=view(p);if(!gk)return v;return expandViews([v]).find(x=>groupKeyOf(x)===gk)||v;}
+function openShot(pid,i,gk){
+  const v=shotView(pid,gk);if(!v)return;SHOTBOX.gk=gk||"";SHOTBOX.pid=pid;SHOTBOX.list=shotsFor(v);SHOTBOX.i=Math.max(0,Math.min(i,SHOTBOX.list.length-1));paintShot(v);
   const d=$("#shotDlg");if(!d.open)d.showModal();
 }
 function paintShot(v){
@@ -673,19 +691,28 @@ function sharedAddedProjects(added){
   for(const [key,e] of Object.entries(added)){if(!e||typeof e!=="object")continue;
     const link=String(e.link||"");const k=key.startsWith("link:")?null:key.toLowerCase();if(!k&&!/^https?:\/\//i.test(link))continue;
     out.push({id:"shared:"+(k||link),k,g:String(e.title||(k?k.split("/").pop():link)),tf:1,p:String(e.platform||"Unknown"),t:TYPES.includes(e.type)?e.type:"Recompilation",
-      ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
+      ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),games:e.games||null,n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
       pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
       sharedCover:e.cover||""});}
   return out;
 }
 const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
 function allProjects(){
-  const custom=Object.values(S.custom),taken=new Set(custom.map(p=>p.k).filter(Boolean));
+  const sharedKeys=new Set(REPO.added.map(p=>p.k).filter(Boolean));
+  const custom=Object.values(S.custom).filter(p=>!(p.k&&sharedKeys.has(p.k))),taken=new Set(custom.map(p=>p.k).filter(Boolean));
   const shared=REPO.added.filter(p=>!(p.k&&(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k))));
   return SEED.concat(Object.values(S.aw.added),custom,shared).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);});
 }
+function adoptShared(){
+  let moved=0;const byKey=new Map(REPO.added.filter(p=>p.k).map(p=>[p.k,p]));
+  for(const [cid,c] of Object.entries(S.custom)){const sp=c.k&&byKey.get(c.k);if(!sp)continue;
+    if(S.ov[cid]&&!S.ov[sp.id])S.ov[sp.id]=S.ov[cid];delete S.ov[cid];
+    if(S.follow&&S.follow[cid]){S.follow[sp.id]=S.follow[cid];delete S.follow[cid];}
+    S.sharedSeen=S.sharedSeen||{};S.sharedSeen[sp.id]=1;delete S.custom[cid];moved++;}
+  if(moved)save();return moved;
+}
 function noteSharedAdded(){
-  if(!REPO.loaded)return;const keys=REPO.added.map(p=>p.id);
+  if(!REPO.loaded)return;adoptShared();const keys=REPO.added.map(p=>p.id);
   if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
   let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;const vv=view(p);if(vv.risk&&vv.risk.level==="high")continue;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
   if(n){save();renderUpdates();}
@@ -695,7 +722,8 @@ function view(p){
   const m=p.k?(S.meta[p.k]||{}):{};const aw=p.k?S.aw.data[p.k]:null;const ov=S.ov[p.id]||{};const sa=analysisOf(p);const ra=m.readme||null;
   const mf=m.manifest||null;
   const so=sharedFix(p)||{};
-  const platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p), type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:p.t);
+  let platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p);const type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:p.t);
+  if(platform==="Xbox 360"&&!ov.platform&&!so.platform&&XBLA_TITLES.has(nrmT(bare(ov.game||so.title||displayTitle(p,mf)))))platform="XBLA (Xbox 360)";
   const mfa=mf?analyze([mf.notes,mf.approach].join("\n")):null;
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
     feats[f.id]=r==="yes"?{st:"yes",src:"README"}:s==="yes"?{st:"yes",src:"project description"}:(r==="planned"||s==="planned")?{st:"planned",src:r?"README":"project description"}:{st:"no"};}
@@ -1167,7 +1195,9 @@ async function lookupLibretro(title,platform){
 }
 function coverTitle(v){return stripSuffix(stripParens(v.game));}
 function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
-function coverFor(v){const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
+function coverFor(v){
+  if(v.ghost){const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
   if(so.cover&&!lo.game)return {u:so.cover,s:"Port Watch's shared fixes"};
   if(v.p.sharedCover&&!lo.game)return {u:v.p.sharedCover,s:"Port Watch's maintainer"};
@@ -1235,18 +1265,18 @@ function renderUpdates(){
   $("#updTitle").textContent=u.length+" update"+(u.length>1?"s":"")+" since you last looked";
   $("#strip").innerHTML=u.slice(0,14).map((e,ix)=>`<button class="cart" style="--pc:${PCOL[e.plat]||"#888"}" data-ev="${ix}"><span class="kind ${e.type==="gone"?"gone":""}">${e.type==="release"?"Release":e.type==="new"?"New project":"Repo change"}</span><b>${esc(e.game||"Discovered repo")}</b><small>${esc(e.text)}</small><small>${esc(ago(new Date(e.t).toISOString()))}</small></button>`).join("");
 }
-function passes(v,skip){
+function passes(v,skip,own){
   if(v.risk&&v.risk.level==="high"&&!UI.showRisky)return false;
   if((v.gone||v.archived)&&!UI.showGone)return false;
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
   if(skip!=="type"&&UI.type.size&&!UI.type.has(v.type))return false;
   if(skip!=="ps"&&UI.ps.size&&!UI.ps.has(v.ps))return false;
-  if(skip!=="plat"&&UI.plat.size&&!UI.plat.has(v.platform))return false;
+  if(skip!=="plat"&&UI.plat.size&&!UI.plat.has(v.platform)&&!(!own&&!v.ghost&&gamesOf(v).some(g=>UI.plat.has(g.platform))))return false;
   for(const o of UI.os)if(!v.os[o])return false;
   for(const f of UI.feat)if(v.feats[f].st!=="yes")return false;
   if(UI.age){if(!v.updated||(Date.now()-new Date(v.updated))/864e5>+UI.age)return false;}
-  if(UI.q){const hay=[v.game,v.p.pr,v.platform].join(" ").toLowerCase();if(!hay.includes(UI.q.toLowerCase()))return false;}
+  if(UI.q){const extra=own||v.ghost?[]:gamesOf(v).map(g=>g.title+" "+g.platform);const hay=[v.game,v.p.pr,v.platform,...extra].join(" ").toLowerCase();if(!hay.includes(UI.q.toLowerCase()))return false;}
   return true;
 }
 function filtered(){
@@ -1254,10 +1284,21 @@ function filtered(){
   vs.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return vs;
 }
-function groupKeyOf(v){if(S.settings.ungroup)return "p:"+v.p.id;const plat=v.platform==="XBLA (Xbox 360)"?"Xbox 360":v.platform;return nrmT(stripParens(v.game)).replace(/ 1$/,"")+"|"+plat;}
+function groupKeyOf(v){if(S.settings.ungroup)return "p:"+v.p.id;const plat=v.platform==="XBLA (Xbox 360)"?"Xbox 360":v.platform;return nrmT(bare(v.game)).replace(/ 1$/,"")+"|"+plat;}
+function parseGames(x){
+  if(!x)return [];const arr=Array.isArray(x)?x:String(x).split(/\n+/);
+  return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim()};
+    const [t,pl]=String(e).split("|").map(z=>z.trim());return {title:t||"",platform:pl||""};}).filter(e=>e.title);
+}
+function gamesOf(v){
+  const lo=S.ov[v.p.id]||{},so=v.so||{};const list=parseGames(lo.games!=null?lo.games:(so.games||v.p.games));
+  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
+}
+function ghostView(v,g){return Object.assign({},v,{game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});}
+function expandViews(vs){const out=[];for(const v of vs){out.push(v);for(const g of gamesOf(v))out.push(ghostView(v,g));}return out;}
 function rankItems(a,b){return ((b.play==="yes")-(a.play==="yes"))||((b.stars||0)-(a.stars||0))||(b.updated||"").localeCompare(a.updated||"");}
 function groupsOf(vs){
-  const m=new Map();for(const v of vs){const k=groupKeyOf(v);if(!m.has(k))m.set(k,[]);m.get(k).push(v);}
+  const m=new Map();for(const v of expandViews(vs)){if(!passes(v,null,true))continue;const k=groupKeyOf(v);if(!m.has(k))m.set(k,[]);m.get(k).push(v);}
   const out=[];for(const [key,items] of m){items.sort(rankItems);const upd=items.reduce((x,v)=>(v.updated||"")>x?v.updated:x,"");
     out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform});}
   const s=UI.sort;
@@ -1269,7 +1310,7 @@ function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io
 function tabsHTML(g,cur,where){
   if(g.items.length<2)return "";
   return `<div class="ptabs" role="tablist" aria-label="Projects for ${esc(g.game)}">${g.items.map(v=>{const oss=OSLIST.filter(o=>v.os[o]);
-    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}<small>${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
+    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}${gamesOf(v.ghost?view(v.p):v).length?' <span title="Covers several games">⧉</span>':""}<small>${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
 }
 function groupDetailHTML(g){const cur=selectedIn(g);
   const head=g.items.length>1?`<div class="phead">${heartHTML(cur)}<a href="${esc(cur.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(cur))}</a>${riskPill(cur)}</div>`:"";
@@ -1340,6 +1381,9 @@ function detailHTML(v,head){
     <section class="d-feats"><h4>Features <span class="note">${nFeat} of ${FEATURES.length} detected</span></h4><div class="chipset">${feat}</div>
       <p class="note" style="margin-top:6px">${esc(scanned)} Hover an item to see where it was found.</p></section>
     <section class="d-proj"><h4>Project</h4>
+      ${(()=>{const pv=v.ghost?view(v.p):v;const gl=[{title:pv.game,platform:pv.platform},...gamesOf(pv)];if(gl.length<2)return "";
+        return `<div class="games-cov"><span class="note">This project covers ${gl.length} games:</span> ${gl.map(g=>{const gk=groupKeyOf({p:v.p,game:g.title,platform:g.platform});const cur=nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform;
+          return `<button class="chipbtn${cur?" cur":""}" data-gogame="${esc(gk)}" data-id="${esc(v.p.id)}" ${cur?'aria-current="true"':""}>${esc(g.title)} <small>${esc(g.platform)}</small></button>`;}).join("")}</div>`;})()}
       <dl class="kv"><dt>Type</dt><dd>${esc(v.type)}</dd><dt>Original platform</dt><dd>${esc(v.platform)}</dd>
       <dt>Playability</dt><dd>${playPill(v)} <span class="note">${v.play==="yes"?"a public release is available":v.play==="no"?"no public release found yet":"not checked yet"}${(S.ov[p.id]||{}).play?" (set by you)":""}</span></dd>
       <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")})</span></dd>
@@ -1356,19 +1400,20 @@ function detailHTML(v,head){
       ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
     </section>
     ${shotsHTML(v)}
-    <details class="d-more"><summary>Your edits, cover and checks</summary><div class="moregrid">
+    ${v.ghost?`<p class="note d-more" style="padding-top:10px;border-top:1px solid var(--line)">Edits, cover and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="moregrid">
       <div class="edit"><label>Cover image link<input type="text" data-f="cover" placeholder="Paste an image URL to override" value="${esc((S.ov[p.id]||{}).cover||"")}"></label>
         <span class="note">${(()=>{const c=coverFor(v);return c?"Current cover from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+".":"No cover found yet.";})()} <button class="btn" data-recover="${esc(coverKey(v))}" style="padding:2px 8px;font-size:12px">Look up again</button>
         <a class="btn" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener" style="padding:2px 8px;font-size:12px">Find on SteamGridDB</a></span>
         <span class="note">On SteamGridDB, open a cover, copy its image link and paste it above.</span></div>
       <div class="edit"><label>Game title<input type="text" data-f="game" value="${esc(v.game)}"></label>
+        <label>Other games this project covers<textarea data-f="games" rows="2" placeholder="One per line: Title | Platform" style="min-height:44px">${esc(((S.ov[p.id]||{}).games!=null?parseGames(S.ov[p.id].games):parseGames((v.so||{}).games||p.games)).map(g=>g.title+(g.platform?" | "+g.platform:"")).join("\n"))}</textarea></label>
         <label>Playability<select data-f="play"><option value="">Automatic</option><option value="yes" ${(S.ov[p.id]||{}).play==="yes"?"selected":""}>Playable</option><option value="no" ${(S.ov[p.id]||{}).play==="no"?"selected":""}>No public release</option></select></label>
         <label>PC release<select data-f="ps">${PS.map(x=>`<option ${v.ps===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label></div>
       ${p.custom?`<div class="edit">
         <label>Original platform<select data-f="platform">${plats.concat("Unknown").map(x=>`<option ${v.platform===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
         <label>Type<select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>
         <button class="btn" data-remove="${esc(p.id)}">Remove from tracker</button></div>`:""}
-    </div></details>
+    </div></details>`}
   </div></div>`;
 }
 function renderProjects(){
@@ -1582,10 +1627,11 @@ $("#clearBtn").addEventListener("click",clearFilters);
 $("#sort").addEventListener("change",e=>{UI.sort=e.target.value;render();});
 document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{UI.tab=t.dataset.tab;render();}));
 $("#filtersBtn").addEventListener("click",e=>{const o=$("#rail").classList.toggle("open");e.target.setAttribute("aria-expanded",o);});
-function groupFor(v){const gk=groupKeyOf(v);const items=allProjects().map(view).filter(x=>groupKeyOf(x)===gk&&(passes(x)||x.p.id===v.p.id));items.sort(rankItems);
+function groupFor(v,gkWanted){const gk=gkWanted||groupKeyOf(v);const items=expandViews(allProjects().map(view)).filter(x=>groupKeyOf(x)===gk&&(passes(x,null,true)||x.p.id===v.p.id));items.sort(rankItems);
+  if(gkWanted){const cur=items.find(x=>x.p.id===v.p.id);if(cur)v=cur;}
   return {key:gk,items,lead:items[0]||v,game:(items[0]||v).game,platform:(items[0]||v).platform};}
-function openProject(id){
-  const p=allProjects().find(x=>x.id===id);if(!p)return;const v=view(p);const g=groupFor(v);UI.sel[g.key]=id;
+function openProject(id,gkWanted){
+  const p=allProjects().find(x=>x.id===id);if(!p)return;let v=view(p);const g=groupFor(v,gkWanted);UI.sel[g.key]=id;v=g.items.find(x=>x.p.id===id)||v;
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
   $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2>${g.items.length>1?typePills([...new Set(g.items.map(x=>x.type))]):`<span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span>`} <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
   const d=$("#projDlg");if(!d.open)d.showModal();observeCovers($("#projBody"));
@@ -1594,22 +1640,29 @@ function openProject(id){
 function toggleRow(gk){UI.open=UI.open===gk?null:gk;
   const ids=new Set(allProjects().map(view).filter(v=>groupKeyOf(v)===gk).map(v=>v.p.id));for(const ev of S.log)if(ids.has(ev.id)&&!ev.read)ev.read=true;save();renderUpdates();render();
   if(UI.open){const el=document.querySelector(`.row[data-gk="${CSS.escape(UI.open)}"]`);if(el)el.scrollIntoView({block:"nearest"});}}
+function goGame(gk,id){
+  if($("#projDlg").open||S.settings.view==="grid"){openProject(id,gk);return;}
+  UI.tab="projects";clearFilters();UI.open=gk;UI.sel[gk]=id;
+  const ix=groupsOf(filtered()).findIndex(g=>g.key===gk);if(ix>=UI.limit)UI.limit=ix+20;renderAll();
+  const el=document.querySelector(`.row[data-gk="${CSS.escape(gk)}"]`);if(el)el.scrollIntoView({block:"center"});
+}
 function onDetailClick(e){
-  const sh=e.target.closest("[data-shot]");if(sh){openShot(sh.dataset.pid,+sh.dataset.shot);return true;}
+  const gg=e.target.closest("[data-gogame]");if(gg){goGame(gg.dataset.gogame,gg.dataset.id);return true;}
+  const sh=e.target.closest("[data-shot]");if(sh){openShot(sh.dataset.pid,+sh.dataset.shot,sh.dataset.gk);return true;}
   const co=e.target.closest("[data-checkone]");if(co){co.disabled=true;co.textContent="Checking…";checkOne(co.dataset.checkone);return true;}
   const oa=e.target.closest("[data-osauto]");if(oa){const o=S.ov[oa.dataset.osauto];if(o){delete o.os;save();}renderFilters();if($("#projDlg").open)openProject(oa.dataset.osauto);else render();return true;}
   const rc=e.target.closest("[data-recover]");if(rc){delete S.covers[rc.dataset.recover];coverPending.delete(rc.dataset.recover);const el=document.createElement("div");(()=>{const el=document.querySelector('[data-ck="'+CSS.escape(rc.dataset.recover)+'"]')||{dataset:{}};return lookupCover(rc.dataset.recover,el.dataset.ct||"",el.dataset.cp||"");})().then(()=>{toast("Cover looked up again.");if($("#projDlg").open){const id=$("#projBody .detail").dataset.detail;openProject(id);}else render();});return true;}
   return false;
 }
-$("#shotPrev").addEventListener("click",()=>{SHOTBOX.i--;const p=allProjects().find(x=>x.id===SHOTBOX.pid);paintShot(p&&view(p));});
-$("#shotNext").addEventListener("click",()=>{SHOTBOX.i++;const p=allProjects().find(x=>x.id===SHOTBOX.pid);paintShot(p&&view(p));});
+$("#shotPrev").addEventListener("click",()=>{SHOTBOX.i--;paintShot(shotView(SHOTBOX.pid,SHOTBOX.gk));});
+$("#shotNext").addEventListener("click",()=>{SHOTBOX.i++;paintShot(shotView(SHOTBOX.pid,SHOTBOX.gk));});
 $("#shotClose").addEventListener("click",()=>$("#shotDlg").close());
 $("#shotDlg").addEventListener("click",e=>{if(e.target===$("#shotDlg"))$("#shotDlg").close();});
 $("#shotDlg").addEventListener("keydown",e=>{if(e.key==="ArrowLeft"&&!$("#shotPrev").disabled)$("#shotPrev").click();else if(e.key==="ArrowRight"&&!$("#shotNext").disabled)$("#shotNext").click();});
 $("#shotHide").addEventListener("click",()=>{const x=SHOTBOX.list[SHOTBOX.i];if(!x)return;const o=S.ov[SHOTBOX.pid]||(S.ov[SHOTBOX.pid]={});o.hideScreens=[...new Set([...(o.hideScreens||[]),x.u])];save();
-  const p=allProjects().find(q=>q.id===SHOTBOX.pid);const v=p&&view(p);SHOTBOX.list=v?shotsFor(v):[];if(SHOTBOX.i>=SHOTBOX.list.length)SHOTBOX.i=SHOTBOX.list.length-1;paintShot(v);
-  toast("Screenshot hidden. Use Export fixes for everyone to hide it for all visitors.");if($("#projDlg").open)openProject(SHOTBOX.pid);else render();});
-$("#projDlg").addEventListener("click",e=>{const gt=e.target.closest("[data-gtab]");if(gt){openProject(gt.dataset.gtab);return;}const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
+  const v=shotView(SHOTBOX.pid,SHOTBOX.gk);SHOTBOX.list=v?shotsFor(v):[];if(SHOTBOX.i>=SHOTBOX.list.length)SHOTBOX.i=SHOTBOX.list.length-1;paintShot(v);
+  toast("Screenshot hidden. Use Export fixes for everyone to hide it for all visitors.");if($("#projDlg").open)openProject(SHOTBOX.pid,SHOTBOX.gk||undefined);else render();});
+$("#projDlg").addEventListener("click",e=>{const gt=e.target.closest("[data-gtab]");if(gt){openProject(gt.dataset.gtab,gt.dataset.gk);return;}const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];$("#projDlg").close();save();renderAll();}}});
 $("#projDlg").addEventListener("change",e=>{if(onOsOverride(e))return;const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const val=e.target.value.trim();if(val)o[f]=val;else delete o[f];save();openProject(id);renderFilters();});
@@ -1624,6 +1677,7 @@ $("#view").addEventListener("click",e=>{
   if(e.target.id==="welcomeOk"){S.welcomed=true;save();render();return;}
   if(e.target.closest("a"))return;
   if(onDetailClick(e))return;
+  const gg=e.target.closest("[data-gogame]");if(gg){goGame(gg.dataset.gogame,gg.dataset.id);return;}
   const gt=e.target.closest("[data-gtab]");if(gt){const sl=gt.parentElement.scrollLeft;UI.sel[gt.dataset.gk]=gt.dataset.gtab;render();const bar=document.querySelector(`.row[data-gk="${CSS.escape(gt.dataset.gk)}"]`);const nb=bar&&bar.parentElement.querySelector(".ptabs");if(nb)nb.scrollLeft=sl;return;}
   const tile=e.target.closest(".tile");if(tile){openProject(UI.sel[tile.dataset.gk]||tile.dataset.id);return;}
   const row=e.target.closest(".row");if(row){toggleRow(row.dataset.gk);return;}
@@ -1687,11 +1741,11 @@ $("#importCovers").addEventListener("change",async e=>{const f=e.target.files[0]
 const addDlg=$("#addDlg");
 $("#addBtn").addEventListener("click",()=>{const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");$("#addPlat").innerHTML=plats.concat("Unknown").map(x=>`<option ${x==="Unknown"?"selected":""}>${esc(x)}</option>`).join("");$("#addCheck").innerHTML="";addPre=null;addTouched={};$("#addPs").innerHTML=PS.map(x=>`<option ${x==="Not checked"?"selected":""}>${esc(x)}</option>`).join("");["#addUrl","#addGame"].forEach(i=>$(i).value="");addDlg.showModal();});
 $("#addCancel").addEventListener("click",()=>addDlg.close());
-const PLAT_RULES=[["Xbox 360",/xbox ?360|\bx360\b|\bxbla\b/i],["Xbox One",/xbox one/i],["Xbox (original)",/original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))/i],
+const PLAT_RULES=[["XBLA (Xbox 360)",/\bxbla\b|xbox live arcade/i],["Xbox 360",/xbox ?360|\bx360\b/i],["PS Vita",/ps ?vita\b/i],["Xbox One",/xbox one/i],["Xbox (original)",/original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))/i],
   ["PS4",/\bps4\b|playstation 4/i],["PS3",/\bps3\b|playstation 3/i],["PS2",/\bps2\b|playstation 2/i],["PSP",/\bpsp\b|playstation portable/i],["PS1",/\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))/i],
   ["Wii U",/wii ?u\b/i],["Wii",/\bwii\b/i],["GameCube",/gamecube|\bgcn\b/i],["Switch",/nintendo switch|\(switch\)|switch (game|version|title|release)/i],["3DS",/\b3ds\b/i],["DS",/\bnds\b|nintendo ds\b/i],
   ["N64",/\bn64\b|nintendo 64/i],["SNES",/\bsnes\b|super nintendo/i],["NES",/\bnes\b|famicom/i],["GBA",/\bgba\b|game ?boy advance/i],["Game Boy Color",/\bgbc\b|game ?boy colou?r/i],["Game Boy",/game ?boy\b/i],
-  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i]];
+  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i],["Mobile",/\b(ios|iphone|ipad|android|mobile) (game|version|original|release)\b|\((ios|iphone|ipad|android|mobile)\)/i]];
 function detectPlatform(text){for(const [p,re] of PLAT_RULES)if(re.test(text||""))return p;return "";}
 function detectType(text){const t=text||"";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
   if(/source[- ]port|engine port/i.test(t)&&!/decomp/i.test(t))return "Source Port";
@@ -1763,7 +1817,7 @@ $("#exportFixes").addEventListener("click",async()=>{
   const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
-    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
+    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
   const addedOut={};
   try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}
