@@ -38,6 +38,9 @@ jobs:
       - name: Refresh covers, itch.io devlogs and project status
         env:
           SGDB_API_KEY: ${{ secrets.SGDB_API_KEY }}
+          # Twitch developer app credentials for IGDB screenshots (Settings > Secrets and variables > Actions).
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
           # The job's own token reads public repositories through GitHub's GraphQL API.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Optional: a fine-grained personal token (public repositories, read-only) if the job's token ever runs short.
