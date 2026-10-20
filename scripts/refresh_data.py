@@ -323,7 +323,8 @@ def meta_batch(keys, token):
     return out
 
 
-def readme_batch(keys, token):
+def readme_batch(keys, token, full_names=None):
+    full_names = full_names or {}
     parts = []
     for i, k in enumerate(keys):
         files = " ".join('f%d: object(expression: %s) { ... on Blob { text } }' % (j, json.dumps("HEAD:" + n)) for j, n in enumerate(README_NAMES))
@@ -348,7 +349,7 @@ def readme_batch(keys, token):
                 except ValueError:
                     pass
         out[k] = {"readme": A.analyze(text) if text else {"features": {}, "os": {}, "none": True}, "manifest": man,
-                  "readmeLure": A.lure_signals(text) if text else []}
+                  "readmeLure": A.lure_signals(text) if text else [], "shots": A.readme_shots(text, full_names.get(k) or k) if text else []}
     return out
 
 
@@ -406,16 +407,16 @@ def refresh_status(projects):
             fresh[k] = e
             if e.get("notFound"):
                 continue
-            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev or "readmeLure" not in prev:
-                changed.append(k)             # new, pushed since last run, or read before lure signals existed
+            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev or "readmeLure" not in prev or "shots" not in prev:
+                changed.append(k)             # new, pushed since last run, or read before lure signals/screenshots existed
             else:
-                e["readme"], e["manifest"], e["readmeLure"] = prev.get("readme"), prev.get("manifest"), prev.get("readmeLure")
+                e["readme"], e["manifest"], e["readmeLure"], e["shots"] = prev.get("readme"), prev.get("manifest"), prev.get("readmeLure"), prev.get("shots")
         time.sleep(0.5)
     log("  GitHub: %d of %d repos read, %d need their README read" % (len(fresh), len(gh_keys), len(changed)))
     for i in range(0, len(changed), 15):
         batch = changed[i:i + 15]
         try:
-            res = readme_batch(batch, token)
+            res = readme_batch(batch, token, {k: (fresh.get(k, {}).get("repo") or {}).get("full") or k for k in batch})
         except Exception as e:
             log("  README batch failed (%s); keeping previous README results" % e)
             res = {}
@@ -428,6 +429,8 @@ def refresh_status(projects):
                     fresh[k]["readme"], fresh[k]["manifest"] = prev.get("readme"), prev.get("manifest")
                     if "readmeLure" in prev:
                         fresh[k]["readmeLure"] = prev["readmeLure"]
+                    if "shots" in prev:
+                        fresh[k]["shots"] = prev["shots"]
         time.sleep(0.5)
     for k in gl_keys:
         try:
@@ -443,6 +446,105 @@ def refresh_status(projects):
     data["generated"] = NOW
     return write_json_if_changed(path, data)
 
+
+# ---------------------------------------------------------------- IGDB screenshots
+TWITCH_TOKEN_URL = os.environ.get("PW_TWITCH_TOKEN_URL", "https://id.twitch.tv/oauth2/token")
+IGDB_URL = os.environ.get("PW_IGDB_URL", "https://api.igdb.com/v4")
+IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12, "Xbox (original)": 11, "PS1": 7, "PS2": 8, "PS3": 9, "PS4": 48, "PSP": 38,
+                  "PS Vita": 46, "GameCube": 21, "Wii": 5, "Wii U": 41, "Switch": 130, "N64": 4, "SNES": 19, "NES": 18, "Mega Drive": 29, "32X": 30,
+                  "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
+                  "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78}
+MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "400"))
+
+def igdb_token(cid, secret):
+    body = urllib.parse.urlencode({"client_id": cid, "client_secret": secret, "grant_type": "client_credentials"}).encode()
+    with urllib.request.urlopen(urllib.request.Request(TWITCH_TOKEN_URL, data=body, headers={"User-Agent": UA}), timeout=30) as r:
+        return json.loads(r.read())["access_token"]
+
+def igdb_query(cid, token, body):
+    req = urllib.request.Request(IGDB_URL + "/games", data=body.encode(), headers={"Client-ID": cid, "Authorization": "Bearer " + token,
+                                 "Accept": "application/json", "User-Agent": UA})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < 2:
+                time.sleep(2 * (attempt + 1)); continue
+            raise
+
+def igdb_match(title, results):
+    q, best = norm(title), None
+    for g in results or []:
+        n = norm(g.get("name", ""))
+        score = 1.0 if n == q else difflib.SequenceMatcher(None, q, n).ratio()
+        if numbers(q) != numbers(n):
+            score -= 0.3
+        if best is None or score > best[0]:
+            best = (score, g)
+    return best if best and best[0] >= 0.85 else None
+
+def refresh_screens(projects, overrides):
+    cid, secret = os.environ.get("IGDB_CLIENT_ID", "").strip(), os.environ.get("IGDB_CLIENT_SECRET", "").strip()
+    path = os.path.join(DATA, "screens.json")
+    data = load_json(path, {"format": "port-watch-screens", "version": 1, "games": {}, "map": {}})
+    games, mapping = data.setdefault("games", {}), data.setdefault("map", {})
+    if not cid or not secret:
+        log("  IGDB_CLIENT_ID / IGDB_CLIENT_SECRET aren't set; skipping IGDB screenshots")
+        return False
+    try:
+        token = igdb_token(cid, secret)
+    except Exception as e:
+        log(f"  Twitch sign-in failed ({e}); skipping IGDB screenshots")
+        return False
+    wanted = {}
+    for p in projects:
+        key = p.get("k") or p["id"]
+        fix = overrides.get(key) or overrides.get(p["id"]) or {}
+        if fix.get("hide"):
+            continue
+        title = cover_title(fix.get("title") or p.get("g", ""))
+        plat = fix.get("platform") or p.get("p") or ""
+        pid = IGDB_PLATFORMS.get(plat)
+        if not title or not pid:
+            continue
+        q = f"{norm(title)}|{pid}"
+        mapping[key] = q
+        wanted.setdefault(q, (title, pid))
+    for k in [k for k in mapping if k not in {p.get("k") or p["id"] for p in projects}]:
+        del mapping[k]
+    now = datetime.datetime.now(datetime.timezone.utc)
+    todo = []
+    for q, (title, pid) in wanted.items():
+        g = games.get(q)
+        if g and (g.get("shots") or (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
+            continue                  # found before, or missed less than 30 days ago
+        todo.append((q, title, pid))
+    log(f"  {len(todo)} games to look up on IGDB (max {MAX_IGDB} this run)")
+    found = 0
+    for q, title, pid in todo[:MAX_IGDB]:
+        safe = title.replace('"', "").replace("\\", "")
+        try:
+            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id; where platforms = ({pid}); limit 8;')
+        except Exception as e:
+            log(f"  {title}: IGDB error ({e})")
+            time.sleep(0.3)
+            continue
+        m = igdb_match(title, res)
+        if m:
+            score, g = m
+            shots = [s["image_id"] for s in (g.get("screenshots") or []) if s.get("image_id")][:6]
+            games[q] = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW}
+            found += bool(shots)
+        else:
+            games[q] = {"shots": [], "checked": NOW}
+        time.sleep(0.3)                # IGDB allows 4 requests a second
+    used = set(mapping.values())
+    for q in [q for q in games if q not in used]:
+        del games[q]
+    log(f"  IGDB: screenshots found for {found} of {min(len(todo), MAX_IGDB)} looked up")
+    data["generated"] = NOW
+    return write_json_if_changed(path, data)
 
 # ---------------------------------------------------------------- main
 def main():
@@ -465,6 +567,8 @@ def main():
     refresh_covers(seed + extra, overrides)
     log("itch.io devlogs:")
     refresh_itch(seed + added)
+    log("IGDB screenshots:")
+    refresh_screens(seed + extra, overrides)
     log("Shared update checks:")
     refresh_status([p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))])
 

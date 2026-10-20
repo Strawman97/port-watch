@@ -173,3 +173,49 @@ LURE_RE = {
 
 def lure_signals(text):
     return [k for k, r in LURE_RE.items() if r.search(text or "")]
+
+
+
+# README screenshots (kept in step with readmeShots in index.html)
+SHOT_SKIP = re.compile(r"shields\.io|badge|powered-?by|gplv?\d|gnu\.org/graphics|licen[cs]e|made-?with|built-?with|logo|icon|banner|favicon|box-?art|cover|background|\.svg(\?|$)|discord|invidget|widget|ko-?fi|patreon|paypal|buymeacoffee|sponsor|readme-typing|skillicons|github-readme-stats|star-history|contrib\.rocks|visitor|komarev|wakatime|capsule-render|emoji|avatar|qr-?code|\.mp4|\.webm|\.mov", re.I)
+IMG_RE = re.compile(r"!\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)|<img\b[^>]*?\bsrc=[\"']([^\"']+)[\"'][^>]*>", re.I)
+
+
+def resolve_img(u, full):
+    if not u or re.match(r"data:", u, re.I):
+        return ""
+    x = u.replace("&amp;", "&").strip()
+    b = re.match(r"https?://github\.com/([^/]+/[^/]+)/(?:blob|raw)/(.+)$", x, re.I)
+    if b:
+        return "https://raw.githubusercontent.com/" + b.group(1) + "/" + re.sub(r"\?raw=true$", "", b.group(2), flags=re.I)
+    if re.match(r"https?://", x, re.I):
+        return x
+    if x.startswith("//"):
+        return "https:" + x
+    if not full:
+        return ""
+    x = re.sub(r"^\./", "", x)
+    x = re.sub(r"^/", "", x).split("#")[0]
+    if not x or x.startswith("../"):
+        return ""
+    return "https://raw.githubusercontent.com/" + full + "/HEAD/" + x
+
+
+def readme_shots(text, full):
+    out = []
+    for m in IMG_RE.finditer(str(text or "")):
+        if len(out) >= 6:
+            break
+        raw = (m.group(2) or m.group(3) or "").strip()
+        am = re.search(r"\balt=[\"']([^\"']*)[\"']", m.group(0), re.I)
+        alt = m.group(1) or (am.group(1) if am else "")
+        if not raw or SHOT_SKIP.search(raw) or SHOT_SKIP.search(alt or ""):
+            continue
+        u = resolve_img(raw, full)
+        if not u:
+            continue
+        if not re.search(r"\.(png|jpe?g|gif|webp)(\?|$)", u, re.I) and not re.search(r"user-attachments/assets/", u, re.I):
+            continue
+        if u not in out:
+            out.append(u)
+    return out
