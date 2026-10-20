@@ -153,6 +153,33 @@ def load_overrides():
     """Shared fixes from overrides.json in the repository root (title, cover, platform, type, pcRelease, runsOn, hide)."""
     return (load_json(os.path.join(ROOT, "overrides.json"), {}) or {}).get("projects") or {}
 
+def games_of(p, fix):
+    """Other games a project covers: [{title, platform}] from a shared fix or the added entry."""
+    raw = fix.get("games") if fix.get("games") is not None else p.get("games")
+    out = []
+    for e in raw or []:
+        if isinstance(e, dict):
+            t, pl = str(e.get("title") or "").strip(), str(e.get("platform") or "").strip()
+        else:
+            t, _, pl = str(e).partition("|")
+            t, pl = t.strip(), pl.strip()
+        if t:
+            out.append({"title": t, "platform": pl or p.get("p") or ""})
+    return out
+
+def with_games(projects, overrides):
+    """Each extra game becomes its own entry (key k#title) so it gets a cover and screenshots."""
+    out = list(projects)
+    for p in projects:
+        key = p.get("k") or p["id"]
+        fix = overrides.get(key) or overrides.get(p["id"]) or {}
+        if fix.get("hide"):
+            continue
+        for g in games_of(p, fix):
+            gk = f"{key}#{norm(g['title'])}"
+            out.append({"k": gk, "id": gk, "g": g["title"], "p": g["platform"], "ghost": True})
+    return out
+
 def load_added():
     """Projects the maintainer added for everyone (the "added" section of overrides.json)."""
     out = []
@@ -161,7 +188,7 @@ def load_added():
             continue                      # links that aren't GitHub, GitLab or itch.io can't be checked
         k = key.lower()
         out.append({"k": k, "id": "shared:" + k, "g": e.get("title") or k.split("/")[-1], "p": e.get("platform") or "Unknown",
-                    "cover": e.get("cover") or ""})
+                    "cover": e.get("cover") or "", "games": e.get("games") or []})
     return out
 
 def refresh_covers(projects, overrides):
@@ -453,7 +480,7 @@ IGDB_URL = os.environ.get("PW_IGDB_URL", "https://api.igdb.com/v4")
 IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12, "Xbox (original)": 11, "PS1": 7, "PS2": 8, "PS3": 9, "PS4": 48, "PSP": 38,
                   "PS Vita": 46, "GameCube": 21, "Wii": 5, "Wii U": 41, "Switch": 130, "N64": 4, "SNES": 19, "NES": 18, "Mega Drive": 29, "32X": 30,
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
-                  "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78}
+                  "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34"}
 MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "400"))
 
 def igdb_token(cid, secret):
@@ -564,11 +591,11 @@ def main():
         if p["cover"] and not (overrides.get(p["k"]) or {}).get("cover"):
             overrides = {**overrides, p["k"]: {**(overrides.get(p["k"]) or {}), "cover": p["cover"]}}
     extra = extra + added
-    refresh_covers(seed + extra, overrides)
+    refresh_covers(with_games(seed + extra, overrides), overrides)
     log("itch.io devlogs:")
     refresh_itch(seed + added)
     log("IGDB screenshots:")
-    refresh_screens(seed + extra, overrides)
+    refresh_screens(with_games(seed + extra, overrides), overrides)
     log("Shared update checks:")
     refresh_status([p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))])
 
