@@ -102,11 +102,20 @@ aside h3 small{font:400 12px var(--body);color:var(--muted);letter-spacing:0}
 .more-btn{display:block;margin:12px auto}
 
 .detail{border-top:1px solid var(--line);background:var(--sunk);padding:14px 18px 16px;container-type:inline-size}
-.dgrid{display:grid;gap:14px 26px;grid-template-columns:1fr;grid-template-areas:"runs" "feats" "proj" "more"}
+.dgrid{display:grid;gap:14px 26px;grid-template-columns:1fr;grid-template-areas:"runs" "feats" "proj" "shots" "more"}
+.d-shots{grid-area:shots;min-width:0}
+.shots{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.shot{flex:0 0 auto;border:1px solid var(--line);border-radius:6px;padding:0;background:var(--surface);cursor:zoom-in;line-height:0}
+.shot img{height:118px;width:auto;max-width:280px;object-fit:cover;border-radius:5px;display:block}
+.shot:hover{border-color:var(--action)}
+dialog.shotbox{max-width:min(1280px,96vw);width:auto;padding:12px;background:var(--surface)}
+dialog.shotbox img{display:block;max-width:100%;max-height:78vh;margin:0 auto;border-radius:6px;image-rendering:auto}
+dialog.shotbox .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13px}
+dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 .detail>.phead{margin-bottom:10px}.detail>.warnbox{margin-bottom:10px}
 .d-runs{grid-area:runs}.d-feats{grid-area:feats}.d-proj{grid-area:proj}.d-more{grid-area:more}
-@container (min-width:640px){.dgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"runs proj" "feats proj" "more more"}}
-@container (min-width:980px){.dgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,1.25fr);grid-template-areas:"runs feats proj" "more more more"}}
+@container (min-width:640px){.dgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"runs proj" "feats proj" "shots shots" "more more"}}
+@container (min-width:980px){.dgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,1.25fr);grid-template-areas:"runs feats proj" "shots shots shots" "more more more"}}
 .chipset{display:flex;flex-wrap:wrap;gap:5px}
 .chipset .c{font-size:12.5px;line-height:1.5;padding:1px 9px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}
 .chipset .c.yes{color:var(--ink);border-color:var(--recomp);background:var(--recomp-bg);font-weight:500}
@@ -354,6 +363,9 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <div class="row2"><button class="btn primary" id="addSave">Add project</button><button class="btn" id="addCancel">Cancel</button></div>
 </dialog>
 <dialog id="projDlg" class="proj" aria-labelledby="projTitle"><div id="projBody"></div></dialog>
+<dialog id="shotDlg" class="shotbox" aria-label="Screenshot"><img id="shotImg" alt="" referrerpolicy="no-referrer">
+  <div class="bar"><span class="cap" id="shotCap"></span><button class="btn" id="shotPrev">Previous</button><button class="btn" id="shotNext">Next</button>
+  <button class="btn" id="shotHide" title="Hide this screenshot from this project. Export fixes for everyone to share it.">Hide this screenshot</button><button class="btn primary" id="shotClose">Close</button></div></dialog>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -368,14 +380,15 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, screens:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
 const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
   if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
-    const [c,i,st] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json")]);
+    const [c,i,st,sc] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json")]);
+    if(sc&&sc.games&&sc.map)REPO.screens=sc;
     try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
       if(o&&o.added&&typeof o.added==="object")REPO.added=sharedAddedProjects(o.added);}}catch(e){}
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
@@ -513,6 +526,56 @@ function awNormalize(g){
   const k=(String(g.url||"").includes("gitlab.com")?"gitlab.com/":"")+g.repo.toLowerCase();
   const p=AW_PLAT_FIX[k]||AW_PLAT[g.platform];if(!p)return null;
   return {k,t,p,title:g.title,url:g.url,d:g.note||g.description||"",rel:g.release||"",rd:g.release_date||"",lc:g.last_commit||"",stars:g.stars,archived:!!g.archived,linkOk:g.link_ok!==false,ai:!!g.ai_flag};
+}
+
+/* ---------------- screenshots ---------------- */
+const SHOT_SKIP=/shields\.io|badge|powered-?by|gplv?\d|gnu\.org\/graphics|licen[cs]e|made-?with|built-?with|logo|icon|banner|favicon|box-?art|cover|background|\.svg(\?|$)|discord|invidget|widget|ko-?fi|patreon|paypal|buymeacoffee|sponsor|readme-typing|skillicons|github-readme-stats|star-history|contrib\.rocks|visitor|komarev|wakatime|capsule-render|emoji|avatar|qr-?code|\.mp4|\.webm|\.mov/i;
+function resolveImg(u,full){
+  if(!u||/^data:/i.test(u))return "";let x=u.replace(/&amp;/g,"&").trim();
+  const b=/^https?:\/\/github\.com\/([^/]+\/[^/]+)\/(?:blob|raw)\/(.+)$/i.exec(x);if(b)return "https://raw.githubusercontent.com/"+b[1]+"/"+b[2].replace(/\?raw=true$/i,"");
+  if(/^https?:\/\//i.test(x))return x;if(/^\/\//.test(x))return "https:"+x;if(!full)return "";
+  x=x.replace(/^\.\//,"").replace(/^\//,"").split("#")[0];if(!x||x.startsWith("../"))return "";
+  return "https://raw.githubusercontent.com/"+full+"/HEAD/"+x;
+}
+function readmeShots(text,full){
+  const out=[];const re=/!\[([^\]]*)\]\(\s*<?([^)\s>]+)>?(?:\s+"[^"]*")?\s*\)|<img\b[^>]*?\bsrc=["']([^"']+)["'][^>]*>/gi;let m;
+  while((m=re.exec(String(text||"")))&&out.length<6){
+    const raw=(m[2]||m[3]||"").trim();const alt=m[1]||((/\balt=["']([^"']*)["']/i.exec(m[0])||[])[1])||"";
+    if(!raw||SHOT_SKIP.test(raw)||SHOT_SKIP.test(alt))continue;
+    const u=resolveImg(raw,full);if(!u)continue;
+    if(!/\.(png|jpe?g|gif|webp)(\?|$)/i.test(u)&&!/user-attachments\/assets\//i.test(u))continue;
+    if(!out.includes(u))out.push(u);
+  }
+  return out;
+}
+const IGDB_IMG=(id,size)=>"https://images.igdb.com/igdb/image/upload/t_"+size+"/"+id+".jpg";
+function igdbFor(p){const sc=REPO.screens;if(!sc)return null;const q=sc.map[p.k||p.id];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
+function shotsFor(v){
+  if(typeof HOSTED!=="undefined"&&HOSTED)return [];
+  const out=[],seen=new Set();const add=(u,t,src)=>{if(!u||seen.has(u))return;seen.add(u);out.push({u,t:t||u,src});};
+  const lo=S.ov[v.p.id]||{},so=v.so||{};const hide=new Set([...(lo.hideScreens||[]),...(so.hideScreens||[])]);
+  (so.screens||[]).forEach(u=>add(u,u,"Port Watch's maintainer"));
+  if(!v.risk)((v.m&&v.m.shots)||[]).forEach(u=>add(u,u,"the project's README"));
+  const ig=igdbFor(v.p);if(ig)ig.shots.forEach(id=>add(IGDB_IMG(id,"screenshot_huge"),IGDB_IMG(id,"screenshot_med"),"IGDB"));
+  const c=coverFor(v);if(c&&/libretro/.test(c.s||"")&&/\/Named_Boxarts\//.test(c.u)){add(c.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails");add(c.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)");}
+  return out.filter(x=>!hide.has(x.u)).slice(0,10);
+}
+function shotsHTML(v){
+  const list=shotsFor(v);if(!list.length)return "";
+  const srcs=[...new Set(list.map(x=>x.src.replace(/ \(title screen\)$/,"")))];
+  return `<section class="d-shots"><h4>Screenshots <span class="note">from ${srcs.map(x=>x==="IGDB"?'<a href="https://www.igdb.com" target="_blank" rel="noopener">IGDB</a>':esc(x)).join(", ")}</span></h4>
+    <div class="shots">${list.map((x,i)=>`<button class="shot" data-shot="${i}" data-pid="${esc(v.p.id)}" title="From ${esc(x.src)}. Click to enlarge."><img src="${esc(x.t||x.u)}" alt="Screenshot ${i+1} of ${esc(v.game)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('.shot').remove()"></button>`).join("")}</div></section>`;
+}
+const SHOTBOX={pid:"",i:0,list:[]};
+function openShot(pid,i){
+  const p=allProjects().find(x=>x.id===pid);if(!p)return;const v=view(p);SHOTBOX.pid=pid;SHOTBOX.list=shotsFor(v);SHOTBOX.i=Math.max(0,Math.min(i,SHOTBOX.list.length-1));paintShot(v);
+  const d=$("#shotDlg");if(!d.open)d.showModal();
+}
+function paintShot(v){
+  const x=SHOTBOX.list[SHOTBOX.i];if(!x){$("#shotDlg").close();return;}
+  $("#shotImg").src=x.u;$("#shotImg").alt="Screenshot "+(SHOTBOX.i+1)+" of "+(v?v.game:"");
+  $("#shotCap").innerHTML=`${SHOTBOX.i+1} of ${SHOTBOX.list.length} · from ${esc(x.src)} · <a href="${esc(x.u)}" target="_blank" rel="noopener">open full size</a>`;
+  $("#shotPrev").disabled=SHOTBOX.i===0;$("#shotNext").disabled=SHOTBOX.i>=SHOTBOX.list.length-1;
 }
 
 /* ---------------- malware-lure detection ---------------- */
@@ -719,6 +782,7 @@ function applyShared(p,st){
   if(st.assetOs)m.assetOs=Object.assign({},st.assetOs);else delete m.assetOs;
   if(st.readme)m.readme=st.readme;
   if(Array.isArray(st.readmeLure))m.readmeLure=st.readmeLure;
+  if(Array.isArray(st.shots))m.shots=st.shots;
   if(st.manifest)m.manifest=st.manifest;else if("manifest" in st)delete m.manifest;
   m.scannedFor=(st.repo&&st.repo.pushed)||m.scannedFor;m.scannedAt=m.scannedAt||Date.now();m.checkedAt=Date.now();m.shared=true;delete m.netErr;
 }
@@ -742,7 +806,7 @@ async function scanGitHub(p,m,force){
     else{m.noRelease=true;}}
   if(changed){
     const rd=await gh(base+"/readme",{accept:"application/vnd.github.raw",raw:true,useEtag:false});
-    if(rd.status===200){m.readme=analyze(rd.data);m.readmeLure=lureSignals(rd.data);}else if(rd.status===404){m.readme={features:{},os:{},none:true};m.readmeLure=[];}
+    if(rd.status===200){m.readme=analyze(rd.data);m.readmeLure=lureSignals(rd.data);m.shots=readmeShots(rd.data,(m.repo&&m.repo.full)||p.k);}else if(rd.status===404){m.readme={features:{},os:{},none:true};m.readmeLure=[];}
     applyManifest(m,await readManifest(p.k));
     m.scannedFor=activity||new Date().toISOString();m.scannedAt=Date.now();
   }
@@ -1291,6 +1355,7 @@ function detailHTML(v,head){
       ${p.k&&p.k.startsWith("itch.io/")&&m.itchTriedAt?`<p class="note">Devlog last tried ${esc(ago(new Date(m.itchTriedAt).toISOString()))}: ${esc((m.itchTried||[]).join("; "))}${m.itchVia?". Read via "+esc(m.itchVia)+".":"."}</p>`:""}
       ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
     </section>
+    ${shotsHTML(v)}
     <details class="d-more"><summary>Your edits, cover and checks</summary><div class="moregrid">
       <div class="edit"><label>Cover image link<input type="text" data-f="cover" placeholder="Paste an image URL to override" value="${esc((S.ov[p.id]||{}).cover||"")}"></label>
         <span class="note">${(()=>{const c=coverFor(v);return c?"Current cover from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+".":"No cover found yet.";})()} <button class="btn" data-recover="${esc(coverKey(v))}" style="padding:2px 8px;font-size:12px">Look up again</button>
@@ -1530,11 +1595,20 @@ function toggleRow(gk){UI.open=UI.open===gk?null:gk;
   const ids=new Set(allProjects().map(view).filter(v=>groupKeyOf(v)===gk).map(v=>v.p.id));for(const ev of S.log)if(ids.has(ev.id)&&!ev.read)ev.read=true;save();renderUpdates();render();
   if(UI.open){const el=document.querySelector(`.row[data-gk="${CSS.escape(UI.open)}"]`);if(el)el.scrollIntoView({block:"nearest"});}}
 function onDetailClick(e){
+  const sh=e.target.closest("[data-shot]");if(sh){openShot(sh.dataset.pid,+sh.dataset.shot);return true;}
   const co=e.target.closest("[data-checkone]");if(co){co.disabled=true;co.textContent="Checking…";checkOne(co.dataset.checkone);return true;}
   const oa=e.target.closest("[data-osauto]");if(oa){const o=S.ov[oa.dataset.osauto];if(o){delete o.os;save();}renderFilters();if($("#projDlg").open)openProject(oa.dataset.osauto);else render();return true;}
   const rc=e.target.closest("[data-recover]");if(rc){delete S.covers[rc.dataset.recover];coverPending.delete(rc.dataset.recover);const el=document.createElement("div");(()=>{const el=document.querySelector('[data-ck="'+CSS.escape(rc.dataset.recover)+'"]')||{dataset:{}};return lookupCover(rc.dataset.recover,el.dataset.ct||"",el.dataset.cp||"");})().then(()=>{toast("Cover looked up again.");if($("#projDlg").open){const id=$("#projBody .detail").dataset.detail;openProject(id);}else render();});return true;}
   return false;
 }
+$("#shotPrev").addEventListener("click",()=>{SHOTBOX.i--;const p=allProjects().find(x=>x.id===SHOTBOX.pid);paintShot(p&&view(p));});
+$("#shotNext").addEventListener("click",()=>{SHOTBOX.i++;const p=allProjects().find(x=>x.id===SHOTBOX.pid);paintShot(p&&view(p));});
+$("#shotClose").addEventListener("click",()=>$("#shotDlg").close());
+$("#shotDlg").addEventListener("click",e=>{if(e.target===$("#shotDlg"))$("#shotDlg").close();});
+$("#shotDlg").addEventListener("keydown",e=>{if(e.key==="ArrowLeft"&&!$("#shotPrev").disabled)$("#shotPrev").click();else if(e.key==="ArrowRight"&&!$("#shotNext").disabled)$("#shotNext").click();});
+$("#shotHide").addEventListener("click",()=>{const x=SHOTBOX.list[SHOTBOX.i];if(!x)return;const o=S.ov[SHOTBOX.pid]||(S.ov[SHOTBOX.pid]={});o.hideScreens=[...new Set([...(o.hideScreens||[]),x.u])];save();
+  const p=allProjects().find(q=>q.id===SHOTBOX.pid);const v=p&&view(p);SHOTBOX.list=v?shotsFor(v):[];if(SHOTBOX.i>=SHOTBOX.list.length)SHOTBOX.i=SHOTBOX.list.length-1;paintShot(v);
+  toast("Screenshot hidden. Use Export fixes for everyone to hide it for all visitors.");if($("#projDlg").open)openProject(SHOTBOX.pid);else render();});
 $("#projDlg").addEventListener("click",e=>{const gt=e.target.closest("[data-gtab]");if(gt){openProject(gt.dataset.gtab);return;}const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];$("#projDlg").close();save();renderAll();}}});
 $("#projDlg").addEventListener("change",e=>{if(onOsOverride(e))return;const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
@@ -1689,7 +1763,7 @@ $("#exportFixes").addEventListener("click",async()=>{
   const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
-    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;
+    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
   const addedOut={};
   try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}

@@ -15,6 +15,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
   - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
 - **List and grid views,** with box art from libretro-thumbnails and other sources. Games with several projects (The Darkness, Forza Horizon, Banjo-Kazooie and so on) are grouped into one entry, with a tab for each repository showing its own features, platforms and releases. **Group by game** turns this off.
+- **Screenshots:** each project shows screenshots from its own README (the port itself), IGDB and libretro-thumbnails. Click one to enlarge it.
 - **Malware-lure warnings:** repositories that look like malware disguised as game ports are flagged and hidden (see below).
 - **Follow list:** tap the heart on a project, then use **Check followed** to check only those.
 - **Alerts** for new releases, newly listed projects and repositories that disappear.
@@ -62,6 +63,16 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
   python3 scripts/sgdb_covers.py port-watch-needs-covers.json --key YOUR_SGDB_KEY
   ```
 
+## Screenshots
+
+Each project's details show up to ten screenshots, in this order:
+
+1. **The project's README:** images of the port itself, so you see its widescreen, HDR or new renderer. Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
+2. **IGDB:** screenshots of the original game, mainly for newer consoles. The workflow looks each game up on its original platform and only accepts a confident title match.
+3. **libretro-thumbnails:** an in-game shot and the title screen, for games whose box art comes from libretro.
+
+If a screenshot is wrong, open it and click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
+
 ## Malware-lure detection
 
 Fake "PC port" repositories are a known way of spreading malware. Port Watch checks every repository for the warning signs they share:
@@ -93,6 +104,8 @@ Port Watch has no server, accounts or analytics. Your data never leaves your bro
 | `api.github.com`, `gitlab.com` | Releases, READMEs and activity for tracked projects (on checks) |
 | `raw.githubusercontent.com` | This repository's shared data, the Awesome Decomp Games list, `.recomp.json` files and libretro box art |
 | `cdn2.steamgriddb.com` | Cover images from SteamGridDB |
+| `images.igdb.com` | Screenshots from IGDB |
+| The hosts of README images (mostly GitHub) | Screenshots from projects' READMEs, only when you open a project |
 | `unbaked.games` | The **Find a game** search |
 | `en.wikipedia.org`, `upload.wikimedia.org` | Fallback cover art |
 | `fonts.googleapis.com`, `fonts.gstatic.com` | Fonts |
@@ -106,6 +119,7 @@ Port Watch builds on the work of these projects and lists. Their data and images
 - [unbaked.games](https://unbaked.games): the registry behind **Find a game**
 - [libretro-thumbnails](https://github.com/libretro-thumbnails): box art
 - [SteamGridDB](https://www.steamgriddb.com): cover art, made by its community
+- [IGDB](https://www.igdb.com): game screenshots
 - [PortsDR](https://portsdr.com), [Recompendium](https://nio03.github.io/unricopie/en/) and [Read Only Memo](https://readonlymemo.com/decompilation-projects-and-n64-recompiled-list/): used to compile the original built-in list
 - Every project developer whose work is tracked here
 
@@ -123,7 +137,7 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
-| `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json` and malware-lure detection rules, ported to Python |
+| `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json`, malware-lure and README-screenshot rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |
 | `scripts/sgdb_covers.py` | Optional helper for adding covers to a downloaded copy |
@@ -168,6 +182,15 @@ A visitor's own edits in their browser still take priority for them.
 ```
 
 `runsOn`, `cover`, `description` and `note` work here too. The file holds only your decisions. Releases, features and platforms come from `data/status.json`, which the workflow refreshes, so they never go stale. Visitors see an added project like any other, can follow it, and get a "new project" alert the first time it appears. The refresh workflow checks its releases, README and cover like a built-in project. Links that aren't on GitHub, GitLab or itch.io (keyed as `link:` plus the URL) are shown but can't be checked automatically. If Awesome Decomp Games later lists the same repository, Port Watch shows it only once.
+
+**IGDB screenshots** need a Twitch developer app. Register one at dev.twitch.tv/console/apps with:
+
+- **Name:** any unique name.
+- **OAuth Redirect URL:** `https://localhost` (required by the form but never used).
+- **Category:** Website Integration.
+- **Client type:** Confidential.
+
+Then store its client ID and a new secret as the repository secrets `IGDB_CLIENT_ID` and `IGDB_CLIENT_SECRET`. Without them, the workflow skips IGDB and the other screenshot sources still work.
 
 **Changing detection rules:** the features, platforms and release-file rules exist twice, in the JavaScript in `index.html` and in `scripts/pw_analysis.py`. Change both together, or the shared data and in-page checks will disagree.
 
