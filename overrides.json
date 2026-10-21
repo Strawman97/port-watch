@@ -1,11 +1,25 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "projects": {
+    "2ez4gcx/yugioh-fm-3d-monsters": {
+      "_game": "Yu-Gi-Oh! Forbidden Memories",
+      "platform": "PS1",
+      "pcRelease": "Never released on PC"
+    },
+    "7akeem0/albw-decomp-ai": {
+      "_game": "The Legend of Zelda: A Link Between Worlds",
+      "type": "Decompilation"
+    },
     "aabrole/huntersrecomp": {
       "title": "Metroid Prime Hunters",
       "pcRelease": "Never released on PC"
+    },
+    "alekszverr-jpg/cod3pc": {
+      "_game": "Call of Duty 3",
+      "platform": "Xbox 360",
+      "pcRelease": "Not checked"
     },
     "alexbeavs-ps1-ports/apocalypse-recomp": {
       "_game": "Apocalypse",
@@ -20,6 +34,14 @@
       "_game": "The Legend of Zelda: Majora's Mask",
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "bc160201983/medievil_2019_pc_port": {
+      "_game": "MediEvil",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ec71de5a8e7da7c954b1cf1eefbe41c3.jpg"
+    },
+    "bearhuddleston/lasrecomp": {
+      "_game": "The Legend of Zelda: Link's Awakening (2019)",
+      "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png"
     },
     "bigmak94/galaxyquest": {
       "title": "Super Mario Galaxy",
@@ -42,6 +64,16 @@
       "_game": "Animal Forest",
       "cover": "https://cdn2.steamgriddb.com/thumb/045c46e3c0c3be46563fc234789b31fb.jpg"
     },
+    "caiuscodes/goldeneye-007-xbla-pc-recomp": {
+      "_game": "Golden Eye 007",
+      "platform": "XBLA (Xbox 360)"
+    },
+    "carlsonic/sonic-riders-gc-decompilation": {
+      "_game": "Sonic Riders",
+      "platform": "GameCube",
+      "type": "Decompilation",
+      "pcRelease": "Also on PC (console version ported)"
+    },
     "chupathingyce/chupathingyce": {
       "title": "Halo: Combat Evolved"
     },
@@ -52,6 +84,15 @@
       "title": "Need for Speed: Most Wanted (2005)",
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
+    },
+    "dbalatoni13/nfsmw": {
+      "_game": "Need for Speed: Most Wanted",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
+    },
+    "deprivedpeasant/ape-escape-decomp-port": {
+      "_game": "Ape Escape",
+      "platform": "PS1",
+      "pcRelease": "Never released on PC"
     },
     "devzer0d4y/mcx360-edition": {
       "_game": "Minecraft: Xbox 360 Edition",
@@ -80,14 +121,28 @@
     "gillou68310/dukenukemzerohourport": {
       "title": "Duke Nukem: Zero Hour"
     },
+    "glinesbdev/mh3u-port": {
+      "_game": "Monster Hunter 3 Ultimate",
+      "platform": "Wii U",
+      "pcRelease": "Never released on PC"
+    },
     "gtteancum/openh3m": {
       "title": "Halo 3"
+    },
+    "guichiapini/sotcport": {
+      "_game": "Shadow of the Colossus",
+      "platform": "PS4",
+      "pcRelease": "Never released on PC"
     },
     "hayatog/dusklight": {
       "title": "The Legend of Zelda: Twilight Princess"
     },
     "herringway/earthbound": {
       "title": "EarthBound"
+    },
+    "hubbydebs/nfs-nitro-ds-port": {
+      "_game": "Need For Speed: Nitro",
+      "platform": "DS"
     },
     "invinceble55-wq/estacado": {
       "_game": "The Darkness",
@@ -96,6 +151,10 @@
     "invinceble55-wq/estacado-the-darkness-recomp": {
       "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
+    },
+    "jackrushante/dbz-super-saiya-densetsu-rust": {
+      "_game": "Dragon Ball Z: Super Saiya Densetsu",
+      "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg"
     },
     "jotd666/xevious": {
       "title": "Xevious"
@@ -108,8 +167,31 @@
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
     },
+    "manoharpadul/uncharted_nathan_drake_collection_pc": {
+      "_game": "Uncharted: The Nathan Drake Collection",
+      "platform": "PS4",
+      "pcRelease": "Never released on PC"
+    },
+    "mayhemdotcpp/nfs4-recomp": {
+      "_game": "Need for Speed: High Stakes",
+      "platform": "PS1",
+      "pcRelease": "Also on PC (console version ported)"
+    },
     "mbayonal/tp-port": {
       "title": "The Legend of Zelda: Twilight Princess"
+    },
+    "megami-decomps/dds-decomp": {
+      "_game": "Shin Megami Tensei: Digital Devil Saga",
+      "games": [
+        {
+          "title": "Shin Megami Tensei: Digital Devil Saga 2",
+          "platform": "PS2"
+        }
+      ]
+    },
+    "megangrass/bio2-ds": {
+      "_game": "Resident Evil 2",
+      "type": "Decompilation"
     },
     "mkw-sp/mkw-sp": {
       "title": "Mario Kart Wii"
@@ -129,11 +211,25 @@
     "naegoxdev/sm64-scratch": {
       "title": "Super Mario 64"
     },
+    "nawaf-al-hussain/tenkaichi3decomp": {
+      "_game": "Dragon Ball Z: Budokai Tenkaichi 3",
+      "cover": "https://cdn2.steamgriddb.com/thumb/2fcd824d9156e24ad1f7344c8723ab5f.jpg",
+      "platform": "PS2",
+      "pcRelease": "Never released on PC"
+    },
     "nerunsmarts/forzarecomp": {
       "title": "Forza Horizon"
     },
+    "nikolaygorb/goldeneye007reloadedrecomp": {
+      "_game": "GoldenEye 007 Reloaded",
+      "cover": "https://cdn2.steamgriddb.com/thumb/d2a3705b4550183211b94bf86b710bb5.jpg"
+    },
     "novapowers0/dbz-budokai-3-hd-collection": {
       "title": "Dragon Ball Z: Budokai 3"
+    },
+    "nugget1072/dbz-ssw2-godot-port": {
+      "_game": "Dragon Ball Z Supersonic Warriors 2",
+      "cover": "https://cdn2.steamgriddb.com/thumb/24f3f7f630abe81cf2dbf9bdfbfbf13e.jpg"
     },
     "obaidr1/hercules-recompiled": {
       "_game": "Disney's Hercules",
@@ -141,6 +237,15 @@
     },
     "official-kryo-to/ctw-native": {
       "title": "Grand Theft Auto: Chinatown Wars"
+    },
+    "ohackercego/samsho-recomp": {
+      "_game": "Samurai Shodown Sen",
+      "pcRelease": "Never released on PC"
+    },
+    "olink9/driver1-decomp": {
+      "_game": "Driver",
+      "platform": "PS1",
+      "type": "Decompilation"
     },
     "openrac/openrac": {
       "title": "Ratchet & Clank"
@@ -160,12 +265,26 @@
     "rages4calm/earthbound-companion": {
       "title": "Earthbound"
     },
+    "randomno/pinball-decomp": {
+      "_game": "3D Pinball for Windows - Space Cadet",
+      "cover": "https://cdn2.steamgriddb.com/thumb/098b8b9f44bbbc0db5aff108ef93a0e2.jpg"
+    },
+    "recompport/pandora-tower-pc": {
+      "_game": "Pandora's Tower",
+      "cover": "https://cdn2.steamgriddb.com/thumb/8c1bbcea199457b63dc39f7a024591f1.jpg",
+      "platform": "Wii",
+      "pcRelease": "Never released on PC"
+    },
     "rerevvedrecomp/rerevved": {
       "_game": "Civilization Revolution",
       "cover": "https://cdn2.steamgriddb.com/thumb/fd21f5770b522657a6125e2a00e79c5c.jpg"
     },
     "revan67/doax2-recomp": {
       "title": "Dead or Alive Xtreme 2"
+    },
+    "saulob/hard-corps-uprising-recompiled": {
+      "_game": "Hard Corps: Uprising",
+      "platform": "XBLA (Xbox 360)"
     },
     "shmargus/gsrecomp": {
       "title": "Golden Sun"
@@ -189,9 +308,18 @@
     "supermedo/bloodborne_pc": {
       "title": "Bloodborne"
     },
+    "t3chnolog1c/sacredfire": {
+      "_game": "Crash Team Racing: Nitro-Fueled",
+      "platform": "PS4"
+    },
     "tekrantgaming/king-kong-recompiled": {
       "_game": "Peter Jackson's King Kong",
       "cover": "https://cdn2.steamgriddb.com/thumb/94e1efbe349498e6c22ad4f42b236631.jpg"
+    },
+    "thedoffman/timesplitters-future-perfect-pc": {
+      "_game": "Timesplitters Future Perfect",
+      "platform": "Xbox (original)",
+      "pcRelease": "Never released on PC"
     },
     "thibautbus/top": {
       "title": "The Legend of Zelda: Oracle of Ages"
@@ -211,6 +339,10 @@
     "usernamefodder/pmdsky-debug": {
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
     },
+    "virtual-ak/fes-pc-recomp": {
+      "_game": "Shin Megami Tensei: Persona 3 FES",
+      "cover": "https://cdn2.steamgriddb.com/thumb/5011c560a9233c63cf0e6cb6d06cf22c.jpg"
+    },
     "wivi514/dead_rising_2_case_west_xenon_recomp": {
       "_game": "Dead Rising 2: Case West",
       "cover": "https://cdn2.steamgriddb.com/thumb/3de080c153a4d3d431cd08028f17bf1f.jpg"
@@ -221,6 +353,10 @@
     },
     "xandoxan65/segarally95-recomp": {
       "title": "SEGA Rally Championship"
+    },
+    "xzhuofan/cryrecomp": {
+      "_game": "The Legend of Zelda: Tears of the Kingdom",
+      "platform": "Switch"
     }
   },
   "added": {
@@ -622,6 +758,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "giangra/stuntdouble-reignition": {
+      "link": "https://github.com/giangra/stuntdouble-reignition",
+      "title": "Stuntman: Ignition",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Stuntman: Ignition (Xbox 360) static recompilation for PC, built with ReXGlue"
+    },
     "gitfist/hotd2-re": {
       "link": "https://github.com/GitFist/hotd2-re",
       "title": "House of the Dead 2",
@@ -696,6 +840,21 @@
       "pcRelease": "Never released on PC",
       "description": "Native PC port (Linux/Windows) of The Last Guardian (PS4, CUSA03627) — runs your own game dump; no game or firmware files included. Mouse/keyboard, optional 60 FPS, SMAA/CAS filters. | Port nativo para PC de The Last Guardian — usa o seu próprio dump."
     },
+    "hekamiaeon/star-ocean-integrity-and-faithlessness-ps4rt": {
+      "link": "https://github.com/HekamiAeon/Star-Ocean-Integrity-and-Faithlessness-PS4RT",
+      "title": "Star Ocean: Integrity and Faithlessness",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Star Ocean 5 Compatibility Runtime for PC (Linux) through PS4RT"
+    },
+    "hekamiaeon/valkyria-revolution-ps4rt": {
+      "link": "https://github.com/HekamiAeon/valkyria-revolution-ps4rt",
+      "title": "Valkyria Revolution",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "heromachine/burnout-recompilation": {
       "link": "https://github.com/Heromachine/Burnout-Recompilation",
       "title": "Burnout",
@@ -709,6 +868,14 @@
       "platform": "DS",
       "type": "Recompilation",
       "description": "Nfs nitro ds port game to windows"
+    },
+    "ibrahimpuri/infamous-pc-enhanced": {
+      "link": "https://github.com/ibrahimpuri/inFamous-PC-Enhanced",
+      "title": "inFamous",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Enhanced inFamous PS3 PC port (fork of inFAMOUSreborn): full launcher, NVIDIA DLSS/DLAA, DualSense / DS4 / Steam Controller, cheat mods. No game files - bring your own dump."
     },
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "link": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
@@ -1004,6 +1171,14 @@
       "pcRelease": "Never released on PC",
       "description": "Digimon Rumble Arena (Digimon Tamers: Battle Evolution, PS1, Japan) matching decompilation"
     },
+    "rob646464/luigis-mansion-pc-port": {
+      "link": "https://github.com/rob646464/luigis-mansion-pc-port",
+      "title": "Luigi's Mansion",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Luigi's Mansion Recompiled: a PC port of Luigi's Mansion (GameCube) built from your own disc"
+    },
     "sackchief/dqix-enhanced": {
       "link": "https://github.com/sackchief/dqix-enhanced",
       "title": "Dragon Quest IX: Sentinels of the Starry Skies",
@@ -1093,6 +1268,14 @@
       "platform": "Mega Drive",
       "type": "Recompilation",
       "description": "Recompilation of Sonic 3D Blast: Directors Cut"
+    },
+    "smm2recomp/smm2recomp": {
+      "link": "https://github.com/smm2recomp/smm2recomp",
+      "title": "Super Mario Maker 2",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Super Mario Maker 2 Recomp"
     },
     "sno2207/windowsmash": {
       "link": "https://github.com/SNO2207/WindowSmash",
@@ -1241,6 +1424,14 @@
       "type": "Recompilation",
       "pcRelease": "Also on PC (console version ported)",
       "description": "Unofficial native Windows x64 PC port of Spider-Man: Web of Shadows (Xbox 360) created through static recompilation. No game assets included."
+    },
+    "tzeentchnet/killzoneliberation-recomp": {
+      "link": "https://github.com/Tzeentchnet/KillzoneLiberation-Recomp",
+      "title": "Killzone: Liberation",
+      "platform": "PSP",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Killzone: Liberation (PSP) to native Windows / Direct3D 12. Bring your own ISO."
     },
     "used255/artonelico2-decomp": {
       "link": "https://github.com/USED255/artonelico2-decomp",
