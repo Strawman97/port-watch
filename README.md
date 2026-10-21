@@ -26,7 +26,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 
 1. Open the site. It starts with a built-in list and doesn't check anything until you ask.
 2. Follow the projects you're interested in with the heart.
-3. Click **Check for updates**, or **Check followed** to refresh just those. Both use Port Watch's shared data (see below), so no GitHub account or token is needed.
+3. There's nothing to click to stay current: Port Watch applies its shared data (see below) when you open it, every 30 minutes, and when you come back to the tab. This uses no GitHub requests. **Check for updates** is only needed for projects you added yourself.
 
 Everything you do (follows, notes, edits, settings) is saved in your own browser. Use **Settings > Export backup** to keep a copy or move it to another browser.
 
@@ -181,7 +181,9 @@ A visitor's own edits in their browser still take priority for them.
 
 **Projects that cover several games** (launchers such as Athelas, or engines such as Riptide that play more than one game): fill in **Other games this project covers** in the project's edits, one per line as `Title | Platform`, then export. The project appears under its main game and under each other game as a tab, and its details list every game with links between them. Edits stay on the main game's entry.
 
-**Grouping:** projects are grouped by game title and platform, ignoring anything in brackets such as years. If two projects for the same game still don't group (for example "Burnout 3" and "Burnout 3: Takedown"), give them the same title with a shared fix.
+**Grouping:** projects are grouped by game title across platforms, so a PS2 port and an Xbox port of Burnout 3 share one entry. The entry lists every platform, and each repository's tab shows its own. Text in brackets is ignored, except a year, which marks a different game with the same name: "Sonic the Hedgehog (2006)" stays apart from the 1991 game. A project without a year joins a year-marked group only if it shares that group's platform.
+
+If two projects for the same game don't group ("Burnout 3" and "Burnout 3: Takedown"), give them the same title with a shared fix. If two different games share a title, add the year to one of them, as with "Castlevania (1999)" for the N64 game and "FIFA Street (2012)" for the Xbox 360 one.
 
 **Your own copies of shared projects:** if a project you added yourself is later shared, Port Watch switches you to the shared copy, keeping your edits and follow. Exports then can't overwrite the shared entry with an older copy.
 

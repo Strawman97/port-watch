@@ -168,6 +168,7 @@ dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 .ptabs{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;padding:8px 16px 0;border-top:1px solid var(--line);background:var(--sunk);scrollbar-width:thin}
 .ptab{flex:0 0 auto;max-width:300px;white-space:nowrap;border:1px solid var(--line);border-bottom:0;background:var(--surface);color:var(--muted);border-radius:6px 6px 0 0;padding:5px 10px;font-size:12.5px;text-align:left;display:grid;gap:1px}
 .ptab small{overflow:hidden;text-overflow:ellipsis}
+.ptab .tabplat{color:var(--ink);font-weight:600}
 .ptab small{font-size:11px;color:var(--muted)}
 .ptab[aria-selected="true"]{color:var(--ink);font-weight:600;box-shadow:inset 0 3px 0 var(--action)}
 .ptabs + .detail{border-top:1px solid var(--line)}
@@ -341,6 +342,8 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <span class="note">Checking everything reads hundreds of GitHub repos. Without a token, that runs into GitHub's limit of 60 requests an hour.</span>
   </label>
   <label class="check"><input type="checkbox" id="notify"> Show desktop notifications for new releases and new projects</label>
+  <label class="check"><input type="checkbox" id="autoShared"> Keep the list up to date automatically</label>
+  <span class="note" style="display:block;margin:-6px 0 10px">Applies Port Watch's shared data when you open the page, every 30 minutes and when you come back to the tab. It uses no GitHub requests. <b>Check for updates</b> is only needed for projects you added yourself.</span>
   <label class="check"><input type="checkbox" id="blurNsfw"> Blur suggestive cover art and screenshots</label>
   <span class="note" style="display:block;margin:-6px 0 10px">Covers games tagged "Erotic" on IGDB, a short list of series such as Dead or Alive Xtreme and Rumble Roses, and anything marked in a project's edits.</span>
   <label class="check"><input type="checkbox" id="itchRelay"> Read itch.io devlogs through a relay when itch.io blocks this page</label>
@@ -1115,6 +1118,22 @@ async function discoverFeeds(known){
 
 /* ---------------- check runner ---------------- */
 let running=false;
+let autoBusy=false,autoPending=false;
+function userBusy(){const a=document.activeElement;return document.querySelector("dialog[open]")||(a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));}
+async function autoRefresh(){
+  if(autoBusy||running||(typeof HOSTED!=="undefined"&&HOSTED)||S.settings.autoShared===false||navigator.onLine===false)return;
+  autoBusy=true;newThisRun=0;
+  try{
+    await syncAwesome().catch(()=>{});
+    await loadRepoData(true);noteSharedAdded();
+    let n=0;if(REPO.status)for(const p of allProjects()){if(!p.k||p.k.startsWith("itch.io/"))continue;const st=REPO.status[p.k];if(st){applyShared(p,st);n++;}}
+    for(const p of allProjects())if(p.k&&p.k.startsWith("itch.io/")){try{await scanItch(p,S.meta[p.k]||(S.meta[p.k]={}));}catch(e){}}
+    if(n)S.lastShared=REPO.statusAt;S.lastAuto=Date.now();save();
+    if(newThisRun)notifyDesktop(newThisRun);
+  }finally{autoBusy=false;}
+  if(userBusy())autoPending=true;else{renderAll();}
+}
+function flushAuto(){if(autoPending&&!userBusy()){autoPending=false;renderAll();}}
 async function runCheck(mode){
   mode=mode==="followed"?"followed":"all";
   if(running)return;
@@ -1284,7 +1303,7 @@ function setStatus(extra){
   if(extra)parts.push(esc(extra));
   else{parts.push(S.lastCheck?"Last full check "+ago(new Date(S.lastCheck).toISOString()):"Not checked yet. Data from "+esc(BUILT));
     if(S.lastFollowCheck)parts.push("Followed projects checked "+ago(new Date(S.lastFollowCheck).toISOString()));
-    if(S.lastShared)parts.push("Shared data refreshed "+ago(S.lastShared));
+    if(S.lastShared)parts.push("Shared data refreshed "+ago(S.lastShared)+(S.lastAuto?" · updated here "+ago(new Date(S.lastAuto).toISOString()):""));
     if(S.cursor)parts.push("README scan resumes at repo "+(S.cursor+1));
     if(S.lastIssues)parts.push("Couldn't reach "+Object.entries(S.lastIssues.hosts).map(([h,n])=>esc(h)+" ("+n+")").join(", ")+" last time");}
   if(S.rate)parts.push("GitHub requests left this hour: "+S.rate.remaining.toLocaleString()+" of "+S.rate.limit.toLocaleString());
@@ -1316,7 +1335,24 @@ function filtered(){
   vs.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return vs;
 }
-function groupKeyOf(v){if(S.settings.ungroup)return "p:"+v.p.id;const plat=v.platform==="XBLA (Xbox 360)"?"Xbox 360":v.platform;return nrmT(bare(v.game)).replace(/ 1$/,"")+"|"+plat;}
+// Projects group by game title across platforms. A year in brackets marks a separate game ("Sonic the Hedgehog (2006)");
+// a project without a year joins a year-marked group only if it shares that group's platform.
+let YIDX=null;
+function titleBase(t){return nrmT(bare(t)).replace(/ 1$/,"");}
+function titleYear(t){const m=/\((?:[^)]*\D)?((?:19|20)\d\d)\)/.exec(String(t||""));return m?m[1]:"";}
+function samePlat(p){return p==="XBLA (Xbox 360)"?"Xbox 360":p;}
+function yearIndex(){
+  if(YIDX)return YIDX;const idx=new Map();
+  for(const v of expandViews(allProjects().map(view))){const y=titleYear(v.game);if(!y)continue;const b=titleBase(v.game);
+    if(!idx.has(b))idx.set(b,new Map());const ym=idx.get(b);if(!ym.has(y))ym.set(y,new Set());ym.get(y).add(samePlat(v.platform));}
+  return YIDX=idx;
+}
+function groupKeyOf(v){
+  if(S.settings.ungroup)return "p:"+v.p.id;
+  const b=titleBase(v.game),y=titleYear(v.game);if(y)return b+"|"+y;
+  const ym=yearIndex().get(b);if(ym){const hits=[...ym].filter(([,ps])=>ps.has(samePlat(v.platform)));if(hits.length===1)return b+"|"+hits[0][0];}
+  return b;
+}
 function parseGames(x){
   if(!x)return [];const arr=Array.isArray(x)?x:String(x).split(/\n+/);
   return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim()};
@@ -1332,7 +1368,8 @@ function rankItems(a,b){return ((b.play==="yes")-(a.play==="yes"))||((b.stars||0
 function groupsOf(vs){
   const m=new Map();for(const v of expandViews(vs)){if(!passes(v,null,true))continue;const k=groupKeyOf(v);if(!m.has(k))m.set(k,[]);m.get(k).push(v);}
   const out=[];for(const [key,items] of m){items.sort(rankItems);const upd=items.reduce((x,v)=>(v.updated||"")>x?v.updated:x,"");
-    out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform});}
+    const plats=[...new Set(items.map(v=>v.platform))];
+    out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform,plats});}
   const s=UI.sort;
   out.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return out;
@@ -1342,7 +1379,7 @@ function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io
 function tabsHTML(g,cur,where){
   if(g.items.length<2)return "";
   return `<div class="ptabs" role="tablist" aria-label="Projects for ${esc(g.game)}">${g.items.map(v=>{const oss=OSLIST.filter(o=>v.os[o]);
-    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}${gamesOf(v.ghost?view(v.p):v).length?' <span title="Covers several games">⧉</span>':""}<small>${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
+    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}${gamesOf(v.ghost?view(v.p):v).length?' <span title="Covers several games">⧉</span>':""}<small>${new Set(g.items.map(x=>x.platform)).size>1?`<b class="tabplat">${esc(v.platform)}</b> · `:""}${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
 }
 function groupDetailHTML(g){const cur=selectedIn(g);
   const head=g.items.length>1?`<div class="phead">${heartHTML(cur)}<a href="${esc(cur.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(cur))}</a>${riskPill(cur)}</div>`:"";
@@ -1359,7 +1396,7 @@ function groupRowHTML(g,nid){
     <span class="bar"></span>
     <span class="g"><span class="unk" style="grid-row:1/3;grid-column:2;align-self:center">${fol?"♥ "+fol:""}</span><b>${esc(g.game)}<span class="gcount">${items.length} projects</span>${isNew?'<span class="newtag">NEW</span>':""}</b><span class="repos">${esc(items.slice(0,3).map(repoLabel).join(" · "))}${items.length>3?" · +"+(items.length-3):""}</span></span>
     <span class="ty">${types.map(t=>`<span class="pill ${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[0]}</span>`).join("")}${playPill({play:best})}${risky?riskPill(risky):""}</span>
-    <span class="plat">${esc(g.platform)}</span>
+    <span class="plat">${g.plats.map(esc).join("<br>")}</span>
     <span class="oss tags">${oss.length?oss.map(o=>`<span class="f os">${o}</span>`).join(""):'<span class="unk">Not detected yet</span>'}</span>
     <span class="feats tags">${show.map(f=>`<span class="f">${esc(f.label)}</span>`).join("")}${on.length>show.length?`<span class="f more">+${on.length-show.length}</span>`:""}${on.length?"":'<span class="unk">None detected</span>'}</span>
     <span class="upd">${g.updated?esc(fmtDate(g.updated)):"Unknown"}<small>${g.updated?esc(ago(g.updated)):""}${relLead.rel&&relLead.rel.tag?" · "+esc(relLead.rel.tag):""}</small></span>
@@ -1371,7 +1408,7 @@ function groupTileHTML(g,nid){
   const oss=OSLIST.filter(o=>g.items.some(v=>v.os[o]));const best=g.items.some(v=>v.play==="yes")?"yes":g.items.every(v=>v.play==="no")?"no":"unknown";
   const gtypes=[...new Set(g.items.map(v=>v.type))];
   return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" data-id="${esc(lead.p.id)}">${coverHTML(cv,isNew,gtypes)}
-    <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.platform)} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
+    <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.plats.join(" · "))} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
 }
 function newIds(){const s=new Set();for(const e of unread())if(e.id)s.add(e.id);return s;}
 function rowHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
@@ -1455,7 +1492,7 @@ function renderProjects(){
   $("#groupTog").checked=!S.settings.ungroup;
   if(!vs.length){$("#view").innerHTML=`<div class="list"><div class="empty">No projects match these filters. <button class="btn" id="emptyClear">Clear filters</button></div></div>`;return;}
   const grid=S.settings.view==="grid";
-  const welcome=(!S.lastCheck&&!S.welcomed)?`<div class="welcome"><div><b>Port Watch starts with data as of ${esc(BUILT)} and doesn't check for updates until you ask.</b><br>Follow the projects you care about with the heart, then use <b>Check followed</b> to refresh just those. <b>Check for updates</b> uses Port Watch's shared data, refreshed every few hours, so no GitHub token is needed.</div><button class="btn" id="welcomeOk">Got it</button></div>`:"";
+  const welcome=(!S.lastCheck&&!S.lastAuto&&!S.welcomed)?`<div class="welcome"><div><b>Port Watch keeps itself up to date from its shared data, refreshed every few hours.</b><br>Follow the projects you care about with the heart, then use <b>Check followed</b> to refresh just those. <b>Check for updates</b> uses Port Watch's shared data, refreshed every few hours, so no GitHub token is needed.</div><button class="btn" id="welcomeOk">Got it</button></div>`:"";
   $("#view").innerHTML=welcome+(grid?`<div class="grid">${groups.slice(0,UI.limit).map(g=>groupTileHTML(g,nid)).join("")}</div>`:`<div class="list">${groups.slice(0,UI.limit).map(g=>groupRowHTML(g,nid)).join("")}</div>`)+(groups.length>UI.limit?`<button class="btn more-btn" id="moreBtn">Show ${Math.min(150,groups.length-UI.limit)} more of ${groups.length-UI.limit}</button>`:"");
 }
 function afterProjects(){if(S.settings.view==="grid")observeCovers($("#view"));}
@@ -1641,7 +1678,7 @@ function renderFilters(){
   $("#fOs").innerHTML=OSLIST.filter(o=>present.has(o)).map(o=>`<button class="chip" data-chip="os" data-v="${o}" aria-pressed="${UI.os.has(o)}">${o}</button>`).join("");
   $("#fFeat").innerHTML=FEATURES.map(f=>`<button class="chip" data-chip="feat" data-v="${f.id}" aria-pressed="${UI.feat.has(f.id)}">${esc(f.label)}</button>`).join("");
 }
-function render(){
+function render(){YIDX=null;
   document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===UI.tab));
   const wrap=$(".wrap");wrap.classList.toggle("solo",UI.tab!=="projects");$("#filtersBtn").style.display=UI.tab==="projects"?"":"none";
   $("#sortbar").style.visibility=UI.tab==="projects"?"visible":"hidden";
@@ -1663,7 +1700,7 @@ $("#filtersBtn").addEventListener("click",e=>{const o=$("#rail").classList.toggl
 function groupFor(v,gkWanted){const gk=gkWanted||groupKeyOf(v);const items=expandViews(allProjects().map(view)).filter(x=>groupKeyOf(x)===gk&&(passes(x,null,true)||x.p.id===v.p.id));items.sort(rankItems);
   if(gkWanted){const cur=items.find(x=>x.p.id===v.p.id);if(cur)v=cur;}
   return {key:gk,items,lead:items[0]||v,game:(items[0]||v).game,platform:(items[0]||v).platform};}
-function openProject(id,gkWanted){
+function openProject(id,gkWanted){YIDX=null;
   const p=allProjects().find(x=>x.id===id);if(!p)return;let v=view(p);const g=groupFor(v,gkWanted);UI.sel[g.key]=id;v=g.items.find(x=>x.p.id===id)||v;
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
   $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2>${g.items.length>1?typePills([...new Set(g.items.map(x=>x.type))]):`<span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span>`} <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
@@ -1841,9 +1878,9 @@ $("#addSave").addEventListener("click",()=>{
 
 /* settings */
 const dlg=$("#settings");
-$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
+$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#autoShared").checked=S.settings.autoShared!==false;$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
 $("#closeSettings").addEventListener("click",()=>dlg.close());
-$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;S.settings.autoMode=$("#autoMode").value;
+$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;S.settings.autoShared=$("#autoShared").checked;S.settings.autoMode=$("#autoMode").value;
   const want=$("#notify").checked;
   if(want&&"Notification" in window&&Notification.permission!=="granted"){try{const p=await Notification.requestPermission();if(p!=="granted")toast("Desktop notifications are blocked for this page. In-page alerts still work.");}catch(e){}}
   S.settings.notify=want;
@@ -1883,6 +1920,12 @@ $("#resetBtn").addEventListener("click",()=>{if(confirm("Reset all saved data an
 if(typeof HOSTED==="undefined"||!HOSTED)loadRepoData().then(()=>{noteSharedAdded();renderFilters();if(UI.tab==="projects")render();});
 renderAll();
 if(!S.settings.autoMode)S.settings.autoMode="off";
+// keep up to date from the shared data: on open, every 30 minutes, and when coming back to the tab
+setTimeout(autoRefresh,1200);
+setInterval(autoRefresh,30*60e3);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&(!S.lastAuto||Date.now()-S.lastAuto>30*60e3))autoRefresh();});
+document.addEventListener("focusout",()=>setTimeout(flushAuto,300));
+document.addEventListener("close",()=>setTimeout(flushAuto,300),true);
 const stale=t=>!t||Date.now()-t>6*3600e3;
 if(navigator.onLine!==false){
   if(S.settings.autoMode==="followed"&&followedCount()&&stale(S.lastFollowCheck))setTimeout(()=>runCheck("followed"),800);
