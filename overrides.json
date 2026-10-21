@@ -25,6 +25,15 @@
       "_game": "Apocalypse",
       "cover": "https://cdn2.steamgriddb.com/thumb/8d2bb3e3e38aecce130899813a042108.jpg"
     },
+    "alexbeavs-ps1-ports/psxrecomp-ports": {
+      "_game": "Alexbeav's PS1 recomps",
+      "hide": true,
+      "note": "Collection hub. Each game has its own repository, tracked individually."
+    },
+    "anthonybongers/ghostsandgraves": {
+      "_game": "Ghosts And Graves",
+      "cover": "https://raw.githubusercontent.com/AnthonyBongers/GhostsAndGraves/main/reference/cart.png"
+    },
     "bailifftrimmer/ship-of-harkinian-pc-port": {
       "_game": "The Legend of Zelda: Ocarina of Time",
       "hide": true,
@@ -117,6 +126,10 @@
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
     },
+    "davidptrssvea/table-tennis-rockstar-pc": {
+      "_game": "Rockstar Table Tennis",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a5043803fb976050f4c31b55a2962b8e.jpg"
+    },
     "dbalatoni13/nfsmw": {
       "_game": "Need for Speed: Most Wanted",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png",
@@ -131,6 +144,10 @@
     "devzer0d4y/mcx360-edition": {
       "_game": "Minecraft: Xbox 360 Edition",
       "cover": "https://cdn2.steamgriddb.com/thumb/5d0b7689fb494d293633a96f45a16843.jpg"
+    },
+    "donovanmontoya/pokemon-xd-decomp": {
+      "_game": "Pokémon XD: Gale of Darkness",
+      "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg"
     },
     "dougchansan/mk8-recomp": {
       "title": "Mario Kart 8 Deluxe",
@@ -163,6 +180,16 @@
     "gtteancum/openh3m": {
       "title": "Halo 3"
     },
+    "gtteancum/vigilante-8-recomp": {
+      "_game": "Vigilante 8 / Vigilante 8: 2nd Offense",
+      "title": "Vigilante 8",
+      "games": [
+        {
+          "title": "Vigilante 8: 2nd Offense",
+          "platform": "PS1"
+        }
+      ]
+    },
     "guichiapini/sotcport": {
       "_game": "Shadow of the Colossus",
       "platform": "PS4",
@@ -170,6 +197,10 @@
     },
     "hayatog/dusklight": {
       "title": "The Legend of Zelda: Twilight Princess"
+    },
+    "hekamiaeon/valkyria-revolution-ps4rt": {
+      "_game": "Valkyria Revolution",
+      "cover": "https://cdn2.steamgriddb.com/thumb/3783b2997aa60fea365daf96a6754cf6.jpg"
     },
     "herringway/earthbound": {
       "title": "EarthBound"
@@ -206,6 +237,9 @@
       "platform": "PS4",
       "pcRelease": "Never released on PC"
     },
+    "maryncrt/ultimate-mortal-kombat-3-ios-decompiled": {
+      "title": "Ultimate Mortal Kombat 3"
+    },
     "mayhemdotcpp/nfs4-recomp": {
       "_game": "Need for Speed: High Stakes",
       "platform": "PS1",
@@ -226,6 +260,9 @@
     "megangrass/bio2-ds": {
       "_game": "Resident Evil 2",
       "type": "Decompilation"
+    },
+    "mkst/esa": {
+      "_game": "Evo's Space Adventures"
     },
     "mkw-sp/mkw-sp": {
       "title": "Mario Kart Wii"
@@ -319,6 +356,9 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
       "pcRelease": "Never released on PC"
     },
+    "periblugaming/toystory2recomp": {
+      "title": "Toy Story 2: Buzz Lightyear to the Rescue!"
+    },
     "portingpete/the-darkness-recomp": {
       "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
@@ -338,6 +378,9 @@
       "_game": "3D Pinball for Windows - Space Cadet",
       "cover": "https://cdn2.steamgriddb.com/thumb/098b8b9f44bbbc0db5aff108ef93a0e2.jpg"
     },
+    "rangi42/polishedcrystal": {
+      "title": "Pokémon Crystal Version"
+    },
     "recompport/pandora-tower-pc": {
       "_game": "Pandora's Tower",
       "cover": "https://cdn2.steamgriddb.com/thumb/8c1bbcea199457b63dc39f7a024591f1.jpg",
@@ -355,6 +398,10 @@
       "_game": "Castlevania (N64)",
       "title": "Castlevania (1999)",
       "note": "The N64 game, not the 1986 NES Castlevania"
+    },
+    "sal063/ace-combat-3-static-recompilation": {
+      "_game": "Ace Combat 3",
+      "title": "Ace Combat 3: Electrosphere"
     },
     "samuelit0davila/fifa-street-pc-port": {
       "_game": "FIFA Street",
@@ -499,6 +546,1002 @@
       "platform": "Xbox 360",
       "type": "Recompilation",
       "description": "Experimental native Windows x64 port of Call of Duty 3 Xbox 360 single-player using ReXGlue static recompilation. Bring your own game assets."
+    },
+    "alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp",
+      "title": "Ace Combat 3: Electrosphere (Japan)",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Japan disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/ape-escape-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/ape-escape-recomp",
+      "title": "Ape Escape",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/armored-core-master-of-arena-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/armored-core-master-of-arena-recomp",
+      "title": "Armored Core: Master of Arena",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/armored-core-project-phantasma-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/armored-core-project-phantasma-recomp",
+      "title": "Armored Core: Project Phantasma",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/armored-core-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/armored-core-recomp",
+      "title": "Armored Core",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/azure-dreams-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/azure-dreams-recomp",
+      "title": "Azure Dreams",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/blood-omen-legacy-of-kain-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/blood-omen-legacy-of-kain-recomp",
+      "title": "Blood Omen: Legacy of Kain",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/bloody-roar-ii-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/bloody-roar-ii-recomp",
+      "title": "Bloody Roar II",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/brave-fencer-musashi-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/brave-fencer-musashi-recomp",
+      "title": "Brave Fencer Musashi",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/bushido-blade-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/bushido-blade-2-recomp",
+      "title": "Bushido Blade 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/colin-mcrae-rally-2-0-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/colin-mcrae-rally-2-0-recomp",
+      "title": "Colin McRae Rally 2.0",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/colony-wars-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/colony-wars-recomp",
+      "title": "Colony Wars",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/colony-wars-red-sun-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/colony-wars-red-sun-recomp",
+      "title": "Colony Wars: Red Sun",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/destruction-derby-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/destruction-derby-2-recomp",
+      "title": "Destruction Derby 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/destruction-derby-raw-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/destruction-derby-raw-recomp",
+      "title": "Destruction Derby Raw",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/devil-dice-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/devil-dice-recomp",
+      "title": "Devil Dice",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/digimon-world-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/digimon-world-2-recomp",
+      "title": "Digimon World 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/dragon-ball-z-ultimate-battle-22-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/dragon-ball-z-ultimate-battle-22-recomp",
+      "title": "Dragon Ball Z: Ultimate Battle 22",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/driver-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/driver-recomp",
+      "title": "Driver",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/duke-nukem-land-of-the-babes-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/duke-nukem-land-of-the-babes-recomp",
+      "title": "Duke Nukem: Land of the Babes",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/duke-nukem-time-to-kill-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/duke-nukem-time-to-kill-recomp",
+      "title": "Duke Nukem: Time to Kill",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/fade-to-black-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/fade-to-black-recomp",
+      "title": "Fade to Black",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/fear-effect-2-retro-helix-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/fear-effect-2-retro-helix-recomp",
+      "title": "Fear Effect 2: Retro Helix",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/fear-effect-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/fear-effect-recomp",
+      "title": "Fear Effect",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/fighting-force-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/fighting-force-recomp",
+      "title": "Fighting Force",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/future-cop-lapd-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/future-cop-lapd-recomp",
+      "title": "Future Cop: L.A.P.D.",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/g-police-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/g-police-recomp",
+      "title": "G-Police",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/g-police-weapons-of-justice-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/g-police-weapons-of-justice-recomp",
+      "title": "G-Police: Weapons of Justice",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/galerians-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/galerians-recomp",
+      "title": "Galerians",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/ghost-in-the-shell-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/ghost-in-the-shell-recomp",
+      "title": "Ghost in the Shell",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/in-cold-blood-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/in-cold-blood-recomp",
+      "title": "In Cold Blood",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/incredible-crisis-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/incredible-crisis-recomp",
+      "title": "Incredible Crisis",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/jackie-chan-stuntmaster-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/jackie-chan-stuntmaster-recomp",
+      "title": "Jackie Chan Stuntmaster",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/jade-cocoon-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/jade-cocoon-recomp",
+      "title": "Jade Cocoon: Story of the Tamamayu",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/kartia-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/kartia-recomp",
+      "title": "Kartia: The Word of Fate",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/kings-field-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/kings-field-recomp",
+      "title": "King's Field",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Japan disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/koudelka-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/koudelka-recomp",
+      "title": "Koudelka",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/kula-world-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/kula-world-recomp",
+      "title": "Kula World",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/legacy-of-kain-soul-reaver-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/legacy-of-kain-soul-reaver-recomp",
+      "title": "Legacy of Kain: Soul Reaver",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/martian-gothic-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/martian-gothic-recomp",
+      "title": "Martian Gothic",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/mdk-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/mdk-recomp",
+      "title": "MDK",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/mega-man-legends-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/mega-man-legends-2-recomp",
+      "title": "Mega Man Legends 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/men-in-black-the-game-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/men-in-black-the-game-recomp",
+      "title": "Men in Black: The Game",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/metal-slug-x-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/metal-slug-x-recomp",
+      "title": "Metal Slug X",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/misadventures-of-tron-bonne-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/misadventures-of-tron-bonne-recomp",
+      "title": "The Misadventures of Tron Bonne",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/monster-rancher-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/monster-rancher-2-recomp",
+      "title": "Monster Rancher 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/monster-rancher-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/monster-rancher-recomp",
+      "title": "Monster Rancher",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/mortal-kombat-4-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/mortal-kombat-4-recomp",
+      "title": "Mortal Kombat 4",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/mortal-kombat-trilogy-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/mortal-kombat-trilogy-recomp",
+      "title": "Mortal Kombat Trilogy",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/nightmare-creatures-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/nightmare-creatures-recomp",
+      "title": "Nightmare Creatures",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/oddworld-abe-s-oddysee-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/oddworld-abe-s-oddysee-recomp",
+      "title": "Oddworld: Abe's Oddysee",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/pro-pinball-timeshock-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/pro-pinball-timeshock-recomp",
+      "title": "Pro Pinball: Timeshock!",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/quake-ii-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/quake-ii-recomp",
+      "title": "Quake II",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/r-type-delta-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/r-type-delta-recomp",
+      "title": "R-Type Delta",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/rival-schools-evolution-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/rival-schools-evolution-recomp",
+      "title": "Rival Schools: Evolution Disc",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/rival-schools-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/rival-schools-recomp",
+      "title": "Rival Schools: United by Fate",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/rollcage-stage-ii-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/rollcage-stage-ii-recomp",
+      "title": "Rollcage Stage II",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/silent-bomber-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/silent-bomber-recomp",
+      "title": "Silent Bomber",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/spider-man-2-enter-electro-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/spider-man-2-enter-electro-recomp",
+      "title": "Spider-Man 2: Enter Electro",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/spider-man-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/spider-man-recomp",
+      "title": "Spider-Man",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/spyro-the-dragon-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/spyro-the-dragon-recomp",
+      "title": "Spyro the Dragon",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/star-wars-episode-i-the-phantom-menace-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/star-wars-episode-i-the-phantom-menace-recomp",
+      "title": "Star Wars Episode I: The Phantom Menace",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/syphon-filter-3-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/syphon-filter-3-recomp",
+      "title": "Syphon Filter 3",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tail-concerto-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tail-concerto-recomp",
+      "title": "Tail Concerto",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/team-buddies-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/team-buddies-recomp",
+      "title": "Team Buddies",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tenchu-stealth-assassins-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tenchu-stealth-assassins-recomp",
+      "title": "Tenchu: Stealth Assassins",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/the-fifth-element-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/the-fifth-element-recomp",
+      "title": "The Fifth Element",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/the-lost-world-jurassic-park-special-edition-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/the-lost-world-jurassic-park-special-edition-recomp",
+      "title": "The Lost World: Jurassic Park Special Edition",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/the-mummy-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/the-mummy-recomp",
+      "title": "The Mummy",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/threads-of-fate-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/threads-of-fate-recomp",
+      "title": "Threads of Fate",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA, Canada disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tokyo-highway-battle-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tokyo-highway-battle-recomp",
+      "title": "Tokyo Highway Battle",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-2-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-2-recomp",
+      "title": "Tony Hawk's Pro Skater 2",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-3-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-3-recomp",
+      "title": "Tony Hawk's Pro Skater 3",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-4-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-4-recomp",
+      "title": "Tony Hawk's Pro Skater 4",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-recomp",
+      "title": "Tony Hawk's Pro Skater",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/valkyrie-profile-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/valkyrie-profile-recomp",
+      "title": "Valkyrie Profile",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/vampire-hunter-d-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/vampire-hunter-d-recomp",
+      "title": "Vampire Hunter D",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/vib-ribbon-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/vib-ribbon-recomp",
+      "title": "Vib-Ribbon",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/vigilante-8-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/vigilante-8-recomp",
+      "title": "Vigilante 8",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/wild-arms-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/wild-arms-recomp",
+      "title": "Wild Arms",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/wipeout-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/wipeout-recomp",
+      "title": "WipEout",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Europe disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/wipeout-xl-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/wipeout-xl-recomp",
+      "title": "Wipeout XL",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+    },
+    "alexbeavs-ps1-ports/xena-warrior-princess-recomp": {
+      "link": "https://github.com/alexbeavs-ps1-ports/xena-warrior-princess-recomp",
+      "title": "Xena: Warrior Princess",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (USA disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
     },
     "algebramaniacabc/acnlwa-decomp": {
       "link": "https://github.com/AlgebraManiacABC/acnlwa-decomp",
@@ -1097,6 +2140,19 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Uncharted Series Native Build For PS4 Games"
+    },
+    "maryncrt/ultimate-mortal-kombat-3-ios-decompiled": {
+      "link": "https://github.com/MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled",
+      "title": "Ultimate Mortal Kombat 3",
+      "platform": "Mobile",
+      "type": "Decompilation",
+      "pcRelease": "PC version is a different game",
+      "runsOn": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "description": "Clean-room decompilation of the 2011 iOS release of Ultimate Mortal Kombat 3 (v1.2.59), all 2,572 game functions in C, with a native port for Windows, Linux and macOS."
     },
     "masterllgod/naruto-storm-3-full-burst-port-nativo": {
       "link": "https://github.com/Masterllgod/naruto-storm-3-full-burst-port-nativo",

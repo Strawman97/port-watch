@@ -763,8 +763,11 @@ function view(p){
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
     feats[f.id]=r==="yes"?{st:"yes",src:"README"}:s==="yes"?{st:"yes",src:"project description"}:(r==="planned"||s==="planned")?{st:"planned",src:r?"README":"project description"}:{st:"no"};}
   const origTarget=ORIG_TO_TARGET[platform]||null;
-  const strong={},weak={};const put=(o,x,src)=>{if(x&&OSLIST.includes(x)&&x!==origTarget&&!o[x])o[x]=src;};
-  for(const x of (p.po||"").split(",").map(s=>s.trim()).filter(Boolean))put(strong,x,"your tracker");
+  const strong={},weak={};
+  // a mobile game's own name and README say "iOS"/"Android" because that's where it came from; only real builds count
+  const mobileOrig=platform==="Mobile",hardSrc=/^(release files|you|\.recomp\.json|Port Watch's shared list|your own entry|Port Watch's built-in list)$/;
+  const put=(o,x,src)=>{if(!x||!OSLIST.includes(x)||x===origTarget||o[x])return;if(mobileOrig&&(x==="iOS"||x==="Android")&&!hardSrc.test(src))return;o[x]=src;};
+  for(const x of (p.po||"").split(",").map(s=>s.trim()).filter(Boolean))put(strong,x,p.shared?"Port Watch's shared list":p.custom?"your own entry":"Port Watch's built-in list");
   if(m.assetOs)for(const x in m.assetOs)put(strong,x,"release files");
   const nd=nameDescOS(p.pr||p.k,[p.custom?"":p.d,aw&&aw.d,m.repo&&m.repo.desc].filter(Boolean).join("\n"));for(const x in nd)put(strong,x,"repo name or description");
   if(mf)for(const x of mf.targets)put(strong,x,".recomp.json");
