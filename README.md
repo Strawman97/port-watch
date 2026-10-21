@@ -70,7 +70,17 @@ Each project's details show two rows of screenshots:
 - **The port:** images from the project's README (its launcher, widescreen, HDR or new renderer). Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
 - **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen where available. The workflow looks each game up on its original platform and only accepts a confident title match.
 
-If a screenshot is wrong, open it and click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
+Click a screenshot to enlarge it, and use the arrow keys or **Previous**/**Next** to move between them. If a screenshot is wrong, click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
+
+## Suggestive content
+
+Cover art and screenshots of games with suggestive content are blurred by default, with a **Suggestive** label. The enlarged view has a **Show image** button. A game counts as suggestive when:
+
+- IGDB tags it with the "Erotic" theme (checked by the refresh workflow);
+- it belongs to a short built-in list of series such as Dead or Alive Xtreme, Rumble Roses, Senran Kagura and Gal*Gun; or
+- someone sets **Suggestive content** to **Yes** in the project's edits.
+
+Setting it to **No** overrides the automatic choice for one project, and **Export fixes for everyone** shares either choice. **Settings > Blur suggestive cover art and screenshots** turns the blur off for your browser.
 
 ## Malware-lure detection
 
@@ -163,6 +173,7 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
 | `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. The project then appears under each of those games too, with its own cover and screenshots. |
 | `hideScreens` | Screenshot links to leave out. |
+| `nsfw` | `true` blurs the project's cover and screenshots as suggestive; `false` stops it being blurred. |
 | `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
 | `note` | Optional text shown in the project's details. |
 

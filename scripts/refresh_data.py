@@ -481,7 +481,8 @@ IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12
                   "PS Vita": 46, "GameCube": 21, "Wii": 5, "Wii U": 41, "Switch": 130, "N64": 4, "SNES": 19, "NES": 18, "Mega Drive": 29, "32X": 30,
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
                   "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34"}
-MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "400"))
+MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "700"))
+IGDB_EROTIC_THEME = 42   # IGDB's "Erotic" theme; such games are blurred by default on the page
 
 def igdb_token(cid, secret):
     body = urllib.parse.urlencode({"client_id": cid, "client_secret": secret, "grant_type": "client_credentials"}).encode()
@@ -544,6 +545,9 @@ def refresh_screens(projects, overrides):
     todo = []
     for q, (title, pid) in wanted.items():
         g = games.get(q)
+        if g and g.get("id") and "nsfw" not in g:
+            todo.append((q, title, pid))   # found before the theme check existed: look it up once more
+            continue
         if g and (g.get("shots") or (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
             continue                  # found before, or missed less than 30 days ago
         todo.append((q, title, pid))
@@ -552,7 +556,7 @@ def refresh_screens(projects, overrides):
     for q, title, pid in todo[:MAX_IGDB]:
         safe = title.replace('"', "").replace("\\", "")
         try:
-            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id; where platforms = ({pid}); limit 8;')
+            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes; where platforms = ({pid}); limit 8;')
         except Exception as e:
             log(f"  {title}: IGDB error ({e})")
             time.sleep(0.3)
@@ -561,7 +565,8 @@ def refresh_screens(projects, overrides):
         if m:
             score, g = m
             shots = [s["image_id"] for s in (g.get("screenshots") or []) if s.get("image_id")][:6]
-            games[q] = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW}
+            games[q] = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW,
+                        "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or [])}
             found += bool(shots)
         else:
             games[q] = {"shots": [], "checked": NOW}
