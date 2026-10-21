@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-10-21T05:11:27Z",
+ "generated": "2026-10-21T05:23:41Z",
  "repos": {
   "0c0de/splatterhouse-decomp": {
    "assetOs": {},
@@ -700,7 +700,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T00:56:25Z",
     "size": 4932,
-    "stars": 1278
+    "stars": 1279
    },
    "shots": []
   },
@@ -2792,7 +2792,7 @@
     "lang": "C#",
     "pushed": "2026-10-21T05:15:19Z",
     "size": 7986,
-    "stars": 711
+    "stars": 712
    },
    "shots": []
   },
@@ -2957,7 +2957,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T06:08:41Z",
     "size": 6356,
-    "stars": 116
+    "stars": 118
    },
    "shots": [
     "https://raw.githubusercontent.com/bc160201983/medievil_2019_pc_port/HEAD/docs/screenshots/graveyard.jpg",
@@ -5091,7 +5091,7 @@
     "desc": "Pokémon Snap, statically recompiled for iPhone, iPad, and Apple Silicon Mac.",
     "full": "chrissotraidis/snappad",
     "lang": "Python",
-    "pushed": "2026-10-19T09:28:25Z",
+    "pushed": "2026-10-21T05:17:55Z",
     "size": 2611,
     "stars": 12
    },
@@ -5478,7 +5478,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T08:50:16Z",
     "size": 235810,
-    "stars": 529
+    "stars": 530
    },
    "shots": [
     "https://raw.githubusercontent.com/coccofresco/TriAevum/HEAD/docs/images/alpha2-kokiri.png",
@@ -9365,7 +9365,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T05:02:01Z",
     "size": 9158,
-    "stars": 3731
+    "stars": 3733
    },
    "shots": []
   },
@@ -10227,6 +10227,50 @@
     "pushed": "2026-10-19T04:57:14Z",
     "size": 4048,
     "stars": 553
+   },
+   "shots": []
+  },
+  "giangra/stuntdouble-reignition": {
+   "assetOs": {
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "",
+    "game": "Stuntman: Ignition",
+    "notes": "",
+    "system": "Xbox 360",
+    "targets": [],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-20T13:00:59Z",
+    "pre": true,
+    "tag": "v0.1.1",
+    "url": "https://github.com/giangra/stuntdouble-reignition/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-18T17:42:11Z",
+    "desc": "Stuntman: Ignition (Xbox 360) static recompilation for PC, built with ReXGlue",
+    "full": "giangra/stuntdouble-reignition",
+    "lang": "C#",
+    "pushed": "2026-10-20T13:00:50Z",
+    "size": 92,
+    "stars": 20
    },
    "shots": []
   },
@@ -12152,7 +12196,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T05:02:35Z",
     "size": 17007,
-    "stars": 727
+    "stars": 728
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/iss_pc/HEAD/docs/screenshots/01-grafite-sensor.jpg",
@@ -12203,7 +12247,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T04:37:45Z",
     "size": 5307,
-    "stars": 354
+    "stars": 355
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/tlg_pc/HEAD/docs/screenshots/01-menu.jpg",
@@ -12287,6 +12331,87 @@
     "pushed": "2026-06-29T11:05:43Z",
     "size": 3611,
     "stars": 5236
+   },
+   "shots": []
+  },
+  "hekamiaeon/star-ocean-integrity-and-faithlessness-ps4rt": {
+   "assetOs": {
+    "Linux": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "fg": "yes",
+     "fsr": "yes",
+     "hfr": "planned",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-20T22:31:36Z",
+    "pre": false,
+    "tag": "v1.0",
+    "url": "https://github.com/HekamiAeon/Star-Ocean-Integrity-and-Faithlessness-PS4RT/releases/tag/v1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-20T21:13:30Z",
+    "desc": "Star Ocean 5 Compatibility Runtime for PC (Linux) through PS4RT",
+    "full": "HekamiAeon/Star-Ocean-Integrity-and-Faithlessness-PS4RT",
+    "lang": "C++",
+    "pushed": "2026-10-20T23:40:13Z",
+    "size": 18282,
+    "stars": 5
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/HekamiAeon/Star-Ocean-Integrity-and-Faithlessness-PS4RT/HEAD/docs/images/readme/sample.png"
+   ]
+  },
+  "hekamiaeon/valkyria-revolution-ps4rt": {
+   "assetOs": {
+    "Linux": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "fg": "planned",
+     "fsr": "yes",
+     "hfr": "planned",
+     "kbm": "yes",
+     "online": "planned",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-17T05:02:51Z",
+    "pre": false,
+    "tag": "v1.0",
+    "url": "https://github.com/HekamiAeon/valkyria-revolution-ps4rt/releases/tag/v1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-17T04:48:25Z",
+    "desc": "",
+    "full": "HekamiAeon/valkyria-revolution-ps4rt",
+    "lang": "C++",
+    "pushed": "2026-10-20T21:50:15Z",
+    "size": 12683,
+    "stars": 7
    },
    "shots": []
   },
@@ -12690,6 +12815,63 @@
     "stars": 28
    },
    "shots": []
+  },
+  "ibrahimpuri/infamous-pc-enhanced": {
+   "assetOs": {
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Static recompilation of the PPU and SPU code to x86-64 with a native Direct3D 12 runtime",
+    "game": "inFamous",
+    "notes": "Native Windows port built from the player's own European BCES00220 disc dump; no game code or data is distributed.",
+    "system": "PS3",
+    "targets": [
+     "Windows"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "dlss": "yes",
+     "fg": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-20T19:08:10Z",
+    "pre": false,
+    "tag": "v1.5",
+    "url": "https://github.com/ibrahimpuri/inFamous-PC-Enhanced/releases/tag/v1.5"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-20T00:37:38Z",
+    "desc": "Enhanced inFamous PS3 PC port (fork of inFAMOUSreborn): full launcher, NVIDIA DLSS/DLAA, DualSense / DS4 / Steam Controller, cheat mods. No game files - bring your own dump.",
+    "full": "ibrahimpuri/inFamous-PC-Enhanced",
+    "lang": "C",
+    "pushed": "2026-10-20T19:49:11Z",
+    "size": 14301,
+    "stars": 25
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/gameplay-dlaa.jpg",
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/launcher-home.jpg",
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/launcher-graphics.jpg",
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/launcher-controller.jpg",
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/launcher-mods.jpg",
+    "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/launcher-performance.jpg"
+   ]
   },
   "iexplosiverage/dbz-burst-limit-recompiled": {
    "assetOs": {
@@ -13642,7 +13824,7 @@
     "desc": "",
     "full": "JEschete/VS-NativePort",
     "lang": "C",
-    "pushed": "2026-10-21T04:58:39Z",
+    "pushed": "2026-10-21T05:23:41Z",
     "size": 19677,
     "stars": 13
    },
@@ -14376,7 +14558,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T05:10:54Z",
     "size": 22618,
-    "stars": 67
+    "stars": 68
    },
    "shots": [
     "https://raw.githubusercontent.com/josiahg2502-glitch/NewSuperPaperBros/HEAD/screenshots/mac_02_cinematic.png",
@@ -20402,7 +20584,7 @@
     "full": "nathanialf/ico",
     "lang": "C",
     "pushed": "2026-10-21T05:16:04Z",
-    "size": 28177,
+    "size": 28509,
     "stars": 43
    },
    "shots": []
@@ -22655,7 +22837,7 @@
     "desc": "Unofficial PC port of the Xbox 360 version of Army of Two (2008). Online co-op supported.",
     "full": "OpenPortroid/ArmyOfTwoRecompilation",
     "lang": "C++",
-    "pushed": "2026-10-21T04:16:36Z",
+    "pushed": "2026-10-21T05:19:22Z",
     "size": 8035,
     "stars": 86
    },
@@ -23162,7 +23344,7 @@
     "lang": "C",
     "pushed": "2026-10-21T04:57:27Z",
     "size": 8177,
-    "stars": 1494
+    "stars": 1496
    },
    "shots": [
     "https://raw.githubusercontent.com/peiikai/LASRecomp/HEAD/docs/ultrawide.jpg",
@@ -24794,6 +24976,39 @@
     "pushed": "2026-10-17T07:01:30Z",
     "size": 728,
     "stars": 64
+   },
+   "shots": []
+  },
+  "rob646464/luigis-mansion-pc-port": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hfr": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-21T01:35:54Z",
+    "pre": false,
+    "tag": "v1.1",
+    "url": "https://github.com/rob646464/luigis-mansion-recompiled/releases/tag/v1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-14T04:54:29Z",
+    "desc": "Luigi's Mansion Recompiled: a PC port of Luigi's Mansion (GameCube) built from your own disc",
+    "full": "rob646464/luigis-mansion-recompiled",
+    "lang": "C++",
+    "pushed": "2026-10-21T01:39:13Z",
+    "size": 5641,
+    "stars": 145
    },
    "shots": []
   },
@@ -27043,6 +27258,56 @@
    },
    "shots": []
   },
+  "smm2recomp/smm2recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "online": "planned"
+    },
+    "os": {
+     "Android": true,
+     "Linux": true,
+     "Windows": true,
+     "iOS": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-20T07:05:11Z",
+    "pre": false,
+    "tag": "v0.2.0",
+    "url": "https://github.com/smm2recomp/smm2recomp/releases/tag/v0.2.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-19T03:02:41Z",
+    "desc": "Super Mario Maker 2 Recomp",
+    "full": "smm2recomp/smm2recomp",
+    "lang": "Rust",
+    "pushed": "2026-10-20T09:30:51Z",
+    "size": 14968,
+    "stars": 41
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/title.jpg",
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/title-course.jpg",
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/menu.jpg",
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/100mario-select.jpg",
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/100mario-map.jpg",
+    "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/100mario-card.jpg"
+   ]
+  },
   "snesrev/sm": {
    "noRelease": true,
    "readme": {
@@ -28800,7 +29065,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T20:42:52Z",
     "size": 5994,
-    "stars": 4162
+    "stars": 4163
    },
    "shots": []
   },
@@ -28840,7 +29105,7 @@
     "lang": "C++",
     "pushed": "2026-10-17T23:37:21Z",
     "size": 3834,
-    "stars": 1733
+    "stars": 1734
    },
    "shots": []
   },
@@ -28986,7 +29251,7 @@
     "full": "TeamGDB/Yakumo",
     "lang": "C++",
     "pushed": "2026-10-21T04:23:59Z",
-    "size": 22384,
+    "size": 22447,
     "stars": 495
    },
    "shots": []
@@ -29824,7 +30089,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T21:00:28Z",
     "size": 486,
-    "stars": 601
+    "stars": 602
    },
    "shots": [
     "https://github.com/user-attachments/assets/e0156eb8-c1b5-49d9-ab93-3abb46bf5f47"
@@ -31016,6 +31281,33 @@
     "https://github.com/user-attachments/assets/7bf66958-8bdc-4a65-bab9-a7b652f742ce"
    ]
   },
+  "tzeentchnet/killzoneliberation-recomp": {
+   "noRelease": true,
+   "readme": {
+    "features": {
+     "kbm": "yes",
+     "online": "planned",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "repo": {
+    "archived": false,
+    "created": "2026-10-19T07:43:02Z",
+    "desc": "Static recompilation of Killzone: Liberation (PSP) to native Windows / Direct3D 12. Bring your own ISO.",
+    "full": "Tzeentchnet/KillzoneLiberation-Recomp",
+    "lang": "Python",
+    "pushed": "2026-10-21T03:31:56Z",
+    "size": 1564,
+    "stars": 2
+   },
+   "shots": []
+  },
   "unchiga/yu-gi-oh-forbidden-memories-recompiled": {
    "assetOs": {
     "Android": true,
@@ -31897,7 +32189,7 @@
     "lang": "Python",
     "pushed": "2026-10-21T02:49:35Z",
     "size": 37427,
-    "stars": 107
+    "stars": 108
    },
    "shots": [
     "https://raw.githubusercontent.com/vyanhursky/DefJamFFNY-recomp/HEAD/branding/fan/github/social-preview-1280x640.jpg",
@@ -32942,7 +33234,7 @@
     "full": "yanm1103/War_of_the_Monsters_recomp",
     "lang": "C++",
     "pushed": "2026-10-21T04:37:32Z",
-    "size": 114315,
+    "size": 114313,
     "stars": 14
    },
    "shots": [
@@ -33848,7 +34140,7 @@
     "lang": "C",
     "pushed": "2026-10-21T04:57:47Z",
     "size": 21766,
-    "stars": 860
+    "stars": 861
    },
    "shots": []
   },
