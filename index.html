@@ -395,14 +395,15 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, screens:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, screens:null, lib:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
 const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
   if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
-    const [c,i,st,sc] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json")]);
+    const [c,i,st,sc,lb] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json"),get("libretro.json")]);
+    if(lb&&lb.map)REPO.lib=lb;
     if(sc&&sc.games&&sc.map)REPO.screens=sc;
     try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
       if(o&&o.added&&typeof o.added==="object")REPO.added=sharedAddedProjects(o.added);}}catch(e){}
@@ -594,8 +595,10 @@ function shotsFor(v){
   (so.screens||[]).forEach(u=>add(u,u,"Port Watch's maintainer","port"));
   if(!v.risk)((v.m&&v.m.shots)||[]).slice(0,6).forEach(u=>add(u,u,"the project's README","port"));
   const ig=igdbFor(v.p,v);if(ig)ig.shots.slice(0,6).forEach(id=>add(IGDB_IMG(id,"screenshot_huge"),IGDB_IMG(id,"screenshot_med"),"IGDB","orig"));
-  const lb=!v.ghost&&seedCover(v.p)||(()=>{const c=coverFor(v);return c&&/libretro/.test(c.s||"")?c:null;})();
-  if(lb&&/\/Named_Boxarts\//.test(lb.u)){add(lb.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails","orig");add(lb.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)","orig");}
+  const le=libFor(v);
+  if(le){if(le.snap!==false)add(ltURL(le.repo,le.file,"Named_Snaps"),"","libretro-thumbnails","orig");if(le.title!==false)add(ltURL(le.repo,le.file,"Named_Titles"),"","libretro-thumbnails (title screen)","orig");}
+  else{const lb=!v.ghost&&seedCover(v.p)||(()=>{const c=coverFor(v);return c&&/libretro/.test(c.s||"")?c:null;})();
+    if(lb&&/\/Named_Boxarts\//.test(lb.u)){add(lb.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails","orig");add(lb.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)","orig");}}
   return out.filter(x=>!hide.has(x.u));
 }
 function shotsHTML(v){
@@ -852,7 +855,7 @@ async function scanGitHub(p,m,force){
   if(!aw||force){
     const r=await gh(base,{useEtag:!!m.repo});
     if(r.status===404||r.status===451){if(!m.notFound&&m.scannedAt)logEv("gone",p,r.status===451?"Repository blocked for legal reasons (likely DMCA)":"Repository not found: deleted, renamed or made private");m.notFound=true;m.checkedAt=Date.now();return;}
-    if(r.status===200){const d=r.data;m.notFound=false;m.repo={pushed:d.pushed_at,stars:d.stargazers_count,archived:d.archived,full:d.full_name,desc:d.description||"",size:d.size,lang:d.language||null,created:d.created_at};
+    if(r.status===200){const d=r.data;m.notFound=false;m.repo={pushed:d.pushed_at,stars:d.stargazers_count,archived:d.archived,full:d.full_name,desc:d.description||"",size:d.size,lang:d.language||null,created:d.created_at,fork:!!d.fork,parent:(d.parent&&d.parent.full_name)||""};
       if(d.archived&&m.scannedAt&&!m.archivedLogged){logEv("gone",p,"Repository archived (read-only)");m.archivedLogged=true;}}
     activity=(m.repo&&m.repo.pushed)||activity;
   }
@@ -1223,7 +1226,8 @@ function ltMatch(idx,title,alias){
     if(best)return best.e;}
   return null;
 }
-function ltURL(repo,file){return "https://raw.githubusercontent.com/libretro-thumbnails/"+repo+"/"+(repo==="Sega_-_Naomi_2"?"main":"master")+"/Named_Boxarts/"+encodeURIComponent(file);}
+function ltURL(repo,file,folder){return "https://raw.githubusercontent.com/libretro-thumbnails/"+repo+"/"+(repo==="Sega_-_Naomi_2"?"main":"master")+"/"+(folder||"Named_Boxarts")+"/"+encodeURIComponent(file);}
+function libFor(v){const L=REPO.lib&&REPO.lib.map;if(!L)return null;const e=L[(v.p.k||v.p.id)+(v.ghost?"#"+nrmT(v.ghost.title):"")];return e&&e.file?e:null;}
 function seedCover(p){if(!p.cv)return null;const i=p.cv.indexOf("|");return {u:ltURL(p.cv.slice(0,i),p.cv.slice(i+1)),s:"libretro box art"};}
 const ltLists={};
 function ltList(repo){if(ltLists[repo])return ltLists[repo];
@@ -1246,13 +1250,14 @@ function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
 function baseTitle(p,so){return (so&&so.title)||(p.tf?p.g:displayTitle(p,(S.meta[p.k]||{}).manifest||null));}
 function localRename(p,lo,so){return !!(lo.game&&nrmT(bare(lo.game))!==nrmT(bare(baseTitle(p,so))));}
 function coverFor(v){
-  if(v.ghost){const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  if(v.ghost){const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
   const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
   const myRename=localRename(v.p,lo,so);   // a local title only counts if it differs from the shared one
   if(so.cover&&!myRename)return {u:so.cover,s:"Port Watch's shared fixes"};
   if(v.p.sharedCover&&!myRename)return {u:v.p.sharedCover,s:"Port Watch's maintainer"};
   const renamed=myRename||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
+  const lbx=!myRename&&libFor(v);if(lbx)return {u:ltURL(lbx.repo,lbx.file),s:"libretro box art"};
   const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];
   if(rc&&rc.url&&(!renamed||(!myRename&&nrmT(bare(rc.title||""))===nrmT(bare(coverTitle(v))))||(!myRename&&!so.title)))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
 function sgdbSearchURL(v){return "https://www.steamgriddb.com/search/grids?term="+encodeURIComponent(coverTitle(v));}
@@ -1844,6 +1849,7 @@ async function precheckLink(){
   if(seq!==addSeq)return;
   if(m.notFound||!m.repo){box.innerHTML=`<span class="pill pl-no">Not found</span> There's no public repository at this link. Check it for typos.`;return;}
   addPre={k,m};const risk=lureRiskOf(k,m,m.repo.stars);
+  const par=m.repo.fork&&m.repo.parent?m.repo.parent:"";const parTracked=par&&knownKeys().has(par.toLowerCase());
   const desc=m.repo.desc||"",mf=m.manifest||null,name=k.split("/").pop();
   const title=(mf&&mf.game)||titleFromDesc(desc)||stripSuffix(stripParens(name.replace(/[-_.]+/g," ").replace(/([a-z])([A-Z])/g,"$1 $2"))).trim();
   const plat=(mf&&mf.system&&PCOL[mf.system]?mf.system:"")||detectPlatform(desc)||detectPlatform(name.replace(/[-_]/g," "));
@@ -1859,6 +1865,7 @@ async function precheckLink(){
     ★ ${Number(m.repo.stars||0).toLocaleString()} · last push ${esc(ago(m.repo.pushed))} · ${rel}${m.repo.archived?' · <span class="pill pl-no">Archived</span>':""}<br>
     Runs on: ${os.size?esc([...os].join(", ")):"not detected yet"} · Features: ${feats.length?esc(feats.join(", ")):"none detected"}${mf?" · has a .recomp.json":""}<br>
     <span class="note">Title, platform and type were filled in from the repository. Check them before adding.</span>`+
+    (par?`<div class="warnbox" style="margin-top:6px"><b>This is a fork of ${esc(par)}</b>${parTracked?", which Port Watch already tracks. Unless this fork adds something of its own, the original is the one to follow.":"."}</div>`:"")+
     (risk?`<div class="warnbox" style="margin-top:6px">${risk.level==="high"?"<b>This looks like malware disguised as a game port.</b> ":"<b>Be careful with this repository.</b> "}Warning signs: ${esc(risk.reasons.join(", "))}.${risk.level==="high"?" Don't download anything from it, and don't share it.":""}</div>`:"");
 }
 $("#addSave").addEventListener("click",()=>{

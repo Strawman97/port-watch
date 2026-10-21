@@ -68,7 +68,9 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
 Each project's details show two rows of screenshots:
 
 - **The port:** images from the project's README (its launcher, widescreen, HDR or new renderer). Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
-- **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen where available. The workflow looks each game up on its original platform and only accepts a confident title match.
+- **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen for retro consoles. The workflow looks each game up on its original platform and only accepts a confident title match. When a platform version has fewer than three screenshots on IGDB, the workflow adds screenshots from the same game's other platform versions, never from a different game that shares the name.
+
+Lookups compare titles without brackets. A year in a title ("FIFA Street (2005)"), or else the original console's era, decides between same-named games, and extra words such as "mini", "remake" or "HD" count against a match. Retro games use libretro's official box art before SteamGridDB.
 
 Click a screenshot to enlarge it, and use the arrow keys or **Previous**/**Next** to move between them. If a screenshot is wrong, click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
 
@@ -146,6 +148,7 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
+| `data/libretro.json` | Written by the workflow: each retro game's libretro-thumbnails box art, in-game shot and title screen |
 | `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json`, malware-lure and README-screenshot rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |
@@ -178,6 +181,8 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `note` | Optional text shown in the project's details. |
 
 A visitor's own edits in their browser still take priority for them.
+
+**Games released as several versions** (Pokémon Red and Blue, Ruby and Sapphire): list the other versions as games the project covers, so each version gets its own entry, cover and screenshots.
 
 **Projects that cover several games** (launchers such as Athelas, or engines such as Riptide that play more than one game): fill in **Other games this project covers** in the project's edits, one per line as `Title | Platform`, then export. The project appears under its main game and under each other game as a tab, and its details list every game with links between them. Edits stay on the main game's entry.
 

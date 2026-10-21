@@ -127,18 +127,61 @@ def awesome_projects():
     return out
 
 # ---------------------------------------------------------------- SteamGridDB covers
-def sgdb_lookup(title, key):
-    res = http_get(SGDB_BASE + "/search/autocomplete/" + urllib.parse.quote(title, safe=""), {"Authorization": "Bearer " + key})
-    hits = (json.loads(res).get("data") if res else None) or []
-    q, best = norm(title), None
-    for h in hits:
-        n = norm(h.get("name", ""))
+# Years each console's games came out, used to pick between same-named games ("FIFA Street" 2005 vs 2012).
+PLATFORM_ERA = {"PS1": (1994, 2006), "PS2": (2000, 2013), "PS3": (2006, 2017), "PS4": (2013, 2023), "PSP": (2004, 2014), "PS Vita": (2011, 2019),
+                "Xbox (original)": (2001, 2008), "Xbox 360": (2005, 2016), "XBLA (Xbox 360)": (2004, 2016), "Xbox One": (2013, 2022),
+                "NES": (1983, 1995), "SNES": (1990, 1999), "N64": (1996, 2002), "GameCube": (2001, 2007), "Wii": (2006, 2014), "Wii U": (2012, 2017),
+                "Switch": (2017, 2030), "Game Boy": (1989, 2001), "Game Boy Color": (1998, 2003), "GBA": (2001, 2008), "DS": (2004, 2014),
+                "3DS": (2011, 2020), "Mega Drive": (1988, 1998), "32X": (1994, 1996), "Saturn": (1994, 2000), "Dreamcast": (1998, 2002),
+                "Master System": (1985, 1996), "Game Gear": (1990, 1997), "Virtual Boy": (1995, 1996), "Mobile": (2008, 2030)}
+EXTRA_WORDS = re.compile(r"\b(mini|demake|hack|remake|remaster(ed)?|reloaded|fan ?made|deluxe|hd|definitive|collection|anniversary|redux|3d|online|portable)\b", re.I)
+
+def vnorm(t):
+    """norm() without a trailing "version": "Pokémon Emerald" matches "Pokémon Emerald Version"."""
+    return re.sub(r" version$", "", norm(t))
+
+def bare_title(t):
+    return re.sub(r"\s+", " ", re.sub(r"\s*\([^)]*\)", " ", t or "")).strip()
+
+def title_year(t):
+    m = re.search(r"\((?:[^)]*\D)?((?:19|20)\d\d)\)", t or "")
+    return int(m.group(1)) if m else None
+
+def pick_match(title, cands, name_of, year_of, platform, threshold=0.88):
+    """Best candidate for a title: names compared without brackets; a year in the title, or else the console's era,
+    chooses between same-named games; extra words such as "mini" or "remake" count against a candidate."""
+    q = vnorm(bare_title(title)); want = title_year(title); era = PLATFORM_ERA.get(platform)
+    q_extra = {m.group(0).lower() for m in EXTRA_WORDS.finditer(bare_title(title))}
+    best = None
+    for c in cands or []:
+        raw = name_of(c) or ""
+        n = vnorm(bare_title(raw))
         score = 1.0 if n == q else difflib.SequenceMatcher(None, q, n).ratio()
         if numbers(q) != numbers(n):
             score -= 0.3
-        if best is None or score > best[0]:
-            best = (score, h)
-    if not best or best[0] < 0.85:
+        if {m.group(0).lower() for m in EXTRA_WORDS.finditer(bare_title(raw))} - q_extra:
+            score -= 0.2
+        y = year_of(c) or title_year(raw)
+        rank = score
+        if want and y:
+            rank += 0.2 if abs(y - want) <= 1 else -0.25
+        elif era and y:
+            rank += 0.05 if era[0] <= y <= era[1] else -0.15
+        if score >= threshold and (best is None or rank > best[0]):
+            best = (rank, score, c)
+    return (best[1], best[2]) if best else None
+
+def ts_year(v):
+    try:
+        return datetime.datetime.fromtimestamp(int(v), datetime.timezone.utc).year if v else None
+    except (ValueError, OSError, OverflowError):
+        return None
+
+def sgdb_lookup(title, key, platform=""):
+    res = http_get(SGDB_BASE + "/search/autocomplete/" + urllib.parse.quote(bare_title(title), safe=""), {"Authorization": "Bearer " + key})
+    hits = (json.loads(res).get("data") if res else None) or []
+    best = pick_match(title, hits, lambda h: h.get("name"), lambda h: ts_year(h.get("release_date")), platform)
+    if not best:
         return None
     score, hit = best
     time.sleep(0.25)
@@ -147,7 +190,7 @@ def sgdb_lookup(title, key):
     imgs = (json.loads(res).get("data") if res else None) or []
     if not imgs:
         return None
-    return {"url": imgs[0].get("url"), "thumb": imgs[0].get("thumb"), "name": hit.get("name"), "match": round(score, 3)}
+    return {"url": imgs[0].get("url"), "thumb": imgs[0].get("thumb"), "name": hit.get("name"), "match": round(score, 3), "rev": 2}
 
 def load_overrides():
     """Shared fixes from overrides.json in the repository root (title, cover, platform, type, pcRelease, runsOn, hide)."""
@@ -212,25 +255,27 @@ def refresh_covers(projects, overrides):
         if ck in seen:
             continue
         seen.add(ck)
+        plat = fix.get("platform") or p.get("p") or ""
         if ck in covers:
-            if not fixed_title or covers[ck].get("title") == fixed_title:
+            if fixed_title and covers[ck].get("title") != fixed_title:
+                covers.pop(ck, None)      # the title was corrected: look the cover up again
+                misses.pop(ck, None)
+            elif covers[ck].get("rev") == 2:
                 continue
-            covers.pop(ck, None)          # the title was corrected: look the cover up again
-            misses.pop(ck, None)
+            else:
+                todo.append((ck, covers[ck].get("title") or cover_title(p.get("g", "")), plat))   # matched by the older rules: check once more
+                continue
         miss = misses.get(ck)
         if miss and (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(miss.replace("Z", "+00:00"))).days < RETRY_MISSES_DAYS:
             continue
         title = fixed_title or cover_title(p.get("g", ""))
         if title:
-            todo.append((ck, title))
+            todo.append((ck, title, plat))
     log(f"  {len(todo)} games need a cover lookup (max {MAX_LOOKUPS} this run)")
-    for ck, title in todo[:MAX_LOOKUPS]:
+    for ck, title, plat in todo[:MAX_LOOKUPS]:
+        old = covers.get(ck)
         try:
-            hit = sgdb_lookup(title, key)
-            bare = re.sub(r"\s*\(\d{4}\)\s*$", "", title)
-            if not hit and bare != title:          # "Saints Row (2006)" -> "Saints Row" when the year finds nothing
-                time.sleep(0.25)
-                hit = sgdb_lookup(bare, key)
+            hit = sgdb_lookup(title, key, plat)
         except urllib.error.HTTPError as e:
             if e.code == 401:
                 log("  SteamGridDB rejected the API key (401); stopping cover lookups")
@@ -243,8 +288,12 @@ def refresh_covers(projects, overrides):
         if hit and hit.get("url"):
             covers[ck] = {**hit, "title": title, "added": NOW}
             misses.pop(ck, None)
-            log(f"  + {title} -> {hit['name']} ({hit['match']})")
+            if not old or old.get("url") != hit["url"]:
+                log(f"  + {title} -> {hit['name']} ({hit['match']})")
+        elif old and old.get("match", 0) >= 0.95 and not EXTRA_WORDS.search(old.get("name") or ""):
+            covers[ck] = {**old, "rev": 2}  # the new rules found nothing better: keep a confident older match
         else:
+            covers.pop(ck, None)
             misses[ck] = NOW
         time.sleep(0.25)
     data["generated"] = NOW
@@ -538,43 +587,187 @@ def refresh_screens(projects, overrides):
             continue
         q = f"{norm(title)}|{pid}"
         mapping[key] = q
-        wanted.setdefault(q, (title, pid))
+        wanted.setdefault(q, (title, pid, plat))
     for k in [k for k in mapping if k not in {p.get("k") or p["id"] for p in projects}]:
         del mapping[k]
     now = datetime.datetime.now(datetime.timezone.utc)
     todo = []
-    for q, (title, pid) in wanted.items():
+    for q, (title, pid, plat) in wanted.items():
         g = games.get(q)
+        if g and g.get("rev") != 2 and len(g.get("shots") or []) < 3:
+            todo.append((q, title, pid, plat))   # missed or thin under the older rules: look it up once more
+            continue
         if g and g.get("id") and "nsfw" not in g:
-            todo.append((q, title, pid))   # found before the theme check existed: look it up once more
+            todo.append((q, title, pid, plat))   # found before the theme check existed: look it up once more
             continue
         if g and (g.get("shots") or (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
             continue                  # found before, or missed less than 30 days ago
-        todo.append((q, title, pid))
+        todo.append((q, title, pid, plat))
     log(f"  {len(todo)} games to look up on IGDB (max {MAX_IGDB} this run)")
-    found = 0
-    for q, title, pid in todo[:MAX_IGDB]:
-        safe = title.replace('"', "").replace("\\", "")
+    found = topped = 0
+    for q, title, pid, plat in todo[:MAX_IGDB]:
+        safe = bare_title(title).replace('"', "").replace("\\", "")
         try:
-            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes; where platforms = ({pid}); limit 8;')
+            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes; where platforms = ({pid}); limit 10;')
         except Exception as e:
             log(f"  {title}: IGDB error ({e})")
             time.sleep(0.3)
             continue
-        m = igdb_match(title, res)
+        time.sleep(0.3)                # IGDB allows 4 requests a second
+        m = pick_match(title, res, lambda g: g.get("name"), lambda g: ts_year(g.get("first_release_date")), plat)
         if m:
             score, g = m
-            shots = [s["image_id"] for s in (g.get("screenshots") or []) if s.get("image_id")][:6]
-            games[q] = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW,
-                        "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or [])}
-            found += bool(shots)
+            shots = [x["image_id"] for x in (g.get("screenshots") or []) if x.get("image_id")][:8]
+            entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": 2,
+                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or [])}
+            if len(shots) < 3:
+                # thin results: add screenshots from the same game's other platform versions
+                n0 = len(shots)
+                try:
+                    more = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id; limit 12;')
+                    time.sleep(0.3)
+                    year = ts_year(g.get("first_release_date"))
+                    for o in more or []:
+                        if o.get("id") == g.get("id") or not pick_match(title, [o], lambda x: x.get("name"), lambda x: None, "", 0.95):
+                            continue
+                        oy = ts_year(o.get("first_release_date"))
+                        if year and oy and abs(oy - year) > 1:
+                            continue      # a different game that shares the name
+                        for x in o.get("screenshots") or []:
+                            if x.get("image_id") and x["image_id"] not in shots and len(shots) < 8:
+                                shots.append(x["image_id"])
+                except Exception as e:
+                    log(f"  {title}: IGDB error while adding other versions ({e})")
+                entry["shots"] = shots
+                if len(shots) > n0:
+                    entry["more"] = len(shots) - n0
+                    topped += 1
+            games[q] = entry
+            found += bool(entry["shots"])
         else:
-            games[q] = {"shots": [], "checked": NOW}
-        time.sleep(0.3)                # IGDB allows 4 requests a second
+            games[q] = {"shots": [], "checked": NOW, "rev": 2}
     used = set(mapping.values())
     for q in [q for q in games if q not in used]:
         del games[q]
-    log(f"  IGDB: screenshots found for {found} of {min(len(todo), MAX_IGDB)} looked up")
+    log(f"  IGDB: screenshots found for {found} of {min(len(todo), MAX_IGDB)} looked up ({topped} topped up from other versions)")
+    data["generated"] = NOW
+    return write_json_if_changed(path, data)
+
+# ---------------------------------------------------------------- libretro-thumbnails (box art, in-game shot, title screen)
+LT_REPOS = {"N64": "Nintendo_-_Nintendo_64", "SNES": "Nintendo_-_Super_Nintendo_Entertainment_System", "NES": "Nintendo_-_Nintendo_Entertainment_System",
+            "Game Boy": "Nintendo_-_Game_Boy", "Game Boy Color": "Nintendo_-_Game_Boy_Color", "GBA": "Nintendo_-_Game_Boy_Advance", "DS": "Nintendo_-_Nintendo_DS",
+            "3DS": "Nintendo_-_Nintendo_3DS", "GameCube": "Nintendo_-_GameCube", "Wii": "Nintendo_-_Wii", "Wii U": "Nintendo_-_Wii_U", "Virtual Boy": "Nintendo_-_Virtual_Boy",
+            "PS1": "Sony_-_PlayStation", "PS2": "Sony_-_PlayStation_2", "PS3": "Sony_-_PlayStation_3", "PSP": "Sony_-_PlayStation_Portable", "PS4": "Sony_-_PlayStation_4",
+            "Xbox (original)": "Microsoft_-_Xbox", "Xbox 360": "Microsoft_-_Xbox_360", "XBLA (Xbox 360)": "Microsoft_-_Xbox_360", "Mega Drive": "Sega_-_Mega_Drive_-_Genesis",
+            "32X": "Sega_-_32X", "Saturn": "Sega_-_Saturn", "Dreamcast": "Sega_-_Dreamcast", "Master System": "Sega_-_Master_System_-_Mark_III", "Game Gear": "Sega_-_Game_Gear"}
+LT_BAD = re.compile(r"\((?:[^)]*\b(beta|proto|prototype|demo|sample|kiosk|promo|unl|pirate|hack|aftermarket|program|debug|competition|preview|trial)\b[^)]*)\)", re.I)
+API = os.environ.get("PW_GH_API", "https://api.github.com")
+
+def lt_region_rank(base):
+    tags = " ".join(re.findall(r"\(([^)]*)\)", base))
+    r = 0 if re.search(r"\bUSA\b", tags) else 1 if re.search(r"\bWorld\b", tags) else 2 if re.search(r"\bEurope\b", tags) else 3 if re.search(r"\bJapan\b", tags) else 4
+    return r + (0.3 if re.search(r"\bRev\b", tags) else 0) + (0.5 if re.search(r"Disc [2-9]", tags) else 0)
+
+def lt_index(names):
+    out = []
+    for n in names:
+        if not n.lower().endswith(".png") or LT_BAD.search(n):
+            continue
+        base = n[:-4]; tp = base.split(" (")[0]
+        segs = []
+        for sg in tp.split(" - "):
+            m = re.match(r"^(.*), (The|A|An)$", sg)
+            segs.append(f"{m.group(2)} {m.group(1)}" if m else sg)
+        out.append((n, vnorm(" ".join(segs)), vnorm(" ".join(segs[1:])) if len(segs) > 1 else "", lt_region_rank(base), len(base)))
+    return out
+
+def lt_match(idx, title):
+    tries = [cover_title(bare_title(title))]
+    if re.search(r"\s(64|1)$", tries[0]):
+        tries.append(re.sub(r"\s(64|1)$", "", tries[0]))
+    for t in tries:
+        q = vnorm(t)
+        if not q:
+            continue
+        best = None
+        for n, full, alt, rr, ln in idx:
+            for cand in (full, alt):
+                if not cand:
+                    continue
+                if cand.replace(" ", "") == q.replace(" ", ""):
+                    sc = 1.0
+                else:
+                    if abs(len(cand) - len(q)) > max(6, len(q) * 0.35):
+                        continue
+                    sc = difflib.SequenceMatcher(None, q, cand).ratio()
+                    if sc < 0.9 or numbers(q) != numbers(cand):
+                        continue
+                key = (-sc, rr, ln)
+                if best is None or key < best[0]:
+                    best = (key, n)
+        if best:
+            return best[1]
+    return None
+
+def lt_lists(repo, token):
+    br = "main" if repo == "Sega_-_Naomi_2" else "master"
+    hdr = {"Authorization": "Bearer " + token, "Accept": "application/vnd.github+json"}
+    top = json.loads(http_get(f"{API}/repos/libretro-thumbnails/{repo}/contents/?ref={br}", hdr) or b"[]")
+    out = {}
+    for d in top:
+        if d.get("name") in ("Named_Boxarts", "Named_Snaps", "Named_Titles") and d.get("sha"):
+            tree = json.loads(http_get(f"{API}/repos/libretro-thumbnails/{repo}/git/trees/{d['sha']}", hdr) or b"{}")
+            out[d["name"]] = {e["path"] for e in tree.get("tree", []) if e.get("type") == "blob"}
+    return out
+
+def refresh_libretro(projects, overrides):
+    token = (os.environ.get("PW_GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "").strip()
+    path = os.path.join(DATA, "libretro.json")
+    data = load_json(path, {"format": "port-watch-libretro", "version": 1, "map": {}})
+    mp = data.setdefault("map", {})
+    if not token:
+        log("  No GitHub token available; skipping libretro matching")
+        return False
+    now = datetime.datetime.now(datetime.timezone.utc)
+    wanted = {}
+    for p in projects:
+        key = p.get("k") or p["id"]
+        fix = overrides.get(key) or overrides.get(p.get("id", "")) or {}
+        if fix.get("hide"):
+            continue
+        plat = fix.get("platform") or p.get("p") or ""
+        repo = LT_REPOS.get(plat)
+        if not repo:
+            continue
+        title = fix.get("title") or p.get("g", "")
+        cv = p.get("cv") if not fix.get("title") else ""
+        wanted[key] = (repo, title, cv)
+    for k in [k for k in mp if k not in wanted]:
+        del mp[k]
+    todo = {}
+    for key, (repo, title, cv) in wanted.items():
+        e = mp.get(key)
+        if e and e.get("q") == norm(title) and (e.get("file") or (now - datetime.datetime.fromisoformat(e.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
+            continue
+        todo.setdefault(repo, []).append((key, title, cv))
+    log(f"  {sum(len(v) for v in todo.values())} games to match on libretro-thumbnails, across {len(todo)} consoles")
+    hits = 0
+    for repo, items in todo.items():
+        try:
+            lists = lt_lists(repo, token)
+        except Exception as e:
+            log(f"  {repo}: couldn't list libretro-thumbnails ({e}); keeping previous matches")
+            continue
+        idx = lt_index(sorted(lists.get("Named_Boxarts", set())))
+        for key, title, cv in items:
+            f = cv.split("|", 1)[1] if cv and "|" in cv else lt_match(idx, title)
+            if f:
+                mp[key] = {"repo": repo, "file": f, "snap": f in lists.get("Named_Snaps", set()), "title": f in lists.get("Named_Titles", set()),
+                           "q": norm(title), "checked": NOW}
+                hits += 1
+            else:
+                mp[key] = {"q": norm(title), "checked": NOW}
+    log(f"  libretro-thumbnails: matched {hits}")
     data["generated"] = NOW
     return write_json_if_changed(path, data)
 
@@ -599,6 +792,8 @@ def main():
     refresh_covers(with_games(seed + extra, overrides), overrides)
     log("itch.io devlogs:")
     refresh_itch(seed + added)
+    log("libretro-thumbnails:")
+    refresh_libretro(with_games(seed + extra, overrides), overrides)
     log("IGDB screenshots:")
     refresh_screens(with_games(seed + extra, overrides), overrides)
     log("Shared update checks:")

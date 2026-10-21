@@ -35,6 +35,11 @@
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
     },
+    "batatinhafcbatatinha-pixel/fifa-street-pc": {
+      "_game": "FIFA Street",
+      "title": "FIFA Street (2005)",
+      "note": "The 2005 game, not the 2012 one"
+    },
     "bc160201983/medievil_2019_pc_port": {
       "_game": "MediEvil",
       "cover": "https://cdn2.steamgriddb.com/thumb/ec71de5a8e7da7c954b1cf1eefbe41c3.jpg"
@@ -63,6 +68,32 @@
     "bruder-grimm/animal_forest_psp": {
       "_game": "Animal Forest",
       "cover": "https://cdn2.steamgriddb.com/thumb/045c46e3c0c3be46563fc234789b31fb.jpg"
+    },
+    "bryanthaboi/gen1recomp": {
+      "_game": "Pokemon Red / Blue / Yellow / Gold / Silver / Crystal",
+      "title": "Pokémon Red Version",
+      "games": [
+        {
+          "title": "Pokémon Blue Version",
+          "platform": "Game Boy"
+        },
+        {
+          "title": "Pokémon Yellow Version: Special Pikachu Edition",
+          "platform": "Game Boy"
+        },
+        {
+          "title": "Pokémon Gold Version",
+          "platform": "Game Boy Color"
+        },
+        {
+          "title": "Pokémon Silver Version",
+          "platform": "Game Boy Color"
+        },
+        {
+          "title": "Pokémon Crystal Version",
+          "platform": "Game Boy Color"
+        }
+      ]
     },
     "caiuscodes/goldeneye-007-xbla-pc-recomp": {
       "_game": "Golden Eye 007",
@@ -199,6 +230,36 @@
     "mkw-sp/mkw-sp": {
       "title": "Mario Kart Wii"
     },
+    "mstan/fireredleafgreenrecomp": {
+      "_game": "Pokémon FireRed and LeafGreen",
+      "title": "Pokémon FireRed Version",
+      "games": [
+        {
+          "title": "Pokémon LeafGreen Version",
+          "platform": "GBA"
+        }
+      ]
+    },
+    "mstan/pokemonredandbluerecomp": {
+      "_game": "Pokémon Red and Blue",
+      "title": "Pokémon Red Version",
+      "games": [
+        {
+          "title": "Pokémon Blue Version",
+          "platform": "Game Boy"
+        }
+      ]
+    },
+    "mstan/rubysapphirerecomp": {
+      "_game": "Pokémon Ruby and Sapphire",
+      "title": "Pokémon Ruby Version",
+      "games": [
+        {
+          "title": "Pokémon Sapphire Version",
+          "platform": "GBA"
+        }
+      ]
+    },
     "mustafasamer93/apocalypse-pc-native-port": {
       "_game": "Apocalypse",
       "cover": "https://cdn2.steamgriddb.com/thumb/8d2bb3e3e38aecce130899813a042108.jpg"
@@ -264,6 +325,11 @@
     },
     "pranchad/re-sonic06demo": {
       "title": "Sonic the Hedgehog (2006)"
+    },
+    "rafidwayne/speedbreaker": {
+      "_game": "Need for Speed: Most Wanted",
+      "hide": true,
+      "note": "Personal fork of SpeedBreakerProject/speedbreaker, which is already tracked."
     },
     "rages4calm/earthbound-companion": {
       "title": "Earthbound"
@@ -352,7 +418,18 @@
       "title": "Super Smash Bros. Melee"
     },
     "underdecoded/gen2recomped": {
-      "title": "Pokemon Gold Version"
+      "title": "Pokémon Gold Version",
+      "_game": "Pokemon Gold / Silver / Crystal",
+      "games": [
+        {
+          "title": "Pokémon Silver Version",
+          "platform": "Game Boy Color"
+        },
+        {
+          "title": "Pokémon Crystal Version",
+          "platform": "Game Boy Color"
+        }
+      ]
     },
     "usernamefodder/pmdsky-debug": {
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
@@ -400,6 +477,14 @@
       "platform": "3DS",
       "type": "Decompilation",
       "description": "Matching decompilation of The Legend of Zelda: A Link Between Worlds (3DS, USA) - work in progress, 63.7% of functions matched byte-exact"
+    },
+    "abdelmoumendeghbouche/wipeout_pc": {
+      "link": "https://github.com/abdelmoumendeghbouche/wipeout_pc",
+      "title": "WipEout Omega Collection",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "WipEout Omega Collection (PS4) native PC port for Windows: original x86-64 code on the CPU, PS4 runtime, shadPS4 Vulkan video core. Early development. No game files included."
     },
     "abilliontokens/urbz-recomp": {
       "link": "https://github.com/abilliontokens/urbz-recomp",
@@ -755,11 +840,17 @@
     },
     "fuddlesworth/pokebw2": {
       "link": "https://github.com/fuddlesworth/pokebw2",
-      "title": "Pokémon Black 2 and White 2",
+      "title": "Pokémon Black Version 2",
       "platform": "DS",
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
-      "description": "Decompilation of Pokémon Black 2 and White 2"
+      "description": "Decompilation of Pokémon Black 2 and White 2",
+      "games": [
+        {
+          "title": "Pokémon White Version 2",
+          "platform": "DS"
+        }
+      ]
     },
     "gamboozino/ngbrecomp": {
       "link": "https://github.com/gamboozino/ngbrecomp",
@@ -956,6 +1047,18 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unofficial experimental Windows port of The Incredible Crash Dummies for Game Boy. Native C++/Win32, keyboard and XInput; original ROM required."
+    },
+    "kumapauz/project-reignition": {
+      "link": "https://github.com/kumapauz/project-reignition",
+      "title": "Sonic and the Secret Rings",
+      "platform": "Wii",
+      "type": "Reimplementation",
+      "runsOn": [
+        "Windows",
+        "Linux"
+      ],
+      "description": "The Sonic and the Secret Rings fan-remake.",
+      "pcRelease": "Never released on PC"
     },
     "kyleckroeger/moh-frontline-decomp": {
       "link": "https://github.com/kyleckroeger/moh-frontline-decomp",
