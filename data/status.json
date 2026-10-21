@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-10-21T09:52:10Z",
+ "generated": "2026-10-21T10:43:44Z",
  "repos": {
   "0c0de/splatterhouse-decomp": {
    "assetOs": {},
@@ -159,7 +159,7 @@
     "full": "15Cyber/marvel-nemesis-recomp",
     "lang": "C++",
     "pushed": "2026-10-21T09:09:22Z",
-    "size": 11113,
+    "size": 11158,
     "stars": 11
    },
    "shots": [
@@ -348,10 +348,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-16T18:48:01Z",
+    "date": "2026-10-21T10:39:33Z",
     "pre": true,
-    "tag": "v0.10.0-dev.3",
-    "url": "https://github.com/96dot/Dragon-Age-Origins-Recomp/releases/tag/v0.10.0-dev.3"
+    "tag": "v0.10.0-dev.4",
+    "url": "https://github.com/96dot/Dragon-Age-Origins-Recomp/releases/tag/v0.10.0-dev.4"
    },
    "repo": {
     "archived": false,
@@ -359,7 +359,7 @@
     "desc": "Dragon Age: Origins (Xbox 360) static recompilation - bring your own disc image",
     "full": "96dot/Dragon-Age-Origins-Recomp",
     "lang": "C",
-    "pushed": "2026-10-20T20:13:36Z",
+    "pushed": "2026-10-21T10:32:27Z",
     "size": 5526,
     "stars": 20
    },
@@ -390,10 +390,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-16T18:48:01Z",
+    "date": "2026-10-21T10:39:33Z",
     "pre": true,
-    "tag": "v0.10.0-dev.3",
-    "url": "https://github.com/96dot/Dragon-Age-Origins-Recomp/releases/tag/v0.10.0-dev.3"
+    "tag": "v0.10.0-dev.4",
+    "url": "https://github.com/96dot/Dragon-Age-Origins-Recomp/releases/tag/v0.10.0-dev.4"
    },
    "repo": {
     "archived": false,
@@ -401,7 +401,7 @@
     "desc": "Dragon Age: Origins (Xbox 360) static recompilation - bring your own disc image",
     "full": "96dot/Dragon-Age-Origins-Recomp",
     "lang": "C",
-    "pushed": "2026-10-20T20:13:36Z",
+    "pushed": "2026-10-21T10:32:27Z",
     "size": 5526,
     "stars": 20
    },
@@ -822,7 +822,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T00:56:25Z",
     "size": 4932,
-    "stars": 1286
+    "stars": 1291
    },
    "shots": []
   },
@@ -936,7 +936,7 @@
     "full": "alekszverr-jpg/cod3pc",
     "lang": "C++",
     "pushed": "2026-10-21T09:36:19Z",
-    "size": 111,
+    "size": 348,
     "stars": 2
    },
    "shots": []
@@ -1135,6 +1135,37 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:24Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:33:34Z",
+    "desc": "Source-only Windows setup host for Ace Combat 3: Electrosphere (Japan); Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:36Z",
+    "size": 682,
+    "stars": 8
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/ace-combat-3-electrosphere-usa-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1259,6 +1290,37 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/ape-escape-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:29Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/ape-escape-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:33:44Z",
+    "desc": "Source-only Windows setup host for Ape Escape; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/ape-escape-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:10Z",
+    "size": 682,
+    "stars": 0
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/apocalypse-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1290,6 +1352,377 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/armored-core-master-of-arena-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:20:45Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/armored-core-master-of-arena-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:47:39Z",
+    "desc": "Static recompilation of Armored Core: Master of Arena (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/armored-core-master-of-arena-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:39Z",
+    "size": 111,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/armored-core-project-phantasma-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:25:12Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/armored-core-project-phantasma-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:47:46Z",
+    "desc": "Static recompilation of Armored Core: Project Phantasma (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/armored-core-project-phantasma-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:42Z",
+    "size": 108,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/armored-core-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:29Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/armored-core-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:31:19Z",
+    "desc": "Source-only Windows setup host for Armored Core; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/armored-core-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:30Z",
+    "size": 677,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/azure-dreams-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:26:16Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/azure-dreams-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:47:54Z",
+    "desc": "Static recompilation of Azure Dreams (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/azure-dreams-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:07:07Z",
+    "size": 113,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/blood-omen-legacy-of-kain-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:30Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/blood-omen-legacy-of-kain-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:34:12Z",
+    "desc": "Source-only Windows setup host for Blood Omen: Legacy of Kain; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/blood-omen-legacy-of-kain-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:25Z",
+    "size": 685,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/bloody-roar-ii-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:34Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/bloody-roar-ii-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:09:41Z",
+    "desc": "Bloody Roar II static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/bloody-roar-ii-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:14Z",
+    "size": 643,
+    "stars": 0
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/brave-fencer-musashi-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:40:52Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/brave-fencer-musashi-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:09:48Z",
+    "desc": "Brave Fencer Musashi static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/brave-fencer-musashi-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:15Z",
+    "size": 657,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/bushido-blade-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:30:48Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/bushido-blade-2-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:02Z",
+    "desc": "Static recompilation of Bushido Blade 2 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/bushido-blade-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:45Z",
+    "size": 110,
+    "stars": 7
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/colin-mcrae-rally-2-0-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:34Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/colin-mcrae-rally-2-0-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:31:00Z",
+    "desc": "Source-only Windows setup host for Colin McRae Rally 2.0; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/colin-mcrae-rally-2-0-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:24Z",
+    "size": 678,
+    "stars": 7
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/colony-wars-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:33:16Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/colony-wars-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T23:56:44Z",
+    "desc": "Colony Wars: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/colony-wars-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:46Z",
+    "size": 48,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/colony-wars-red-sun-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:34:57Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/colony-wars-red-sun-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:10Z",
+    "desc": "Static recompilation of Colony Wars: Red Sun (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/colony-wars-red-sun-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:48Z",
+    "size": 114,
+    "stars": 7
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/crash-bandicoot-3-warped-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1318,6 +1751,111 @@
     "pushed": "2026-10-02T11:06:26Z",
     "size": 56,
     "stars": 15
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/destruction-derby-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:35Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/destruction-derby-2-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:31:10Z",
+    "desc": "Source-only Windows setup host for Destruction Derby 2; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/destruction-derby-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:27Z",
+    "size": 684,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/destruction-derby-raw-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:35:22Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/destruction-derby-raw-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:18Z",
+    "desc": "Static recompilation of Destruction Derby Raw (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/destruction-derby-raw-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:51Z",
+    "size": 107,
+    "stars": 7
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/devil-dice-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:38:59Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/devil-dice-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:26Z",
+    "desc": "Static recompilation of Devil Dice (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/devil-dice-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:54Z",
+    "size": 107,
+    "stars": 3
    },
    "shots": []
   },
@@ -1380,6 +1918,43 @@
     "pushed": "2026-10-02T14:41:01Z",
     "size": 685,
     "stars": 16
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/digimon-world-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:22:12Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/digimon-world-2-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:33Z",
+    "desc": "Static recompilation of Digimon World 2 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/digimon-world-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:57Z",
+    "size": 108,
+    "stars": 4
    },
    "shots": []
   },
@@ -1476,6 +2051,266 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/dragon-ball-z-ultimate-battle-22-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:39:46Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/dragon-ball-z-ultimate-battle-22-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:41Z",
+    "desc": "Static recompilation of Dragon Ball Z: Ultimate Battle 22 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/dragon-ball-z-ultimate-battle-22-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:00Z",
+    "size": 108,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/driver-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:39Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/driver-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:56Z",
+    "desc": "Source-only Windows setup host for Driver; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/driver-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:32Z",
+    "size": 684,
+    "stars": 8
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/duke-nukem-land-of-the-babes-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:44Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/duke-nukem-land-of-the-babes-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:30:40Z",
+    "desc": "Source-only Windows setup host for Duke Nukem: Land of the Babes; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/duke-nukem-land-of-the-babes-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:18Z",
+    "size": 679,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/duke-nukem-time-to-kill-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:44Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/duke-nukem-time-to-kill-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-29T16:17:06Z",
+    "desc": "",
+    "full": "alexbeavs-ps1-ports/duke-nukem-time-to-kill-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:15Z",
+    "size": 696,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/fade-to-black-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:44Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/fade-to-black-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:33:05Z",
+    "desc": "Source-only Windows setup host for Fade to Black; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/fade-to-black-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:58Z",
+    "size": 678,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/fear-effect-2-retro-helix-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:43:00Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/fear-effect-2-retro-helix-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:48Z",
+    "desc": "Static recompilation of Fear Effect 2: Retro Helix (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/fear-effect-2-retro-helix-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:03Z",
+    "size": 113,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/fear-effect-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:29:10Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/fear-effect-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:31Z",
+    "desc": "fear-effect: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/fear-effect-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:38Z",
+    "size": 51,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/fighting-force-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:44Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/fighting-force-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:01Z",
+    "desc": "Fighting Force static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/fighting-force-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:15Z",
+    "size": 658,
+    "stars": 3
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/final-fantasy-ix-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1535,6 +2370,538 @@
     "pushed": "2026-10-02T11:06:44Z",
     "size": 50,
     "stars": 12
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/future-cop-lapd-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:43:16Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/future-cop-lapd-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:48:56Z",
+    "desc": "Static recompilation of Future Cop: L.A.P.D. (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/future-cop-lapd-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:07Z",
+    "size": 113,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/g-police-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:37:25Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/g-police-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T23:56:11Z",
+    "desc": "G-Police: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/g-police-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:58Z",
+    "size": 49,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/g-police-weapons-of-justice-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:46:52Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/g-police-weapons-of-justice-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:49:09Z",
+    "desc": "Static recompilation of G-Police: Weapons of Justice (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/g-police-weapons-of-justice-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:10Z",
+    "size": 108,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/galerians-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:52:06Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/galerians-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:49:33Z",
+    "desc": "Static recompilation of Galerians (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/galerians-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:13Z",
+    "size": 112,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/ghost-in-the-shell-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:38:46Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/ghost-in-the-shell-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T16:33:17Z",
+    "desc": "Portable PSXRecomp setup candidate. Owned game disc and retail BIOS required.",
+    "full": "alexbeavs-ps1-ports/ghost-in-the-shell-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:07:00Z",
+    "size": 50,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/in-cold-blood-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:48Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/in-cold-blood-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:34:02Z",
+    "desc": "Source-only Windows setup host for In Cold Blood; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/in-cold-blood-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:21Z",
+    "size": 685,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/incredible-crisis-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:48:02Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/incredible-crisis-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:49:40Z",
+    "desc": "Static recompilation of Incredible Crisis (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/incredible-crisis-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:16Z",
+    "size": 109,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/jackie-chan-stuntmaster-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:48Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/jackie-chan-stuntmaster-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:08Z",
+    "desc": "Jackie Chan Stuntmaster static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/jackie-chan-stuntmaster-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:15Z",
+    "size": 647,
+    "stars": 1
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/jade-cocoon-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:53:07Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/jade-cocoon-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:49:48Z",
+    "desc": "Static recompilation of Jade Cocoon: Story of the Tamamayu (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/jade-cocoon-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:20Z",
+    "size": 109,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/kartia-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:56:35Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/kartia-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:49:58Z",
+    "desc": "Static recompilation of Kartia: The Word of Fate (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/kartia-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:24Z",
+    "size": 108,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/kings-field-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:48Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/kings-field-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:31:28Z",
+    "desc": "Source-only Windows setup host for King's Field; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/kings-field-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:33Z",
+    "size": 709,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/koudelka-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:49Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/koudelka-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:05Z",
+    "desc": "Source-only Windows setup host for Koudelka; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/koudelka-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:45Z",
+    "size": 688,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/kula-world-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:53Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/kula-world-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:25Z",
+    "desc": "Source-only Windows setup host for Kula World; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/kula-world-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:51Z",
+    "size": 684,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/legacy-of-kain-soul-reaver-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-02T15:46:13Z",
+    "pre": false,
+    "tag": "v0.1.4",
+    "url": "https://github.com/alexbeavs-ps1-ports/legacy-of-kain-soul-reaver-recomp/releases/tag/v0.1.4"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:14Z",
+    "desc": "Legacy of Kain: Soul Reaver static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/legacy-of-kain-soul-reaver-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T15:46:13Z",
+    "size": 650,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/martian-gothic-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:35:59Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/martian-gothic-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:16:13Z",
+    "desc": "martian-gothic: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/martian-gothic-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:53Z",
+    "size": 49,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/mdk-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-02T15:47:01Z",
+    "pre": false,
+    "tag": "v0.1.4",
+    "url": "https://github.com/alexbeavs-ps1-ports/mdk-recomp/releases/tag/v0.1.4"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:21Z",
+    "desc": "MDK static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/mdk-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T15:47:01Z",
+    "size": 644,
+    "stars": 4
    },
    "shots": []
   },
@@ -1616,6 +2983,43 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/mega-man-legends-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T19:56:49Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/mega-man-legends-2-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:50:18Z",
+    "desc": "Static recompilation of Mega Man Legends 2 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/mega-man-legends-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:28Z",
+    "size": 108,
+    "stars": 7
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/mega-man-legends-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1647,6 +3051,37 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/men-in-black-the-game-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:58Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/men-in-black-the-game-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:35Z",
+    "desc": "Source-only Windows setup host for Men in Black: The Game; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/men-in-black-the-game-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:54Z",
+    "size": 682,
+    "stars": 4
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/metal-gear-solid-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1675,6 +3110,198 @@
     "pushed": "2026-10-02T11:06:26Z",
     "size": 65,
     "stars": 29
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/metal-slug-x-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:48:58Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/metal-slug-x-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:41Z",
+    "desc": "Metal Slug X static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/metal-slug-x-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:19Z",
+    "size": 658,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/misadventures-of-tron-bonne-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:03:02Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/misadventures-of-tron-bonne-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:50:30Z",
+    "desc": "Static recompilation of The Misadventures of Tron Bonne (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/misadventures-of-tron-bonne-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:31Z",
+    "size": 107,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/monster-rancher-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:43:04Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/monster-rancher-2-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:47Z",
+    "desc": "Monster Rancher 2 static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/monster-rancher-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:21Z",
+    "size": 104,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/monster-rancher-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:29:50Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/monster-rancher-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:37Z",
+    "desc": "monster-rancher: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/monster-rancher-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:40Z",
+    "size": 50,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/mortal-kombat-4-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-08-31T15:04:28Z",
+    "pre": false,
+    "tag": "v0.3.5",
+    "url": "https://github.com/alexbeavs-ps1-ports/mortal-kombat-4-recomp/releases/tag/v0.3.5"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T08:50:08Z",
+    "desc": "Mortal Kombat 4 (PSX) static recompilation setup host",
+    "full": "alexbeavs-ps1-ports/mortal-kombat-4-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:12Z",
+    "size": 671,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/mortal-kombat-trilogy-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:32:36Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/mortal-kombat-trilogy-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:54Z",
+    "desc": "mortal-kombat-trilogy: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/mortal-kombat-trilogy-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:46Z",
+    "size": 51,
+    "stars": 4
    },
    "shots": []
   },
@@ -1715,6 +3342,68 @@
    },
    "shots": []
   },
+  "alexbeavs-ps1-ports/nightmare-creatures-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:43:48Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/nightmare-creatures-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:10:54Z",
+    "desc": "Nightmare Creatures static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/nightmare-creatures-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:21Z",
+    "size": 645,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/oddworld-abe-s-oddysee-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:44:32Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/oddworld-abe-s-oddysee-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:00Z",
+    "desc": "Oddworld: Abe's Oddysee static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/oddworld-abe-s-oddysee-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:21Z",
+    "size": 649,
+    "stars": 4
+   },
+   "shots": []
+  },
   "alexbeavs-ps1-ports/parasite-eve-recomp": {
    "assetOs": {
     "Linux": true,
@@ -1746,42 +3435,96 @@
    },
    "shots": []
   },
-  "alexbeavs-ps1-ports/psxrecomp-ports": {
+  "alexbeavs-ps1-ports/pro-pinball-timeshock-recomp": {
    "assetOs": {
-    "Windows": true
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
    },
    "readme": {
-    "features": {
-     "aspect": "planned",
-     "kbm": "yes",
-     "online": "yes",
-     "res": "yes",
-     "tex": "planned"
-    },
-    "os": {
-     "Linux": true,
-     "Windows": true,
-     "macOS": true
-    },
+    "features": {},
+    "os": {},
     "targets": {},
     "v": 2
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-09-02T18:20:07Z",
+    "date": "2026-09-30T11:35:17Z",
     "pre": false,
-    "tag": "v0.3.4",
-    "url": "https://github.com/alexbeavs-ps1-ports/psxrecomp-ports/releases/tag/v0.3.4"
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/pro-pinball-timeshock-recomp/releases/tag/v0.1.1"
    },
    "repo": {
     "archived": false,
-    "created": "2026-08-24T11:46:29Z",
-    "desc": "Unofficial noncommercial PlayStation recompilation releases",
-    "full": "alexbeavs-ps1-ports/psxrecomp-ports",
-    "lang": "PowerShell",
-    "pushed": "2026-10-07T20:47:19Z",
-    "size": 11729,
-    "stars": 112
+    "created": "2026-09-06T23:56:18Z",
+    "desc": "Pro Pinball: Timeshock!: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/pro-pinball-timeshock-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:53Z",
+    "size": 53,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/quake-ii-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:07Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/quake-ii-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:06Z",
+    "desc": "Quake II static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/quake-ii-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:22Z",
+    "size": 99,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/r-type-delta-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:31:13Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/r-type-delta-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:43Z",
+    "desc": "r-type-delta: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/r-type-delta-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:43Z",
+    "size": 46,
+    "stars": 5
    },
    "shots": []
   },
@@ -1813,6 +3556,278 @@
     "pushed": "2026-10-02T11:06:33Z",
     "size": 48,
     "stars": 12
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/rival-schools-evolution-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:01:57Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/rival-schools-evolution-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:50:45Z",
+    "desc": "Static recompilation of Rival Schools: Evolution Disc (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/rival-schools-evolution-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:43:06Z",
+    "size": 125,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/rival-schools-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:07:01Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/rival-schools-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:50:52Z",
+    "desc": "Static recompilation of Rival Schools: United by Fate (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/rival-schools-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:37Z",
+    "size": 119,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/rollcage-stage-ii-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:07:38Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/rollcage-stage-ii-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:51:00Z",
+    "desc": "Static recompilation of Rollcage Stage II (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/rollcage-stage-ii-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:40Z",
+    "size": 106,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/silent-bomber-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:39:27Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/silent-bomber-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:16:25Z",
+    "desc": "silent-bomber: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/silent-bomber-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:07:03Z",
+    "size": 48,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/spider-man-2-enter-electro-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:11:58Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/spider-man-2-enter-electro-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:51:07Z",
+    "desc": "Static recompilation of Spider-Man 2: Enter Electro (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/spider-man-2-enter-electro-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:43Z",
+    "size": 110,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/spider-man-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:27:48Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/spider-man-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:13Z",
+    "desc": "spider-man: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/spider-man-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:33Z",
+    "size": 49,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/spyro-the-dragon-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-02T15:47:47Z",
+    "pre": false,
+    "tag": "v0.1.4",
+    "url": "https://github.com/alexbeavs-ps1-ports/spyro-the-dragon-recomp/releases/tag/v0.1.4"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:12Z",
+    "desc": "Spyro the Dragon static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/spyro-the-dragon-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T15:47:47Z",
+    "size": 646,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/star-wars-episode-i-the-phantom-menace-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:23:39Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/star-wars-episode-i-the-phantom-menace-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T23:56:38Z",
+    "desc": "Star Wars Episode I: The Phantom Menace: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/star-wars-episode-i-the-phantom-menace-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:24Z",
+    "size": 48,
+    "stars": 3
    },
    "shots": []
   },
@@ -1915,6 +3930,675 @@
     "pushed": "2026-09-30T12:23:59Z",
     "size": 2434,
     "stars": 39
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/syphon-filter-3-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:45:58Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/syphon-filter-3-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:18Z",
+    "desc": "Syphon Filter 3 static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/syphon-filter-3-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:24Z",
+    "size": 653,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tail-concerto-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:16:26Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/tail-concerto-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:51:22Z",
+    "desc": "Static recompilation of Tail Concerto (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/tail-concerto-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:53Z",
+    "size": 109,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/team-buddies-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:15:52Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/team-buddies-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:51:30Z",
+    "desc": "Static recompilation of Team Buddies (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/team-buddies-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:42:59Z",
+    "size": 107,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tenchu-stealth-assassins-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:46:42Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/tenchu-stealth-assassins-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:25Z",
+    "desc": "Tenchu: Stealth Assassins static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/tenchu-stealth-assassins-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:24Z",
+    "size": 648,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/the-fifth-element-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:22:58Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/the-fifth-element-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:14:47Z",
+    "desc": "the-fifth-element: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/the-fifth-element-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:23Z",
+    "size": 46,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/the-lost-world-jurassic-park-special-edition-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:12Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/the-lost-world-jurassic-park-special-edition-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:16Z",
+    "desc": "Source-only Windows setup host for The Lost World: Jurassic Park Special Edition; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/the-lost-world-jurassic-park-special-edition-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:48Z",
+    "size": 678,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/the-mummy-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:12Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/the-mummy-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:32:46Z",
+    "desc": "Source-only Windows setup host for The Mummy; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/the-mummy-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:29Z",
+    "size": 682,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/threads-of-fate-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:19:56Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/threads-of-fate-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:15:25Z",
+    "desc": "threads-of-fate: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/threads-of-fate-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T22:05:12Z",
+    "size": 52,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tokyo-highway-battle-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:36:43Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/tokyo-highway-battle-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-07T00:16:19Z",
+    "desc": "tokyo-highway-battle: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/tokyo-highway-battle-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:56Z",
+    "size": 47,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-2-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:47:25Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-2-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:32Z",
+    "desc": "Tony Hawk's Pro Skater 2 static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-2-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:11Z",
+    "size": 653,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-3-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:48:09Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-3-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:38Z",
+    "desc": "Tony Hawk's Pro Skater 3 static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-3-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:25Z",
+    "size": 653,
+    "stars": 5
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-4-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:48:54Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-4-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:44Z",
+    "desc": "Tony Hawk's Pro Skater 4 static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-4-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:26Z",
+    "size": 653,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:49:36Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/tony-hawk-s-pro-skater-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:50Z",
+    "desc": "Tony Hawk's Pro Skater static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/tony-hawk-s-pro-skater-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:27Z",
+    "size": 651,
+    "stars": 6
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/valkyrie-profile-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-05T17:41:56Z",
+    "pre": false,
+    "tag": "v0.1.3",
+    "url": "https://github.com/alexbeavs-ps1-ports/valkyrie-profile-recomp/releases/tag/v0.1.3"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:11:57Z",
+    "desc": "Valkyrie Profile static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/valkyrie-profile-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:27Z",
+    "size": 670,
+    "stars": 3
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/vampire-hunter-d-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:17Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/vampire-hunter-d-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:33:53Z",
+    "desc": "Source-only Windows setup host for Vampire Hunter D; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/vampire-hunter-d-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:41:14Z",
+    "size": 681,
+    "stars": 2
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/vib-ribbon-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:30:34Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/vib-ribbon-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T23:56:32Z",
+    "desc": "Vib-Ribbon: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/vib-ribbon-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:06:40Z",
+    "size": 45,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/vigilante-8-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:21Z",
+    "pre": false,
+    "tag": "v0.3.6",
+    "url": "https://github.com/alexbeavs-ps1-ports/vigilante-8-recomp/releases/tag/v0.3.6"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-31T19:31:55Z",
+    "desc": "Source-only Windows setup host for Vigilante 8; Wave 2 release draft.",
+    "full": "alexbeavs-ps1-ports/vigilante-8-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:40:42Z",
+    "size": 685,
+    "stars": 0
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/wild-arms-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "online": "planned"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-14T20:20:34Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/alexbeavs-ps1-ports/wild-arms-recomp/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-14T13:51:36Z",
+    "desc": "Static recompilation of Wild Arms (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+    "full": "alexbeavs-ps1-ports/wild-arms-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T14:43:03Z",
+    "size": 107,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/wipeout-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-02T15:48:33Z",
+    "pre": false,
+    "tag": "v0.1.4",
+    "url": "https://github.com/alexbeavs-ps1-ports/wipeout-recomp/releases/tag/v0.1.4"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:12:03Z",
+    "desc": "WipEout static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/wipeout-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T15:48:33Z",
+    "size": 651,
+    "stars": 4
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/wipeout-xl-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-30T11:38:05Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/alexbeavs-ps1-ports/wipeout-xl-recomp/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-06T23:56:25Z",
+    "desc": "Wipeout XL: source for the standalone setup release candidate",
+    "full": "alexbeavs-ps1-ports/wipeout-xl-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-02T11:07:00Z",
+    "size": 52,
+    "stars": 8
+   },
+   "shots": []
+  },
+  "alexbeavs-ps1-ports/xena-warrior-princess-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {},
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-04T14:49:21Z",
+    "pre": false,
+    "tag": "v0.1.2",
+    "url": "https://github.com/alexbeavs-ps1-ports/xena-warrior-princess-recomp/releases/tag/v0.1.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-03T10:12:11Z",
+    "desc": "Xena: Warrior Princess static recompilation setup project",
+    "full": "alexbeavs-ps1-ports/xena-warrior-princess-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-01T21:16:30Z",
+    "size": 126,
+    "stars": 5
    },
    "shots": []
   },
@@ -2492,7 +5176,7 @@
     "lang": "C",
     "pushed": "2026-10-20T05:14:09Z",
     "size": 60226,
-    "stars": 348
+    "stars": 349
    },
    "shots": [
     "https://raw.githubusercontent.com/Apolinario-coder/SkyRecomp/HEAD/docs/gameplay.png"
@@ -2651,8 +5335,8 @@
     "full": "arnaldolima1/gow-ascension-pc",
     "lang": "Python",
     "pushed": "2026-10-21T09:38:39Z",
-    "size": 1275,
-    "stars": 121
+    "size": 1299,
+    "stars": 123
    },
    "shots": [
     "https://raw.githubusercontent.com/arnaldolima1/gow-ascension-pc/HEAD/docs/images/launcher-home.jpg",
@@ -2830,7 +5514,7 @@
     "lang": "Rust",
     "pushed": "2026-10-18T08:24:43Z",
     "size": 4050,
-    "stars": 92
+    "stars": 93
    },
    "shots": []
   },
@@ -2986,8 +5670,8 @@
     "full": "Awakenchan/LanternEngine",
     "lang": "C#",
     "pushed": "2026-10-21T09:48:03Z",
-    "size": 5937,
-    "stars": 722
+    "size": 5745,
+    "stars": 725
    },
    "shots": []
   },
@@ -3196,7 +5880,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T11:01:37Z",
     "size": 3928,
-    "stars": 374
+    "stars": 375
    },
    "shots": []
   },
@@ -3684,7 +6368,7 @@
     "lang": "C#",
     "pushed": "2026-10-21T03:46:06Z",
     "size": 1450,
-    "stars": 940
+    "stars": 941
    },
    "shots": []
   },
@@ -3711,7 +6395,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T05:20:56Z",
     "size": 33515,
-    "stars": 99
+    "stars": 100
    },
    "shots": [
     "https://raw.githubusercontent.com/BlackLineInteractive/Driveclub-Port/HEAD/media/2026-10-14_22-34-39.png",
@@ -4377,7 +7061,7 @@
     "full": "CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
     "lang": "C++",
     "pushed": "2026-10-21T09:31:22Z",
-    "size": 9946,
+    "size": 10084,
     "stars": 49
    },
    "shots": [
@@ -4992,7 +7676,7 @@
     "desc": "Super Mario Sunshine Native PC Port",
     "full": "chasem-dev/sms-pc-port",
     "lang": "C++",
-    "pushed": "2026-10-21T04:48:29Z",
+    "pushed": "2026-10-21T10:47:09Z",
     "size": 408416,
     "stars": 163
    },
@@ -5443,7 +8127,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T11:06:01Z",
     "size": 1514,
-    "stars": 41
+    "stars": 42
    },
    "shots": [
     "https://raw.githubusercontent.com/ChunchunQ/fifa09-recomp/HEAD/docs/images/match.jpg",
@@ -5515,10 +8199,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-20T14:17:13Z",
+    "date": "2026-10-21T10:07:13Z",
     "pre": false,
-    "tag": "v1.09",
-    "url": "https://github.com/Claudio5702/Cristalis/releases/tag/v1.09"
+    "tag": "v1.10",
+    "url": "https://github.com/Claudio5702/Cristalis/releases/tag/v1.10"
    },
    "repo": {
     "archived": false,
@@ -5526,7 +8210,7 @@
     "desc": "Crystal Defenders Recomp — unofficial native PC port (Windows, Linux) of Crystal Defenders (Xbox 360) by static recompilation. Bring your own copy of the game.",
     "full": "Claudio5702/Cristalis",
     "lang": "C",
-    "pushed": "2026-10-20T14:17:12Z",
+    "pushed": "2026-10-21T10:07:13Z",
     "size": 2965,
     "stars": 3
    },
@@ -5584,7 +8268,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T00:31:36Z",
     "size": 4994,
-    "stars": 99
+    "stars": 101
    },
    "shots": [
     "https://raw.githubusercontent.com/ClickingMaster/ssrecomp/HEAD/docs/screenshots/route-widescreen.png",
@@ -5712,7 +8396,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T08:50:16Z",
     "size": 235810,
-    "stars": 532
+    "stars": 533
    },
    "shots": [
     "https://raw.githubusercontent.com/coccofresco/TriAevum/HEAD/docs/images/alpha2-kokiri.png",
@@ -5786,7 +8470,7 @@
     "lang": "C",
     "pushed": "2026-10-12T14:00:58Z",
     "size": 14475,
-    "stars": 227
+    "stars": 228
    },
    "shots": []
   },
@@ -5930,7 +8614,7 @@
     "desc": "Monster hunter 4 u decomp",
     "full": "CompaLarios18/MH4UltimateDC",
     "lang": "Python",
-    "pushed": "2026-10-21T07:01:28Z",
+    "pushed": "2026-10-21T10:42:10Z",
     "size": 6412,
     "stars": 26
    },
@@ -6058,7 +8742,7 @@
     "lang": "C",
     "pushed": "2026-10-08T20:06:15Z",
     "size": 321128,
-    "stars": 1471
+    "stars": 1472
    },
    "shots": []
   },
@@ -6324,7 +9008,7 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-21T09:44:57Z",
+    "date": "2026-10-21T10:32:19Z",
     "pre": false,
     "tag": "update",
     "url": "https://github.com/crazyriddler/FinestHourRemastered/releases/tag/update"
@@ -6335,9 +9019,9 @@
     "desc": "A native PC port of Call of Duty: Finest Hour (original Xbox) with a remastered renderer",
     "full": "crazyriddler/FinestHourRemastered",
     "lang": "C++",
-    "pushed": "2026-10-21T09:44:57Z",
-    "size": 24643,
-    "stars": 84
+    "pushed": "2026-10-21T10:32:18Z",
+    "size": 27195,
+    "stars": 85
    },
    "shots": [
     "https://raw.githubusercontent.com/crazyriddler/FinestHourRemastered/HEAD/docs/media/compare_1_off.jpg",
@@ -6596,7 +9280,7 @@
     "full": "OpenCommunityEdition/OpenCE",
     "lang": "C",
     "pushed": "2026-10-21T09:44:18Z",
-    "size": 67147,
+    "size": 57173,
     "stars": 1742
    },
    "shots": [
@@ -6721,7 +9405,7 @@
     "full": "DahSidiAbdallah/ConkerBFDReloaded",
     "lang": "C++",
     "pushed": "2026-10-21T09:44:59Z",
-    "size": 13485,
+    "size": 13484,
     "stars": 103
    },
    "shots": []
@@ -6890,7 +9574,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T05:04:11Z",
     "size": 2527,
-    "stars": 147
+    "stars": 148
    },
    "shots": []
   },
@@ -7266,7 +9950,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T06:31:22Z",
     "size": 6271,
-    "stars": 3432
+    "stars": 3433
    },
    "shots": []
   },
@@ -7386,7 +10070,7 @@
     "lang": "C",
     "pushed": "2026-10-21T06:25:19Z",
     "size": 7216,
-    "stars": 327
+    "stars": 329
    },
    "shots": [
     "https://raw.githubusercontent.com/Denkishi/ssbu-recomp/HEAD/media/og-image.png",
@@ -7411,7 +10095,7 @@
     "desc": "This is a WIP decompilation of Crash Bandicoot: The Wrath of Cortex for Playstation 2",
     "full": "denzi-gh/crashwoc-decomp-ps2",
     "lang": "C",
-    "pushed": "2026-10-21T08:40:27Z",
+    "pushed": "2026-10-21T10:42:20Z",
     "size": 5305,
     "stars": 16
    },
@@ -8025,7 +10709,7 @@
     "lang": "C++",
     "pushed": "2026-10-01T20:56:37Z",
     "size": 888,
-    "stars": 80
+    "stars": 81
    },
    "shots": []
   },
@@ -8264,7 +10948,7 @@
     "full": "Dyotson/ForzaHorizon1-ReImagined",
     "lang": "Python",
     "pushed": "2026-10-21T09:29:25Z",
-    "size": 4111,
+    "size": 4112,
     "stars": 247
    },
    "shots": [
@@ -8590,7 +11274,7 @@
     "lang": null,
     "pushed": "2026-10-20T09:40:06Z",
     "size": 2,
-    "stars": 260
+    "stars": 261
    },
    "shots": []
   },
@@ -8660,7 +11344,7 @@
     "lang": "C",
     "pushed": "2026-09-19T16:18:44Z",
     "size": 7006,
-    "stars": 256
+    "stars": 257
    },
    "shots": []
   },
@@ -9006,7 +11690,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T22:59:26Z",
     "size": 3701,
-    "stars": 220
+    "stars": 222
    },
    "shots": [
     "https://raw.githubusercontent.com/EstebanPdN/mario-kart-64-3ds/HEAD/docs/images/showcase-rounded.webp"
@@ -9631,7 +12315,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T06:01:15Z",
     "size": 9163,
-    "stars": 3747
+    "stars": 3751
    },
    "shots": []
   },
@@ -9750,7 +12434,7 @@
     "lang": "C++",
     "pushed": "2026-10-16T11:21:36Z",
     "size": 7064,
-    "stars": 623
+    "stars": 624
    },
    "shots": [
     "https://raw.githubusercontent.com/florinp93/hells-gate-recomp/HEAD/assets/fan_artwork.png"
@@ -9948,7 +12632,9 @@
    "readme": {
     "features": {
      "aa": "yes",
+     "aspect": "yes",
      "kbm": "yes",
+     "online": "yes",
      "res": "yes"
     },
     "os": {
@@ -9959,10 +12645,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-07T15:03:25Z",
+    "date": "2026-10-21T10:09:04Z",
     "pre": true,
-    "tag": "v0.4.0",
-    "url": "https://github.com/FrankHUN88453/CoD3Recomp/releases/tag/v0.4.0"
+    "tag": "v0.5.0",
+    "url": "https://github.com/FrankHUN88453/CoD3Recomp/releases/tag/v0.5.0"
    },
    "repo": {
     "archived": false,
@@ -9970,12 +12656,12 @@
     "desc": "Call of Duty 3 (Xbox 360) static recompilation: host runtime, tools and notes",
     "full": "FrankHUN88453/CoD3Recomp",
     "lang": "C++",
-    "pushed": "2026-10-20T02:22:12Z",
+    "pushed": "2026-10-21T10:47:41Z",
     "size": 3553,
     "stars": 299
    },
    "shots": [
-    "https://raw.githubusercontent.com/FrankHUN88453/CoD3Recomp/HEAD/level.png"
+    "https://raw.githubusercontent.com/FrankHUN88453/CoD3Recomp/HEAD/preview.png"
    ]
   },
   "franklincg/twisted-metal-2012-ps3-native-port": {
@@ -10103,6 +12789,7 @@
    },
    "readme": {
     "features": {
+     "aspect": "yes",
      "hfr": "yes",
      "kbm": "yes"
     },
@@ -10115,10 +12802,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-20T20:10:07Z",
+    "date": "2026-10-21T10:39:24Z",
     "pre": false,
-    "tag": "v0.1.2",
-    "url": "https://github.com/FulGerNet/rePOP/releases/tag/v0.1.2"
+    "tag": "v0.2.0",
+    "url": "https://github.com/FulGerNet/rePOP/releases/tag/v0.2.0"
    },
    "repo": {
     "archived": false,
@@ -10126,7 +12813,7 @@
     "desc": "Static recompilation project bringing the original Xbox Prince of Persia trilogy natively to PC and Android with modern enhancements and unlocked performance.",
     "full": "FulGerNet/rePOP",
     "lang": "C",
-    "pushed": "2026-10-20T20:10:06Z",
+    "pushed": "2026-10-21T10:39:23Z",
     "size": 35387,
     "stars": 36
    },
@@ -10235,9 +12922,9 @@
     "desc": "Ninja Gaiden Black (Xbox, 2005) statically recompiled into native Linux and Windows builds, drawn by its own Vulkan renderer. A steady 60 fps, widescreen and ultrawide, keyboard and mouse, Steam Deck ready. Bring your own copy of the game.",
     "full": "gamboozino/ngbrecomp",
     "lang": "C",
-    "pushed": "2026-10-21T01:15:56Z",
+    "pushed": "2026-10-21T10:39:26Z",
     "size": 4753,
-    "stars": 101
+    "stars": 102
    },
    "shots": []
   },
@@ -10881,7 +13568,7 @@
     "lang": "C",
     "pushed": "2026-10-14T10:48:28Z",
     "size": 16688,
-    "stars": 107
+    "stars": 108
    },
    "shots": [
     "https://github.com/user-attachments/assets/eb23ea38-f97d-43a1-b22c-e58a80f90aa7"
@@ -10963,7 +13650,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T03:27:30Z",
     "size": 4742,
-    "stars": 143
+    "stars": 145
    },
    "shots": []
   },
@@ -11042,7 +13729,7 @@
     "lang": "C++",
     "pushed": "2026-10-08T17:50:33Z",
     "size": 2534,
-    "stars": 411
+    "stars": 413
    },
    "shots": [
     "https://raw.githubusercontent.com/goliathret/EdgeOfTimeRecomp/HEAD/docs/image.png"
@@ -11864,7 +14551,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T09:41:53Z",
     "size": 3886,
-    "stars": 89
+    "stars": 90
    },
    "shots": []
   },
@@ -12463,7 +15150,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T06:05:11Z",
     "size": 17021,
-    "stars": 735
+    "stars": 734
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/iss_pc/HEAD/docs/screenshots/01-grafite-sensor.jpg",
@@ -12514,7 +15201,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T04:37:45Z",
     "size": 5308,
-    "stars": 358
+    "stars": 359
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/tlg_pc/HEAD/docs/screenshots/01-menu.jpg",
@@ -12734,7 +15421,7 @@
     "desc": "Native port of Shadow of the Colossus (PS2) to macOS and PS Vita: static recompilation with PS2Recomp, a native Metal/OpenGL renderer, and a decompilation in progress",
     "full": "HenryKun55/celosia",
     "lang": "C++",
-    "pushed": "2026-10-21T05:35:23Z",
+    "pushed": "2026-10-21T10:12:49Z",
     "size": 5424,
     "stars": 24
    },
@@ -12777,7 +15464,7 @@
     "full": "Hero88go/melee-unlocked",
     "lang": "C++",
     "pushed": "2026-10-21T09:39:13Z",
-    "size": 121406,
+    "size": 121474,
     "stars": 127
    },
    "shots": [
@@ -13166,7 +15853,7 @@
     "lang": "C",
     "pushed": "2026-10-20T19:49:11Z",
     "size": 14301,
-    "stars": 28
+    "stars": 29
    },
    "shots": [
     "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/gameplay-dlaa.jpg",
@@ -13849,7 +16536,7 @@
     "lang": "C",
     "pushed": "2026-10-20T23:37:18Z",
     "size": 3759,
-    "stars": 77
+    "stars": 78
    },
    "shots": []
   },
@@ -14130,7 +16817,7 @@
     "lang": "C",
     "pushed": "2026-10-21T08:33:00Z",
     "size": 20357,
-    "stars": 13
+    "stars": 14
    },
    "shots": []
   },
@@ -14621,7 +17308,7 @@
     "desc": "",
     "full": "JonathanDC64/DemonsSoulsRecomp",
     "lang": "C++",
-    "pushed": "2026-10-21T02:16:12Z",
+    "pushed": "2026-10-21T10:07:00Z",
     "size": 2837,
     "stars": 69
    },
@@ -15388,7 +18075,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T02:09:25Z",
     "size": 252146,
-    "stars": 97
+    "stars": 98
    },
    "shots": []
   },
@@ -15420,7 +18107,7 @@
     "full": "KarlLaberfeld/Crash-Dummies-Native",
     "lang": "Python",
     "pushed": "2026-10-21T09:28:19Z",
-    "size": 3343,
+    "size": 3511,
     "stars": 0
    },
    "shots": []
@@ -15611,7 +18298,7 @@
     "desc": "A renovation of the 2001 Chinese PC port of Breath of Fire III",
     "full": "kerokline/BreathOfFire3PCPort",
     "lang": "C++",
-    "pushed": "2026-10-20T22:08:33Z",
+    "pushed": "2026-10-21T10:25:45Z",
     "size": 50242,
     "stars": 17
    },
@@ -15685,7 +18372,7 @@
     "desc": "Native PC port of Rage Racer",
     "full": "khasinski/rage-racer-pc",
     "lang": "C",
-    "pushed": "2026-10-20T23:39:13Z",
+    "pushed": "2026-10-21T10:01:37Z",
     "size": 22464,
     "stars": 128
    },
@@ -15976,7 +18663,7 @@
     "lang": "C",
     "pushed": "2026-10-20T15:22:22Z",
     "size": 1761,
-    "stars": 18
+    "stars": 19
    },
    "shots": [
     "https://raw.githubusercontent.com/koenhendriks/SSX3-recomp/HEAD/docs/screenshots/33-widescreen-32x9-snow-jam.png",
@@ -16103,7 +18790,7 @@
     "desc": "Matching decompilation of Medal of Honor: Frontline (GameCube, GMFE69)",
     "full": "kyleckroeger/moh-frontline-decomp",
     "lang": "C",
-    "pushed": "2026-10-18T16:26:34Z",
+    "pushed": "2026-10-21T10:10:51Z",
     "size": 9553,
     "stars": 5
    },
@@ -16423,7 +19110,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T06:33:43Z",
     "size": 3836,
-    "stars": 214
+    "stars": 215
    },
    "shots": []
   },
@@ -16710,7 +19397,7 @@
     "lang": "C++",
     "pushed": "2026-09-02T22:18:50Z",
     "size": 21552,
-    "stars": 318
+    "stars": 319
    },
    "shots": [
     "https://raw.githubusercontent.com/LittleBitUA/DownpourRecomp/HEAD/docs/screenshots/murphy-closeup.png",
@@ -17217,7 +19904,7 @@
     "lang": "C",
     "pushed": "2026-10-15T20:59:34Z",
     "size": 32166,
-    "stars": 875
+    "stars": 876
    },
    "shots": []
   },
@@ -17257,6 +19944,41 @@
    "shots": [
     "https://raw.githubusercontent.com/mariopartyrd/partyboard/HEAD/assets/aurora-powered.png"
    ]
+  },
+  "maryncrt/ultimate-mortal-kombat-3-ios-decompiled": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "kbm": "yes",
+     "online": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-16T23:52:41Z",
+    "pre": true,
+    "tag": "v0.1.5-alpha",
+    "url": "https://github.com/MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled/releases/tag/v0.1.5-alpha"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-08-14T02:44:53Z",
+    "desc": "Ultimate Mortal Kombat 3 (iOS, EA Mobile 2011), fully decompiled: all 2,572 game functions are readable C, checked against a static ARM-to-C recompiler. Native port in progress: menus, sound and saves run; fight data tables extracted from your copy and verified; not playable yet. No game assets - bring your own copy.",
+    "full": "MaryNCRT/Ultimate-Mortal-Kombat-3-iOS-Decompiled",
+    "lang": "C",
+    "pushed": "2026-10-18T23:09:20Z",
+    "size": 210763,
+    "stars": 44
+   },
+   "shots": []
   },
   "maskezeny/windowwaker": {
    "assetOs": {
@@ -17502,7 +20224,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T21:18:37Z",
     "size": 7221,
-    "stars": 272
+    "stars": 274
    },
    "shots": []
   },
@@ -18076,8 +20798,8 @@
     "desc": "Matching decompilation of Shin Megami Tensei: Digital Devil Saga 1 & 2 (PS2)",
     "full": "Megami-Decomps/dds-decomp",
     "lang": "C",
-    "pushed": "2026-10-21T09:55:51Z",
-    "size": 329211,
+    "pushed": "2026-10-21T10:46:15Z",
+    "size": 334137,
     "stars": 32
    },
    "shots": []
@@ -18547,7 +21269,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T03:28:51Z",
     "size": 6609,
-    "stars": 462
+    "stars": 463
    },
    "shots": []
   },
@@ -18837,7 +21559,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T09:48:31Z",
     "size": 3306,
-    "stars": 486
+    "stars": 487
    },
    "shots": []
   },
@@ -20442,7 +23164,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T01:22:35Z",
     "size": 4630,
-    "stars": 72
+    "stars": 73
    },
    "shots": [
     "https://img.youtube.com/vi/CID9oVhgCyY/maxresdefault.jpg"
@@ -20653,7 +23375,7 @@
     "lang": "C",
     "pushed": "2026-10-20T20:56:02Z",
     "size": 12471,
-    "stars": 309
+    "stars": 310
    },
    "shots": [
     "https://raw.githubusercontent.com/murkantor/Project-Midas/HEAD/port/include/presskit/PM%20thin%201%20-%20full.png"
@@ -20995,8 +23717,8 @@
     "desc": "Decompilation of ICO (PS2)",
     "full": "nathanialf/ico",
     "lang": "C",
-    "pushed": "2026-10-21T09:48:08Z",
-    "size": 27481,
+    "pushed": "2026-10-21T10:29:17Z",
+    "size": 27568,
     "stars": 43
    },
    "shots": []
@@ -21775,7 +24497,7 @@
     "lang": "C",
     "pushed": "2026-10-20T05:44:55Z",
     "size": 2065,
-    "stars": 44
+    "stars": 45
    },
    "shots": [
     "https://raw.githubusercontent.com/NJH-1001/Wipeout2K97XL/HEAD/docs/images/negcon-dual-sticks.png"
@@ -21817,13 +24539,15 @@
     "lang": "C++",
     "pushed": "2026-10-17T02:57:12Z",
     "size": 1759,
-    "stars": 41
+    "stars": 42
    },
    "shots": []
   },
   "noahvl/birdman64": {
    "assetOs": {
-    "Android": true
+    "Android": true,
+    "Linux": true,
+    "Windows": true
    },
    "manifest": {
     "approach": "Native Rust runtime running the decompiled game code, compiled natively with zig",
@@ -21858,10 +24582,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-19T16:45:21Z",
-    "pre": true,
-    "tag": "test-android-controller",
-    "url": "https://github.com/NoahVl/Birdman64/releases/tag/test-android-controller"
+    "date": "2026-10-21T10:30:45Z",
+    "pre": false,
+    "tag": "v1.5.1",
+    "url": "https://github.com/NoahVl/Birdman64/releases/tag/v1.5.1"
    },
    "repo": {
     "archived": false,
@@ -21869,7 +24593,7 @@
     "desc": "Pilotwings 64 as a native PC game for Windows and Linux: widescreen, 144+ FPS, gamepads. Bring your own ROM, no emulator.",
     "full": "NoahVl/Birdman64",
     "lang": "Rust",
-    "pushed": "2026-10-20T08:47:41Z",
+    "pushed": "2026-10-21T10:37:24Z",
     "size": 3259,
     "stars": 34
    },
@@ -22286,7 +25010,7 @@
     "lang": "C",
     "pushed": "2026-10-07T04:33:24Z",
     "size": 2007,
-    "stars": 62
+    "stars": 61
    },
    "shots": [
     "https://raw.githubusercontent.com/nukep/SMB-Vanilla/HEAD/docs/screenshot1.png"
@@ -22479,7 +25203,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T00:32:38Z",
     "size": 2335,
-    "stars": 152
+    "stars": 153
    },
    "shots": []
   },
@@ -22516,7 +25240,7 @@
     "lang": "Python",
     "pushed": "2026-10-18T11:19:52Z",
     "size": 1165,
-    "stars": 94
+    "stars": 95
    },
    "shots": []
   },
@@ -22559,8 +25283,8 @@
     "full": "Odrannnn/MetroidPrimePort",
     "lang": "C++",
     "pushed": "2026-10-21T09:57:21Z",
-    "size": 181692,
-    "stars": 487
+    "size": 181918,
+    "stars": 488
    },
    "shots": []
   },
@@ -23041,7 +25765,7 @@
     "lang": "C++",
     "pushed": "2026-10-17T11:51:47Z",
     "size": 75966,
-    "stars": 220
+    "stars": 221
    },
    "shots": []
   },
@@ -23162,7 +25886,7 @@
     "full": "OpenCommunityEdition/OpenCE",
     "lang": "C",
     "pushed": "2026-10-21T09:44:18Z",
-    "size": 67147,
+    "size": 57173,
     "stars": 1742
    },
    "shots": [
@@ -23286,7 +26010,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T08:52:21Z",
     "size": 5834,
-    "stars": 86
+    "stars": 87
    },
    "shots": []
   },
@@ -23386,7 +26110,7 @@
     "desc": "",
     "full": "oric212/BT2-Recomp",
     "lang": "C++",
-    "pushed": "2026-10-21T07:29:15Z",
+    "pushed": "2026-10-21T10:45:27Z",
     "size": 7730,
     "stars": 13
    },
@@ -23426,9 +26150,9 @@
     "desc": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
     "full": "Oussama268/ShadowOfTheColossus-PC",
     "lang": "C++",
-    "pushed": "2026-10-21T09:33:35Z",
-    "size": 4666,
-    "stars": 190
+    "pushed": "2026-10-21T10:45:01Z",
+    "size": 4683,
+    "stars": 191
    },
    "shots": []
   },
@@ -23714,7 +26438,7 @@
     "desc": "Wiicompiled",
     "full": "patchzyy/Wiicompiled",
     "lang": "C++",
-    "pushed": "2026-10-21T01:26:36Z",
+    "pushed": "2026-10-21T10:46:51Z",
     "size": 3313,
     "stars": 1225
    },
@@ -23751,7 +26475,7 @@
     "full": "PaulCombal/mw2-recompiled",
     "lang": "C++",
     "pushed": "2026-10-21T09:41:02Z",
-    "size": 2262,
+    "size": 2403,
     "stars": 112
    },
    "shots": [
@@ -23831,7 +26555,7 @@
     "lang": "C",
     "pushed": "2026-10-21T06:03:09Z",
     "size": 8303,
-    "stars": 1514
+    "stars": 1518
    },
    "shots": [
     "https://raw.githubusercontent.com/peiikai/LASRecomp/HEAD/docs/ultrawide.jpg",
@@ -24016,8 +26740,8 @@
     "desc": "Recompilation Project for Timesplitters 2",
     "full": "phobos665/split2-recomp",
     "lang": "C",
-    "pushed": "2026-10-21T09:44:20Z",
-    "size": 510,
+    "pushed": "2026-10-21T09:59:44Z",
+    "size": 531,
     "stars": 16
    },
    "shots": [
@@ -24113,7 +26837,7 @@
     "lang": "C",
     "pushed": "2026-10-20T20:03:52Z",
     "size": 8229,
-    "stars": 163
+    "stars": 164
    },
    "shots": [
     "https://raw.githubusercontent.com/portingpete/Black-2006-Recomp/HEAD/docs/images/launcher-main.png",
@@ -24168,7 +26892,7 @@
     "lang": "C++",
     "pushed": "2026-10-16T17:31:54Z",
     "size": 5266,
-    "stars": 327
+    "stars": 328
    },
    "shots": []
   },
@@ -25100,7 +27824,7 @@
     "desc": "A Majora's Mask Archipelago randomizer with an emphasis on fun and silliness. SHNIGEDY DING-DONG",
     "full": "RecompRando/MMRecompRando",
     "lang": "C",
-    "pushed": "2026-10-03T13:54:28Z",
+    "pushed": "2026-10-21T10:40:53Z",
     "size": 35063,
     "stars": 47
    },
@@ -25614,7 +28338,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T01:39:13Z",
     "size": 5641,
-    "stars": 151
+    "stars": 152
    },
    "shots": []
   },
@@ -25647,7 +28371,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T01:39:13Z",
     "size": 5641,
-    "stars": 151
+    "stars": 152
    },
    "shots": []
   },
@@ -25950,7 +28674,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T05:52:29Z",
     "size": 25366,
-    "stars": 413
+    "stars": 414
    },
    "shots": []
   },
@@ -25983,7 +28707,7 @@
     "lang": "C",
     "pushed": "2026-10-19T23:28:49Z",
     "size": 3739,
-    "stars": 55
+    "stars": 56
    },
    "shots": []
   },
@@ -27228,7 +29952,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T07:43:26Z",
     "size": 2793,
-    "stars": 105
+    "stars": 106
    },
    "shots": [
     "https://raw.githubusercontent.com/shihabal3amri/tekken-tag-tournament-2-pc/HEAD/.github/assets/download.png",
@@ -27360,8 +30084,8 @@
     "desc": "A static recompilation of Road Trip (Choro Q HG 2) for macOS and Android, built from your own disc",
     "full": "silentsudin/RoadTripAdventure-recomp",
     "lang": "C++",
-    "pushed": "2026-10-21T09:09:39Z",
-    "size": 10408,
+    "pushed": "2026-10-21T10:12:40Z",
+    "size": 10428,
     "stars": 17
    },
    "shots": [
@@ -27860,7 +30584,7 @@
     "full": "SMCGames/Paper-Mario-ReCut-Deprecated",
     "lang": "C++",
     "pushed": "2026-10-21T09:32:47Z",
-    "size": 89589,
+    "size": 89594,
     "stars": 307
    },
    "shots": [
@@ -27934,9 +30658,9 @@
     "desc": "Super Mario Maker 2 Recomp",
     "full": "smm2recomp/smm2recomp",
     "lang": "Rust",
-    "pushed": "2026-10-21T09:55:40Z",
-    "size": 13488,
-    "stars": 62
+    "pushed": "2026-10-21T10:03:56Z",
+    "size": 13514,
+    "stars": 66
    },
    "shots": [
     "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/title.jpg",
@@ -28058,7 +30782,7 @@
     "lang": "C",
     "pushed": "2026-10-21T07:43:01Z",
     "size": 2926,
-    "stars": 318
+    "stars": 319
    },
    "shots": []
   },
@@ -28103,8 +30827,8 @@
     "desc": "Work-in-progress matching decompilation of Fossil Fighters (Nintendo DS). Bring your own ROM; no game assets included.",
     "full": "Sojews/fossil-fighters-decomp",
     "lang": "C++",
-    "pushed": "2026-10-21T09:58:22Z",
-    "size": 9290,
+    "pushed": "2026-10-21T10:36:24Z",
+    "size": 9475,
     "stars": 1
    },
    "shots": []
@@ -28426,7 +31150,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T20:12:44Z",
     "size": 17353,
-    "stars": 98
+    "stars": 99
    },
    "shots": []
   },
@@ -28493,7 +31217,7 @@
     "lang": "C++",
     "pushed": "2026-10-14T02:46:43Z",
     "size": 455,
-    "stars": 57
+    "stars": 58
    },
    "shots": []
   },
@@ -29264,7 +31988,7 @@
     "full": "SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port",
     "lang": "Assembly",
     "pushed": "2026-10-21T09:34:08Z",
-    "size": 223061,
+    "size": 223267,
     "stars": 265
    },
    "shots": []
@@ -29310,7 +32034,7 @@
     "full": "SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port",
     "lang": "Assembly",
     "pushed": "2026-10-21T09:34:08Z",
-    "size": 223061,
+    "size": 223267,
     "stars": 265
    },
    "shots": []
@@ -29704,7 +32428,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T20:42:52Z",
     "size": 5994,
-    "stars": 4178
+    "stars": 4184
    },
    "shots": []
   },
@@ -29744,7 +32468,7 @@
     "lang": "C++",
     "pushed": "2026-10-17T23:37:21Z",
     "size": 3834,
-    "stars": 1745
+    "stars": 1749
    },
    "shots": []
   },
@@ -29890,7 +32614,7 @@
     "full": "TeamGDB/Yakumo",
     "lang": "C++",
     "pushed": "2026-10-21T09:21:10Z",
-    "size": 22463,
+    "size": 22526,
     "stars": 497
    },
    "shots": []
@@ -30418,7 +33142,7 @@
     "lang": "C++",
     "pushed": "2026-10-13T22:17:46Z",
     "size": 12087,
-    "stars": 202
+    "stars": 203
    },
    "shots": [
     "https://raw.githubusercontent.com/TekRantGaming/king-kong-recompiled/HEAD/docs/images/launcher-home.jpg",
@@ -30728,7 +33452,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T21:00:28Z",
     "size": 486,
-    "stars": 606
+    "stars": 607
    },
    "shots": [
     "https://github.com/user-attachments/assets/e0156eb8-c1b5-49d9-ab93-3abb46bf5f47"
@@ -30767,7 +33491,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T06:50:03Z",
     "size": 1997,
-    "stars": 323
+    "stars": 324
    },
    "shots": [
     "https://github.com/user-attachments/assets/d13e1fb6-ba97-4067-84e1-c2362d66d7c4",
@@ -30926,7 +33650,7 @@
     "lang": "C++",
     "pushed": "2025-12-18T04:46:41Z",
     "size": 14183,
-    "stars": 154
+    "stars": 155
    },
    "shots": []
   },
@@ -31458,7 +34182,7 @@
     "lang": "C",
     "pushed": "2026-10-18T09:01:43Z",
     "size": 5650,
-    "stars": 68
+    "stars": 69
    },
    "shots": []
   },
@@ -31494,7 +34218,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T01:56:05Z",
     "size": 10046,
-    "stars": 29
+    "stars": 31
    },
    "shots": [
     "https://raw.githubusercontent.com/timftw21/burnout2-recompilation/main/screenshots/single-player.jpg",
@@ -31777,7 +34501,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T23:57:15Z",
     "size": 47006,
-    "stars": 41
+    "stars": 42
    },
    "shots": []
   },
@@ -32395,7 +35119,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T23:19:42Z",
     "size": 378,
-    "stars": 45
+    "stars": 46
    },
    "shots": []
   },
@@ -32423,7 +35147,7 @@
     "full": "Virtual-AK/fes-pc-recomp",
     "lang": "Python",
     "pushed": "2026-10-21T09:07:46Z",
-    "size": 1613,
+    "size": 1757,
     "stars": 1
    },
    "shots": []
@@ -33335,7 +36059,7 @@
     "desc": "Native C/C++ recompilation research for White Knight Chronicles II (PS3).",
     "full": "WK2D/White-Knight-Chronicles-2-Recomp",
     "lang": "C++",
-    "pushed": "2026-10-21T09:57:43Z",
+    "pushed": "2026-10-21T10:43:14Z",
     "size": 160247,
     "stars": 13
    },
@@ -33673,7 +36397,7 @@
     "lang": "C",
     "pushed": "2026-10-20T20:58:15Z",
     "size": 3143,
-    "stars": 175
+    "stars": 176
    },
    "shots": []
   },
@@ -33765,7 +36489,7 @@
     "lang": "Python",
     "pushed": "2026-10-17T17:15:18Z",
     "size": 11014,
-    "stars": 305
+    "stars": 306
    },
    "shots": [
     "https://raw.githubusercontent.com/xenophobentx/takedawn/HEAD/docs/screenshots/takedawn-alt-12-europe-winter-city-cathedral.jpg",
@@ -34510,7 +37234,7 @@
     "desc": "Native Pokémon Emerald port for Nintendo 3DS, featuring dual-screen gameplay, stereoscopic 3D, and a fully 3D world.",
     "full": "ZallaxDev/emerald-3ds",
     "lang": "C",
-    "pushed": "2026-10-21T07:50:38Z",
+    "pushed": "2026-10-21T10:29:19Z",
     "size": 19052,
     "stars": 566
    },
@@ -34780,7 +37504,7 @@
     "full": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
     "lang": "C",
     "pushed": "2026-10-21T09:44:50Z",
-    "size": 22412,
+    "size": 22617,
     "stars": 871
    },
    "shots": []
