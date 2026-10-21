@@ -134,6 +134,18 @@ dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 .d-more{border-top:1px solid var(--line);padding-top:10px}
 .d-more summary{cursor:pointer;font:600 15px/1.2 var(--display)}
 .moregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 22px;margin-top:8px}
+.edgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 14px;margin-top:8px;align-items:start}
+.ef{display:grid;gap:3px;min-width:0;font-size:12.5px}
+.ef>span,.ef>label>span{color:var(--muted);font-weight:500}
+.ef input,.ef select{width:100%;height:32px;padding:4px 8px;font-size:13px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);box-sizing:border-box}
+.ef textarea{width:100%;min-height:52px;padding:5px 8px;font-size:13px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);resize:vertical;box-sizing:border-box}
+.ef.wide{grid-column:1/-1}
+.efrow{display:flex;gap:6px;align-items:center}.efrow input{flex:1 1 auto}
+.btn.sm{padding:4px 9px;font-size:12px;white-space:nowrap;height:32px}
+.ef .hint,.ef small.hint{color:var(--muted);font-size:11.5px;font-weight:400}
+.ef>span .hint{margin-left:6px}
+.efend{justify-items:start}
+@container (min-width:900px){.ef.wide{grid-column:span 2}.ef.wide:has(textarea),.ef.wide.efend{grid-column:span 2}}
 .moregrid .edit{margin-top:0}
 .kv{grid-template-columns:118px 1fr}
 .detail h4{font:600 16px/1.2 var(--display);margin:0 0 6px}
@@ -1477,20 +1489,19 @@ function detailHTML(v,head){
       ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
     </section>
     ${shotsHTML(v)}
-    ${v.ghost?`<p class="note d-more" style="padding-top:10px;border-top:1px solid var(--line)">Edits, cover and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="moregrid">
-      <div class="edit"><label>Cover image link<input type="text" data-f="cover" placeholder="Paste an image URL to override" value="${esc((S.ov[p.id]||{}).cover||"")}"></label>
-        <span class="note">${(()=>{const c=coverFor(v);return c?"Current cover from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+".":"No cover found yet.";})()} <button class="btn" data-recover="${esc(coverKey(v))}" style="padding:2px 8px;font-size:12px">Look up again</button>
-        <a class="btn" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener" style="padding:2px 8px;font-size:12px">Find on SteamGridDB</a></span>
-        <span class="note">On SteamGridDB, open a cover, copy its image link and paste it above.</span></div>
-      <div class="edit"><label>Game title<input type="text" data-f="game" value="${esc(v.game)}"></label>
-        <label>Other games this project covers<textarea data-f="games" rows="2" placeholder="One per line: Title | Platform" style="min-height:44px">${esc(((S.ov[p.id]||{}).games!=null?parseGames(S.ov[p.id].games):parseGames((v.so||{}).games||p.games)).map(g=>g.title+(g.platform?" | "+g.platform:"")).join("\n"))}</textarea></label>
-        <label>Suggestive content<select data-f="nsfw"><option value="">Automatic (${autoNsfw(v)?"yes":"no"})</option><option value="yes" ${(S.ov[p.id]||{}).nsfw==="yes"?"selected":""}>Yes, blur it</option><option value="no" ${(S.ov[p.id]||{}).nsfw==="no"?"selected":""}>No</option></select></label>
-        <label>Playability<select data-f="play"><option value="">Automatic</option><option value="yes" ${(S.ov[p.id]||{}).play==="yes"?"selected":""}>Playable</option><option value="no" ${(S.ov[p.id]||{}).play==="no"?"selected":""}>No public release</option></select></label>
-        <label>PC release<select data-f="ps">${PS.map(x=>`<option ${v.ps===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label></div>
-      ${p.custom?`<div class="edit">
-        <label>Original platform<select data-f="platform">${plats.concat("Unknown").map(x=>`<option ${v.platform===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
-        <label>Type<select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>
-        <button class="btn" data-remove="${esc(p.id)}">Remove from tracker</button></div>`:""}
+    ${v.ghost?`<p class="note d-more" style="padding-top:10px;border-top:1px solid var(--line)">Edits, cover and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="edgrid">
+      <label class="ef"><span>Game title</span><input type="text" data-f="game" value="${esc(v.game)}"></label>
+      ${p.custom?`<label class="ef"><span>Original platform</span><select data-f="platform">${plats.concat("Unknown").map(x=>`<option ${v.platform===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
+      <label class="ef"><span>Type</span><select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>`:""}
+      <label class="ef"><span>Playability</span><select data-f="play"><option value="">Automatic</option><option value="yes" ${(S.ov[p.id]||{}).play==="yes"?"selected":""}>Playable</option><option value="no" ${(S.ov[p.id]||{}).play==="no"?"selected":""}>No public release</option></select></label>
+      <label class="ef"><span>PC release</span><select data-f="ps">${PS.map(x=>`<option ${v.ps===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
+      <label class="ef"><span>Suggestive content</span><select data-f="nsfw"><option value="">Automatic (${autoNsfw(v)?"yes":"no"})</option><option value="yes" ${(S.ov[p.id]||{}).nsfw==="yes"?"selected":""}>Yes, blur it</option><option value="no" ${(S.ov[p.id]||{}).nsfw==="no"?"selected":""}>No</option></select></label>
+      <div class="ef wide"><label for="cv-${esc(p.id)}"><span>Cover image link</span></label>
+        <div class="efrow"><input id="cv-${esc(p.id)}" type="text" data-f="cover" placeholder="Paste an image link to use your own cover" value="${esc((S.ov[p.id]||{}).cover||"")}">
+          <button class="btn sm" data-recover="${esc(coverKey(v))}">Look up again</button><a class="btn sm" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener">Find on SteamGridDB</a></div>
+        <small class="hint">${(()=>{const c=coverFor(v);return c?"Now from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+". ":"No cover found yet. ";})()}On SteamGridDB, open a cover and copy its image link.</small></div>
+      <label class="ef wide"><span>Other games this project covers <small class="hint">one per line, as Title | Platform</small></span><textarea data-f="games" rows="2" placeholder="The Lord of the Rings: The Two Towers | Xbox (original)">${esc(((S.ov[p.id]||{}).games!=null?parseGames(S.ov[p.id].games):parseGames((v.so||{}).games||p.games)).map(g=>g.title+(g.platform?" | "+g.platform:"")).join("\n"))}</textarea></label>
+      ${p.custom?`<div class="ef wide efend"><button class="btn sm" data-remove="${esc(p.id)}">Remove from tracker</button></div>`:""}
     </div></details>`}
   </div></div>`;
 }
