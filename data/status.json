@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-10-24T04:34:33Z",
+ "generated": "2026-10-24T10:57:14Z",
  "repos": {
   "0bandywirus/dq9-decomp": {
    "assetOs": {
@@ -191,7 +191,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T09:09:22Z",
     "size": 11158,
-    "stars": 11
+    "stars": 12
    },
    "shots": [
     "https://raw.githubusercontent.com/15Cyber/marvel-nemesis-recomp/HEAD/docs/screenshots/gameplay-streets.png",
@@ -392,7 +392,7 @@
     "lang": "C",
     "pushed": "2026-10-23T21:56:50Z",
     "size": 4018,
-    "stars": 23
+    "stars": 25
    },
    "shots": []
   },
@@ -434,7 +434,7 @@
     "lang": "C",
     "pushed": "2026-10-23T21:56:50Z",
     "size": 4018,
-    "stars": 23
+    "stars": 25
    },
    "shots": []
   },
@@ -601,7 +601,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T03:02:26Z",
     "size": 10426,
-    "stars": 71
+    "stars": 73
    },
    "shots": []
   },
@@ -653,6 +653,53 @@
    },
    "shots": []
   },
+  "abilliontokens/sims1-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Static recompilation of the retail XBE to C++; XDK 5233 HLE with a native Vulkan renderer and SDL3 on Linux (no Wine), Direct3D 12 and XAudio2 cross-compiled for Windows",
+    "game": "The Sims",
+    "notes": "In progress - boots, plays its intro movies, reaches menus, Create a Sim and a playable household in live mode unattended (17 of 17 runs, 860-2208 draws a frame, docs/playtest.md). XDK 5233 was unsupported by the SDK: the signature set was seeded from 5558 and then signed from this image, the CDevice layout was proven offset by offset (its miniport sits at +0x17C8, 26 of 31 offsets differ from 5558), and 128 of 242 XDK names plus 11 of 12 data are proven with per-name evidence. Two boot defects fixed on the way (docs/boot-crash.md): the unnamed Direct3D_CreateDevice running the NV2A miniport i",
+    "system": "Xbox (original)",
+    "targets": [
+     "Windows",
+     "Linux"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hdr": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-21T08:32:14Z",
+    "pre": false,
+    "tag": "v0.2.0",
+    "url": "https://github.com/abilliontokens/sims1-recomp/releases/tag/v0.2.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-21T00:46:27Z",
+    "desc": "The Sims (original Xbox) statically recompiled for Linux and Windows — native Vulkan/SDL3 and D3D12/XAudio2, XDK 5233",
+    "full": "abilliontokens/sims1-recomp",
+    "lang": "Python",
+    "pushed": "2026-10-21T09:08:44Z",
+    "size": 371,
+    "stars": 3
+   },
+   "shots": []
+  },
   "abilliontokens/sims2-recomp": {
    "assetOs": {
     "Linux": true,
@@ -695,7 +742,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T04:39:00Z",
     "size": 171,
-    "stars": 9
+    "stars": 11
    },
    "shots": []
   },
@@ -907,7 +954,7 @@
     "lang": "C",
     "pushed": "2026-10-23T17:54:55Z",
     "size": 4378,
-    "stars": 115
+    "stars": 123
    },
    "shots": [
     "https://img.youtube.com/vi/0sW1BHgIMXs/maxresdefault.jpg"
@@ -949,7 +996,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T16:44:30Z",
     "size": 4303,
-    "stars": 1422
+    "stars": 1432
    },
    "shots": [
     "https://raw.githubusercontent.com/AjncSystem/ShadowOfTheColossus-PC/HEAD/docs/images/sotc-menu-f1-en.png"
@@ -986,7 +1033,7 @@
     "lang": "C",
     "pushed": "2026-10-13T07:38:22Z",
     "size": 1924,
-    "stars": 16
+    "stars": 17
    },
    "shots": []
   },
@@ -1128,7 +1175,7 @@
     "lang": "PowerShell",
     "pushed": "2026-10-15T23:48:16Z",
     "size": 4004,
-    "stars": 118
+    "stars": 119
    },
    "shots": [
     "https://raw.githubusercontent.com/Alexbeav/fm4-recomp/HEAD/assets/fm4-recompiled-hero.png"
@@ -1582,7 +1629,7 @@
     "lang": "Python",
     "pushed": "2026-10-02T14:40:30Z",
     "size": 677,
-    "stars": 6
+    "stars": 7
    },
    "shots": []
   },
@@ -4847,8 +4894,8 @@
     "desc": "Static Recompilation of Automobili Lamborghini for the N64",
     "full": "alondero/automobililamborghini-recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T22:07:25Z",
-    "size": 35764,
+    "pushed": "2026-10-24T09:53:04Z",
+    "size": 35800,
     "stars": 47
    },
    "shots": [
@@ -4876,7 +4923,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T19:42:19Z",
     "size": 1336,
-    "stars": 221
+    "stars": 222
    },
    "shots": []
   },
@@ -4898,45 +4945,6 @@
     "pushed": "2026-09-26T00:27:09Z",
     "size": 6034,
     "stars": 23
-   },
-   "shots": []
-  },
-  "amazingalek/rush-2049-recomp": {
-   "assetOs": {
-    "Linux": true,
-    "Windows": true
-   },
-   "readme": {
-    "features": {
-     "aa": "yes",
-     "aspect": "yes",
-     "hdr": "planned",
-     "hfr": "yes",
-     "kbm": "yes",
-     "mods": "yes",
-     "online": "yes",
-     "res": "yes"
-    },
-    "os": {},
-    "targets": {},
-    "v": 2
-   },
-   "readmeLure": [],
-   "release": {
-    "date": "2026-10-23T11:00:06Z",
-    "pre": false,
-    "tag": "v0.1.20",
-    "url": "https://github.com/n64hub/rush-2049-recomp/releases/tag/v0.1.20"
-   },
-   "repo": {
-    "archived": false,
-    "created": "2026-10-10T06:00:17Z",
-    "desc": "AI-written static recompilation of San Francisco Rush 2049 for N64, for PC and the web. Bring your own ROM.",
-    "full": "n64hub/rush-2049-recomp",
-    "lang": "C++",
-    "pushed": "2026-10-24T00:21:44Z",
-    "size": 4169,
-    "stars": 10
    },
    "shots": []
   },
@@ -5110,7 +5118,7 @@
     "lang": "C",
     "pushed": "2026-10-21T07:03:18Z",
     "size": 10773,
-    "stars": 26
+    "stars": 27
    },
    "shots": [
     "https://raw.githubusercontent.com/ankushKun/sh23ds/HEAD/site/assets/shots/town-top.jpg",
@@ -5249,7 +5257,7 @@
     "lang": "C",
     "pushed": "2026-10-20T23:08:41Z",
     "size": 5065,
-    "stars": 158
+    "stars": 160
    },
    "shots": []
   },
@@ -5341,7 +5349,7 @@
     "lang": "C",
     "pushed": "2026-10-22T04:04:44Z",
     "size": 55522,
-    "stars": 407
+    "stars": 411
    },
    "shots": [
     "https://raw.githubusercontent.com/Apolinario-coder/SkyRecomp/HEAD/docs/gameplay.png"
@@ -5388,7 +5396,7 @@
     "lang": "Python",
     "pushed": "2026-10-23T03:33:13Z",
     "size": 32613,
-    "stars": 883
+    "stars": 886
    },
    "shots": [
     "https://raw.githubusercontent.com/arcanite24/pinyon-shift/HEAD/.github/launcher-ready.png"
@@ -5501,7 +5509,7 @@
     "lang": "Python",
     "pushed": "2026-10-24T02:52:31Z",
     "size": 1060,
-    "stars": 225
+    "stars": 232
    },
    "shots": [
     "https://raw.githubusercontent.com/arnaldolima1/gow-ascension-pc/HEAD/docs/images/launcher-home.jpg",
@@ -5545,7 +5553,7 @@
     "lang": "Shell",
     "pushed": "2026-10-16T00:22:56Z",
     "size": 2622,
-    "stars": 41
+    "stars": 42
    },
    "shots": []
   },
@@ -5614,8 +5622,8 @@
     "desc": "Static recompilation of Yu-Gi-Oh! GX Tag Force (PSP) to native Windows - early preview",
     "full": "Artknighty/tagforcerecomp-preview",
     "lang": "C++",
-    "pushed": "2026-10-24T03:30:14Z",
-    "size": 5606,
+    "pushed": "2026-10-24T04:34:51Z",
+    "size": 5610,
     "stars": 4
    },
    "shots": []
@@ -5643,7 +5651,7 @@
     "lang": "C",
     "pushed": "2026-10-23T23:11:31Z",
     "size": 68176,
-    "stars": 296
+    "stars": 297
    },
    "shots": [
     "https://i.imgur.com/FreVpxO.png"
@@ -5678,7 +5686,7 @@
     "lang": "Rust",
     "pushed": "2026-10-22T00:00:39Z",
     "size": 15185,
-    "stars": 128
+    "stars": 129
    },
    "shots": []
   },
@@ -5794,7 +5802,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T00:31:50Z",
     "size": 8119,
-    "stars": 30
+    "stars": 31
    },
    "shots": [
     "https://raw.githubusercontent.com/Auremana666/Naruto-The-Broken-Bond-PC-Port/HEAD/docs/images/title-screen.jpg",
@@ -5837,9 +5845,9 @@
     "desc": "Lantern Engine: run your own copy of Bloodborne on Windows. A launcher and engine where the game's code runs natively; bring your own game dump.",
     "full": "Awakenchan/LanternEngine",
     "lang": "C++",
-    "pushed": "2026-10-23T13:16:53Z",
-    "size": 19554,
-    "stars": 941
+    "pushed": "2026-10-24T09:41:55Z",
+    "size": 19687,
+    "stars": 958
    },
    "shots": []
   },
@@ -5911,7 +5919,33 @@
     "lang": "C",
     "pushed": "2026-09-25T18:57:08Z",
     "size": 3946,
-    "stars": 2081
+    "stars": 2083
+   },
+   "shots": []
+  },
+  "basedyuki/the-3rd-birthday-recomp": {
+   "assetOs": {},
+   "readme": {
+    "features": {},
+    "none": true,
+    "os": {}
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-24T09:05:53Z",
+    "pre": false,
+    "tag": "v0.9.2",
+    "url": "https://github.com/BasedYuki/the-3rd-birthday-recomp/releases/tag/v0.9.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-26T12:06:45Z",
+    "desc": "Native PC port of The 3rd Birthday (PSP) via static recompilation. Bring your own ISO; no game data included.",
+    "full": "BasedYuki/the-3rd-birthday-recomp",
+    "lang": "C",
+    "pushed": "2026-10-24T09:05:15Z",
+    "size": 13912,
+    "stars": 12
    },
    "shots": []
   },
@@ -6007,7 +6041,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T13:05:19Z",
     "size": 6420,
-    "stars": 148
+    "stars": 150
    },
    "shots": [
     "https://raw.githubusercontent.com/bc160201983/medievil_2019_pc_port/HEAD/docs/screenshots/graveyard.jpg",
@@ -6051,7 +6085,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T16:49:51Z",
     "size": 4595,
-    "stars": 489
+    "stars": 495
    },
    "shots": []
   },
@@ -6115,8 +6149,8 @@
     "desc": "A Recompilation of Project Gotham Racing 4",
     "full": "beatrixzy/PGR4-Recomp",
     "lang": "CMake",
-    "pushed": "2026-10-20T19:43:39Z",
-    "size": 180,
+    "pushed": "2026-10-24T09:38:26Z",
+    "size": 186,
     "stars": 208
    },
    "shots": []
@@ -6219,7 +6253,7 @@
     "lang": "Python",
     "pushed": "2026-10-11T12:43:14Z",
     "size": 512,
-    "stars": 17
+    "stars": 18
    },
    "shots": []
   },
@@ -6297,7 +6331,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T21:36:29Z",
     "size": 6395,
-    "stars": 114
+    "stars": 116
    },
    "shots": [
     "https://raw.githubusercontent.com/bigmak94/GalaxyQuest/HEAD/docs/images/diorama.jpg",
@@ -6504,7 +6538,7 @@
     "lang": "C#",
     "pushed": "2026-10-03T21:52:59Z",
     "size": 350,
-    "stars": 203
+    "stars": 205
    },
    "shots": [
     "https://github.com/user-attachments/assets/b0a0e61f-6251-40c8-b186-549844bce776"
@@ -6539,7 +6573,7 @@
     "lang": "C#",
     "pushed": "2026-10-21T03:46:06Z",
     "size": 1450,
-    "stars": 961
+    "stars": 966
    },
    "shots": []
   },
@@ -6566,7 +6600,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T05:20:56Z",
     "size": 33515,
-    "stars": 124
+    "stars": 125
    },
    "shots": [
     "https://raw.githubusercontent.com/BlackLineInteractive/Driveclub-Port/HEAD/media/2026-10-14_22-34-39.png",
@@ -6864,7 +6898,7 @@
     "lang": "HTML",
     "pushed": "2026-07-25T05:46:30Z",
     "size": 1898,
-    "stars": 39
+    "stars": 40
    },
    "shots": []
   },
@@ -7092,7 +7126,7 @@
     "lang": "Lua",
     "pushed": "2026-10-23T21:49:18Z",
     "size": 119950,
-    "stars": 4022
+    "stars": 4023
    },
    "shots": [
     "https://img.youtube.com/vi/Q87iK8u_52o/maxresdefault.jpg"
@@ -7132,10 +7166,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T07:27:44Z",
+    "date": "2026-10-24T06:35:39Z",
     "pre": false,
-    "tag": "v1.0.31",
-    "url": "https://github.com/bryantmh/rush2recompiled/releases/tag/v1.0.31"
+    "tag": "v1.0.32",
+    "url": "https://github.com/bryantmh/rush2recompiled/releases/tag/v1.0.32"
    },
    "repo": {
     "archived": false,
@@ -7143,9 +7177,9 @@
     "desc": "A recompilation of the N64 Classic: Rush 2",
     "full": "bryantmh/rush2recompiled",
     "lang": "C++",
-    "pushed": "2026-10-23T07:27:44Z",
-    "size": 16360,
-    "stars": 57
+    "pushed": "2026-10-24T06:35:39Z",
+    "size": 16638,
+    "stars": 58
    },
    "shots": []
   },
@@ -7603,7 +7637,7 @@
     "lang": "C",
     "pushed": "2026-10-23T00:59:21Z",
     "size": 28543,
-    "stars": 109
+    "stars": 110
    },
    "shots": []
   },
@@ -7740,7 +7774,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T01:52:02Z",
     "size": 18930,
-    "stars": 177
+    "stars": 178
    },
    "shots": []
   },
@@ -7850,7 +7884,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T02:33:23Z",
     "size": 435411,
-    "stars": 172
+    "stars": 173
    },
    "shots": []
   },
@@ -7996,9 +8030,9 @@
     "desc": "The Legend of Zelda: The Wind Waker Recompiled. Native for MacOS, iOS, Windows, Linux, and Android.",
     "full": "chrissotraidis/bluewake",
     "lang": "C",
-    "pushed": "2026-10-24T04:25:58Z",
-    "size": 10495,
-    "stars": 466
+    "pushed": "2026-10-24T10:42:42Z",
+    "size": 10820,
+    "stars": 468
    },
    "shots": []
   },
@@ -8114,8 +8148,8 @@
     "desc": "Mario Kart Wii and Retro Rewind, native for iOS, iPadOS, macOS, tvOS, and Android.",
     "full": "chrissotraidis/kartpad",
     "lang": "Python",
-    "pushed": "2026-10-24T04:34:17Z",
-    "size": 58029,
+    "pushed": "2026-10-24T10:35:40Z",
+    "size": 58110,
     "stars": 708
    },
    "shots": []
@@ -8229,7 +8263,7 @@
     "lang": "Objective-C++",
     "pushed": "2026-10-19T10:14:47Z",
     "size": 5595,
-    "stars": 195
+    "stars": 196
    },
    "shots": []
   },
@@ -8299,7 +8333,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T01:46:01Z",
     "size": 1518,
-    "stars": 69
+    "stars": 70
    },
    "shots": [
     "https://raw.githubusercontent.com/ChunchunQ/fifa09-recomp/HEAD/docs/images/match.jpg",
@@ -8346,6 +8380,45 @@
     "pushed": "2026-09-26T09:50:52Z",
     "size": 4148,
     "stars": 8
+   },
+   "shots": []
+  },
+  "citrongames/dora64-3": {
+   "assetOs": {
+    "Android": true,
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes"
+    },
+    "os": {
+     "Android": true,
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-13T18:39:04Z",
+    "pre": false,
+    "tag": "v1.0.0",
+    "url": "https://github.com/citrongames/Dora64-3/releases/tag/v1.0.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-27T10:15:40Z",
+    "desc": "Native recompilation of Doraemon 3: Nobita no Machi SOS! for Windows, Linux and Android.",
+    "full": "citrongames/Dora64-3",
+    "lang": "C++",
+    "pushed": "2026-10-13T18:39:03Z",
+    "size": 14124,
+    "stars": 4
    },
    "shots": []
   },
@@ -8524,7 +8597,7 @@
     "lang": "C++",
     "pushed": "2026-10-10T12:31:53Z",
     "size": 13575,
-    "stars": 12
+    "stars": 13
    },
    "shots": [
     "https://raw.githubusercontent.com/coccofresco/mgsone-recomp/HEAD/docs/images/mgsone-header.png"
@@ -8569,7 +8642,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T15:58:21Z",
     "size": 244440,
-    "stars": 553
+    "stars": 554
    },
    "shots": [
     "https://raw.githubusercontent.com/coccofresco/TriAevum/HEAD/docs/images/beta12-kokiri.jpg",
@@ -8622,7 +8695,7 @@
     "lang": "JavaScript",
     "pushed": "2026-10-22T14:10:29Z",
     "size": 9153,
-    "stars": 93
+    "stars": 96
    },
    "shots": []
   },
@@ -8667,7 +8740,7 @@
     "lang": "C",
     "pushed": "2026-10-22T14:10:26Z",
     "size": 14476,
-    "stars": 241
+    "stars": 244
    },
    "shots": []
   },
@@ -8868,9 +8941,9 @@
     "desc": "Monster hunter 4 u decomp",
     "full": "CompaLarios18/MH4UltimateDC",
     "lang": "Python",
-    "pushed": "2026-10-23T13:02:24Z",
-    "size": 9317,
-    "stars": 46
+    "pushed": "2026-10-24T06:42:36Z",
+    "size": 9776,
+    "stars": 47
    },
    "shots": []
   },
@@ -8904,7 +8977,7 @@
     "lang": "C",
     "pushed": "2026-09-02T01:08:25Z",
     "size": 5288,
-    "stars": 36
+    "stars": 35
    },
    "shots": []
   },
@@ -8996,7 +9069,7 @@
     "lang": "C",
     "pushed": "2026-10-24T03:03:16Z",
     "size": 337190,
-    "stars": 1478
+    "stars": 1480
    },
    "shots": []
   },
@@ -9023,7 +9096,7 @@
     "lang": "C",
     "pushed": "2026-10-23T07:47:30Z",
     "size": 2668,
-    "stars": 14
+    "stars": 15
    },
    "shots": []
   },
@@ -9097,7 +9170,7 @@
     "lang": "C++",
     "pushed": "2026-10-15T16:07:45Z",
     "size": 93,
-    "stars": 15
+    "stars": 16
    },
    "shots": []
   },
@@ -9304,7 +9377,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T00:00:53Z",
     "size": 27288,
-    "stars": 113
+    "stars": 117
    },
    "shots": [
     "https://raw.githubusercontent.com/crazyriddler/FinestHourRemastered/HEAD/docs/media/compare_1_off.jpg",
@@ -9371,7 +9444,7 @@
     "lang": "C",
     "pushed": "2026-10-23T08:52:07Z",
     "size": 49793,
-    "stars": 360
+    "stars": 361
    },
    "shots": []
   },
@@ -9520,7 +9593,7 @@
     "lang": "C",
     "pushed": "2026-10-22T01:24:38Z",
     "size": 3992,
-    "stars": 40
+    "stars": 41
    },
    "shots": []
   },
@@ -9564,7 +9637,7 @@
     "lang": "C",
     "pushed": "2026-10-24T01:58:49Z",
     "size": 68637,
-    "stars": 1787
+    "stars": 1792
    },
    "shots": [
     "https://github.com/user-attachments/assets/0a4412e1-f6d3-48ed-8e17-0a374c2122f1"
@@ -9689,7 +9762,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T17:57:14Z",
     "size": 35131,
-    "stars": 121
+    "stars": 120
    },
    "shots": []
   },
@@ -9857,7 +9930,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T19:40:13Z",
     "size": 2634,
-    "stars": 167
+    "stars": 170
    },
    "shots": []
   },
@@ -10042,7 +10115,7 @@
     "lang": "C",
     "pushed": "2026-10-07T12:21:01Z",
     "size": 2662,
-    "stars": 25
+    "stars": 26
    },
    "shots": []
   },
@@ -10109,7 +10182,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T11:59:45Z",
     "size": 268,
-    "stars": 47
+    "stars": 49
    },
    "shots": []
   },
@@ -10233,7 +10306,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T06:31:22Z",
     "size": 6271,
-    "stars": 3564
+    "stars": 3567
    },
    "shots": []
   },
@@ -10304,7 +10377,7 @@
     "lang": "C++",
     "pushed": "2026-10-09T19:01:44Z",
     "size": 137673,
-    "stars": 20
+    "stars": 21
    },
    "shots": [
     "https://raw.githubusercontent.com/deivid22srk/pinyon-shift-android/HEAD/.github/launcher-ready.png",
@@ -10328,9 +10401,9 @@
     "desc": "This is a WIP decompilation of Crash Bandicoot: The Wrath of Cortex for Playstation 2",
     "full": "denzi-gh/crashwoc-decomp-ps2",
     "lang": "C",
-    "pushed": "2026-10-23T22:26:23Z",
-    "size": 5173,
-    "stars": 17
+    "pushed": "2026-10-24T10:50:50Z",
+    "size": 5208,
+    "stars": 18
    },
    "shots": []
   },
@@ -10516,7 +10589,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T00:24:24Z",
     "size": 96879,
-    "stars": 9931
+    "stars": 9930
    },
    "shots": [
     "https://github.com/user-attachments/assets/7ac73801-ef7b-4cc1-8442-a191a2a0a1ce",
@@ -10560,7 +10633,7 @@
     "lang": "C",
     "pushed": "2026-10-23T05:00:41Z",
     "size": 7785,
-    "stars": 26
+    "stars": 28
    },
    "shots": [
     "https://raw.githubusercontent.com/DiegoDeDios/AlienReRecomp/HEAD/docs/media/compare_original.jpg",
@@ -10687,6 +10760,55 @@
     "pushed": "2026-10-12T12:49:15Z",
     "size": 3518,
     "stars": 9
+   },
+   "shots": []
+  },
+  "djultra64/clayfighter64": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Static recompilation with N64ModernRuntime and RT64; ClayFighter 63⅓ gameplay foundation with the four additional Sculptor's Cut characters.",
+    "game": "ClayFighter 63⅓",
+    "notes": "Community fusion of ClayFighter 63⅓ and ClayFighter: Sculptor's Cut, retaining the 63⅓ gameplay foundation and expanding the roster to sixteen characters. Includes Training Mode, portable settings, per-action combat remapping and controller-aware prompts. Created with AI assistance.",
+    "system": "N64",
+    "targets": [
+     "Windows",
+     "Linux"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-14T12:57:06Z",
+    "pre": false,
+    "tag": "v2.0",
+    "url": "https://github.com/djultra64/ClayFighter64/releases/tag/v2.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-14T04:11:06Z",
+    "desc": "ClayFighter 64: native Linux and Windows fusion of ClayFighter 63⅓ gameplay and Sculptor's Cut characters, by djultra64",
+    "full": "djultra64/ClayFighter64",
+    "lang": "C++",
+    "pushed": "2026-10-23T14:53:30Z",
+    "size": 2528,
+    "stars": 6
    },
    "shots": []
   },
@@ -10930,7 +11052,7 @@
     "full": "dougchansan/mk8-recomp",
     "lang": "C++",
     "pushed": "2026-10-24T04:17:33Z",
-    "size": 2471,
+    "size": 2880,
     "stars": 99
    },
    "shots": []
@@ -10969,7 +11091,7 @@
     "lang": "C",
     "pushed": "2026-10-20T16:14:23Z",
     "size": 6405,
-    "stars": 81
+    "stars": 82
    },
    "shots": [
     "https://raw.githubusercontent.com/DR-89/time-crisis-vr/HEAD/docs/images/gameplay.png",
@@ -11010,7 +11132,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T14:24:12Z",
     "size": 1053,
-    "stars": 112
+    "stars": 115
    },
    "shots": []
   },
@@ -11077,7 +11199,7 @@
     "lang": "C",
     "pushed": "2026-10-17T05:57:35Z",
     "size": 8097,
-    "stars": 40
+    "stars": 41
    },
    "shots": []
   },
@@ -11115,7 +11237,7 @@
     "lang": "C",
     "pushed": "2026-10-23T20:42:49Z",
     "size": 11676,
-    "stars": 38
+    "stars": 49
    },
    "shots": [
     "https://raw.githubusercontent.com/DrummingBird1/gow-psp-recomp/HEAD/docs/images/launcher-main.png",
@@ -11159,7 +11281,7 @@
     "lang": "C++",
     "pushed": "2026-09-30T11:19:02Z",
     "size": 8566,
-    "stars": 149
+    "stars": 150
    },
    "shots": [
     "https://raw.githubusercontent.com/dubrovskiy-yevhen-stakelogic/gt-2-pc/HEAD/docs/images/cockpit-0.5.0.png"
@@ -11296,9 +11418,9 @@
     "desc": "Forza Horizon (Xbox 360) natively on PC, rebuilt around the modern Horizon experience: shared online free roam, leaderboards and rivals, 120/144 fps, and a self-hostable online server.",
     "full": "Dyotson/ForzaHorizon1-ReImagined",
     "lang": "Python",
-    "pushed": "2026-10-24T04:06:33Z",
-    "size": 6610,
-    "stars": 280
+    "pushed": "2026-10-24T10:47:27Z",
+    "size": 6903,
+    "stars": 287
    },
    "shots": [
     "https://raw.githubusercontent.com/Dyotson/ForzaHorizon1-ReImagined/HEAD/docs/images/forza-free-roam.jpg",
@@ -11387,8 +11509,8 @@
     "desc": "Experimental Super Robot Wars 64 native recompilation, with Japanese/Chinese text and optional HD presentation.",
     "full": "dyzz/srw64-recomp",
     "lang": "Python",
-    "pushed": "2026-10-24T01:52:10Z",
-    "size": 112316,
+    "pushed": "2026-10-24T08:41:06Z",
+    "size": 113069,
     "stars": 29
    },
    "shots": [
@@ -11623,7 +11745,7 @@
     "lang": null,
     "pushed": "2026-10-23T21:27:09Z",
     "size": 2,
-    "stars": 354
+    "stars": 358
    },
    "shots": []
   },
@@ -11835,7 +11957,7 @@
     "lang": "C",
     "pushed": "2026-10-05T13:23:33Z",
     "size": 8792,
-    "stars": 574
+    "stars": 575
    },
    "shots": [
     "https://raw.githubusercontent.com/elliotttate/Wind-Waker-Recomp/HEAD/docs/images/bluewake-ipad-title.jpg",
@@ -11870,7 +11992,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T14:49:50Z",
     "size": 11692,
-    "stars": 257
+    "stars": 258
    },
    "shots": []
   },
@@ -12126,7 +12248,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T02:33:43Z",
     "size": 6806,
-    "stars": 225
+    "stars": 227
    },
    "shots": [
     "https://raw.githubusercontent.com/EstebanPdN/mario-kart-64-3ds/HEAD/docs/images/showcase-rounded.webp"
@@ -12161,7 +12283,7 @@
     "lang": "C",
     "pushed": "2026-10-20T22:59:19Z",
     "size": 249393,
-    "stars": 728
+    "stars": 729
    },
    "shots": [
     "https://raw.githubusercontent.com/EstebanPdN/zelda-alttp-3ds/HEAD/docs/images/showcase-rounded.webp"
@@ -12199,7 +12321,7 @@
     "lang": "C",
     "pushed": "2026-10-20T22:59:16Z",
     "size": 9447,
-    "stars": 776
+    "stars": 778
    },
    "shots": [
     "https://raw.githubusercontent.com/EstebanPdN/zelda-tmc-3ds/HEAD/docs/images/showcase-rounded.webp"
@@ -12332,7 +12454,7 @@
     "lang": "C",
     "pushed": "2026-09-03T10:33:44Z",
     "size": 149236,
-    "stars": 16
+    "stars": 17
    },
    "shots": []
   },
@@ -12390,7 +12512,7 @@
     "lang": "C++",
     "pushed": "2026-09-12T02:09:57Z",
     "size": 450317,
-    "stars": 393
+    "stars": 395
    },
    "shots": []
   },
@@ -12437,7 +12559,7 @@
     "lang": "C",
     "pushed": "2026-10-18T10:30:05Z",
     "size": 66633,
-    "stars": 84
+    "stars": 83
    },
    "shots": [
     "https://raw.githubusercontent.com/faligame/lost-odyssey-hd-remaster/HEAD/media/hero.png",
@@ -12491,7 +12613,7 @@
     "lang": "C",
     "pushed": "2026-10-18T10:30:05Z",
     "size": 66633,
-    "stars": 84
+    "stars": 83
    },
    "shots": [
     "https://raw.githubusercontent.com/faligame/lost-odyssey-hd-remaster/HEAD/media/hero.png",
@@ -12643,7 +12765,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T00:03:19Z",
     "size": 220,
-    "stars": 3
+    "stars": 4
    },
    "shots": []
   },
@@ -12687,7 +12809,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T01:51:03Z",
     "size": 78683,
-    "stars": 4025
+    "stars": 4039
    },
    "shots": []
   },
@@ -12718,7 +12840,7 @@
     "lang": "C++",
     "pushed": "2026-09-23T15:07:43Z",
     "size": 193519,
-    "stars": 63
+    "stars": 65
    },
    "shots": []
   },
@@ -12757,7 +12879,7 @@
     "lang": "C",
     "pushed": "2026-10-23T16:52:05Z",
     "size": 11888,
-    "stars": 137
+    "stars": 138
    },
    "shots": []
   },
@@ -12806,7 +12928,7 @@
     "lang": "C++",
     "pushed": "2026-10-16T11:21:36Z",
     "size": 7064,
-    "stars": 675
+    "stars": 679
    },
    "shots": [
     "https://raw.githubusercontent.com/florinp93/hells-gate-recomp/HEAD/assets/fan_artwork.png"
@@ -12839,7 +12961,7 @@
     "lang": "C",
     "pushed": "2026-09-02T15:42:59Z",
     "size": 255,
-    "stars": 28
+    "stars": 29
    },
    "shots": []
   },
@@ -12966,7 +13088,7 @@
     "lang": "C",
     "pushed": "2026-08-02T00:56:51Z",
     "size": 10974,
-    "stars": 1516
+    "stars": 1517
    },
    "shots": []
   },
@@ -13030,7 +13152,7 @@
     "lang": "C",
     "pushed": "2026-10-23T10:38:55Z",
     "size": 21876,
-    "stars": 13
+    "stars": 14
    },
    "shots": []
   },
@@ -13067,7 +13189,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T10:48:32Z",
     "size": 7826,
-    "stars": 329
+    "stars": 332
    },
    "shots": [
     "https://raw.githubusercontent.com/FrankHUN88453/CoD3Recomp/HEAD/preview.png"
@@ -13160,7 +13282,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T01:06:47Z",
     "size": 53694,
-    "stars": 792
+    "stars": 795
    },
    "shots": [
     "https://raw.githubusercontent.com/freefrank/LostOdysseyRecomp/HEAD/docs/images/title-screen.png",
@@ -13185,9 +13307,9 @@
     "desc": "Decompilation of Pokémon Black 2 and White 2",
     "full": "fuddlesworth/pokebw2",
     "lang": "C",
-    "pushed": "2026-10-24T03:38:16Z",
-    "size": 265656,
-    "stars": 52
+    "pushed": "2026-10-24T08:28:39Z",
+    "size": 266445,
+    "stars": 54
    },
    "shots": []
   },
@@ -13211,10 +13333,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T10:27:31Z",
+    "date": "2026-10-24T10:22:15Z",
     "pre": false,
-    "tag": "v0.3.0",
-    "url": "https://github.com/FulGerNet/rePOP/releases/tag/v0.3.0"
+    "tag": "reSOTv0.3.1",
+    "url": "https://github.com/FulGerNet/rePOP/releases/tag/reSOTv0.3.1"
    },
    "repo": {
     "archived": false,
@@ -13222,9 +13344,9 @@
     "desc": "Static recompilation project bringing the original Xbox Prince of Persia trilogy natively to PC and Android with modern enhancements and unlocked performance.",
     "full": "FulGerNet/rePOP",
     "lang": "C",
-    "pushed": "2026-10-22T18:07:46Z",
+    "pushed": "2026-10-24T10:22:14Z",
     "size": 47634,
-    "stars": 62
+    "stars": 63
    },
    "shots": [
     "https://raw.githubusercontent.com/FulGerNet/rePOP/HEAD/docs/media/reSOT.png",
@@ -13252,10 +13374,10 @@
     "filehost"
    ],
    "release": {
-    "date": "2026-10-16T15:03:27Z",
+    "date": "2026-10-24T08:25:47Z",
     "pre": false,
-    "tag": "v1.1.0",
-    "url": "https://github.com/fungalspores/prototype-switch/releases/tag/v1.1.0"
+    "tag": "v1.4.0",
+    "url": "https://github.com/fungalspores/prototype-switch/releases/tag/v1.4.0"
    },
    "repo": {
     "archived": false,
@@ -13263,8 +13385,8 @@
     "desc": "Prototype and Prototype 2 (Xbox 360) for Nintendo Switch: static recompilation with ReXGlue, native Vulkan renderer. Free, not for sale. No game files.",
     "full": "fungalspores/prototype-switch",
     "lang": "C++",
-    "pushed": "2026-10-23T21:46:10Z",
-    "size": 1312,
+    "pushed": "2026-10-24T08:25:46Z",
+    "size": 2553,
     "stars": 27
    },
    "shots": []
@@ -13298,7 +13420,7 @@
     "lang": "C",
     "pushed": "2026-10-24T02:05:41Z",
     "size": 6370,
-    "stars": 113
+    "stars": 114
    },
    "shots": []
   },
@@ -13333,8 +13455,8 @@
     "desc": "A static recompilation study and native port of Wario Land: Super Mario Land 3 with native widescreen support, mods support for HD tile and remastered music.",
     "full": "GABRIELNNK/Bigodao",
     "lang": "C",
-    "pushed": "2026-10-24T04:29:06Z",
-    "size": 5651,
+    "pushed": "2026-10-24T06:21:35Z",
+    "size": 6197,
     "stars": 22
    },
    "shots": []
@@ -13371,7 +13493,7 @@
     "lang": "C",
     "pushed": "2026-10-23T16:32:27Z",
     "size": 3840,
-    "stars": 141
+    "stars": 142
    },
    "shots": []
   },
@@ -13573,7 +13695,7 @@
     "lang": "C#",
     "pushed": "2026-10-21T15:21:20Z",
     "size": 6530,
-    "stars": 75
+    "stars": 76
    },
    "shots": [
     "https://raw.githubusercontent.com/GenryTheFox0/Project-2099/HEAD/assets/installer-v2-one-screen-ru-20260921.png",
@@ -13663,7 +13785,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T04:57:14Z",
     "size": 4048,
-    "stars": 615
+    "stars": 616
    },
    "shots": []
   },
@@ -13727,10 +13849,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-21T08:47:01Z",
+    "date": "2026-10-24T10:36:55Z",
     "pre": false,
-    "tag": "v0.2.0",
-    "url": "https://github.com/giangra/stuntdouble-reignition/releases/tag/v0.2.0"
+    "tag": "v0.3.0",
+    "url": "https://github.com/giangra/stuntdouble-reignition/releases/tag/v0.3.0"
    },
    "repo": {
     "archived": false,
@@ -13738,7 +13860,7 @@
     "desc": "Stuntman: Ignition (Xbox 360) static recompilation for PC, built with ReXGlue",
     "full": "giangra/stuntdouble-reignition",
     "lang": "C++",
-    "pushed": "2026-10-21T08:46:30Z",
+    "pushed": "2026-10-24T10:38:57Z",
     "size": 231,
     "stars": 24
    },
@@ -13847,10 +13969,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-24T00:57:26Z",
+    "date": "2026-10-24T08:38:26Z",
     "pre": false,
-    "tag": "v2026.10.23-a",
-    "url": "https://github.com/GitFist/hotd2-re/releases/tag/v2026.10.23-a"
+    "tag": "v2026.10.24-b",
+    "url": "https://github.com/GitFist/hotd2-re/releases/tag/v2026.10.24-b"
    },
    "repo": {
     "archived": false,
@@ -13858,9 +13980,9 @@
     "desc": "Native C++20 rebuild of The House of the Dead 2 with online co-op, extra modes, and modern controls. Complete download-and-play Windows package in Releases.",
     "full": "GitFist/hotd2-re",
     "lang": "C++",
-    "pushed": "2026-10-24T00:57:26Z",
-    "size": 12170,
-    "stars": 25
+    "pushed": "2026-10-24T10:32:34Z",
+    "size": 12583,
+    "stars": 26
    },
    "shots": [
     "https://raw.githubusercontent.com/GitFist/hotd2-re/HEAD/docs/images/hotd2re-header.png"
@@ -14111,7 +14233,7 @@
     "lang": "C",
     "pushed": "2026-10-14T10:48:28Z",
     "size": 16688,
-    "stars": 114
+    "stars": 115
    },
    "shots": [
     "https://github.com/user-attachments/assets/eb23ea38-f97d-43a1-b22c-e58a80f90aa7"
@@ -14193,7 +14315,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T02:10:49Z",
     "size": 4510,
-    "stars": 171
+    "stars": 175
    },
    "shots": []
   },
@@ -14272,7 +14394,7 @@
     "lang": "C++",
     "pushed": "2026-10-08T17:50:33Z",
     "size": 2534,
-    "stars": 431
+    "stars": 430
    },
    "shots": [
     "https://raw.githubusercontent.com/goliathret/EdgeOfTimeRecomp/HEAD/docs/image.png"
@@ -14344,7 +14466,7 @@
     "lang": "C",
     "pushed": "2026-07-23T00:22:35Z",
     "size": 25835,
-    "stars": 17
+    "stars": 18
    },
    "shots": []
   },
@@ -14425,7 +14547,7 @@
     "lang": "C",
     "pushed": "2026-10-19T23:23:05Z",
     "size": 13708,
-    "stars": 148
+    "stars": 149
    },
    "shots": [
     "https://raw.githubusercontent.com/griches/EternalDarknessRecomp/HEAD/res/ui/glyphs/ink/xbox/stick_l.png",
@@ -14469,7 +14591,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T15:26:57Z",
     "size": 14198,
-    "stars": 22
+    "stars": 23
    },
    "shots": [
     "https://raw.githubusercontent.com/griches/PS5_MarioGalaxy/HEAD/docs/builder-mac.png",
@@ -14573,7 +14695,7 @@
     "lang": "C++",
     "pushed": "2026-10-03T18:37:46Z",
     "size": 17015,
-    "stars": 35
+    "stars": 36
    },
    "shots": [
     "https://raw.githubusercontent.com/GTTeancum/OpenGTPS1/HEAD/docs/images/opengtps1-0.9b-main-menu.png",
@@ -14738,7 +14860,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T18:06:04Z",
     "size": 9650,
-    "stars": 42
+    "stars": 43
    },
    "shots": [
     "https://raw.githubusercontent.com/GTTeancum/SotE-Recomp/HEAD/docs/screenshots/main_menu.png",
@@ -14782,7 +14904,7 @@
     "lang": "C#",
     "pushed": "2026-09-29T14:21:43Z",
     "size": 351603,
-    "stars": 42
+    "stars": 43
    },
    "shots": [
     "https://raw.githubusercontent.com/GTTeancum/SpideyPS1recomp/HEAD/docs/screenshots/gallery/sm1-4x3.png",
@@ -14827,7 +14949,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T15:29:12Z",
     "size": 1878,
-    "stars": 8
+    "stars": 9
    },
    "shots": [
     "https://raw.githubusercontent.com/GTTeancum/StarWars-CloneWars-PC/HEAD/docs/screenshots/gameplay-1080p-widescreen.jpg",
@@ -14879,6 +15001,50 @@
     "https://raw.githubusercontent.com/GTTeancum/StarWars-RenegadeSquadron-PC/HEAD/docs/screenshots/hoth.png",
     "https://raw.githubusercontent.com/GTTeancum/StarWars-RenegadeSquadron-PC/HEAD/docs/screenshots/mustafar.png",
     "https://raw.githubusercontent.com/GTTeancum/StarWars-RenegadeSquadron-PC/HEAD/docs/screenshots/space-kashyyyk.png"
+   ]
+  },
+  "gtteancum/timesplitters": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-23T16:14:23Z",
+    "pre": false,
+    "tag": "v1.0",
+    "url": "https://github.com/GTTeancum/Timesplitters/releases/tag/v1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-23T23:23:00Z",
+    "desc": "A recomp of the PS2 game Timesplitters",
+    "full": "GTTeancum/Timesplitters",
+    "lang": "C++",
+    "pushed": "2026-10-23T16:31:33Z",
+    "size": 19863,
+    "stars": 28
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/windows-title.jpg",
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/windows-4player-tomb.jpg",
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/windows-loading-widescreen.png",
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/windows-deathmatch-options.jpg",
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/linux-title.jpg",
+    "https://raw.githubusercontent.com/GTTeancum/Timesplitters/HEAD/docs/screenshots/linux-4player-tomb.png"
    ]
   },
   "gtteancum/vigilante-8-recomp": {
@@ -15137,10 +15303,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T18:28:13Z",
+    "date": "2026-10-24T05:55:58Z",
     "pre": false,
-    "tag": "1.9.6",
-    "url": "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.6"
+    "tag": "1.9.7",
+    "url": "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.7"
    },
    "repo": {
     "archived": false,
@@ -15148,17 +15314,17 @@
     "desc": "A native Windows PC port of The Lord of the Rings: The Two Towers (Xbox, USA, 2002), made by static recompilation. It needs your own copy of the game, either the disc image (ISO) or an extracted folder. No game data is included.",
     "full": "Gumpolas/TooTawersRecomp",
     "lang": "C",
-    "pushed": "2026-10-22T18:43:10Z",
-    "size": 96411,
-    "stars": 73
+    "pushed": "2026-10-24T06:47:34Z",
+    "size": 97426,
+    "stars": 75
    },
    "shots": [
+    "https://github.com/user-attachments/assets/35a356e3-651a-4a39-8d08-a72952829d13",
     "https://github.com/user-attachments/assets/5c4c73fe-d546-4551-bac5-64c1f05abbdd",
     "https://github.com/user-attachments/assets/d4c031fa-852d-4448-95fd-0143d080b8d5",
     "https://github.com/user-attachments/assets/882c535a-8f86-4078-a121-a02b1fd3760e",
     "https://github.com/user-attachments/assets/b96fb9ba-cd0e-4372-a379-3bebd560968e",
-    "https://github.com/user-attachments/assets/1b11ae21-d9d8-495d-a56b-872ac8aaf93b",
-    "https://github.com/user-attachments/assets/cd27127e-3580-4620-928b-2710676de681"
+    "https://github.com/user-attachments/assets/1b11ae21-d9d8-495d-a56b-872ac8aaf93b"
    ]
   },
   "hachi23/unicorn_overlord_pc": {
@@ -15196,7 +15362,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T09:41:53Z",
     "size": 3886,
-    "stars": 114
+    "stars": 118
    },
    "shots": []
   },
@@ -15322,7 +15488,7 @@
     "lang": "C++",
     "pushed": "2026-10-11T09:40:48Z",
     "size": 1103888,
-    "stars": 18
+    "stars": 19
    },
    "shots": [
     "https://raw.githubusercontent.com/hamishakl/LibertyRecomp/HEAD/docs/images/perf_liberty_metal_m4.png",
@@ -15485,7 +15651,7 @@
     "lang": "C",
     "pushed": "2026-10-22T17:46:56Z",
     "size": 164701,
-    "stars": 512
+    "stars": 514
    },
    "shots": []
   },
@@ -15523,7 +15689,7 @@
     "lang": "C",
     "pushed": "2026-10-23T23:28:38Z",
     "size": 127806,
-    "stars": 5738
+    "stars": 5740
    },
    "shots": [
     "https://raw.githubusercontent.com/HarbourMasters/Shipwright/HEAD/docs/shiptitle.darkmode.png",
@@ -15565,7 +15731,7 @@
     "lang": "C",
     "pushed": "2026-10-22T15:55:20Z",
     "size": 593890,
-    "stars": 2439
+    "stars": 2440
    },
    "shots": [
     "https://raw.githubusercontent.com/HarbourMasters/SpaghettiKart/HEAD/docs/spaghettigithublight.png",
@@ -15608,7 +15774,7 @@
     "lang": "C",
     "pushed": "2026-09-15T21:17:12Z",
     "size": 17611,
-    "stars": 2115
+    "stars": 2117
    },
    "shots": []
   },
@@ -15799,7 +15965,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T03:16:14Z",
     "size": 17025,
-    "stars": 839
+    "stars": 847
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/iss_pc/HEAD/docs/screenshots/video-tutorial.jpg",
@@ -15850,7 +16016,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T03:00:35Z",
     "size": 5743,
-    "stars": 411
+    "stars": 415
    },
    "shots": [
     "https://raw.githubusercontent.com/HayatoG/tlg_pc/HEAD/docs/screenshots/video-tutorial.jpg",
@@ -15934,7 +16100,7 @@
     "lang": "C++",
     "pushed": "2026-06-29T11:05:43Z",
     "size": 3611,
-    "stars": 5257
+    "stars": 5259
    },
    "shots": []
   },
@@ -16042,12 +16208,13 @@
   },
   "henrykun55/celosia": {
    "manifest": {
-    "approach": "Static recompilation of the EE code with PS2Recomp, and a native Metal renderer fed at the game's own draw calls (models, skinning, lighting, fog, bloom, 2D)",
+    "approach": "Static recompilation of the EE code with PS2Recomp, a native renderer (Metal on macOS, OpenGL ES on PS Vita) fed at the game's own draw calls (models, skinning, lighting, fog, bloom, 2D), and a functi",
     "game": "Shadow of the Colossus",
-    "notes": "Runs on macOS through static recompilation. The PS2 hardware is being replaced step by step: the native renderer (SOTC_NATIVE=1) draws the game from its own model, texture and sprite data with Metal, without the VIF/VU1/GS path. PS Vita is the long-term target.",
+    "notes": "Runs on macOS and PS Vita through static recompilation. The PS2 hardware is being replaced step by step: the native renderer (SOTC_NATIVE=1) draws the game from its own model, texture and sprite data without the VIF/VU1/GS path, and the hot game code is being decompiled to native C++ for Vita speed (progress in docs/decomp_status.json).",
     "system": "PS2",
     "targets": [
-     "macOS"
+     "macOS",
+     "PS Vita"
     ],
     "type": "Recompilation"
    },
@@ -16071,9 +16238,9 @@
     "desc": "Native port of Shadow of the Colossus (PS2) to macOS and PS Vita: static recompilation with PS2Recomp, a native Metal/OpenGL renderer, and a decompilation in progress",
     "full": "HenryKun55/celosia",
     "lang": "C++",
-    "pushed": "2026-10-24T04:04:42Z",
-    "size": 6352,
-    "stars": 34
+    "pushed": "2026-10-24T04:52:31Z",
+    "size": 6598,
+    "stars": 36
    },
    "shots": []
   },
@@ -16102,10 +16269,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-24T02:09:13Z",
+    "date": "2026-10-24T10:51:40Z",
     "pre": false,
-    "tag": "v0.9.18",
-    "url": "https://github.com/Hero88go/melee-unlocked/releases/tag/v0.9.18"
+    "tag": "v0.9.52",
+    "url": "https://github.com/Hero88go/melee-unlocked/releases/tag/v0.9.52"
    },
    "repo": {
     "archived": false,
@@ -16113,8 +16280,8 @@
     "desc": "Super Smash Bros. Melee for Windows as a true Source Port: the game compiled natively from its decompiled C source, no emulation, with unlocked FPS and Slippi rollback online. A Static Recomp of the original code is included as a second engine. Beta. Bring your own NTSC 1.02 ISO.",
     "full": "Hero88go/melee-unlocked",
     "lang": "C++",
-    "pushed": "2026-10-24T02:09:13Z",
-    "size": 122672,
+    "pushed": "2026-10-24T10:51:40Z",
+    "size": 123451,
     "stars": 128
    },
    "shots": [
@@ -16305,9 +16472,48 @@
     "lang": "C++",
     "pushed": "2026-10-23T15:29:41Z",
     "size": 2642,
-    "stars": 522
+    "stars": 525
    },
    "shots": []
+  },
+  "hk21x/pgr1-recomp": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-23T15:46:39Z",
+    "pre": false,
+    "tag": "v1.0",
+    "url": "https://github.com/hk21x/pgr1-recomp/releases/tag/v1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-22T13:20:12Z",
+    "desc": "Project Gotham Racing recompilation for a native PC port.",
+    "full": "hk21x/pgr1-recomp",
+    "lang": "C++",
+    "pushed": "2026-10-23T15:45:09Z",
+    "size": 781,
+    "stars": 29
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/hk21x/pgr1-recomp/HEAD/docs/images/pgr1-pc-port.webp"
+   ]
   },
   "hk21x/pgr2-recomp": {
    "assetOs": {
@@ -16343,7 +16549,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T20:37:57Z",
     "size": 975,
-    "stars": 39
+    "stars": 41
    },
    "shots": [
     "https://raw.githubusercontent.com/hk21x/pgr2-recomp/HEAD/docs/images/pgr2-pc-port.webp",
@@ -16389,7 +16595,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T14:45:43Z",
     "size": 610,
-    "stars": 146
+    "stars": 145
    },
    "shots": [
     "https://raw.githubusercontent.com/holdmysocks/mcla-recomp/HEAD/docs/images/ps5-home-screen.webp",
@@ -16431,6 +16637,52 @@
    },
    "shots": []
   },
+  "hopeaero/mlbpowerpros2008recomp": {
+   "assetOs": {
+    "Linux": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "planned",
+     "fsr": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Steam Deck": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [
+    "password"
+   ],
+   "release": {
+    "date": "2026-10-22T19:34:13Z",
+    "pre": false,
+    "tag": "v0.1.4.1",
+    "url": "https://github.com/HopeAero/MLBPowerPros2008Recomp/releases/tag/v0.1.4.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-14T03:12:34Z",
+    "desc": "Native recompilation of MLB Power Pros 2008 (Wii) on Wiicompiled. No game data included.",
+    "full": "HopeAero/MLBPowerPros2008Recomp",
+    "lang": "Python",
+    "pushed": "2026-10-23T19:43:33Z",
+    "size": 9988,
+    "stars": 5
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/HopeAero/MLBPowerPros2008Recomp/HEAD/docs/media/launcher-en.jpg",
+    "https://raw.githubusercontent.com/HopeAero/MLBPowerPros2008Recomp/HEAD/docs/media/setup-en.jpg"
+   ]
+  },
   "hossez/fifa-world-cup-2014-recompiled": {
    "assetOs": {
     "Windows": true
@@ -16469,7 +16721,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T21:52:52Z",
     "size": 722,
-    "stars": 49
+    "stars": 53
    },
    "shots": [
     "https://github.com/user-attachments/assets/b4625ef4-2b4c-4930-9465-ddfba3f16aa7",
@@ -16589,7 +16841,7 @@
     "lang": "C",
     "pushed": "2026-10-20T19:49:11Z",
     "size": 14301,
-    "stars": 44
+    "stars": 47
    },
    "shots": [
     "https://raw.githubusercontent.com/ibrahimpuri/inFamous-PC-Enhanced/HEAD/docs/screenshots/gameplay-dlaa.jpg",
@@ -16636,7 +16888,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T12:30:10Z",
     "size": 3510,
-    "stars": 101
+    "stars": 102
    },
    "shots": [
     "https://raw.githubusercontent.com/iExplosiveRage/DBZ-Burst-Limit-Recompiled/HEAD/res/screenshots/start_screen.png",
@@ -16709,7 +16961,7 @@
     "lang": "C",
     "pushed": "2026-10-19T15:11:36Z",
     "size": 1608,
-    "stars": 48
+    "stars": 49
    },
    "shots": [
     "https://raw.githubusercontent.com/iHaiDeeZ/SMW/HEAD/docs/images/boot-screen.png",
@@ -16827,10 +17079,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T19:05:34Z",
+    "date": "2026-10-24T07:47:17Z",
     "pre": true,
-    "tag": "android-check-1.0",
-    "url": "https://github.com/iMrBurn/wwe12-pc/releases/tag/android-check-1.0"
+    "tag": "android-alpha-1",
+    "url": "https://github.com/iMrBurn/wwe12-pc/releases/tag/android-alpha-1"
    },
    "repo": {
     "archived": false,
@@ -16838,8 +17090,8 @@
     "desc": "WWE '12 on PC ! Native render (Still W.I.P)",
     "full": "iMrBurn/wwe12-pc",
     "lang": "C++",
-    "pushed": "2026-10-23T20:25:03Z",
-    "size": 2467,
+    "pushed": "2026-10-24T10:35:55Z",
+    "size": 2694,
     "stars": 47
    },
    "shots": []
@@ -16941,7 +17193,7 @@
     "lang": "C++",
     "pushed": "2026-10-12T13:15:25Z",
     "size": 4279,
-    "stars": 100
+    "stars": 102
    },
    "shots": [
     "https://raw.githubusercontent.com/invinceble55-wq/Estacado-The-Darkness-Recomp/HEAD/docs/screenshots/chinatown-street.jpg",
@@ -16987,7 +17239,7 @@
     "lang": "C++",
     "pushed": "2026-10-12T13:15:25Z",
     "size": 4279,
-    "stars": 100
+    "stars": 102
    },
    "shots": [
     "https://raw.githubusercontent.com/invinceble55-wq/Estacado-The-Darkness-Recomp/HEAD/docs/screenshots/chinatown-street.jpg",
@@ -17053,7 +17305,7 @@
     "lang": "C++",
     "pushed": "2026-10-17T14:50:46Z",
     "size": 1815,
-    "stars": 52
+    "stars": 53
    },
    "shots": []
   },
@@ -17093,7 +17345,7 @@
     "lang": "C#",
     "pushed": "2026-10-20T21:48:49Z",
     "size": 1423,
-    "stars": 21
+    "stars": 22
    },
    "shots": []
   },
@@ -17334,7 +17586,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T20:17:38Z",
     "size": 41190,
-    "stars": 121
+    "stars": 123
    },
    "shots": [
     "https://raw.githubusercontent.com/JackandBeans/Snap64Recomp/HEAD/docs/screenshots/01q-title-116.png",
@@ -17461,7 +17713,7 @@
     "lang": "Rust",
     "pushed": "2026-10-22T14:33:13Z",
     "size": 14612,
-    "stars": 15
+    "stars": 16
    },
    "shots": [
     "https://raw.githubusercontent.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust/HEAD/docs/media/cmp-01-title-classic.png",
@@ -17597,6 +17849,48 @@
     "https://raw.githubusercontent.com/Jaster111/double-dash-redux/HEAD/docs/media/shot_4p.jpg"
    ]
   },
+  "jay-day/rmg-k": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "online": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-09-02T01:23:45Z",
+    "pre": false,
+    "tag": "v0.9.14",
+    "url": "https://github.com/Jay-Day/RMG-K/releases/tag/v0.9.14"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-01-05T02:40:40Z",
+    "desc": "Rosalie's Mupen GUI with Kaillera and GekkoNet Rollback implementation",
+    "full": "Jay-Day/RMG-K",
+    "lang": "C++",
+    "pushed": "2026-10-23T16:52:02Z",
+    "size": 114575,
+    "stars": 175
+   },
+   "shots": [
+    "https://github.com/user-attachments/assets/adc7a1b3-0c4f-4d5d-9f88-79622e87f6ee",
+    "https://github.com/user-attachments/assets/6cf1cfcb-891f-457e-af8d-e348c99c2ffd",
+    "https://github.com/user-attachments/assets/13915a82-54b5-44ce-bb1a-f0aac5304220",
+    "https://github.com/user-attachments/assets/d5145a6c-4bc2-4f52-901b-7da7f0f0ae8d",
+    "https://github.com/user-attachments/assets/549ba26f-03d7-4950-a3cb-7a68cc9e6c98",
+    "https://github.com/user-attachments/assets/6616186e-ab5d-4598-8b2c-4916d4a54dc4"
+   ]
+  },
   "jcsix694/def-jam-vendetta-recomp": {
    "assetOs": {
     "Windows": true
@@ -17678,7 +17972,7 @@
     "lang": "C++",
     "pushed": "2026-10-10T02:58:13Z",
     "size": 1630,
-    "stars": 79
+    "stars": 80
    },
    "shots": []
   },
@@ -18085,7 +18379,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T16:50:33Z",
     "size": 221,
-    "stars": 11
+    "stars": 12
    },
    "shots": []
   },
@@ -18127,7 +18421,7 @@
     "lang": "C",
     "pushed": "2026-10-21T01:32:04Z",
     "size": 282830,
-    "stars": 287
+    "stars": 288
    },
    "shots": [
     "https://raw.githubusercontent.com/jkdansereau/goldeneye-pc-port/HEAD/docs/media/goldeneye-gh-preview.gif"
@@ -18238,9 +18532,9 @@
     "desc": "",
     "full": "JonathanDC64/DemonsSoulsRecomp",
     "lang": "C++",
-    "pushed": "2026-10-24T04:29:52Z",
-    "size": 4466,
-    "stars": 95
+    "pushed": "2026-10-24T10:27:27Z",
+    "size": 4490,
+    "stars": 98
    },
    "shots": []
   },
@@ -18381,7 +18675,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T20:47:40Z",
     "size": 3343,
-    "stars": 133
+    "stars": 138
    },
    "shots": []
   },
@@ -18433,7 +18727,7 @@
     "lang": "C",
     "pushed": "2026-10-21T14:16:30Z",
     "size": 7996,
-    "stars": 62
+    "stars": 65
    },
    "shots": [
     "https://raw.githubusercontent.com/josiahg2502-glitch/Mother3Recomp/HEAD/docs/screenshots/launcher.png",
@@ -18480,7 +18774,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T05:27:20Z",
     "size": 22842,
-    "stars": 123
+    "stars": 125
    },
    "shots": [
     "https://raw.githubusercontent.com/josiahg2502-glitch/NewSuperPaperBros/HEAD/screenshots/mac_02_cinematic.png",
@@ -18524,7 +18818,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T22:27:27Z",
     "size": 8034,
-    "stars": 27
+    "stars": 28
    },
    "shots": [
     "https://raw.githubusercontent.com/josiahg2502-glitch/Scooby-Doo-Refrightened/HEAD/docs/screenshots/courtyard.jpg",
@@ -18566,7 +18860,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T21:35:25Z",
     "size": 8815,
-    "stars": 14
+    "stars": 15
    },
    "shots": [
     "https://raw.githubusercontent.com/josiahg2502-glitch/Scooby-Doo-ReMasked/HEAD/docs/screenshots/aquarium.jpg",
@@ -18640,7 +18934,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T13:33:09Z",
     "size": 27222,
-    "stars": 510
+    "stars": 511
    },
    "shots": []
   },
@@ -18795,6 +19089,44 @@
    },
    "shots": []
   },
+  "jxnplays/cod3-recomp": {
+   "assetOs": {},
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-16T01:11:58Z",
+    "pre": false,
+    "tag": "remaster-pass-2026-10-15",
+    "url": "https://github.com/jxnplays/cod3-recomp/releases/tag/remaster-pass-2026-10-15"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-11T02:20:45Z",
+    "desc": "Call of Duty 3 (Xbox 360) recompiled to native x86-64 for Windows, and remastered: ultrawide, uncapped FPS, modern graphics settings. Built on XenonRecomp.",
+    "full": "jxnplays/cod3-recomp",
+    "lang": "C++",
+    "pushed": "2026-10-18T02:54:57Z",
+    "size": 10775,
+    "stars": 10
+   },
+   "shots": []
+  },
   "k0nl/b2recomp": {
    "assetOs": {},
    "readme": {
@@ -18828,7 +19160,7 @@
     "lang": "C",
     "pushed": "2026-10-23T22:47:32Z",
     "size": 1464,
-    "stars": 402
+    "stars": 410
    },
    "shots": []
   },
@@ -18871,7 +19203,7 @@
     "lang": "C",
     "pushed": "2026-10-02T05:14:46Z",
     "size": 5051,
-    "stars": 39
+    "stars": 40
    },
    "shots": [
     "https://raw.githubusercontent.com/KaikoClanworth1/buffy-chaos-bleeds-pc/HEAD/docs/screenshots/title.jpg",
@@ -18923,7 +19255,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T19:32:08Z",
     "size": 49685,
-    "stars": 125
+    "stars": 126
    },
    "shots": [
     "https://raw.githubusercontent.com/KaikoClanworth1/wwe-svr2011-pc/HEAD/docs/screenshots/title.jpg",
@@ -18983,7 +19315,7 @@
     "full": "kandowontu2/starfox-enhanced",
     "lang": "C++",
     "pushed": "2026-10-24T03:47:06Z",
-    "size": 253716,
+    "size": 253796,
     "stars": 110
    },
    "shots": []
@@ -19117,6 +19449,7 @@
     "features": {
      "aa": "yes",
      "aspect": "yes",
+     "dlss": "yes",
      "fsr": "yes",
      "gyro": "yes",
      "hfr": "yes",
@@ -19144,9 +19477,9 @@
     "desc": "A decompiled PC Port of Super Mario Galaxy, intended to work on Windows, Linux, MacOS, Android, and iOS/iPadOS.",
     "full": "keepvaibin/nebula",
     "lang": "C++",
-    "pushed": "2026-10-24T02:12:40Z",
-    "size": 19403,
-    "stars": 325
+    "pushed": "2026-10-24T08:28:04Z",
+    "size": 20115,
+    "stars": 323
    },
    "shots": []
   },
@@ -19208,7 +19541,7 @@
     "full": "kerokline/BreathOfFire3PCPort",
     "lang": "C++",
     "pushed": "2026-10-24T04:26:51Z",
-    "size": 42153,
+    "size": 42449,
     "stars": 19
    },
    "shots": [
@@ -19393,14 +19726,57 @@
     "desc": "Native PC port of God of War (PS2) via static recompilation with PS2Recomp",
     "full": "KIexster/god-of-war-recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T19:19:44Z",
-    "size": 4249,
-    "stars": 175
+    "pushed": "2026-10-24T05:34:13Z",
+    "size": 4474,
+    "stars": 177
    },
    "shots": [
     "https://raw.githubusercontent.com/KIexster/god-of-war-recomp/HEAD/docs/capturas/menu.jpg",
     "https://raw.githubusercontent.com/KIexster/god-of-war-recomp/HEAD/docs/capturas/partida.jpg"
    ]
+  },
+  "kirby-letsgo/oracles-decomp": {
+   "assetOs": {
+    "Android": true,
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "kbm": "yes",
+     "mods": "yes"
+    },
+    "os": {
+     "Android": true,
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [
+    "password"
+   ],
+   "release": {
+    "date": "2026-10-23T21:33:42Z",
+    "pre": false,
+    "tag": "v1.0.1",
+    "url": "https://github.com/kirby-letsgo/oracles-decomp/releases/tag/v1.0.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-25T07:56:17Z",
+    "desc": "Native app for the GBC zelda oracle games",
+    "full": "kirby-letsgo/oracles-decomp",
+    "lang": "C",
+    "pushed": "2026-10-23T21:33:42Z",
+    "size": 23311,
+    "stars": 93
+   },
+   "shots": []
   },
   "kirby1237/parappatherapperrecomp": {
    "assetOs": {
@@ -19600,10 +19976,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T22:21:32Z",
+    "date": "2026-10-24T07:46:09Z",
     "pre": false,
-    "tag": "v0.2.2",
-    "url": "https://github.com/koenhendriks/SSX3-recomp/releases/tag/v0.2.2"
+    "tag": "v0.2.3",
+    "url": "https://github.com/koenhendriks/SSX3-recomp/releases/tag/v0.2.3"
    },
    "repo": {
     "archived": false,
@@ -19611,9 +19987,9 @@
     "desc": "Static recompilation of SSX 3 (original Xbox, PAL) into a native Windows program",
     "full": "koenhendriks/SSX3-recomp",
     "lang": "C",
-    "pushed": "2026-10-24T00:53:23Z",
-    "size": 1689,
-    "stars": 42
+    "pushed": "2026-10-24T07:45:55Z",
+    "size": 1703,
+    "stars": 43
    },
    "shots": [
     "https://raw.githubusercontent.com/koenhendriks/SSX3-recomp/HEAD/docs/screenshots/33-widescreen-32x9-snow-jam.png",
@@ -19656,7 +20032,7 @@
     "lang": "C++",
     "pushed": "2026-10-15T16:35:46Z",
     "size": 1093480,
-    "stars": 93
+    "stars": 94
    },
    "shots": [
     "https://raw.githubusercontent.com/KoreanSeats1/Theft4/HEAD/docs/images/capture-interface.png",
@@ -19719,7 +20095,7 @@
     "lang": "C#",
     "pushed": "2026-10-23T20:14:57Z",
     "size": 6655511,
-    "stars": 301
+    "stars": 302
    },
    "shots": [
     "https://raw.githubusercontent.com/kumapauz/project-reignition/HEAD/misc/MajorChangesimage.png"
@@ -19828,10 +20204,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T06:48:31Z",
-    "pre": true,
-    "tag": "v1.6",
-    "url": "https://github.com/lakshya16157/midtown-madness-3-PC-Native/releases/tag/v1.6"
+    "date": "2026-10-24T08:12:23Z",
+    "pre": false,
+    "tag": "v1.7",
+    "url": "https://github.com/lakshya16157/midtown-madness-3-PC-Native/releases/tag/v1.7"
    },
    "repo": {
     "archived": false,
@@ -19839,9 +20215,9 @@
     "desc": "Midtown Madness 3 PC Native: an improved and modded MM3 PC port for Windows 10/11 x64. Xbox static recompilation with Direct3D 11, keyboard controls, widescreen, custom cars, gameplay fixes and performance improvements. Build from your own game disc.",
     "full": "lakshya16157/midtown-madness-3-PC-Native",
     "lang": "Python",
-    "pushed": "2026-10-23T09:03:22Z",
-    "size": 3721,
-    "stars": 24
+    "pushed": "2026-10-24T08:12:23Z",
+    "size": 3939,
+    "stars": 25
    },
    "shots": []
   },
@@ -19868,8 +20244,8 @@
     "desc": "Work-in-progress Resident Evil 4 port for Sega Dreamcast, with native PowerVR rendering, VMU saves and Flycast-tested play builds.",
     "full": "lamb2k/re4dc",
     "lang": "C++",
-    "pushed": "2026-10-24T04:32:32Z",
-    "size": 58600,
+    "pushed": "2026-10-24T10:47:12Z",
+    "size": 65604,
     "stars": 36
    },
    "shots": [
@@ -19939,10 +20315,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T02:09:56Z",
+    "date": "2026-10-24T06:42:56Z",
     "pre": false,
-    "tag": "v1.3.0",
-    "url": "https://github.com/LANCommander/TonyWasAProSkater/releases/tag/v1.3.0"
+    "tag": "v1.4.0",
+    "url": "https://github.com/LANCommander/TonyWasAProSkater/releases/tag/v1.4.0"
    },
    "repo": {
     "archived": false,
@@ -19950,11 +20326,43 @@
     "desc": "",
     "full": "LANCommander/TonyWasAProSkater",
     "lang": "C++",
-    "pushed": "2026-10-23T05:44:42Z",
-    "size": 6130,
+    "pushed": "2026-10-24T06:30:31Z",
+    "size": 5270,
     "stars": 43
    },
    "shots": []
+  },
+  "lasvola/godhand-recomp": {
+   "noRelease": true,
+   "readme": {
+    "features": {
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "repo": {
+    "archived": false,
+    "created": "2026-10-17T21:58:39Z",
+    "desc": "God Hand Recompiled: native PC port of God Hand (PS2) via static recompilation. No game data included.",
+    "full": "LasVola/godhand-recomp",
+    "lang": "C++",
+    "pushed": "2026-10-20T10:53:33Z",
+    "size": 6591,
+    "stars": 13
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/title-screen.png",
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/minigame-buttons.jpg",
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/title-menu.jpg",
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/warning-screen.jpg",
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/cutscene-faces.jpg",
+    "https://raw.githubusercontent.com/LasVola/godhand-recomp/HEAD/assets/saloon-fight.jpg"
+   ]
   },
   "legend-of-dragoon-modding/severed-chains": {
    "assetOs": {
@@ -20059,7 +20467,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T00:04:48Z",
     "size": 5417,
-    "stars": 259
+    "stars": 262
    },
    "shots": [
     "https://raw.githubusercontent.com/lesca-191204/killzone-shadowfall-pc/HEAD/docs/images/launcher.png",
@@ -20139,8 +20547,8 @@
     "desc": "Matching decompilation of Medal of Honor: Rising Sun (GameCube, USA / GR8E69). AI-assisted contributors welcome.",
     "full": "lifewillbeokay/moh-rising-sun",
     "lang": "C",
-    "pushed": "2026-10-24T04:30:14Z",
-    "size": 3465,
+    "pushed": "2026-10-24T05:10:08Z",
+    "size": 3527,
     "stars": 8
    },
    "shots": []
@@ -20180,7 +20588,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T20:11:52Z",
     "size": 128879,
-    "stars": 107
+    "stars": 113
    },
    "shots": []
   },
@@ -20247,7 +20655,7 @@
     "lang": "C",
     "pushed": "2026-10-23T03:44:19Z",
     "size": 141018,
-    "stars": 74
+    "stars": 76
    },
    "shots": []
   },
@@ -20318,6 +20726,56 @@
    },
    "shots": []
   },
+  "literalynn/burnoutdominatorreversed": {
+   "manifest": {
+    "approach": "",
+    "game": "Burnout Dominator",
+    "notes": "",
+    "system": "PS2",
+    "targets": [
+     "Windows",
+     "Linux",
+     "macOS"
+    ],
+    "type": "Recompilation"
+   },
+   "noRelease": true,
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hfr": "planned",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "repo": {
+    "archived": false,
+    "created": "2026-10-06T22:18:43Z",
+    "desc": "Burnout Dominator (PS2) recompiled into a native PC game. fully playable, WIP",
+    "full": "literalynn/BurnoutDominatorReversed",
+    "lang": "C++",
+    "pushed": "2026-10-24T10:24:36Z",
+    "size": 13206,
+    "stars": 11
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/race-mountain.jpg",
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/race-factory-sun.jpg",
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/race-city-boost.jpg",
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/crash.jpg",
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/car-select.jpg",
+    "https://raw.githubusercontent.com/literalynn/BurnoutDominatorReversed/HEAD/docs/screenshots/medal-table.jpg"
+   ]
+  },
   "littlebitua/downpourrecomp": {
    "assetOs": {},
    "readme": {
@@ -20351,7 +20809,7 @@
     "lang": "C++",
     "pushed": "2026-09-02T22:18:50Z",
     "size": 21552,
-    "stars": 329
+    "stars": 331
    },
    "shots": [
     "https://raw.githubusercontent.com/LittleBitUA/DownpourRecomp/HEAD/docs/screenshots/murphy-closeup.png",
@@ -20395,7 +20853,7 @@
     "lang": "C++",
     "pushed": "2026-10-03T19:32:00Z",
     "size": 29166,
-    "stars": 174
+    "stars": 175
    },
    "shots": [
     "https://raw.githubusercontent.com/LittleBitUA/DPRecomp/HEAD/docs/screenshots/york.jpg",
@@ -20692,13 +21150,10 @@
    ]
   },
   "madelrandel-blip/nfsmw-recompiled": {
-   "assetOs": {
-    "Android": true
-   },
+   "noRelease": true,
    "readme": {
     "features": {
-     "kbm": "yes",
-     "online": "planned",
+     "aa": "yes",
      "res": "yes"
     },
     "os": {},
@@ -20706,20 +21161,14 @@
     "v": 2
    },
    "readmeLure": [],
-   "release": {
-    "date": "2026-10-08T20:41:02Z",
-    "pre": false,
-    "tag": "latest",
-    "url": "https://github.com/madelrandel-blip/NFSMW-Recompiled/releases/tag/latest"
-   },
    "repo": {
     "archived": false,
     "created": "2026-09-10T12:23:15Z",
     "desc": "A static native recompilation of Need for Speed: Most Wanted (2005) Xbox 360",
     "full": "madelrandel-blip/NFSMW-Recompiled",
-    "lang": "C++",
-    "pushed": "2026-10-24T03:43:34Z",
-    "size": 188395,
+    "lang": "C",
+    "pushed": "2026-10-24T07:03:11Z",
+    "size": 4014,
     "stars": 163
    },
    "shots": []
@@ -21043,7 +21492,7 @@
     "lang": null,
     "pushed": "2026-10-19T01:34:00Z",
     "size": 987,
-    "stars": 58
+    "stars": 59
    },
    "shots": [
     "https://raw.githubusercontent.com/Masterllgod/naruto-storm-3-full-burst-port-nativo/HEAD/docs/screenshots/menu-pc.jpg",
@@ -21090,7 +21539,7 @@
     "lang": null,
     "pushed": "2026-10-18T14:31:12Z",
     "size": 971,
-    "stars": 76
+    "stars": 77
    },
    "shots": [
     "https://raw.githubusercontent.com/Masterllgod/naruto-storm-generations-port-nativo/HEAD/docs/screenshots/menu.jpg",
@@ -21169,7 +21618,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T02:32:55Z",
     "size": 24871,
-    "stars": 175
+    "stars": 176
    },
    "shots": [
     "https://github.com/user-attachments/assets/76be801c-a6e2-4ff9-9629-860ee72b5f01",
@@ -21210,7 +21659,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T03:54:04Z",
     "size": 9481,
-    "stars": 309
+    "stars": 313
    },
    "shots": []
   },
@@ -21246,7 +21695,7 @@
     "lang": "C",
     "pushed": "2026-05-17T09:54:49Z",
     "size": 27405,
-    "stars": 401
+    "stars": 402
    },
    "shots": []
   },
@@ -21288,7 +21737,7 @@
     "lang": "C#",
     "pushed": "2026-10-21T23:49:56Z",
     "size": 5315,
-    "stars": 296
+    "stars": 295
    },
    "shots": [
     "https://github.com/user-attachments/assets/3682fe9c-0deb-466c-adbe-285a1fd7bbcc",
@@ -21328,8 +21777,8 @@
     "desc": "Dead or Alive 3 (Japan) PC Port ",
     "full": "MattPonton/doa3-recomp",
     "lang": "Assembly",
-    "pushed": "2026-10-24T04:29:33Z",
-    "size": 113175,
+    "pushed": "2026-10-24T07:26:29Z",
+    "size": 114059,
     "stars": 3
    },
    "shots": []
@@ -21386,6 +21835,7 @@
   },
   "matymeatboy/rekhcom": {
    "assetOs": {
+    "Linux": true,
     "Windows": true
    },
    "readme": {
@@ -21405,10 +21855,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T13:30:28Z",
+    "date": "2026-10-24T05:05:20Z",
     "pre": true,
-    "tag": "v2.0-pre2",
-    "url": "https://github.com/MatyMeatBoy/ReKHCoM/releases/tag/v2.0-pre2"
+    "tag": "v2.0-pre5",
+    "url": "https://github.com/MatyMeatBoy/ReKHCoM/releases/tag/v2.0-pre5"
    },
    "repo": {
     "archived": false,
@@ -21416,9 +21866,9 @@
     "desc": "Kingdom Hearts: Chain of Memories for PC and browser (Web Alpha). Widescreen and ultrawide, EU/US/JP cartridges, HD text and optional touch controls.",
     "full": "MatyMeatBoy/ReKHCoM",
     "lang": "C",
-    "pushed": "2026-10-24T04:06:08Z",
-    "size": 84041,
-    "stars": 61
+    "pushed": "2026-10-24T10:45:17Z",
+    "size": 84232,
+    "stars": 62
    },
    "shots": [
     "https://raw.githubusercontent.com/MatyMeatBoy/ReKHCoM/HEAD/docs/screenshots/battle.png",
@@ -21520,7 +21970,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T08:03:06Z",
     "size": 34152,
-    "stars": 53
+    "stars": 54
    },
    "shots": []
   },
@@ -21585,8 +22035,8 @@
     "desc": "An unofficial port of Crash Mind Over Mutant (Xbox 360) into a Native PC Game",
     "full": "Maxilure/MindOver-Recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T18:03:10Z",
-    "size": 11093,
+    "pushed": "2026-10-24T08:40:02Z",
+    "size": 11597,
     "stars": 30
    },
    "shots": [
@@ -21701,7 +22151,7 @@
     "lang": "C++",
     "pushed": "2026-07-24T21:18:52Z",
     "size": 18878,
-    "stars": 1713
+    "stars": 1714
    },
    "shots": [
     "https://img.youtube.com/vi/ETXCOsip1Uo/maxresdefault.jpg"
@@ -21791,8 +22241,8 @@
     "desc": "Matching decompilation of Shin Megami Tensei: Digital Devil Saga 1 & 2 (PS2)",
     "full": "Megami-Decomps/dds-decomp",
     "lang": "C",
-    "pushed": "2026-10-24T04:33:19Z",
-    "size": 354286,
+    "pushed": "2026-10-24T10:57:57Z",
+    "size": 337221,
     "stars": 35
    },
    "shots": []
@@ -21969,7 +22419,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T17:30:34Z",
     "size": 205358,
-    "stars": 15
+    "stars": 16
    },
    "shots": [
     "https://raw.githubusercontent.com/MikeSemicolonD/RogueSquadron64Recomp/HEAD/screenshots/Capture1.png",
@@ -22070,8 +22520,8 @@
     "desc": "Fatal Frame 1 Decompilation Project",
     "full": "Mikompilation/Himuro",
     "lang": "C",
-    "pushed": "2026-10-18T11:04:59Z",
-    "size": 11339,
+    "pushed": "2026-10-24T08:55:58Z",
+    "size": 11404,
     "stars": 133
    },
    "shots": []
@@ -22263,7 +22713,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T02:07:44Z",
     "size": 7121,
-    "stars": 518
+    "stars": 521
    },
    "shots": []
   },
@@ -22297,7 +22747,7 @@
     "lang": "C",
     "pushed": "2026-10-22T18:25:54Z",
     "size": 3167,
-    "stars": 60
+    "stars": 61
    },
    "shots": [
     "https://img.youtube.com/vi/hVSkDmrpqtg/maxresdefault.jpg"
@@ -22362,10 +22812,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-20T00:46:17Z",
+    "date": "2026-10-24T05:27:19Z",
     "pre": false,
-    "tag": "v1.4.0",
-    "url": "https://github.com/mr-finster/vf1-recomp/releases/tag/v1.4.0"
+    "tag": "v1.4.1",
+    "url": "https://github.com/mr-finster/vf1-recomp/releases/tag/v1.4.1"
    },
    "repo": {
     "archived": false,
@@ -22373,8 +22823,8 @@
     "desc": "Virtua Fighter (Sega Model 1, 1993) statically recompiled for Mac, Windows and Steam Deck: up to 6x, widescreen, smooth 120 fps. Bring your own vf.zip.",
     "full": "mr-finster/vf1-recomp",
     "lang": "C++",
-    "pushed": "2026-10-20T22:27:48Z",
-    "size": 3047,
+    "pushed": "2026-10-24T05:37:02Z",
+    "size": 3067,
     "stars": 61
    },
    "shots": [
@@ -22411,10 +22861,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T05:28:29Z",
+    "date": "2026-10-24T05:26:59Z",
     "pre": false,
-    "tag": "v0.1.13",
-    "url": "https://github.com/mr-finster/vf2-recomp/releases/tag/v0.1.13"
+    "tag": "v0.1.14",
+    "url": "https://github.com/mr-finster/vf2-recomp/releases/tag/v0.1.14"
    },
    "repo": {
     "archived": false,
@@ -22422,9 +22872,9 @@
     "desc": "Virtua Fighter 2 (Sega Model 2, 1994) for Mac, Windows and Steam Deck: the arcade's i960 program recompiled to native code, up to 6x, widescreen, smooth 120 fps. Bring your own vf2.zip.",
     "full": "mr-finster/vf2-recomp",
     "lang": "C++",
-    "pushed": "2026-10-22T05:28:28Z",
-    "size": 4068,
-    "stars": 65
+    "pushed": "2026-10-24T05:26:49Z",
+    "size": 3918,
+    "stars": 66
    },
    "shots": [
     "https://vf2-recomp.pages.dev/img/montage.jpg",
@@ -22468,8 +22918,8 @@
     "desc": "Virtua Fighter 3 (Sega Model 3, 1996) for Mac, Windows and Steam Deck: the arcade's PowerPC program recompiled to native code, up to 6x, widescreen, smooth 120 fps. Bring your own vf3.zip.",
     "full": "mr-finster/vf3-recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T12:49:39Z",
-    "size": 3119,
+    "pushed": "2026-10-24T06:58:16Z",
+    "size": 2929,
     "stars": 40
    },
    "shots": [
@@ -22551,9 +23001,9 @@
     "desc": "Native x86-64 Windows loader for Bloodborne (CUSA03173) with native CPU execution, Win32 runtime, and shadPS4-based Vulkan GPU rendering. Based on deadinside28's bbport.",
     "full": "Mrsuss60/bloodborne_pc_windows_port",
     "lang": "C++",
-    "pushed": "2026-10-23T23:01:09Z",
+    "pushed": "2026-10-24T10:11:01Z",
     "size": 4680,
-    "stars": 523
+    "stars": 526
    },
    "shots": []
   },
@@ -22808,7 +23258,7 @@
     "lang": "C",
     "pushed": "2026-10-19T19:23:33Z",
     "size": 6201,
-    "stars": 13
+    "stars": 14
    },
    "shots": []
   },
@@ -23233,10 +23683,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T23:58:48Z",
+    "date": "2026-10-24T05:19:56Z",
     "pre": false,
-    "tag": "v1.0.5",
-    "url": "https://github.com/mstan/MegaManX4Recomp/releases/tag/v1.0.5"
+    "tag": "v1.0.6",
+    "url": "https://github.com/mstan/MegaManX4Recomp/releases/tag/v1.0.6"
    },
    "repo": {
     "archived": false,
@@ -23244,8 +23694,8 @@
     "desc": "Mega Man X4 (USA, SLUS-00561) statically recompiled to a native PC executable with PSXRecomp",
     "full": "mstan/MegaManX4Recomp",
     "lang": "C",
-    "pushed": "2026-10-23T23:58:44Z",
-    "size": 5620,
+    "pushed": "2026-10-24T07:55:15Z",
+    "size": 3751,
     "stars": 107
    },
    "shots": [
@@ -23461,6 +23911,7 @@
    "readme": {
     "features": {
      "aspect": "yes",
+     "hfr": "yes",
      "kbm": "yes",
      "mods": "yes",
      "online": "yes",
@@ -23476,10 +23927,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T03:55:52Z",
+    "date": "2026-10-24T08:20:11Z",
     "pre": true,
-    "tag": "v0.7.8-alpha",
-    "url": "https://github.com/mstan/MetroidPrimeHuntersRecomp/releases/tag/v0.7.8-alpha"
+    "tag": "v0.7.9-alpha",
+    "url": "https://github.com/mstan/MetroidPrimeHuntersRecomp/releases/tag/v0.7.9-alpha"
    },
    "repo": {
     "archived": false,
@@ -23487,8 +23938,8 @@
     "desc": "",
     "full": "mstan/MetroidPrimeHuntersRecomp",
     "lang": "Python",
-    "pushed": "2026-10-23T03:54:40Z",
-    "size": 2357,
+    "pushed": "2026-10-24T08:20:10Z",
+    "size": 2406,
     "stars": 266
    },
    "shots": [
@@ -23670,7 +24121,7 @@
     "lang": "C",
     "pushed": "2026-10-23T00:02:45Z",
     "size": 5467,
-    "stars": 18
+    "stars": 19
    },
    "shots": [
     "https://raw.githubusercontent.com/mstan/Sonic3AndKnucklesRecomp/HEAD/docs/images/zones/showcase.png",
@@ -23714,7 +24165,7 @@
     "lang": "C",
     "pushed": "2026-10-23T05:15:45Z",
     "size": 2314,
-    "stars": 20
+    "stars": 21
    },
    "shots": []
   },
@@ -23747,7 +24198,7 @@
     "lang": "Python",
     "pushed": "2026-10-18T14:30:29Z",
     "size": 1246,
-    "stars": 18
+    "stars": 19
    },
    "shots": [
     "https://img.youtube.com/vi/IINTsq1JBg8/maxresdefault.jpg"
@@ -24082,10 +24533,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T04:19:31Z",
+    "date": "2026-10-24T05:17:32Z",
     "pre": false,
-    "tag": "v0.3.14",
-    "url": "https://github.com/mstan/SuperMetroidRecomp/releases/tag/v0.3.14"
+    "tag": "v0.3.15",
+    "url": "https://github.com/mstan/SuperMetroidRecomp/releases/tag/v0.3.15"
    },
    "repo": {
     "archived": false,
@@ -24093,8 +24544,8 @@
     "desc": "Super Metroid recompiled for the Super Nintendo using snesrecomp · Part of the R.A.I.D. community",
     "full": "mstan/SuperMetroidRecomp",
     "lang": "C",
-    "pushed": "2026-10-23T04:19:31Z",
-    "size": 2826,
+    "pushed": "2026-10-24T05:17:32Z",
+    "size": 2836,
     "stars": 121
    },
    "shots": [
@@ -24158,10 +24609,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T21:36:32Z",
-    "pre": false,
-    "tag": "v0.22.0-alpha",
-    "url": "https://github.com/mstan/TombaRecomp/releases/tag/v0.22.0-alpha"
+    "date": "2026-10-24T07:12:43Z",
+    "pre": true,
+    "tag": "v0.22.0-alpha.pr49.1",
+    "url": "https://github.com/mstan/TombaRecomp/releases/tag/v0.22.0-alpha.pr49.1"
    },
    "repo": {
     "archived": false,
@@ -24169,8 +24620,8 @@
     "desc": "Tomba! (USA) recompiled for the Sony PlayStation using psxrecomp · Part of the R.A.I.D. community",
     "full": "mstan/TombaRecomp",
     "lang": "Python",
-    "pushed": "2026-10-22T21:35:25Z",
-    "size": 5138,
+    "pushed": "2026-10-24T07:12:43Z",
+    "size": 4582,
     "stars": 75
    },
    "shots": [
@@ -24243,6 +24694,39 @@
     "pushed": "2026-10-19T22:18:35Z",
     "size": 167,
     "stars": 22
+   },
+   "shots": []
+  },
+  "mstan/yoshinesrecomp": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "kbm": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-19T18:26:26Z",
+    "pre": false,
+    "tag": "v1.2.1",
+    "url": "https://github.com/mstan/YoshiNESRecomp/releases/tag/v1.2.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-03-29T05:14:49Z",
+    "desc": "Yoshi recompiled for the NES using nesrecomp · Part of the R.A.I.D. community",
+    "full": "mstan/YoshiNESRecomp",
+    "lang": "C",
+    "pushed": "2026-10-19T19:26:11Z",
+    "size": 12841,
+    "stars": 9
    },
    "shots": []
   },
@@ -24386,7 +24870,7 @@
     "lang": "C",
     "pushed": "2026-10-23T10:27:34Z",
     "size": 11407,
-    "stars": 331
+    "stars": 335
    },
    "shots": [
     "https://raw.githubusercontent.com/murkantor/Project-Midas/HEAD/port/include/presskit/PM%20thin%201%20-%20full.png"
@@ -24501,7 +24985,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T04:52:43Z",
     "size": 740,
-    "stars": 2
+    "stars": 3
    },
    "shots": []
   },
@@ -24601,7 +25085,7 @@
     "lang": "C",
     "pushed": "2026-10-21T11:42:49Z",
     "size": 1044,
-    "stars": 36
+    "stars": 38
    },
    "shots": []
   },
@@ -24671,7 +25155,46 @@
     "lang": "C",
     "pushed": "2024-02-04T10:26:16Z",
     "size": 25614,
-    "stars": 8929
+    "stars": 8927
+   },
+   "shots": []
+  },
+  "n64hub/rush-2049-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hdr": "planned",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-23T11:00:06Z",
+    "pre": false,
+    "tag": "v0.1.20",
+    "url": "https://github.com/n64hub/rush-2049-recomp/releases/tag/v0.1.20"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-10T06:00:17Z",
+    "desc": "AI-written static recompilation of San Francisco Rush 2049 for N64, for PC and the web. Bring your own ROM.",
+    "full": "n64hub/rush-2049-recomp",
+    "lang": "C++",
+    "pushed": "2026-10-24T00:21:44Z",
+    "size": 4169,
+    "stars": 10
    },
    "shots": []
   },
@@ -24764,8 +25287,8 @@
     "desc": "Decompilation of ICO (PS2)",
     "full": "nathanialf/ico",
     "lang": "C",
-    "pushed": "2026-10-24T03:57:48Z",
-    "size": 28573,
+    "pushed": "2026-10-24T07:29:20Z",
+    "size": 29678,
     "stars": 48
    },
    "shots": []
@@ -24810,9 +25333,9 @@
     "desc": "PC, Android, iOS and macOS port of the ICO (PS2) decompilation (nathanialf/ico): Windows, Linux, Steam Deck, Android, iPhone via LiveContainer and Apple-silicon Mac (contributed). Contains no game data.",
     "full": "nathanialf/ico-pc",
     "lang": "C",
-    "pushed": "2026-10-24T01:50:41Z",
-    "size": 53696,
-    "stars": 432
+    "pushed": "2026-10-24T05:54:31Z",
+    "size": 54685,
+    "stars": 433
    },
    "shots": []
   },
@@ -24820,7 +25343,8 @@
    "noRelease": true,
    "readme": {
     "features": {
-     "online": "yes"
+     "online": "yes",
+     "rt": "yes"
     },
     "os": {},
     "targets": {},
@@ -24833,12 +25357,13 @@
     "desc": "Super Mario Bros. static recompilation in C",
     "full": "nathsou/smb",
     "lang": "MoonBit",
-    "pushed": "2026-10-23T20:23:27Z",
-    "size": 836,
+    "pushed": "2026-10-24T09:26:00Z",
+    "size": 1001,
     "stars": 14
    },
    "shots": [
-    "https://raw.githubusercontent.com/nathsou/smb/HEAD/res/smb-demo.png"
+    "https://raw.githubusercontent.com/nathsou/smb/HEAD/res/smb-demo.png",
+    "https://raw.githubusercontent.com/nathsou/smb/HEAD/res/themes.png"
    ]
   },
   "nawaf-al-hussain/tenkaichi3decomp": {
@@ -25601,10 +26126,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T09:51:10Z",
+    "date": "2026-10-24T09:40:50Z",
     "pre": true,
-    "tag": "v1.5.1-test2",
-    "url": "https://github.com/NoahVl/Birdman64/releases/tag/v1.5.1-test2"
+    "tag": "v1.5.2-pre1",
+    "url": "https://github.com/NoahVl/Birdman64/releases/tag/v1.5.2-pre1"
    },
    "repo": {
     "archived": false,
@@ -25612,8 +26137,8 @@
     "desc": "Pilotwings 64 as a native PC game for Windows and Linux: widescreen, 144+ FPS, gamepads. Bring your own ROM, no emulator.",
     "full": "NoahVl/Birdman64",
     "lang": "Rust",
-    "pushed": "2026-10-23T09:44:30Z",
-    "size": 3588,
+    "pushed": "2026-10-24T09:34:32Z",
+    "size": 3458,
     "stars": 37
    },
    "shots": [
@@ -25656,7 +26181,7 @@
     "full": "NoRain211/doa3-re",
     "lang": "C",
     "pushed": "2026-10-24T03:41:23Z",
-    "size": 8486,
+    "size": 8487,
     "stars": 15
    },
    "shots": []
@@ -25705,8 +26230,8 @@
     "full": "NoRain211/doaxvb-re",
     "lang": "C",
     "pushed": "2026-10-24T03:47:22Z",
-    "size": 3010,
-    "stars": 212
+    "size": 3024,
+    "stars": 214
    },
    "shots": [
     "https://github.com/NoRain211/doaxbv-re/releases/download/readme-media/doaxbv-match.jpg",
@@ -25758,8 +26283,8 @@
     "full": "NoRain211/doaxvb-re",
     "lang": "C",
     "pushed": "2026-10-24T03:47:22Z",
-    "size": 3010,
-    "stars": 212
+    "size": 3024,
+    "stars": 214
    },
    "shots": [
     "https://github.com/NoRain211/doaxbv-re/releases/download/readme-media/doaxbv-match.jpg",
@@ -25906,10 +26431,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-24T00:17:09Z",
+    "date": "2026-10-24T08:41:57Z",
     "pre": false,
-    "tag": "v1.5.5.1",
-    "url": "https://github.com/novapowers0/DBZ-Budokai-3-HD-Collection/releases/tag/v1.5.5.1"
+    "tag": "v1.5.5.3",
+    "url": "https://github.com/novapowers0/DBZ-Budokai-3-HD-Collection/releases/tag/v1.5.5.3"
    },
    "repo": {
     "archived": false,
@@ -25917,9 +26442,9 @@
     "desc": "Recompilacion estatica (ReXGlue) de Dragon Ball Z: Budokai 3 HD Collection (Xbox 360) para Windows con launcher, sistema de mods y herramientas. No incluye datos del juego.",
     "full": "novapowers0/DBZ-Budokai-3-HD-Collection",
     "lang": "C++",
-    "pushed": "2026-10-24T00:17:21Z",
-    "size": 79907,
-    "stars": 203
+    "pushed": "2026-10-24T08:42:33Z",
+    "size": 81435,
+    "stars": 205
    },
    "shots": [
     "https://raw.githubusercontent.com/novapowers0/DBZ-Budokai-3-HD-Collection/HEAD/docs/screenshots/launcher_inicio.jpg",
@@ -25961,7 +26486,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T03:32:03Z",
     "size": 9126,
-    "stars": 28
+    "stars": 34
    },
    "shots": []
   },
@@ -26113,7 +26638,7 @@
     "lang": "C",
     "pushed": "2026-10-21T10:01:17Z",
     "size": 4612,
-    "stars": 23
+    "stars": 24
    },
    "shots": [
     "https://raw.githubusercontent.com/Nycolazs/EoWRecomp/HEAD/docs/screenshots/01_prologue.jpg",
@@ -26156,7 +26681,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T10:43:35Z",
     "size": 84436,
-    "stars": 79
+    "stars": 78
    },
    "shots": [
     "https://raw.githubusercontent.com/Nycolazs/WindWakerHD-Android-Plus/HEAD/docs/screenshots/01-outset-touch-controls.jpg",
@@ -26269,7 +26794,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T00:32:38Z",
     "size": 2335,
-    "stars": 192
+    "stars": 196
    },
    "shots": []
   },
@@ -26306,7 +26831,7 @@
     "lang": "Python",
     "pushed": "2026-10-23T22:00:55Z",
     "size": 1230,
-    "stars": 99
+    "stars": 100
    },
    "shots": []
   },
@@ -26348,9 +26873,9 @@
     "desc": "Native port of Metroid Prime (GameCube) for Linux, Windows and Android, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image.",
     "full": "Odrannnn/MetroidPrimePort",
     "lang": "C++",
-    "pushed": "2026-10-23T22:57:18Z",
-    "size": 185302,
-    "stars": 509
+    "pushed": "2026-10-24T10:21:44Z",
+    "size": 184874,
+    "stars": 510
    },
    "shots": []
   },
@@ -26546,7 +27071,7 @@
     "lang": "C",
     "pushed": "2026-10-23T21:44:07Z",
     "size": 7897,
-    "stars": 97
+    "stars": 101
    },
    "shots": []
   },
@@ -26849,7 +27374,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T07:51:19Z",
     "size": 79091,
-    "stars": 230
+    "stars": 232
    },
    "shots": []
   },
@@ -26925,7 +27450,7 @@
     "lang": "Svelte",
     "pushed": "2026-10-18T00:21:31Z",
     "size": 217548,
-    "stars": 243
+    "stars": 244
    },
    "shots": [
     "https://raw.githubusercontent.com/open-goal/launcher/HEAD/docs/support-package.png"
@@ -26971,7 +27496,7 @@
     "lang": "C",
     "pushed": "2026-10-24T01:58:49Z",
     "size": 68637,
-    "stars": 1787
+    "stars": 1792
    },
    "shots": [
     "https://github.com/user-attachments/assets/0a4412e1-f6d3-48ed-8e17-0a374c2122f1"
@@ -27008,7 +27533,7 @@
     "lang": "C",
     "pushed": "2026-09-22T12:58:13Z",
     "size": 49769,
-    "stars": 1428
+    "stars": 1429
    },
    "shots": [
     "https://i.ibb.co/2q1pp06/red2.png",
@@ -27049,9 +27574,9 @@
     "desc": "Native 100% ARM64 Android port of the 2007 cosmic gravity platformer with OpenGL ES 3.2, AAudio, Hor+ ultrawide, and touch controls.",
     "full": "OpenPort-Labs/Galaxy-Android",
     "lang": "C++",
-    "pushed": "2026-10-23T09:07:12Z",
-    "size": 133590,
-    "stars": 261
+    "pushed": "2026-10-24T09:50:41Z",
+    "size": 133735,
+    "stars": 262
    },
    "shots": []
   },
@@ -27094,7 +27619,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T17:34:34Z",
     "size": 6508,
-    "stars": 108
+    "stars": 110
    },
    "shots": []
   },
@@ -27126,8 +27651,8 @@
     "desc": "A matching decompilation and PC port for the Ratchet & Clank series.",
     "full": "OpenRAC/OpenRAC",
     "lang": "C",
-    "pushed": "2026-10-24T04:17:18Z",
-    "size": 102607,
+    "pushed": "2026-10-24T10:48:14Z",
+    "size": 106531,
     "stars": 35
    },
    "shots": [
@@ -27177,7 +27702,7 @@
     "lang": "C",
     "pushed": "2026-10-21T18:31:37Z",
     "size": 7729,
-    "stars": 441
+    "stars": 449
    },
    "shots": [
     "https://raw.githubusercontent.com/OpenSmash-Ultimate/ssbu-recomp/HEAD/media/og-image.png",
@@ -27261,6 +27786,7 @@
      "dlss": "yes",
      "fg": "yes",
      "fsr": "yes",
+     "hdr": "planned",
      "hfr": "yes",
      "kbm": "yes",
      "res": "yes"
@@ -27273,10 +27799,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-20T08:47:57Z",
+    "date": "2026-10-24T09:42:06Z",
     "pre": false,
-    "tag": "v0.57-opt8",
-    "url": "https://github.com/Oussama268/ShadowOfTheColossus-PC/releases/tag/v0.57-opt8"
+    "tag": "v0.60.6-opt11",
+    "url": "https://github.com/Oussama268/ShadowOfTheColossus-PC/releases/tag/v0.60.6-opt11"
    },
    "repo": {
     "archived": false,
@@ -27284,9 +27810,9 @@
     "desc": "Native Windows port of Shadow of the Colossus (PS4, CUSA08809) - bring your own game dump. Port nativo para PC.",
     "full": "Oussama268/ShadowOfTheColossus-PC",
     "lang": "C++",
-    "pushed": "2026-10-23T11:38:43Z",
-    "size": 4782,
-    "stars": 210
+    "pushed": "2026-10-24T09:41:50Z",
+    "size": 4972,
+    "stars": 211
    },
    "shots": [
     "https://raw.githubusercontent.com/Oussama268/ShadowOfTheColossus-PC/HEAD/docs/images/sotc-menu-f1-en.png"
@@ -27332,7 +27858,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T19:42:04Z",
     "size": 44959,
-    "stars": 645
+    "stars": 660
    },
    "shots": [
     "https://github.com/user-attachments/assets/4c0fe155-eae9-4c78-aa24-4a5b154e2b9f"
@@ -27506,7 +28032,7 @@
     "lang": "Assembly",
     "pushed": "2026-10-24T02:14:46Z",
     "size": 70673,
-    "stars": 76
+    "stars": 77
    },
    "shots": [
     "https://github.com/user-attachments/assets/cb91f3eb-0e5c-4043-b23a-96ab06497ac8",
@@ -27534,8 +28060,8 @@
     "desc": "🌋 Alchemy is a decompilation of both ☀️ Golden Sun games for Gameboy Advance",
     "full": "PascalPixel/alchemy",
     "lang": "C",
-    "pushed": "2026-10-24T03:15:01Z",
-    "size": 349798,
+    "pushed": "2026-10-24T10:40:00Z",
+    "size": 351827,
     "stars": 174
    },
    "shots": [
@@ -27572,9 +28098,9 @@
     "desc": "Wiicompiled",
     "full": "patchzyy/Wiicompiled",
     "lang": "C#",
-    "pushed": "2026-10-23T19:14:06Z",
-    "size": 4153,
-    "stars": 1248
+    "pushed": "2026-10-24T09:14:39Z",
+    "size": 6339,
+    "stars": 1250
    },
    "shots": []
   },
@@ -27601,10 +28127,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-22T18:12:20Z",
+    "date": "2026-10-24T09:37:08Z",
     "pre": false,
-    "tag": "v0.7.1",
-    "url": "https://github.com/PaulCombal/mw2-recompiled/releases/tag/v0.7.1"
+    "tag": "v0.7.2",
+    "url": "https://github.com/PaulCombal/mw2-recompiled/releases/tag/v0.7.2"
    },
    "repo": {
     "archived": false,
@@ -27612,9 +28138,9 @@
     "desc": "Call of Duty: Modern Warfare 2 (2009) for Xbox 360 recompiled for Windows & Linux",
     "full": "PaulCombal/mw2-recompiled",
     "lang": "C++",
-    "pushed": "2026-10-23T16:29:55Z",
-    "size": 8338,
-    "stars": 126
+    "pushed": "2026-10-24T09:37:08Z",
+    "size": 8289,
+    "stars": 128
    },
    "shots": [
     "https://raw.githubusercontent.com/PaulCombal/mw2-recompiled/HEAD/docs/images/readme/multiplayer-menu.jpg",
@@ -27651,15 +28177,13 @@
     "lang": "C++",
     "pushed": "2026-09-11T20:04:32Z",
     "size": 30693,
-    "stars": 68
+    "stars": 69
    },
    "shots": []
   },
   "peiikai/lasrecomp": {
    "assetOs": {
-    "Linux": true,
-    "Windows": true,
-    "macOS": true
+    "Windows": true
    },
    "readme": {
     "features": {
@@ -27682,10 +28206,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-24T02:20:26Z",
-    "pre": false,
-    "tag": "beta_5.1",
-    "url": "https://github.com/peiikai/LASRecomp/releases/tag/beta_5.1"
+    "date": "2026-10-24T06:31:47Z",
+    "pre": true,
+    "tag": "test-intel-black-1",
+    "url": "https://github.com/peiikai/LASRecomp/releases/tag/test-intel-black-1"
    },
    "repo": {
     "archived": false,
@@ -27693,9 +28217,9 @@
     "desc": "Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux",
     "full": "peiikai/LASRecomp",
     "lang": "C",
-    "pushed": "2026-10-24T02:20:38Z",
-    "size": 10741,
-    "stars": 1715
+    "pushed": "2026-10-24T06:31:46Z",
+    "size": 10789,
+    "stars": 1726
    },
    "shots": [
     "https://raw.githubusercontent.com/peiikai/LASRecomp/HEAD/docs/ultrawide.jpg",
@@ -27898,7 +28422,7 @@
     "lang": "Python",
     "pushed": "2026-10-23T23:09:10Z",
     "size": 1071,
-    "stars": 21
+    "stars": 22
    },
    "shots": [
     "https://github.com/user-attachments/assets/139ac55d-e26a-476b-83ad-5704bdab6acc"
@@ -28175,10 +28699,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T23:06:21Z",
+    "date": "2026-10-24T10:40:33Z",
     "pre": true,
-    "tag": "test-pr74-7b170011a14b",
-    "url": "https://github.com/previouslevelgames/recharged/releases/tag/test-pr74-7b170011a14b"
+    "tag": "test-pr74-a36959639e06",
+    "url": "https://github.com/previouslevelgames/recharged/releases/tag/test-pr74-a36959639e06"
    },
    "repo": {
     "archived": false,
@@ -28186,7 +28710,7 @@
     "desc": "Mario Strikers Charged for PC, Mac & Linux. Ported from decompiled code. Not a recompilation.",
     "full": "previouslevelgames/recharged",
     "lang": "C++",
-    "pushed": "2026-10-23T23:19:09Z",
+    "pushed": "2026-10-24T10:40:35Z",
     "size": 15881,
     "stars": 100
    },
@@ -28249,10 +28773,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T13:55:37Z",
+    "date": "2026-10-24T06:52:03Z",
     "pre": false,
-    "tag": "v1.1.0",
-    "url": "https://github.com/PromethenDev/wwe2k14-recomp/releases/tag/v1.1.0"
+    "tag": "v1.2.0",
+    "url": "https://github.com/PromethenDev/wwe2k14-recomp/releases/tag/v1.2.0"
    },
    "repo": {
     "archived": false,
@@ -28260,9 +28784,9 @@
     "desc": "",
     "full": "PromethenDev/wwe2k14-recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T13:55:22Z",
-    "size": 2845,
-    "stars": 69
+    "pushed": "2026-10-24T06:52:03Z",
+    "size": 2851,
+    "stars": 70
    },
    "shots": []
   },
@@ -28316,7 +28840,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T06:00:57Z",
     "size": 247,
-    "stars": 246
+    "stars": 247
    },
    "shots": [
     "https://img.youtube.com/vi/028_cJIhIjA/maxresdefault.jpg"
@@ -28381,7 +28905,7 @@
     "lang": "C",
     "pushed": "2026-10-23T23:34:05Z",
     "size": 6922,
-    "stars": 48
+    "stars": 49
    },
    "shots": [
     "https://raw.githubusercontent.com/Puddz/AstralChain-PC/HEAD/docs/images/launcher.jpg"
@@ -28549,7 +29073,7 @@
     "lang": null,
     "pushed": "2026-10-13T23:59:52Z",
     "size": 3828,
-    "stars": 17
+    "stars": 18
    },
    "shots": [
     "https://raw.githubusercontent.com/RaccoonRecomp/ResidentEvilOutbreakRecompiled/HEAD/docs/screenshots/main-menu.png",
@@ -28661,7 +29185,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T01:40:53Z",
     "size": 652,
-    "stars": 14
+    "stars": 15
    },
    "shots": []
   },
@@ -28980,7 +29504,7 @@
     "lang": "Assembly",
     "pushed": "2026-10-22T15:05:14Z",
     "size": 90384,
-    "stars": 1679
+    "stars": 1680
    },
    "shots": [
     "https://raw.githubusercontent.com/Rangi42/polishedcrystal/HEAD/screenshots/title-screen.png",
@@ -29048,7 +29572,7 @@
     "lang": "C",
     "pushed": "2026-10-22T15:19:17Z",
     "size": 9602,
-    "stars": 169
+    "stars": 173
    },
    "shots": [
     "https://github.com/raulzrrs/letsgo-recomp/releases/download/v0.5.0/screenshot-compare-gym.jpg",
@@ -29130,7 +29654,7 @@
     "lang": null,
     "pushed": "2026-10-14T17:13:17Z",
     "size": 13958,
-    "stars": 27
+    "stars": 30
    },
    "shots": []
   },
@@ -29190,7 +29714,7 @@
     "lang": "C++",
     "pushed": "2026-10-10T19:50:12Z",
     "size": 89705,
-    "stars": 35
+    "stars": 36
    },
    "shots": []
   },
@@ -29288,7 +29812,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T22:08:11Z",
     "size": 9578,
-    "stars": 0
+    "stars": 2
    },
    "shots": []
   },
@@ -29795,8 +30319,8 @@
     "desc": "Nintendo DS source port of Super Smash Bros. 64 via the BattleShip decomp.",
     "full": "rockenrooster/Smash64DS_Port",
     "lang": "C",
-    "pushed": "2026-10-24T02:47:56Z",
-    "size": 660351,
+    "pushed": "2026-10-24T10:04:42Z",
+    "size": 661134,
     "stars": 30
    },
    "shots": [
@@ -29974,7 +30498,7 @@
     "lang": "Python",
     "pushed": "2026-10-17T00:44:08Z",
     "size": 395,
-    "stars": 43
+    "stars": 44
    },
    "shots": []
   },
@@ -30089,7 +30613,7 @@
     "lang": "C++",
     "pushed": "2026-08-22T15:52:26Z",
     "size": 91892,
-    "stars": 551
+    "stars": 552
    },
    "shots": []
   },
@@ -30120,7 +30644,7 @@
     "lang": "C",
     "pushed": "2026-10-02T22:21:54Z",
     "size": 1142,
-    "stars": 23
+    "stars": 24
    },
    "shots": []
   },
@@ -30152,7 +30676,7 @@
     "lang": "C",
     "pushed": "2026-09-19T19:22:43Z",
     "size": 1591,
-    "stars": 105
+    "stars": 106
    },
    "shots": []
   },
@@ -30184,7 +30708,7 @@
     "lang": "C",
     "pushed": "2026-08-28T19:20:41Z",
     "size": 8294,
-    "stars": 84
+    "stars": 85
    },
    "shots": []
   },
@@ -30212,7 +30736,7 @@
     "lang": "C++",
     "pushed": "2026-10-08T05:42:47Z",
     "size": 3623,
-    "stars": 47
+    "stars": 48
    },
    "shots": []
   },
@@ -30536,7 +31060,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T23:22:09Z",
     "size": 2730,
-    "stars": 53
+    "stars": 55
    },
    "shots": [
     "https://github.com/user-attachments/assets/b5b7f3d7-1a8d-419c-8339-43b244cda1e2",
@@ -30591,7 +31115,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T18:41:25Z",
     "size": 13524,
-    "stars": 211
+    "stars": 212
    },
    "shots": [
     "https://github.com/user-attachments/assets/984433e5-1bd8-498a-949c-68815e73b901",
@@ -30762,7 +31286,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T18:31:16Z",
     "size": 1819,
-    "stars": 58
+    "stars": 60
    },
    "shots": [
     "https://github.com/user-attachments/assets/d52ee275-da0b-4860-ae1d-24216df5b05f",
@@ -30806,7 +31330,7 @@
     "lang": "C",
     "pushed": "2026-10-23T22:22:41Z",
     "size": 18494,
-    "stars": 304
+    "stars": 305
    },
    "shots": [
     "https://github.com/user-attachments/assets/abb979d7-24a5-44f8-98d3-088ba2054a74"
@@ -30932,10 +31456,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T21:09:07Z",
+    "date": "2026-10-24T07:54:06Z",
     "pre": false,
-    "tag": "v1.2.6",
-    "url": "https://github.com/SecondaryLifer/StarHaven/releases/tag/v1.2.6"
+    "tag": "v1.2.7",
+    "url": "https://github.com/SecondaryLifer/StarHaven/releases/tag/v1.2.7"
    },
    "repo": {
     "archived": false,
@@ -30943,9 +31467,9 @@
     "desc": "Native Nintendo 3DS port of Paper Mario (N64), built from the decompilation. Bring your own ROM.",
     "full": "SecondaryLifer/StarHaven",
     "lang": "C",
-    "pushed": "2026-10-23T21:20:16Z",
-    "size": 170820,
-    "stars": 67
+    "pushed": "2026-10-24T07:54:06Z",
+    "size": 170909,
+    "stars": 68
    },
    "shots": [
     "https://raw.githubusercontent.com/SecondaryLifer/StarHaven/HEAD/port/3ds/docs/screenshots/field.png",
@@ -31141,8 +31665,8 @@
     "desc": "WIP multi-platform port of Silent Hill 1 with a future-proof foundation.",
     "full": "Sezzary/SilentEngine",
     "lang": "C++",
-    "pushed": "2026-10-23T09:16:00Z",
-    "size": 21104,
+    "pushed": "2026-10-24T10:54:31Z",
+    "size": 21060,
     "stars": 218
    },
    "shots": []
@@ -31180,7 +31704,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T23:35:02Z",
     "size": 10154,
-    "stars": 100
+    "stars": 102
    },
    "shots": [
     "https://github.com/user-attachments/assets/7a19a7d8-5653-4a2c-909e-cd8dd1dcf653",
@@ -31230,7 +31754,6 @@
    },
    "readme": {
     "features": {
-     "aa": "yes",
      "dlc": "yes",
      "fsr": "yes",
      "hfr": "yes",
@@ -31248,10 +31771,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T21:13:17Z",
+    "date": "2026-10-24T10:52:05Z",
     "pre": false,
-    "tag": "v1.5.0",
-    "url": "https://github.com/shaneomac1337/WWE-AllStars-Recomp/releases/tag/v1.5.0"
+    "tag": "v1.6.0",
+    "url": "https://github.com/shaneomac1337/WWE-AllStars-Recomp/releases/tag/v1.6.0"
    },
    "repo": {
     "archived": false,
@@ -31259,7 +31782,7 @@
     "desc": "Unofficial Windows version of WWE All Stars (Xbox 360), recompiled with ReXGlue. Bring your own disc image.",
     "full": "shaneomac1337/WWE-AllStars-Recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T21:13:17Z",
+    "pushed": "2026-10-24T10:52:04Z",
     "size": 6913,
     "stars": 43
    },
@@ -31269,7 +31792,7 @@
     "https://raw.githubusercontent.com/shaneomac1337/WWE-AllStars-Recomp/HEAD/docs/images/shot-match.jpg",
     "https://raw.githubusercontent.com/shaneomac1337/WWE-AllStars-Recomp/HEAD/docs/images/shot-finisher.jpg",
     "https://raw.githubusercontent.com/shaneomac1337/WWE-AllStars-Recomp/HEAD/docs/images/shot-select.jpg",
-    "https://raw.githubusercontent.com/shaneomac1337/WWE-AllStars-Recomp/HEAD/docs/images/shot-online-lobby.jpg"
+    "https://raw.githubusercontent.com/shaneomac1337/WWE-AllStars-Recomp/HEAD/docs/images/compare-entrance-xbox360-zoom.png"
    ]
   },
   "shihabal3amri/tekken-tag-tournament-2-pc": {
@@ -31307,7 +31830,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T20:23:16Z",
     "size": 3683,
-    "stars": 149
+    "stars": 153
    },
    "shots": [
     "https://raw.githubusercontent.com/shihabal3amri/tekken-tag-tournament-2-pc/HEAD/.github/assets/download.png",
@@ -31357,9 +31880,9 @@
     "desc": "Burnout Revenge recompilation based on RexGlue + standalone Plume render",
     "full": "shipa-2/Xerenge",
     "lang": "C++",
-    "pushed": "2026-10-23T16:46:29Z",
-    "size": 3525,
-    "stars": 151
+    "pushed": "2026-10-24T08:30:43Z",
+    "size": 3417,
+    "stars": 153
    },
    "shots": []
   },
@@ -31488,7 +32011,7 @@
     "lang": "C++",
     "pushed": "2026-10-13T12:18:44Z",
     "size": 31365,
-    "stars": 59
+    "stars": 60
    },
    "shots": [
     "https://raw.githubusercontent.com/SilverwireGames/ReChan/HEAD/res/screenshots/title.png",
@@ -31630,7 +32153,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T21:42:07Z",
     "size": 1419,
-    "stars": 81
+    "stars": 82
    },
    "shots": []
   },
@@ -31777,7 +32300,45 @@
     "lang": "C",
     "pushed": "2026-10-22T19:31:03Z",
     "size": 5427,
-    "stars": 22
+    "stars": 23
+   },
+   "shots": []
+  },
+  "slaveofido/blastcorps-recomp": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-23T12:33:23Z",
+    "pre": false,
+    "tag": "1.0.0",
+    "url": "https://github.com/SlaveOfIDO/blastcorps-recomp/releases/tag/1.0.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-09-10T12:41:21Z",
+    "desc": "BlastCorps for PC (Windows/Linux/MacOS)",
+    "full": "SlaveOfIDO/blastcorps-recomp",
+    "lang": "C",
+    "pushed": "2026-10-23T12:33:23Z",
+    "size": 12223,
+    "stars": 6
    },
    "shots": []
   },
@@ -31818,9 +32379,9 @@
     "desc": "Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development.",
     "full": "SlickAmogus/silent-hill-decomp",
     "lang": "C",
-    "pushed": "2026-10-24T04:25:48Z",
-    "size": 113982,
-    "stars": 757
+    "pushed": "2026-10-24T10:06:37Z",
+    "size": 114027,
+    "stars": 759
    },
    "shots": []
   },
@@ -31994,7 +32555,7 @@
     "lang": "C",
     "pushed": "2024-12-17T14:37:36Z",
     "size": 17064,
-    "stars": 1872
+    "stars": 1873
    },
    "shots": []
   },
@@ -32139,9 +32700,9 @@
     "desc": "Super Mario Maker 2 Recomp",
     "full": "smm2recomp/smm2recomp",
     "lang": "Rust",
-    "pushed": "2026-10-24T04:05:58Z",
-    "size": 15010,
-    "stars": 157
+    "pushed": "2026-10-24T09:06:26Z",
+    "size": 15516,
+    "stars": 158
    },
    "shots": [
     "https://raw.githubusercontent.com/smm2recomp/smm2recomp/HEAD/docs/screenshots/title.jpg",
@@ -32227,7 +32788,7 @@
     "lang": "C",
     "pushed": "2026-10-02T23:58:23Z",
     "size": 3981,
-    "stars": 4901
+    "stars": 4902
    },
    "shots": []
   },
@@ -32263,7 +32824,7 @@
     "lang": "C",
     "pushed": "2026-10-22T11:09:01Z",
     "size": 3129,
-    "stars": 378
+    "stars": 380
    },
    "shots": []
   },
@@ -32321,7 +32882,7 @@
     "lang": "C++",
     "pushed": "2026-10-15T09:21:04Z",
     "size": 11721,
-    "stars": 384
+    "stars": 386
    },
    "shots": [
     "https://raw.githubusercontent.com/snuri00/psp-web-recomp/HEAD/docs/media/demo.webp"
@@ -32342,8 +32903,8 @@
     "desc": "Work-in-progress matching decompilation of Fossil Fighters (Nintendo DS). Bring your own ROM; no game assets included.",
     "full": "Sojews/fossil-fighters-decomp",
     "lang": "C++",
-    "pushed": "2026-10-23T18:01:30Z",
-    "size": 9819,
+    "pushed": "2026-10-24T08:11:08Z",
+    "size": 9894,
     "stars": 1
    },
    "shots": []
@@ -32383,7 +32944,7 @@
     "lang": "C++",
     "pushed": "2026-10-03T01:10:21Z",
     "size": 193675,
-    "stars": 226
+    "stars": 227
    },
    "shots": [
     "https://github.com/user-attachments/assets/8841c75d-1d5b-43f5-b19e-050b05fb7d08"
@@ -32625,7 +33186,7 @@
     "lang": "C",
     "pushed": "2026-08-11T17:36:21Z",
     "size": 8727,
-    "stars": 398
+    "stars": 399
    },
    "shots": []
   },
@@ -32665,7 +33226,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T20:12:44Z",
     "size": 17353,
-    "stars": 103
+    "stars": 104
    },
    "shots": []
   },
@@ -32732,7 +33293,7 @@
     "lang": "C++",
     "pushed": "2026-10-14T02:46:43Z",
     "size": 455,
-    "stars": 61
+    "stars": 64
    },
    "shots": []
   },
@@ -32770,7 +33331,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T21:47:21Z",
     "size": 5094,
-    "stars": 131
+    "stars": 133
    },
    "shots": [
     "https://raw.githubusercontent.com/soyjxck/dod3-recomp/HEAD/docs/images/opening.jpg"
@@ -32862,7 +33423,9 @@
    ]
   },
   "sp00nznet/kotor-recomp": {
-   "noRelease": true,
+   "assetOs": {
+    "Windows": true
+   },
    "readme": {
     "features": {
      "aspect": "yes",
@@ -32874,20 +33437,71 @@
     "v": 2
    },
    "readmeLure": [],
+   "release": {
+    "date": "2026-10-24T09:04:05Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/sp00nznet/kotor-recomp/releases/tag/v0.1.0"
+   },
    "repo": {
     "archived": false,
     "created": "2026-10-04T03:53:50Z",
     "desc": "Static recompilation of Star Wars: Knights of the Old Republic (PC) to native C, on pcrecomp - fixing the engine's modern-PC problems in its own code",
     "full": "sp00nznet/kotor-recomp",
     "lang": "C",
-    "pushed": "2026-10-10T09:50:32Z",
-    "size": 996,
-    "stars": 12
+    "pushed": "2026-10-24T09:02:31Z",
+    "size": 1007,
+    "stars": 13
    },
    "shots": [
     "https://raw.githubusercontent.com/sp00nznet/kotor-recomp/HEAD/docs/screenshots/main-menu.png",
     "https://raw.githubusercontent.com/sp00nznet/kotor-recomp/HEAD/docs/screenshots/endar-spire.png",
     "https://raw.githubusercontent.com/sp00nznet/kotor-recomp/HEAD/docs/screenshots/in-game-hud.png"
+   ]
+  },
+  "sp00nznet/racer": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "online": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-10-24T08:15:07Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/sp00nznet/racer/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-03-10T08:23:27Z",
+    "desc": "Star Wars Episode I: Racer - N64 Static Recompilation",
+    "full": "sp00nznet/racer",
+    "lang": "C++",
+    "pushed": "2026-10-24T08:13:46Z",
+    "size": 10435,
+    "stars": 12
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/hero.gif",
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/title.png",
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/watto-shop.png",
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/select-player.png",
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/tournament.png",
+    "https://raw.githubusercontent.com/sp00nznet/racer/HEAD/docs/screenshots/race-1.png"
    ]
   },
   "sp00nznet/rampage": {
@@ -32945,7 +33559,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T22:14:15Z",
     "size": 3975,
-    "stars": 35
+    "stars": 36
    },
    "shots": [
     "https://raw.githubusercontent.com/sp00nznet/reo/HEAD/docs/screenshots/hero.gif",
@@ -33290,7 +33904,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T19:41:02Z",
     "size": 643,
-    "stars": 325
+    "stars": 326
    },
    "shots": []
   },
@@ -33335,7 +33949,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T15:12:20Z",
     "size": 8090,
-    "stars": 468
+    "stars": 469
    },
    "shots": [
     "https://raw.githubusercontent.com/SpeedBreakerProject/speedbreaker/HEAD/assets/screenshots/speedbreaker-00-ultrawide-chase-cam-race.jpg",
@@ -33380,7 +33994,7 @@
     "lang": "C#",
     "pushed": "2026-10-12T02:52:55Z",
     "size": 5209,
-    "stars": 33
+    "stars": 34
    },
    "shots": [
     "https://raw.githubusercontent.com/Spicywonda/castlevania-chronicles-recomp/HEAD/docs/images/recomp-poster.png"
@@ -33445,8 +34059,8 @@
     "desc": "",
     "full": "Spooky098529/ITC-Recomp",
     "lang": "C++",
-    "pushed": "2026-10-24T04:30:08Z",
-    "size": 17236,
+    "pushed": "2026-10-24T04:42:12Z",
+    "size": 17343,
     "stars": 14
    },
    "shots": []
@@ -33512,9 +34126,9 @@
     "desc": "Native Pikmin Windows/Linux/Android Port",
     "full": "SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port",
     "lang": "Assembly",
-    "pushed": "2026-10-23T23:12:21Z",
-    "size": 225853,
-    "stars": 273
+    "pushed": "2026-10-24T10:24:18Z",
+    "size": 225857,
+    "stars": 274
    },
    "shots": []
   },
@@ -33558,9 +34172,9 @@
     "desc": "Native Pikmin Windows/Linux/Android Port",
     "full": "SSunnKing/Open-Nectar---Pikmin-Native-PC-Mobile-Port",
     "lang": "Assembly",
-    "pushed": "2026-10-23T23:12:21Z",
-    "size": 225853,
-    "stars": 273
+    "pushed": "2026-10-24T10:24:18Z",
+    "size": 225857,
+    "stars": 274
    },
    "shots": []
   },
@@ -33595,7 +34209,7 @@
     "lang": "C++",
     "pushed": "2026-10-19T20:26:05Z",
     "size": 80115,
-    "stars": 80
+    "stars": 81
    },
    "shots": []
   },
@@ -33852,7 +34466,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T12:02:29Z",
     "size": 2549,
-    "stars": 52
+    "stars": 53
    },
    "shots": [
     "https://github.com/user-attachments/assets/c287c4dc-409d-46a1-a9f4-388cf41ccd64",
@@ -33990,7 +34604,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T21:30:46Z",
     "size": 10052,
-    "stars": 4445
+    "stars": 4475
    },
    "shots": []
   },
@@ -34032,7 +34646,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T19:20:39Z",
     "size": 5962,
-    "stars": 1895
+    "stars": 1899
    },
    "shots": []
   },
@@ -34069,7 +34683,7 @@
     "lang": "C#",
     "pushed": "2026-10-11T19:24:45Z",
     "size": 1902,
-    "stars": 92
+    "stars": 93
    },
    "shots": []
   },
@@ -34108,7 +34722,7 @@
     "lang": "Python",
     "pushed": "2026-10-22T18:41:19Z",
     "size": 3635,
-    "stars": 11
+    "stars": 10
    },
    "shots": [
     "https://raw.githubusercontent.com/swaymun/AC-Recomp/HEAD/assets/launcher/start_screen.jpg"
@@ -34131,8 +34745,8 @@
     "desc": "Byte-matching decompilation project for Monster Hunter Portable 2nd G",
     "full": "tclamb/mhp2g-decomp",
     "lang": "C++",
-    "pushed": "2026-10-22T05:31:45Z",
-    "size": 3199,
+    "pushed": "2026-10-24T09:28:29Z",
+    "size": 3338,
     "stars": 34
    },
    "shots": []
@@ -34177,9 +34791,9 @@
     "desc": "Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game.",
     "full": "TeamGDB/Yakumo",
     "lang": "C++",
-    "pushed": "2026-10-24T03:02:17Z",
-    "size": 23037,
-    "stars": 516
+    "pushed": "2026-10-24T10:34:32Z",
+    "size": 23155,
+    "stars": 517
    },
    "shots": []
   },
@@ -34470,7 +35084,7 @@
     "lang": "C",
     "pushed": "2026-10-10T07:57:33Z",
     "size": 6292,
-    "stars": 9
+    "stars": 10
    },
    "shots": []
   },
@@ -34924,7 +35538,7 @@
     "lang": "C++",
     "pushed": "2026-10-11T13:41:29Z",
     "size": 14751,
-    "stars": 253
+    "stars": 254
    },
    "shots": []
   },
@@ -35016,7 +35630,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T00:29:33Z",
     "size": 366,
-    "stars": 701
+    "stars": 708
    },
    "shots": [
     "https://github.com/user-attachments/assets/e0156eb8-c1b5-49d9-ab93-3abb46bf5f47"
@@ -35055,7 +35669,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T02:07:56Z",
     "size": 2004,
-    "stars": 338
+    "stars": 341
    },
    "shots": [
     "https://github.com/user-attachments/assets/d13e1fb6-ba97-4067-84e1-c2362d66d7c4",
@@ -35248,7 +35862,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T08:06:07Z",
     "size": 106251,
-    "stars": 311
+    "stars": 313
    },
    "shots": []
   },
@@ -35285,9 +35899,9 @@
     "desc": "Experimental TimeSplitters: Future Perfect PC integration: keyboard and mouse controls, source patches, and build instructions. Requires your own Xbox game dump.",
     "full": "TheDoffman/timesplitters-future-perfect-pc",
     "lang": "C",
-    "pushed": "2026-10-24T04:28:50Z",
-    "size": 12537,
-    "stars": 35
+    "pushed": "2026-10-24T10:44:29Z",
+    "size": 25520,
+    "stars": 40
    },
    "shots": []
   },
@@ -35408,7 +36022,7 @@
     "lang": "C",
     "pushed": "2026-10-15T18:53:20Z",
     "size": 9860,
-    "stars": 15
+    "stars": 16
    },
    "shots": [
     "https://img.youtube.com/vi/PrhwXBr1qJI/maxresdefault.jpg",
@@ -35457,8 +36071,8 @@
     "desc": "Port of Star Fox 64 to PSP based on the decompilation.",
     "full": "TheMrIron2/sf64-psp",
     "lang": "C",
-    "pushed": "2026-10-24T04:31:59Z",
-    "size": 17491,
+    "pushed": "2026-10-24T04:55:14Z",
+    "size": 17527,
     "stars": 21
    },
    "shots": []
@@ -35658,7 +36272,7 @@
     "lang": null,
     "pushed": "2026-10-21T08:22:16Z",
     "size": 432,
-    "stars": 73
+    "stars": 74
    },
    "shots": []
   },
@@ -35757,7 +36371,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T01:36:56Z",
     "size": 5758,
-    "stars": 54
+    "stars": 55
    },
    "shots": []
   },
@@ -35797,7 +36411,7 @@
     "lang": "C",
     "pushed": "2026-10-18T09:01:43Z",
     "size": 5650,
-    "stars": 76
+    "stars": 75
    },
    "shots": []
   },
@@ -35833,7 +36447,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T18:24:59Z",
     "size": 9140,
-    "stars": 33
+    "stars": 34
    },
    "shots": [
     "https://raw.githubusercontent.com/timftw21/burnout2-recompilation/main/screenshots/single-player.jpg",
@@ -35876,7 +36490,7 @@
     "lang": "Python",
     "pushed": "2026-10-22T03:54:27Z",
     "size": 8085,
-    "stars": 66
+    "stars": 67
    },
    "shots": [
     "https://raw.githubusercontent.com/TK22-26/JetForceGemini-Recomp/HEAD/docs/images/startup-screen.png",
@@ -36131,7 +36745,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T15:16:32Z",
     "size": 47010,
-    "stars": 47
+    "stars": 49
    },
    "shots": []
   },
@@ -36152,7 +36766,7 @@
     "lang": "C",
     "pushed": "2026-09-25T17:20:50Z",
     "size": 26115,
-    "stars": 49
+    "stars": 48
    },
    "shots": []
   },
@@ -36243,7 +36857,7 @@
     "lang": "C++",
     "pushed": "2026-10-20T11:30:29Z",
     "size": 303182,
-    "stars": 6046
+    "stars": 6049
    },
    "shots": [
     "https://raw.githubusercontent.com/TwilitRealm/dusklight/HEAD/assets/aurora-powered.png"
@@ -36333,7 +36947,7 @@
     "lang": "C",
     "pushed": "2026-10-23T23:36:14Z",
     "size": 69169,
-    "stars": 237
+    "stars": 239
    },
    "shots": [
     "https://raw.githubusercontent.com/Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled/HEAD/docs/screenshots/field.jpg",
@@ -36629,7 +37243,7 @@
     "full": "VibinToast/JetForceGemini-Recomp",
     "lang": "C++",
     "pushed": "2026-10-24T03:52:59Z",
-    "size": 8216,
+    "size": 8197,
     "stars": 23
    },
    "shots": []
@@ -36700,7 +37314,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T00:38:01Z",
     "size": 480,
-    "stars": 53
+    "stars": 54
    },
    "shots": []
   },
@@ -36727,8 +37341,8 @@
     "desc": "Turning Persona 3 FES into a native PC port",
     "full": "Virtual-AK/fes-pc-recomp",
     "lang": "Python",
-    "pushed": "2026-10-24T01:03:17Z",
-    "size": 2563,
+    "pushed": "2026-10-24T05:21:00Z",
+    "size": 2763,
     "stars": 1
    },
    "shots": []
@@ -36751,6 +37365,33 @@
     "pushed": "2026-10-21T17:08:21Z",
     "size": 13020,
     "stars": 14
+   },
+   "shots": []
+  },
+  "voicedrew11/verdite1": {
+   "noRelease": true,
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "kbm": "yes",
+     "mods": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "repo": {
+    "archived": false,
+    "created": "2026-09-27T04:35:52Z",
+    "desc": "AI driven attempt at porting King's Field (SLPS-00017) to PC with a variety of improvements",
+    "full": "Voicedrew11/verdite1",
+    "lang": "C#",
+    "pushed": "2026-10-24T00:23:53Z",
+    "size": 9300,
+    "stars": 10
    },
    "shots": []
   },
@@ -36786,7 +37427,7 @@
     "lang": "C#",
     "pushed": "2026-10-17T19:38:09Z",
     "size": 7358,
-    "stars": 55
+    "stars": 56
    },
    "shots": [
     "https://github.com/user-attachments/assets/cfdd9335-6f94-4feb-9093-957fe9c58749"
@@ -36824,7 +37465,7 @@
     "lang": "C#",
     "pushed": "2026-10-18T22:37:12Z",
     "size": 3934,
-    "stars": 27
+    "stars": 28
    },
    "shots": [
     "https://github.com/user-attachments/assets/833865b8-a6e2-4486-a999-4832458d2d0e"
@@ -37168,9 +37809,9 @@
     "desc": "Def Jam: Fight for NY PC port — static recompilation of the original Xbox game for native Windows and macOS (Direct3D 11 / Vulkan). Bring your own game dump.",
     "full": "vyanhursky/DefJamFFNY-recomp",
     "lang": "Python",
-    "pushed": "2026-10-24T04:31:28Z",
-    "size": 38873,
-    "stars": 158
+    "pushed": "2026-10-24T04:39:40Z",
+    "size": 38992,
+    "stars": 160
    },
    "shots": [
     "https://raw.githubusercontent.com/vyanhursky/DefJamFFNY-recomp/HEAD/branding/fan/github/social-preview-1280x640.jpg",
@@ -37204,7 +37845,7 @@
     "lang": "C++",
     "pushed": "2026-10-18T20:40:40Z",
     "size": 9894,
-    "stars": 37
+    "stars": 39
    },
    "shots": [
     "https://raw.githubusercontent.com/Waffle565/God-Of-War-Native-Port/HEAD/docs/captures/olympus.jpg",
@@ -37356,7 +37997,7 @@
     "lang": "C",
     "pushed": "2026-10-23T13:01:25Z",
     "size": 16845,
-    "stars": 305
+    "stars": 309
    },
    "shots": []
   },
@@ -37539,7 +38180,7 @@
     "lang": "C++",
     "pushed": "2026-10-23T21:36:07Z",
     "size": 7713,
-    "stars": 76
+    "stars": 85
    },
    "shots": [
     "https://raw.githubusercontent.com/WitherBlitz/NSMB-Wii-Multiplayer-Recompilation/HEAD/docs/screenshots/android-title.webp",
@@ -37684,7 +38325,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T09:26:30Z",
     "size": 172394,
-    "stars": 21
+    "stars": 22
    },
    "shots": [
     "https://raw.githubusercontent.com/WK2D/White-Knight-Chronicles-2-Recomp/HEAD/verification/screenshots/2026-10-22-native-geometry-chain-street.png",
@@ -38047,8 +38688,8 @@
     "desc": "Decompilation of Castlevania: Symphony of the Night (PSX, PSP, Saturn)",
     "full": "Xeeynamo/sotn-decomp",
     "lang": "C",
-    "pushed": "2026-10-24T00:33:25Z",
-    "size": 77386,
+    "pushed": "2026-10-24T09:44:14Z",
+    "size": 77387,
     "stars": 1171
    },
    "shots": []
@@ -38112,7 +38753,7 @@
     "lang": "C",
     "pushed": "2026-10-23T06:27:14Z",
     "size": 10777,
-    "stars": 373
+    "stars": 379
    },
    "shots": [
     "https://raw.githubusercontent.com/xenophobentx/takedawn/HEAD/docs/screenshots/takedawn-alt-12-europe-winter-city-cathedral.jpg",
@@ -38221,8 +38862,8 @@
     "desc": "PC port of War of the Monsters focused on QoL and new features",
     "full": "yanm1103/War_of_the_Monsters_recomp",
     "lang": "C++",
-    "pushed": "2026-10-24T04:31:48Z",
-    "size": 246682,
+    "pushed": "2026-10-24T05:32:33Z",
+    "size": 258944,
     "stars": 15
    },
    "shots": [
@@ -38343,7 +38984,7 @@
     "lang": "C++",
     "pushed": "2026-10-11T21:15:48Z",
     "size": 134475,
-    "stars": 374
+    "stars": 376
    },
    "shots": []
   },
@@ -38531,10 +39172,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T19:44:58Z",
+    "date": "2026-10-24T07:45:57Z",
     "pre": false,
-    "tag": "v0.14.0",
-    "url": "https://github.com/YuutaTsubasa/ChaotixRecompiled/releases/tag/v0.14.0"
+    "tag": "v0.15.1",
+    "url": "https://github.com/YuutaTsubasa/ChaotixRecompiled/releases/tag/v0.15.1"
    },
    "repo": {
     "archived": false,
@@ -38542,8 +39183,8 @@
     "desc": "Static recompilation of the Sega 32X game Knuckles' Chaotix into native C++ (Windows/Linux/macOS/Android), with true widescreen. Bring your own ROM; no game data included.",
     "full": "YuutaTsubasa/ChaotixRecompiled",
     "lang": "C++",
-    "pushed": "2026-10-23T19:44:53Z",
-    "size": 3004,
+    "pushed": "2026-10-24T08:36:54Z",
+    "size": 3200,
     "stars": 47
    },
    "shots": []
@@ -38596,8 +39237,8 @@
     "desc": "Unofficial static recompilation of Sonic Free Riders for Windows, Linux and Android, with controller/keyboard support, custom VRM avatars, and Kinect v1, Kinect v2 (experimental) and webcam motion controls on Windows.",
     "full": "YuutaTsubasa/Free-Riders-Recompiled",
     "lang": "C++",
-    "pushed": "2026-10-23T23:11:53Z",
-    "size": 10700,
+    "pushed": "2026-10-24T09:56:36Z",
+    "size": 10722,
     "stars": 99
    },
    "shots": [
@@ -38671,9 +39312,9 @@
     "desc": "",
     "full": "YYOzcan/tokisaki-port",
     "lang": "C++",
-    "pushed": "2026-10-24T03:23:35Z",
-    "size": 8691,
-    "stars": 59
+    "pushed": "2026-10-24T10:23:02Z",
+    "size": 8742,
+    "stars": 61
    },
    "shots": [
     "https://raw.githubusercontent.com/YYOzcan/tokisaki-port/HEAD/docs/media/new-sun-first-gameplay.png",
@@ -38710,7 +39351,7 @@
     "lang": "C",
     "pushed": "2026-10-10T23:18:03Z",
     "size": 165116,
-    "stars": 91
+    "stars": 90
    },
    "shots": []
   },
@@ -38786,7 +39427,7 @@
     "lang": "C",
     "pushed": "2026-10-24T01:09:22Z",
     "size": 14556,
-    "stars": 565
+    "stars": 567
    },
    "shots": []
   },
@@ -38825,7 +39466,7 @@
     "lang": "C",
     "pushed": "2026-09-27T23:33:40Z",
     "size": 33892,
-    "stars": 21
+    "stars": 22
    },
    "shots": [
     "https://raw.githubusercontent.com/ZakyPew/epoch-equinox/HEAD/docs/launcher.png",
@@ -38868,7 +39509,7 @@
     "lang": "C",
     "pushed": "2026-10-24T02:14:42Z",
     "size": 19617,
-    "stars": 595
+    "stars": 598
    },
    "shots": [
     "https://i.postimg.cc/h42VQzvT/10-10-26-18-38-57-898.png",
@@ -39042,8 +39683,8 @@
     "desc": "Experimental native Windows Haze port using ps3recomp; game assets not included",
     "full": "zdiemer/haze-recomp",
     "lang": "C++",
-    "pushed": "2026-10-23T23:01:24Z",
-    "size": 4069,
+    "pushed": "2026-10-24T08:20:48Z",
+    "size": 4070,
     "stars": 7
    },
    "shots": [
@@ -39124,7 +39765,7 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T16:47:26Z",
+    "date": "2026-10-24T10:58:50Z",
     "pre": true,
     "tag": "devel-build",
     "url": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/releases/tag/devel-build"
@@ -39135,9 +39776,9 @@
     "desc": "Zelda Wind Waker HD Recomp",
     "full": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
     "lang": "C++",
-    "pushed": "2026-10-24T02:43:30Z",
-    "size": 19833,
-    "stars": 1012
+    "pushed": "2026-10-24T10:58:49Z",
+    "size": 18729,
+    "stars": 1013
    },
    "shots": []
   },
@@ -39202,10 +39843,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-10-23T20:04:54Z",
+    "date": "2026-10-24T07:00:57Z",
     "pre": false,
-    "tag": "v0.5.6",
-    "url": "https://github.com/zer0ducksgiven/Forza-Motorsport-2-ReGPU/releases/tag/v0.5.6"
+    "tag": "v0.5.7",
+    "url": "https://github.com/zer0ducksgiven/Forza-Motorsport-2-ReGPU/releases/tag/v0.5.7"
    },
    "repo": {
     "archived": false,
@@ -39213,9 +39854,9 @@
     "desc": "Native PC port of Forza Motorsport 2: static recompilation of the CPU code and a native D3D12 renderer",
     "full": "zer0ducksgiven/Forza-Motorsport-2-ReGPU",
     "lang": "C++",
-    "pushed": "2026-10-23T20:04:44Z",
-    "size": 4098,
-    "stars": 38
+    "pushed": "2026-10-24T07:00:46Z",
+    "size": 4238,
+    "stars": 39
    },
    "shots": []
   },
@@ -39322,8 +39963,8 @@
     "desc": "Need For Speed III: Hot Pursuit recompiled PC port on Android",
     "full": "ZloiKILLER/nfs3recompiled-android",
     "lang": "C++",
-    "pushed": "2026-10-23T18:05:47Z",
-    "size": 54034,
+    "pushed": "2026-10-24T05:12:26Z",
+    "size": 54260,
     "stars": 49
    },
    "shots": [
