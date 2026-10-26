@@ -70,7 +70,7 @@ Each project's details show two rows of screenshots:
 - **The port:** images from the project's README (its launcher, widescreen, HDR or new renderer). Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
 - **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen for retro consoles. The workflow looks each game up on its original platform and only accepts a confident title match. When a platform version has fewer than three screenshots on IGDB, the workflow adds screenshots from the same game's other platform versions, never from a different game that shares the name.
 
-Lookups compare titles without brackets. A year in a title ("FIFA Street (2005)"), or else the original console's era, decides between same-named games, and extra words such as "mini", "remake" or "HD" count against a match. Retro games use libretro's official box art before SteamGridDB.
+Lookups compare titles without brackets. A year in a title ("FIFA Street (2005)"), or else the original console's era, decides between same-named games, and extra words such as "mini", "remake" or "HD" count against a match. Covers come from, in order: a link you or the maintainer set, libretro's official box art (retro consoles), SteamGridDB, then IGDB, which also covers console-only releases that SteamGridDB lacks.
 
 Click a screenshot to enlarge it, and use the arrow keys or **Previous**/**Next** to move between them. If a screenshot is wrong, click **Hide this screenshot**. **Export fixes for everyone** shares hidden screenshots as `hideScreens` in `overrides.json`. Pinned screenshot links can be added there as `screens`.
 

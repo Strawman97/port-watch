@@ -180,6 +180,15 @@
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
     },
+    "galaxynostalgia/outbreak-decomp": {
+      "_game": "Biohazard Outbreak",
+      "games": [
+        {
+          "title": "Biohazard Outbreak File 2",
+          "platform": "PS2"
+        }
+      ]
+    },
     "gillou68310/dukenukemzerohourport": {
       "title": "Duke Nukem: Zero Hour"
     },
@@ -554,6 +563,10 @@
     "xzhuofan/cryrecomp": {
       "_game": "The Legend of Zelda: Tears of the Kingdom",
       "platform": "Switch"
+    },
+    "zdiemer/chrono-trigger-reimplemented": {
+      "_game": "Chrono Trigger",
+      "type": "Source Port"
     }
   },
   "added": {
@@ -602,6 +615,13 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "A work-in-progress decompilation of Turok: Rage Wars for the N64"
+    },
+    "aitorcachero/alundra-recomp": {
+      "link": "https://github.com/aitorcachero/alundra-recomp",
+      "title": "Alundra",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "alekszverr-jpg/cod3pc": {
       "link": "https://github.com/alekszverr-jpg/cod3pc",
@@ -1764,6 +1784,14 @@
       "pcRelease": "Also on PC (console version ported)",
       "description": "This repository provides the decompilation tooling, methodology, and a function index for the GameCube release of Sonic Riders (USA) (GXEE8P, rev 00)."
     },
+    "carolux97/gears3-azura": {
+      "link": "https://github.com/Carolux97/Gears3-Azura",
+      "title": "Gears of War 3",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Unofficial native macOS/Linux port of Gears of War 3 (Xbox 360) via static recompilation, with its launcher"
+    },
     "cellenseres/lufia2snesrecomp": {
       "link": "https://github.com/Cellenseres/Lufia2SNESRecomp",
       "title": "Lufia II: Rise of the Sinistrals",
@@ -1938,6 +1966,13 @@
       "platform": "GameCube",
       "type": "Decompilation",
       "description": "A matching decompilation of Pokémon XD: Gale of Darkness for the Nintendo GameCube"
+    },
+    "dudux42/freedomunbound": {
+      "link": "https://github.com/Dudux42/FreedomUnbound",
+      "title": "Monster Hunter Freedom Unite",
+      "platform": "PSP",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "duislingr/cr1-u": {
       "link": "https://github.com/DuIslingr/CR1-U",
@@ -2302,6 +2337,14 @@
       "description": "The Sonic and the Secret Rings fan-remake.",
       "pcRelease": "Never released on PC"
     },
+    "kuraeow/ultratears": {
+      "link": "https://github.com/kuraeow/ultratears",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Unofficial native Windows port of Tears of the Kingdom 1.4.3 using static recompilation. Builds locally from the player's own extracted game dump; no game files included."
+    },
     "kyleckroeger/moh-frontline-decomp": {
       "link": "https://github.com/kyleckroeger/moh-frontline-decomp",
       "title": "Medal of Honor: Frontline",
@@ -2330,6 +2373,13 @@
       "title": "Spyro: A Hero's Tail",
       "platform": "GameCube",
       "type": "Decompilation",
+      "pcRelease": "Never released on PC"
+    },
+    "lucabravi/monzamac": {
+      "link": "https://github.com/lucabravi/MonZaMac",
+      "title": "Pokémon Legends: Z-A",
+      "platform": "Switch",
+      "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
     "mango77x/mhforever": {
@@ -2432,6 +2482,14 @@
       ],
       "description": "Gran Turismo Sport (PS4) as a native Windows program, built on Ryty and shadGT's Vulkan renderer"
     },
+    "morerokk/mhgurecomp": {
+      "link": "https://github.com/morerokk/MHGURecomp",
+      "title": "Monster Hunter Generations Ultimate",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native PC port of Monster Hunter Generations Ultimate. Requires the game's files to play or build."
+    },
     "mortify7612/rallisportchallenge2-decomp": {
       "link": "https://github.com/Mortify7612/RallisportChallenge2-decomp",
       "title": "RalliSport Challenge 2",
@@ -2450,6 +2508,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Apocalypse (PS1) to native Windows and Linux code"
+    },
+    "mysteriousaeon/rayman3-hd-recompiled": {
+      "link": "https://github.com/MysteriousAeon/rayman3-hd-recompiled",
+      "title": "Rayman 3 HD",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "A native Windows port of Rayman 3 HD (Xbox 360) using static recompilation, with HD+ enhancements and Turkish localization."
     },
     "nawaf-al-hussain/tenkaichi3decomp": {
       "link": "https://github.com/nawaf-al-hussain/Tenkaichi3Decomp",
@@ -2614,6 +2680,20 @@
       "type": "Recompilation",
       "description": "Native PC port of Hard Corps: Uprising (Xbox Live Arcade) via static recompilation, with the TRG launcher"
     },
+    "saulob/marvel-ultimate-alliance-bundle-recompiled": {
+      "link": "https://github.com/saulob/marvel-ultimate-alliance-bundle-recompiled",
+      "title": "Marvel: Ultimate Alliance",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Marvel Ultimate Alliance 1, Gold Edition and 2 native PC ports via static recompilation, in one bundle with high frame rates, 4K rendering, ultrawide, HD Text, TRG launcher, and experimental Linux/Steam Deck support",
+      "games": [
+        {
+          "title": "Marvel: Ultimate Alliance 2",
+          "platform": "Xbox 360"
+        }
+      ]
+    },
     "saulob/ssf2t-hd-remix-recompiled": {
       "link": "https://github.com/saulob/ssf2t-hd-remix-recompiled",
       "title": "Super Street Fighter II Turbo HD Remix",
@@ -2662,6 +2742,14 @@
         }
       ]
     },
+    "shaunsingh/pgr4-native": {
+      "link": "https://github.com/shaunsingh/pgr4-native",
+      "title": "Project Gotham Racing 4",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native Direct3D 12 renderer for the Project Gotham Racing 4 static recompilation"
+    },
     "shihabal3amri/tekken-tag-tournament-2-pc": {
       "link": "https://github.com/shihabal3amri/tekken-tag-tournament-2-pc",
       "title": "Tekken Tag Tournament 2",
@@ -2669,6 +2757,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Native Windows port of Tekken Tag Tournament 2 (Xbox 360) by static recompilation. Not an emulator. Ships no game data - the installer builds the game from your own disc image and Title Update 3."
+    },
+    "sidreshot/openmerc": {
+      "link": "https://github.com/sidreshot/openMERC",
+      "title": "Soldier of Fortune",
+      "platform": "PC",
+      "type": "Reimplementation",
+      "pcRelease": "Originally a PC game",
+      "description": "Open-source (GPL v2) engine for Soldier of Fortune (2000): clean-room, Yamagi Quake II based. Bring your own licensed copy."
     },
     "sigods/otogi1": {
       "link": "https://github.com/sigods/otogi1",

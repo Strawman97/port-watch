@@ -560,7 +560,7 @@ function awNormalize(g){
 const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","castlevania symphony of the night","crystal defenders","daytona usa","dead rising 2 case west","dead rising 2 case zero",
   "earthworm jim hd","exit","exit 2","exit 1 and 2","exit exit 2","geometry wars retro evolved","geometry wars retro evolved 2","goldeneye 007","golden eye 007","goldeneye 007 xbla pc recomp","hard corps uprising",
   "metal slug xx","nba jam on fire edition","naughty bear panic in paradise","outpost kaloki x","perfect dark","perfect dark remaster","super street fighter ii turbo hd remix",
-  "dishwasher dead samurai","dishwasher vampire smile","simpsons arcade","simpsons arcade game","vigilante 8 arcade","burnout crash","minecraft xbox 360 edition","sonic the fighters","rez hd",
+  "dishwasher dead samurai","rayman 3 hd","dishwasher vampire smile","simpsons arcade","simpsons arcade game","vigilante 8 arcade","burnout crash","minecraft xbox 360 edition","sonic the fighters","rez hd",
   "ikaruga","braid","trials hd","shadow complex","castle crashers","splosion man","ms splosion man","hydro thunder hurricane","beyond good and evil hd","alan wake s american nightmare",
   "bomberman live","pac man championship edition dx","pac man championship edition","street fighter iii 3rd strike online edition","marvel vs capcom 2","sonic adventure","sonic adventure 2",
   "nights into dreams","jet set radio","crazy taxi","space channel 5 part 2","rocket knight","contra rebirth","limbo","bastion","fez","super meat boy","toy soldiers","toy soldiers cold war"]);
@@ -599,6 +599,8 @@ function readmeShots(text,full){
   return out;
 }
 const IGDB_IMG=(id,size)=>"https://images.igdb.com/igdb/image/upload/t_"+size+"/"+id+".jpg";
+function igdbGame(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];return (q&&sc.games[q])||null;}
+function igdbCover(v){const g=igdbGame(v.p,v);return g&&g.cover?{u:IGDB_IMG(g.cover,"cover_big"),s:"IGDB",page:g.name||""}:null;}
 function igdbFor(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
 function shotsFor(v){
   if(typeof HOSTED!=="undefined"&&HOSTED)return [];
@@ -1265,7 +1267,7 @@ function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
 function baseTitle(p,so){return (so&&so.title)||(p.tf?p.g:displayTitle(p,(S.meta[p.k]||{}).manifest||null));}
 function localRename(p,lo,so){return !!(lo.game&&nrmT(bare(lo.game))!==nrmT(bare(baseTitle(p,so))));}
 function coverFor(v){
-  if(v.ghost){const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  if(v.ghost){const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const ig=igdbCover(v);if(ig)return ig;const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
   const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
   const myRename=localRename(v.p,lo,so);   // a local title only counts if it differs from the shared one
@@ -1274,7 +1276,9 @@ function coverFor(v){
   const renamed=myRename||so.title;const sc=seedCover(v.p);if(sc&&!renamed)return sc;
   const lbx=!myRename&&libFor(v);if(lbx)return {u:ltURL(lbx.repo,lbx.file),s:"libretro box art"};
   const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];
-  if(rc&&rc.url&&(!renamed||(!myRename&&nrmT(bare(rc.title||""))===nrmT(bare(coverTitle(v))))||(!myRename&&!so.title)))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  if(rc&&rc.url&&(!renamed||(!myRename&&nrmT(bare(rc.title||""))===nrmT(bare(coverTitle(v))))||(!myRename&&!so.title)))return {u:rc.url,s:"SteamGridDB",page:rc.name||""};
+  if(!myRename){const ig=igdbCover(v);if(ig)return ig;}
+  const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
 function sgdbSearchURL(v){return "https://www.steamgriddb.com/search/grids?term="+encodeURIComponent(coverTitle(v));}
 let sgdbBlocked=false;const coverQ=[];let coverActive=0;const coverPending=new Set();
 async function lookupSGDB(title){

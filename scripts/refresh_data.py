@@ -597,8 +597,8 @@ def refresh_screens(projects, overrides):
         if g and g.get("rev") != 2 and len(g.get("shots") or []) < 3:
             todo.append((q, title, pid, plat))   # missed or thin under the older rules: look it up once more
             continue
-        if g and g.get("id") and "nsfw" not in g:
-            todo.append((q, title, pid, plat))   # found before the theme check existed: look it up once more
+        if g and g.get("id") and ("nsfw" not in g or "cover" not in g):
+            todo.append((q, title, pid, plat))   # found before the theme check or covers existed: look it up once more
             continue
         if g and (g.get("shots") or (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
             continue                  # found before, or missed less than 30 days ago
@@ -608,7 +608,7 @@ def refresh_screens(projects, overrides):
     for q, title, pid, plat in todo[:MAX_IGDB]:
         safe = bare_title(title).replace('"', "").replace("\\", "")
         try:
-            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes; where platforms = ({pid}); limit 10;')
+            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes,cover.image_id; where platforms = ({pid}); limit 10;')
         except Exception as e:
             log(f"  {title}: IGDB error ({e})")
             time.sleep(0.3)
@@ -619,7 +619,7 @@ def refresh_screens(projects, overrides):
             score, g = m
             shots = [x["image_id"] for x in (g.get("screenshots") or []) if x.get("image_id")][:8]
             entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": 2,
-                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or [])}
+                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or []), "cover": (g.get("cover") or {}).get("image_id") or ""}
             if len(shots) < 3:
                 # thin results: add screenshots from the same game's other platform versions
                 n0 = len(shots)
