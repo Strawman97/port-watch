@@ -831,9 +831,18 @@ async function gl(url,raw){let r;try{r=await fetch(url,{cache:"no-store"});}catc
 let newThisRun=0;
 function logEv(type,p,text,name,plat){const ov=p?(S.ov[p.id]||{}):{};S.log.unshift({t:Date.now(),type,id:p?p.id:null,game:p?(ov.game||p.g):(name||""),plat:p?(ov.platform||p.p):(plat||""),text,read:false});if(S.log.length>500)S.log.length=500;newThisRun++;}
 function seenTag(p,tag,date,pre){
-  if(!tag||!p.k)return;const prev=S.tags[p.k];
-  if(prev===undefined){S.tags[p.k]=tag;if(p.rel&&p.rel!==tag)logEv("release",p,"New release "+tag+(pre?" (pre-release)":""));else if(!p.rel&&p.seededNoRelease)logEv("release",p,"First release "+tag);return;}
-  if(prev!==tag){S.tags[p.k]=tag;logEv("release",p,(prev?"New release ":"First release ")+tag+(pre?" (pre-release)":""));}
+  if(!tag||!p.k)return;const prev=S.tags[p.k];S.tagDates=S.tagDates||{};
+  const when=date?Date.parse(date):NaN;
+  // what we know about the release we already have: its recorded date, or the date of the release on record
+  const m=S.meta[p.k]||{};let known=S.tagDates[p.k];
+  if(!known&&prev&&m.release&&m.release.tag===prev&&m.release.date)known=m.release.date;
+  // two sources can disagree (the awesome list skips pre-releases); never step back to an older release
+  if(prev!==undefined&&prev!==tag&&known&&!isNaN(when)&&when<=Date.parse(known))return;
+  const note=(!isNaN(when)&&Date.now()-when>2*864e5)?", published "+new Date(when).toLocaleDateString(undefined,{day:"numeric",month:"short"}):"";
+  const label=tag+(pre?" (pre-release)":"")+note;
+  if(prev===undefined){S.tags[p.k]=tag;if(date)S.tagDates[p.k]=date;if(p.rel&&p.rel!==tag)logEv("release",p,"New release "+label);else if(!p.rel&&p.seededNoRelease)logEv("release",p,"First release "+label);return;}
+  if(prev!==tag){S.tags[p.k]=tag;if(date)S.tagDates[p.k]=date;logEv("release",p,(prev?"New release ":"First release ")+label);}
+  else if(date&&!S.tagDates[p.k])S.tagDates[p.k]=date;
 }
 
 const RJ_SYS={"Xbox 360":"Xbox 360","Xbox":"Xbox (original)","PS3":"PS3","PS2":"PS2","PSP":"PSP","PS Vita":"PS Vita","PS1":"PS1","Wii U":"Wii U","Wii":"Wii","GameCube":"GameCube","N64":"N64","Switch":"Switch","SNES":"SNES","GBA":"GBA","GBC":"Game Boy Color","GB":"Game Boy","NDS":"DS","3DS":"3DS","Virtual Boy":"Virtual Boy","NES":"NES","Master System":"Master System","Game Gear":"Game Gear","32X":"32X","Saturn":"Saturn","Dreamcast":"Dreamcast","Genesis":"Mega Drive","Arcade":"Arcade","Sega CD":"Sega CD","3DO":"3DO","Atari Jaguar":"Atari Jaguar","Neo Geo":"Neo Geo"};

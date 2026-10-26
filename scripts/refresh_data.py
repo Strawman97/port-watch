@@ -140,6 +140,8 @@ def vnorm(t):
     """norm() without a trailing "version": "Pokémon Emerald" matches "Pokémon Emerald Version"."""
     return re.sub(r" version$", "", norm(t))
 
+POSSESSIVE = re.compile(r"^(?:[A-Z][\w.]*\s){0,2}[A-Z][\w.]*['’]s\s+")   # "Sid Meier's ", "Tom Clancy's ", "Peter Jackson's "
+
 def bare_title(t):
     return re.sub(r"\s+", " ", re.sub(r"\s*\([^)]*\)", " ", t or "")).strip()
 
@@ -157,6 +159,10 @@ def pick_match(title, cands, name_of, year_of, platform, threshold=0.88):
         raw = name_of(c) or ""
         n = vnorm(bare_title(raw))
         score = 1.0 if n == q else difflib.SequenceMatcher(None, q, n).ratio()
+        for side_raw, other in ((raw, q), (title, n)):     # "Sid Meier's Civilization Revolution" vs "Civilization Revolution"
+            stripped = vnorm(bare_title(POSSESSIVE.sub("", side_raw)))
+            if stripped and stripped != vnorm(bare_title(side_raw)):
+                score = max(score, (1.0 if stripped == other else difflib.SequenceMatcher(None, stripped, other).ratio()) - 0.03)
         if numbers(q) != numbers(n):
             score -= 0.3
         if {m.group(0).lower() for m in EXTRA_WORDS.finditer(bare_title(raw))} - q_extra:
@@ -531,6 +537,7 @@ IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
                   "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34"}
 MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "700"))
+IGDB_REV = 3             # matching rules version; misses from older versions get one more try
 IGDB_EROTIC_THEME = 42   # IGDB's "Erotic" theme; such games are blurred by default on the page
 
 def igdb_token(cid, secret):
@@ -591,18 +598,22 @@ def refresh_screens(projects, overrides):
     for k in [k for k in mapping if k not in {p.get("k") or p["id"] for p in projects}]:
         del mapping[k]
     now = datetime.datetime.now(datetime.timezone.utc)
-    todo = []
+    queues = ([], [], [], [])   # 0 never looked up, 1 earlier misses, 2 thin results, 3 cover/theme re-checks
     for q, (title, pid, plat) in wanted.items():
         g = games.get(q)
-        if g and g.get("rev") != 2 and len(g.get("shots") or []) < 3:
-            todo.append((q, title, pid, plat))   # missed or thin under the older rules: look it up once more
-            continue
-        if g and g.get("id") and ("nsfw" not in g or "cover" not in g):
-            todo.append((q, title, pid, plat))   # found before the theme check or covers existed: look it up once more
-            continue
-        if g and (g.get("shots") or (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
-            continue                  # found before, or missed less than 30 days ago
-        todo.append((q, title, pid, plat))
+        item = (q, title, pid, plat)
+        if not g:
+            queues[0].append(item); continue
+        if not g.get("id") and g.get("rev", 0) < IGDB_REV:
+            queues[1].append(item); continue        # missed under older matching rules: one more try
+        if g.get("id") and g.get("rev", 0) < 2 and len(g.get("shots") or []) < 3:
+            queues[2].append(item); continue        # thin results from before other versions were added
+        if g.get("id") and ("nsfw" not in g or "cover" not in g):
+            queues[3].append(item); continue        # found before the theme check or covers existed
+        if not g.get("id") and (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days >= 30:
+            queues[1].append(item)                  # missed more than 30 days ago: try again
+    todo = [x for qu in queues for x in qu]
+    log(f"  IGDB queue: {len(queues[0])} new, {len(queues[1])} retries, {len(queues[2])} thin, {len(queues[3])} re-checks")
     log(f"  {len(todo)} games to look up on IGDB (max {MAX_IGDB} this run)")
     found = topped = 0
     for q, title, pid, plat in todo[:MAX_IGDB]:
@@ -618,7 +629,7 @@ def refresh_screens(projects, overrides):
         if m:
             score, g = m
             shots = [x["image_id"] for x in (g.get("screenshots") or []) if x.get("image_id")][:8]
-            entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": 2,
+            entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": IGDB_REV,
                      "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or []), "cover": (g.get("cover") or {}).get("image_id") or ""}
             if len(shots) < 3:
                 # thin results: add screenshots from the same game's other platform versions
@@ -645,7 +656,7 @@ def refresh_screens(projects, overrides):
             games[q] = entry
             found += bool(entry["shots"])
         else:
-            games[q] = {"shots": [], "checked": NOW, "rev": 2}
+            games[q] = {"shots": [], "checked": NOW, "rev": IGDB_REV}
     used = set(mapping.values())
     for q in [q for q in games if q not in used]:
         del games[q]
