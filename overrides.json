@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-25",
+  "updated": "2026-10-27",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -246,6 +246,23 @@
       "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
     },
+    "itch.io/almost-there-games/azimuth": {
+      "_game": "Forza Horizon 2",
+      "games": [
+        {
+          "title": "Forza Horizon 3",
+          "platform": "Xbox One"
+        },
+        {
+          "title": "Forza Motorsport 5",
+          "platform": "Xbox One"
+        },
+        {
+          "title": "Forza Motorsport 6",
+          "platform": "Xbox One"
+        }
+      ]
+    },
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "_game": "Dragon Ball Z: Super Saiya Densetsu",
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg"
@@ -342,6 +359,10 @@
     "mxmstr/burnout3recomp": {
       "_game": "Burnout 3: Takedown",
       "title": "Burnout 3: Takedown"
+    },
+    "mysteriousaeon/rayman3-hd-recompiled": {
+      "_game": "Rayman 3 HD",
+      "cover": "https://cdn2.steamgriddb.com/thumb/cfcd83d977652143eb694f5576618fc6.jpg"
     },
     "naegoxdev/sm64-scratch": {
       "title": "Super Mario 64"
@@ -446,6 +467,15 @@
       "_game": "Hard Corps: Uprising",
       "platform": "XBLA (Xbox 360)"
     },
+    "saulob/marvel-ultimate-alliance-bundle-recompiled": {
+      "_game": "Marvel: Ultimate Alliance",
+      "games": [
+        {
+          "title": "Marvel: Ultimate Alliance 2",
+          "platform": "Xbox 360"
+        }
+      ]
+    },
     "shagg88/athelas": {
       "_game": "The Lord of the Rings: The Return of the King",
       "games": [
@@ -465,6 +495,10 @@
     },
     "shmargus/gsrecomp": {
       "title": "Golden Sun"
+    },
+    "sidreshot/openmerc": {
+      "_game": "Soldier of Fortune",
+      "type": "Reimplementation"
     },
     "sonsegajp/hwder": {
       "title": "Hyrule Warriors"
@@ -1643,6 +1677,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/1405b92bd2d27ad3ee55a596b034a7d3.jpg",
       "description": "Experimental Windows recompilation of Super Street Fighter II X with widescreen fight stages and training tools. Bring your own ROMs."
     },
+    "anishchandra24/nhl2k8-recompiled": {
+      "link": "https://github.com/anishchandra24/NHL2K8-Recompiled",
+      "title": "NHL 2K8",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "An unofficial port of NHL 2K8 for the Xbox 360, to PC, done via static recompilation with the ReXGlue SDK. No game files are provided."
+    },
     "anzaldoivan/dino-crisis-2-decomp": {
       "link": "https://github.com/anzaldoivan/dino-crisis-2-decomp",
       "title": "Dino Crisis 2",
@@ -2095,6 +2137,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "gitlab.com/rygt-team/rygt": {
+      "link": "https://gitlab.com/rygt-team/RyGT",
+      "title": "Gran Turismo Sport",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "glinesbdev/mh3u-port": {
       "link": "https://github.com/glinesbdev/mh3u-port",
       "title": "Monster Hunter 3 Ultimate",
@@ -2109,6 +2158,14 @@
       "platform": "PS4",
       "type": "Recompilation",
       "description": "EA SPORTS UFC 3 (PS4) native port for Linux and Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer"
+    },
+    "granassabre/grandia3-pc": {
+      "link": "https://github.com/GranasSabre/Grandia3-PC",
+      "title": "Grandia III",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Grandia III (PS2) as a native PC game via static recompilation - bring your own ISO"
     },
     "gta-reversed/gta-reversed": {
       "link": "https://github.com/gta-reversed/gta-reversed",
@@ -2190,6 +2247,14 @@
       "platform": "Xbox (original)",
       "type": "Recompilation",
       "description": "Static recompilation of Burnout (Xbox, Criterion 2002) to a native Windows build. Ships the tool, not the game: you supply your own disc image."
+    },
+    "hk21x/007eon-recomp": {
+      "link": "https://github.com/hk21x/007eon-recomp",
+      "title": "007: Everything or Nothing",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "007 Everything or Nothing recompilation for a native PC port."
     },
     "hubbydebs/nfs-nitro-ds-port": {
       "link": "https://github.com/HubbyDebs/nfs-nitro-ds-port",
@@ -2382,6 +2447,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "luckvj/streetball-revival": {
+      "link": "https://github.com/luckvj/streetball-revival",
+      "title": "NBA Street Vol. 2",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Complete NBA Street Vol. 2 Rust Remake"
+    },
     "mango77x/mhforever": {
       "link": "https://github.com/Mango77x/MHForever",
       "title": "Monster Hunter Freedom Unite",
@@ -2434,6 +2507,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "matt-pulsipher/gt3-revisited": {
+      "link": "https://github.com/matt-pulsipher/GT3-revisited",
+      "title": "Gran Turismo 3: A-Spec",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Gran Turismo 3 A-Spec engine reimplementation for modern platforms (bring your own disc)"
+    },
     "mattponton/doa3-recomp": {
       "link": "https://github.com/MattPonton/doa3-recomp",
       "title": "Dead or Alive 3",
@@ -2481,6 +2562,14 @@
         "Windows"
       ],
       "description": "Gran Turismo Sport (PS4) as a native Windows program, built on Ryty and shadGT's Vulkan renderer"
+    },
+    "monscriser/hydrothunderport": {
+      "link": "https://github.com/monscriser/HydroThunderPORT",
+      "title": "Hydro Thunder Hurricane",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Hydro Thunder Hurricane: Recompiled  Experimental Windows & Linux Port"
     },
     "morerokk/mhgurecomp": {
       "link": "https://github.com/morerokk/MHGURecomp",
@@ -2550,6 +2639,14 @@
       "pcRelease": "Never released on PC",
       "cover": "https://cdn2.steamgriddb.com/thumb/d2a3705b4550183211b94bf86b710bb5.jpg",
       "description": "GoldenEye007: Reloaded 2011 [Xbox360] game static recompilation project based on RexGlue-SDK"
+    },
+    "norain211/doa2u-re": {
+      "link": "https://github.com/NoRain211/doa2u-re",
+      "title": "Dead or Alive 2 Ultimate",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native Windows port of Dead or Alive 2 Ultimate (Xbox), built by static recompilation with a hand-written runtime. Requires your own copy of the game."
     },
     "nugget1072/dbz-ssw2-godot-port": {
       "link": "https://github.com/Nugget1072/dbz-ssw2-godot-port",
@@ -2742,6 +2839,14 @@
         }
       ]
     },
+    "shagg88/cogbox": {
+      "link": "https://github.com/Shagg88/COGBox",
+      "title": "Gears of War 2",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "This is an open source all-in-one launcher for the amazing series on Xbox 360: \"Gears of War\" franchise. 75% of this amazing series never received a proper remaster, so here I am bringing this project to life! Enjoy!"
+    },
     "shaunsingh/pgr4-native": {
       "link": "https://github.com/shaunsingh/pgr4-native",
       "title": "Project Gotham Racing 4",
@@ -2881,6 +2986,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unofficial native Windows port of ARMORED CORE for Answer (PS3), built from your own copy of the game. Part of Project Glintburn."
+    },
+    "supercatelvis/untildawn_pc": {
+      "link": "https://github.com/SuperCatElvis/UntilDawn_PC",
+      "title": "Until Dawn",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Only a remake or remaster on PC",
+      "description": "PC recompilation of the original Until Dawn (2015), running natively on Windows with a custom Vulkan renderer."
     },
     "supermedo/uncharted_pc": {
       "link": "https://github.com/Supermedo/uncharted_pc",
@@ -3038,6 +3151,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Tekken 5 Dark Resurrection Online Native Port"
+    },
+    "thierbig/iwd2r": {
+      "link": "https://github.com/thierbig/iwd2r",
+      "title": "Icewind Dale II",
+      "platform": "PC",
+      "type": "Decompilation",
+      "pcRelease": "Originally a PC game",
+      "description": "Icewind Dale 2 Resurrected: a cross-platform engine built on the decompiled IWD2 source. Bring your own GOG copy."
     },
     "toowasmir/webofshadowsrecomp": {
       "link": "https://github.com/toowasmir/WebOfShadowsRecomp",
