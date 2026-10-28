@@ -557,6 +557,15 @@ def igdb_query(cid, token, body):
                 time.sleep(2 * (attempt + 1)); continue
             raise
 
+IGDB_PC = 6
+def igdb_pc(g):
+    """Whether a game reached PC, from IGDB's platforms: "yes" (it or a port), "remake" (only a remake or remaster), or "no"."""
+    if IGDB_PC in (g.get("platforms") or []) or any(IGDB_PC in (x.get("platforms") or []) for x in g.get("ports") or [] if isinstance(x, dict)):
+        return "yes"
+    if any(IGDB_PC in (x.get("platforms") or []) for x in (g.get("remakes") or []) + (g.get("remasters") or []) if isinstance(x, dict)):
+        return "remake"
+    return "no"
+
 def igdb_match(title, results):
     q, best = norm(title), None
     for g in results or []:
@@ -608,8 +617,8 @@ def refresh_screens(projects, overrides):
             queues[1].append(item); continue        # missed under older matching rules: one more try
         if g.get("id") and g.get("rev", 0) < 2 and len(g.get("shots") or []) < 3:
             queues[2].append(item); continue        # thin results from before other versions were added
-        if g.get("id") and ("nsfw" not in g or "cover" not in g):
-            queues[3].append(item); continue        # found before the theme check or covers existed
+        if g.get("id") and ("nsfw" not in g or "cover" not in g or "pc" not in g):
+            queues[3].append(item); continue        # found before the theme check, covers or PC release existed
         if not g.get("id") and (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days >= 30:
             queues[1].append(item)                  # missed more than 30 days ago: try again
     todo = [x for qu in queues for x in qu]
@@ -619,7 +628,7 @@ def refresh_screens(projects, overrides):
     for q, title, pid, plat in todo[:MAX_IGDB]:
         safe = bare_title(title).replace('"', "").replace("\\", "")
         try:
-            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes,cover.image_id; where platforms = ({pid}); limit 10;')
+            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes,cover.image_id,platforms,ports.platforms,remakes.platforms,remasters.platforms; where platforms = ({pid}); limit 10;')
         except Exception as e:
             log(f"  {title}: IGDB error ({e})")
             time.sleep(0.3)
@@ -630,7 +639,8 @@ def refresh_screens(projects, overrides):
             score, g = m
             shots = [x["image_id"] for x in (g.get("screenshots") or []) if x.get("image_id")][:8]
             entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": IGDB_REV,
-                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or []), "cover": (g.get("cover") or {}).get("image_id") or ""}
+                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or []), "cover": (g.get("cover") or {}).get("image_id") or "",
+                     "pc": igdb_pc(g)}
             if len(shots) < 3:
                 # thin results: add screenshots from the same game's other platform versions
                 n0 = len(shots)

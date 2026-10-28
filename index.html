@@ -599,6 +599,12 @@ function readmeShots(text,full){
   return out;
 }
 const IGDB_IMG=(id,size)=>"https://images.igdb.com/igdb/image/upload/t_"+size+"/"+id+".jpg";
+// PC release from IGDB's platforms, used only where nobody has set it
+function autoPs(platform,g){
+  if(platform==="PC")return "Originally a PC game";
+  if(!g||!g.id||!g.pc)return "";
+  return g.pc==="yes"?"Also on PC (console version ported)":g.pc==="remake"?"Only a remake or remaster on PC":"Never released on PC";
+}
 function igdbGame(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];return (q&&sc.games[q])||null;}
 function igdbCover(v){const g=igdbGame(v.p,v);return g&&g.cover?{u:IGDB_IMG(g.cover,"cover_big"),s:"IGDB",page:g.name||""}:null;}
 function igdbFor(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
@@ -800,13 +806,14 @@ function view(p){
   const updated=newest(lastCommit,rel&&rel.date);
   const stars=(m.repo&&m.repo.stars)!=null?m.repo.stars:(aw&&aw.stars!=null?aw.stars:(p.stars||0));
   const gone=m.notFound||(aw&&!aw.linkOk);
-  const ps=ov.ps||so.pcRelease||p.ps||"Not checked";
+  let ps=ov.ps||so.pcRelease||p.ps||"Not checked",psSrc="";
+  if(ps==="Not checked"){const a=autoPs(platform,igdbGame(p,null));if(a){ps=a;psSrc="IGDB";}}
   let play="unknown";
   if(ov.play)play=ov.play;
   else if(rel&&rel.tag)play="yes";
   else if(m.noRelease||(aw&&!aw.rel)||(/Awesome/.test(p.src||"")&&!p.rel))play="no";
   const risk=lureRiskOf(p.k,m,(m.repo&&m.repo.stars)!=null?m.repo.stars:(p.stars||0));
-  return {p,m,aw,ps,play,so,risk,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
+  return {p,m,aw,ps,psSrc,play,so,risk,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
 }
 
 /* ---------------- GitHub / GitLab ---------------- */
@@ -1388,14 +1395,18 @@ function groupKeyOf(v){
 }
 function parseGames(x){
   if(!x)return [];const arr=Array.isArray(x)?x:String(x).split(/\n+/);
-  return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim()};
+  return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim(),pcRelease:e.pcRelease||""};
     const [t,pl]=String(e).split("|").map(z=>z.trim());return {title:t||"",platform:pl||""};}).filter(e=>e.title);
 }
 function gamesOf(v){
   const lo=S.ov[v.p.id]||{},so=v.so||{};const list=parseGames(lo.games!=null?lo.games:(so.games||v.p.games));
-  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
+  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform,pcRelease:g.pcRelease||""})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
 }
-function ghostView(v,g){return Object.assign({},v,{game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});}
+function ghostView(v,g){const gv=Object.assign({},v,{game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});
+  // each other game has its own PC history: its own value if set, otherwise IGDB's; never the main game's
+  if(g.pcRelease&&PS.includes(g.pcRelease)){gv.ps=g.pcRelease;gv.psSrc="";}
+  else{const a=autoPs(g.platform,igdbGame(v.p,gv));gv.ps=a||"Not checked";gv.psSrc=a?"IGDB":"";}
+  return gv;}
 function expandViews(vs){const out=[];for(const v of vs){out.push(v);for(const g of gamesOf(v))out.push(ghostView(v,g));}return out;}
 function rankItems(a,b){return ((b.play==="yes")-(a.play==="yes"))||((b.stars||0)-(a.stars||0))||(b.updated||"").localeCompare(a.updated||"");}
 function groupsOf(vs){
@@ -1488,7 +1499,7 @@ function detailHTML(v,head){
           return `<button class="chipbtn${cur?" cur":""}" data-gogame="${esc(gk)}" data-id="${esc(v.p.id)}" ${cur?'aria-current="true"':""}>${esc(g.title)} <small>${esc(g.platform)}</small></button>`;}).join("")}</div>`;})()}
       <dl class="kv"><dt>Type</dt><dd>${esc(v.type)}</dd><dt>Original platform</dt><dd>${esc(v.platform)}</dd>
       <dt>Playability</dt><dd>${playPill(v)} <span class="note">${v.play==="yes"?"a public release is available":v.play==="no"?"no public release found yet":"not checked yet"}${(S.ov[p.id]||{}).play?" (set by you)":""}</span></dd>
-      <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")})</span></dd>
+      <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")}${v.psSrc?"; from IGDB, change it in the edits if it's wrong":""})</span></dd>
       ${v.so&&Object.keys(v.so).some(k=>k!=="note"&&!k.startsWith("_"))?`<dt>Shared fixes</dt><dd>${esc(Object.keys(v.so).filter(k=>k!=="note"&&!k.startsWith("_")).map(k=>({title:"title",cover:"cover",platform:"platform",type:"type",pcRelease:"PC release",runsOn:"runs on"}[k]||k)).join(", "))} set by the maintainer${v.so.note?" · "+esc(v.so.note):""}</dd>`:""}
       <dt>Last updated</dt><dd>${v.updated?esc(fmtDate(v.updated))+" ("+esc(ago(v.updated))+")":"Unknown"}</dd>
       <dt>Latest release</dt><dd>${v.rel&&v.rel.tag?(v.rel.url?`<a href="${esc(v.rel.url)}" target="_blank" rel="noopener">${esc(v.rel.tag)}</a>`:esc(v.rel.tag))+(v.rel.date?" · "+esc(fmtDate(v.rel.date)):""):"None found"}</dd>
@@ -1786,7 +1797,7 @@ $("#view").addEventListener("click",e=>{
   if(onDetailClick(e))return;
   const gg=e.target.closest("[data-gogame]");if(gg){goGame(gg.dataset.gogame,gg.dataset.id);return;}
   const gt=e.target.closest("[data-gtab]");if(gt){const sl=gt.parentElement.scrollLeft;UI.sel[gt.dataset.gk]=gt.dataset.gtab;render();const bar=document.querySelector(`.row[data-gk="${CSS.escape(gt.dataset.gk)}"]`);const nb=bar&&bar.parentElement.querySelector(".ptabs");if(nb)nb.scrollLeft=sl;return;}
-  const tile=e.target.closest(".tile");if(tile){openProject(UI.sel[tile.dataset.gk]||tile.dataset.id);return;}
+  const tile=e.target.closest(".tile");if(tile){openProject(UI.sel[tile.dataset.gk]||tile.dataset.id,tile.dataset.gk);return;}
   const row=e.target.closest(".row");if(row){toggleRow(row.dataset.gk);return;}
   if(e.target.id==="moreBtn"){UI.limit+=150;render();return;}
   if(e.target.id==="emptyClear"){clearFilters();return;}
@@ -1796,7 +1807,7 @@ $("#view").addEventListener("click",e=>{
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];UI.open=null;save();renderAll();}return;}
 });
 $("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("row")){e.preventDefault();toggleRow(e.target.dataset.gk);}
-  else if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("tile")){e.preventDefault();openProject(e.target.dataset.id);}});
+  else if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("tile")){e.preventDefault();openProject(UI.sel[e.target.dataset.gk]||e.target.dataset.id,e.target.dataset.gk);}});
 $("#fFollow").addEventListener("change",e=>{UI.followed=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fRisky").addEventListener("change",e=>{UI.showRisky=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fGone").addEventListener("change",e=>{UI.showGone=e.target.checked;UI.limit=150;renderFilters();render();});

@@ -172,9 +172,9 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `cover` | A cover image link. It's used instead of any looked-up cover. |
 | `platform` | The original platform, written as in Port Watch's filters, such as `Xbox 360`, `XBLA (Xbox 360)`, `Mobile`, or `PC` for games that began on PC. Xbox Live Arcade games recorded as `Xbox 360` are shown as XBLA automatically. |
 | `type` | `Recompilation`, `Decompilation`, `Source Port`, `Reimplementation` or `Compatibility layer`. **Source Port** is a game's own code brought to modern systems (DevilutionX for Diablo); **Reimplementation** is a new engine written from scratch (SiegeFX for Dungeon Siege). |
-| `pcRelease` | One of the **PC release** values shown in Port Watch's filters. |
+| `pcRelease` | One of the **PC release** values shown in Port Watch's filters. Where nobody has set one, Port Watch fills it in from IGDB's platform list (the game itself, its ports, remakes and remasters) and labels it "from IGDB". IGDB can't tell when a PC version is a different game, so set that by hand. |
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
-| `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. The project then appears under each of those games too, with its own cover and screenshots. |
+| `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. Each entry can also have its own `pcRelease`; otherwise it comes from IGDB, never from the main game. The project then appears under each of those games too, with its own cover and screenshots. |
 | `hideScreens` | Screenshot links to leave out. |
 | `nsfw` | `true` blurs the project's cover and screenshots as suggestive; `false` stops it being blurred. |
 | `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
