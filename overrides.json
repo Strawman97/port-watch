@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -318,6 +318,10 @@
     "mkw-sp/mkw-sp": {
       "title": "Mario Kart Wii"
     },
+    "monscriser/hydrothunderport": {
+      "_game": "Hydro Thunder Hurricane",
+      "pcRelease": "Also on PC (console version ported)"
+    },
     "mstan/fireredleafgreenrecomp": {
       "_game": "Pokémon FireRed and LeafGreen",
       "title": "Pokémon FireRed Version",
@@ -490,6 +494,19 @@
         {
           "title": "The Lord of the Rings: The Fellowship of the Ring",
           "platform": "Xbox (original)"
+        }
+      ]
+    },
+    "shagg88/cogbox": {
+      "_game": "Gears of War 2",
+      "games": [
+        {
+          "title": "Gears of War 3",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War: Judgement",
+          "platform": "Xbox 360"
         }
       ]
     },
@@ -1677,6 +1694,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/1405b92bd2d27ad3ee55a596b034a7d3.jpg",
       "description": "Experimental Windows recompilation of Super Street Fighter II X with widescreen fight stages and training tools. Bring your own ROMs."
     },
+    "anishchandra24/juiced2-recompiled": {
+      "link": "https://github.com/anishchandra24/Juiced2-Recompiled",
+      "title": "Juiced 2: Hot Import Nights",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Unofficial native Windows port of Juiced 2: Hot Import Nights for the Xbox 360, made with static recompilation via the ReXGlue SDK. Early preview. Contains no game files."
+    },
     "anishchandra24/nhl2k8-recompiled": {
       "link": "https://github.com/anishchandra24/NHL2K8-Recompiled",
       "title": "NHL 2K8",
@@ -1796,6 +1821,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "bromurok/thekingoffightersneowaverecomp": {
+      "link": "https://github.com/bromurok/TheKingofFightersNeowaveRecomp",
+      "title": "The King of Fighters: Neowave",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "caiuscodes/goldeneye-007-xbla-pc-recomp": {
       "link": "https://github.com/CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
       "title": "Golden Eye 007",
@@ -1809,6 +1841,15 @@
       "platform": "N64",
       "type": "Recompilation",
       "description": "Native PC port of Ken Griffey Jr.'s Slugfest (N64) via static recompilation"
+    },
+    "camybiohazard/project-veronicax": {
+      "link": "https://github.com/camybiohazard/Project-VeronicaX",
+      "title": "Resident Evil Code: Veronica X",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg",
+      "description": "Static recompilation of Resident Evil Code: Veronica X (Xbox 360) with ReXGlue. No game files included."
     },
     "canersaka/yakuza-dead-souls-recompiled": {
       "link": "https://github.com/canersaka/Yakuza-Dead-Souls-Recompiled",
@@ -1941,6 +1982,14 @@
       "type": "Reimplementation",
       "description": "Clean room remake of Bejeweled 3",
       "pcRelease": "Originally a PC game"
+    },
+    "cultofblue/mktrilogyn64recomp": {
+      "link": "https://github.com/cultofblue/MKTrilogyN64Recomp",
+      "title": "Mortal Kombat Trilogy",
+      "platform": "N64",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native recompilation of Mortal Kombat Trilogy for N64"
     },
     "danielcoffey1/fable-anniversary-pc": {
       "link": "https://github.com/DanielCoffey1/Fable-Anniversary-PC",
@@ -2248,6 +2297,14 @@
       "type": "Recompilation",
       "description": "Static recompilation of Burnout (Xbox, Criterion 2002) to a native Windows build. Ships the tool, not the game: you supply your own disc image."
     },
+    "highdrexler/racit": {
+      "link": "https://github.com/HighDrexler/RACiT",
+      "title": "Ratchet & Clank: A Crack in Time",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "RACiT."
+    },
     "hk21x/007eon-recomp": {
       "link": "https://github.com/hk21x/007eon-recomp",
       "title": "007: Everything or Nothing",
@@ -2380,6 +2437,15 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unofficial experimental Windows port of The Incredible Crash Dummies for Game Boy. Native C++/Win32, keyboard and XInput; original ROM required."
+    },
+    "kastieloficial/re-code-veronica-ps3-hd-recomp-pc": {
+      "link": "https://github.com/kastieloficial/RE-Code-Veronica-PS3-HD-Recomp-PC",
+      "title": "Resident Evil Code: Veronica X",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg",
+      "description": "Resident Evil Code: Veronica X HD - PS3 static recompilation port (hobby, no game data)"
     },
     "kastieloficial/re-code-veronica-recomp": {
       "link": "https://github.com/kastieloficial/RE-Code-Veronica-Recomp",
@@ -2791,6 +2857,14 @@
         }
       ]
     },
+    "saulob/odin-sphere-leifthrasir-pc": {
+      "link": "https://github.com/saulob/odin-sphere-leifthrasir-pc",
+      "title": "Odin Sphere Leifthrasir",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Odin Sphere Leifthrasir native PC port for Windows, with direct PS4 PKG installation, TRG launcher and modern graphics options"
+    },
     "saulob/ssf2t-hd-remix-recompiled": {
       "link": "https://github.com/saulob/ssf2t-hd-remix-recompiled",
       "title": "Super Street Fighter II Turbo HD Remix",
@@ -2820,6 +2894,14 @@
       "platform": "PS2",
       "type": "Recompilation",
       "description": "Noble Archimedes - Castlevania CoD Recomp. Experimental source-only Windows recompilation host; native and PCSX2 GS paths; 60 FPS gameplay remains a target."
+    },
+    "seveerj/orta_pc_recomp": {
+      "link": "https://github.com/SeveerJ/Orta_PC_Recomp",
+      "title": "Panzer Dragoon Orta",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static Recompilation of Panzer Dragoon Orta, fully AI powered"
     },
     "shagg88/athelas": {
       "link": "https://github.com/Shagg88/Athelas",
@@ -2938,6 +3020,14 @@
           "platform": "Dreamcast"
         }
       ]
+    },
+    "solleo95/reuc-recomp": {
+      "link": "https://github.com/solleo95/reuc-recomp",
+      "title": "Resident Evil: The Umbrella Chronicles",
+      "platform": "Wii",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Resident Evil: The Umbrella Chronicles running natively on Windows: unlocked FPS, mouse aiming, DLSS / FSR 3.1 + frame generation, ray-traced shadows, HDR, Lua/JS/DLL mods, online co-op. Bring your own NTSC-U (RBUE08) image."
     },
     "sp00nznet/bloodwake": {
       "link": "https://github.com/sp00nznet/bloodwake",
@@ -3184,6 +3274,14 @@
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Killzone: Liberation (PSP) to native Windows / Direct3D 12. Bring your own ISO."
     },
+    "undecuple/project-helghast": {
+      "link": "https://github.com/undecuple/project-helghast",
+      "title": "Killzone 3",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game."
+    },
     "used255/artonelico2-decomp": {
       "link": "https://github.com/USED255/artonelico2-decomp",
       "title": "Ar tonelico II: Melody of Metafalica",
@@ -3199,6 +3297,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unofficial native PC port of inFAMOUS First Light (PS4). Bring your own game dump - no game files included."
+    },
+    "victor-takai/rogue-galaxy-recomp": {
+      "link": "https://github.com/victor-takai/rogue-galaxy-recomp",
+      "title": "Rogue Galaxy",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Rogue Galaxy (PS2) to a native PC executable, on PS2Recomp"
     },
     "vinceip/fci-recomp": {
       "link": "https://github.com/VinceIP/fci-recomp",
@@ -3308,6 +3414,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Native C/C++ recompilation research for White Knight Chronicles II (PS3)."
+    },
+    "wrexxial/harmonyrecomp": {
+      "link": "https://github.com/Wrexxial/HarmonyRecomp",
+      "title": "Castlevania: Harmony of Despair",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "xzhuofan/cryrecomp": {
       "link": "https://github.com/xzhuofan/CryRecomp",
