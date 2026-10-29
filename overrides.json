@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -120,6 +120,10 @@
       "platform": "XBLA (Xbox 360)",
       "title": "GoldenEye 007"
     },
+    "camybiohazard/project-veronicax": {
+      "_game": "Resident Evil Code: Veronica X",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
+    },
     "carlsonic/sonic-riders-gc-decompilation": {
       "_game": "Sonic Riders",
       "platform": "GameCube",
@@ -164,6 +168,10 @@
       "title": "Mario Kart 8 Deluxe",
       "cover": "https://cdn2.steamgriddb.com/thumb/9cd6d894098e748716960bfcf9dbe115.jpg",
       "pcRelease": "Never released on PC"
+    },
+    "duislingr/cro-u": {
+      "_game": "Chaos Rings Omega",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ee8b4c652d80b1098423aa08ea22756e.jpg"
     },
     "dyotson/forzahorizon1-reimagined": {
       "title": "Forza Horizon"
@@ -273,6 +281,10 @@
     "kandowontu2/starfox-enhanced": {
       "title": "Star Fox"
     },
+    "kastieloficial/re-code-veronica-ps3-hd-recomp-pc": {
+      "_game": "Resident Evil Code: Veronica X",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
+    },
     "kastieloficial/re-code-veronica-recomp": {
       "_game": "Resident Evil Code: Veronica X",
       "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
@@ -317,6 +329,10 @@
     },
     "mkw-sp/mkw-sp": {
       "title": "Mario Kart Wii"
+    },
+    "moesuito/gt4-staticrecomp": {
+      "_game": "Gran Turismo 4",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a27804f1148c12b96c96d0b5b2e98ebe.jpg"
     },
     "monscriser/hydrothunderport": {
       "_game": "Hydro Thunder Hurricane",
@@ -607,6 +623,10 @@
     "wivi514/dead_rising_2_case_zero_xenon_recomp": {
       "_game": "Dead Rising 2: Case Zero",
       "cover": "https://cdn2.steamgriddb.com/thumb/8f84bc859ab19fe4c85b572b458c47ed.jpg"
+    },
+    "wrexxial/harmonyrecomp": {
+      "_game": "Castlevania: Harmony of Despair",
+      "platform": "XBLA (Xbox 360)"
     },
     "xandoxan65/segarally95-recomp": {
       "title": "SEGA Rally Championship"
@@ -1806,6 +1826,14 @@
       "pcRelease": "Never released on PC",
       "description": "An experimental PC port / recompilation project for Medal of Honor: European Assault Xbox"
     },
+    "boyclinton/cha-cha": {
+      "link": "https://github.com/BoyClinton/Cha-Cha",
+      "title": "Monster Hunter 3 Ultimate",
+      "platform": "Wii U",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Cha-Cha: A MH3U Recomp. Monster Hunter 3 Ultimate running natively on Windows and Linux. Bring your own dump."
+    },
     "brian-oblivion/pepsiman-decomp": {
       "link": "https://github.com/brian-oblivion/pepsiman-decomp",
       "title": "Pepsiman",
@@ -2073,6 +2101,24 @@
       "description": "CR1:U - a from-scratch reimplementation of Chaos Rings (iPad HD 1.0.1, iPhone 2.2.0, PS Vita). Bring your own copy; no game data included.",
       "pcRelease": "Never released on PC"
     },
+    "duislingr/cr2-u": {
+      "link": "https://github.com/DuIslingr/CR2-U",
+      "title": "Chaos Rings II",
+      "platform": "Mobile",
+      "type": "Reimplementation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/4f8d35a2c19b430277cd4c8b5b86ecab.jpg",
+      "description": "CR2-U - a from-scratch reimplementation of Chaos Rings II (iPad 2.1.0, Android 2.1.2, PS Vita). Bring your own copy; no game data included."
+    },
+    "duislingr/cr3-u": {
+      "link": "https://github.com/DuIslingr/CR3-U",
+      "title": "Chaos Rings III",
+      "platform": "Mobile",
+      "type": "Reimplementation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ef7b0a97e48beffaf5f2b873f4137408.jpg",
+      "description": "CR3-U - a from-scratch reimplementation of Chaos Rings III (iOS 1.2.2, Android 1.1.3, PS Vita). Bring your own copy; no game data included."
+    },
     "duislingr/cro-u": {
       "link": "https://github.com/DuIslingr/CRO-U",
       "title": "Chaos Rings Omega",
@@ -2274,6 +2320,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Native PC port (Linux/Windows) of The Last Guardian (PS4, CUSA03627) — runs your own game dump; no game or firmware files included. Mouse/keyboard, optional 60 FPS, SMAA/CAS filters. | Port nativo para PC de The Last Guardian — usa o seu próprio dump."
+    },
+    "hekamiaeon/sakura-wars-ps4rt": {
+      "link": "https://github.com/HekamiAeon/Sakura-Wars-PS4RT",
+      "title": "Sakura Wars",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/49a71cf1f087a3bd58c69cd8f3305420.jpg"
     },
     "hekamiaeon/star-ocean-integrity-and-faithlessness-ps4rt": {
       "link": "https://github.com/HekamiAeon/Star-Ocean-Integrity-and-Faithlessness-PS4RT",
@@ -2773,6 +2827,22 @@
       "platform": "PS4",
       "type": "Recompilation",
       "description": "Experimental native runtime for Gravity Rush Remastered and Gravity Rush 2 on Windows 10 and 11 built on the native PC port base by Supermedo and deadinside28"
+    },
+    "project-holon/aletheia": {
+      "link": "https://github.com/Project-Holon/aletheia",
+      "title": "Pokemon Black Version",
+      "platform": "DS",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "From-scratch byte-matching decompilation of Pokemon Black"
+    },
+    "project-holon/eidos": {
+      "link": "https://github.com/Project-Holon/eidos",
+      "title": "Pokemon Black Version",
+      "platform": "DS",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port of Pokemon Black and White, built on aletheia"
     },
     "randomno/pinball-decomp": {
       "link": "https://github.com/Randomno/pinball-decomp",
