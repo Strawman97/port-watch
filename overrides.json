@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-29",
+  "updated": "2026-10-31",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -169,6 +169,16 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/9cd6d894098e748716960bfcf9dbe115.jpg",
       "pcRelease": "Never released on PC"
     },
+    "duislingr/cr2-u": {
+      "_game": "Chaos Rings II",
+      "cover": "https://cdn2.steamgriddb.com/thumb/4f8d35a2c19b430277cd4c8b5b86ecab.jpg",
+      "type": "Reimplementation"
+    },
+    "duislingr/cr3-u": {
+      "_game": "Chaos Rings III",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ef7b0a97e48beffaf5f2b873f4137408.jpg",
+      "type": "Reimplementation"
+    },
     "duislingr/cro-u": {
       "_game": "Chaos Rings Omega",
       "cover": "https://cdn2.steamgriddb.com/thumb/ee8b4c652d80b1098423aa08ea22756e.jpg"
@@ -235,6 +245,10 @@
     "hayatog/dusklight": {
       "title": "The Legend of Zelda: Twilight Princess"
     },
+    "hekamiaeon/sakura-wars-ps4rt": {
+      "_game": "Sakura Wars",
+      "cover": "https://cdn2.steamgriddb.com/thumb/49a71cf1f087a3bd58c69cd8f3305420.jpg"
+    },
     "hekamiaeon/valkyria-revolution-ps4rt": {
       "_game": "Valkyria Revolution",
       "cover": "https://cdn2.steamgriddb.com/thumb/3783b2997aa60fea365daf96a6754cf6.jpg"
@@ -270,6 +284,9 @@
           "platform": "Xbox One"
         }
       ]
+    },
+    "jackgllghr/bigmission-recomp": {
+      "title": "Saru Getchu: Million Monkeys"
     },
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "_game": "Dragon Ball Z: Super Saiya Densetsu",
@@ -441,6 +458,15 @@
     "pranchad/re-sonic06demo": {
       "title": "Sonic the Hedgehog (2006)"
     },
+    "project-holon/eidos": {
+      "_game": "Pokemon Black Version",
+      "games": [
+        {
+          "title": "Pokemon White Version",
+          "platform": "NDS"
+        }
+      ]
+    },
     "rafidwayne/speedbreaker": {
       "_game": "Need for Speed: Most Wanted",
       "hide": true,
@@ -510,6 +536,10 @@
         {
           "title": "The Lord of the Rings: The Fellowship of the Ring",
           "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
         }
       ]
     },
@@ -522,6 +552,10 @@
         },
         {
           "title": "Gears of War: Judgement",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War",
           "platform": "Xbox 360"
         }
       ]
@@ -1770,6 +1804,14 @@
       "pcRelease": "Never released on PC",
       "description": "Unofficial PC port of Naruto: The Broken Bond (Xbox 360) - static recompilation with a full PC options menu. Bring your own game ISO."
     },
+    "badcompany94-rcmp/project-tandem": {
+      "link": "https://github.com/badcompany94-rcmp/project-tandem",
+      "title": "Mario Kart: Double Dash!!",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Play Mario Kart: Double Dash!! online on Windows. Project Tandem is a native PC recompilation with 2-8 player solo/shared-kart multiplayer, widescreen, and mouse/keyboard controls. Requires your own compatible USA disc image."
+    },
     "banatic/acww-decomp": {
       "link": "https://github.com/banatic/acww-decomp",
       "title": "Animal Crossing: Wild World",
@@ -2247,12 +2289,28 @@
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Monster Hunter 3 Ultimate (Wii U, USA) to native Windows and Linux. Bring your own legally dumped copy; no game files included."
     },
+    "gminustwo/msr2ds": {
+      "link": "https://github.com/gminustwo/msr2ds",
+      "title": "Metroid: Samus Returns",
+      "platform": "3DS",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Metroid: Samus Returns as a single-screen PC game, built on the Azahar 3DS emulator. Bring your own dump."
+    },
     "gnsb/ufc-3-ps4-port-linux-windows": {
       "link": "https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS",
       "title": "EA SPORTS UFC 3",
       "platform": "PS4",
       "type": "Recompilation",
       "description": "EA SPORTS UFC 3 (PS4) native port for Linux and Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer"
+    },
+    "gothamor/gta-vcs-recomp": {
+      "link": "https://github.com/gothamor/gta-vcs-recomp",
+      "title": "Grand Theft Auto: Vice City Stories",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native Windows and Linux port of Grand Theft Auto: Vice City Stories (PS2, USA, SLUS-21590), made by recompiling the game's PS2 executable into C++"
     },
     "granassabre/grandia3-pc": {
       "link": "https://github.com/GranasSabre/Grandia3-PC",
@@ -2366,6 +2424,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "007 Everything or Nothing recompilation for a native PC port."
+    },
+    "hk21x/nightfire-recomp": {
+      "link": "https://github.com/hk21x/nightfire-recomp",
+      "title": "007 Nightfire",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game",
+      "description": "007 Nightfire recompilation for a native PC port."
     },
     "hubbydebs/nfs-nitro-ds-port": {
       "link": "https://github.com/HubbyDebs/nfs-nitro-ds-port",
@@ -2813,6 +2879,14 @@
       "type": "Compatibility layer",
       "pcRelease": "Never released on PC"
     },
+    "onerag90/fe3h-recomp": {
+      "link": "https://github.com/onerag90/fe3h-recomp",
+      "title": "Fire Emblem: Three Houses",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Fire Emblem: Three Houses (Switch) to native Windows"
+    },
     "openportroid/armyoftworecompilation": {
       "link": "https://github.com/OpenPortroid/ArmyOfTwoRecompilation",
       "title": "Army of Two",
@@ -2885,6 +2959,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Luigi's Mansion Recompiled: a PC port of Luigi's Mansion (GameCube) built from your own disc"
+    },
+    "rotmill/dino-crisis-modern-edition": {
+      "link": "https://github.com/Rotmill/Dino-Crisis-Modern-Edition",
+      "title": "Dino Crisis",
+      "platform": "PS1",
+      "type": "",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Fan mod of Dino Crisis (PS1). It brings a modern Resident evil Remakes like over-the-shoulder camera, updated controls, visual/gameplay improvements, and plenty of Quality of Life settings to customize the experience to your liking."
     },
     "sackchief/dqix-enhanced": {
       "link": "https://github.com/sackchief/dqix-enhanced",
@@ -3202,6 +3284,14 @@
       "pcRelease": "Never released on PC",
       "description": "Byte-matching decompilation project for Monster Hunter Portable 2nd G"
     },
+    "tekrantgaming/trials-revolution-collection": {
+      "link": "https://github.com/TekRantGaming/Trials-ReVolution-Collection",
+      "title": "Trials HD",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Trials HD, Trials Evolution and Trials Fusion on PC, recompiled from the Xbox 360 games, with their DLC, in one launcher"
+    },
     "tgp482/007frwl-xberecomp": {
       "link": "https://github.com/TGP482/007FRWL-XBERecomp",
       "title": "007: From Russia With Love",
@@ -3360,6 +3450,14 @@
       "pcRelease": "Never released on PC",
       "description": "Ar tonelico II: Melody of Metafalica — matching decompilation (SLPS_258.19)"
     },
+    "valentderah/totk-pc-recomp": {
+      "link": "https://github.com/valentderah/totk-pc-recomp",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows x86-64, with a Vulkan renderer. Game files not included."
+    },
     "vantageex/infamous-first-light-pc": {
       "link": "https://github.com/VantageEX/infamous-first-light-pc",
       "title": "inFAMOUS First Light",
@@ -3513,6 +3611,14 @@
       "platform": "PS3",
       "type": "Recompilation",
       "description": "Experimental Imabikisou PS3-to-PC recompilation using ps3recomp, with script tools and an AI-assisted English machine-translation preview."
+    },
+    "yaz-myst/zoe-recompiled": {
+      "link": "https://github.com/Yaz-Myst/ZOE-Recompiled",
+      "title": "Zone of the Enders",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Zone of the Enders - Static Recompilation Project for PC"
     },
     "yeraydien/castaway_recomp": {
       "link": "https://github.com/YerayDien/castaway_recomp",
