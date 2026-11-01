@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -598,6 +598,19 @@
     "tekrantgaming/king-kong-recompiled": {
       "_game": "Peter Jackson's King Kong",
       "cover": "https://cdn2.steamgriddb.com/thumb/94e1efbe349498e6c22ad4f42b236631.jpg"
+    },
+    "tekrantgaming/trials-revolution-collection": {
+      "_game": "Trials HD",
+      "games": [
+        {
+          "title": "Trials Evolution",
+          "platform": "XBLA (Xbox 360)"
+        },
+        {
+          "title": "Trials Fusion",
+          "platform": "XBLA (Xbox 360)"
+        }
+      ]
     },
     "thedoffman/timesplitters-future-perfect-pc": {
       "_game": "Timesplitters Future Perfect",
@@ -1868,6 +1881,14 @@
       "pcRelease": "Never released on PC",
       "description": "An experimental PC port / recompilation project for Medal of Honor: European Assault Xbox"
     },
+    "boubou666/vp2s_recomp": {
+      "link": "https://github.com/boubou666/VP2S_Recomp",
+      "title": "Valkyrie Profile 2: Silmeria",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port of Valkyrie Profile 2: Silmeria (PAL, SLES-54645) by static recompilation with PS2Recomp. No game data or keys included."
+    },
     "boyclinton/cha-cha": {
       "link": "https://github.com/BoyClinton/Cha-Cha",
       "title": "Monster Hunter 3 Ultimate",
@@ -2075,6 +2096,30 @@
       "type": "Recompilation",
       "description": "Fable III Xbox 360 static recompilation research with ReXGlue; initial analysis, not yet playable"
     },
+    "darkuni/castlevania-rebirth-recomp": {
+      "link": "https://github.com/darkuni/castlevania-rebirth-recomp",
+      "title": "Castlevania: The Adventure ReBirth",
+      "platform": "Wii",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A recompile of a WiiWare game."
+    },
+    "darkuni/contra-rebirth-recomp": {
+      "link": "https://github.com/darkuni/contra-rebirth-recomp",
+      "title": "Contra ReBirth",
+      "platform": "Wii",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A recompile of the WiiWare game."
+    },
+    "darkuni/gradius-rebirth-recomp": {
+      "link": "https://github.com/darkuni/gradius-rebirth-recomp",
+      "title": "Gradius ReBirth",
+      "platform": "Wii",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A decompiled and recompiled version of a WiiWare game."
+    },
     "datibrr/ae3-pc": {
       "link": "https://github.com/datibrr/ae3-pc",
       "title": "Ape Escape 3",
@@ -2220,6 +2265,13 @@
         }
       ]
     },
+    "g-guthrie/mvc2-ps2-decomp": {
+      "link": "https://github.com/g-guthrie/mvc2-ps2-decomp",
+      "title": "Marvel vs. Capcom 2: New Age of Heroes",
+      "platform": "PS2",
+      "type": "Decompilation",
+      "pcRelease": "Also on PC (console version ported)"
+    },
     "gaberealb/parasite-eve-2-decomp": {
       "link": "https://github.com/GabeRealB/parasite-eve-2-decomp",
       "title": "Parasite Eve 2",
@@ -2267,6 +2319,13 @@
       "pcRelease": "Also on PC (console version ported)",
       "description": "Native C++20 rebuild of The House of the Dead 2 with online co-op, extra modes, and modern controls. Complete download-and-play Windows package in Releases."
     },
+    "gitlab.com/onerag90/fe3h-recomp": {
+      "link": "https://gitlab.com/onerag90/fe3h-recomp",
+      "title": "Fire Emblem: Three Houses",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "gitlab.com/pacific-city-recompiled/crackdown-recomp": {
       "link": "https://gitlab.com/pacific-city-recompiled/crackdown-recomp",
       "title": "Crackdown",
@@ -2288,6 +2347,15 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Monster Hunter 3 Ultimate (Wii U, USA) to native Windows and Linux. Bring your own legally dumped copy; no game files included."
+    },
+    "glitxhhh/xenobladechroniclesrecompiled": {
+      "link": "https://github.com/Glitxhhh/XenobladeChroniclesRecompiled",
+      "title": "Xenoblade Chronicles: Definitive Edition",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9374ef3d53a00c33de62be93467ec04d.jpg",
+      "description": "Recompilations & PC Ports of the Xenoblade Chronicles Series"
     },
     "gminustwo/msr2ds": {
       "link": "https://github.com/gminustwo/msr2ds",
@@ -2352,6 +2420,15 @@
       "pcRelease": "Never released on PC",
       "description": "Shadow of the Colossus (PS4, CUSA08809) running natively on Windows — fork of the Bloodborne PC port (bbport) runtime and its shadPS4-based Vulkan renderer"
     },
+    "gustavomorinaga/project-vekta": {
+      "link": "https://github.com/gustavomorinaga/project-vekta",
+      "title": "Killzone HD",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/cd97a1b65a03e2c63c60ad12db864b38.jpg",
+      "description": "Killzone HD // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game."
+    },
     "hachi23/unicorn_overlord_pc": {
       "link": "https://github.com/hachi23/unicorn_overlord_pc",
       "title": "Unicorn Overlord",
@@ -2359,6 +2436,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unicorn Overlord (PS4) native PC port"
+    },
+    "harskov/fate-unlimited-codes-jp": {
+      "link": "https://github.com/Harskov/fate-unlimited-codes-jp",
+      "title": "Fate/Unlimited Codes",
+      "platform": "PS2",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Matching decompilation of Fate/Unlimited Codes (Japan, SLPM_551.08) for PlayStation 2"
     },
     "hayatog/iss_pc": {
       "link": "https://github.com/HayatoG/iss_pc",
@@ -2464,6 +2549,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg",
       "description": "Dragon Ball Z: Super Saiya Densetsu (SNES) — Classic, Recompiled and HD Remastered, rewritten in Rust. Bring your own ROM."
     },
+    "jake-r-r-w/crash_bash_decomp": {
+      "link": "https://github.com/jake-r-r-w/crash_bash_decomp",
+      "title": "Crash Bash",
+      "platform": "PS1",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A vibe decomp of crash bash, disk 2 disk. also port"
+    },
     "jaster111/double-dash-redux": {
       "link": "https://github.com/Jaster111/double-dash-redux",
       "title": "Mario Kart: Double Dash!!",
@@ -2478,6 +2571,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "A Recompilation of XBLA Pac-Man Championship Edition (2007) for PC and Steam Deck"
+    },
+    "jmars125/xcx-recomp": {
+      "link": "https://github.com/jmars125/xcx-recomp",
+      "title": "Xenoblade Chronicles X: Definitive Edition",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/cdbc3879830f9869766206c798af1645.jpg"
     },
     "jonathandc64/demonssoulsrecomp": {
       "link": "https://github.com/JonathanDC64/DemonsSoulsRecomp",
@@ -3387,6 +3488,13 @@
       "pcRelease": "Never released on PC",
       "description": "Port nativo e não oficial de LittleBigPlanet 3 (PS4) para Windows, em andamento. Nenhum arquivo do jogo incluído."
     },
+    "theslackbringer/dbziw-recomp": {
+      "link": "https://github.com/TheSlackbringer/dbziw-recomp",
+      "title": "Dragon Ball Z: Infinite World",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "theslackbringer/dw5xl-recomp": {
       "link": "https://github.com/TheSlackbringer/dw5xl-recomp",
       "title": "Dynasty Warriors 5: Xtreme Legends",
@@ -3409,6 +3517,14 @@
       "type": "Decompilation",
       "pcRelease": "Originally a PC game",
       "description": "Icewind Dale 2 Resurrected: a cross-platform engine built on the decompiled IWD2 source. Bring your own GOG copy."
+    },
+    "timboat/demons-souls-recomp": {
+      "link": "https://github.com/timboat/demons-souls-recomp",
+      "title": "Demon's Souls",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native Windows port of Demon's Souls (PS3, BLUS-30443) via ps3recomp static recompilation. Bring your own disc image; no game files included."
     },
     "toowasmir/webofshadowsrecomp": {
       "link": "https://github.com/toowasmir/WebOfShadowsRecomp",
@@ -3568,6 +3684,14 @@
       "type": "Recompilation",
       "description": "Mega Man Legends (SLUS-00603) static recompilation with widescreen, modern controls, high frame rate and PGXP, built on psxrecomp"
     },
+    "weaversworkshop/mlbis-decomp": {
+      "link": "https://github.com/weaversworkshop/mlbis-decomp",
+      "title": "Mario & Luigi: Bowser's Inside Story",
+      "platform": "DS",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Matching decompilation of Mario & Luigi: Bowser's Inside Story (NDS)"
+    },
     "whompay/infamousreborn": {
       "link": "https://github.com/whompay/inFAMOUSreborn",
       "title": "inFAMOUS",
@@ -3619,6 +3743,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Zone of the Enders - Static Recompilation Project for PC"
+    },
+    "yeperik/ff7-doc-decomp": {
+      "link": "https://github.com/YEperik/ff7-doc-decomp",
+      "title": "Dirge of Cerberus: Final Fantasy VII",
+      "platform": "PS2",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A matching decompilation of Dirge of Cerberus: Final Fantasy VII International (PS2 / SLPM-66629)"
     },
     "yeraydien/castaway_recomp": {
       "link": "https://github.com/YerayDien/castaway_recomp",
