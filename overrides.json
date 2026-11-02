@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -224,6 +224,10 @@
       "platform": "Wii U",
       "pcRelease": "Never released on PC"
     },
+    "glitxhhh/xenobladechroniclesrecompiled": {
+      "_game": "Xenoblade Chronicles: Definitive Edition",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9374ef3d53a00c33de62be93467ec04d.jpg"
+    },
     "gtteancum/openh3m": {
       "title": "Halo 3"
     },
@@ -241,6 +245,10 @@
       "_game": "Shadow of the Colossus",
       "platform": "PS4",
       "pcRelease": "Never released on PC"
+    },
+    "gustavomorinaga/project-vekta": {
+      "_game": "Killzone HD",
+      "cover": "https://cdn2.steamgriddb.com/thumb/cd97a1b65a03e2c63c60ad12db864b38.jpg"
     },
     "hayatog/dusklight": {
       "title": "The Legend of Zelda: Twilight Princess"
@@ -291,6 +299,10 @@
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "_game": "Dragon Ball Z: Super Saiya Densetsu",
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg"
+    },
+    "jmars125/xcx-recomp": {
+      "_game": "Xenoblade Chronicles X: Definitive Edition",
+      "cover": "https://cdn2.steamgriddb.com/thumb/cdbc3879830f9869766206c798af1645.jpg"
     },
     "jotd666/xevious": {
       "title": "Xevious"
@@ -733,6 +745,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "A work-in-progress decompilation of Turok: Rage Wars for the N64"
+    },
+    "adolini1715/concrete-jungle-pc": {
+      "link": "https://github.com/Adolini1715/Concrete-Jungle-PC",
+      "title": "Predator: Concrete Jungle",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port of Predator: Concrete Jungle (Xbox, 2005) by static recompilation. Build it from your own disc with Install.bat. No game data included."
     },
     "aitorcachero/alundra-recomp": {
       "link": "https://github.com/aitorcachero/alundra-recomp",
@@ -1833,6 +1853,27 @@
       "pcRelease": "Never released on PC",
       "description": "Matching decompilation of Animal Crossing: Wild World (Korea, NDS) ARM9 game code"
     },
+    "barthes-recompiled/hp1-recompiled": {
+      "link": "https://github.com/Barthes-Recompiled/HP1-Recompiled",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game"
+    },
+    "barthes-recompiled/hp2-recompiled": {
+      "link": "https://github.com/Barthes-Recompiled/HP2-Recompiled",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game"
+    },
+    "barthes-recompiled/hp3-recompiled": {
+      "link": "https://github.com/Barthes-Recompiled/HP3-Recompiled",
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game"
+    },
     "batatinhafcbatatinha-pixel/fifa-street-pc": {
       "link": "https://github.com/batatinhafcbatatinha-pixel/fifa-street-pc",
       "title": "FIFA Street",
@@ -2172,6 +2213,13 @@
       "platform": "GameCube",
       "type": "Decompilation",
       "description": "A matching decompilation of Pokémon XD: Gale of Darkness for the Nintendo GameCube"
+    },
+    "dopam3an/jstarsreborn": {
+      "link": "https://github.com/Dopam3an/JStarsReborn",
+      "title": "J-Stars Victory VS+",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "dudux42/freedomunbound": {
       "link": "https://github.com/Dudux42/FreedomUnbound",
@@ -2572,6 +2620,14 @@
       "pcRelease": "Never released on PC",
       "description": "A Recompilation of XBLA Pac-Man Championship Edition (2007) for PC and Steam Deck"
     },
+    "jmafort/castlevaniacod-pc": {
+      "link": "https://github.com/jmafort/CastlevaniaCOD-PC",
+      "title": "Castlevania: Curse of Darkness",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Castlevania: Curse of Darkness XBE recomp project"
+    },
     "jmars125/xcx-recomp": {
       "link": "https://github.com/jmars125/xcx-recomp",
       "title": "Xenoblade Chronicles X: Definitive Edition",
@@ -2586,6 +2642,15 @@
       "platform": "PS3",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "josiahg2502-glitch/hexichdrecompiled": {
+      "link": "https://github.com/josiahg2502-glitch/HexicHDRecompiled",
+      "title": "Hexic HD",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a4424bfec64bd2f6f0630eb842401f11.jpg",
+      "description": "Statically recompiled PC port of Hexic HD (Xbox Live Arcade). Bring your own copy of the game."
     },
     "josiahg2502-glitch/scooby-doo-refrightened": {
       "link": "https://github.com/josiahg2502-glitch/Scooby-Doo-Refrightened",
@@ -2742,6 +2807,14 @@
       "pcRelease": "Never released on PC",
       "description": "Complete NBA Street Vol. 2 Rust Remake"
     },
+    "mabec-games/conker-recomped-and-reloaded": {
+      "link": "https://github.com/Mabec-games/Conker-Recomped-and-Reloaded",
+      "title": "Conker: Live & Reloaded",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Conker: Live & Reloaded (Xbox) on Windows & Linux: a native recompilation with a launcher that builds it from your own disc, widescreen up to 240 FPS, enhancements, and online play with room codes."
+    },
     "mango77x/mhforever": {
       "link": "https://github.com/Mango77x/MHForever",
       "title": "Monster Hunter Freedom Unite",
@@ -2876,6 +2949,14 @@
         "Linux"
       ],
       "description": "Recompilation of DICE's 2004 Rallisport Challenge 2 for Linux and Windows."
+    },
+    "mrbaazzman/asphalt5-native": {
+      "link": "https://github.com/mrbaazzman/Asphalt5-Native",
+      "title": "Asphalt 5 HD",
+      "platform": "Mobile",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native x86-64 recompilation of Asphalt 5 ; APK-driven builder, no emulator."
     },
     "mustafasamer93/repocalypse-recomp": {
       "link": "https://github.com/MustafaSamer93/Repocalypse-Recomp",
@@ -3027,6 +3108,15 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/098b8b9f44bbbc0db5aff108ef93a0e2.jpg",
       "description": "A matching decompilation of Space Cadet Pinball",
       "pcRelease": "Originally a PC game"
+    },
+    "ravencaio/tlou-remastered-pc": {
+      "link": "https://github.com/ravencaio/tlou-remastered-pc",
+      "title": "The Last of Us Remastered",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Only a remake or remaster on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9db1c4a3a80276439554314a0b2dabe2.jpg",
+      "description": "Native Windows PC port of The Last of Us Remastered (PS4, CUSA00552). Runs the game’s own x86-64 code on a custom runtime, with PS4 system libraries reimplemented and a Vulkan renderer based on shadPS4. Includes a launcher. No game files included: you need your own copy."
     },
     "recompport/pandora-tower-pc": {
       "link": "https://github.com/RecompPort/pandora-tower-pc",
@@ -3181,6 +3271,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "This is an open source all-in-one launcher for the amazing series on Xbox 360: \"Gears of War\" franchise. 75% of this amazing series never received a proper remaster, so here I am bringing this project to life! Enjoy!"
+    },
+    "shaneomac1337/top-spin-4-recomp": {
+      "link": "https://github.com/shaneomac1337/Top-Spin-4-Recomp",
+      "title": "Top Spin 4",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Unofficial PC port of Top Spin 4 (Xbox 360), statically recompiled to native x86-64 with a Vulkan renderer. Bring your own disc."
     },
     "shaunsingh/pgr4-native": {
       "link": "https://github.com/shaunsingh/pgr4-native",
@@ -3409,6 +3507,22 @@
       "pcRelease": "Never released on PC",
       "description": "An unofficial original Xbox version PC port of BLACK (2006) via static recompilation."
     },
+    "thatcalikid760/scda360pcport": {
+      "link": "https://github.com/thatcalikid760/SCDA360pcport",
+      "title": "Tom Clancy's Splinter Cell: Double Agent",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Splinter Cell: Double Agent (Xbox 360) static recompilation to native Windows x64"
+    },
+    "thebabyhippo303/nimbus-project": {
+      "link": "https://github.com/thebabyhippo303/nimbus-project",
+      "title": "Dragon Ball Z: Budokai",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "The Nimbus Project: native DBZ GameCube trilogy ports with Linux/Windows/Android crossplay. Release distros only."
+    },
     "thedoffman/timesplitters-future-perfect-pc": {
       "link": "https://github.com/TheDoffman/timesplitters-future-perfect-pc",
       "title": "Timesplitters Future Perfect",
@@ -3455,6 +3569,14 @@
       "platform": "PS3",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "thelostpantheon/nativ": {
+      "link": "https://github.com/TheLostPantheon/nativ",
+      "title": "Killzone: Mercenary",
+      "platform": "PS Vita",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "PS Vita games recompiled into native PC programs: you bring your own games and firmware"
     },
     "themagicalkarp/open-spyro": {
       "link": "https://github.com/theMagicalKarp/open-spyro",
@@ -3525,6 +3647,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Native Windows port of Demon's Souls (PS3, BLUS-30443) via ps3recomp static recompilation. Bring your own disc image; no game files included."
+    },
+    "timftw21/smbd-recompilation": {
+      "link": "https://github.com/timftw21/smbd-recompilation",
+      "title": "Super Monkey Ball Deluxe",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Only a remake or remaster on PC",
+      "description": "A static recompilation of Super Monkey Ball Deluxe for the original Xbox."
     },
     "toowasmir/webofshadowsrecomp": {
       "link": "https://github.com/toowasmir/WebOfShadowsRecomp",
@@ -3813,6 +3943,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Experimental native Windows Haze port using ps3recomp; game assets not included"
+    },
+    "zer0ducksgiven/pgr4-regpu": {
+      "link": "https://github.com/zer0ducksgiven/PGR4-ReGPU",
+      "title": "Project Gotham Racing 4",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Project Gotham Racing 4 PC port on ReGPU (XenonRecomp)"
     },
     "zmbkilla/psp2i_recomp": {
       "link": "https://github.com/zmbkilla/PSP2I_Recomp",
