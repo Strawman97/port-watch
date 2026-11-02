@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-11-02T11:01:51Z",
+ "generated": "2026-11-02T11:06:19Z",
  "repos": {
   "0c0de/splatterhouse-decomp": {
    "assetOs": {},
@@ -1039,6 +1039,43 @@
     "pushed": "2026-04-15T15:20:00Z",
     "size": 21530,
     "stars": 92
+   },
+   "shots": []
+  },
+  "adolini1715/concrete-jungle-pc": {
+   "assetOs": {},
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hdr": "planned",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-02T01:10:44Z",
+    "pre": false,
+    "tag": "v0.1",
+    "url": "https://github.com/Adolini1715/Concrete-Jungle-PC/releases/tag/v0.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-27T03:14:58Z",
+    "desc": "Native PC port of Predator: Concrete Jungle (Xbox, 2005) by static recompilation. Build it from your own disc with Install.bat. No game data included.",
+    "full": "Adolini1715/Concrete-Jungle-PC",
+    "lang": "C",
+    "pushed": "2026-11-02T03:15:13Z",
+    "size": 3327,
+    "stars": 14
    },
    "shots": []
   },
@@ -6586,6 +6623,115 @@
    },
    "shots": []
   },
+  "barthes-recompiled/hp1-recompiled": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [
+    "password"
+   ],
+   "release": {
+    "date": "2026-11-01T06:56:30Z",
+    "pre": false,
+    "tag": "v1.0.2",
+    "url": "https://github.com/Barthes-Recompiled/HP1-Recompiled/releases/tag/v1.0.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-30T19:13:07Z",
+    "desc": "",
+    "full": "Barthes-Recompiled/HP1-Recompiled",
+    "lang": "C",
+    "pushed": "2026-11-01T06:56:30Z",
+    "size": 4572,
+    "stars": 0
+   },
+   "shots": []
+  },
+  "barthes-recompiled/hp2-recompiled": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T06:56:38Z",
+    "pre": false,
+    "tag": "v1.0.2",
+    "url": "https://github.com/Barthes-Recompiled/HP2-Recompiled/releases/tag/v1.0.2"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-30T19:13:24Z",
+    "desc": "",
+    "full": "Barthes-Recompiled/HP2-Recompiled",
+    "lang": "C",
+    "pushed": "2026-11-01T06:56:38Z",
+    "size": 4471,
+    "stars": 0
+   },
+   "shots": []
+  },
+  "barthes-recompiled/hp3-recompiled": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T06:56:47Z",
+    "pre": false,
+    "tag": "v0.5.2-beta",
+    "url": "https://github.com/Barthes-Recompiled/HP3-Recompiled/releases/tag/v0.5.2-beta"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-30T19:13:46Z",
+    "desc": "",
+    "full": "Barthes-Recompiled/HP3-Recompiled",
+    "lang": "C",
+    "pushed": "2026-11-01T06:56:47Z",
+    "size": 5264,
+    "stars": 0
+   },
+   "shots": []
+  },
   "basedyuki/the-3rd-birthday-recomp": {
    "assetOs": {},
    "readme": {
@@ -7534,8 +7680,8 @@
     "desc": "A static recompiler for Bloodborne (PS4): turns your own copy of the game's code into native C. With bbcpu, an x86-64 interpreter and arm64 translator.",
     "full": "bloodborne-native/bloodborne-recomp",
     "lang": "C",
-    "pushed": "2026-11-02T10:35:29Z",
-    "size": 1029,
+    "pushed": "2026-11-02T11:03:34Z",
+    "size": 671,
     "stars": 29
    },
    "shots": []
@@ -12735,6 +12881,40 @@
    },
    "shots": []
   },
+  "dopam3an/jstarsreborn": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "kbm": "yes",
+     "online": "planned"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T16:36:48Z",
+    "pre": true,
+    "tag": "0.4.0",
+    "url": "https://github.com/Dopam3an/JStarsReborn/releases/tag/0.4.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-01T16:02:07Z",
+    "desc": "",
+    "full": "Dopam3an/JStarsReborn",
+    "lang": "C++",
+    "pushed": "2026-11-02T02:03:33Z",
+    "size": 4980,
+    "stars": 0
+   },
+   "shots": []
+  },
   "dorpxp/driftdroid": {
    "assetOs": {
     "Android": true
@@ -14873,7 +15053,7 @@
     "lang": "C++",
     "pushed": "2026-11-02T00:35:51Z",
     "size": 100651,
-    "stars": 4513
+    "stars": 4514
    },
    "shots": []
   },
@@ -21508,7 +21688,7 @@
     "desc": "",
     "full": "JEschete/VS-NativePort",
     "lang": "C",
-    "pushed": "2026-11-02T11:02:20Z",
+    "pushed": "2026-11-02T11:04:29Z",
     "size": 28486,
     "stars": 68
    },
@@ -22001,6 +22181,42 @@
     "https://raw.githubusercontent.com/jkdansereau/goldeneye-pc-port/HEAD/docs/media/goldeneye-gh-preview.gif"
    ]
   },
+  "jmafort/castlevaniacod-pc": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "kbm": "yes",
+     "res": "yes",
+     "tex": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-02T03:45:13Z",
+    "pre": false,
+    "tag": "v1.4.0",
+    "url": "https://github.com/jmafort/CastlevaniaCOD-PC/releases/tag/v1.4.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-01T20:56:40Z",
+    "desc": "Castlevania: Curse of Darkness XBE recomp project",
+    "full": "jmafort/CastlevaniaCOD-PC",
+    "lang": "C++",
+    "pushed": "2026-11-02T03:45:13Z",
+    "size": 380,
+    "stars": 23
+   },
+   "shots": []
+  },
   "jmars125/xcx-recomp": {
    "assetOs": {
     "Linux": true,
@@ -22394,6 +22610,39 @@
     "https://raw.githubusercontent.com/josiahg2502-glitch/BrawlRecompiled/HEAD/screenshots/03_character_select.jpg",
     "https://raw.githubusercontent.com/josiahg2502-glitch/BrawlRecompiled/HEAD/screenshots/04_stage_select.jpg",
     "https://raw.githubusercontent.com/josiahg2502-glitch/BrawlRecompiled/HEAD/screenshots/06_castle_siege_2.jpg"
+   ]
+  },
+  "josiahg2502-glitch/hexichdrecompiled": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "res": "yes"
+    },
+    "os": {},
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T14:20:30Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/josiahg2502-glitch/HexicHDRecompiled/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-29T16:26:04Z",
+    "desc": "Statically recompiled PC port of Hexic HD (Xbox Live Arcade). Bring your own copy of the game.",
+    "full": "josiahg2502-glitch/HexicHDRecompiled",
+    "lang": "C++",
+    "pushed": "2026-11-01T14:20:29Z",
+    "size": 615,
+    "stars": 5
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/josiahg2502-glitch/HexicHDRecompiled/HEAD/docs/milestone-playable.png"
    ]
   },
   "josiahg2502-glitch/mother3recomp": {
@@ -23605,7 +23854,7 @@
     "desc": "A decompiled PC Port of Super Mario Galaxy, intended to work on Windows, Linux, MacOS, Android, and iOS/iPadOS.",
     "full": "keepvaibin/nebula",
     "lang": "C++",
-    "pushed": "2026-11-02T11:00:58Z",
+    "pushed": "2026-11-02T11:07:20Z",
     "size": 28994,
     "stars": 514
    },
@@ -25583,6 +25832,51 @@
     "stars": 19
    },
    "shots": []
+  },
+  "mabec-games/conker-recomped-and-reloaded": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "mods": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T06:47:47Z",
+    "pre": false,
+    "tag": "v1.1",
+    "url": "https://github.com/Mabec-games/Conker-Recomped-and-Reloaded/releases/tag/v1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-31T18:25:04Z",
+    "desc": "Conker: Live & Reloaded (Xbox) on Windows & Linux: a native recompilation with a launcher that builds it from your own disc, widescreen up to 240 FPS, enhancements, and online play with room codes.",
+    "full": "Mabec-games/Conker-Recomped-and-Reloaded",
+    "lang": "C++",
+    "pushed": "2026-11-02T04:43:36Z",
+    "size": 3658,
+    "stars": 36
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/Mabec-games/Conker-Recomped-and-Reloaded/HEAD/docs/images/cutscene-king-conker.jpg",
+    "https://raw.githubusercontent.com/Mabec-games/Conker-Recomped-and-Reloaded/HEAD/docs/images/online-match.jpg",
+    "https://raw.githubusercontent.com/Mabec-games/Conker-Recomped-and-Reloaded/HEAD/docs/images/online-scoreboard.jpg"
+   ]
   },
   "mabec-games/f-zero-glinux": {
    "assetOs": {
@@ -27655,7 +27949,7 @@
     "lang": "C",
     "pushed": "2026-11-02T01:06:20Z",
     "size": 4489,
-    "stars": 356
+    "stars": 357
    },
    "shots": []
   },
@@ -27918,6 +28212,52 @@
     "https://raw.githubusercontent.com/Mr-Shizzy/PacManRecomp/HEAD/docs/images/launcher.png",
     "https://raw.githubusercontent.com/Mr-Shizzy/PacManRecomp/HEAD/docs/images/launcher_settings.png"
    ]
+  },
+  "mrbaazzman/asphalt5-native": {
+   "assetOs": {
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Static ARMv7 to x86-64 translation to C, native MinGW build, OpenGL ES 1.x host layer.",
+    "game": "Asphalt 5 HD",
+    "notes": "Static ARM-to-C recompilation of the Android build. One setup builds the game from the user's own legally owned copy for 3.2.4, 3.3.7 or 3.4.1 on Windows x64. The first-run installer downloads the official Gameloft data pack. No game files are distributed.",
+    "system": "Android",
+    "targets": [
+     "Windows"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Android": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T10:53:59Z",
+    "pre": false,
+    "tag": "v2.3.0",
+    "url": "https://github.com/mrbaazzman/Asphalt5-Native/releases/tag/v2.3.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-23T08:32:13Z",
+    "desc": "Native x86-64 recompilation of Asphalt 5 ; APK-driven builder, no emulator.",
+    "full": "mrbaazzman/Asphalt5-Native",
+    "lang": "C",
+    "pushed": "2026-11-01T10:53:36Z",
+    "size": 5728,
+    "stars": 19
+   },
+   "shots": []
   },
   "mrjackspade/supermetroiddecomp": {
    "assetOs": {
@@ -34485,7 +34825,7 @@
     "full": "Project-Holon/eidos",
     "lang": "C",
     "pushed": "2026-11-02T10:47:09Z",
-    "size": 9009,
+    "size": 9085,
     "stars": 64
    },
    "shots": []
@@ -35426,6 +35766,43 @@
     "https://raw.githubusercontent.com/raulzrrs/letsgo-recomp/HEAD/docs/images/launcher-mods.png",
     "https://raw.githubusercontent.com/raulzrrs/letsgo-recomp/HEAD/docs/images/f12-menu.jpg"
    ]
+  },
+  "ravencaio/tlou-remastered-pc": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "dlss": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "kbm": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T21:54:24Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/ravencaio/tlou-remastered-pc/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-01T20:52:57Z",
+    "desc": "Native Windows PC port of The Last of Us Remastered (PS4, CUSA00552). Runs the game’s own x86-64 code on a custom runtime, with PS4 system libraries reimplemented and a Vulkan renderer based on shadPS4. Includes a launcher. No game files included: you need your own copy.",
+    "full": "ravencaio/tlou-remastered-pc",
+    "lang": "C++",
+    "pushed": "2026-11-01T21:54:24Z",
+    "size": 4061,
+    "stars": 65
+   },
+   "shots": []
   },
   "recomp-code/street-recomp-v3": {
    "assetOs": {
@@ -38256,6 +38633,51 @@
    },
    "shots": []
   },
+  "shaneomac1337/top-spin-4-recomp": {
+   "assetOs": {},
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Steam Deck": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T23:19:24Z",
+    "pre": false,
+    "tag": "v1.0.0",
+    "url": "https://github.com/shaneomac1337/Top-Spin-4-Recomp/releases/tag/v1.0.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-01T23:14:21Z",
+    "desc": "Unofficial PC port of Top Spin 4 (Xbox 360), statically recompiled to native x86-64 with a Vulkan renderer. Bring your own disc.",
+    "full": "shaneomac1337/Top-Spin-4-Recomp",
+    "lang": "C++",
+    "pushed": "2026-11-01T23:17:18Z",
+    "size": 4051,
+    "stars": 9
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/shot-match.jpg",
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/shot-select.jpg",
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/shot-creator.jpg",
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/shot-academy.jpg",
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/compare-match-original-zoom.png",
+    "https://raw.githubusercontent.com/shaneomac1337/Top-Spin-4-Recomp/HEAD/docs/images/compare-match-pc-zoom.png"
+   ]
+  },
   "shaneomac1337/wwe-allstars-recomp": {
    "assetOs": {
     "Windows": true
@@ -40849,7 +41271,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T19:45:18Z",
     "size": 750,
-    "stars": 367
+    "stars": 368
    },
    "shots": []
   },
@@ -43031,6 +43453,50 @@
     "https://github.com/user-attachments/assets/594acdec-3a98-4dc5-ba6c-62e238db3895"
    ]
   },
+  "thatcalikid760/scda360pcport": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "kbm": "yes",
+     "online": "planned",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-02T07:14:57Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/thatcalikid760/SCDA360pcport/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-28T13:51:41Z",
+    "desc": "Splinter Cell: Double Agent (Xbox 360) static recompilation to native Windows x64",
+    "full": "thatcalikid760/SCDA360pcport",
+    "lang": "C++",
+    "pushed": "2026-11-02T07:33:35Z",
+    "size": 10658,
+    "stars": 39
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/cozumel_horizon.jpg",
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/iceland_plant_vista.jpg",
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/iceland_emf.jpg",
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/iceland_osprey.jpg",
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/jail_cell.jpg",
+    "https://raw.githubusercontent.com/thatcalikid760/SCDA360pcport/HEAD/docs/images/okhotsk_ice_dive.jpg"
+   ]
+  },
   "thatguymcd/dkr-r": {
    "assetOs": {
     "Linux": true,
@@ -43148,6 +43614,43 @@
    "shots": [
     "https://github.com/user-attachments/assets/6f59e8e5-6d00-424c-81e1-7b93c6fee169"
    ]
+  },
+  "thebabyhippo303/nimbus-project": {
+   "assetOs": {
+    "Android": true,
+    "Linux": true,
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "online": "yes"
+    },
+    "os": {
+     "Android": true,
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-02T09:11:31Z",
+    "pre": false,
+    "tag": "alpha-1.1",
+    "url": "https://github.com/thebabyhippo303/nimbus-project/releases/tag/alpha-1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-02T05:14:32Z",
+    "desc": "The Nimbus Project: native DBZ GameCube trilogy ports with Linux/Windows/Android crossplay. Release distros only.",
+    "full": "thebabyhippo303/nimbus-project",
+    "lang": null,
+    "pushed": "2026-11-02T09:11:31Z",
+    "size": 1,
+    "stars": 1
+   },
+   "shots": []
   },
   "theboy181/drmario64_recomp_plus": {
    "assetOs": {
@@ -43493,6 +43996,47 @@
     "pushed": "2026-10-30T15:55:21Z",
     "size": 901,
     "stars": 18
+   },
+   "shots": []
+  },
+  "thelostpantheon/nativ": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
+   "readme": {
+    "features": {
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-02T01:00:31Z",
+    "pre": true,
+    "tag": "v0.1.5",
+    "url": "https://github.com/TheLostPantheon/nativ/releases/tag/v0.1.5"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-27T20:37:13Z",
+    "desc": "PS Vita games recompiled into native PC programs: you bring your own games and firmware",
+    "full": "TheLostPantheon/nativ",
+    "lang": "C",
+    "pushed": "2026-11-02T01:00:31Z",
+    "size": 4829,
+    "stars": 94
    },
    "shots": []
   },
@@ -44149,6 +44693,49 @@
     "https://raw.githubusercontent.com/timftw21/burnout2-recompilation/main/screenshots/driving-lesson.jpg",
     "https://raw.githubusercontent.com/timftw21/burnout2-recompilation/main/screenshots/snowy-track.jpg",
     "https://raw.githubusercontent.com/timftw21/burnout2-recompilation/main/screenshots/airport-terminal.jpg"
+   ]
+  },
+  "timftw21/smbd-recompilation": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true,
+     "macOS": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T19:02:32Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/timftw21/smbd-recompilation/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-25T15:54:36Z",
+    "desc": "A static recompilation of Super Monkey Ball Deluxe for the original Xbox.",
+    "full": "timftw21/smbd-recompilation",
+    "lang": "C++",
+    "pushed": "2026-11-01T19:02:20Z",
+    "size": 3320,
+    "stars": 3
+   },
+   "shots": [
+    "https://raw.githubusercontent.com/timftw21/smbd-recompilation/HEAD/resources/screenshots/mode-select.jpg",
+    "https://raw.githubusercontent.com/timftw21/smbd-recompilation/HEAD/resources/screenshots/stage-select.jpg",
+    "https://raw.githubusercontent.com/timftw21/smbd-recompilation/HEAD/resources/screenshots/gameplay.jpg"
    ]
   },
   "tk22-26/jetforcegemini-recomp": {
@@ -45044,7 +45631,7 @@
     "lang": "C",
     "pushed": "2026-11-02T07:01:45Z",
     "size": 3927,
-    "stars": 3507
+    "stars": 3513
    },
    "shots": []
   },
@@ -48349,6 +48936,43 @@
     "pushed": "2026-10-31T22:21:20Z",
     "size": 8376,
     "stars": 64
+   },
+   "shots": []
+  },
+  "zer0ducksgiven/pgr4-regpu": {
+   "assetOs": {
+    "Windows": true
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "dlc": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "mods": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 2
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-01T22:36:11Z",
+    "pre": false,
+    "tag": "v0.1.1",
+    "url": "https://github.com/zer0ducksgiven/PGR4-ReGPU/releases/tag/v0.1.1"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-10-22T08:25:30Z",
+    "desc": "Project Gotham Racing 4 PC port on ReGPU (XenonRecomp)",
+    "full": "zer0ducksgiven/PGR4-ReGPU",
+    "lang": "C++",
+    "pushed": "2026-11-01T22:36:03Z",
+    "size": 975,
+    "stars": 26
    },
    "shots": []
   },
