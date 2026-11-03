@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -2029,6 +2029,14 @@
       "pcRelease": "Never released on PC",
       "description": "A Yakuza Dead Souls recompilation effort"
     },
+    "captainj-sparrow/astral-chain-pc-recomp": {
+      "link": "https://github.com/captainj-sparrow/astral-chain-pc-recomp",
+      "title": "Astral Chain",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Astral Chain to native Windows, with a Vulkan renderer. Game files not included."
+    },
     "carlsonic/sonic-riders-gc-decompilation": {
       "link": "https://github.com/Carlsonic/Sonic-Riders-GC-Decompilation",
       "title": "Sonic Riders",
@@ -2300,6 +2308,14 @@
       "description": "CRO-U - a from-scratch reimplementation of Chaos Rings Omega (iPad HD 1.0.0, PS Vita), begun from CR1:U. Bring your own copy; no game data included.",
       "pcRelease": "Never released on PC"
     },
+    "dvilelaf/battlestadium-don": {
+      "link": "https://github.com/dvilelaf/battlestadium-don",
+      "title": "Battle Stadium D.O.N",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "PC port (Linux, Windows) of Battle Stadium D.O.N (PS2) by static recompilation. No game material included: bring your own disc."
+    },
     "eggscantfly/robox-recompiled-3ds": {
       "link": "https://github.com/Eggscantfly/robox-recompiled-3ds",
       "title": "Robox",
@@ -2405,6 +2421,13 @@
       "pcRelease": "Also on PC (console version ported)",
       "description": "Native C++20 rebuild of The House of the Dead 2 with online co-op, extra modes, and modern controls. Complete download-and-play Windows package in Releases."
     },
+    "gitlab.com/octagram-labs-group/scda360pcport": {
+      "link": "https://gitlab.com/octagram-labs-group/SCDA360pcport",
+      "title": "Tom Clancy's Splinter Cell: Double Agent",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)"
+    },
     "gitlab.com/onerag90/fe3h-recomp": {
       "link": "https://gitlab.com/onerag90/fe3h-recomp",
       "title": "Fire Emblem: Three Houses",
@@ -2423,6 +2446,13 @@
       "link": "https://gitlab.com/rygt-team/RyGT",
       "title": "Gran Turismo Sport",
       "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
+    "gitlab.com/zzzarathustra-dev/power-moon-recomp": {
+      "link": "https://gitlab.com/zzzarathustra-dev/power-moon-recomp",
+      "title": "Super Mario Odyssey",
+      "platform": "Switch",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
@@ -2587,6 +2617,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "RACiT."
+    },
+    "hk21x/007-agentunderfire-recomp": {
+      "link": "https://github.com/hk21x/007-agentunderfire-recomp",
+      "title": "007 Agent Under Fire",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "007 Agent Under Fire recomp from Xbox to PC Port."
     },
     "hk21x/007eon-recomp": {
       "link": "https://github.com/hk21x/007eon-recomp",
@@ -2844,6 +2882,15 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Complete NBA Street Vol. 2 Rust Remake"
+    },
+    "luisxl15/god-of-war-hd-collection": {
+      "link": "https://github.com/luisxl15/GOD-OF-WAR-HD-COLLECTION",
+      "title": "God of War Collection",
+      "platform": "PS Vita",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/385cc545400c1fd8ae301308b5401834.png",
+      "description": "Ω God of War Collection (PS Vita) recompilado para PC — demonstração / prova de conceito da VitaRT. Espere por bugs."
     },
     "luukasr1/disgaea-d2-recomp-windows": {
       "link": "https://github.com/LUUKASR1/disgaea-d2-recomp-windows",
@@ -3163,6 +3210,14 @@
       "pcRelease": "Only a remake or remaster on PC",
       "cover": "https://cdn2.steamgriddb.com/thumb/9db1c4a3a80276439554314a0b2dabe2.jpg",
       "description": "Native Windows PC port of The Last of Us Remastered (PS4, CUSA00552). Runs the game’s own x86-64 code on a custom runtime, with PS4 system libraries reimplemented and a Vulkan renderer based on shadPS4. Includes a launcher. No game files included: you need your own copy."
+    },
+    "re-tero17/ratchet-tod-recomp": {
+      "link": "https://github.com/Re-TeRo17/ratchet-tod-recomp",
+      "title": "Ratchet & Clank: Tools of Destruction",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Ratchet & Clank: Tools of Destruction native PC port (PS3 static recompilation) – 4K, 60 fps, DualSense, Windows"
     },
     "recompport/pandora-tower-pc": {
       "link": "https://github.com/RecompPort/pandora-tower-pc",
@@ -3702,6 +3757,14 @@
       "pcRelease": "Only a remake or remaster on PC",
       "description": "A static recompilation of Super Monkey Ball Deluxe for the original Xbox."
     },
+    "tmcleroy/soulcalibur2-recomp": {
+      "link": "https://github.com/tmcleroy/soulcalibur2-recomp",
+      "title": "Soulcalibur II",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Soulcalibur II (Xbox) as a native port for macOS, Linux/Steam Deck and Windows, with Link and Heihachi from your own discs"
+    },
     "toowasmir/webofshadowsrecomp": {
       "link": "https://github.com/toowasmir/WebOfShadowsRecomp",
       "title": "Spider-Man: Web of Shadows",
@@ -3757,6 +3820,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Unofficial native PC port of inFAMOUS First Light (PS4). Bring your own game dump - no game files included."
+    },
+    "vcking101/dissidia012-pc": {
+      "link": "https://github.com/VCKing101/Dissidia012-pc",
+      "title": "Dissidia 012 Duodecim Final Fantasy",
+      "platform": "PSP",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "victor-takai/rogue-galaxy-recomp": {
       "link": "https://github.com/victor-takai/rogue-galaxy-recomp",
