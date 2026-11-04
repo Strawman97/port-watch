@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -189,6 +189,10 @@
     "dyotson/recompiledforzahorizon": {
       "title": "Forza Horizon"
     },
+    "ensapra/champions-of-norrath": {
+      "_game": "Champions of Norrath (champions-of-norrath (ensapra))",
+      "pcRelease": "Never released on PC"
+    },
     "felipeprado0/gow3_pc": {
       "title": "God of War III Remastered",
       "cover": "https://cdn2.steamgriddb.com/thumb/bc6a17604012da6895c1bacd28cdb9fa.jpg"
@@ -321,6 +325,10 @@
     "kastieloficial/re-code-veronica-recomp": {
       "_game": "Resident Evil Code: Veronica X",
       "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
+    },
+    "luisxl15/god-of-war-hd-collection": {
+      "_game": "God of War Collection",
+      "cover": "https://cdn2.steamgriddb.com/thumb/385cc545400c1fd8ae301308b5401834.png"
     },
     "madelrandel-blip/nfsmw-recompiled": {
       "title": "Need for Speed: Most Wanted (2005)",
@@ -760,6 +768,14 @@
       "platform": "3DS",
       "type": "Decompilation",
       "description": "Matching decompilation of The Legend of Zelda: A Link Between Worlds (3DS, USA) - work in progress, 63.7% of functions matched byte-exact"
+    },
+    "7v0biscuit/openkai2": {
+      "link": "https://github.com/7v0biscuit/OpenKai2",
+      "title": "Dragon Ball Z: Budokai 2",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native Windows port of Dragon Ball Z: Budokai 2 [Early Development] "
     },
     "abdelmoumendeghbouche/wipeout_pc": {
       "link": "https://github.com/abdelmoumendeghbouche/wipeout_pc",
@@ -1819,6 +1835,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/1405b92bd2d27ad3ee55a596b034a7d3.jpg",
       "description": "Experimental Windows recompilation of Super Street Fighter II X with widescreen fight stages and training tools. Bring your own ROMs."
     },
+    "andrewnakas/thug-decomp": {
+      "link": "https://github.com/andrewnakas/thug-decomp",
+      "title": "Tony Hawk's Underground",
+      "platform": "PS2",
+      "type": "Decompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Matching decompilation of Tony Hawk's Underground (PS2, SLUS-20731). Bring your own disc."
+    },
     "anishchandra24/juiced2-recompiled": {
       "link": "https://github.com/anishchandra24/Juiced2-Recompiled",
       "title": "Juiced 2: Hot Import Nights",
@@ -2169,6 +2193,14 @@
       "pcRelease": "Never released on PC",
       "description": "Native recompilation of Mortal Kombat Trilogy for N64"
     },
+    "daniel-madrid-07/weeping-of-the-empire": {
+      "link": "https://github.com/daniel-madrid-07/weeping-of-the-empire",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Zelda: Tears of the Kingdom (TotK) 1.0.0 recompiled to native Windows and Vulkan. Frame cap up to 240, DLSS option, mouse and keyboard. Open source, mostly written by AI agents. You build it from your own dump; no game files included. Measured on one PC so far."
+    },
     "danielcoffey1/fable-anniversary-pc": {
       "link": "https://github.com/DanielCoffey1/Fable-Anniversary-PC",
       "title": "Fable Anniversary",
@@ -2420,6 +2452,13 @@
       "type": "Decompilation",
       "pcRelease": "Also on PC (console version ported)",
       "description": "Native C++20 rebuild of The House of the Dead 2 with online co-op, extra modes, and modern controls. Complete download-and-play Windows package in Releases."
+    },
+    "gitlab.com/engage-pc-recomp/engage-pc-recomp": {
+      "link": "https://gitlab.com/engage-pc-recomp/engage-pc-recomp",
+      "title": "Fire Emblem: Engage",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "gitlab.com/octagram-labs-group/scda360pcport": {
       "link": "https://gitlab.com/octagram-labs-group/SCDA360pcport",
@@ -2704,6 +2743,14 @@
       "pcRelease": "Never released on PC",
       "description": "Castlevania: Curse of Darkness XBE recomp project"
     },
+    "jmars125/xc2-recomp": {
+      "link": "https://github.com/jmars125/xc2-recomp",
+      "title": "Xenoblade Chronicles 2",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Xenoblade Chronicles 2 to Windows x86-64 with a Vulkan renderer"
+    },
     "jmars125/xcx-recomp": {
       "link": "https://github.com/jmars125/xcx-recomp",
       "title": "Xenoblade Chronicles X: Definitive Edition",
@@ -2845,6 +2892,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Matching decompilation of Medal of Honor: Frontline (GameCube, GMFE69)"
+    },
+    "leandrossb/moh-vanguard-recomp": {
+      "link": "https://github.com/LeandroSSB/moh-vanguard-recomp",
+      "title": "Medal of Honor: Vanguard",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port of Medal of Honor: Vanguard (PS2) via static recompilation with PS2Recomp - mouse+keyboard FPS controls, faithful 59.94 NTSC clock, and the full bring-up research diary"
     },
     "lesca-191204/killzone-shadowfall-pc": {
       "link": "https://github.com/lesca-191204/killzone-shadowfall-pc",
@@ -3005,6 +3060,14 @@
       "platform": "Xbox 360",
       "type": "Recompilation",
       "description": "Unofficial native PC port of WWE 2K14 (Xbox 360) by static recompilation. 60 FPS, up to 4K. Bring your own game. Based on WWE '13 Recomp and ReXGlue."
+    },
+    "mildrain479/pokepark-wiicompiled": {
+      "link": "https://github.com/MildRain479/PokePark-Wiicompiled",
+      "title": "PokePark Wii: Pikachu's Adventure",
+      "platform": "Wii",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native PC port of PokePark Wii: Pikachu's Adventure by static recompilation (open beta). No game data included."
     },
     "mlgprorektm8/rygt": {
       "link": "https://github.com/mlgprorektm8/RyGT",
@@ -3170,6 +3233,30 @@
       "pcRelease": "Never released on PC",
       "description": "Unofficial PC port of the Xbox 360 version of Army of Two (2008). Online co-op supported."
     },
+    "phobos665/gladius-recomp": {
+      "link": "https://github.com/phobos665/gladius-recomp",
+      "title": "Gladius",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static Recompilation of Original Xbox game - Gladius"
+    },
+    "phobos665/pro-evo-5-recomp": {
+      "link": "https://github.com/phobos665/pro-evo-5-recomp",
+      "title": "Pro Evolution Soccer 5",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static Recompilation of Pro Evo 5 for OG Xbox"
+    },
+    "phobos665/rainbow-six-three-recomp": {
+      "link": "https://github.com/phobos665/Rainbow-six-three-recomp",
+      "title": "Tom Clancy's Rainbow Six 3",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game",
+      "description": "Static Recompilation of Original Xbox game Rainbow Six 3 - Very WIP"
+    },
     "prathewsh/gravityrush_pc": {
       "link": "https://github.com/Prathewsh/gravityrush_pc",
       "title": "Gravity Rush",
@@ -3259,6 +3346,14 @@
       "type": "",
       "pcRelease": "Also on PC (console version ported)",
       "description": "Fan mod of Dino Crisis (PS1). It brings a modern Resident evil Remakes like over-the-shoulder camera, updated controls, visual/gameplay improvements, and plenty of Quality of Life settings to customize the experience to your liking."
+    },
+    "sabishii-bit/gauntlet-dark-legacy-pc-port": {
+      "link": "https://github.com/sabishii-bit/Gauntlet-Dark-Legacy-PC-Port",
+      "title": "Gauntlet: Dark Legacy",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Fan-made unofficial PC port of Gauntlet: Dark Legacy"
     },
     "sackchief/dqix-enhanced": {
       "link": "https://github.com/sackchief/dqix-enhanced",
@@ -3592,6 +3687,14 @@
       "pcRelease": "Also on PC (console version ported)",
       "description": "Trials HD, Trials Evolution and Trials Fusion on PC, recompiled from the Xbox 360 games, with their DLC, in one launcher"
     },
+    "telltaleatheist/mw3-re": {
+      "link": "https://github.com/telltaleatheist/mw3-re",
+      "title": "MechWarrior 3",
+      "platform": "PC",
+      "type": "Recompilation",
+      "pcRelease": "Originally a PC game",
+      "description": "Learning to reverse engineer MechWarrior 3 with REA and rebuild its mechanics"
+    },
     "tgp482/007frwl-xberecomp": {
       "link": "https://github.com/TGP482/007FRWL-XBERecomp",
       "title": "007: From Russia With Love",
@@ -3615,6 +3718,14 @@
       "type": "Recompilation",
       "pcRelease": "Also on PC (console version ported)",
       "description": "Splinter Cell: Double Agent (Xbox 360) static recompilation to native Windows x64"
+    },
+    "the-crow-den/skylanderspc": {
+      "link": "https://github.com/The-Crow-Den/SkylandersPC",
+      "title": "Skylanders: Trap Team",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A solution for running all ps4 skylanders game on PC with native performance"
     },
     "thebabyhippo303/nimbus-project": {
       "link": "https://github.com/thebabyhippo303/nimbus-project",
@@ -3724,6 +3835,14 @@
       "platform": "PS2",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "theweathervane/sfa3max-decomp": {
+      "link": "https://github.com/theweathervane/sfa3max-decomp",
+      "title": "Street Fighter Alpha 3 MAX",
+      "platform": "PSP",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Street Fighter Alpha 3 MAX (Decomp)"
     },
     "thewishin/t5dronline": {
       "link": "https://github.com/TheWishin/T5DROnline",
