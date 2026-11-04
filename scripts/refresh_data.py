@@ -378,6 +378,7 @@ def repo_ref(k):
 
 def meta_batch(keys, token):
     parts = ["r%d: %s { nameWithOwner pushedAt stargazerCount isArchived description diskUsage createdAt primaryLanguage { name } "
+             "firstRel: releases(first: 1, orderBy: {field: CREATED_AT, direction: ASC}) { nodes { publishedAt createdAt } } "
              "releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) { nodes { %s } } }" % (i, repo_ref(k), RELEASE_FIELDS)
              for i, k in enumerate(keys)]
     resp = gql("query {\n" + "\n".join(parts) + "\n}", token)
@@ -394,7 +395,9 @@ def meta_batch(keys, token):
         rel = ((r.get("releases") or {}).get("nodes") or [None])[0]
         e = {"repo": {"pushed": r.get("pushedAt"), "stars": r.get("stargazerCount"), "archived": bool(r.get("isArchived")),
                       "full": r.get("nameWithOwner"), "desc": r.get("description") or "", "size": r.get("diskUsage"),
-                      "lang": (r.get("primaryLanguage") or {}).get("name"), "created": r.get("createdAt")}}
+                      "lang": (r.get("primaryLanguage") or {}).get("name"), "created": r.get("createdAt"),
+                      "firstRelease": ((((r.get("firstRel") or {}).get("nodes") or [None])[0]) or {}).get("publishedAt")
+                                      or ((((r.get("firstRel") or {}).get("nodes") or [None])[0]) or {}).get("createdAt")}}
         if rel:
             e["release"] = {"tag": rel.get("tagName"), "date": rel.get("publishedAt") or rel.get("createdAt"),
                             "pre": bool(rel.get("isPrerelease")), "url": rel.get("url")}
@@ -792,6 +795,105 @@ def refresh_libretro(projects, overrides):
     data["generated"] = NOW
     return write_json_if_changed(path, data)
 
+# ---------------------------------------------------------------- recomp.fyi (search data for the Find a game tab)
+RECOMPFYI_URL = os.environ.get("PW_RECOMPFYI_URL", "https://recomp.fyi/")
+from html.parser import HTMLParser
+
+class _TableParser(HTMLParser):
+    """Collects every table as rows of (text, first link) cells."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.tables, self._t, self._row, self._cell = [], None, None, None
+    def handle_starttag(self, tag, attrs):
+        if tag == "table":
+            self._t = []
+        elif tag == "tr" and self._t is not None:
+            self._row = []
+        elif tag in ("td", "th") and self._row is not None:
+            self._cell = {"text": "", "href": ""}
+        elif tag == "a" and self._cell is not None and not self._cell["href"]:
+            self._cell["href"] = dict(attrs).get("href") or ""
+        elif tag == "br" and self._cell is not None:
+            self._cell["text"] += " "
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self._cell is not None and self._row is not None:
+            self._cell["text"] = re.sub(r"\s+", " ", self._cell["text"]).strip()
+            self._row.append(self._cell); self._cell = None
+        elif tag == "tr" and self._row is not None and self._t is not None:
+            if self._row:
+                self._t.append(self._row)
+            self._row = None
+        elif tag == "table" and self._t is not None:
+            self.tables.append(self._t); self._t = None
+    def handle_data(self, data):
+        if self._cell is not None:
+            self._cell["text"] += data
+
+def parse_recompfyi(html):
+    p = _TableParser(); p.feed(html)
+    for t in p.tables:
+        head = [c["text"].lower() for c in t[0]] if t else []
+        if any(h.startswith("game") for h in head) and any(h.startswith("project") for h in head):
+            clean = [re.sub(r"[^a-z ]", "", h).strip() for h in head]   # headings may carry sort arrows or labels
+            def find(name):
+                return next((i for i, h in enumerate(clean) if h == name or h.startswith(name + " ") or h.startswith(name)), None)
+            ix = {n: find(n) for n in ("game", "system", "runs on", "work", "toolchain", "project", "status", "version", "last commit", "added")}
+            col = lambda r, name: r[ix[name]] if ix.get(name) is not None and ix[name] < len(r) else {"text": "", "href": ""}
+            rows = []
+            for r in t[1:]:
+                game = col(r, "game")["text"]
+                if not game:
+                    continue
+                proj = col(r, "project")
+                url = proj["href"]
+                if url.startswith("/"):
+                    url = urllib.parse.urljoin(RECOMPFYI_URL, url)
+                runs = [x.strip() for x in col(r, "runs on")["text"].split("/") if x.strip()]
+                rows.append([game, col(r, "system")["text"], runs, col(r, "work")["text"].lower(), col(r, "toolchain")["text"],
+                             proj["text"], url, col(r, "status")["text"], col(r, "version")["text"], col(r, "last commit")["text"],
+                             col(r, "added")["text"]])
+            return rows
+    return []
+
+def refresh_recompfyi():
+    path = os.path.join(DATA, "recompfyi.json")
+    old = load_json(path, {})
+    try:
+        last = datetime.datetime.fromisoformat((old.get("fetched") or "2000-01-01T00:00:00Z").replace("Z", "+00:00"))
+        if (datetime.datetime.now(datetime.timezone.utc) - last).total_seconds() < 20 * 3600:
+            log("  recomp.fyi: read less than a day ago; skipping")
+            return False
+    except ValueError:
+        pass
+    try:
+        html = (http_get(RECOMPFYI_URL, {"Accept": "text/html"}) or b"").decode("utf-8", "replace")
+        rows = parse_recompfyi(html)
+    except Exception as e:
+        log(f"  recomp.fyi couldn't be read ({e}); keeping the previous copy")
+        return False
+    if len(rows) < 100:
+        log(f"  recomp.fyi: only {len(rows)} rows found (the page layout may have changed); keeping the previous copy")
+        return False
+    data = {"format": "port-watch-recompfyi", "version": 1, "source": RECOMPFYI_URL, "fetched": NOW,
+            "columns": ["game", "system", "runs", "work", "toolchain", "project", "url", "status", "version", "last", "added"], "rows": rows}
+    log(f"  recomp.fyi: {len(rows)} rows")
+    return write_json_if_changed(path, data, compare_without=("generated", "fetched"))
+
+# ---------------------------------------------------------------- first seen by Port Watch (for "New" badges)
+def refresh_history(keys):
+    path = os.path.join(DATA, "history.json")
+    first_run = not os.path.exists(path)
+    data = load_json(path, {"format": "port-watch-history", "version": 1, "seen": {}})
+    seen = data.setdefault("seen", {})
+    added = 0
+    for k in keys:
+        if k not in seen:
+            seen[k] = "before" if first_run else NOW   # the first run records what was already there
+            added += 1
+    log(f"  history: {added} newly seen" + (" (first run: all recorded as already there)" if first_run else ""))
+    data["generated"] = NOW
+    return write_json_if_changed(path, data)
+
 # ---------------------------------------------------------------- main
 def main():
     seed = seed_projects()
@@ -817,8 +919,13 @@ def main():
     refresh_libretro(with_games(seed + extra, overrides), overrides)
     log("IGDB screenshots:")
     refresh_screens(with_games(seed + extra, overrides), overrides)
+    log("recomp.fyi:")
+    refresh_recompfyi()
     log("Shared update checks:")
-    refresh_status([p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))])
+    tracked = [p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))]
+    refresh_status(tracked)
+    log("History:")
+    refresh_history(sorted({p.get("k") or p["id"] for p in tracked}))
 
 if __name__ == "__main__":
     main()

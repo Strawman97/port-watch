@@ -181,6 +181,9 @@ dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 .ptab{flex:0 0 auto;max-width:300px;white-space:nowrap;border:1px solid var(--line);border-bottom:0;background:var(--surface);color:var(--muted);border-radius:6px 6px 0 0;padding:5px 10px;font-size:12.5px;text-align:left;display:grid;gap:1px}
 .ptab small{overflow:hidden;text-overflow:ellipsis}
 .ptab .tabplat{color:var(--ink);font-weight:600}
+.pill.rc-new{background:#E4F6EA;color:#17663A;font-weight:600}.pill.rc-play{background:#E2F1FB;color:#155E8C;font-weight:600}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.rc-new{background:#173A26;color:#8FE0AE}:root:not([data-theme="light"]) .pill.rc-play{background:#14334A;color:#8CCBF2}}
+:root[data-theme="dark"] .pill.rc-new{background:#173A26;color:#8FE0AE}:root[data-theme="dark"] .pill.rc-play{background:#14334A;color:#8CCBF2}
 .ptab small{font-size:11px;color:var(--muted)}
 .ptab[aria-selected="true"]{color:var(--ink);font-weight:600;box-shadow:inset 0 3px 0 var(--action)}
 .ptabs + .detail{border-top:1px solid var(--line)}
@@ -300,6 +303,9 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <label class="opt" style="margin-top:8px"><input type="checkbox" id="fFollow"> Followed only<span class="n" id="nFollow"></span></label>
     <label class="opt" title="Repositories that look like malware disguised as game ports are hidden unless this is ticked"><input type="checkbox" id="fRisky"> Show suspected malware lures<span class="n" id="nRisky"></span></label>
     <label class="opt" title="Repositories that were deleted, made private or archived are left out of the list unless this is ticked"><input type="checkbox" id="fGone"> Show deleted or archived<span class="n" id="nGone"></span></label>
+    <h3 style="margin-top:12px">Recent changes</h3>
+    <label class="opt" title="Projects added to Port Watch, or whose repository was created, in the last 7 days"><input type="checkbox" id="fRecentNew"> New this week<span class="n" id="nRecentNew"></span></label>
+    <label class="opt" title="Projects that had no public release before, and got their first one in the last 14 days"><input type="checkbox" id="fRecentPlay"> Newly playable (14 days)<span class="n" id="nRecentPlay"></span></label>
     <h3>Playability</h3><div id="fPlay"></div>
     <h3>Type</h3><div id="fType"></div>
     <h3>PC release</h3><div id="fPs"></div>
@@ -326,6 +332,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
           <option value="name">Game name</option>
           <option value="platform">Original platform</option>
           <option value="stars">GitHub stars</option>
+          <option value="added">Recently added</option>
         </select>
       </div>
     </div>
@@ -407,14 +414,15 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, screens:null, lib:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, screens:null, lib:null, history:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
 const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
   if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
-    const [c,i,st,sc,lb] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json"),get("libretro.json")]);
+    const [c,i,st,sc,lb,hi] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json"),get("libretro.json"),get("history.json")]);
+    if(hi&&hi.seen)REPO.history=hi;
     if(lb&&lb.map)REPO.lib=lb;
     if(sc&&sc.games&&sc.map)REPO.screens=sc;
     try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
@@ -492,7 +500,7 @@ function loadState(){
 let saveFailed=false;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
-const UI={q:"",followed:false,showRisky:false,showGone:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
+const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
 
 /* ---------------- helpers ---------------- */
 const $=s=>document.querySelector(s);
@@ -1359,6 +1367,7 @@ function renderUpdates(){
 function passes(v,skip,own){
   if(v.risk&&v.risk.level==="high"&&!UI.showRisky)return false;
   if((v.gone||v.archived)&&!UI.showGone)return false;
+  if(skip!=="recent"&&(UI.recentNew||UI.recentPlay)){const ri=recentInfo(v);if(!((UI.recentNew&&ri.isNew)||(UI.recentPlay&&ri.nowPlayable)))return false;}
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
   if(skip!=="type"&&UI.type.size&&!UI.type.has(v.type))return false;
@@ -1415,6 +1424,7 @@ function groupsOf(vs){
     const plats=[...new Set(items.map(v=>v.platform))];
     out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform,plats});}
   const s=UI.sort;
+  if(s==="added"){const at=g=>Math.max(...g.items.map(v=>recentInfo(v).addedT));out.sort((a,b)=>at(b)-at(a));return out;}
   out.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return out;
 }
@@ -1438,7 +1448,7 @@ function groupRowHTML(g,nid){
   const relLead=items.slice().sort((a,b)=>(b.updated||"").localeCompare(a.updated||""))[0];
   return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" aria-expanded="${UI.open===g.key}">
     <span class="bar"></span>
-    <span class="g"><span class="unk" style="grid-row:1/3;grid-column:2;align-self:center">${fol?"♥ "+fol:""}</span><b>${esc(g.game)}<span class="gcount">${items.length} projects</span>${isNew?'<span class="newtag">NEW</span>':""}</b><span class="repos">${esc(items.slice(0,3).map(repoLabel).join(" · "))}${items.length>3?" · +"+(items.length-3):""}</span></span>
+    <span class="g"><span class="unk" style="grid-row:1/3;grid-column:2;align-self:center">${fol?"♥ "+fol:""}</span><b>${esc(g.game)}<span class="gcount">${items.length} projects</span>${recentPills(items)}${isNew?'<span class="newtag">NEW</span>':""}</b><span class="repos">${esc(items.slice(0,3).map(repoLabel).join(" · "))}${items.length>3?" · +"+(items.length-3):""}</span></span>
     <span class="ty">${types.map(t=>`<span class="pill ${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[0]}</span>`).join("")}${playPill({play:best})}${risky?riskPill(risky):""}</span>
     <span class="plat">${g.plats.map(esc).join("<br>")}</span>
     <span class="oss tags">${oss.length?oss.map(o=>`<span class="f os">${o}</span>`).join(""):'<span class="unk">Not detected yet</span>'}</span>
@@ -1452,15 +1462,34 @@ function groupTileHTML(g,nid){
   const oss=OSLIST.filter(o=>g.items.some(v=>v.os[o]));const best=g.items.some(v=>v.play==="yes")?"yes":g.items.every(v=>v.play==="no")?"no":"unknown";
   const gtypes=[...new Set(g.items.map(v=>v.type))];
   return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" data-id="${esc(lead.p.id)}">${coverHTML(cv,isNew,gtypes)}
-    <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.plats.join(" · "))} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
+    <span class="meta2"><b>${esc(g.game)}<span class="gcount">${g.items.length} projects</span></b><span>${playPill({play:best})}${recentPills(g.items)}${(g.items.find(v=>v.risk)?riskPill(g.items.find(v=>v.risk)):"")}</span><small>${esc(g.plats.join(" · "))} · ${g.updated?esc(ago(g.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
 }
-function newIds(){const s=new Set();for(const e of unread())if(e.id)s.add(e.id);return s;}
+function newIds(){return new Set();}   // per-row NEW tags gave way to the data-based "New" / "Now playable" badges
+const RECENT_DAYS=14,NEW_DAYS=7;   // "New": first week; "Now playable": two weeks, since those are rarer
+function recentInfo(v){
+  const r=(v.m&&v.m.repo)||{},now=Date.now(),win=RECENT_DAYS*864e5,day=864e5;
+  const seen=REPO.history&&REPO.history.seen?REPO.history.seen[v.p.k||v.p.id]:undefined;
+  const seenT=seen&&seen!=="before"?Date.parse(seen):NaN,createdT=r.created?Date.parse(r.created):NaN,firstT=r.firstRelease?Date.parse(r.firstRelease):NaN;
+  const nwin=NEW_DAYS*864e5;const recentSeen=!isNaN(seenT)&&now-seenT<=nwin,recentCreated=!isNaN(createdT)&&now-createdT<=nwin;
+  const isNew=recentSeen||recentCreated;const newT=recentSeen?seenT:recentCreated?createdT:NaN;
+  // newly playable: the first-ever release is recent, and the project already existed without one
+  // the repository's creation date is the best evidence; "already there at the first run" only counts when it's unknown
+  const existedBefore=!isNaN(createdT)?firstT-createdT>3*day:(seen==="before"||(!isNaN(seenT)&&firstT-seenT>day));
+  const nowPlayable=!isNaN(firstT)&&now-firstT<=win&&v.play==="yes"&&existedBefore;
+  const addedT=!isNaN(seenT)?seenT:!isNaN(createdT)?createdT:0;
+  return {isNew,newT,nowPlayable,firstT,addedT};
+}
+function recentPills(items){
+  const infos=items.map(recentInfo);const nw=infos.filter(i=>i.isNew),np=infos.filter(i=>i.nowPlayable);
+  return (nw.length?`<span class="pill rc-new" title="Added to Port Watch, or created, ${esc(ago(new Date(Math.max(...nw.map(i=>i.newT))).toISOString()))}">New</span>`:"")+
+         (np.length?`<span class="pill rc-play" title="First public release ${esc(ago(new Date(Math.max(...np.map(i=>i.firstT))).toISOString()))}">Now playable</span>`:"");
+}
 function rowHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
   const on=FEATURES.filter(f=>v.feats[f.id].st==="yes");const show=on.slice(0,4);
   const oss=OSLIST.filter(o=>v.os[o]);
   return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}" data-gk="${esc(gk)}" aria-expanded="${UI.open===gk}">
     <span class="bar"></span>
-    <span class="g">${heartHTML(v)}<b>${esc(v.game)}${isNew?'<span class="newtag">NEW</span>':""}</b>${v.p.l?`<a href="${esc(v.p.l)}" target="_blank" rel="noopener">${esc(v.p.pr||v.p.l)}</a>`:`<span class="unk">${esc(v.p.pr||"")}</span>`}</span>
+    <span class="g">${heartHTML(v)}<b>${esc(v.game)}${recentPills([v])}</b>${v.p.l?`<a href="${esc(v.p.l)}" target="_blank" rel="noopener">${esc(v.p.pr||v.p.l)}</a>`:`<span class="unk">${esc(v.p.pr||"")}</span>`}</span>
     <span class="ty"><span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0]}</span>${playPill(v)}${riskPill(v)}</span>
     <span class="plat">${esc(v.platform)}</span>
     <span class="oss tags">${oss.length?oss.map(o=>`<span class="f os">${o}</span>`).join(""):'<span class="unk">Not detected yet</span>'}</span>
@@ -1471,7 +1500,7 @@ function rowHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
 function tileHTML(v,isNew,g){const gk=g?g.key:groupKeyOf(v);
   const oss=OSLIST.filter(o=>v.os[o]);
   return `<div class="tile" role="button" tabindex="0" style="--pc:${PCOL[v.platform]||"#888"}" data-id="${esc(v.p.id)}" data-gk="${esc(gk)}">${heartHTML(v)}${coverHTML(v,isNew,true)}
-    <span class="meta2"><b>${esc(v.game)}</b><span>${playPill(v)}${riskPill(v)}</span><small>${esc(v.platform)} · ${v.updated?esc(ago(v.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
+    <span class="meta2"><b>${esc(v.game)}</b><span>${playPill(v)}${recentPills([v])}${riskPill(v)}</span><small>${esc(v.platform)} · ${v.updated?esc(ago(v.updated)):"update date unknown"}</small><small>${oss.length?esc(oss.join(", ")):"Platforms not detected yet"}</small></span></div>`;
 }
 function detailHTML(v,head){
   const p=v.p,m=v.m;
@@ -1502,6 +1531,9 @@ function detailHTML(v,head){
       <dt>PC release</dt><dd>${esc(v.ps)} <span class="note">(${esc(PS_HELP[v.ps]||"")}${v.psSrc?"; from IGDB, change it in the edits if it's wrong":""})</span></dd>
       ${v.so&&Object.keys(v.so).some(k=>k!=="note"&&!k.startsWith("_"))?`<dt>Shared fixes</dt><dd>${esc(Object.keys(v.so).filter(k=>k!=="note"&&!k.startsWith("_")).map(k=>({title:"title",cover:"cover",platform:"platform",type:"type",pcRelease:"PC release",runsOn:"runs on"}[k]||k)).join(", "))} set by the maintainer${v.so.note?" · "+esc(v.so.note):""}</dd>`:""}
       <dt>Last updated</dt><dd>${v.updated?esc(fmtDate(v.updated))+" ("+esc(ago(v.updated))+")":"Unknown"}</dd>
+      ${(()=>{const ri=recentInfo(v);const seen=REPO.history&&REPO.history.seen?REPO.history.seen[v.p.k||v.p.id]:"";
+        return (seen&&seen!=="before"?`<dt>Added to Port Watch</dt><dd>${esc(fmtDate(seen))} (${esc(ago(seen))})</dd>`:"")+
+               (!isNaN(ri.firstT)?`<dt>First release</dt><dd>${esc(fmtDate(new Date(ri.firstT).toISOString()))}${ri.nowPlayable?' <span class="pill rc-play">Now playable</span>':""}</dd>`:"");})()}
       <dt>Latest release</dt><dd>${v.rel&&v.rel.tag?(v.rel.url?`<a href="${esc(v.rel.url)}" target="_blank" rel="noopener">${esc(v.rel.tag)}</a>`:esc(v.rel.tag))+(v.rel.date?" · "+esc(fmtDate(v.rel.date)):""):"None found"}</dd>
       <dt>Last commit</dt><dd>${v.lastCommit?esc(fmtDate(v.lastCommit)):"Unknown"}</dd>
       <dt>Repo</dt><dd>${p.l?`<a href="${esc(p.l)}" target="_blank" rel="noopener">${esc(p.l.replace(/^https?:\/\//,""))}</a>`:"None"}</dd>
@@ -1604,16 +1636,96 @@ function findResults(){
     q?(a,b)=>b[0]-a[0]||((b[1].has_public_code?1:0)-(a[1].has_public_code?1:0))||(b[1].stars||0)-(a[1].stars||0):(a,b)=>(b[1].last_push||"").localeCompare(a[1].last_push||"");
   return scored.sort(by).map(x=>x[1]);
 }
+/* ---------------- recomp.fyi as a second search source (read daily by the refresh workflow; never raises alerts) ---------------- */
+const RF={status:"idle",rows:[],fetched:""};
+const RF_SITE="https://recomp.fyi/";
+const RF_PLAT={"Xbox":"Xbox (original)","Genesis":"Mega Drive","NDS":"DS","GB":"Game Boy","GBC":"Game Boy Color","PC (Windows)":"PC","PC (DOS)":"PC","PC (Linux)":"PC","Mac":"PC","iOS":"Mobile","Android":"Mobile","iOS (iPad)":"Mobile","GG":"Game Gear"};
+const RF_NONCONSOLE=/^(pc|mac|android|ios|zx spectrum|amiga|msx|apm3|cd-i)/i;
+UI.findRF={plat:"",work:"",runs:"",sort:"match",consoles:true,open:null};
+function rfPlat(sys){const first=String(sys||"").split(/\s*\/\s*/)[0].trim();return RF_PLAT[first]||first;}
+function rfURL(u,text){
+  if(u&&/^https?:\/\/(?:www\.)?(?:github\.com|gitlab\.com)\/|^https?:\/\/[^/]+\.itch\.io\//i.test(u))return u;
+  const m=/(?:https?:\/\/(?:www\.)?github\.com\/)?([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\s*$/.exec(String(text||"").trim());
+  if(m&&!/\s/.test(m[1]))return "https://github.com/"+m[1].replace(/\.git$/,"");
+  return u||"";
+}
+async function loadRecompfyi(){
+  if(RF.status==="loading"||RF.status==="ok")return;RF.status="loading";renderFindResults();
+  try{const r=await fetch(DATA_BASE+"recompfyi.json",{cache:"no-store"});if(!r.ok)throw 0;const d=await r.json();
+    RF.rows=(d.rows||[]).map((x,i)=>({i,game:x[0]||"",sys:x[1]||"",runs:x[2]||[],work:(x[3]||"").toLowerCase(),tool:x[4]||"",proj:x[5]||"",url:rfURL(x[6],x[5]),status:x[7]||"",ver:x[8]||"",last:x[9]||"",added:x[10]||"",
+      _p:rfPlat(x[1]),_n:nrmT(stripParens(x[0]||"")),_nf:nrmT(x[0]||"")}));RF.fetched=d.fetched||"";RF.status=RF.rows.length?"ok":"blocked";}
+  catch(e){RF.status="blocked";}
+  if(UI.tab==="find"){renderFindControls();renderFindResults();}
+}
+function rfWorkType(w){return /recomp/.test(w)?"Recompilation":/source port/.test(w)?"Source Port":/decomp/.test(w)?"Decompilation":"Recompilation";}
+function rfGroups(){
+  const f=UI.findRF,q=nrmT(UI.find.q),toks=q?q.split(" "):[];
+  const rows=RF.rows.filter(r=>(!f.consoles||!RF_NONCONSOLE.test(r.sys))&&(!f.plat||r._p===f.plat)&&(!f.work||r.work===f.work)&&(!f.runs||r.runs.includes(f.runs)));
+  const m=new Map();
+  for(const r of rows){const sc=scoreTitle(r._n,r._nf,q,toks);if(sc<=0)continue;const key=r._n+"|"+r._p;if(!m.has(key))m.set(key,{key,game:r.game,plat:r._p,sys:r.sys,rows:[],score:0,last:"",added:""});
+    const g=m.get(key);g.rows.push(r);g.score=Math.max(g.score,sc);if(r.last>g.last)g.last=r.last;if(r.added>g.added)g.added=r.added;}
+  const out=[...m.values()];
+  const by=f.sort==="recent"?(a,b)=>b.last.localeCompare(a.last):f.sort==="added"?(a,b)=>b.added.localeCompare(a.added):
+    q?(a,b)=>b.score-a.score||b.last.localeCompare(a.last):(a,b)=>b.last.localeCompare(a.last);
+  return out.sort(by);
+}
+function renderFindControlsRF(c){
+  const f=UI.findRF;const counts={};RF.rows.forEach(r=>{if(f.consoles&&RF_NONCONSOLE.test(r.sys))return;counts[r._p]=(counts[r._p]||0)+1;});
+  const plats=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);const runs=[...new Set(RF.rows.flatMap(r=>r.runs))].sort();
+  c.innerHTML=findSourceTabs()+`<label class="sr" for="fq">Search for a game</label>
+    <input class="fq" id="fq" type="search" placeholder="Which game? For example: Lost Odyssey, Killzone, Dragon Age" value="${esc(UI.find.q)}" autocomplete="off">
+    <div class="frow">
+      <label>Original platform <select id="rfPlat"><option value="">Any</option>${plats.map(p=>`<option ${f.plat===p?"selected":""} value="${esc(p)}">${esc(p)} (${counts[p]})</option>`).join("")}</select></label>
+      <label>Work <select id="rfWork"><option value="">Any</option>${["recomp","source port","decomp"].map(w=>`<option ${f.work===w?"selected":""} value="${w}">${w[0].toUpperCase()+w.slice(1)}</option>`).join("")}</select></label>
+      <label>Runs on <select id="rfRuns"><option value="">Anything</option>${runs.map(m=>`<option ${f.runs===m?"selected":""}>${esc(m)}</option>`).join("")}</select></label>
+      <label>Sort <select id="rfSort"><option value="match" ${f.sort==="match"?"selected":""}>Best match</option><option value="recent" ${f.sort==="recent"?"selected":""}>Recently active</option><option value="added" ${f.sort==="added"?"selected":""}>Recently added</option></select></label>
+      <label><input type="checkbox" id="rfCons" ${f.consoles?"checked":""}> Console games only</label>
+    </div>`;
+}
+function findSourceTabs(){const s=UI.find.src||"unbaked";
+  return `<div class="viewtog" role="group" aria-label="Search source" style="margin-bottom:8px"><button data-fsrc="unbaked" aria-pressed="${s==="unbaked"}">unbaked.games</button><button data-fsrc="recompfyi" aria-pressed="${s==="recompfyi"}">recomp.fyi</button></div>`;}
+function renderFindResultsRF(box){
+  if(RF.status==="idle"||RF.status==="loading"){box.innerHTML=`<div class="list"><div class="empty">Loading recomp.fyi's table…</div></div>`;return;}
+  if(RF.status==="blocked"){box.innerHTML=`<div class="list"><div class="empty">Port Watch's copy of recomp.fyi isn't available yet; the refresh workflow reads it once a day. <a href="${RF_SITE}" target="_blank" rel="noopener">Search recomp.fyi directly</a>.</div></div>`;return;}
+  const ti=trackedIndex(),gs=rfGroups(),shown=gs.slice(0,60),f=UI.findRF,q=UI.find.q;
+  const head=`<div class="infobar">${q?`${gs.length} game${gs.length===1?"":"s"} match “${esc(q)}”.`:"Recently active games. Type a name to search."} Data from <a href="${RF_SITE}" target="_blank" rel="noopener">recomp.fyi</a> by neurocontrarian${RF.fetched?", read "+esc(ago(RF.fetched)):""}. It lists tools, ports and work in progress too; nothing here raises alerts until you add it.</div>`;
+  if(!gs.length){box.innerHTML=head+notFoundHTML(q);return;}
+  box.innerHTML=head+shown.map(g=>{
+    const tracked=g.rows.filter(r=>{const k=linkKey(r.url);return k&&ti.byKey.get(k);}).length;const open=f.open===g.key;
+    const works=[...new Set(g.rows.map(r=>r.work))],runs=[...new Set(g.rows.flatMap(r=>r.runs))];
+    return `<div class="fg"><button class="fghead" data-rfopen="${esc(g.key)}" aria-expanded="${open}" style="--pc:${PCOL[g.plat]||"#888"}"><span class="bar"></span>
+      <span><b>${esc(g.game)}</b><div class="sub">${esc(g.sys)} · ${g.rows.length} project${g.rows.length>1?"s":""}</div>
+        <div style="margin-top:4px">${works.map(w=>`<span class="mini">${esc(w)}</span>`).join("")}</div>
+        ${runs.length?`<div class="sub" style="margin-top:3px">Runs on ${esc(runs.join(", "))}</div>`:""}</span>
+      <span class="right">${tracked?`<span class="pill pl-yes">In Port Watch${tracked>1?" ("+tracked+")":""}</span>`:""}${g.last?`<span>last commit ${esc(g.last)}</span>`:""}</span></button>
+      ${open?`<div class="fgbody">${g.rows.map(r=>{const k=linkKey(r.url);const have=k&&ti.byKey.get(k);const hv=have?view(have):null;
+        return `<div class="fproj"><div class="meta">${r.url?`<a class="name" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.proj||r.url)}</a>`:`<b>${esc(r.proj)}</b>`}
+          <div class="note" style="margin-top:3px"><span class="mini">${esc(r.work)}</span>${r.tool?esc(r.tool)+" · ":""}${r.status?esc(r.status)+" · ":""}${r.ver?esc(r.ver)+" · ":""}${r.last?"last commit "+esc(r.last)+" · ":""}${r.runs.length?"runs on "+esc(r.runs.join(", ")):""}</div></div>
+          <div class="acts">${have?`<span class="pill pl-yes">In Port Watch</span>${heartHTML(hv)}<button class="btn" data-goto="${esc(have.id)}">Show</button>`:
+            k?`<button class="btn" data-rfadd="${r.i}">Add</button><button class="btn primary" data-rfadd="${r.i}|follow">Add and follow</button>`:`<span class="note">No repository link</span>`}</div></div>`;}).join("")}</div>`:""}</div>`;}).join("")+
+    (gs.length>shown.length?`<p class="note" style="text-align:center">Showing the first ${shown.length}. Narrow the search to see others.</p>`:"");
+}
+function addFromRecompfyi(i,follow){
+  const r=RF.rows[+i];if(!r)return;const k=linkKey(r.url);if(!k){toast("That row has no repository link.");return;}
+  if(knownKeys().has(k)){toast("That project is already in Port Watch.");return;}
+  const id="custom:"+k;
+  S.custom[id]={id,k,g:r.game,tf:1,p:PCOL[r._p]?r._p:"Unknown",t:rfWorkType(r.work),ps:r._p==="PC"?"Originally a PC game":"Not checked",d:"",n:"",
+    po:r.runs.filter(x=>OSLIST.includes(x)).join(", "),pr:k.replace(/^(gitlab\.com|itch\.io)\//,""),l:r.url,src:"Added from recomp.fyi",custom:true};
+  if(follow){S.follow=S.follow||{};S.follow[id]=Date.now();}
+  save();renderFilters();renderFindResults();
+  toast((follow?"Added and followed. ":"Added. ")+"Checking it now…");checkOne(id);
+}
 function renderFind(){
   $("#view").innerHTML=`<div class="fctl" id="findCtl"></div><div id="findRes"></div>`;
-  renderFindControls();renderFindResults();if(UB.status==="idle")loadUnbaked();
+  UI.find.src=UI.find.src||S.settings.findSrc||"unbaked";
+  renderFindControls();renderFindResults();if(UI.find.src==="recompfyi"){if(RF.status==="idle")loadRecompfyi();}else if(UB.status==="idle")loadUnbaked();
   setTimeout(()=>{const i=$("#fq");if(i){i.focus();i.setSelectionRange(i.value.length,i.value.length);}},0);
 }
 function renderFindControls(){
-  const c=$("#findCtl");if(!c)return;const f=UI.find;
+  const c=$("#findCtl");if(!c)return;const f=UI.find;if(f.src==="recompfyi"){renderFindControlsRF(c);return;}
   const counts={};UB.games.forEach(g=>{if(f.consoles&&NON_CONSOLE.has(g.platform))return;counts[g._p]=(counts[g._p]||0)+1;});
   const plats=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
-  c.innerHTML=`<label class="sr" for="fq">Search for a game</label>
+  c.innerHTML=findSourceTabs()+`<label class="sr" for="fq">Search for a game</label>
     <input class="fq" id="fq" type="search" placeholder="Which game? For example: Lost Odyssey, Killzone, Dragon Age" value="${esc(f.q)}" autocomplete="off">
     <div class="frow">
       <label>Original platform <select id="fPlatSel"><option value="">Any</option>${plats.map(p=>`<option ${f.plat===p?"selected":""} value="${esc(p)}">${esc(p)} (${counts[p]})</option>`).join("")}</select></label>
@@ -1626,7 +1738,7 @@ function renderFindControls(){
 }
 let findT;
 function renderFindResults(){
-  const box=$("#findRes");if(!box)return;const f=UI.find;
+  const box=$("#findRes");if(!box)return;const f=UI.find;if(f.src==="recompfyi"){renderFindResultsRF(box);return;}
   if(UB.status==="loading"||UB.status==="idle"){box.innerHTML=`<div class="list"><div class="empty">Loading the unbaked.games registry…</div></div>`;return;}
   const ti=trackedIndex();
   if(UB.status==="blocked"){
@@ -1686,12 +1798,19 @@ function addFromUnbaked(slug,i,follow){
   toast((follow?"Added and followed. ":"Added. ")+(k?"Checking it now…":"This link can't be checked automatically."));
   if(k)checkOne(id);
 }
-$("#view").addEventListener("input",e=>{if(e.target.id!=="fq")return;UI.find.q=e.target.value;clearTimeout(findT);findT=setTimeout(()=>{UI.find.open=null;renderFindResults();},140);});
+$("#view").addEventListener("input",e=>{if(e.target.id!=="fq")return;UI.find.q=e.target.value;clearTimeout(findT);findT=setTimeout(()=>{UI.find.open=null;UI.findRF.open=null;renderFindResults();},140);});
 $("#view").addEventListener("change",e=>{const id=e.target.id,f=UI.find;
+  if(/^rf(Plat|Work|Runs|Sort|Cons)$/.test(id)){const r=UI.findRF;if(id==="rfPlat")r.plat=e.target.value;else if(id==="rfWork")r.work=e.target.value;else if(id==="rfRuns")r.runs=e.target.value;else if(id==="rfSort")r.sort=e.target.value;
+    else{r.consoles=e.target.checked;if(r.consoles&&RF_NONCONSOLE.test(r.plat))r.plat="";renderFindControls();}r.open=null;renderFindResults();return;}
   if(id==="fPlatSel")f.plat=e.target.value;else if(id==="fMethSel")f.method=e.target.value;else if(id==="fRunsSel")f.runs=e.target.value;else if(id==="fSortSel")f.sort=e.target.value;
   else if(id==="fCons"){f.consoles=e.target.checked;if(f.consoles&&NON_CONSOLE.has(f.plat))f.plat="";renderFindControls();}else if(id==="fNative")f.native=e.target.checked;else return;
   f.open=null;renderFindResults();});
 function onFindClick(e){
+  const sw=e.target.closest("[data-fsrc]");if(sw){UI.find.src=sw.dataset.fsrc;S.settings.findSrc=UI.find.src;save();renderFindControls();renderFindResults();
+    if(UI.find.src==="recompfyi"){if(RF.status==="idle")loadRecompfyi();}else if(UB.status==="idle")loadUnbaked();
+    setTimeout(()=>{const i=$("#fq");if(i)i.focus();},0);return true;}
+  const ro=e.target.closest("[data-rfopen]");if(ro){UI.findRF.open=UI.findRF.open===ro.dataset.rfopen?null:ro.dataset.rfopen;renderFindResults();return true;}
+  const ra=e.target.closest("[data-rfadd]");if(ra){const [i,fl]=ra.dataset.rfadd.split("|");addFromRecompfyi(i,fl==="follow");return true;}
   const o=e.target.closest("[data-ubopen]");if(o){openUnbakedGame(o.dataset.ubopen);return true;}
   const a=e.target.closest("[data-ubadd]");if(a){const [slug,i,fl]=a.dataset.ubadd.split("|");addFromUnbaked(slug,i,fl==="follow");return true;}
   if(e.target.id==="ubRetry"){UB.status="idle";loadUnbaked();return true;}
@@ -1714,6 +1833,9 @@ function renderFilters(){
   const plc=cnt("play",v=>v.play);$("#fPlay").innerHTML=["yes","no","unknown"].map(x=>`<label class="opt"><input type="checkbox" data-set="play" value="${x}" ${UI.play.has(x)?"checked":""}> ${PLAY_LABEL[x]}<span class="n">${plc[x]||0}</span></label>`).join("");
   const fc=followedCount();$("#nFollow").textContent=fc||"";
   const rc=allProjects().map(view).filter(v=>v.risk&&v.risk.level==="high").length;$("#nRisky").textContent=rc||"";$("#fRisky").checked=UI.showRisky;
+  const rcv=allProjects().map(view).filter(v=>passes(v,"recent",true)).map(recentInfo);
+  $("#nRecentNew").textContent=rcv.filter(i=>i.isNew).length||"";$("#nRecentPlay").textContent=rcv.filter(i=>i.nowPlayable).length||"";
+  $("#fRecentNew").checked=UI.recentNew;$("#fRecentPlay").checked=UI.recentPlay;
   const gc=allProjects().map(view).filter(v=>v.gone||v.archived).length;$("#nGone").textContent=gc||"";$("#fGone").checked=UI.showGone;$("#fFollow").checked=UI.followed;updateFollowBtn();
   const psc=cnt("ps",v=>v.ps);$("#fPs").innerHTML=PS.map(x=>opt("ps",x,psc[x])).join("");
   $("#fPlat").innerHTML=order.map(k=>opt("plat",k,pc[k],true)).join("");
@@ -1811,6 +1933,8 @@ $("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.t
 $("#fFollow").addEventListener("change",e=>{UI.followed=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fRisky").addEventListener("change",e=>{UI.showRisky=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fGone").addEventListener("change",e=>{UI.showGone=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fRecentNew").addEventListener("change",e=>{UI.recentNew=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fRecentPlay").addEventListener("change",e=>{UI.recentPlay=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#groupTog").addEventListener("change",e=>{S.settings.ungroup=!e.target.checked;UI.open=null;save();render();});
 function onOsOverride(e){const cb=e.target.closest("[data-osov]");if(!cb)return false;const det=cb.closest("[data-detail]");if(!det)return true;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const cur=new Set(Array.isArray(o.os)?o.os:Object.keys(view(allProjects().find(x=>x.id===id)).os));

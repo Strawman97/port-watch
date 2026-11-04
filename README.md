@@ -19,7 +19,8 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 - **Malware-lure warnings:** repositories that look like malware disguised as game ports are flagged and hidden (see below).
 - **Follow list:** tap the heart on a project, then use **Check followed** to check only those.
 - **Alerts** for new releases, newly listed projects and repositories that disappear.
-- **Find a game:** search the unbaked.games registry to see whether a recompilation or decompilation exists for a game, and add any project to your list in one click.
+- **Find a game:** search the unbaked.games registry or [recomp.fyi](https://recomp.fyi/)'s table to see whether a recompilation, decompilation or source port exists for a game, and add any project to your list in one click. Search results never raise alerts; only projects you add are tracked.
+- **Recent changes:** **New** marks projects added to Port Watch, or created, in the last 7 days. **Now playable** marks projects that had no public release before and got their first one in the last 14 days. Both have sidebar filters, and **Recently added** sorts by when projects appeared.
 - **Add project:** track anything else by its GitHub, GitLab or itch.io link.
 
 ## Getting started
@@ -131,6 +132,7 @@ Port Watch builds on the work of these projects and lists. Their data and images
 - [libretro-thumbnails](https://github.com/libretro-thumbnails): box art
 - [SteamGridDB](https://www.steamgriddb.com): cover art, made by its community
 - [IGDB](https://www.igdb.com): game screenshots
+- [recomp.fyi](https://recomp.fyi/) by neurocontrarian: the project table searchable in Find a game
 - [PortsDR](https://portsdr.com), [Recompendium](https://nio03.github.io/unricopie/en/) and [Read Only Memo](https://readonlymemo.com/decompilation-projects-and-n64-recompiled-list/): used to compile the original built-in list
 - Every project developer whose work is tracked here
 
@@ -148,6 +150,8 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
+| `data/recompfyi.json` | Written by the workflow once a day: a copy of recomp.fyi's table for the Find a game tab |
+| `data/history.json` | Written by the workflow: when each project first appeared in Port Watch (projects present at the first run are marked "before") |
 | `data/libretro.json` | Written by the workflow: each retro game's libretro-thumbnails box art, in-game shot and title screen |
 | `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json`, malware-lure and README-screenshot rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
