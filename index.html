@@ -301,8 +301,8 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <label class="sr" for="q">Search games or projects</label>
     <input class="search" id="q" type="search" placeholder="Game or project">
     <label class="opt" style="margin-top:8px"><input type="checkbox" id="fFollow"> Followed only<span class="n" id="nFollow"></span></label>
-    <label class="opt" title="Repositories that look like malware disguised as game ports are hidden unless this is ticked"><input type="checkbox" id="fRisky"> Show suspected malware lures<span class="n" id="nRisky"></span></label>
-    <label class="opt" title="Repositories that were deleted, made private or archived are left out of the list unless this is ticked"><input type="checkbox" id="fGone"> Show deleted or archived<span class="n" id="nGone"></span></label>
+    <label class="opt" title="Tick to list only repositories that look like malware disguised as game ports, to review them. They're hidden from the normal list."><input type="checkbox" id="fRisky"> Suspected malware lures only<span class="n" id="nRisky"></span></label>
+    <label class="opt" title="Tick to list only repositories that were deleted, made private or archived, for example to look for a rehosted copy. They're hidden from the normal list."><input type="checkbox" id="fGone"> Deleted or archived only<span class="n" id="nGone"></span></label>
     <h3 style="margin-top:12px">Recent changes</h3>
     <label class="opt" title="Projects added to Port Watch, or whose repository was created, in the last 7 days"><input type="checkbox" id="fRecentNew"> New this week<span class="n" id="nRecentNew"></span></label>
     <label class="opt" title="Projects that had no public release before, and got their first one in the last 14 days"><input type="checkbox" id="fRecentPlay"> Newly playable (14 days)<span class="n" id="nRecentPlay"></span></label>
@@ -1365,8 +1365,9 @@ function renderUpdates(){
   $("#strip").innerHTML=u.slice(0,14).map((e,ix)=>`<button class="cart" style="--pc:${PCOL[e.plat]||"#888"}" data-ev="${ix}"><span class="kind ${e.type==="gone"?"gone":""}">${e.type==="release"?"Release":e.type==="new"?"New project":"Repo change"}</span><b>${esc(e.game||"Discovered repo")}</b><small>${esc(e.text)}</small><small>${esc(ago(new Date(e.t).toISOString()))}</small></button>`).join("");
 }
 function passes(v,skip,own){
-  if(v.risk&&v.risk.level==="high"&&!UI.showRisky)return false;
-  if((v.gone||v.archived)&&!UI.showGone)return false;
+  {const isLure=!!(v.risk&&v.risk.level==="high"),isGone=!!(v.gone||v.archived);
+   if(UI.showRisky||UI.showGone){if(!((UI.showRisky&&isLure)||(UI.showGone&&isGone)))return false;}
+   else if(isLure||isGone)return false;}
   if(skip!=="recent"&&(UI.recentNew||UI.recentPlay)){const ri=recentInfo(v);if(!((UI.recentNew&&ri.isNew)||(UI.recentPlay&&ri.nowPlayable)))return false;}
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
@@ -1507,6 +1508,12 @@ function detailHTML(v,head){
   const warn=[];
   if(v.risk)warn.push(v.risk.level==="high"?"This looks like malware disguised as a game port: "+v.risk.reasons.join(", ")+". Don't download or run anything from it.":"Be careful with this repository. Warning signs: "+v.risk.reasons.join(", ")+".");
   if(v.m&&v.m.netErr)warn.push("Port Watch couldn't reach "+v.m.netErr.host+" for this project on the last check, so its details may be out of date.");if(v.gone)warn.push("The repository couldn't be reached on the last check. It may have been deleted, renamed or taken down.");if(v.archived)warn.push("The repository is archived (read-only).");
+  const rehost=(v.gone||v.archived)?(()=>{const name=(v.p.k||"").split("/").pop()||v.game,q=encodeURIComponent(name),g=encodeURIComponent(v.game);
+    return `<div class="warnbox">Look for a rehosted copy: <a href="https://github.com/search?type=repositories&q=${q}" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://gitlab.com/search?search=${q}&scope=projects" target="_blank" rel="noopener">GitLab</a> ·
+      <a href="https://codeberg.org/explore/repos?q=${q}" target="_blank" rel="noopener">Codeberg</a> ·
+      <a href="https://github.com/search?type=repositories&q=${g}+recomp+OR+decomp+OR+port" target="_blank" rel="noopener">GitHub by game title</a> ·
+      <a href="https://web.archive.org/web/*/${esc(v.p.l||"https://github.com/"+(v.p.k||""))}" target="_blank" rel="noopener">Wayback Machine</a></div>`;})():"";
   const rankSt={yes:0,planned:1,no:2};
   const feat=FEATURES.slice().sort((x,y)=>rankSt[v.feats[x.id].st]-rankSt[v.feats[y.id].st]).map(f=>{const st=v.feats[f.id];return `<span class="c ${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" · planned":""}</span>`;}).join("");
   const os=OSLIST.slice().sort((x,y)=>(v.os[y]?1:0)-(v.os[x]?1:0)).map(o=>`<span class="c ${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
@@ -1518,7 +1525,7 @@ function detailHTML(v,head){
   const scanned=m.scannedAt?"README and release files read "+ago(new Date(m.scannedAt).toISOString())+".":(p.k?"README and release files not read yet. Run Check for updates.":"No repository to read.");
   const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");
   return `<div class="detail" data-detail="${esc(p.id)}">${head||""}
-    ${warn.map(w=>`<div class="warnbox">${esc(w)}</div>`).join("")}
+    ${warn.map(w=>`<div class="warnbox">${esc(w)}</div>`).join("")}${rehost}
     <div class="dgrid"><section class="d-runs"><h4>Runs on</h4><div class="chipset">${os}</div>${osEdit}</section>
     <section class="d-feats"><h4>Features <span class="note">${nFeat} of ${FEATURES.length} detected</span></h4><div class="chipset">${feat}</div>
       <p class="note" style="margin-top:6px">${esc(scanned)} Hover an item to see where it was found.</p></section>

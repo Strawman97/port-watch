@@ -97,7 +97,7 @@ Fake "PC port" repositories are a known way of spreading malware. Port Watch che
 - a name copying a well-known project from a different owner, with few stars;
 - a brand-new repository with almost no stars.
 
-A repository with real code counts against a flag, so genuine projects with download buttons aren't flagged. Strong combinations mark a project as **Possible malware**. It's hidden from the list unless you tick **Show suspected malware lures**, and its details explain why. Weaker signs show a **Check before downloading** badge. **Add project** warns before you add a flagged repository.
+A repository with real code counts against a flag, so genuine projects with download buttons aren't flagged. Strong combinations mark a project as **Possible malware**. It's hidden from the normal list; tick **Suspected malware lures only** to list just those projects for review, and their details explain why. Weaker signs show a **Check before downloading** badge. **Add project** warns before you add a flagged repository.
 
 **Export fixes for everyone** never includes suspected lures, hidden projects or deleted repositories, so they can't be shared by accident.
 
@@ -105,7 +105,7 @@ These are warning signs, not proof. Never run downloads from a project you're un
 
 ## Deleted and archived repositories
 
-Projects whose repository was deleted, made private or archived are left out of the list. Tick **Show deleted or archived** to see them; some archived projects still have working downloads.
+Projects whose repository was deleted, made private or archived are left out of the list. Tick **Deleted or archived only** to list just those, for example to look for a rehosted copy. Their details have one-click searches on GitHub, GitLab and Codeberg, and a Wayback Machine link. Some archived projects still have working downloads.
 
 ## Privacy
 
