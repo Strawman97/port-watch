@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -1996,6 +1996,15 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
       "description": "Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux"
     },
+    "blsncvs/castlevania-grimoire-of-souls-recomp": {
+      "link": "https://github.com/BLSNCVS/Castlevania-Grimoire-of-Souls-Recomp",
+      "title": "Castlevania: Grimoire of Souls",
+      "platform": "Mobile",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/105c4dffbc8f021336f80e0a67c37e08.jpg",
+      "description": "Castlevania: Grimoire of Souls (Apple Arcade, macOS) running natively on Windows."
+    },
     "bluisblu/cttr": {
       "link": "https://github.com/bluisblu/cttr",
       "title": "Crash Tag Team Racing",
@@ -2027,6 +2036,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Cha-Cha: A MH3U Recomp. Monster Hunter 3 Ultimate running natively on Windows and Linux. Bring your own dump."
+    },
+    "brewsparrow/armyoftwotdc-recomp": {
+      "link": "https://github.com/BrewSparrow/ArmyOfTwoTDC-Recomp",
+      "title": "Army of Two: The Devil's Cartel",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Army of Two The Devil's Cartel Xbox 360 Recomp Project"
     },
     "brian-oblivion/pepsiman-decomp": {
       "link": "https://github.com/brian-oblivion/pepsiman-decomp",
@@ -2119,6 +2136,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Matching decompilation of Star Ocean: Till the End of Time (PS2)"
+    },
+    "chasem-dev/sms-launcher": {
+      "link": "https://github.com/chasem-dev/sms-launcher",
+      "title": "Super Mario Sunshine",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Super Mario Sunshine Native PC Port Launcher"
     },
     "chunchunq/fifa09-recomp": {
       "link": "https://github.com/ChunchunQ/fifa09-recomp",
@@ -2510,6 +2535,13 @@
     "gitlab.com/octagram-labs-group/scda360pcport": {
       "link": "https://gitlab.com/octagram-labs-group/SCDA360pcport",
       "title": "Tom Clancy's Splinter Cell: Double Agent",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)"
+    },
+    "gitlab.com/octagram-labs-group/tcscc-recomp": {
+      "link": "https://gitlab.com/octagram-labs-group/TCSCC-Recomp",
+      "title": "Tom Clancy’s Splinter Cell: Conviction",
       "platform": "Xbox 360",
       "type": "Recompilation",
       "pcRelease": "Also on PC (console version ported)"
@@ -3078,6 +3110,14 @@
       "pcRelease": "Never released on PC",
       "description": "Dead or Alive 3 (Japan) PC Port "
     },
+    "mauricristiano95-hub/f1_ce_ps3": {
+      "link": "https://github.com/mauricristiano95-hub/F1_CE_PS3",
+      "title": "Formula One Championship Edition",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Recompilation for modern system of Formula One Championship Edition (PS3)"
+    },
     "mayhemdotcpp/nfs4-recomp": {
       "link": "https://github.com/mayhemdotcpp/nfs4-recomp",
       "title": "Need for Speed: High Stakes",
@@ -3351,6 +3391,15 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/9db1c4a3a80276439554314a0b2dabe2.jpg",
       "description": "Native Windows PC port of The Last of Us Remastered (PS4, CUSA00552). Runs the game’s own x86-64 code on a custom runtime, with PS4 system libraries reimplemented and a Vulkan renderer based on shadPS4. Includes a launcher. No game files included: you need your own copy."
     },
+    "razzconnect/basara4-native-pc": {
+      "link": "https://github.com/razzconnect/basara4-native-pc",
+      "title": "Sengoku Basara 4 Sumeragi",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/4bfab835a70836f9ce3f029ffeb555f9.png",
+      "description": "Sengoku Basara 4 Sumeragi Native PC Port & Launcher. Direct x86-64 CPU Execution, Re-implemented PS4 System Contracts & Vulkan Translation by Razz"
+    },
     "re-tero17/ratchet-tod-recomp": {
       "link": "https://github.com/Re-TeRo17/ratchet-tod-recomp",
       "title": "Ratchet & Clank: Tools of Destruction",
@@ -3414,6 +3463,14 @@
       "platform": "DS",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "saintiron82/macross30-recomp": {
+      "link": "https://github.com/saintiron82/macross30-recomp",
+      "title": "Macross 30: Voices across the Galaxy",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Technical research notes: SPU contracts, synchronization, rendering and troubleshooting. Documentation only."
     },
     "sardentrasi/legaiarecomp": {
       "link": "https://github.com/sardentrasi/LegaiaRecomp",
@@ -3755,6 +3812,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "An unofficial original Xbox version PC port of 007: From Russia With Love via static recompilation."
+    },
+    "tgp482/007nightfire-xberecomp": {
+      "link": "https://github.com/TGP482/007Nightfire-XBERecomp",
+      "title": "007: Nightfire",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "PC version is a different game",
+      "description": "An unofficial original Xbox version PC port of 007: Nightfire via static recompilation."
     },
     "tgp482/black-xberecomp": {
       "link": "https://github.com/TGP482/BLACK-XBERecomp",
@@ -4138,6 +4203,13 @@
       "platform": "Switch",
       "type": "Recompilation",
       "description": "A soon to be crowned prince is crying. Static recompilation"
+    },
+    "yaibakamikaze/izunarecomp": {
+      "link": "https://github.com/YaibaKamikaze/IzunaRecomp",
+      "title": "Ninja Gaiden II",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Only a remake or remaster on PC"
     },
     "yakuru-43/dq8-decomp": {
       "link": "https://github.com/Yakuru-43/dq8-decomp",
