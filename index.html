@@ -302,6 +302,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <input class="search" id="q" type="search" placeholder="Game or project">
     <label class="opt" style="margin-top:8px"><input type="checkbox" id="fFollow"> Followed only<span class="n" id="nFollow"></span></label>
     <label class="opt" title="Tick to list only repositories that look like malware disguised as game ports, to review them. They're hidden from the normal list."><input type="checkbox" id="fRisky"> Suspected malware lures only<span class="n" id="nRisky"></span></label>
+    <label class="opt" title="Tick to list only projects with no cover art from any source, to find ones to fix by hand"><input type="checkbox" id="fNoCover"> Missing cover art only<span class="n" id="nNoCover"></span></label>
     <label class="opt" title="Tick to list only repositories that were deleted, made private or archived, for example to look for a rehosted copy. They're hidden from the normal list."><input type="checkbox" id="fGone"> Deleted or archived only<span class="n" id="nGone"></span></label>
     <h3 style="margin-top:12px">Recent changes</h3>
     <label class="opt" title="Projects added to Port Watch, or whose repository was created, in the last 7 days"><input type="checkbox" id="fRecentNew"> New this week<span class="n" id="nRecentNew"></span></label>
@@ -311,6 +312,8 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <h3>PC release</h3><div id="fPs"></div>
     <h3>Runs on <small>(all selected)</small></h3><div class="chips" id="fOs"></div>
     <h3>Original platform</h3><div id="fPlat"></div>
+    <h3>Genre <small>(all selected)</small></h3><div class="chips" id="fGenre"><span class="note">Genres appear after the next data refresh.</span></div>
+    <h3>Series</h3><select id="fSeries" class="sel" style="width:100%"><option value="">Any series</option></select>
     <h3>Features <small>(all selected)</small></h3><div class="chips" id="fFeat"></div>
     <h3>Last updated</h3>
     <label class="sr" for="fAge">Last updated</label>
@@ -500,7 +503,7 @@ function loadState(){
 let saveFailed=false;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
-const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
+const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,genres:new Set(),series:"",noCover:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
 
 /* ---------------- helpers ---------------- */
 const $=s=>document.querySelector(s);
@@ -556,7 +559,20 @@ function nameDescOS(name,desc){
 }
 
 /* ---------------- awesome-list normalisation ---------------- */
+// kept in step with is_emulator() in scripts/refresh_data.py
+const EMU_REPOS=new Set(["hrydgard/ppsspp","flyinghead/flycast","cemu-project/cemu","melonds-emu/melonds","azahar-emu/azahar","tasemulators/bizhawk","swordfish90/lemuroid",
+  "pcsx2/pcsx2","stenzek/duckstation","xenia-manager/xenia-manager","xenia-project/xenia","xenia-canary/xenia-canary","jay-day/rmg-k","rosalie241/rmg","2006-scape/2006scape",
+  "dolphin-emu/dolphin","rpcs3/rpcs3","ryujinx/ryujinx","citra-emu/citra","mupen64plus/mupen64plus-core","libretro/retroarch","mednafen/mednafen","mamedev/mame",
+  "vita3k/vita3k","shadps4-emu/shadps4","xemu-project/xemu","cxbx-reloaded/cxbx-reloaded","ares-emulator/ares","simple64/simple64","flathub/org.ppsspp.ppsspp"]);
+function isEmulator(title,repo,desc){
+  if(EMU_REPOS.has(String(repo||"").toLowerCase()))return true;
+  const d=String(desc||""),t=String(title||"");
+  if(/emulat/i.test(t))return false;                                     // a game named "... Emulator" (LSD: Dream Emulator)
+  if(/\b(no|without|not an?|instead of an?|zero|never)\b[^.;:!?]{0,40}\bemulat/i.test(d))return false;  // "no emulator", "no Wine or emulator"
+  return /\bemulat(or|ion)\b/i.test(d)&&!/\b(recompil|decompil|native (pc )?port|source port|pc port|port of|ported)/i.test(d.replace(/\bemulat\w*/ig,""));
+}
 function awNormalize(g){
+  if(isEmulator(g.title,g.repo,g.description))return null;
   const t=g.type==="static-recomp"?"Recompilation":g.type==="source-port"?"Decompilation":(g.type==="decompilation"&&g.release)?"Decompilation":null;
   if(!t||!g.repo)return null;
   const k=(String(g.url||"").includes("gitlab.com")?"gitlab.com/":"")+g.repo.toLowerCase();
@@ -572,6 +588,7 @@ const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","ca
   "ikaruga","braid","trials hd","shadow complex","castle crashers","splosion man","ms splosion man","hydro thunder hurricane","beyond good and evil hd","alan wake s american nightmare",
   "bomberman live","pac man championship edition dx","pac man championship edition","street fighter iii 3rd strike online edition","marvel vs capcom 2","sonic adventure","sonic adventure 2",
   "nights into dreams","jet set radio","crazy taxi","space channel 5 part 2","rocket knight","contra rebirth","limbo","bastion","fez","super meat boy","toy soldiers","toy soldiers cold war"]);
+function fold(t){return String(t||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
 function bare(t){return String(t||"").replace(/\s*\([^)]*\)/g," ").replace(/\s+/g," ").trim();}
 
 /* ---------------- suggestive content ---------------- */
@@ -613,20 +630,24 @@ function autoPs(platform,g){
   if(!g||!g.id||!g.pc)return "";
   return g.pc==="yes"?"Also on PC (console version ported)":g.pc==="remake"?"Only a remake or remaster on PC":"Never released on PC";
 }
+function tagsFor(v){const g=igdbGame(v.p,v.ghost?v:null);return {genres:(g&&g.genres)||[],series:(g&&g.series)||[]};}
 function igdbGame(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];return (q&&sc.games[q])||null;}
 function igdbCover(v){const g=igdbGame(v.p,v);return g&&g.cover?{u:IGDB_IMG(g.cover,"cover_big"),s:"IGDB",page:g.name||""}:null;}
 function igdbFor(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
 function shotsFor(v){
   if(typeof HOSTED!=="undefined"&&HOSTED)return [];
-  const out=[],seen=new Set();const add=(u,t,src,kind)=>{if(!u||seen.has(u))return;seen.add(u);out.push({u,t:t||u,src,kind});};
+  const out=[],seen=new Set();const add=(u,t,src,kind,link)=>{if(!u||seen.has(u))return;seen.add(u);out.push({u,t:t||u,src,kind,link:link||u});};
   const lo=S.ov[v.p.id]||{},so=v.so||{};const hide=new Set([...(lo.hideScreens||[]),...(so.hideScreens||[])]);
   (so.screens||[]).forEach(u=>add(u,u,"Port Watch's maintainer","port"));
   if(!v.risk)((v.m&&v.m.shots)||[]).slice(0,6).forEach(u=>add(u,u,"the project's README","port"));
   const ig=igdbFor(v.p,v);if(ig)ig.shots.slice(0,6).forEach(id=>add(IGDB_IMG(id,"screenshot_huge"),IGDB_IMG(id,"screenshot_med"),"IGDB","orig"));
-  const le=libFor(v);
+  const thin=()=>out.filter(x=>x.kind==="orig").length<4;const le=libFor(v);
   if(le){if(le.snap!==false)add(ltURL(le.repo,le.file,"Named_Snaps"),"","libretro-thumbnails","orig");if(le.title!==false)add(ltURL(le.repo,le.file,"Named_Titles"),"","libretro-thumbnails (title screen)","orig");}
   else{const lb=!v.ghost&&seedCover(v.p)||(()=>{const c=coverFor(v);return c&&/libretro/.test(c.s||"")?c:null;})();
     if(lb&&/\/Named_Boxarts\//.test(lb.u)){add(lb.u.replace("/Named_Boxarts/","/Named_Snaps/"),"","libretro-thumbnails","orig");add(lb.u.replace("/Named_Boxarts/","/Named_Titles/"),"","libretro-thumbnails (title screen)","orig");}}
+  const ig2=igdbGame(v.p,v.ghost?v:null);
+  if(ig2&&thin()){(ig2.art||[]).forEach(id=>{if(thin())add(IGDB_IMG(id,"1080p"),IGDB_IMG(id,"screenshot_med"),"IGDB artwork","orig");});
+    (ig2.vids||[]).forEach(id=>{if(thin())add("https://i.ytimg.com/vi/"+encodeURIComponent(id)+"/hqdefault.jpg","","IGDB trailer","orig","https://www.youtube.com/watch?v="+encodeURIComponent(id));});}
   return out.filter(x=>!hide.has(x.u));
 }
 function shotsHTML(v){
@@ -647,7 +668,7 @@ function paintShot(v){
   const x=SHOTBOX.list[SHOTBOX.i];if(!x){$("#shotDlg").close();return;}
   const nb=!!(v&&blurOn()&&isNsfw(v));$("#shotImg").classList.toggle("nsfw",nb&&!SHOTBOX.reveal);$("#shotShow").hidden=!nb||SHOTBOX.reveal;
   $("#shotImg").src=x.u;$("#shotImg").alt="Screenshot "+(SHOTBOX.i+1)+" of "+(v?v.game:"");
-  $("#shotCap").innerHTML=`${SHOTBOX.i+1} of ${SHOTBOX.list.length} · from ${esc(x.src)} · <a href="${esc(x.u)}" target="_blank" rel="noopener">open full size</a>`;
+  $("#shotCap").innerHTML=`${SHOTBOX.i+1} of ${SHOTBOX.list.length} · from ${esc(x.src)} · <a href="${esc(x.link||x.u)}" target="_blank" rel="noopener">${/trailer/.test(x.src)?"watch the trailer":"open full size"}</a>`;
   // keep keyboard focus inside the view: a focused button that becomes disabled would drop focus onto the page behind
   const a=document.activeElement,atStart=SHOTBOX.i===0,atEnd=SHOTBOX.i>=SHOTBOX.list.length-1;
   if((a===$("#shotPrev")&&atStart)||(a===$("#shotNext")&&atEnd))$("#shotDlg").focus();
@@ -759,7 +780,26 @@ function allProjects(){
   const sharedKeys=new Set(REPO.added.map(p=>p.k).filter(Boolean));
   const custom=Object.values(S.custom).filter(p=>!(p.k&&sharedKeys.has(p.k))),taken=new Set(custom.map(p=>p.k).filter(Boolean));
   const shared=REPO.added.filter(p=>!(p.k&&(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k))));
-  return SEED.concat(Object.values(S.aw.added),custom,shared).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);});
+  const aw=Object.values(S.aw.added).filter(p=>!isEmulator(p.g,p.k,p.d));   // emulators added before they were excluded
+  return dropRenamed(SEED.concat(aw,custom,shared).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);}));
+}
+// A renamed or moved repository keeps answering at its old address, so it can be listed twice.
+// Keep one entry per actual repository: the one at its current name, or else the first listed.
+function renamedGroups(list){
+  const g=new Map();for(const p of list){if(!p.k)continue;const r=(S.meta[p.k]||{}).repo;const c=(r&&r.full?r.full.toLowerCase():"")||p.k;if(!g.has(c))g.set(c,[]);g.get(c).push(p);}
+  return g;
+}
+function dropRenamed(list){
+  const drop=new Set();for(const [c,ps] of renamedGroups(list)){if(ps.length<2)continue;const keep=ps.find(p=>p.k===c)||ps[0];for(const p of ps)if(p!==keep)drop.add(p.id);}
+  return drop.size?list.filter(p=>!drop.has(p.id)):list;
+}
+function adoptRenamed(){
+  const all=SEED.concat(Object.values(S.aw.added),Object.values(S.custom),REPO.added);let n=0;
+  for(const [c,ps] of renamedGroups(all)){if(ps.length<2)continue;const keep=ps.find(p=>p.k===c)||ps[0];
+    for(const p of ps){if(p===keep)continue;
+      if(S.follow&&S.follow[p.id]&&!S.follow[keep.id]){S.follow[keep.id]=S.follow[p.id];n++;}
+      if(S.ov[p.id]&&!S.ov[keep.id]){S.ov[keep.id]=S.ov[p.id];n++;}}}
+  if(n)save();
 }
 function adoptShared(){
   let moved=0;const byKey=new Map(REPO.added.filter(p=>p.k).map(p=>[p.k,p]));
@@ -775,7 +815,7 @@ function dropRedundantTitles(){
   if(n)save();return n;
 }
 function noteSharedAdded(){
-  if(!REPO.loaded)return;adoptShared();dropRedundantTitles();const keys=REPO.added.map(p=>p.id);
+  if(!REPO.loaded)return;adoptShared();adoptRenamed();dropRedundantTitles();const keys=REPO.added.map(p=>p.id);
   if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
   let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;const vv=view(p);if(vv.risk&&vv.risk.level==="high")continue;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
   if(n){save();renderUpdates();}
@@ -1368,6 +1408,9 @@ function passes(v,skip,own){
   {const isLure=!!(v.risk&&v.risk.level==="high"),isGone=!!(v.gone||v.archived);
    if(UI.showRisky||UI.showGone){if(!((UI.showRisky&&isLure)||(UI.showGone&&isGone)))return false;}
    else if(isLure||isGone)return false;}
+  if(skip!=="genre"&&UI.genres.size){const gs=tagsFor(v).genres;for(const x of UI.genres)if(!gs.includes(x))return false;}
+  if(skip!=="series"&&UI.series&&!tagsFor(v).series.includes(UI.series))return false;
+  if(UI.noCover&&coverFor(v))return false;
   if(skip!=="recent"&&(UI.recentNew||UI.recentPlay)){const ri=recentInfo(v);if(!((UI.recentNew&&ri.isNew)||(UI.recentPlay&&ri.nowPlayable)))return false;}
   if(UI.followed&&!isFollowed(v.p.id))return false;
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
@@ -1377,7 +1420,7 @@ function passes(v,skip,own){
   for(const o of UI.os)if(!v.os[o])return false;
   for(const f of UI.feat)if(v.feats[f].st!=="yes")return false;
   if(UI.age){if(!v.updated||(Date.now()-new Date(v.updated))/864e5>+UI.age)return false;}
-  if(UI.q){const extra=own||v.ghost?[]:gamesOf(v).map(g=>g.title+" "+g.platform);const hay=[v.game,v.p.pr,v.platform,...extra].join(" ").toLowerCase();if(!hay.includes(UI.q.toLowerCase()))return false;}
+  if(UI.q){const extra=own||v.ghost?[]:gamesOf(v).map(g=>g.title+" "+g.platform);const tg=tagsFor(v);const hay=fold([v.game,v.p.pr,v.platform,...extra,...tg.genres,...tg.series].join(" "));if(!hay.includes(fold(UI.q)))return false;}
   return true;
 }
 function filtered(){
@@ -1849,6 +1892,14 @@ function renderFilters(){
   const present=new Set();all.forEach(v=>Object.keys(v.os).forEach(o=>present.add(o)));UI.os.forEach(o=>present.add(o));
   $("#fOs").innerHTML=OSLIST.filter(o=>present.has(o)).map(o=>`<button class="chip" data-chip="os" data-v="${o}" aria-pressed="${UI.os.has(o)}">${o}</button>`).join("");
   $("#fFeat").innerHTML=FEATURES.map(f=>`<button class="chip" data-chip="feat" data-v="${f.id}" aria-pressed="${UI.feat.has(f.id)}">${esc(f.label)}</button>`).join("");
+  // genres and series, counted over the projects the other filters leave
+  const gcnt={},scnt={};for(const v of allProjects().map(view)){if(!passes(v,"genre",true))continue;for(const g of tagsFor(v).genres)gcnt[g]=(gcnt[g]||0)+1;}
+  for(const v of allProjects().map(view)){if(!passes(v,"series",true))continue;for(const x of tagsFor(v).series)scnt[x]=(scnt[x]||0)+1;}
+  const gl=Object.keys(gcnt).sort((a,b)=>gcnt[b]-gcnt[a]);UI.genres.forEach(g=>{if(!gl.includes(g))gl.push(g);});
+  if(gl.length)$("#fGenre").innerHTML=gl.map(g=>`<button class="chip" data-chip="genres" data-v="${esc(g)}" aria-pressed="${UI.genres.has(g)}">${esc(g)} <small>${gcnt[g]||0}</small></button>`).join("");
+  const sl=Object.keys(scnt).filter(x=>scnt[x]>=2||x===UI.series).sort((a,b)=>scnt[b]-scnt[a]||a.localeCompare(b));
+  $("#fSeries").innerHTML=`<option value="">Any series</option>`+sl.map(x=>`<option value="${esc(x)}" ${UI.series===x?"selected":""}>${esc(x)} (${scnt[x]||0})</option>`).join("");
+  const nc=allProjects().map(view).filter(v=>!(v.risk&&v.risk.level==="high")&&!v.gone&&!v.archived&&!coverFor(v)).length;$("#nNoCover").textContent=nc||"";$("#fNoCover").checked=UI.noCover;
 }
 function render(){YIDX=null;
   document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.tab===UI.tab));
@@ -1858,7 +1909,7 @@ function render(){YIDX=null;
   if(UI.tab==="projects"){renderProjects();afterProjects();}else if(UI.tab==="find")renderFind();else renderActivity();
 }
 function renderAll(keepStatus){if(!keepStatus)setStatus();renderUpdates();renderFilters();render();}
-function clearFilters(){UI.q="";$("#q").value="";["type","ps","play","plat","os","feat"].forEach(k=>UI[k].clear());UI.followed=false;UI.age="";$("#fAge").value="";UI.limit=150;renderFilters();render();}
+function clearFilters(){UI.q="";$("#q").value="";["type","ps","play","plat","os","feat","genres"].forEach(k=>UI[k].clear());UI.series="";UI.noCover=false;UI.followed=false;UI.age="";$("#fAge").value="";UI.limit=150;renderFilters();render();}
 
 /* ---------------- events ---------------- */
 $("#q").addEventListener("input",e=>{UI.q=e.target.value;UI.limit=150;renderFilters();render();});
@@ -1940,6 +1991,8 @@ $("#view").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.t
 $("#fFollow").addEventListener("change",e=>{UI.followed=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fRisky").addEventListener("change",e=>{UI.showRisky=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fGone").addEventListener("change",e=>{UI.showGone=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fNoCover").addEventListener("change",e=>{UI.noCover=e.target.checked;UI.limit=150;renderFilters();render();});
+$("#fSeries").addEventListener("change",e=>{UI.series=e.target.value;UI.limit=150;renderFilters();render();});
 $("#fRecentNew").addEventListener("change",e=>{UI.recentNew=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#fRecentPlay").addEventListener("change",e=>{UI.recentPlay=e.target.checked;UI.limit=150;renderFilters();render();});
 $("#groupTog").addEventListener("change",e=>{S.settings.ungroup=!e.target.checked;UI.open=null;save();render();});

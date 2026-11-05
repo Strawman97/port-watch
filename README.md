@@ -20,6 +20,8 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 - **Follow list:** tap the heart on a project, then use **Check followed** to check only those.
 - **Alerts** for new releases, newly listed projects and repositories that disappear.
 - **Find a game:** search the unbaked.games registry or [recomp.fyi](https://recomp.fyi/)'s table to see whether a recompilation, decompilation or source port exists for a game, and add any project to your list in one click. Search results never raise alerts; only projects you add are tracked.
+- **Genres and series:** filter or search by genre (RPG, JRPG, Platformer, First-person shooter, Metroidvania…) and by series (Pokémon, Monster Hunter, Castlevania…), from IGDB. Search ignores accents, so "poke" finds "Pokémon".
+- **Missing cover art only:** lists just the projects with no cover from any source, to fix by hand.
 - **Recent changes:** **New** marks projects added to Port Watch, or created, in the last 7 days. **Now playable** marks projects that had no public release before and got their first one in the last 14 days. Both have sidebar filters, and **Recently added** sorts by when projects appeared.
 - **Add project:** track anything else by its GitHub, GitLab or itch.io link.
 
@@ -69,7 +71,7 @@ If the shared itch.io copy is ever missing, **Settings > Read itch.io devlogs th
 Each project's details show two rows of screenshots:
 
 - **The port:** images from the project's README (its launcher, widescreen, HDR or new renderer). Badges, logos, box art and banners are filtered out, and suspected malware lures never show their README images.
-- **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen for retro consoles. The workflow looks each game up on its original platform and only accepts a confident title match. When a platform version has fewer than three screenshots on IGDB, the workflow adds screenshots from the same game's other platform versions, never from a different game that shares the name.
+- **The original game:** screenshots from IGDB, plus libretro-thumbnails' in-game shot and title screen for retro consoles. The workflow looks each game up on its original platform and only accepts a confident title match. When a platform version has fewer than three screenshots on IGDB, the workflow adds screenshots from the same game's other platform versions, never from a different game that shares the name. If there are still fewer than four, IGDB's official artwork and trailer stills fill the row (trailers link to the video).
 
 Lookups compare titles without brackets. A year in a title ("FIFA Street (2005)"), or else the original console's era, decides between same-named games, and extra words such as "mini", "remake" or "HD" count against a match. Covers come from, in order: a link you or the maintainer set, libretro's official box art (retro consoles), SteamGridDB, then IGDB, which also covers console-only releases that SteamGridDB lacks.
 
@@ -102,6 +104,10 @@ A repository with real code counts against a flag, so genuine projects with down
 **Export fixes for everyone** never includes suspected lures, hidden projects or deleted repositories, so they can't be shared by accident.
 
 These are warning signs, not proof. Never run downloads from a project you're unsure about, and report suspicious repositories to GitHub.
+
+## Emulators and renamed repositories
+
+Emulators and emulator front ends listed in Awesome Decomp Games (PPSSPP, Cemu, PCSX2 and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
 
 ## Deleted and archived repositories
 

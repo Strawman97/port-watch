@@ -107,6 +107,23 @@ AW_PLAT = {"N64": "N64", "N64 / GameCube": "N64", "Xbox 360": "Xbox 360", "xbox3
            "Saturn": "Saturn", "Master System": "Master System"}
 AW_PLAT_FIX = {"supermedo/bloodborne_pc": "PS4", "chasem-dev/sms-launcher": "GameCube", "wurlyfox/c1": "PS1", "999sian/melee-pc": "GameCube"}
 
+# kept in step with isEmulator() in index.html
+EMU_REPOS = {"hrydgard/ppsspp", "flyinghead/flycast", "cemu-project/cemu", "melonds-emu/melonds", "azahar-emu/azahar", "tasemulators/bizhawk", "swordfish90/lemuroid",
+             "pcsx2/pcsx2", "stenzek/duckstation", "xenia-manager/xenia-manager", "xenia-project/xenia", "xenia-canary/xenia-canary", "jay-day/rmg-k", "rosalie241/rmg",
+             "2006-scape/2006scape", "dolphin-emu/dolphin", "rpcs3/rpcs3", "ryujinx/ryujinx", "citra-emu/citra", "mupen64plus/mupen64plus-core", "libretro/retroarch",
+             "mednafen/mednafen", "mamedev/mame", "vita3k/vita3k", "shadps4-emu/shadps4", "xemu-project/xemu", "cxbx-reloaded/cxbx-reloaded", "ares-emulator/ares",
+             "simple64/simple64", "flathub/org.ppsspp.ppsspp"}
+
+def is_emulator(title, repo, desc):
+    if (repo or "").lower() in EMU_REPOS:
+        return True
+    d, t = desc or "", title or ""
+    if re.search(r"emulat", t, re.I):
+        return False                      # a game named "... Emulator" (LSD: Dream Emulator)
+    if re.search(r"\b(no|without|not an?|instead of an?|zero|never)\b[^.;:!?]{0,40}\bemulat", d, re.I):
+        return False                      # "no emulator", "no Wine or emulator"
+    return bool(re.search(r"\bemulat(or|ion)\b", d, re.I)) and not re.search(r"\b(recompil|decompil|native (pc )?port|source port|pc port|port of|ported)", re.sub(r"(?i)\bemulat\w*", "", d), re.I)
+
 def awesome_projects():
     try:
         d = json.loads(http_get(AWESOME_URL) or b"{}")
@@ -115,6 +132,8 @@ def awesome_projects():
         return []
     out = []
     for g in d.get("games", []):
+        if is_emulator(g.get("title"), g.get("repo"), g.get("description")):
+            continue                      # emulators and front ends are not ports
         t = {"static-recomp": "Recompilation", "source-port": "Decompilation"}.get(g.get("type"))
         if g.get("type") == "decompilation" and g.get("release"):
             t = "Decompilation"
@@ -163,6 +182,9 @@ def pick_match(title, cands, name_of, year_of, platform, threshold=0.88):
             stripped = vnorm(bare_title(POSSESSIVE.sub("", side_raw)))
             if stripped and stripped != vnorm(bare_title(side_raw)):
                 score = max(score, (1.0 if stripped == other else difflib.SequenceMatcher(None, stripped, other).ratio()) - 0.03)
+        for longer, shorter in ((n, q), (q, n)):        # extra leading words on one side
+            if len(shorter.split()) >= 3 and longer.endswith(" " + shorter) and len(longer.split()) - len(shorter.split()) <= 3:
+                score = max(score, 0.93)
         if numbers(q) != numbers(n):
             score -= 0.3
         if {m.group(0).lower() for m in EXTRA_WORDS.finditer(bare_title(raw))} - q_extra:
@@ -540,7 +562,7 @@ IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
                   "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34"}
 MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "700"))
-IGDB_REV = 3             # matching rules version; misses from older versions get one more try
+IGDB_REV = 4             # matching rules version; misses from older versions get one more try
 IGDB_EROTIC_THEME = 42   # IGDB's "Erotic" theme; such games are blurred by default on the page
 
 def igdb_token(cid, secret):
@@ -559,6 +581,36 @@ def igdb_query(cid, token, body):
             if e.code == 429 and attempt < 2:
                 time.sleep(2 * (attempt + 1)); continue
             raise
+
+GENRE_TAGS = {"Role-playing (RPG)": "RPG", "Platform": "Platformer", "Shooter": "Shooter", "Fighting": "Fighting", "Racing": "Racing", "Sport": "Sports",
+              "Adventure": "Adventure", "Puzzle": "Puzzle", "Strategy": "Strategy", "Real Time Strategy (RTS)": "Strategy", "Turn-based strategy (TBS)": "Strategy",
+              "Tactical": "Tactics", "Simulator": "Simulation", "Hack and slash/Beat 'em up": "Beat 'em up", "Music": "Music & rhythm", "Arcade": "Arcade",
+              "Point-and-click": "Point-and-click", "Visual Novel": "Visual novel", "Card & Board Game": "Card & board", "Pinball": "Pinball", "Quiz/Trivia": "Quiz"}
+THEME_TAGS = {"Horror": "Horror", "Survival": "Survival", "Stealth": "Stealth", "Open world": "Open world", "Sandbox": "Sandbox", "Party": "Party",
+              "Science fiction": "Sci-fi", "Fantasy": "Fantasy", "Warfare": "War"}
+KEYWORD_TAGS = {"jrpg": "JRPG", "japanese role-playing game": "JRPG", "metroidvania": "Metroidvania", "roguelike": "Roguelike", "roguelite": "Roguelike",
+                "soulslike": "Soulslike", "souls-like": "Soulslike", "survival horror": "Survival horror", "bullet hell": "Shoot 'em up", "shoot 'em up": "Shoot 'em up",
+                "shmup": "Shoot 'em up", "kart racing": "Kart racing", "3d platformer": "3D platformer", "mecha": "Mecha", "monster taming": "Monster taming"}
+def igdb_tags(g):
+    names = lambda f: [x.get("name") for x in (g.get(f) or []) if isinstance(x, dict) and x.get("name")]
+    tags = {GENRE_TAGS[n] for n in names("genres") if n in GENRE_TAGS} | {THEME_TAGS[n] for n in names("themes") if n in THEME_TAGS}
+    tags |= {KEYWORD_TAGS[k.lower()] for k in names("keywords") if k.lower() in KEYWORD_TAGS}
+    persp = set(names("player_perspectives"))
+    if "Shooter" in tags and "First person" in persp: tags.add("First-person shooter")
+    if "Shooter" in tags and ("Third person" in persp or "Over the shoulder" in persp): tags.add("Third-person shooter")
+    if "RPG" in tags and "Action" in names("themes"): tags.add("Action RPG")
+    if "Horror" in tags and "Survival" in tags: tags.add("Survival horror")
+    return sorted(tags)
+def igdb_series(g):
+    out = []
+    for f in ("collections", "franchises"):
+        for x in g.get(f) or []:
+            n = (x.get("name") if isinstance(x, dict) else "") or ""
+            if n and n not in out:
+                out.append(n)
+    return out[:3]
+IGDB_FIELDS = ("name,first_release_date,screenshots.image_id,themes.name,cover.image_id,platforms,ports.platforms,remakes.platforms,remasters.platforms,"
+               "artworks.image_id,videos.video_id,genres.name,player_perspectives.name,keywords.name,collections.name,franchises.name")
 
 IGDB_PC = 6
 def igdb_pc(g):
@@ -620,7 +672,7 @@ def refresh_screens(projects, overrides):
             queues[1].append(item); continue        # missed under older matching rules: one more try
         if g.get("id") and g.get("rev", 0) < 2 and len(g.get("shots") or []) < 3:
             queues[2].append(item); continue        # thin results from before other versions were added
-        if g.get("id") and ("nsfw" not in g or "cover" not in g or "pc" not in g):
+        if g.get("id") and ("nsfw" not in g or "cover" not in g or "pc" not in g or "genres" not in g):
             queues[3].append(item); continue        # found before the theme check, covers or PC release existed
         if not g.get("id") and (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days >= 30:
             queues[1].append(item)                  # missed more than 30 days ago: try again
@@ -631,19 +683,34 @@ def refresh_screens(projects, overrides):
     for q, title, pid, plat in todo[:MAX_IGDB]:
         safe = bare_title(title).replace('"', "").replace("\\", "")
         try:
-            res = igdb_query(cid, token, f'search "{safe}"; fields name,first_release_date,screenshots.image_id,themes,cover.image_id,platforms,ports.platforms,remakes.platforms,remasters.platforms; where platforms = ({pid}); limit 10;')
+            res = igdb_query(cid, token, f'search "{safe}"; fields {IGDB_FIELDS}; where platforms = ({pid}); limit 10;')
         except Exception as e:
             log(f"  {title}: IGDB error ({e})")
             time.sleep(0.3)
             continue
         time.sleep(0.3)                # IGDB allows 4 requests a second
         m = pick_match(title, res, lambda g: g.get("name"), lambda g: ts_year(g.get("first_release_date")), plat)
+        other_platform = False
+        if not m:
+            # not listed on its own platform: take a confident match from any platform
+            try:
+                anyres = igdb_query(cid, token, f'search "{safe}"; fields {IGDB_FIELDS}; limit 10;')
+                time.sleep(0.3)
+                m = pick_match(title, anyres, lambda g: g.get("name"), lambda g: ts_year(g.get("first_release_date")), plat, 0.95)
+                other_platform = bool(m)
+            except Exception as e:
+                log(f"  {title}: IGDB error on the any-platform search ({e})")
         if m:
             score, g = m
             shots = [x["image_id"] for x in (g.get("screenshots") or []) if x.get("image_id")][:8]
             entry = {"name": g.get("name"), "id": g.get("id"), "shots": shots, "match": round(score, 3), "checked": NOW, "rev": IGDB_REV,
-                     "nsfw": IGDB_EROTIC_THEME in (g.get("themes") or []), "cover": (g.get("cover") or {}).get("image_id") or "",
-                     "pc": igdb_pc(g)}
+                     "nsfw": IGDB_EROTIC_THEME in [t.get("id") if isinstance(t, dict) else t for t in (g.get("themes") or [])],
+                     "cover": (g.get("cover") or {}).get("image_id") or "", "pc": "" if other_platform else igdb_pc(g),
+                     "genres": igdb_tags(g), "series": igdb_series(g),
+                     "art": [x["image_id"] for x in (g.get("artworks") or []) if x.get("image_id")][:6],
+                     "vids": [x["video_id"] for x in (g.get("videos") or []) if x.get("video_id")][:4]}
+            if other_platform:
+                entry["other"] = True
             if len(shots) < 3:
                 # thin results: add screenshots from the same game's other platform versions
                 n0 = len(shots)
