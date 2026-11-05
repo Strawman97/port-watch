@@ -1,6 +1,6 @@
 {
  "format": "port-watch-libretro",
- "generated": "2026-11-05T05:28:11Z",
+ "generated": "2026-11-05T12:26:53Z",
  "map": {
   "0c0de/splatterhouse-decomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -283,9 +283,9 @@
    "title": true
   },
   "alexbeavs-ps1-ports/ace-combat-3-electrosphere-recomp": {
-   "checked": "2026-10-21T10:43:44Z",
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Ace Combat 3 - Electrosphere (USA).png",
-   "q": "ace combat 3 electrosphere japan",
+   "q": "ace combat 3 electrosphere",
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true
@@ -1287,9 +1287,9 @@
    "q": "forza horizon"
   },
   "arch61s/baroque-decomp": {
-   "checked": "2026-10-27T15:20:47Z",
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Baroque (USA).png",
-   "q": "baroque baroque native pc port",
+   "q": "baroque baroque decomp",
    "repo": "Sony_-_PlayStation_2",
    "snap": true,
    "title": true
@@ -1659,6 +1659,14 @@
    "file": "Doom (USA).png",
    "q": "doom",
    "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true
+  },
+  "bonllavier/corruption_3-pc": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Metroid Prime 3_ Corruption (USA).png",
+   "q": "metroid prime 3 corruption",
+   "repo": "Nintendo_-_Wii",
    "snap": true,
    "title": true
   },
@@ -2195,9 +2203,9 @@
    "title": true
   },
   "compalarios18/mh4ultimatedc": {
-   "checked": "2026-10-21T09:52:10Z",
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Monster Hunter 4 Ultimate (USA).png",
-   "q": "monster hunter 4 ultimate",
+   "q": "monster hunter 4 ultimate mh4ultimatedc",
    "repo": "Nintendo_-_Nintendo_3DS",
    "snap": true,
    "title": true
@@ -2946,6 +2954,14 @@
    "snap": true,
    "title": true
   },
+  "ethannicholas/bluestorm-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Wave Race - Blue Storm (USA).png",
+   "q": "wave race blue storm",
+   "repo": "Nintendo_-_GameCube",
+   "snap": true,
+   "title": true
+  },
   "ethannicholas/fzerogx-recomp": {
    "checked": "2026-11-02T13:30:59Z",
    "file": "F-Zero GX (USA).png",
@@ -2983,6 +2999,14 @@
    "file": "Sonic The Hedgehog 3 (USA).png",
    "q": "sonic the hedgehog 3 and knuckles",
    "repo": "Sega_-_Mega_Drive_-_Genesis",
+   "snap": true,
+   "title": true
+  },
+  "evaa-01/adam": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Neon Genesis Evangelion (Japan).png",
+   "q": "neon genesis evangelion",
+   "repo": "Nintendo_-_Nintendo_64",
    "snap": true,
    "title": true
   },
@@ -3195,9 +3219,9 @@
    "title": true
   },
   "fulgernet/repop": {
-   "checked": "2026-10-21T09:52:10Z",
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Prince of Persia - The Sands of Time (USA).png",
-   "q": "prince of persia the sands of time resot",
+   "q": "prince of persia the sands of time repop",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true
@@ -3618,6 +3642,14 @@
    "snap": true,
    "title": false
   },
+  "gui-tora/dmc-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Devil May Cry (USA).png",
+   "q": "devil may cry",
+   "repo": "Sony_-_PlayStation_2",
+   "snap": true,
+   "title": true
+  },
   "guichiapini/sotcport": {
    "checked": "2026-10-21T09:52:10Z",
    "q": "shadow of the colossus"
@@ -3663,8 +3695,8 @@
    "q": "unicorn overlord"
   },
   "hajdeo/nhl24pc": {
-   "checked": "2026-10-21T09:52:10Z",
-   "q": "nhl 24 pc"
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "nhl 24 nhl24pc"
   },
   "halkuncode/anothermind-decomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -4071,8 +4103,8 @@
    "q": "wwe 2k14 wwe2k14 pc"
   },
   "itsbybanshee/wwe2k16-pc": {
-   "checked": "2026-10-27T15:20:47Z",
-   "q": "wwe 2k16 wwe 2k16 pc recomp"
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "wwe 2k16 wwe 2k16 recomp"
   },
   "itseniy/pvz-console-edition": {
    "checked": "2026-10-28T12:51:47Z",
@@ -4189,10 +4221,6 @@
    "repo": "Nintendo_-_GameCube",
    "snap": true,
    "title": true
-  },
-  "jay-day/rmg-k": {
-   "checked": "2026-10-24T10:57:14Z",
-   "q": "rmg k"
   },
   "jbcgames/sms-android": {
    "checked": "2026-10-27T15:20:47Z",
@@ -4361,6 +4389,14 @@
    "repo": "Nintendo_-_Nintendo_DS",
    "snap": true,
    "title": true
+  },
+  "jonathandc64/soulbrandt": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Demon's Souls (USA).png",
+   "q": "demons souls",
+   "repo": "Sony_-_PlayStation_3",
+   "snap": true,
+   "title": false
   },
   "jorge262007/fftarecomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -4678,6 +4714,10 @@
    "snap": true,
    "title": true
   },
+  "kitaaaaaa/oratan-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "cyber troopers virtual on oratorio tangram"
+  },
   "kittycache9/opensa2": {
    "checked": "2026-10-22T11:50:09Z",
    "file": "Sonic Adventure 2_ Battle (USA).png",
@@ -4933,6 +4973,14 @@
   "llamapixels/tenchuzrecomp": {
    "checked": "2026-10-29T18:27:45Z",
    "q": "tenchu z"
+  },
+  "llcoolt/ttyd": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Paper Mario_ The Thousand-Year Door (USA).png",
+   "q": "paper mario the thousand year door all seven versions",
+   "repo": "Nintendo_-_GameCube",
+   "snap": false,
+   "title": false
   },
   "lockingfr/mkw-switch-recomp": {
    "checked": "2026-11-03T17:01:53Z",
@@ -5442,6 +5490,14 @@
    "checked": "2026-10-28T12:51:47Z",
    "file": "Super Metroid (Japan, USA) (En,Ja).png",
    "q": "super metroid",
+   "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true
+  },
+  "mrot4/babel-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Illusion of Gaia (USA).png",
+   "q": "illusion of gaia",
    "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
    "snap": true,
    "title": true
@@ -6055,8 +6111,8 @@
    "q": "mass effect masseffect nx"
   },
   "nefariousjosiah/wwe-svr2007-recomp": {
-   "checked": "2026-10-27T15:20:47Z",
-   "q": "wwe smackdown vs raw 2007 wwe svr2007 recomp"
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "wwe smackdown vs raw 2007 wwe smackdown vs raw 2007 recomp"
   },
   "nefariousjosiah/wwe-svr2008-recomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -6266,8 +6322,8 @@
    "snap": true,
    "title": true
   },
-  "nvdemu/apeescaperecomp-macwindowslinux": {
-   "checked": "2026-10-21T09:52:10Z",
+  "nvd123-yt/apeescaperecompiled": {
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Ape Escape (USA).png",
    "q": "ape escape",
    "repo": "Sony_-_PlayStation",
@@ -6365,6 +6421,10 @@
    "repo": "Nintendo_-_GameCube",
    "snap": true,
    "title": true
+  },
+  "ohackercego/samsho-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "samurai shodown sen"
   },
   "olink9/driver1-decomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -6786,6 +6846,14 @@
    "checked": "2026-10-21T09:52:10Z",
    "q": "ratchet and clank rac1 native"
   },
+  "rac08241988/incrediblecrashdummies-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Incredible Crash Dummies, The (USA).png",
+   "q": "incredible crash dummies",
+   "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true
+  },
   "rac08241988/magicalblocks": {
    "checked": "2026-11-03T17:01:53Z",
    "file": "Magical Tetris Challenge (USA).png",
@@ -7179,6 +7247,14 @@
    "file": "Super Dodge Ball (USA).png",
    "q": "super dodge ball super super dodgeball",
    "repo": "Nintendo_-_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true
+  },
+  "ryderclanky/botw-native": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Legend of Zelda, The - Breath of the Wild (USA) (En,Fr,Es).png",
+   "q": "breath of the wild botw recompiled",
+   "repo": "Nintendo_-_Wii_U",
    "snap": true,
    "title": true
   },
@@ -8294,6 +8370,14 @@
    "snap": true,
    "title": true
   },
+  "teclilla18/sonic-riders-recomp": {
+   "checked": "2026-11-05T12:26:53Z",
+   "file": "Sonic Riders (USA) (En,Ja,Fr,De,Es,It).png",
+   "q": "sonic riders",
+   "repo": "Nintendo_-_GameCube",
+   "snap": true,
+   "title": true
+  },
   "tekrantgaming/cartoon-network-racing-recompiled": {
    "checked": "2026-11-03T17:01:53Z",
    "file": "Cartoon Network Racing (USA).png",
@@ -8707,9 +8791,9 @@
    "title": true
   },
   "tmcleroy/soulcalibur2-recomp": {
-   "checked": "2026-11-03T10:01:16Z",
+   "checked": "2026-11-05T12:26:53Z",
    "file": "Soulcalibur II (USA).png",
-   "q": "soulcalibur ii",
+   "q": "soulcalibur ii soulcalibur ii recomp",
    "repo": "Microsoft_-_Xbox",
    "snap": false,
    "title": false
@@ -8863,8 +8947,8 @@
    "title": true
   },
   "vantageex/infamous-first-light-pc": {
-   "checked": "2026-10-25T13:02:48Z",
-   "q": "infamous first light"
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "infamous first light infamous first light native pc port"
   },
   "vcking101/dissidia012-pc": {
    "checked": "2026-11-03T10:01:16Z",
@@ -8941,6 +9025,10 @@
   "visibou/htrecomp": {
    "checked": "2026-10-30T17:59:38Z",
    "q": "hydro thunder hurricane"
+  },
+  "vitomiguelf/crashott-pc": {
+   "checked": "2026-11-05T12:26:53Z",
+   "q": "crash of the titans crashrecomp crash of the titans definitive edition pc"
   },
   "vnnc1/gow-native-pc": {
    "checked": "2026-11-01T13:20:44Z",
@@ -9237,10 +9325,6 @@
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true
-  },
-  "xenia-manager/xenia-manager": {
-   "checked": "2026-10-31T12:25:56Z",
-   "q": "xenia manager"
   },
   "xenophobentx/takedawn": {
    "checked": "2026-10-21T09:52:10Z",
