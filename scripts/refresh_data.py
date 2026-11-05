@@ -150,7 +150,7 @@ def awesome_projects():
 PLATFORM_ERA = {"PS1": (1994, 2006), "PS2": (2000, 2013), "PS3": (2006, 2017), "PS4": (2013, 2023), "PSP": (2004, 2014), "PS Vita": (2011, 2019),
                 "Xbox (original)": (2001, 2008), "Xbox 360": (2005, 2016), "XBLA (Xbox 360)": (2004, 2016), "Xbox One": (2013, 2022),
                 "NES": (1983, 1995), "SNES": (1990, 1999), "N64": (1996, 2002), "GameCube": (2001, 2007), "Wii": (2006, 2014), "Wii U": (2012, 2017),
-                "Switch": (2017, 2030), "Game Boy": (1989, 2001), "Game Boy Color": (1998, 2003), "GBA": (2001, 2008), "DS": (2004, 2014),
+                "Switch": (2017, 2030), "Switch 2": (2025, 2035), "Game Boy": (1989, 2001), "Game Boy Color": (1998, 2003), "GBA": (2001, 2008), "DS": (2004, 2014),
                 "3DS": (2011, 2020), "Mega Drive": (1988, 1998), "32X": (1994, 1996), "Saturn": (1994, 2000), "Dreamcast": (1998, 2002),
                 "Master System": (1985, 1996), "Game Gear": (1990, 1997), "Virtual Boy": (1995, 1996), "Mobile": (2008, 2030)}
 EXTRA_WORDS = re.compile(r"\b(mini|demake|hack|remake|remaster(ed)?|reloaded|fan ?made|deluxe|hd|definitive|collection|anniversary|redux|3d|online|portable)\b", re.I)
@@ -560,7 +560,7 @@ IGDB_URL = os.environ.get("PW_IGDB_URL", "https://api.igdb.com/v4")
 IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12, "Xbox (original)": 11, "PS1": 7, "PS2": 8, "PS3": 9, "PS4": 48, "PSP": 38,
                   "PS Vita": 46, "GameCube": 21, "Wii": 5, "Wii U": 41, "Switch": 130, "N64": 4, "SNES": 19, "NES": 18, "Mega Drive": 29, "32X": 30,
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
-                  "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34"}
+                  "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34", "Switch 2": "508,130"}
 MAX_IGDB = int(os.environ.get("PW_MAX_IGDB", "700"))
 IGDB_REV = 4             # matching rules version; misses from older versions get one more try
 IGDB_EROTIC_THEME = 42   # IGDB's "Erotic" theme; such games are blurred by default on the page

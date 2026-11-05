@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -168,6 +168,11 @@
       "title": "Mario Kart 8 Deluxe",
       "cover": "https://cdn2.steamgriddb.com/thumb/9cd6d894098e748716960bfcf9dbe115.jpg",
       "pcRelease": "Never released on PC"
+    },
+    "drakolordx7/switch2-recomp": {
+      "_game": "Pokopia (Pokopia Recomp)",
+      "title": "Pokémon Pokopia",
+      "platform": "Switch 2"
     },
     "duislingr/cr2-u": {
       "_game": "Chaos Rings II",
@@ -1309,7 +1314,7 @@
     },
     "alexbeavs-ps1-ports/martian-gothic-recomp": {
       "link": "https://github.com/alexbeavs-ps1-ports/martian-gothic-recomp",
-      "title": "Martian Gothic",
+      "title": "Martian Gothic: Unification",
       "platform": "PS1",
       "type": "Recompilation",
       "runsOn": [
