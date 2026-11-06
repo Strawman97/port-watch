@@ -72,6 +72,10 @@
       "title": "Super Mario Galaxy",
       "pcRelease": "Never released on PC"
     },
+    "blsncvs/castlevania-grimoire-of-souls-recomp": {
+      "_game": "Castlevania: Grimoire of Souls",
+      "cover": "https://cdn2.steamgriddb.com/thumb/105c4dffbc8f021336f80e0a67c37e08.jpg"
+    },
     "bluefirecontrol/spaghettikart-mkdd-port": {
       "_game": "Mario Kart: Double Dash",
       "hide": true,
@@ -81,6 +85,9 @@
       "_game": "Star Fox 64",
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "bmbelo87/decomp-it-up-new-xenesis": {
+      "title": "Pump It Up NX"
     },
     "bnunu/halo-ce-universal": {
       "title": "Halo: Combat Evolved"
@@ -160,6 +167,9 @@
       "_game": "Minecraft: Xbox 360 Edition",
       "cover": "https://cdn2.steamgriddb.com/thumb/5d0b7689fb494d293633a96f45a16843.jpg"
     },
+    "digdat0/acgc-switch-port": {
+      "title": "Animal Crossing"
+    },
     "donovanmontoya/pokemon-xd-decomp": {
       "_game": "Pokémon XD: Gale of Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg"
@@ -200,6 +210,10 @@
     },
     "felipeprado0/gow3_pc": {
       "title": "God of War III Remastered",
+      "cover": "https://cdn2.steamgriddb.com/thumb/bc6a17604012da6895c1bacd28cdb9fa.jpg"
+    },
+    "felipeprado0/spartanport": {
+      "_game": "God of War III Remastered",
       "cover": "https://cdn2.steamgriddb.com/thumb/bc6a17604012da6895c1bacd28cdb9fa.jpg"
     },
     "flintautocrat/opengoal-jak-pc-port": {
@@ -515,6 +529,10 @@
       "_game": "The Last of Us Remastered",
       "cover": "https://cdn2.steamgriddb.com/thumb/9db1c4a3a80276439554314a0b2dabe2.jpg"
     },
+    "razzconnect/basara4-native-pc": {
+      "_game": "Sengoku Basara 4 Sumeragi",
+      "cover": "https://cdn2.steamgriddb.com/thumb/4bfab835a70836f9ce3f029ffeb555f9.png"
+    },
     "recompport/pandora-tower-pc": {
       "_game": "Pandora's Tower",
       "cover": "https://cdn2.steamgriddb.com/thumb/8c1bbcea199457b63dc39f7a024591f1.jpg",
@@ -739,6 +757,10 @@
     "usernamefodder/pmdsky-debug": {
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
     },
+    "veemyu/strahlender-xnu": {
+      "_game": "Pokémon Brilliant Diamond",
+      "cover": "https://cdn2.steamgriddb.com/thumb/0b25f4410efd4b2e9a7b5cd868576016.jpg"
+    },
     "virtual-ak/fes-pc-recomp": {
       "_game": "Shin Megami Tensei: Persona 3 FES",
       "cover": "https://cdn2.steamgriddb.com/thumb/5011c560a9233c63cf0e6cb6d06cf22c.jpg"
@@ -836,6 +858,14 @@
       "platform": "PS1",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "akshardp/xc2-recomp": {
+      "link": "https://github.com/AksharDP/xc2-recomp",
+      "title": "Xenoblade Chronicles 2",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Xenoblade Chronicles 2 to native Windows x86-64, with a Vulkan renderer. Game files not included."
     },
     "alekszverr-jpg/cod3pc": {
       "link": "https://github.com/alekszverr-jpg/cod3pc",
@@ -1932,6 +1962,14 @@
       "pcRelease": "Never released on PC",
       "description": "Unofficial PC port of Naruto: The Broken Bond (Xbox 360) - static recompilation with a full PC options menu. Bring your own game ISO."
     },
+    "b4ttycre4se/spider-man-3-recomp": {
+      "link": "https://github.com/b4ttycre4se/Spider-Man-3-Recomp",
+      "title": "Spider-Man 3",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Unofficial Windows x64 recompilation of Spider-Man 3 (Xbox 360), built with ReXGlue and a custom Vulkan renderer. 1440p internal resolution, 60 FPS cap, FXAA, corrected road markings, and TOML options for 30 FPS and island exploration. Missions and cutscenes have worked well in testing."
+    },
     "badcompany94-rcmp/project-tandem": {
       "link": "https://github.com/badcompany94-rcmp/project-tandem",
       "title": "Mario Kart: Double Dash!!",
@@ -2282,6 +2320,14 @@
       "type": "Recompilation",
       "description": "Fable III Xbox 360 static recompilation research with ReXGlue; initial analysis, not yet playable"
     },
+    "darhkfox/supermarioallstars": {
+      "link": "https://github.com/Darhkfox/SuperMarioAllStars",
+      "title": "Super Mario All-Stars",
+      "platform": "SNES",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Windows PC & Android port of Super Mario All-Stars (SNES) with true widescreen up to 21:9, simultaneous two-player co-op, 82 achievements, CRT filters and slang shaders, save states, rewind, cheats, level select and music player. Requires your own USA ROM."
+    },
     "darkuni/castlevania-rebirth-recomp": {
       "link": "https://github.com/darkuni/castlevania-rebirth-recomp",
       "title": "Castlevania: The Adventure ReBirth",
@@ -2319,6 +2365,14 @@
       "platform": "PS3",
       "type": "Recompilation",
       "description": "Early-stage Folklore (PS3) native recompilation research and validation tools. Exploring; no playable build."
+    },
+    "dennisabalo18-bot/red-dead-revolver-pc": {
+      "link": "https://github.com/dennisabalo18-bot/red-dead-revolver-pc",
+      "title": "Red Dead Revolver",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Red Dead Revolver (Xbox, PAL/Europe version) running natively on PC — static recompilation port"
     },
     "denzi-gh/crashwoc-decomp-ps2": {
       "link": "https://github.com/denzi-gh/crashwoc-decomp-ps2",
@@ -2498,6 +2552,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Biohazard: outbreak decomp"
+    },
+    "gamboozino/ng2recomp": {
+      "link": "https://github.com/gamboozino/ng2recomp",
+      "title": "Ninja Gaiden II",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Only a remake or remaster on PC",
+      "description": "Ninja Gaiden II (Xbox 360, 2008) statically recompiled into native Linux and Windows builds, drawn by its own Vulkan renderer. A steady 60 fps, up to 8x render scale, widescreen and ultrawide, keyboard and mouse, mods, Steam Deck ready. Bring your own copy of the game."
     },
     "gamboozino/ngbrecomp": {
       "link": "https://github.com/gamboozino/ngbrecomp",
@@ -3039,6 +3101,14 @@
       "pcRelease": "Never released on PC",
       "description": "Experimental Windows x64 adaptation of Disgaea D2 static recompilation (US 1.40, Direct3D 12), based on Sean13128/disgaea-d2-recomp and ps3recomp. Includes a launcher for local preparation from your own game files. No game data included. Android planned."
     },
+    "luvabyss/b3-express": {
+      "link": "https://github.com/LuvAbyss/B3-Express",
+      "title": "Bayonetta 3",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Bayonetta 3 v1.2.0 running natively on Windows through ScarletNX static recompilation, with an NVN renderer on Vulkan and a friendly launcher. Aiming for butter-smooth 60 FPS. No game files included: bring your own dump."
+    },
     "mabec-games/conker-recomped-and-reloaded": {
       "link": "https://github.com/Mabec-games/Conker-Recomped-and-Reloaded",
       "title": "Conker: Live & Reloaded",
@@ -3429,6 +3499,15 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Digimon Rumble Arena (Digimon Tamers: Battle Evolution, PS1, Japan) matching decompilation"
+    },
+    "retrogameworld/torchlightrecomp": {
+      "link": "https://github.com/retrogameworld/TorchlightRecomp",
+      "title": "Torchlight",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "cover": "https://cdn2.steamgriddb.com/thumb/550aae1e60740ba60f4dc8a255e0e960.jpg",
+      "description": "Torchlight Xbox 360 Recomp"
     },
     "revivedx/savagewindrecomp": {
       "link": "https://github.com/Revivedx/SavageWindRecomp",
@@ -4223,6 +4302,15 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Byte-matching decompilation of Dragon Quest VIII (PS2, PAL), made with an LLM. No game data included."
+    },
+    "yapel/torchlight-recomp": {
+      "link": "https://github.com/YaPeL/torchlight-recomp",
+      "title": "Torchlight",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "cover": "https://cdn2.steamgriddb.com/thumb/550aae1e60740ba60f4dc8a255e0e960.jpg",
+      "description": "Recompilation of torchlight360 using rexglue"
     },
     "yasindevs/imabikisou-pc": {
       "link": "https://github.com/yasindevs/imabikisou-pc",
