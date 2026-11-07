@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -543,6 +543,10 @@
       "_game": "Civilization Revolution",
       "cover": "https://cdn2.steamgriddb.com/thumb/fd21f5770b522657a6125e2a00e79c5c.jpg"
     },
+    "retrogameworld/torchlightrecomp": {
+      "_game": "Torchlight",
+      "cover": "https://cdn2.steamgriddb.com/thumb/550aae1e60740ba60f4dc8a255e0e960.jpg"
+    },
     "revan67/doax2-recomp": {
       "title": "Dead or Alive Xtreme 2"
     },
@@ -783,6 +787,10 @@
     "xzhuofan/cryrecomp": {
       "_game": "The Legend of Zelda: Tears of the Kingdom",
       "platform": "Switch"
+    },
+    "yapel/torchlight-recomp": {
+      "_game": "Torchlight",
+      "cover": "https://cdn2.steamgriddb.com/thumb/550aae1e60740ba60f4dc8a255e0e960.jpg"
     },
     "zdiemer/chrono-trigger-reimplemented": {
       "_game": "Chrono Trigger",
@@ -2007,6 +2015,14 @@
       "type": "Recompilation",
       "pcRelease": "PC version is a different game"
     },
+    "bassobr/far-cry-instincts-recomp": {
+      "link": "https://github.com/bassobr/Far-Cry-Instincts-Recomp",
+      "title": "Far Cry Instincts",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of the original Xbox Far Cry Instincts into a native Windows x64 executable (Direct3D 11). Bring your own copy of the game; no game files included."
+    },
     "batatinhafcbatatinha-pixel/fifa-street-pc": {
       "link": "https://github.com/batatinhafcbatatinha-pixel/fifa-street-pc",
       "title": "FIFA Street",
@@ -2179,6 +2195,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Matching decompilation of Star Ocean: Till the End of Time (PS2)"
+    },
+    "chasem-dev/colosseum-launcher": {
+      "link": "https://github.com/chasem-dev/colosseum-launcher",
+      "title": "Pokémon Colosseum",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Pokémon Colosseum Native PC Port Launcher"
     },
     "chasem-dev/sms-launcher": {
       "link": "https://github.com/chasem-dev/sms-launcher",
@@ -3605,6 +3629,14 @@
       "type": "Recompilation",
       "pcRelease": "PC version is a different game",
       "description": "Super Street Fighter II Turbo HD Remix native PC port via static recompilation, with TRG launcher, local achievements and experimental Linux support"
+    },
+    "saulob/tmnt-turtles-in-time-reshelled-recompiled": {
+      "link": "https://github.com/saulob/tmnt-turtles-in-time-reshelled-recompiled",
+      "title": "Teenage Mutant Ninja Turtles: Turtles in Time Re-Shelled",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "TMNT: Turtles in Time Re-Shelled native PC port via static recompilation, with 4K rendering, 4-player online co-op, Português Brasil, TRG launcher, and experimental Linux/Steam Deck support"
     },
     "seamuswilkie31-dev/pc-monsterhunter3-ffxi": {
       "link": "https://github.com/seamuswilkie31-dev/pc-monsterhunter3-FFXI",
