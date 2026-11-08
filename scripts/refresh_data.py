@@ -466,6 +466,56 @@ def readme_batch(keys, token, full_names=None):
     return out
 
 
+SF_BASE = os.environ.get("PW_SF_BASE", "https://sourceforge.net")
+SF_OS = {"windows": "Windows", "linux": "Linux", "mac": "macOS", "macos": "macOS", "osx": "macOS", "android": "Android"}
+
+def sourceforge_status(k, prev):
+    """A SourceForge project: details from its REST API, the latest release from best_release.json."""
+    name = k.split("/", 1)[1]
+    raw = http_get(f"{SF_BASE}/rest/p/{urllib.parse.quote(name)}", {"Accept": "application/json"})
+    if raw is None:
+        return {"notFound": True}
+    d = json.loads(raw)
+    text = "\n".join(x for x in (d.get("summary"), d.get("short_description")) if x)
+    cats = d.get("categories") or {}
+    langs = [c.get("fullname") for c in cats.get("language") or [] if isinstance(c, dict) and c.get("fullname")]
+    os_cat = {SF_OS.get((c.get("shortname") or c.get("fullname") or "").lower()) for c in cats.get("os") or [] if isinstance(c, dict)}
+    e = {"repo": {"pushed": None, "stars": 0, "archived": (d.get("status") or "").lower() in ("abandoned", "deleted", "moved"),
+                  "full": "sourceforge.net/" + (d.get("shortname") or name), "desc": d.get("summary") or "", "created": d.get("creation_date"),
+                  "lang": langs[0] if langs else None, "size": None}}
+    rel = None
+    try:
+        br = json.loads(http_get(f"{SF_BASE}/projects/{urllib.parse.quote(name)}/best_release.json") or b"{}")
+        rel = br.get("release") or None
+        plats = br.get("platform_releases") or {}
+    except (ValueError, OSError):
+        plats = {}
+    if rel and rel.get("filename"):
+        fn = rel["filename"].strip("/").split("/")[-1]
+        stem = re.sub(r"\.(7z|zip|rar|tar\.(?:gz|xz|bz2)|tgz|exe|msi|dmg|appimage|apk|ipa|deb|rpm)$", "", fn, flags=re.I)   # "COGBox-0.4.8.7z" -> "COGBox-0.4.8"
+        ver = re.search(r"(\d+(?:\.\d+)+)", stem)
+        when = (rel.get("date") or "").replace(" ", "T")
+        when = when + "Z" if when and not when.endswith("Z") and "+" not in when else when
+        e["release"] = {"tag": ("v" + ver.group(1)) if ver else fn, "date": when or None, "pre": False,
+                        "url": f"https://sourceforge.net/projects/{name}/files/latest/download", "file": fn}
+        e["repo"]["pushed"] = when or None
+        assets = A.os_from_assets([fn])
+        for key in list(plats.keys()) + list(rel.get("sf_platform_default") or []):
+            o = SF_OS.get(str(key).lower())
+            if o:
+                assets[o] = True
+        e["assetOs"] = assets
+    else:
+        e["noRelease"] = True
+    e["readme"] = A.analyze(text) if text else {"features": {}, "os": {}, "none": True}
+    for o in os_cat:
+        if o:
+            e["readme"].setdefault("os", {})[o] = True
+    e["readmeLure"] = A.lure_signals(text) if text else []
+    e["shots"] = [x.get("url") for x in d.get("screenshots") or [] if isinstance(x, dict) and x.get("url")][:6]
+    e["manifest"] = None
+    return e
+
 def gitlab_status(k, prev):
     path = k[len("gitlab.com/"):]
     base = "%s/projects/%s" % (GITLAB_API, urllib.parse.quote(path, safe=""))
@@ -502,7 +552,8 @@ def refresh_status(projects):
     data = load_json(path, {"format": "port-watch-status", "version": 1, "repos": {}})
     repos = data.setdefault("repos", {})
     keys = sorted({p["k"] for p in projects if p.get("k") and "/" in p["k"] and not p["k"].startswith("itch.io/")})
-    gh_keys = [k for k in keys if not k.startswith("gitlab.com/")]
+    gh_keys = [k for k in keys if not k.startswith(("gitlab.com/", "sourceforge.net/"))]
+    sf_keys = [k for k in keys if k.startswith("sourceforge.net/")]
     gl_keys = [k for k in keys if k.startswith("gitlab.com/")]
     if not token:
         log("  No GitHub token available; skipping GitHub projects")
@@ -545,6 +596,12 @@ def refresh_status(projects):
                     if "shots" in prev:
                         fresh[k]["shots"] = prev["shots"]
         time.sleep(0.5)
+    for k in sf_keys:
+        try:
+            fresh[k] = sourceforge_status(k, repos.get(k) or {})
+            time.sleep(0.5)
+        except Exception as e:
+            log("  %s: SourceForge couldn't be read (%s); keeping the previous result" % (k, e))
     for k in gl_keys:
         try:
             fresh[k] = gitlab_status(k, repos.get(k) or {})
