@@ -24,7 +24,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 - **Genres and series:** filter or search by genre (RPG, JRPG, Platformer, First-person shooter, Metroidvania…) and by series (Pokémon, Monster Hunter, Castlevania…), from IGDB. Series are merged into one entry per franchise (Mario, Zelda, Sonic the Hedgehog), with sub-series such as Mario Kart listed beneath; counts are games, not projects. Search ignores accents, so "poke" finds "Pokémon".
 - **Missing cover art only:** lists just the projects with no cover from any source, to fix by hand.
 - **Recent changes:** **New** marks projects added to Port Watch, or created, in the last 7 days. **Now playable** marks projects that had no public release before and got their first one in the last 14 days. Both have sidebar filters, and **Recently added** sorts by when projects appeared.
-- **Add project:** track anything else by its GitHub, GitLab or itch.io link.
+- **Add project:** track anything else by its GitHub, GitLab, SourceForge or itch.io link. SourceForge projects are checked by the shared refresh (latest release file, description, screenshots and supported systems), since browsers can't read SourceForge directly.
 
 ## Getting started
 

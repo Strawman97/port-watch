@@ -819,7 +819,7 @@ function sharedAddedProjects(added){
     const link=String(e.link||"");const k=key.startsWith("link:")?null:key.toLowerCase();if(!k&&!/^https?:\/\//i.test(link))continue;
     out.push({id:"shared:"+(k||link),k,g:String(e.title||(k?k.split("/").pop():link)),tf:1,p:String(e.platform||"Unknown"),t:TYPES.includes(e.type)?e.type:"Recompilation",
       ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),games:e.games||null,n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
-      pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
+      pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: "):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
       sharedCover:e.cover||""});}
   return out;
 }
@@ -1323,6 +1323,7 @@ async function runCheck(mode){
 async function checkOne(id){
   const p=allProjects().find(x=>x.id===id);if(!p||!p.k||running)return;running=true;newThisRun=0;
   const m=S.meta[p.k]||(S.meta[p.k]={});let msg="";
+  if(p.k.startsWith("sourceforge.net/")){running=false;toast("SourceForge projects are checked by Port Watch's shared refresh every few hours; this browser can't reach SourceForge directly.");return;}
   try{await (p.k.startsWith("itch.io/")?scanItch(p,m):p.k.startsWith("gitlab.com/")?scanGitLab(p,m,true):scanGitHub(p,m,true));}
   catch(e){msg=e instanceof RateLimit?"GitHub's hourly limit was reached. Try again after "+new Date(e.reset).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})+".":e instanceof AuthErr?"GitHub rejected the token.":"Couldn't reach "+((e&&e.host)||"the project's site")+".";}
   running=false;save();
@@ -1525,7 +1526,7 @@ function groupsOf(vs){
 // newest release first; projects without a release follow, newest commit first
 function relKey(v){const d=v.rel&&v.rel.date;return d?"1"+d:"0"+(v.lastCommit||v.updated||"");}
 function selectedIn(g){const id=UI.sel[g.key];return g.items.find(v=>v.p.id===id)||g.lead;}
-function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io)\//,"")||v.p.l||v.game;}
+function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: ")||v.p.l||v.game;}
 function tabsHTML(g,cur,where){
   if(g.items.length<2)return "";
   return `<div class="ptabs" role="tablist" aria-label="Projects for ${esc(g.game)}">${g.items.map(v=>{const oss=OSLIST.filter(o=>v.os[o]);
@@ -1717,6 +1718,7 @@ function ubType(methods){const m=methods||[];if(m.includes("Static recomp"))retu
   if(m.includes("Source port")&&!m.some(x=>/decomp/i.test(x)))return "Source Port";
   if(m.some(x=>/decomp|source port|disassembly|native port/i.test(x)))return "Decompilation";if(m.includes("Reimplementation"))return "Reimplementation";return "Recompilation";}
 function linkKey(url){const g=/^https?:\/\/(?:www\.)?github\.com\/([^/#?]+\/[^/#?]+)/i.exec(url||"");if(g)return g[1].toLowerCase().replace(/\.git$/,"");
+  const sf=/^https?:\/\/(?:www\.)?sourceforge\.net\/(?:projects|p)\/([^/#?]+)/i.exec(url||"");if(sf)return "sourceforge.net/"+sf[1].toLowerCase();
   const l=/^https?:\/\/(?:www\.)?gitlab\.com\/([^#?]+?)(?:\/-\/.*)?\/?$/i.exec(url||"");if(l)return "gitlab.com/"+l[1].toLowerCase();const it=itchParts(url);return it?"itch.io/"+it.user+"/"+it.game:null;}
 async function loadUnbaked(){
   if(UB.status==="loading"||UB.status==="ok")return;UB.status="loading";renderFindResults();
@@ -1894,7 +1896,7 @@ function addFromUnbaked(slug,i,follow){
   if(k&&knownKeys().has(k)){toast("That project is already in Port Watch.");return;}
   const id="custom:"+(k||p.url);
   S.custom[id]={id,k,g:d.title,tf:1,p:ubPlat(d.platform),t:ubType(p.methods),ps:"Not checked",d:p.description||"",n:p.notes||"",
-    po:(p.runs_on||[]).join(", "),pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):p.name,l:p.url,src:"Added from unbaked.games",custom:true,stars:p.stars||0,lc:p.last_push?p.last_push+"T00:00:00Z":""};
+    po:(p.runs_on||[]).join(", "),pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: "):p.name,l:p.url,src:"Added from unbaked.games",custom:true,stars:p.stars||0,lc:p.last_push?p.last_push+"T00:00:00Z":""};
   if(follow){S.follow=S.follow||{};S.follow[id]=Date.now();}
   save();renderFilters();renderFindResults();
   toast((follow?"Added and followed. ":"Added. ")+(k?"Checking it now…":"This link can't be checked automatically."));
@@ -2126,6 +2128,7 @@ async function precheckLink(){
   if(k&&knownKeys().has(k)){const p=allProjects().find(x=>x.k===k);box.innerHTML=`<span class="pill pl-yes">Already in Port Watch</span> as ${esc(p?view(p).game:k)}.`;return;}
   if(!k){box.textContent="This link isn't on GitHub, GitLab or itch.io, so it can't be checked automatically. It can still be added.";return;}
   if(k.startsWith("itch.io/")){box.textContent="itch.io pages are checked through their devlog after adding.";return;}
+  if(k.startsWith("sourceforge.net/")){box.textContent="SourceForge projects are checked by Port Watch's shared refresh, once they're shared with Export fixes for everyone. Fill in the title, platform and type below.";return;}
   box.textContent="Checking the repository…";
   const tmp={id:"precheck:"+k,k,g:"",p:"Unknown",t:"Recompilation",d:"",n:"",po:"",pr:k,l:url,custom:true};const m={};
   try{if(k.startsWith("gitlab.com/"))await scanGitLab(tmp,m,true);else await scanGitHub(tmp,m,true);}
@@ -2160,12 +2163,12 @@ $("#addSave").addEventListener("click",()=>{
   const link=gh_?"https://github.com/"+gh_[1].replace(/\.git$/,""):it?"https://"+it.user+".itch.io/"+it.game:url;
   const id="custom:"+(k||url);const game=$("#addGame").value.trim()||(k?k.split("/").pop():url);
   const pre=addPre&&addPre.k===k?addPre.m:null;
-  S.custom[id]={id,k,g:game,tf:1,p:$("#addPlat").value,t:$("#addType").value,ps:$("#addPs").value,d:pre&&pre.repo?pre.repo.desc||"":"",n:"",po:"",pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,""):url,l:link,src:"Added by you",custom:true};
+  S.custom[id]={id,k,g:game,tf:1,p:$("#addPlat").value,t:$("#addType").value,ps:$("#addPs").value,d:pre&&pre.repo?pre.repo.desc||"":"",n:"",po:"",pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: "):url,l:link,src:"Added by you",custom:true};
   if(pre){S.meta[k]=pre;if(pre.release&&pre.release.tag)S.tags[k]=pre.release.tag;}
   if(k&&S.disc.inbox[k])delete S.disc.inbox[k];
   if(addDlg.dataset.from){delete S.disc.inbox[addDlg.dataset.from];delete addDlg.dataset.from;}
   save();addDlg.close();toast(pre?"Added and checked.":k?"Added. It's checked on the next update check.":"Added. This kind of link can't be checked automatically, so open it to look for updates.");gotoProject(id);
-  if(k&&!pre&&!k.startsWith("gitlab.com/")&&!k.startsWith("itch.io/"))checkOne(id);});
+  if(k&&!pre&&!k.startsWith("gitlab.com/")&&!k.startsWith("itch.io/")&&!k.startsWith("sourceforge.net/"))checkOne(id);});
 
 /* settings */
 const dlg=$("#settings");
