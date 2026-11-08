@@ -653,27 +653,6 @@
         }
       ]
     },
-    "shagg88/athelas": {
-      "_game": "The Lord of the Rings: The Return of the King",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        },
-        {
-          "title": "The Lord of the Rings: The Fellowship of the Ring",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Third Age",
-          "platform": "Xbox (original)"
-        }
-      ]
-    },
     "shmargus/gsrecomp": {
       "title": "Golden Sun"
     },
@@ -3783,24 +3762,6 @@
       "pcRelease": "Never released on PC",
       "description": "Static Recompilation of Panzer Dragoon Orta, fully AI powered"
     },
-    "shagg88/athelas": {
-      "link": "https://github.com/Shagg88/Athelas",
-      "title": "The Lord of the Rings: The Return of the King",
-      "platform": "Xbox (original)",
-      "type": "Recompilation",
-      "pcRelease": "Also on PC (console version ported)",
-      "description": "Play The Return of the King (PC and Xbox) and The Two Towers (Xbox) on a modern PC",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        }
-      ]
-    },
     "shaneomac1337/top-spin-4-recomp": {
       "link": "https://github.com/shaneomac1337/Top-Spin-4-Recomp",
       "title": "Top Spin 4",
@@ -3908,6 +3869,32 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Resident Evil: The Umbrella Chronicles running natively on Windows: unlocked FPS, mouse aiming, DLSS / FSR 3.1 + frame generation, ray-traced shadows, HDR, Lua/JS/DLL mods, online co-op. Bring your own NTSC-U (RBUE08) image."
+    },
+    "sourceforge.net/athelas": {
+      "link": "https://sourceforge.net/projects/athelas/",
+      "title": "The Lord of the Rings: The Return of the King",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Athelas: one launcher for The Return of the King (PC, through ROTK Fix) and native PC ports of The Return of the King, The Two Towers, The Fellowship of the Ring and The Third Age (Xbox), now hosted on SourceForge.",
+      "games": [
+        {
+          "title": "The Lord of the Rings: The Two Towers",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Return of the King",
+          "platform": "PC"
+        },
+        {
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
+        }
+      ]
     },
     "sourceforge.net/cogbox": {
       "link": "https://sourceforge.net/projects/cogbox/",
