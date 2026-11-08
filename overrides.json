@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -826,6 +826,10 @@
           "platform": "Game Boy Color"
         }
       ]
+    },
+    "updeshxp/sf3tsoereborn": {
+      "_game": "Street Fighter III: Third Strike Online Edition",
+      "cover": "https://images.gog.com/b45c2a3cdbfe7ecd0665de986d5389949913f4aa23ddb8647602992f30402d47_glx_vertical_cover.webp?namespace=gamesdb"
     },
     "usernamefodder/pmdsky-debug": {
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
@@ -2727,6 +2731,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "gitlab.com/rygt-team/rygt7": {
+      "link": "https://gitlab.com/rygt-team/rygt7",
+      "title": "Gran Turismo 7",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
     "gitlab.com/zzzarathustra-dev/power-moon-recomp": {
       "link": "https://gitlab.com/zzzarathustra-dev/power-moon-recomp",
       "title": "Super Mario Odyssey",
@@ -2857,6 +2868,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Native PC port (Linux/Windows) of The Last Guardian (PS4, CUSA03627) — runs your own game dump; no game or firmware files included. Mouse/keyboard, optional 60 FPS, SMAA/CAS filters. | Port nativo para PC de The Last Guardian — usa o seu próprio dump."
+    },
+    "hekamiaeon/gbo-code-fairy-ps4rt": {
+      "link": "https://github.com/HekamiAeon/GBO-Code-Fairy-PS4RT",
+      "title": "Mobile Suit Gundam Battle Operation: Code Fairy",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://us-east-1-bandai.graphassets.com/AXzioIclSWilEjFtsMJPwz/Q7jKNxZTGaGzSnZmPJT1"
     },
     "hekamiaeon/sakura-wars-ps4rt": {
       "link": "https://github.com/HekamiAeon/Sakura-Wars-PS4RT",
@@ -3958,6 +3977,14 @@
       "type": "Recompilation",
       "description": "SacredFire: an experimental native Linux port of Crash Team Racing: Nitro-Fueled (PS4, CUSA13795 v1.21), built on bbport and the shadPS4 video core."
     },
+    "tangerineturtle1/nx2navi": {
+      "link": "https://github.com/tangerineturtle1/NX2navi",
+      "title": "The Legend of Zelda: Ocarina of Time (2026)",
+      "platform": "Switch 2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/f94be53eb872a59a8e902354ef99ce5a.jpg"
+    },
     "tangosdev/sm64ds-decomp": {
       "link": "https://github.com/tangosdev/sm64ds-decomp",
       "title": "Super Mario 64 DS",
@@ -4014,6 +4041,14 @@
       "pcRelease": "Never released on PC",
       "description": "An unofficial original Xbox version PC port of BLACK (2006) via static recompilation."
     },
+    "tgp482/rdr-xberecomp": {
+      "link": "https://github.com/TGP482/RDR-XBERecomp",
+      "title": "Red Dead Revolver",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "An unofficial original Xbox version PC port of Red Dead Revolver via static recompilation."
+    },
     "thatcalikid760/scda360pcport": {
       "link": "https://github.com/thatcalikid760/SCDA360pcport",
       "title": "Tom Clancy's Splinter Cell: Double Agent",
@@ -4037,6 +4072,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "The Nimbus Project: native DBZ GameCube trilogy ports with Linux/Windows/Android crossplay. Release distros only."
+    },
+    "thebabyhippo303/nimbus-recompilation-project": {
+      "link": "https://github.com/thebabyhippo303/nimbus-recompilation-project",
+      "title": "Dragon Ball Z: Budokai",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "The Nimbus Recompilation Project (TNRP): six native DBZ ports (Budokai, Budokai 2, Sagas, Supersonic Warriors, Taiketsu, Tenkaichi Tag Team) with Linux/Windows/Android crossplay. Release distros only."
     },
     "thedoffman/timesplitters-future-perfect-pc": {
       "link": "https://github.com/TheDoffman/timesplitters-future-perfect-pc",
