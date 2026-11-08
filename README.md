@@ -14,6 +14,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
   - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, Switch, 3DS, PS Vita, Wii U and PSP.
   - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
+- **Sorting:** by **Last release** (the default), **Last commit**, game name, original platform, GitHub stars or **Recently added**. Platforms are grouped by company (Nintendo, Sony, Microsoft, Sega, then others), home consoles before handhelds.
 - **List and grid views,** with box art from libretro-thumbnails and other sources. Games with several projects (The Darkness, Forza Horizon, Banjo-Kazooie and so on) are grouped into one entry, with a tab for each repository showing its own features, platforms and releases. **Group by game** turns this off.
 - **Screenshots:** each project shows screenshots from its own README (the port itself), IGDB and libretro-thumbnails. Click one to enlarge it.
 - **Malware-lure warnings:** repositories that look like malware disguised as game ports are flagged and hidden (see below).
@@ -107,7 +108,7 @@ These are warning signs, not proof. Never run downloads from a project you're un
 
 ## Emulators and renamed repositories
 
-Emulators and emulator front ends listed in Awesome Decomp Games (PPSSPP, Cemu, PCSX2 and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
+Emulators, emulator front ends and small tools listed in Awesome Decomp Games (PPSSPP, Cemu, PCSX2, PSCoverDL and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
 
 ## Deleted and archived repositories
 

@@ -208,6 +208,11 @@
       "_game": "Champions of Norrath (champions-of-norrath (ensapra))",
       "pcRelease": "Never released on PC"
     },
+    "featurejosh/pokopia-recomp": {
+      "_game": "Pokopia (pokopia-recomp)",
+      "title": "Pokémon Pokopia",
+      "platform": "Switch 2"
+    },
     "felipeprado0/gow3_pc": {
       "title": "God of War III Remastered",
       "cover": "https://cdn2.steamgriddb.com/thumb/bc6a17604012da6895c1bacd28cdb9fa.jpg"
@@ -220,6 +225,10 @@
       "_game": "Jak and Daxter",
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "g-guthrie/mvc2-port-and-decomp": {
+      "_game": "Marvel vs. Capcom 2",
+      "title": "Marvel vs. Capcom 2: New Age of Heroes"
     },
     "galaxynostalgia/outbreak-decomp": {
       "_game": "Biohazard Outbreak",
@@ -353,6 +362,66 @@
       "title": "Need for Speed: Most Wanted (2005)",
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
+    },
+    "mamesj/pokemon-fulldex": {
+      "_game": "Pokémon Fulldex",
+      "title": "Pokémon Black Version 2",
+      "platform": "DS",
+      "games": [
+        {
+          "title": "Pokémon White Version 2",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon Black Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon White Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon HeartGold Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon SoulSilver Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon Platinum Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon Diamond Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon Pearl Version",
+          "platform": "DS"
+        },
+        {
+          "title": "Pokémon Emerald Version",
+          "platform": "GBA"
+        },
+        {
+          "title": "Pokémon Ruby Version",
+          "platform": "GBA"
+        },
+        {
+          "title": "Pokémon Sapphire Version",
+          "platform": "GBA"
+        },
+        {
+          "title": "Pokémon FireRed Version",
+          "platform": "GBA"
+        },
+        {
+          "title": "Pokémon LeafGreen Version",
+          "platform": "GBA"
+        }
+      ],
+      "note": "One launcher for 14 Pokémon games, running them through a built-in melonDS emulator core with widescreen patches."
     },
     "manoharpadul/uncharted_nathan_drake_collection_pc": {
       "_game": "Uncharted: The Nathan Drake Collection",
@@ -4149,6 +4218,13 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game."
+    },
+    "updeshxp/sf3tsoereborn": {
+      "link": "https://github.com/updeshxp/SF3TSOEReborn",
+      "title": "Street Fighter III: Third Strike Online Edition",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "description": "Static recompilation of Street Fighter III: Third Strike Online Edition (XBLA) for Windows and Linux, built on the ReXGlue SDK."
     },
     "used255/artonelico2-decomp": {
       "link": "https://github.com/USED255/artonelico2-decomp",

@@ -124,6 +124,8 @@ dialog.shotbox .bar .cap{flex:1;color:var(--muted)}
 @container (min-width:640px){.dgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"runs proj" "feats proj" "shots shots" "more more"}}
 @container (min-width:980px){.dgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.15fr) minmax(0,1.25fr);grid-template-areas:"runs feats proj" "shots shots shots" "more more more"}}
 .chipset{display:flex;flex-wrap:wrap;gap:5px}
+.pgroup{font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:8px 0 2px}.pgroup:first-child{margin-top:0}
+.pgroup small{text-transform:none;letter-spacing:0;font-weight:400}
 .games-cov{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:8px}
 .chipbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:1px 9px;font-size:12.5px;cursor:pointer}
 .chipbtn small{color:var(--muted)}.chipbtn.cur{border-color:var(--action);font-weight:600;cursor:default}
@@ -331,7 +333,8 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
         <label style="display:flex;gap:5px;align-items:center"><input type="checkbox" id="groupTog" checked> Group by game</label>
         <label for="sort">Sort</label>
         <select id="sort">
-          <option value="updated">Last updated</option>
+          <option value="release">Last release</option>
+          <option value="updated">Last commit</option>
           <option value="name">Game name</option>
           <option value="platform">Original platform</option>
           <option value="stars">GitHub stars</option>
@@ -444,6 +447,22 @@ const FEED_CATS = /decompilations? & recompilations?|console to pc ports?|in the
 const FEED_SKIP = /\b(for android|android port|in browser|\bvr\b|ps vita port|switch port|3ds port|dreamcast port|master system port|saturn port|psp port|wii u port|xbox port|ps4 port|ps5 port|nes port|nintendo 64 port|amiga port|gamecube port|dsi port)\b/i;
 const DEFAULT_TOPICS = ["static-recompilation","rexglue","rexglue-recomp","n64recomp","xenonrecomp","recompilation","native-port","pc-port"];
 
+const PLATFORM_GROUPS=[
+  {company:"Nintendo",home:["NES","SNES","N64","GameCube","Wii","Wii U","Switch","Switch 2"],handheld:["Game Boy","Game Boy Color","Virtual Boy","GBA","DS","3DS"]},
+  {company:"Sony",home:["PS1","PS2","PS3","PS4"],handheld:["PSP","PS Vita"]},
+  {company:"Microsoft",home:["Xbox (original)","Xbox 360","XBLA (Xbox 360)","Xbox One"],handheld:[]},
+  {company:"Sega",home:["Master System","Mega Drive","Sega CD","32X","Saturn","Dreamcast"],handheld:["Game Gear"]}];
+function platformOrder(present){   // [{company, kind, platforms}] for the given platforms, "Other" last
+  const want=present?new Set(present):null,used=new Set(),out=[];
+  for(const g of PLATFORM_GROUPS)for(const kind of ["home","handheld"]){const ps=g[kind].filter(x=>!want||want.has(x));ps.forEach(x=>used.add(x));if(ps.length)out.push({company:g.company,kind,platforms:ps});}
+  const rest=(present||Object.keys(PCOL)).filter(x=>!used.has(x)&&x!=="Unknown").sort((a,b)=>a.localeCompare(b));
+  if(rest.length)out.push({company:"Other",kind:"",platforms:rest});
+  return out;
+}
+function platformOptions(selected){   // <optgroup>s for a platform <select>, with Unknown last
+  return platformOrder(null).map(g=>`<optgroup label="${g.company}${g.kind?" — "+(g.kind==="home"?"home consoles":"handhelds"):""}">${g.platforms.map(x=>`<option ${selected===x?"selected":""}>${esc(x)}</option>`).join("")}</optgroup>`).join("")+
+    `<option ${selected==="Unknown"||!selected?"selected":""}>Unknown</option>`;
+}
 const PCOL = {"Switch 2":"#C8102E","PC":"#5B6B82","Mobile":"#7A5AF8","PS Vita":"#2E4E9E","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
 const AW_PLAT = {"N64":"N64","N64 / GameCube":"N64","Xbox 360":"Xbox 360","xbox360":"Xbox 360","PS1":"PS1","ps":"PS1","GameCube":"GameCube","GBA":"GBA","PS2":"PS2","NES":"NES","Wii":"Wii","DS":"DS","SNES":"SNES","Game Boy Color":"Game Boy Color","Game Boy":"Game Boy","Genesis":"Mega Drive","Xbox":"Xbox (original)","og xbox":"Xbox (original)","Switch":"Switch","Wii U":"Wii U","PS3":"PS3","PS4":"PS4","Arcade":"Arcade","3DS":"3DS","Dreamcast":"Dreamcast","PSP":"PSP","32X":"32X","Virtual Boy":"Virtual Boy","Game Gear":"Game Gear","Saturn":"Saturn","Master System":"Master System"};
 const AW_PLAT_FIX = {"supermedo/bloodborne_pc":"PS4","chasem-dev/sms-launcher":"GameCube","wurlyfox/c1":"PS1","999sian/melee-pc":"GameCube"};
@@ -503,7 +522,7 @@ function loadState(){
 let saveFailed=false;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
-const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,genres:new Set(),series:"",noCover:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"updated",tab:"projects",open:null,limit:150};
+const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,genres:new Set(),series:"",noCover:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"release",tab:"projects",open:null,limit:150};
 
 /* ---------------- helpers ---------------- */
 const $=s=>document.querySelector(s);
@@ -563,10 +582,11 @@ function nameDescOS(name,desc){
 const EMU_REPOS=new Set(["hrydgard/ppsspp","flyinghead/flycast","cemu-project/cemu","melonds-emu/melonds","azahar-emu/azahar","tasemulators/bizhawk","swordfish90/lemuroid",
   "pcsx2/pcsx2","stenzek/duckstation","xenia-manager/xenia-manager","xenia-project/xenia","xenia-canary/xenia-canary","jay-day/rmg-k","rosalie241/rmg","2006-scape/2006scape",
   "dolphin-emu/dolphin","rpcs3/rpcs3","ryujinx/ryujinx","citra-emu/citra","mupen64plus/mupen64plus-core","libretro/retroarch","mednafen/mednafen","mamedev/mame",
-  "vita3k/vita3k","shadps4-emu/shadps4","xemu-project/xemu","cxbx-reloaded/cxbx-reloaded","ares-emulator/ares","simple64/simple64","flathub/org.ppsspp.ppsspp"]);
+  "vita3k/vita3k","shadps4-emu/shadps4","xemu-project/xemu","cxbx-reloaded/cxbx-reloaded","ares-emulator/ares","simple64/simple64","flathub/org.ppsspp.ppsspp","xlenore/pscoverdl"]);
 function isEmulator(title,repo,desc){
   if(EMU_REPOS.has(String(repo||"").toLowerCase()))return true;
   const d=String(desc||""),t=String(title||"");
+  if(/^\s*(a |small |simple )?(tool|utility|script)s? (to|for|that)\b/i.test(d))return true;   // "Small tool to download PS1/PS2 covers"
   if(/emulat/i.test(t))return false;                                     // a game named "... Emulator" (LSD: Dream Emulator)
   if(/\b(no|without|not an?|instead of an?|zero|never)\b[^.;:!?]{0,40}\bemulat/i.test(d))return false;  // "no emulator", "no Wine or emulator"
   return /\bemulat(or|ion)\b/i.test(d)&&!/\b(recompil|decompil|native (pc )?port|source port|pc port|port of|ported)/i.test(d.replace(/\bemulat\w*/ig,""));
@@ -586,7 +606,7 @@ const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","ca
   "metal slug xx","nba jam on fire edition","naughty bear panic in paradise","outpost kaloki x","perfect dark","perfect dark remaster","super street fighter ii turbo hd remix",
   "dishwasher dead samurai","rayman 3 hd","dishwasher vampire smile","simpsons arcade","simpsons arcade game","vigilante 8 arcade","burnout crash","minecraft xbox 360 edition","sonic the fighters","rez hd",
   "ikaruga","braid","trials hd","shadow complex","castle crashers","splosion man","ms splosion man","hydro thunder hurricane","beyond good and evil hd","alan wake s american nightmare",
-  "bomberman live","pac man championship edition dx","pac man championship edition","street fighter iii 3rd strike online edition","marvel vs capcom 2","sonic adventure","sonic adventure 2",
+  "bomberman live","pac man championship edition dx","pac man championship edition","street fighter iii 3rd strike online edition","street fighter iii third strike online edition","marvel vs capcom 2","sonic adventure","sonic adventure 2",
   "nights into dreams","jet set radio","crazy taxi","space channel 5 part 2","rocket knight","contra rebirth","limbo","bastion","fez","super meat boy","toy soldiers","toy soldiers cold war"]);
 function fold(t){return String(t||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();}
 function bare(t){return String(t||"").replace(/\s*\([^)]*\)/g," ").replace(/\s+/g," ").trim();}
@@ -1453,6 +1473,7 @@ function passes(v,skip,own){
 }
 function filtered(){
   const vs=allProjects().map(view).filter(v=>passes(v));const s=UI.sort;
+  if(s==="release"){vs.sort((a,b)=>relKey(b).localeCompare(relKey(a)));return vs;}
   vs.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return vs;
 }
@@ -1497,9 +1518,12 @@ function groupsOf(vs){
     out.push({key,items,lead:items[0],updated:upd,stars:Math.max(...items.map(v=>v.stars||0)),game:items[0].game,platform:items[0].platform,plats});}
   const s=UI.sort;
   if(s==="added"){const at=g=>Math.max(...g.items.map(v=>recentInfo(v).addedT));out.sort((a,b)=>at(b)-at(a));return out;}
+  if(s==="release"){const rk=g=>g.items.reduce((m,v)=>relKey(v)>m?relKey(v):m,"");out.sort((a,b)=>rk(b).localeCompare(rk(a)));return out;}
   out.sort((a,b)=>s==="name"?a.game.localeCompare(b.game):s==="platform"?(a.platform.localeCompare(b.platform)||a.game.localeCompare(b.game)):s==="stars"?(b.stars-a.stars):((b.updated||"").localeCompare(a.updated||"")));
   return out;
 }
+// newest release first; projects without a release follow, newest commit first
+function relKey(v){const d=v.rel&&v.rel.date;return d?"1"+d:"0"+(v.lastCommit||v.updated||"");}
 function selectedIn(g){const id=UI.sel[g.key];return g.items.find(v=>v.p.id===id)||g.lead;}
 function repoLabel(v){return v.p.pr||(v.p.k||"").replace(/^(gitlab\.com|itch\.io)\//,"")||v.p.l||v.game;}
 function tabsHTML(g,cur,where){
@@ -1625,7 +1649,7 @@ function detailHTML(v,head){
     ${shotsHTML(v)}
     ${v.ghost?`<p class="note d-more" style="padding-top:10px;border-top:1px solid var(--line)">Edits, cover and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="edgrid">
       <label class="ef"><span>Game title</span><input type="text" data-f="game" value="${esc(v.game)}"></label>
-      ${p.custom?`<label class="ef"><span>Original platform</span><select data-f="platform">${plats.concat("Unknown").map(x=>`<option ${v.platform===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
+      ${p.custom?`<label class="ef"><span>Original platform</span><select data-f="platform">${platformOptions(v.platform)}</select></label>
       <label class="ef"><span>Type</span><select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>`:""}
       <label class="ef"><span>Playability</span><select data-f="play"><option value="">Automatic</option><option value="yes" ${(S.ov[p.id]||{}).play==="yes"?"selected":""}>Playable</option><option value="no" ${(S.ov[p.id]||{}).play==="no"?"selected":""}>No public release</option></select></label>
       <label class="ef"><span>PC release</span><select data-f="ps">${PS.map(x=>`<option ${v.ps===x?"selected":""}>${esc(x)}</option>`).join("")}</select></label>
@@ -1916,7 +1940,8 @@ function renderFilters(){
   $("#fRecentNew").checked=UI.recentNew;$("#fRecentPlay").checked=UI.recentPlay;
   const gc=allProjects().map(view).filter(v=>v.gone||v.archived).length;$("#nGone").textContent=gc||"";$("#fGone").checked=UI.showGone;$("#fFollow").checked=UI.followed;updateFollowBtn();
   const psc=cnt("ps",v=>v.ps);$("#fPs").innerHTML=PS.map(x=>opt("ps",x,psc[x])).join("");
-  $("#fPlat").innerHTML=order.map(k=>opt("plat",k,pc[k],true)).join("");
+  $("#fPlat").innerHTML=platformOrder(order).map(g=>`<div class="pgroup">${g.company}${g.kind?` <small>${g.kind==="home"?"home":"handheld"}</small>`:""}</div>`+g.platforms.map(k=>opt("plat",k,pc[k],true)).join("")).join("")+
+    (order.includes("Unknown")?opt("plat","Unknown",pc["Unknown"],true):"");
   const present=new Set();all.forEach(v=>Object.keys(v.os).forEach(o=>present.add(o)));UI.os.forEach(o=>present.add(o));
   $("#fOs").innerHTML=OSLIST.filter(o=>present.has(o)).map(o=>`<button class="chip" data-chip="os" data-v="${o}" aria-pressed="${UI.os.has(o)}">${o}</button>`).join("");
   $("#fFeat").innerHTML=FEATURES.map(f=>`<button class="chip" data-chip="feat" data-v="${f.id}" aria-pressed="${UI.feat.has(f.id)}">${esc(f.label)}</button>`).join("");
@@ -1953,7 +1978,8 @@ $("#fAge").addEventListener("change",e=>{UI.age=e.target.value;renderFilters();r
 $("#rail").addEventListener("change",e=>{const t=e.target;if(t.dataset.set){const s=UI[t.dataset.set];t.checked?s.add(t.value):s.delete(t.value);UI.limit=150;renderFilters();render();}});
 $("#rail").addEventListener("click",e=>{const c=e.target.closest("[data-chip]");if(!c)return;const s=UI[c.dataset.chip];s.has(c.dataset.v)?s.delete(c.dataset.v):s.add(c.dataset.v);renderFilters();render();});
 $("#clearBtn").addEventListener("click",clearFilters);
-$("#sort").addEventListener("change",e=>{UI.sort=e.target.value;render();});
+$("#sort").addEventListener("change",e=>{UI.sort=e.target.value;S.settings.sort=UI.sort;save();render();});
+if(S.settings.sort&&[...$("#sort").options].some(o=>o.value===S.settings.sort)){UI.sort=S.settings.sort;}$("#sort").value=UI.sort;
 document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{UI.tab=t.dataset.tab;render();}));
 $("#filtersBtn").addEventListener("click",e=>{const o=$("#rail").classList.toggle("open");e.target.setAttribute("aria-expanded",o);});
 function groupFor(v,gkWanted){const gk=gkWanted||groupKeyOf(v);const items=expandViews(allProjects().map(view)).filter(x=>groupKeyOf(x)===gk&&(passes(x,null,true)||x.p.id===v.p.id));items.sort(rankItems);
@@ -2077,7 +2103,7 @@ $("#importCovers").addEventListener("change",async e=>{const f=e.target.files[0]
 
 /* add project */
 const addDlg=$("#addDlg");
-$("#addBtn").addEventListener("click",()=>{const plats=Object.keys(PCOL).filter(x=>x!=="Unknown");$("#addPlat").innerHTML=plats.concat("Unknown").map(x=>`<option ${x==="Unknown"?"selected":""}>${esc(x)}</option>`).join("");$("#addCheck").innerHTML="";addPre=null;addTouched={};$("#addPs").innerHTML=PS.map(x=>`<option ${x==="Not checked"?"selected":""}>${esc(x)}</option>`).join("");["#addUrl","#addGame"].forEach(i=>$(i).value="");addDlg.showModal();});
+$("#addBtn").addEventListener("click",()=>{$("#addPlat").innerHTML=platformOptions("Unknown");$("#addCheck").innerHTML="";addPre=null;addTouched={};$("#addPs").innerHTML=PS.map(x=>`<option ${x==="Not checked"?"selected":""}>${esc(x)}</option>`).join("");["#addUrl","#addGame"].forEach(i=>$(i).value="");addDlg.showModal();});
 $("#addCancel").addEventListener("click",()=>addDlg.close());
 const PLAT_RULES=[["XBLA (Xbox 360)",/\bxbla\b|xbox live arcade/i],["Xbox 360",/xbox ?360|\bx360\b/i],["PS Vita",/ps ?vita\b/i],["Xbox One",/xbox one/i],["Xbox (original)",/original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))/i],
   ["PS4",/\bps4\b|playstation 4/i],["PS3",/\bps3\b|playstation 3/i],["PS2",/\bps2\b|playstation 2/i],["PSP",/\bpsp\b|playstation portable/i],["PS1",/\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))/i],

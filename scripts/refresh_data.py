@@ -112,12 +112,14 @@ EMU_REPOS = {"hrydgard/ppsspp", "flyinghead/flycast", "cemu-project/cemu", "melo
              "pcsx2/pcsx2", "stenzek/duckstation", "xenia-manager/xenia-manager", "xenia-project/xenia", "xenia-canary/xenia-canary", "jay-day/rmg-k", "rosalie241/rmg",
              "2006-scape/2006scape", "dolphin-emu/dolphin", "rpcs3/rpcs3", "ryujinx/ryujinx", "citra-emu/citra", "mupen64plus/mupen64plus-core", "libretro/retroarch",
              "mednafen/mednafen", "mamedev/mame", "vita3k/vita3k", "shadps4-emu/shadps4", "xemu-project/xemu", "cxbx-reloaded/cxbx-reloaded", "ares-emulator/ares",
-             "simple64/simple64", "flathub/org.ppsspp.ppsspp"}
+             "simple64/simple64", "flathub/org.ppsspp.ppsspp", "xlenore/pscoverdl"}
 
 def is_emulator(title, repo, desc):
     if (repo or "").lower() in EMU_REPOS:
         return True
     d, t = desc or "", title or ""
+    if re.match(r"\s*(a |small |simple )?(tool|utility|script)s? (to|for|that)\b", d, re.I):
+        return True                       # "Small tool to download PS1/PS2 covers"
     if re.search(r"emulat", t, re.I):
         return False                      # a game named "... Emulator" (LSD: Dream Emulator)
     if re.search(r"\b(no|without|not an?|instead of an?|zero|never)\b[^.;:!?]{0,40}\bemulat", d, re.I):
@@ -155,9 +157,13 @@ PLATFORM_ERA = {"PS1": (1994, 2006), "PS2": (2000, 2013), "PS3": (2006, 2017), "
                 "Master System": (1985, 1996), "Game Gear": (1990, 1997), "Virtual Boy": (1995, 1996), "Mobile": (2008, 2030)}
 EXTRA_WORDS = re.compile(r"\b(mini|demake|hack|remake|remaster(ed)?|reloaded|fan ?made|deluxe|hd|definitive|collection|anniversary|redux|3d|online|portable)\b", re.I)
 
+ORDINALS = {"1st": "first", "2nd": "second", "3rd": "third", "4th": "fourth", "5th": "fifth", "6th": "sixth", "7th": "seventh", "8th": "eighth", "9th": "ninth"}
+
 def vnorm(t):
-    """norm() without a trailing "version": "Pokémon Emerald" matches "Pokémon Emerald Version"."""
-    return re.sub(r" version$", "", norm(t))
+    """norm() without a trailing "version", with ordinals spelt out: "Pokémon Emerald" matches "Pokémon Emerald Version",
+    "3rd Strike" matches "Third Strike"."""
+    n = re.sub(r" version$", "", norm(t))
+    return re.sub(r"\b(\d(?:st|nd|rd|th))\b", lambda m: ORDINALS.get(m.group(1), m.group(1)), n)
 
 POSSESSIVE = re.compile(r"^(?:[A-Z][\w.]*\s){0,2}[A-Z][\w.]*['’]s\s+")   # "Sid Meier's ", "Tom Clancy's ", "Peter Jackson's "
 
