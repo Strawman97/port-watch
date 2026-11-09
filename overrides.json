@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -769,6 +769,10 @@
         {
           "title": "Dragon Ball Z: Shin Budokai 2",
           "platform": "PSP"
+        },
+        {
+          "title": "Dragon Ball Z: Infinite World",
+          "platform": "PS2"
         }
       ]
     },
@@ -2679,6 +2683,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "ggmartinez/castlevanialoi-pc": {
+      "link": "https://github.com/ggMartinez/CastlevaniaLOI-PC",
+      "title": "Castlevania: Lament of Innocence",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Castlevania: Lament of Innocence ported to PC"
+    },
     "giangra/stuntdouble-reignition": {
       "link": "https://github.com/giangra/stuntdouble-reignition",
       "title": "Stuntman: Ignition",
@@ -3129,6 +3141,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg",
       "description": "Resident Evil Code: Veronica X HD - PS3 static recompilation port (hobby, no game data)"
     },
+    "kayliox/transformers-armada-recomp": {
+      "link": "https://github.com/kayliox/transformers-armada-recomp",
+      "title": "Transformers",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Transformers (PS2, 2004) as a native PC game: static recompilation from your own disc, native Direct3D 12 renderer, up to 4K / 240 fps / ultrawide. Bring your own disc."
+    },
     "kumapauz/project-reignition": {
       "link": "https://github.com/kumapauz/project-reignition",
       "title": "Sonic and the Secret Rings",
@@ -3194,6 +3214,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "lucas-blip-png/dkb-pc-recomp": {
+      "link": "https://github.com/Lucas-blip-png/dkb-pc-recomp",
+      "title": "Donkey Kong Bananza",
+      "platform": "Switch 2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Donkey Kong Bananza (Switch 2) to native Windows with Vulkan. Plays from the title screen through the first stage on an RTX 5060 Ti; still early, can crash. No game files included."
+    },
     "luckvj/streetball-revival": {
       "link": "https://github.com/luckvj/streetball-revival",
       "title": "NBA Street Vol. 2",
@@ -3234,6 +3262,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Conker: Live & Reloaded (Xbox) on Windows & Linux: a native recompilation with a launcher that builds it from your own disc, widescreen up to 240 FPS, enhancements, and online play with room codes."
+    },
+    "mabec-games/gran-turismo-6-pc": {
+      "link": "https://github.com/Mabec-games/Gran-Turismo-6-PC",
+      "title": "Gran Turismo 6",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Gran Turismo 6 on PC (Linux & Windows): GT6-tuned Launcher, one-click setup, modern graphics, wheels, mods, LAN and more."
     },
     "mango77x/mhforever": {
       "link": "https://github.com/Mango77x/MHForever",
@@ -3593,6 +3629,15 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/4bfab835a70836f9ce3f029ffeb555f9.png",
       "description": "Sengoku Basara 4 Sumeragi Native PC Port & Launcher. Direct x86-64 CPU Execution, Re-implemented PS4 System Contracts & Vulkan Translation by Razz"
     },
+    "rcostanza/resogun-recomp": {
+      "link": "https://github.com/rcostanza/resogun-recomp",
+      "title": "Resogun",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/caa1450e9e14a9f396b238fec035ef09.jpg",
+      "description": "Resogun (PS4) - Recompiled to PC"
+    },
     "re-tero17/ratchet-tod-recomp": {
       "link": "https://github.com/Re-TeRo17/ratchet-tod-recomp",
       "title": "Ratchet & Clank: Tools of Destruction",
@@ -3686,6 +3731,14 @@
       "platform": "PS2",
       "type": "Recompilation",
       "description": "Experimental Ace Combat 04 static recompilation for Windows, derived from sal063/Ace-Combat-5-Static-recompilation. Bring your own ISO."
+    },
+    "saulob/13-sentinels-aegis-rim-pc": {
+      "link": "https://github.com/saulob/13-sentinels-aegis-rim-pc",
+      "title": "13 Sentinels: Aegis Rim",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "13 Sentinels: Aegis Rim native PC port for Windows and Linux, with direct PS4 PKG installation, TRG launcher and modern graphics options"
     },
     "saulob/hard-corps-uprising-recompiled": {
       "link": "https://github.com/saulob/hard-corps-uprising-recompiled",
@@ -4195,6 +4248,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Port nativo e não oficial de LittleBigPlanet 3 (PS4) para Windows, em andamento. Nenhum arquivo do jogo incluído."
+    },
+    "therealafsan/shinobi-ps2-recomp": {
+      "link": "https://github.com/TheRealAfsan/Shinobi-PS2-Recomp",
+      "title": "Shinobi",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native Windows port of Shinobi (PS2, USA). Bring your own disc image. Launcher included."
     },
     "theslackbringer/dbziw-recomp": {
       "link": "https://github.com/TheSlackbringer/dbziw-recomp",
