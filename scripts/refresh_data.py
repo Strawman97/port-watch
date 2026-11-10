@@ -100,7 +100,7 @@ def seed_projects():
         sys.exit("Couldn't find Port Watch's built-in list in index.html.")
     return json.loads(m.group(1).replace("<\\/", "</"))
 
-AW_PLAT = {"N64": "N64", "N64 / GameCube": "N64", "Xbox 360": "Xbox 360", "xbox360": "Xbox 360", "PS1": "PS1", "ps": "PS1", "GameCube": "GameCube",
+AW_PLAT = {"switch2": "Switch 2", "Switch 2": "Switch 2", "N64": "N64", "N64 / GameCube": "N64", "Xbox 360": "Xbox 360", "xbox360": "Xbox 360", "PS1": "PS1", "ps": "PS1", "GameCube": "GameCube",
            "GBA": "GBA", "PS2": "PS2", "NES": "NES", "Wii": "Wii", "DS": "DS", "SNES": "SNES", "Game Boy Color": "Game Boy Color", "Game Boy": "Game Boy",
            "Genesis": "Mega Drive", "Xbox": "Xbox (original)", "og xbox": "Xbox (original)", "Switch": "Switch", "Wii U": "Wii U", "PS3": "PS3", "PS4": "PS4",
            "Arcade": "Arcade", "3DS": "3DS", "Dreamcast": "Dreamcast", "PSP": "PSP", "32X": "32X", "Virtual Boy": "Virtual Boy", "Game Gear": "Game Gear",

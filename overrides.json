@@ -170,6 +170,12 @@
     "digdat0/acgc-switch-port": {
       "title": "Animal Crossing"
     },
+    "dittobyte/recompia": {
+      "_game": "Pokopia (pokopia-recomp)",
+      "title": "Pokémon Pokopia",
+      "platform": "Switch 2",
+      "note": "Previously featurejosh/pokopia-recomp"
+    },
     "donovanmontoya/pokemon-xd-decomp": {
       "_game": "Pokémon XD: Gale of Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg"
@@ -207,11 +213,6 @@
     "ensapra/champions-of-norrath": {
       "_game": "Champions of Norrath (champions-of-norrath (ensapra))",
       "pcRelease": "Never released on PC"
-    },
-    "featurejosh/pokopia-recomp": {
-      "_game": "Pokopia (pokopia-recomp)",
-      "title": "Pokémon Pokopia",
-      "platform": "Switch 2"
     },
     "featurejosh/recompia": {
       "title": "Pokémon Pokopia"
@@ -608,6 +609,10 @@
     "razzconnect/basara4-native-pc": {
       "_game": "Sengoku Basara 4 Sumeragi",
       "cover": "https://cdn2.steamgriddb.com/thumb/4bfab835a70836f9ce3f029ffeb555f9.png"
+    },
+    "rcostanza/resogun-recomp": {
+      "_game": "Resogun",
+      "cover": "https://cdn2.steamgriddb.com/thumb/caa1450e9e14a9f396b238fec035ef09.jpg"
     },
     "recompport/pandora-tower-pc": {
       "_game": "Pandora's Tower",
@@ -2513,6 +2518,14 @@
       "pcRelease": "Originally a PC game",
       "description": "Diablo build for modern operating systems"
     },
+    "digdat0/mkdd-nx": {
+      "link": "https://github.com/digdat0/mkdd-nx",
+      "title": "Mario Kart: Double Dash!!",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "mkdd-nx"
+    },
     "donovanmontoya/pokemon-xd-decomp": {
       "link": "https://github.com/DonovanMontoya/pokemon-xd-decomp",
       "title": "Pokémon XD: Gale of Darkness",
@@ -2706,6 +2719,13 @@
       "type": "Decompilation",
       "pcRelease": "Also on PC (console version ported)",
       "description": "Native C++20 rebuild of The House of the Dead 2 with online co-op, extra modes, and modern controls. Complete download-and-play Windows package in Releases."
+    },
+    "gitlab.com/andyalrlabs/recasted": {
+      "link": "https://gitlab.com/AndyALRLabs/ReCasted",
+      "title": "Ratchet & Clank (2016)",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "gitlab.com/engage-pc-recomp/engage-pc-recomp": {
       "link": "https://gitlab.com/engage-pc-recomp/engage-pc-recomp",
@@ -3034,6 +3054,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Xenoblade Chronicles 2 to Windows x86-64 with a Vulkan renderer"
+    },
+    "jmars125/xc3-recomp": {
+      "link": "https://github.com/jmars125/xc3-recomp",
+      "title": "Xenoblade Chronicles 3",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Xenoblade Chronicles 3 to PC"
     },
     "jmars125/xcx-recomp": {
       "link": "https://github.com/jmars125/xcx-recomp",
@@ -3609,6 +3637,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Native PC port of Pokemon Black and White, built on aletheia"
+    },
+    "qnfn/grport": {
+      "link": "https://github.com/qnfn/GRport",
+      "title": "Gravity Rush Remastered",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Gravity Rush Remastered and Gravity Rush 2 on Windows: native runtime, FSR 4 / DLSS, Gravity Rush 2 up to 120 FPS. Unofficial fan project; bring your own game dump."
     },
     "randomno/pinball-decomp": {
       "link": "https://github.com/Randomno/pinball-decomp",
