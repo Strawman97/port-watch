@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -72,6 +72,10 @@
       "title": "Super Mario Galaxy",
       "pcRelease": "Never released on PC"
     },
+    "bipinkrish/sf2recomp": {
+      "_game": "Shadow Fight 2",
+      "cover": "https://cdn2.steamgriddb.com/thumb/03440368ae777a908ab20b6fb052a69e.jpg"
+    },
     "blsncvs/castlevania-grimoire-of-souls-recomp": {
       "_game": "Castlevania: Grimoire of Souls",
       "cover": "https://cdn2.steamgriddb.com/thumb/105c4dffbc8f021336f80e0a67c37e08.jpg"
@@ -91,6 +95,10 @@
     },
     "bnunu/halo-ce-universal": {
       "title": "Halo: Combat Evolved"
+    },
+    "broomstick-girl-magical-amber/tsukire-pc-port": {
+      "title": "Tsukihime: A piece of blue glass moon",
+      "cover": "https://cdn2.steamgriddb.com/thumb/0e8ccd187f56b3696422278ebb620efa.jpg"
     },
     "bruder-grimm/animal_forest_psp": {
       "_game": "Animal Forest",
@@ -239,6 +247,11 @@
       "_game": "Marvel vs. Capcom 2",
       "title": "Marvel vs. Capcom 2: New Age of Heroes"
     },
+    "galarianpikachu2021-hue/racing-8-dx-recomp": {
+      "_game": "Mario Kart 8 Deluxe",
+      "cover": "https://cdn2.steamgriddb.com/thumb/9cd6d894098e748716960bfcf9dbe115.jpg",
+      "platform": "Switch"
+    },
     "galaxynostalgia/outbreak-decomp": {
       "_game": "Biohazard Outbreak",
       "games": [
@@ -268,6 +281,10 @@
     "glitxhhh/xenobladechroniclesrecompiled": {
       "_game": "Xenoblade Chronicles: Definitive Edition",
       "cover": "https://cdn2.steamgriddb.com/thumb/9374ef3d53a00c33de62be93467ec04d.jpg"
+    },
+    "goldoire/fefw-recomp": {
+      "_game": "Fire Emblem: Fortune's Weave",
+      "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
     },
     "gtteancum/openh3m": {
       "title": "Halo 3"
@@ -312,6 +329,12 @@
     "hubbydebs/nfs-nitro-ds-port": {
       "_game": "Need For Speed: Nitro",
       "platform": "DS"
+    },
+    "ihaideez/botw": {
+      "title": "The Legend of Zelda: Breath of the Wild"
+    },
+    "ihaideez/ssbu": {
+      "title": "Super Smash Bros. Ultimate"
     },
     "invinceble55-wq/estacado": {
       "_game": "The Darkness",
@@ -465,6 +488,9 @@
       "_game": "Resident Evil 2",
       "type": "Decompilation"
     },
+    "mkalkhoven-po/nfs-carbon-ce-recomp": {
+      "title": "Need for Speed: Carbon"
+    },
     "mkst/esa": {
       "_game": "Evo's Space Adventures",
       "cover": "https://imgs.search.brave.com/4KJQqnvbHrgDeK-nNa0M7aaGquipmsepCyTMDhK0fuI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yb21z/ZnVuLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wOC9F/dm94MjdzLVNwYWNl/LUFkdmVudHVyZXMu/anBn"
@@ -542,6 +568,11 @@
       "_game": "GoldenEye 007 Reloaded",
       "cover": "https://cdn2.steamgriddb.com/thumb/d2a3705b4550183211b94bf86b710bb5.jpg"
     },
+    "novapowers0/dbz-budokai-1-hd-collection": {
+      "_game": "Dragon Ball Z: Budokai HD Collection",
+      "cover": "https://cdn2.steamgriddb.com/thumb/d29cbe5ceb0a45d87a1050e9a1718255.jpg",
+      "platform": "Xbox 360"
+    },
     "novapowers0/dbz-budokai-3-hd-collection": {
       "title": "Dragon Ball Z: Budokai 3"
     },
@@ -568,6 +599,22 @@
     "openrac/openrac": {
       "title": "Ratchet & Clank"
     },
+    "originalswayze/streets-of-rage-recomp": {
+      "title": "Streets of Rage",
+      "games": [
+        {
+          "title": "Streets of Rage 2",
+          "platform": "Mega Drive"
+        },
+        {
+          "title": "Streets of Rage 3",
+          "platform": "Mega Drive"
+        }
+      ]
+    },
+    "papand7/nightfire-recomp": {
+      "title": "007: Nightfire"
+    },
     "peiikai/lasrecomp": {
       "title": "The Legend of Zelda: Link's Awakening (2019)",
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
@@ -589,6 +636,19 @@
         {
           "title": "Pokemon White Version",
           "platform": "NDS"
+        }
+      ]
+    },
+    "psyykosis/resistance-fall-of-man-recomp": {
+      "_game": "Resistance: Fall of Man",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a675cdaaaea6d970edf507f9716e5227.png"
+    },
+    "qnfn/grport": {
+      "_game": "Gravity Rush Remastered",
+      "games": [
+        {
+          "title": "Gravity Rush 2",
+          "platform": "PS4"
         }
       ]
     },
@@ -650,6 +710,10 @@
       "title": "FIFA Street (2012)",
       "note": "The 2012 Xbox 360 game, not the 2005 original"
     },
+    "santibros/spiderman2-2004-nx": {
+      "title": "Spider-Man 2",
+      "platform": "Xbox (original)"
+    },
     "saulob/hard-corps-uprising-recompiled": {
       "_game": "Hard Corps: Uprising",
       "platform": "XBLA (Xbox 360)"
@@ -682,6 +746,9 @@
       "title": "Need for Speed: Most Wanted (2005)",
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
+    },
+    "speedyjustice2/ridge-racer-psp-static-recomp": {
+      "title": "Ridge Racer"
     },
     "spita90/konami-viper-recomp": {
       "title": "GTI Club 2",
@@ -800,6 +867,10 @@
         }
       ]
     },
+    "thegh0sts/bourne-conspiracy-x360-recomp": {
+      "_game": "The Bourne Conspiracy",
+      "cover": "https://cdn2.steamgriddb.com/thumb/88524e6327a0bd5ff7cc03f86846a15e.jpg"
+    },
     "thelostpantheon/nativ": {
       "_game": "Killzone: Mercenary",
       "games": [
@@ -819,6 +890,9 @@
     },
     "thibautbus/top": {
       "title": "The Legend of Zelda: Oracle of Ages"
+    },
+    "thorhax/mk9-nx": {
+      "title": "Mortal Kombat"
     },
     "tmcleroy/vampire-savior-recomp": {
       "title": "Vampire Savior"
@@ -853,6 +927,10 @@
     },
     "usernamefodder/pmdsky-debug": {
       "title": "Pokémon Mystery Dungeon: Explorers of Sky"
+    },
+    "vasilkovnd/ds1-nx": {
+      "title": "Dead Space (2008)",
+      "cover": "https://cdn2.steamgriddb.com/thumb/26203c6ab63ff66fef12bbc3b8dad1c0.jpg"
     },
     "veemyu/strahlender-xnu": {
       "_game": "Pokémon Brilliant Diamond",
