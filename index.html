@@ -436,7 +436,7 @@ function loadRepoData(force){
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
     if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
-    REPO.loaded=true;
+    REPO.loaded=true;dataChanged();
   })();
   return repoLoading;
 }
@@ -520,7 +520,7 @@ function loadState(){
     const old=localStorage.getItem("portwatch.v1");if(old){const o=JSON.parse(old);const d=defaults();if(o.settings){d.settings.token=o.settings.token||"";d.settings.notify=!!o.settings.notify;if(o.settings.topics)d.settings.topics=o.settings.topics;}if(o.disc&&o.disc.ignored)d.disc.ignored=o.disc.ignored;return d;}
   }catch(e){}return defaults();}
 let saveFailed=false;
-function save(){try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
+function save(){dataChanged();try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
 
 const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,genres:new Set(),series:"",noCover:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"release",tab:"projects",open:null,limit:150};
 
@@ -824,7 +824,8 @@ function sharedAddedProjects(added){
   return out;
 }
 const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
-function allProjects(){
+function allProjects(){if(ACACHE)return ACACHE;return ACACHE=allProjectsRaw();}
+function allProjectsRaw(){
   const sharedKeys=new Set(REPO.added.map(p=>p.k).filter(Boolean));
   const custom=Object.values(S.custom).filter(p=>!(p.k&&sharedKeys.has(p.k))),taken=new Set(custom.map(p=>p.k).filter(Boolean));
   const shared=REPO.added.filter(p=>!(p.k&&(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k))));
@@ -869,7 +870,12 @@ function noteSharedAdded(){
   if(n){save();renderUpdates();}
 }
 function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnalysis[p.id]=analyze([p.d,p.n,aw&&aw.d!==p.d?aw.d:""].join("\n"));}return seedAnalysis[p.id];}
-function view(p){
+// Working out a project's details is the expensive part, and a single redraw used to repeat it many times
+// over. Results are kept until the data changes: any save(), a shared-data load, or a full redraw.
+let VCACHE=new WeakMap(),ACACHE=null;
+function dataChanged(){VCACHE=new WeakMap();ACACHE=null;YIDX=null;SIDX=null;}
+function view(p){let v=VCACHE.get(p);if(!v){v=viewRaw(p);VCACHE.set(p,v);}return v;}
+function viewRaw(p){
   const m=p.k?(S.meta[p.k]||{}):{};const aw=p.k?S.aw.data[p.k]:null;const ov=S.ov[p.id]||{};const sa=analysisOf(p);const ra=m.readme||null;
   const mf=m.manifest||null;
   const so=sharedFix(p)||{};
@@ -1079,6 +1085,13 @@ async function syncAwesome(){
       if(p&&e.rel)seenTag(p,e.rel,e.rd,false);
       if(p&&!e.linkOk&&!S.aw.gone[e.k]){S.aw.gone[e.k]=true;logEv("gone",p,"Awesome Decomp Games reports the repo link is broken");}
     }
+  }
+  // forget entries the list has dropped (renamed, moved or removed), unless you follow them
+  const listed=new Set();for(const g of d.games||[]){const e=awNormalize(g);if(e)listed.add(e.k);}
+  if(listed.size>100){
+    for(const k of Object.keys(S.aw.added)){if(listed.has(k))continue;const p=S.aw.added[k];
+      if(S.follow&&S.follow[p.id]){if(!S.aw.dropped||!S.aw.dropped[k]){(S.aw.dropped=S.aw.dropped||{})[k]=1;logEv("gone",p,"No longer listed by Awesome Decomp Games; it may have been renamed, moved or removed");}continue;}
+      delete S.aw.added[k];delete S.aw.data[k];}
   }
   S.aw.gen=d.generated_at||"";S.aw.syncedAt=Date.now();
   return added;
@@ -1469,7 +1482,9 @@ function passes(v,skip,own){
   for(const o of UI.os)if(!v.os[o])return false;
   for(const f of UI.feat)if(v.feats[f].st!=="yes")return false;
   if(UI.age){if(!v.updated||(Date.now()-new Date(v.updated))/864e5>+UI.age)return false;}
-  if(UI.q){const extra=own||v.ghost?[]:gamesOf(v).map(g=>g.title+" "+g.platform);const tg=tagsFor(v);const hay=fold([v.game,v.p.pr,v.platform,...extra,...tg.genres,...tg.series,...seriesOf(v).tops].join(" "));if(!hay.includes(fold(UI.q)))return false;}
+  if(UI.q){const key=own||v.ghost?"_hayO":"_hayA";let hay=v[key];
+    if(hay===undefined){const extra=own||v.ghost?[]:gamesOf(v).map(g=>g.title+" "+g.platform);const tg=tagsFor(v);hay=v[key]=fold([v.game,v.p.pr,v.platform,...extra,...tg.genres,...tg.series,...seriesOf(v).tops].join(" "));}
+    if(!hay.includes(UI.qf))return false;}
   return true;
 }
 function filtered(){
@@ -1505,7 +1520,7 @@ function gamesOf(v){
   const lo=S.ov[v.p.id]||{},so=v.so||{};const list=parseGames(lo.games!=null?lo.games:(so.games||v.p.games));
   return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform,pcRelease:g.pcRelease||""})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
 }
-function ghostView(v,g){const gv=Object.assign({},v,{game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});
+function ghostView(v,g){const gv=Object.assign({},v,{_hayO:undefined,_hayA:undefined,game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});
   // each other game has its own PC history: its own value if set, otherwise IGDB's; never the main game's
   if(g.pcRelease&&PS.includes(g.pcRelease)){gv.ps=g.pcRelease;gv.psSrc="";}
   else{const a=autoPs(g.platform,igdbGame(v.p,gv));gv.ps=a||"Not checked";gv.psSrc=a?"IGDB":"";}
@@ -1971,11 +1986,16 @@ function render(){YIDX=null;SIDX=null;
   $("#vList").setAttribute("aria-pressed",S.settings.view!=="grid");$("#vGrid").setAttribute("aria-pressed",S.settings.view==="grid");
   if(UI.tab==="projects"){renderProjects();afterProjects();}else if(UI.tab==="find")renderFind();else renderActivity();
 }
-function renderAll(keepStatus){if(!keepStatus)setStatus();renderUpdates();renderFilters();render();}
+function renderAll(keepStatus){dataChanged();if(!keepStatus)setStatus();renderUpdates();renderFilters();render();}
 function clearFilters(){UI.q="";$("#q").value="";["type","ps","play","plat","os","feat","genres"].forEach(k=>UI[k].clear());UI.series="";UI.noCover=false;UI.followed=false;UI.age="";$("#fAge").value="";UI.limit=150;renderFilters();render();}
 
 /* ---------------- events ---------------- */
-$("#q").addEventListener("input",e=>{UI.q=e.target.value;UI.limit=150;renderFilters();render();});
+let qT1,qT2;
+$("#q").addEventListener("input",e=>{UI.q=e.target.value;UI.qf=fold(UI.q.trim());UI.limit=150;
+  clearTimeout(qT1);clearTimeout(qT2);
+  qT1=setTimeout(render,120);              // the list, once typing pauses briefly
+  qT2=setTimeout(renderFilters,450);       // the sidebar counts, once typing stops
+});
 $("#fAge").addEventListener("change",e=>{UI.age=e.target.value;renderFilters();render();});
 $("#rail").addEventListener("change",e=>{const t=e.target;if(t.dataset.set){const s=UI[t.dataset.set];t.checked?s.add(t.value):s.delete(t.value);UI.limit=150;renderFilters();render();}});
 $("#rail").addEventListener("click",e=>{const c=e.target.closest("[data-chip]");if(!c)return;const s=UI[c.dataset.chip];s.has(c.dataset.v)?s.delete(c.dataset.v):s.add(c.dataset.v);renderFilters();render();});
