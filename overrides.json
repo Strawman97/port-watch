@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -2859,6 +2859,68 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "gitlab.com/shagg88/athelas": {
+      "link": "https://gitlab.com/shagg88/athelas",
+      "title": "The Lord of the Rings: The Return of the King",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Athelas: one launcher for The Return of the King (PC, through ROTK Fix) and native PC ports of The Return of the King, The Two Towers, The Fellowship of the Ring and The Third Age (Xbox) Main repository on GitLab, mirrored on SourceForge.",
+      "games": [
+        {
+          "title": "The Lord of the Rings: The Two Towers",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Return of the King",
+          "platform": "PC"
+        },
+        {
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
+        }
+      ],
+      "mirrors": [
+        "https://sourceforge.net/projects/athelas/"
+      ],
+      "was": [
+        "sourceforge.net/athelas",
+        "shagg88/athelas"
+      ]
+    },
+    "gitlab.com/shagg88/cogbox": {
+      "link": "https://gitlab.com/shagg88/cogbox",
+      "title": "Gears of War 2",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "COGBox: a launcher plus native PC recompilations of the four Xbox 360 Gears of War games Main repository on GitLab, mirrored on SourceForge.",
+      "games": [
+        {
+          "title": "Gears of War",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War 3",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War: Judgment",
+          "platform": "Xbox 360"
+        }
+      ],
+      "mirrors": [
+        "https://sourceforge.net/projects/cogbox/"
+      ],
+      "was": [
+        "sourceforge.net/cogbox",
+        "shagg88/cogbox"
+      ]
+    },
     "gitlab.com/zzzarathustra-dev/power-moon-recomp": {
       "link": "https://gitlab.com/zzzarathustra-dev/power-moon-recomp",
       "title": "Super Mario Odyssey",
@@ -2891,6 +2953,13 @@
       "pcRelease": "Never released on PC",
       "description": "Metroid: Samus Returns as a single-screen PC game, built on the Azahar 3DS emulator. Bring your own dump."
     },
+    "gminustwo/rondorecomp": {
+      "link": "https://github.com/gminustwo/RondoRecomp",
+      "title": "Castlevania: Rondo of Blood",
+      "platform": "PC Engine",
+      "type": "Recompilation",
+      "description": "Static recompilation of Castlevania: Rondo of Blood (PC Engine Super CD-ROM²) into a native PC application for Windows and Linux (Steam Deck)."
+    },
     "gnsb/ufc-3-ps4-port-linux-windows": {
       "link": "https://github.com/GNSB/UFC-3-PS4-PORT-LINUX-WINDOWS",
       "title": "EA SPORTS UFC 3",
@@ -2921,6 +2990,20 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Grandia III (PS2) as a native PC game via static recompilation - bring your own ISO"
+    },
+    "grunttanamo/karpur": {
+      "link": "https://github.com/Grunttanamo/KarPur",
+      "title": "Pokémon Scarlet",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Pokémon Scarlet and Violet recompiled into a native Windows game with a Vulkan renderer, built from your own copy of the game.",
+      "games": [
+        {
+          "title": "Pokémon Violet",
+          "platform": "Switch"
+        }
+      ]
     },
     "gta-reversed/gta-reversed": {
       "link": "https://github.com/gta-reversed/gta-reversed",
@@ -4049,54 +4132,6 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Resident Evil: The Umbrella Chronicles running natively on Windows: unlocked FPS, mouse aiming, DLSS / FSR 3.1 + frame generation, ray-traced shadows, HDR, Lua/JS/DLL mods, online co-op. Bring your own NTSC-U (RBUE08) image."
-    },
-    "sourceforge.net/athelas": {
-      "link": "https://sourceforge.net/projects/athelas/",
-      "title": "The Lord of the Rings: The Return of the King",
-      "platform": "Xbox (original)",
-      "type": "Recompilation",
-      "pcRelease": "Also on PC (console version ported)",
-      "description": "Athelas: one launcher for The Return of the King (PC, through ROTK Fix) and native PC ports of The Return of the King, The Two Towers, The Fellowship of the Ring and The Third Age (Xbox), now hosted on SourceForge.",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        },
-        {
-          "title": "The Lord of the Rings: The Fellowship of the Ring",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Third Age",
-          "platform": "Xbox (original)"
-        }
-      ]
-    },
-    "sourceforge.net/cogbox": {
-      "link": "https://sourceforge.net/projects/cogbox/",
-      "title": "Gears of War 2",
-      "platform": "Xbox 360",
-      "type": "Recompilation",
-      "pcRelease": "Never released on PC",
-      "description": "COGBox: a launcher plus native PC recompilations of the four Xbox 360 Gears of War games, now hosted on SourceForge.",
-      "games": [
-        {
-          "title": "Gears of War",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War 3",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War: Judgment",
-          "platform": "Xbox 360"
-        }
-      ]
     },
     "sp00nznet/bloodwake": {
       "link": "https://github.com/sp00nznet/bloodwake",

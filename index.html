@@ -451,7 +451,8 @@ const PLATFORM_GROUPS=[
   {company:"Nintendo",home:["NES","SNES","N64","GameCube","Wii","Wii U","Switch","Switch 2"],handheld:["Game Boy","Game Boy Color","Virtual Boy","GBA","DS","3DS"]},
   {company:"Sony",home:["PS1","PS2","PS3","PS4"],handheld:["PSP","PS Vita"]},
   {company:"Microsoft",home:["Xbox (original)","Xbox 360","XBLA (Xbox 360)","Xbox One"],handheld:[]},
-  {company:"Sega",home:["Master System","Mega Drive","Sega CD","32X","Saturn","Dreamcast"],handheld:["Game Gear"]}];
+  {company:"Sega",home:["Master System","Mega Drive","Sega CD","32X","Saturn","Dreamcast"],handheld:["Game Gear"]},
+  {company:"NEC",home:["PC Engine"],handheld:[]}];
 function platformOrder(present){   // [{company, kind, platforms}] for the given platforms, "Other" last
   const want=present?new Set(present):null,used=new Set(),out=[];
   for(const g of PLATFORM_GROUPS)for(const kind of ["home","handheld"]){const ps=g[kind].filter(x=>!want||want.has(x));ps.forEach(x=>used.add(x));if(ps.length)out.push({company:g.company,kind,platforms:ps});}
@@ -463,8 +464,8 @@ function platformOptions(selected){   // <optgroup>s for a platform <select>, wi
   return platformOrder(null).map(g=>`<optgroup label="${g.company}${g.kind?" — "+(g.kind==="home"?"home consoles":"handhelds"):""}">${g.platforms.map(x=>`<option ${selected===x?"selected":""}>${esc(x)}</option>`).join("")}</optgroup>`).join("")+
     `<option ${selected==="Unknown"||!selected?"selected":""}>Unknown</option>`;
 }
-const PCOL = {"Switch 2":"#C8102E","PC":"#5B6B82","Mobile":"#7A5AF8","PS Vita":"#2E4E9E","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
-const AW_PLAT = {"switch2":"Switch 2","Switch 2":"Switch 2","N64":"N64","N64 / GameCube":"N64","Xbox 360":"Xbox 360","xbox360":"Xbox 360","PS1":"PS1","ps":"PS1","GameCube":"GameCube","GBA":"GBA","PS2":"PS2","NES":"NES","Wii":"Wii","DS":"DS","SNES":"SNES","Game Boy Color":"Game Boy Color","Game Boy":"Game Boy","Genesis":"Mega Drive","Xbox":"Xbox (original)","og xbox":"Xbox (original)","Switch":"Switch","Wii U":"Wii U","PS3":"PS3","PS4":"PS4","Arcade":"Arcade","3DS":"3DS","Dreamcast":"Dreamcast","PSP":"PSP","32X":"32X","Virtual Boy":"Virtual Boy","Game Gear":"Game Gear","Saturn":"Saturn","Master System":"Master System"};
+const PCOL = {"PC Engine":"#E4572E","Switch 2":"#C8102E","PC":"#5B6B82","Mobile":"#7A5AF8","PS Vita":"#2E4E9E","Xbox One":"#107C10","Xbox 360":"#5FB236","XBLA (Xbox 360)":"#2F8F5B","Xbox (original)":"#1E6B34","PS1":"#9AA3AF","PS2":"#2F5DA8","PS3":"#1B3F7A","PS4":"#0F2C59","PSP":"#5E6FCF","GameCube":"#6A4FB6","Wii":"#4FB8DE","Wii U":"#1F8FB8","Switch":"#E60012","N64":"#D3412A","SNES":"#8A69CF","NES":"#B23A3A","Mega Drive":"#B03A48","32X":"#C0563F","Saturn":"#4A4F6A","Master System":"#9E2B2B","Game Gear":"#3A3A3A","Dreamcast":"#F07D22","Dreamcast / Arcade (NAOMI 2)":"#F07D22","Arcade":"#D9A21B","GBA":"#5948B5","Game Boy":"#8BAC0F","Game Boy Color":"#E0A030","Virtual Boy":"#C8102E","DS":"#8C949E","3DS":"#D9303D","Unknown":"#888888"};
+const AW_PLAT = {"PC Engine":"PC Engine","TurboGrafx-16":"PC Engine","PC Engine CD":"PC Engine","switch2":"Switch 2","Switch 2":"Switch 2","N64":"N64","N64 / GameCube":"N64","Xbox 360":"Xbox 360","xbox360":"Xbox 360","PS1":"PS1","ps":"PS1","GameCube":"GameCube","GBA":"GBA","PS2":"PS2","NES":"NES","Wii":"Wii","DS":"DS","SNES":"SNES","Game Boy Color":"Game Boy Color","Game Boy":"Game Boy","Genesis":"Mega Drive","Xbox":"Xbox (original)","og xbox":"Xbox (original)","Switch":"Switch","Wii U":"Wii U","PS3":"PS3","PS4":"PS4","Arcade":"Arcade","3DS":"3DS","Dreamcast":"Dreamcast","PSP":"PSP","32X":"32X","Virtual Boy":"Virtual Boy","Game Gear":"Game Gear","Saturn":"Saturn","Master System":"Master System"};
 const AW_PLAT_FIX = {"supermedo/bloodborne_pc":"PS4","chasem-dev/sms-launcher":"GameCube","wurlyfox/c1":"PS1","999sian/melee-pc":"GameCube"};
 const NEG = /\b(not|no|without|planned|todo|missing|unsupported|isn'?t|aren'?t|won'?t|lacks?|future|coming soon|wishlist|roadmap|would like|eventually|broken|disabled|untested)\b/i;
 const FEATURES = [
@@ -483,7 +484,8 @@ const FEATURES = [
   {id:"online",label:"Online / co-op",re:/\bonline\b|multiplayer|\bco-?op\b|netplay/i},
   {id:"gyro",label:"Gyro aiming",re:/\bgyro/i},
   {id:"dlc",label:"DLC support",re:/\bdlcs?\b|downloadable content|expansion pack/i},
-  {id:"aa",label:"Anti-aliasing",re:/\b(msaa|smaa|fxaa|taa)\b|anti-?aliasing/i}
+  {id:"aa",label:"Anti-aliasing",re:/\b(msaa|smaa|fxaa|taa)\b|anti-?aliasing/i},
+  {id:"single",label:"Single-screen",re:/single[\s-]?screen|one[\s-]screen (mode|layout|setup|view)|\bon (a |one )?single (screen|display)|\bon one (screen|display)\b|merg(e|es|ed|ing) (both|the two|the dual|the top and bottom) screens|both screens (merged|combined) into one/i,only:["DS","3DS"]}   // dual-screen games converted to one screen
 ];
 const OSLIST = ["Windows","Linux","macOS","Android","iOS","Steam Deck","Switch","3DS","PS Vita","Wii U","PSP"];
 const CONSOLE_TARGETS = ["Switch","3DS","PS Vita","Wii U","PSP"];
@@ -537,7 +539,7 @@ function sentences(text){return String(text||"").replace(/```[\s\S]*?```/g," ").
 const BUILD_HEAD=/build|compil|from source|development|developer|contribut|requirements?|prerequisite|dependenc|what you need|toolchain|setup for dev|getting the source/i;
 const BUILD_LINE=/\b(build(ing|s|er)?|compil\w*|cmake|msvc|visual studio|xcode|devkit\w*|toolchain|wsl|homebrew|brew install|apt(-get)? install|pacman|vcpkg|python3?|\.bat\b|\.command\b|\.sh\b|terminal|command line|clone)\b/i;
 function analyze(text){
-  const out={features:{},os:{},targets:{},v:2};
+  const out={features:{},os:{},targets:{},v:3};
   const kept=[];let skipLevel=0;
   for(const raw of String(text||"").replace(/```[\s\S]*?```/g," ").split(/\r?\n/)){
     const h=/^\s{0,3}(#{1,6})\s+(.*)$/.exec(raw);
@@ -679,6 +681,7 @@ function subLabel(x,top){
 }
 function seriesOf(v){const idx=seriesIndex().map,tops=new Set(),subs=new Set();for(const raw of tagsFor(v).series){const e=idx.get(nrmT(raw));if(!e)continue;tops.add(e.top);if(e.sub)subs.add(e.sub);}return {tops,subs};}
 function tagsFor(v){const g=igdbGame(v.p,v.ghost?v:null);return {genres:(g&&g.genres)||[],series:(g&&g.series)||[]};}
+function featuresFor(v){return FEATURES.filter(f=>!f.only||f.only.includes(v.platform));}
 function igdbGame(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];return (q&&sc.games[q])||null;}
 function igdbCover(v){const g=igdbGame(v.p,v);return g&&g.cover?{u:IGDB_IMG(g.cover,"cover_big"),s:"IGDB",page:g.name||""}:null;}
 function igdbFor(p,v){const sc=REPO.screens;if(!sc)return null;const q=sc.map[(p.k||p.id)+(v&&v.ghost?"#"+nrmT(v.ghost.title):"")];const g=q&&sc.games[q];return g&&g.shots&&g.shots.length?g:null;}
@@ -820,7 +823,7 @@ function sharedAddedProjects(added){
     out.push({id:"shared:"+(k||link),k,g:String(e.title||(k?k.split("/").pop():link)),tf:1,p:String(e.platform||"Unknown"),t:TYPES.includes(e.type)?e.type:"Recompilation",
       ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),games:e.games||null,n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
       pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: "):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
-      sharedCover:e.cover||""});}
+      sharedCover:e.cover||"",mirrors:Array.isArray(e.mirrors)?e.mirrors.filter(u=>/^https?:\/\//.test(u)):[],was:Array.isArray(e.was)?e.was.map(x=>String(x).toLowerCase()):[]});}
   return out;
 }
 const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
@@ -850,6 +853,14 @@ function adoptRenamed(){
       if(S.ov[p.id]&&!S.ov[keep.id]){S.ov[keep.id]=S.ov[p.id];n++;}}}
   if(n)save();
 }
+// a shared project that moved (for example from SourceForge to GitLab) lists its old keys in "was";
+// follows and edits made under the old key move to the new one
+function adoptMoved(){
+  let n=0;for(const p of REPO.added){for(const old of p.was||[]){for(const oid of ["shared:"+old,"custom:"+old,"aw:"+old,old]){
+    if(oid===p.id)continue;if(S.follow&&S.follow[oid]&&!S.follow[p.id]){S.follow[p.id]=S.follow[oid];delete S.follow[oid];n++;}
+    if(S.ov[oid]&&!S.ov[p.id]){S.ov[p.id]=S.ov[oid];delete S.ov[oid];n++;}}}}
+  if(n)save();
+}
 function adoptShared(){
   let moved=0;const byKey=new Map(REPO.added.filter(p=>p.k).map(p=>[p.k,p]));
   for(const [cid,c] of Object.entries(S.custom)){const sp=c.k&&byKey.get(c.k);if(!sp)continue;
@@ -864,7 +875,7 @@ function dropRedundantTitles(){
   if(n)save();return n;
 }
 function noteSharedAdded(){
-  if(!REPO.loaded)return;adoptShared();adoptRenamed();dropRedundantTitles();const keys=REPO.added.map(p=>p.id);
+  if(!REPO.loaded)return;adoptShared();adoptMoved();adoptRenamed();dropRedundantTitles();const keys=REPO.added.map(p=>p.id);
   if(!S.sharedSeen){S.sharedSeen={};keys.forEach(id=>S.sharedSeen[id]=1);save();return;}
   let n=0;for(const p of REPO.added){if(S.sharedSeen[p.id])continue;S.sharedSeen[p.id]=1;const vv=view(p);if(vv.risk&&vv.risk.level==="high")continue;if(allProjects().some(x=>x.id===p.id)){logEv("new",p,"Added to Port Watch by its maintainer");n++;}}
   if(n){save();renderUpdates();}
@@ -884,6 +895,7 @@ function viewRaw(p){
   const mfa=mf?analyze([mf.notes,mf.approach].join("\n")):null;
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
     feats[f.id]=r==="yes"?{st:"yes",src:"README"}:s==="yes"?{st:"yes",src:"project description"}:(r==="planned"||s==="planned")?{st:"planned",src:r?"README":"project description"}:{st:"no"};}
+  for(const f of FEATURES)if(f.only&&!f.only.includes(platform))feats[f.id]={st:"no"};   // Single-screen only means something for DS and 3DS games
   const origTarget=ORIG_TO_TARGET[platform]||null;
   const strong={},weak={};
   // a mobile game's own name and README say "iOS"/"Android" because that's where it came from; only real builds count
@@ -995,7 +1007,7 @@ async function scanGitHub(p,m,force){
     activity=(m.repo&&m.repo.pushed)||activity;
   }
   const changed=!(m.scannedAt&&m.scannedFor&&m.scannedFor===activity);
-  const staleReadme=!!(m.readme&&m.readme.v!==2&&!m.readme.none&&!m.assetOs);
+  const staleReadme=!!(m.readme&&m.readme.v!==3&&!m.readme.none&&!m.assetOs);
   if(!changed&&!force&&!staleReadme){m.checkedAt=Date.now();return;}
   if(!changed&&staleReadme&&!force){const rd=await gh(base+"/readme",{accept:"application/vnd.github.raw",raw:true,useEtag:false});if(rd.status===200)m.readme=analyze(rd.data);m.checkedAt=Date.now();return;}
   const rr=await gh(base+"/releases?per_page=1",{useEtag:!!(m.release||m.noRelease)});
@@ -1626,9 +1638,9 @@ function detailHTML(v,head){
       <a href="https://github.com/search?type=repositories&q=${g}+recomp+OR+decomp+OR+port" target="_blank" rel="noopener">GitHub by game title</a> ·
       <a href="https://web.archive.org/web/*/${esc(v.p.l||"https://github.com/"+(v.p.k||""))}" target="_blank" rel="noopener">Wayback Machine</a></div>`;})():"";
   const rankSt={yes:0,planned:1,no:2};
-  const feat=FEATURES.slice().sort((x,y)=>rankSt[v.feats[x.id].st]-rankSt[v.feats[y.id].st]).map(f=>{const st=v.feats[f.id];return `<span class="c ${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" · planned":""}</span>`;}).join("");
+  const FS=featuresFor(v);const feat=FS.slice().sort((x,y)=>rankSt[v.feats[x.id].st]-rankSt[v.feats[y.id].st]).map(f=>{const st=v.feats[f.id];return `<span class="c ${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" · planned":""}</span>`;}).join("");
   const os=OSLIST.slice().sort((x,y)=>(v.os[y]?1:0)-(v.os[x]?1:0)).map(o=>`<span class="c ${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
-  const nFeat=FEATURES.filter(f=>v.feats[f.id].st==="yes").length;
+  const nFeat=FS.filter(f=>v.feats[f.id].st==="yes").length;
   const ovOs=Array.isArray((S.ov[p.id]||{}).os);
   const osEdit=`<details style="margin-top:8px"><summary class="note" style="cursor:pointer">${ovOs?"Runs on is set by you. Change":"Wrong? Set what it runs on"}</summary>
     <div class="chips" style="margin-top:6px">${OSLIST.map(o=>`<label class="chip" style="display:inline-flex;gap:4px;align-items:center"><input type="checkbox" data-osov="${o}" ${v.os[o]?"checked":""}>${o}</label>`).join("")}</div>
@@ -1638,7 +1650,7 @@ function detailHTML(v,head){
   return `<div class="detail" data-detail="${esc(p.id)}">${head||""}
     ${warn.map(w=>`<div class="warnbox">${esc(w)}</div>`).join("")}${rehost}
     <div class="dgrid"><section class="d-runs"><h4>Runs on</h4><div class="chipset">${os}</div>${osEdit}</section>
-    <section class="d-feats"><h4>Features <span class="note">${nFeat} of ${FEATURES.length} detected</span></h4><div class="chipset">${feat}</div>
+    <section class="d-feats"><h4>Features <span class="note">${nFeat} of ${FS.length} detected</span></h4><div class="chipset">${feat}</div>
       <p class="note" style="margin-top:6px">${esc(scanned)} Hover an item to see where it was found.</p></section>
     <section class="d-proj"><h4>Project</h4>
       ${(()=>{const pv=v.ghost?view(v.p):v;const gl=[{title:pv.game,platform:pv.platform},...gamesOf(pv)];if(gl.length<2)return "";
@@ -1652,6 +1664,7 @@ function detailHTML(v,head){
       ${(()=>{const ri=recentInfo(v);const seen=REPO.history&&REPO.history.seen?REPO.history.seen[v.p.k||v.p.id]:"";
         return (seen&&seen!=="before"?`<dt>Added to Port Watch</dt><dd>${esc(fmtDate(seen))} (${esc(ago(seen))})</dd>`:"")+
                (!isNaN(ri.firstT)?`<dt>First release</dt><dd>${esc(fmtDate(new Date(ri.firstT).toISOString()))}${ri.nowPlayable?' <span class="pill rc-play">Now playable</span>':""}</dd>`:"");})()}
+      ${(p.mirrors||[]).length?`<dt>Mirrors</dt><dd>${p.mirrors.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,"").replace(/\/$/,""))}</a>`).join("<br>")}</dd>`:""}
       <dt>Latest release</dt><dd>${v.rel&&v.rel.tag?(v.rel.url?`<a href="${esc(v.rel.url)}" target="_blank" rel="noopener">${esc(v.rel.tag)}</a>`:esc(v.rel.tag))+(v.rel.date?" · "+esc(fmtDate(v.rel.date)):""):"None found"}</dd>
       <dt>Last commit</dt><dd>${v.lastCommit?esc(fmtDate(v.lastCommit)):"Unknown"}</dd>
       <dt>Repo</dt><dd>${p.l?`<a href="${esc(p.l)}" target="_blank" rel="noopener">${esc(p.l.replace(/^https?:\/\//,""))}</a>`:"None"}</dd>
@@ -2131,7 +2144,7 @@ const PLAT_RULES=[["XBLA (Xbox 360)",/\bxbla\b|xbox live arcade/i],["Xbox 360",/
   ["PS4",/\bps4\b|playstation 4/i],["PS3",/\bps3\b|playstation 3/i],["PS2",/\bps2\b|playstation 2/i],["PSP",/\bpsp\b|playstation portable/i],["PS1",/\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))/i],
   ["Wii U",/wii ?u\b/i],["Wii",/\bwii\b/i],["GameCube",/gamecube|\bgcn\b/i],["Switch 2",/switch ?2\b|nintendo switch 2/i],["Switch",/nintendo switch|\(switch\)|switch (game|version|title|release)/i],["3DS",/\b3ds\b/i],["DS",/\bnds\b|nintendo ds\b/i],
   ["N64",/\bn64\b|nintendo 64/i],["SNES",/\bsnes\b|super nintendo/i],["NES",/\bnes\b|famicom/i],["GBA",/\bgba\b|game ?boy advance/i],["Game Boy Color",/\bgbc\b|game ?boy colou?r/i],["Game Boy",/game ?boy\b/i],
-  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i],["Mobile",/\b(ios|iphone|ipad|android|mobile) (game|version|original|release)\b|\((ios|iphone|ipad|android|mobile)\)/i]];
+  ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["PC Engine",/pc[\s-]?engine|turbografx|super cd-rom|pce\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i],["Mobile",/\b(ios|iphone|ipad|android|mobile) (game|version|original|release)\b|\((ios|iphone|ipad|android|mobile)\)/i]];
 function detectPlatform(text){for(const [p,re] of PLAT_RULES)if(re.test(text||""))return p;return "";}
 function detectType(text){const t=text||"";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
   if(/source[- ]port|engine port/i.test(t)&&!/decomp/i.test(t))return "Source Port";

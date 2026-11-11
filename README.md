@@ -12,7 +12,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 - **Shows what each port offers:**
   - Type (recompilation, decompilation, source port, reimplementation or compatibility layer) and original platform, including PC for games that began there.
   - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, Switch, 3DS, PS Vita, Wii U and PSP.
-  - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support.
+  - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support, plus **Single-screen** for DS and 3DS games converted from their dual-screen layout.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
 - **Sorting:** by **Last release** (the default), **Last commit**, game name, original platform, GitHub stars or **Recently added**. Platforms are grouped by company (Nintendo, Sony, Microsoft, Sega, then others), home consoles before handhelds.
 - **List and grid views,** with box art from libretro-thumbnails and other sources. Games with several projects (The Darkness, Forza Horizon, Banjo-Kazooie and so on) are grouped into one entry, with a tab for each repository showing its own features, platforms and releases. **Group by game** turns this off.
@@ -187,6 +187,8 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
 | `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. Each entry can also have its own `pcRelease`; otherwise it comes from IGDB, never from the main game. The project then appears under each of those games too, with its own cover and screenshots. |
 | `hideScreens` | Screenshot links to leave out. |
+| `mirrors` | (Added projects) other places the project is hosted, shown as links in its details, for example a SourceForge mirror of a GitLab project. |
+| `was` | (Added projects) the project's previous keys after a move, such as `["sourceforge.net/cogbox"]`; follows and edits made under an old key move to the new one. |
 | `nsfw` | `true` blurs the project's cover and screenshots as suggestive; `false` stops it being blurred. |
 | `hide` | `true` removes the project from Port Watch entirely, for entries that don't belong. |
 | `note` | Optional text shown in the project's details. |

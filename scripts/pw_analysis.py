@@ -25,6 +25,7 @@ FEATURES = [
     ("gyro", r"\bgyro"),
     ("dlc", r"\bdlcs?\b|downloadable content|expansion pack"),
     ("aa", r"\b(msaa|smaa|fxaa|taa)\b|anti-?aliasing"),
+    ("single", r"single[\s-]?screen|one[\s-]screen (mode|layout|setup|view)|\bon (a |one )?single (screen|display)|\bon one (screen|display)\b|merg(e|es|ed|ing) (both|the two|the dual|the top and bottom) screens|both screens (merged|combined) into one"),
 ]
 FEATURES = [(i, re.compile(p, F)) for i, p in FEATURES]
 OS_TEXT = [
@@ -91,7 +92,7 @@ def console_targets(text):
 
 
 def analyze(text):
-    out = {"features": {}, "os": {}, "targets": {}, "v": 2}
+    out = {"features": {}, "os": {}, "targets": {}, "v": 3}
     kept, skip = [], 0
     for raw in re.split(r"\r?\n", CODE_BLOCK.sub(" ", str(text or ""))):
         h = re.match(r"^\s{0,3}(#{1,6})\s+(.*)$", raw)
