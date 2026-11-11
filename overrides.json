@@ -96,6 +96,10 @@
     "bnunu/halo-ce-universal": {
       "title": "Halo: Combat Evolved"
     },
+    "brewsparrow/armyoftwotdc-recomp": {
+      "_game": "Army of Two: The Devil's Cartel",
+      "cover": "https://cdn2.steamgriddb.com/thumb/0f29b538f40d75868e56b7a7a9f043fe.jpg"
+    },
     "broomstick-girl-magical-amber/tsukire-pc-port": {
       "title": "Tsukihime: A piece of blue glass moon",
       "cover": "https://cdn2.steamgriddb.com/thumb/0e8ccd187f56b3696422278ebb620efa.jpg"
@@ -273,6 +277,44 @@
         }
       ]
     },
+    "gitlab.com/shagg88/athelas": {
+      "_game": "The Lord of the Rings: The Return of the King",
+      "games": [
+        {
+          "title": "The Lord of the Rings: The Two Towers",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Return of the King",
+          "platform": "PC"
+        },
+        {
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
+        }
+      ]
+    },
+    "gitlab.com/shagg88/cogbox": {
+      "_game": "Gears of War 2",
+      "games": [
+        {
+          "title": "Gears of War 3",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War: Judgement",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War",
+          "platform": "Xbox 360"
+        }
+      ]
+    },
     "glinesbdev/mh3u-port": {
       "_game": "Monster Hunter 3 Ultimate",
       "platform": "Wii U",
@@ -367,6 +409,10 @@
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "_game": "Dragon Ball Z: Super Saiya Densetsu",
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg"
+    },
+    "jmars125/xc3-recomp": {
+      "_game": "Xenoblade Chronicles 3",
+      "cover": "https://cdn2.steamgriddb.com/thumb/852fb91791ba2a97611b92ff16264b2a.jpg"
     },
     "jmars125/xcx-recomp": {
       "_game": "Xenoblade Chronicles X: Definitive Edition",
@@ -2297,6 +2343,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
+    "cadugimenes/sanctuaryport": {
+      "link": "https://github.com/CaduGimenes/SanctuaryPort",
+      "title": "Diablo III: Reaper of Souls",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "description": "Native PC port of Diablo III: Reaper of Souls – Ultimate Evil Edition (PS4). Local co-op for 4."
+    },
     "caiuscodes/goldeneye-007-xbla-pc-recomp": {
       "link": "https://github.com/CaiusCodes/GoldenEye-007-XBLA-PC-Recomp",
       "title": "Golden Eye 007",
@@ -3196,6 +3250,14 @@
       "platform": "GameCube",
       "type": "Recompilation",
       "description": "Statically recompiled Mario Kart: Double Dash!! as a native Windows game (x64, Direct3D 11). No emulator."
+    },
+    "jeddhor/gauntletdlredone": {
+      "link": "https://github.com/jeddhor/GauntletDLRedone",
+      "title": "Gauntlet: Dark Legacy",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native Linux/Windows port of Gauntlet: Dark Legacy (PS2, SLUS-20047) in Rust and Bevy; plays from your own disc"
     },
     "jedeyesniv-art/pacman-ce-pc-recomp": {
       "link": "https://github.com/jedeyesniv-art/Pacman-CE-PC-Recomp",
