@@ -432,7 +432,7 @@ function loadRepoData(force){
     if(lb&&lb.map)REPO.lib=lb;
     if(sc&&sc.games&&sc.map)REPO.screens=sc;
     try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
-      if(o&&o.added&&typeof o.added==="object")REPO.added=sharedAddedProjects(o.added);}}catch(e){}
+      if(o&&o.added&&typeof o.added==="object"){REPO.added=sharedAddedProjects(o.added);REPO.addedRaw=o.added;}}}catch(e){}
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
     if(i&&i.feeds){REPO.itch=i.feeds;REPO.itchAt=i.generated||"";}
@@ -815,7 +815,16 @@ function displayTitle(p,mf){
 
 /* ---------------- projects ---------------- */
 const seedAnalysis={};
-function sharedFix(p){return (p.k&&REPO.over[p.k])||REPO.over[p.id]||null;}
+// Shared fixes for a project. If you added a project to the shared list and another source (the built-in list,
+// the awesome list) lists it too, the other source's entry is shown, so your shared details apply to it as fixes.
+const ADDED_AS_FIX=["title","platform","type","pcRelease","runsOn","cover","games","note","region","mirrors"];
+function sharedFix(p){
+  const f=(p.k&&REPO.over[p.k])||REPO.over[p.id]||null;
+  const a=!p.shared&&p.k&&REPO.addedRaw?REPO.addedRaw[p.k]:null;
+  if(!a)return f;
+  const base={};for(const x of ADDED_AS_FIX)if(a[x]!=null)base[x]=a[x];
+  return Object.keys(base).length?Object.assign(base,f||{}):f;
+}
 function sharedAddedProjects(added){
   const out=[];
   for(const [key,e] of Object.entries(added)){if(!e||typeof e!=="object")continue;

@@ -187,6 +187,7 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
 | `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. Each entry can also have its own `pcRelease`; otherwise it comes from IGDB, never from the main game. The project then appears under each of those games too, with its own cover and screenshots. |
 | `hideScreens` | Screenshot links to leave out. |
+| `region` | Which region's libretro box art, in-game shot and title screen to use, such as `Japan`. Useful when a game is listed under its Japanese name, as with the King's Field series. |
 | `mirrors` | (Added projects) other places the project is hosted, shown as links in its details, for example a SourceForge mirror of a GitLab project. |
 | `was` | (Added projects) the project's previous keys after a move, such as `["sourceforge.net/cogbox"]`; follows and edits made under an old key move to the new one. |
 | `nsfw` | `true` blurs the project's cover and screenshots as suggestive; `false` stops it being blurred. |
@@ -204,6 +205,8 @@ A visitor's own edits in their browser still take priority for them.
 If two projects for the same game don't group ("Burnout 3" and "Burnout 3: Takedown"), give them the same title with a shared fix. If two different games share a title, add the year to one of them, as with "Castlevania (1999)" for the N64 game and "FIFA Street (2012)" for the Xbox 360 one.
 
 **Your own copies of shared projects:** if a project you added yourself is later shared, Port Watch switches you to the shared copy, keeping your edits and follow. Exports then can't overwrite the shared entry with an older copy.
+
+**If the awesome list later lists a project you added:** your shared entry's title, platform, type, PC release, games and other details still apply to it, as fixes.
 
 **Adding a project for everyone:** add it in Port Watch with **Add project**, or with **Add** in **Find a game**, then use **Export fixes for everyone** and upload the file as above. Pasting a GitHub or GitLab link into **Add project** checks the repository straight away. It confirms the repository exists and isn't already tracked, fills in the title, platform and type, and shows its latest release, platforms and features, so you can correct anything before adding. Added projects go in the file's `added` section, keyed by repository:
 

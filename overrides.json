@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -15,6 +15,11 @@
     "aabrole/huntersrecomp": {
       "title": "Metroid Prime Hunters",
       "pcRelease": "Never released on PC"
+    },
+    "acranon/kf1-enhanced": {
+      "_game": "King's Field (kf1-enhanced)",
+      "title": "King's Field (1994)",
+      "region": "Japan"
     },
     "alekszverr-jpg/cod3pc": {
       "_game": "Call of Duty 3",
@@ -986,6 +991,26 @@
       "_game": "Shin Megami Tensei: Persona 3 FES",
       "cover": "https://cdn2.steamgriddb.com/thumb/5011c560a9233c63cf0e6cb6d06cf22c.jpg"
     },
+    "voicedrew11/holyland": {
+      "_game": "King's Field: The Ancient City",
+      "title": "King's Field IV (2001)",
+      "region": "Japan"
+    },
+    "voicedrew11/verdite1": {
+      "_game": "King's Field (Verdite1)",
+      "title": "King's Field (1994)",
+      "region": "Japan"
+    },
+    "voicedrew11/verdite2": {
+      "_game": "King's Field",
+      "title": "King's Field II (1995)",
+      "region": "Japan"
+    },
+    "voicedrew11/verdite3": {
+      "_game": "King's Field II",
+      "title": "King's Field III (1996)",
+      "region": "Japan"
+    },
     "wivi514/dead_rising_2_case_west_xenon_recomp": {
       "_game": "Dead Rising 2: Case West",
       "cover": "https://cdn2.steamgriddb.com/thumb/3de080c153a4d3d431cd08028f17bf1f.jpg"
@@ -1068,6 +1093,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "A work-in-progress decompilation of Turok: Rage Wars for the N64"
+    },
+    "acranon/kf3-enhanced": {
+      "link": "https://github.com/Acranon/kf3-enhanced",
+      "title": "King's Field III (1996)",
+      "platform": "PS1",
+      "type": "Recompilation",
+      "region": "Japan",
+      "description": "Static recompilation of King's Field III (sold in North America as King's Field II, SLUS-00255) into a native PC game, from your own disc image."
     },
     "adolini1715/concrete-jungle-pc": {
       "link": "https://github.com/Adolini1715/Concrete-Jungle-PC",
@@ -1521,7 +1554,7 @@
     },
     "alexbeavs-ps1-ports/kings-field-recomp": {
       "link": "https://github.com/alexbeavs-ps1-ports/kings-field-recomp",
-      "title": "King's Field",
+      "title": "King's Field (1994)",
       "platform": "PS1",
       "type": "Recompilation",
       "runsOn": [
@@ -1529,7 +1562,8 @@
         "Linux",
         "macOS"
       ],
-      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Japan disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS."
+      "description": "Bare PSXRecomp recompilation kit from Alexbeav's PS1 recomps (Japan disc). You supply your own disc and BIOS; the kit builds the game for Windows, Linux or macOS.",
+      "region": "Japan"
     },
     "alexbeavs-ps1-ports/koudelka-recomp": {
       "link": "https://github.com/alexbeavs-ps1-ports/koudelka-recomp",
@@ -4638,11 +4672,12 @@
     },
     "voicedrew11/kfiv-decomp": {
       "link": "https://github.com/Voicedrew11/kfiv-decomp",
-      "title": "King's Field: The Ancient City",
+      "title": "King's Field IV (2001)",
       "platform": "PS2",
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
-      "description": "Decompilation of \"King's Field: The Ancient City\""
+      "description": "Decompilation of \"King's Field: The Ancient City\"",
+      "region": "Japan"
     },
     "vs-sr-dev/pc-3ddotgameheroes": {
       "link": "https://github.com/vs-sr-dev/pc-3ddotgameheroes",

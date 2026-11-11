@@ -835,7 +835,7 @@ def lt_index(names):
         out.append((n, vnorm(" ".join(segs)), vnorm(" ".join(segs[1:])) if len(segs) > 1 else "", lt_region_rank(base), len(base)))
     return out
 
-def lt_match(idx, title):
+def lt_match(idx, title, region=""):
     tries = [cover_title(bare_title(title))]
     if re.search(r"\s(64|1)$", tries[0]):
         tries.append(re.sub(r"\s(64|1)$", "", tries[0]))
@@ -856,7 +856,8 @@ def lt_match(idx, title):
                     sc = difflib.SequenceMatcher(None, q, cand).ratio()
                     if sc < 0.9 or numbers(q) != numbers(cand):
                         continue
-                key = (-sc, rr, ln)
+                pref = 0 if not region or re.search(r"\(" + re.escape(region) + r"[),]", n) else 1
+                key = (-sc, pref, rr, ln)
                 if best is None or key < best[0]:
                     best = (key, n)
         if best:
@@ -894,16 +895,17 @@ def refresh_libretro(projects, overrides):
         if not repo:
             continue
         title = fix.get("title") or p.get("g", "")
-        cv = p.get("cv") if not fix.get("title") else ""
-        wanted[key] = (repo, title, cv)
+        region = fix.get("region") or ""
+        cv = p.get("cv") if not fix.get("title") and not region else ""
+        wanted[key] = (repo, title, cv, region)
     for k in [k for k in mp if k not in wanted]:
         del mp[k]
     todo = {}
-    for key, (repo, title, cv) in wanted.items():
+    for key, (repo, title, cv, region) in wanted.items():
         e = mp.get(key)
-        if e and e.get("q") == norm(title) and (e.get("file") or (now - datetime.datetime.fromisoformat(e.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
+        if e and e.get("q") == norm(title) + ("|" + region if region else "") and (e.get("file") or (now - datetime.datetime.fromisoformat(e.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
             continue
-        todo.setdefault(repo, []).append((key, title, cv))
+        todo.setdefault(repo, []).append((key, title, cv, region))
     log(f"  {sum(len(v) for v in todo.values())} games to match on libretro-thumbnails, across {len(todo)} consoles")
     hits = 0
     for repo, items in todo.items():
@@ -913,14 +915,14 @@ def refresh_libretro(projects, overrides):
             log(f"  {repo}: couldn't list libretro-thumbnails ({e}); keeping previous matches")
             continue
         idx = lt_index(sorted(lists.get("Named_Boxarts", set())))
-        for key, title, cv in items:
-            f = cv.split("|", 1)[1] if cv and "|" in cv else lt_match(idx, title)
+        for key, title, cv, region in items:
+            f = cv.split("|", 1)[1] if cv and "|" in cv else lt_match(idx, title, region)
             if f:
                 mp[key] = {"repo": repo, "file": f, "snap": f in lists.get("Named_Snaps", set()), "title": f in lists.get("Named_Titles", set()),
-                           "q": norm(title), "checked": NOW}
+                           "q": norm(title) + ("|" + region if region else ""), "checked": NOW}
                 hits += 1
             else:
-                mp[key] = {"q": norm(title), "checked": NOW}
+                mp[key] = {"q": norm(title) + ("|" + region if region else ""), "checked": NOW}
     log(f"  libretro-thumbnails: matched {hits}")
     data["generated"] = NOW
     return write_json_if_changed(path, data)
@@ -1035,6 +1037,13 @@ def main():
     if overrides:
         log(f"Shared fixes: {len(overrides)} projects in overrides.json")
     taken = known | {p["k"] for p in extra}
+    raw_added = (load_json(os.path.join(ROOT, "overrides.json"), {}) or {}).get("added") or {}
+    for k, a in raw_added.items():              # listed by another source as well: the shared details act as fixes
+        k = k.lower()
+        if k in taken and isinstance(a, dict):
+            base = {x: a[x] for x in ("title", "platform", "type", "pcRelease", "runsOn", "cover", "games", "region") if a.get(x) is not None}
+            if base:
+                overrides = {**overrides, k: {**base, **(overrides.get(k) or {})}}
     added = [p for p in load_added() if p["k"] not in taken]
     if added:
         log(f"Shared added projects: {len(added)}")
