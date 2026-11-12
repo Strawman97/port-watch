@@ -817,7 +817,7 @@ function displayTitle(p,mf){
 const seedAnalysis={};
 // Shared fixes for a project. If you added a project to the shared list and another source (the built-in list,
 // the awesome list) lists it too, the other source's entry is shown, so your shared details apply to it as fixes.
-const ADDED_AS_FIX=["title","platform","type","pcRelease","runsOn","cover","games","note","region","mirrors"];
+const ADDED_AS_FIX=["title","platform","type","pcRelease","runsOn","cover","games","note","region","mirrors","gameCovers"];
 function sharedFix(p){
   const f=(p.k&&REPO.over[p.k])||REPO.over[p.id]||null;
   const a=!p.shared&&p.k&&REPO.addedRaw?REPO.addedRaw[p.k]:null;
@@ -832,7 +832,7 @@ function sharedAddedProjects(added){
     out.push({id:"shared:"+(k||link),k,g:String(e.title||(k?k.split("/").pop():link)),tf:1,p:String(e.platform||"Unknown"),t:TYPES.includes(e.type)?e.type:"Recompilation",
       ps:PS.includes(e.pcRelease)?e.pcRelease:"Not checked",d:String(e.description||""),games:e.games||null,n:String(e.note||""),po:Array.isArray(e.runsOn)?e.runsOn.join(", "):"",
       pr:k?k.replace(/^(gitlab\.com|itch\.io)\//,"").replace(/^sourceforge\.net\//,"SourceForge: "):link,l:link||(k?"https://github.com/"+k:""),src:"Added by Port Watch's maintainer",shared:true,cv:"",
-      sharedCover:e.cover||"",mirrors:Array.isArray(e.mirrors)?e.mirrors.filter(u=>/^https?:\/\//.test(u)):[],was:Array.isArray(e.was)?e.was.map(x=>String(x).toLowerCase()):[]});}
+      sharedCover:e.cover||"",gameCovers:e.gameCovers&&typeof e.gameCovers==="object"?e.gameCovers:null,mirrors:Array.isArray(e.mirrors)?e.mirrors.filter(u=>/^https?:\/\//.test(u)):[],was:Array.isArray(e.was)?e.was.map(x=>String(x).toLowerCase()):[]});}
   return out;
 }
 const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
@@ -1413,8 +1413,13 @@ function coverTitle(v){return stripSuffix(stripParens(v.game));}
 function coverKey(v){return (coverTitle(v)+"|"+v.platform).toLowerCase();}
 function baseTitle(p,so){return (so&&so.title)||(p.tf?p.g:displayTitle(p,(S.meta[p.k]||{}).manifest||null));}
 function localRename(p,lo,so){return !!(lo.game&&nrmT(bare(lo.game))!==nrmT(bare(baseTitle(p,so))));}
+function gameCoverFor(v){   // a cover link set for one of a project's other games
+  const k=nrmT(v.ghost.title),lo=(S.ov[v.p.id]||{}).gameCovers||{},so=(sharedFix(v.p)||{}).gameCovers||{},pa=v.p.gameCovers||{};
+  const pick=m=>{for(const [t,u] of Object.entries(m))if(nrmT(t)===k&&u)return u;return "";};
+  const u=pick(lo);if(u)return {u,s:"you"};const sh=pick(so)||pick(pa)||v.ghost.cover;return sh?{u:sh,s:"Port Watch's shared fixes"}:null;
+}
 function coverFor(v){
-  if(v.ghost){const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const ig=igdbCover(v);if(ig)return ig;const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
+  if(v.ghost){const gc=gameCoverFor(v);if(gc)return gc;const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const ig=igdbCover(v);if(ig)return ig;const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
   const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
   const myRename=localRename(v.p,lo,so);   // a local title only counts if it differs from the shared one
@@ -1534,14 +1539,14 @@ function groupKeyOf(v){
 }
 function parseGames(x){
   if(!x)return [];const arr=Array.isArray(x)?x:String(x).split(/\n+/);
-  return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim(),pcRelease:e.pcRelease||""};
+  return arr.map(e=>{if(e&&typeof e==="object")return {title:String(e.title||"").trim(),platform:String(e.platform||"").trim(),pcRelease:e.pcRelease||"",cover:e.cover||""};
     const [t,pl]=String(e).split("|").map(z=>z.trim());return {title:t||"",platform:pl||""};}).filter(e=>e.title);
 }
 function gamesOf(v){
   const lo=S.ov[v.p.id]||{},so=v.so||{};const list=parseGames(lo.games!=null?lo.games:(so.games||v.p.games));
-  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform,pcRelease:g.pcRelease||""})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
+  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform,pcRelease:g.pcRelease||"",cover:g.cover||""})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
 }
-function ghostView(v,g){const gv=Object.assign({},v,{_hayO:undefined,_hayA:undefined,game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,primary:v.game,primaryPlatform:v.platform}});
+function ghostView(v,g){const gv=Object.assign({},v,{_hayO:undefined,_hayA:undefined,game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,cover:g.cover||"",primary:v.game,primaryPlatform:v.platform}});
   // each other game has its own PC history: its own value if set, otherwise IGDB's; never the main game's
   if(g.pcRelease&&PS.includes(g.pcRelease)){gv.ps=g.pcRelease;gv.psSrc="";}
   else{const a=autoPs(g.platform,igdbGame(v.p,gv));gv.ps=a||"Not checked";gv.psSrc=a?"IGDB":"";}
@@ -1685,7 +1690,11 @@ function detailHTML(v,head){
       ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
     </section>
     ${shotsHTML(v)}
-    ${v.ghost?`<p class="note d-more" style="padding-top:10px;border-top:1px solid var(--line)">Edits, cover and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="edgrid">
+    ${v.ghost?`<div class="d-more" style="padding-top:10px;border-top:1px solid var(--line)"><div class="edgrid"><div class="ef wide"><label for="gc-${esc(p.id)}"><span>Cover image link for ${esc(v.ghost.title)}</span></label>
+        <div class="efrow"><input id="gc-${esc(p.id)}" type="text" data-gcover="${esc(v.ghost.title)}" placeholder="Paste an image link to use your own cover for this game" value="${esc(((S.ov[p.id]||{}).gameCovers||{})[v.ghost.title]||"")}">
+          <a class="btn sm" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener">Find on SteamGridDB</a></div>
+        <small class="hint">${(()=>{const c=coverFor(v);return c?"Now from "+esc(c.s||"cache")+". ":"No cover found yet. ";})()}Used for this game only; Export fixes for everyone shares it.</small></div></div>
+      <p class="note" style="margin-top:8px">Other edits and checks for this project are on its main entry: <button class="chipbtn" data-gogame="${esc(groupKeyOf({p:v.p,game:v.ghost.primary,platform:v.ghost.primaryPlatform}))}" data-id="${esc(v.p.id)}">${esc(v.ghost.primary)} <small>${esc(v.ghost.primaryPlatform)}</small></button></p></div>`:`<details class="d-more"><summary>Your edits, cover and checks</summary><div class="edgrid">
       <label class="ef"><span>Game title</span><input type="text" data-f="game" value="${esc(v.game)}"></label>
       <label class="ef"><span>Original platform</span><select data-f="platform">${platformOptions(v.platform)}</select></label>
       <label class="ef"><span>Type</span><select data-f="type">${TYPES.map(x=>`<option ${v.type===x?"selected":""}>${x}</option>`).join("")}</select></label>
@@ -2029,7 +2038,7 @@ $("#filtersBtn").addEventListener("click",e=>{const o=$("#rail").classList.toggl
 function groupFor(v,gkWanted){const gk=gkWanted||groupKeyOf(v);const items=expandViews(allProjects().map(view)).filter(x=>groupKeyOf(x)===gk&&(passes(x,null,true)||x.p.id===v.p.id));items.sort(rankItems);
   if(gkWanted){const cur=items.find(x=>x.p.id===v.p.id);if(cur)v=cur;}
   return {key:gk,items,lead:items[0]||v,game:(items[0]||v).game,platform:(items[0]||v).platform};}
-function openProject(id,gkWanted){YIDX=null;
+function openProject(id,gkWanted){YIDX=null;UI.dlgGk=gkWanted||"";
   const p=allProjects().find(x=>x.id===id);if(!p)return;let v=view(p);const g=groupFor(v,gkWanted);UI.sel[g.key]=id;v=g.items.find(x=>x.p.id===id)||v;
   for(const ev of S.log)if(ev.id===id&&!ev.read)ev.read=true;save();renderUpdates();
   $("#projBody").innerHTML=`<div class="dhead">${coverHTML(v,false,false)}<div><h2 id="projTitle">${esc(v.game)} ${g.items.length>1?`<span class="gcount">${g.items.length} projects</span>`:heartHTML(v)}</h2>${g.items.length>1?typePills([...new Set(g.items.map(x=>x.type))]):`<span class="pill ${(TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[1]}">${esc(v.type)}</span>`} <span class="note">${esc(v.platform)}</span> ${riskPill(v)}</div><button class="btn x" id="projClose">Close</button></div>`+tabsHTML(g,v,"dlg")+detailHTML(v,g.items.length>1?`<div class="phead">${heartHTML(v)}<a href="${esc(v.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(v))}</a></div>`:"");
@@ -2068,8 +2077,13 @@ $("#shotHide").addEventListener("click",()=>{const x=SHOTBOX.list[SHOTBOX.i];if(
   toast("Screenshot hidden. Use Export fixes for everyone to hide it for all visitors.");if($("#projDlg").open)openProject(SHOTBOX.pid,SHOTBOX.gk||undefined);else render();});
 $("#projDlg").addEventListener("click",e=>{const gt=e.target.closest("[data-gtab]");if(gt){openProject(gt.dataset.gtab,gt.dataset.gk);return;}const hf=e.target.closest("[data-follow]");if(hf){toggleFollow(hf.dataset.follow);return;}if(e.target.id==="projClose"||e.target===$("#projDlg")){$("#projDlg").close();render();return;}if(onDetailClick(e))return;
   const rm=e.target.closest("[data-remove]");if(rm){if(confirm("Remove this project from the tracker?")){delete S.custom[rm.dataset.remove];delete S.ov[rm.dataset.remove];$("#projDlg").close();save();renderAll();}}});
-$("#projDlg").addEventListener("change",e=>{if(onOsOverride(e))return;const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
-  const o=S.ov[id]||(S.ov[id]={});const val=e.target.value.trim();if(val)o[f]=val;else delete o[f];save();openProject(id);renderFilters();});
+function saveGameCover(e){
+  const t=e.target.dataset.gcover;if(t===undefined)return false;const det=e.target.closest("[data-detail]");if(!det)return true;const id=det.dataset.detail;
+  const o=S.ov[id]||(S.ov[id]={});const gc=Object.assign({},o.gameCovers||{});const val=e.target.value.trim();if(val)gc[t]=val;else delete gc[t];
+  if(Object.keys(gc).length)o.gameCovers=gc;else delete o.gameCovers;if(!Object.keys(o).length)delete S.ov[id];save();return id;
+}
+$("#projDlg").addEventListener("change",e=>{if(onOsOverride(e))return;{const gid=saveGameCover(e);if(gid){if(gid!==true)openProject(gid,UI.dlgGk);return;}}const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
+  const o=S.ov[id]||(S.ov[id]={});const val=e.target.value.trim();if(val)o[f]=val;else delete o[f];save();openProject(id,UI.dlgGk);renderFilters();});
 $("#vList").addEventListener("click",()=>{S.settings.view="list";save();render();});
 $("#vGrid").addEventListener("click",()=>{S.settings.view="grid";UI.open=null;save();render();});
 function toggleFollow(id){S.follow=S.follow||{};if(S.follow[id])delete S.follow[id];else S.follow[id]=Date.now();save();const n=S.follow[id];
@@ -2108,7 +2122,7 @@ function onOsOverride(e){const cb=e.target.closest("[data-osov]");if(!cb)return 
   if($("#projDlg").open)openProject(id);else render();return true;}
 $("#view").addEventListener("change",e=>{if(onOsOverride(e))return;
   if(e.target.id==="iSort"){S.settings.inboxSort=e.target.value;save();render();return;}
-  if(e.target.id==="iSrc"){S.settings.inboxSrc=e.target.value;save();render();return;}const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
+  if(e.target.id==="iSrc"){S.settings.inboxSrc=e.target.value;save();render();return;}if(saveGameCover(e)){render();return;}const f=e.target.dataset.f;if(!f)return;const det=e.target.closest("[data-detail]");if(!det)return;const id=det.dataset.detail;
   const o=S.ov[id]||(S.ov[id]={});const val=e.target.value.trim();if(val)o[f]=val;else delete o[f];save();renderFilters();render();});
 $("#strip").addEventListener("click",e=>{const c=e.target.closest("[data-ev]");if(!c)return;const ev=unread()[+c.dataset.ev];if(!ev)return;ev.read=true;save();
   if(ev.id)gotoProject(ev.id);else{UI.tab="activity";renderAll();}});
@@ -2228,7 +2242,7 @@ $("#exportFixes").addEventListener("click",async()=>{
   const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
-    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.nsfw==="yes")f.nsfw=true;else if(o.nsfw==="no")f.nsfw=false;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
+    if(o.game)f.title=o.game;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.gameCovers)f.gameCovers=Object.assign({},f.gameCovers||{},o.gameCovers);if(o.nsfw==="yes")f.nsfw=true;else if(o.nsfw==="no")f.nsfw=false;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
   const addedOut={};
   try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}
@@ -2241,6 +2255,8 @@ $("#exportFixes").addEventListener("click",async()=>{
     const ps=o.ps||p.ps;if(ps&&ps!=="Not checked")e.pcRelease=ps;
     const ro=Array.isArray(o.os)?o.os:(p.po?p.po.split(",").map(x=>x.trim()).filter(Boolean):[]);if(ro.length)e.runsOn=ro;
     if(o.cover)e.cover=o.cover;if(p.d)e.description=String(p.d).slice(0,300);
+    {const gl=parseGames(o.games!=null?o.games:p.games);if(gl.length)e.games=gl.map(g=>Object.assign({title:g.title,platform:g.platform||e.platform},g.cover?{cover:g.cover}:{}));}
+    if(o.gameCovers)e.gameCovers=Object.assign({},o.gameCovers);
     if(JSON.stringify(addedOut[key])!==JSON.stringify(e)){addedOut[key]=e;newProjects++;}}
   for(const [key,f] of Object.entries(out)){const p=byKey.get(key);if(p&&!f.title){const {_game,...rest}=f;out[key]={_game:view(p).game,...rest};}}
   const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b))),

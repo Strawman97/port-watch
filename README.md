@@ -186,6 +186,7 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `pcRelease` | One of the **PC release** values shown in Port Watch's filters. Where nobody has set one, Port Watch fills it in from IGDB's platform list (the game itself, its ports, remakes and remasters) and labels it "from IGDB". IGDB can't tell when a PC version is a different game, so set that by hand. |
 | `runsOn` | A list such as `["Windows", "Linux"]`, replacing the detected platforms. |
 | `games` | Other games the project covers, such as `[{"title": "The Lord of the Rings: The Two Towers", "platform": "Xbox (original)"}]`. Each entry can also have its own `pcRelease`; otherwise it comes from IGDB, never from the main game. The project then appears under each of those games too, with its own cover and screenshots. |
+| `gameCovers` | Cover links for a multi-game project's other games, by title, such as `{"Mario Kart Arcade GP 2": "https://…"}`. Set them from each game's tab in Port Watch; a `cover` inside a `games` entry works too. |
 | `hideScreens` | Screenshot links to leave out. |
 | `region` | Which region's libretro box art, in-game shot and title screen to use, such as `Japan`. Useful when a game is listed under its Japanese name, as with the King's Field series. |
 | `mirrors` | (Added projects) other places the project is hosted, shown as links in its details, for example a SourceForge mirror of a GitLab project. |

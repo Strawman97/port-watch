@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -2197,6 +2197,14 @@
         "macOS"
       ]
     },
+    "arcanite24/lavender-shift": {
+      "link": "https://github.com/arcanite24/lavender-shift",
+      "title": "Forza Horizon 2",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port of Forza Horizon 2 (Xbox 360) via static recompilation. Bring your own disc."
+    },
     "arnaldolima1/gow-ascension-pc": {
       "link": "https://github.com/arnaldolima1/gow-ascension-pc",
       "title": "God of War: Ascension",
@@ -2306,6 +2314,14 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png",
       "description": "Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux"
     },
+    "bhuiyah/infamous2-recomp": {
+      "link": "https://github.com/bhuiyah/infamous2-recomp",
+      "title": "inFamous 2",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "inFamous 2 (PS3) statically recompiled to a native Windows PC port, with a launcher that builds it from your own game files. No game files included."
+    },
     "blsncvs/castlevania-grimoire-of-souls-recomp": {
       "link": "https://github.com/BLSNCVS/Castlevania-Grimoire-of-Souls-Recomp",
       "title": "Castlevania: Grimoire of Souls",
@@ -2376,6 +2392,15 @@
       "platform": "Xbox (original)",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "bugcoder00/farcryinstinctspredatorrecomp": {
+      "link": "https://github.com/bugcoder00/FarCryInstinctsPredatorRecomp",
+      "title": "Far Cry Instincts: Predator",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/b22712201ddb18380ae2962f09db8005.jpg",
+      "description": "PC port of Far Cry Instincts Predator (Xbox 360) by static recompilation. Fan project. No game files included."
     },
     "cadugimenes/sanctuaryport": {
       "link": "https://github.com/CaduGimenes/SanctuaryPort",
@@ -2493,6 +2518,14 @@
       "platform": "3DS",
       "type": "Recompilation",
       "description": "Native PC versions of the Yo-kai Watch 3DS games by static recompilation"
+    },
+    "coaltergeist/brothership-recomp": {
+      "link": "https://github.com/Coaltergeist/Brothership-Recomp",
+      "title": "Mario & Luigi: Brothership",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native recompilation of Mario & Luigi: Brothership"
     },
     "codingncaffeine/siegefx": {
       "link": "https://github.com/codingncaffeine/SiegeFX",
@@ -2766,6 +2799,14 @@
       "platform": "Wii",
       "type": "Recompilation",
       "description": "Wii · static recompilation"
+    },
+    "emurphy04/lbppc": {
+      "link": "https://github.com/emurphy04/LBPPC",
+      "title": "Little Big Planet 3",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Little Big Planet 3 running natively on PC"
     },
     "erreib/pure-recomp": {
       "link": "https://github.com/erreib/pure-recomp",
@@ -3262,6 +3303,15 @@
       "pcRelease": "Never released on PC",
       "description": "Enhanced inFamous PS3 PC port (fork of inFAMOUSreborn): full launcher, NVIDIA DLSS/DLAA, DualSense / DS4 / Steam Controller, cheat mods. No game files - bring your own dump."
     },
+    "imyourhuckleberryponcho/pokemon-xd-pc-port": {
+      "link": "https://github.com/imyourhuckleberryponcho/Pokemon-XD-PC-Port",
+      "title": "Pokémon XD: Gale of Darkness",
+      "platform": "GameCube",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg",
+      "description": "Native PC Port for Pokemon XD: Gale of Darkness"
+    },
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "link": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
       "title": "Dragon Ball Z: Super Saiya Densetsu",
@@ -3683,6 +3733,30 @@
       "pcRelease": "Never released on PC",
       "description": "A native PC port of PokePark Wii: Pikachu's Adventure by static recompilation (open beta). No game data included."
     },
+    "miroslavdanutalexandru-alt/resistance-fall-of-man-recomp": {
+      "link": "https://github.com/miroslavdanutalexandru-alt/Resistance-Fall-of-Man-Recomp",
+      "title": "Resistance: Fall of Man",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/a675cdaaaea6d970edf507f9716e5227.png",
+      "description": "Native PC port of Resistance: Fall of Man (PS3) via static recompilation. D3D12 renderer, NVIDIA DLSS/DLAA and FSR upscaling, 60 fps, in-game PC menu, ultrawide, raw mouse input, keyboard and Xbox prompts. Requires your own copy of the game."
+    },
+    "miroslavdanutalexandru-alt/resistance2port": {
+      "link": "https://github.com/miroslavdanutalexandru-alt/Resistance2Port",
+      "title": "Resistance 2",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
+    },
+    "miroslavdanutalexandru-alt/resistance3port": {
+      "link": "https://github.com/miroslavdanutalexandru-alt/Resistance3Port",
+      "title": "Resistance 3",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC static recompilation port of Resistance 3 (PS3)"
+    },
     "mlgprorektm8/rygt": {
       "link": "https://github.com/mlgprorektm8/RyGT",
       "title": "Gran Turismo Sport",
@@ -3844,6 +3918,21 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Static recompilation of Fire Emblem: Three Houses (Switch) to native Windows"
+    },
+    "opengp-dev/opengp": {
+      "link": "https://github.com/OpenGP-dev/OpenGP",
+      "title": "Mario Kart Arcade GP",
+      "platform": "Arcade",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/78de4ae0ffae610a19ebfa511983cbd3.png",
+      "description": "A native PC port of Mario Kart Arcade GP and GP 2 by static recompilation. Builds the games from your own disc images.",
+      "games": [
+        {
+          "title": "Mario Kart Arcade GP 2",
+          "platform": "Arcade"
+        }
+      ]
     },
     "openportroid/armyoftworecompilation": {
       "link": "https://github.com/OpenPortroid/ArmyOfTwoRecompilation",
@@ -4168,6 +4257,14 @@
       "type": "Recompilation",
       "description": "Recompilation of Sonic 3D Blast: Directors Cut"
     },
+    "simon3sarkis/super-odyssey-pc-recomp": {
+      "link": "https://github.com/Simon3Sarkis/super-odyssey-pc-recomp",
+      "title": "Super Mario Odyssey",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A native Windows PC port of Super Mario Odyssey by static recompilation. Bring your own game: no game files included."
+    },
     "smgcommunity/garigari": {
       "link": "https://github.com/SMGCommunity/Garigari",
       "title": "Super Mario Galaxy 2",
@@ -4339,6 +4436,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Byte-matching decompilation project for Monster Hunter Portable 2nd G"
+    },
+    "tekrantgaming/battlefield-1943-reborn": {
+      "link": "https://github.com/TekRantGaming/Battlefield-1943-Reborn",
+      "title": "Battlefield 1943",
+      "platform": "XBLA (Xbox 360)",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Battlefield 1943 Reborn: the Xbox 360 game running natively on PC, with its online multiplayer restored. Releases and server packages."
     },
     "tekrantgaming/trials-revolution-collection": {
       "link": "https://github.com/TekRantGaming/Trials-ReVolution-Collection",
@@ -4646,6 +4751,14 @@
       "platform": "PSP",
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
+    },
+    "vfjoo888/superwonders": {
+      "link": "https://github.com/vfjoo888/SuperWonders",
+      "title": "Super Mario Bros. Wonder",
+      "platform": "Switch",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "A static recompilation of Super Mario Wonders for switch 1 "
     },
     "victor-takai/rogue-galaxy-recomp": {
       "link": "https://github.com/victor-takai/rogue-galaxy-recomp",
