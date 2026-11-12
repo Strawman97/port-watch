@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-12",
+  "updated": "2026-11-14",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -282,44 +282,6 @@
       "games": [
         {
           "title": "Crackdown 2",
-          "platform": "Xbox 360"
-        }
-      ]
-    },
-    "gitlab.com/shagg88/athelas": {
-      "_game": "The Lord of the Rings: The Return of the King",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        },
-        {
-          "title": "The Lord of the Rings: The Fellowship of the Ring",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Third Age",
-          "platform": "Xbox (original)"
-        }
-      ]
-    },
-    "gitlab.com/shagg88/cogbox": {
-      "_game": "Gears of War 2",
-      "games": [
-        {
-          "title": "Gears of War 3",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War: Judgement",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War",
           "platform": "Xbox 360"
         }
       ]
@@ -813,27 +775,6 @@
         {
           "title": "Marvel: Ultimate Alliance 2",
           "platform": "Xbox 360"
-        }
-      ]
-    },
-    "shagg88/athelas": {
-      "_game": "The Lord of the Rings: The Return of the King",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        },
-        {
-          "title": "The Lord of the Rings: The Fellowship of the Ring",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Third Age",
-          "platform": "Xbox (original)"
         }
       ]
     },
@@ -3104,68 +3045,6 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC"
     },
-    "gitlab.com/shagg88/athelas": {
-      "link": "https://gitlab.com/shagg88/athelas",
-      "title": "The Lord of the Rings: The Return of the King",
-      "platform": "Xbox (original)",
-      "type": "Recompilation",
-      "pcRelease": "Also on PC (console version ported)",
-      "description": "Athelas: one launcher for The Return of the King (PC, through ROTK Fix) and native PC ports of The Return of the King, The Two Towers, The Fellowship of the Ring and The Third Age (Xbox) Main repository on GitLab, mirrored on SourceForge.",
-      "games": [
-        {
-          "title": "The Lord of the Rings: The Two Towers",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Return of the King",
-          "platform": "PC"
-        },
-        {
-          "title": "The Lord of the Rings: The Fellowship of the Ring",
-          "platform": "Xbox (original)"
-        },
-        {
-          "title": "The Lord of the Rings: The Third Age",
-          "platform": "Xbox (original)"
-        }
-      ],
-      "mirrors": [
-        "https://sourceforge.net/projects/athelas/"
-      ],
-      "was": [
-        "sourceforge.net/athelas",
-        "shagg88/athelas"
-      ]
-    },
-    "gitlab.com/shagg88/cogbox": {
-      "link": "https://gitlab.com/shagg88/cogbox",
-      "title": "Gears of War 2",
-      "platform": "Xbox 360",
-      "type": "Recompilation",
-      "pcRelease": "Never released on PC",
-      "description": "COGBox: a launcher plus native PC recompilations of the four Xbox 360 Gears of War games Main repository on GitLab, mirrored on SourceForge.",
-      "games": [
-        {
-          "title": "Gears of War",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War 3",
-          "platform": "Xbox 360"
-        },
-        {
-          "title": "Gears of War: Judgment",
-          "platform": "Xbox 360"
-        }
-      ],
-      "mirrors": [
-        "https://sourceforge.net/projects/cogbox/"
-      ],
-      "was": [
-        "sourceforge.net/cogbox",
-        "shagg88/cogbox"
-      ]
-    },
     "gitlab.com/zzzarathustra-dev/power-moon-recomp": {
       "link": "https://gitlab.com/zzzarathustra-dev/power-moon-recomp",
       "title": "Super Mario Odyssey",
@@ -4482,6 +4361,70 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Static Recompilation of Panzer Dragoon Orta, fully AI powered"
+    },
+    "shagg88/athelas": {
+      "title": "The Lord of the Rings: The Return of the King",
+      "platform": "Xbox (original)",
+      "type": "Recompilation",
+      "pcRelease": "Also on PC (console version ported)",
+      "link": "https://github.com/Shagg88/Athelas",
+      "description": "Athelas: one launcher for The Return of the King (PC, through ROTK Fix) and native PC ports of The Return of the King, The Two Towers, The Fellowship of the Ring and The Third Age (Xbox). Main repository on GitHub, mirrored on GitLab and SourceForge.",
+      "games": [
+        {
+          "title": "The Lord of the Rings: The Two Towers",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Return of the King",
+          "platform": "PC"
+        },
+        {
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
+        }
+      ],
+      "mirrors": [
+        "https://gitlab.com/shagg88/athelas",
+        "https://sourceforge.net/projects/athelas/"
+      ],
+      "was": [
+        "gitlab.com/shagg88/athelas",
+        "sourceforge.net/athelas"
+      ]
+    },
+    "shagg88/cogbox": {
+      "title": "Gears of War 2",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "link": "https://github.com/Shagg88/COGBox",
+      "description": "COGBox: a launcher plus native PC recompilations of the four Xbox 360 Gears of War games. Main repository on GitHub, mirrored on GitLab and SourceForge.",
+      "games": [
+        {
+          "title": "Gears of War",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War 3",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War: Judgment",
+          "platform": "Xbox 360"
+        }
+      ],
+      "mirrors": [
+        "https://gitlab.com/shagg88/cogbox",
+        "https://sourceforge.net/projects/cogbox/"
+      ],
+      "was": [
+        "gitlab.com/shagg88/cogbox",
+        "sourceforge.net/cogbox"
+      ]
     },
     "shaneomac1337/top-spin-4-recomp": {
       "link": "https://github.com/shaneomac1337/Top-Spin-4-Recomp",
