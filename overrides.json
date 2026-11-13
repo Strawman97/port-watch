@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-14",
+  "updated": "2026-11-13",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -83,7 +83,7 @@
     },
     "blsncvs/castlevania-grimoire-of-souls-recomp": {
       "_game": "Castlevania: Grimoire of Souls",
-      "cover": "https://cdn2.steamgriddb.com/thumb/105c4dffbc8f021336f80e0a67c37e08.jpg"
+      "cover": "https://cdn2.steamgriddb.com/thumb/1b6d8f0d5a6046f83e1b84278d365a6f.jpg"
     },
     "bluefirecontrol/spaghettikart-mkdd-port": {
       "_game": "Mario Kart: Double Dash",
@@ -677,6 +677,15 @@
     "pranchad/re-sonic06demo": {
       "title": "Sonic the Hedgehog (2006)"
     },
+    "prathewsh/gravityrush_pc": {
+      "title": "Gravity Rush Remastered",
+      "games": [
+        {
+          "title": "Gravity Rush 2",
+          "platform": "PS4"
+        }
+      ]
+    },
     "project-holon/eidos": {
       "_game": "Pokemon Black Version",
       "games": [
@@ -1126,6 +1135,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Matching decompilation and native PC port of Tekken Tag Tournament (PS2). Contains no game data."
+    },
+    "adeelshah001/dwg2recomp": {
+      "link": "https://github.com/Adeelshah001/DWG2Recomp",
+      "title": "Dynasty Warriors: Gundam 2",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Dynasty Warriors: Gundam 2 Recomp for Windows. Download, features and setup guide."
     },
     "adolini1715/concrete-jungle-pc": {
       "link": "https://github.com/Adolini1715/Concrete-Jungle-PC",
@@ -2771,6 +2788,14 @@
       "pcRelease": "Never released on PC",
       "description": "mkdd-nx"
     },
+    "divxplays/stilwater-recompiled": {
+      "link": "https://github.com/DivxPlays/stilwater-recompiled",
+      "title": "Saints Row",
+      "platform": "Xbox 360",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Saints Row (Xbox 360, 2006) as a native PC port, by static recompilation with ReXGlue. Bring your own disc: the launcher builds it. No game data included. Made with the help of AI."
+    },
     "donovanmontoya/pokemon-xd-decomp": {
       "link": "https://github.com/DonovanMontoya/pokemon-xd-decomp",
       "title": "Pokémon XD: Gale of Darkness",
@@ -4161,6 +4186,15 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/4bfab835a70836f9ce3f029ffeb555f9.png",
       "description": "Sengoku Basara 4 Sumeragi Native PC Port & Launcher. Direct x86-64 CPU Execution, Re-implemented PS4 System Contracts & Vulkan Translation by Razz"
     },
+    "rcostanza/dead-nation-ps4-recomp": {
+      "link": "https://github.com/rcostanza/dead-nation-ps4-recomp",
+      "title": "Dead Nation",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ddb2b49210243775b278bbee1c03c78f.jpg",
+      "description": "Dead Nation (PS4) - Recompiled to PC"
+    },
     "rcostanza/resogun-recomp": {
       "link": "https://github.com/rcostanza/resogun-recomp",
       "title": "Resogun",
@@ -4257,6 +4291,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Technical research notes: SPU contracts, synchronization, rendering and troubleshooting. Documentation only."
+    },
+    "samienazi/infamous2-port": {
+      "link": "https://github.com/SamiEnazi/infamous2-port",
+      "title": "inFAMOUS 2",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "inFAMOUS 2 (PS3) as a native PC program for Windows and Linux: Setup recompiles YOUR copy on your PC (static recompilation, Vulkan). No game files included."
     },
     "sardentrasi/legaiarecomp": {
       "link": "https://github.com/sardentrasi/LegaiaRecomp",
