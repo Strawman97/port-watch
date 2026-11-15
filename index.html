@@ -410,7 +410,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <div id="addCheck" class="note" aria-live="polite" style="margin:-4px 0 6px"></div>
   <label>Game title<input type="text" id="addGame" placeholder="As the game shipped"></label>
   <label>Original platform<select id="addPlat"></select></label>
-  <label>Type<select id="addType"><option>Recompilation</option><option>Decompilation</option><option>Compatibility layer</option></select></label>
+  <label>Type<select id="addType"><option>Recompilation</option><option>Decompilation</option><option>Source Port</option><option>Reimplementation</option><option>Compatibility layer</option></select></label>
   <label>PC release<select id="addPs"></select></label>
   <div class="row2"><button class="btn primary" id="addSave">Add project</button><button class="btn" id="addCancel">Cancel</button></div>
 </dialog>
@@ -938,12 +938,29 @@ function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnaly
 // over. Results are kept until the data changes: any save(), a shared-data load, or a full redraw.
 let VCACHE=new WeakMap(),ACACHE=null;
 function dataChanged(){VCACHE=new WeakMap();ACACHE=null;YIDX=null;SIDX=null;}
+// Types the sources often get wrong, read from how the project describes itself (a maintainer fix always wins):
+// - Reimplementation: a new engine for the game ("replacement game engine", "engine reimplementation", "rewritten in Rust")
+// - Compatibility layer: PS4, PS5 and Xbox One games share the PC's x86-64 CPU, so most "native ports" of them run the
+//   game's own code as it is, with the console's system libraries replaced and its GPU work translated (often with
+//   shadPS4's renderer). The community calls these native or hybrid ports. Projects that really recompile or lift
+//   the code (to C, or to ARM64 ahead of time) stay recompilations.
+const REIMPL_RE=/replacement (?:game )?engine|engine (?:re-?implementation|replacement|recreation)|\bnew (?:and free |open[- ]source )?engine\b|open[- ]source [\w+/ ]{0,20}engine for|\bnative (?:pc )?re-?implementation\b|\b(?:re-?implementation|rewrite) (?:of|in) (?:rust|c\+\+|c#|go|zig)\b|\b(?:rust|c\+\+|c#|zig) (?:\(\w+\) )?(?:re-?implementation|rewrite)\b|\brewritten in (?:rust|c#|go|zig)\b|\brewrite of the (?:arcade )?game\b/i;
+const X86_CONSOLE=new Set(["PS4","PS5","Xbox One"]);
+const WRAP_RE=/x86[-_ ]?64 code|\bruns? (?:the game'?s? )?(?:own )?(?:x86[-_ ]?64 )?code (?:directly|natively|as is|unchanged)|direct (?:x86[-_ ]?64 )?cpu execution|native cpu execution|cpu side|shadps4|\bbbport\b|sacredfire|ps4rt|\bryty\b|gow3_pc runtime|\bruntime\b|\bloader\b|not an emulator|no (?:ps4 )?emulator|native (?:pc |windows |linux )?port|running natively|runs natively|natively on (?:windows|linux|pc)|native (?:pc|windows|linux) (?:port|build|execution)|wrapper|compatibility (?:layer|runtime|project)/i;
+const TRUE_RECOMP_RE=/static(?:ally)? recompil|\b(?:pc )?recompilation of\b|recompiler|lifted to c\b|\bto native c\b|\baot\b|ahead[- ]of[- ]time|arm64|aarch64|android|decompiled (?:c\+\+|graphics|engine)/i;
+function autoType(t,platform,text){
+  if(!text)return t;
+  if(t!=="Reimplementation"&&REIMPL_RE.test(text)&&!/decompil/i.test(text))return "Reimplementation";   // "engine decompilation" next to it means it's a decompilation
+  if(X86_CONSOLE.has(platform)&&t!=="Compatibility layer"&&t!=="Reimplementation"&&WRAP_RE.test(text)&&!TRUE_RECOMP_RE.test(text))return "Compatibility layer";
+  return t;
+}
 function view(p){let v=VCACHE.get(p);if(!v){v=viewRaw(p);VCACHE.set(p,v);}return v;}
 function viewRaw(p){
   const m=p.k?(S.meta[p.k]||{}):{};const aw=p.k?S.aw.data[p.k]:null;const ov=S.ov[p.id]||{};const sa=analysisOf(p);const ra=m.readme||null;
   const mf=m.manifest||null;
   const so=sharedFix(p)||{};
-  let platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p);const type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:p.t);
+  let platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p);
+  const type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:autoType(p.t,platform,[p.d,m.repo&&m.repo.desc,aw&&(aw.d||aw.description)].filter(Boolean).join(" ")));
   if(platform==="Xbox 360"&&!ov.platform&&!so.platform&&XBLA_TITLES.has(nrmT(bare(ov.game||so.title||displayTitle(p,mf)))))platform="XBLA (Xbox 360)";
   const mfa=mf?analyze([mf.notes,mf.approach].join("\n")):null;
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
@@ -2221,7 +2238,7 @@ const PLAT_RULES=[["XBLA (Xbox 360)",/\bxbla\b|xbox live arcade/i],["Xbox 360",/
   ["N64",/\bn64\b|nintendo 64/i],["SNES",/\bsnes\b|super nintendo/i],["NES",/\bnes\b|famicom/i],["GBA",/\bgba\b|game ?boy advance/i],["Game Boy Color",/\bgbc\b|game ?boy colou?r/i],["Game Boy",/game ?boy\b/i],
   ["Dreamcast",/dreamcast/i],["Saturn",/sega saturn|\bsaturn\b/i],["Mega Drive",/mega ?drive|sega genesis|\bgenesis\b/i],["PC Engine",/pc[\s-]?engine|turbografx|super cd-rom|pce\b/i],["Arcade",/\barcade\b/i],["PC",/\b(pc|windows|dos|ms-dos) (game|version|original|release)\b|\(pc\)|\(dos\)/i],["Mobile",/\b(ios|iphone|ipad|android|mobile) (game|version|original|release)\b|\((ios|iphone|ipad|android|mobile)\)/i]];
 function detectPlatform(text){for(const [p,re] of PLAT_RULES)if(re.test(text||""))return p;return "";}
-function detectType(text){const t=text||"";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
+function detectType(text){const t=text||"";if(REIMPL_RE.test(t))return "Reimplementation";if(/wrapper|compatibility layer|translation layer|runtime port/i.test(t))return "Compatibility layer";if(/recomp/i.test(t))return "Recompilation";
   if(/source[- ]port|engine port/i.test(t)&&!/decomp/i.test(t))return "Source Port";
   if(/decomp|source port|disassembl/i.test(t))return "Decompilation";if(/reimplement|engine recreation|open-?source engine/i.test(t))return "Reimplementation";return "";}
 let addPre=null,addTouched={},addSeq=0,addTimer;
