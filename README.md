@@ -108,6 +108,10 @@ These are warning signs, not proof. Never run downloads from a project you're un
 
 ## Emulators and renamed repositories
 
+Fan games (original games made by fans, GB Studio games, homebrew games) aren't ports of retail games either, so projects whose description calls them a fan game or homebrew game are left out of Awesome Decomp Games and Decomp Buddy imports. Fan games the descriptions don't give away are hidden with `"hide": true` in `overrides.json`.
+
+Decomp Buddy titles keep only a bracketed year (as in `Castlevania (1999)`) and drop other brackets, such as the project's name. Square-bracketed mod names such as `Bloody Roar 4 [Analog Stick Mod]`, and titles like `Super Mario 64: Star Road` whose description says ROM hack, are listed as a hack of the game.
+
 Emulators, emulator front ends and small tools listed in Awesome Decomp Games or Decomp Buddy (PPSSPP, Cemu, PCSX2, PSCoverDL and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
 
 ## Deleted and archived repositories
@@ -191,6 +195,7 @@ Each entry is keyed by the project's repository (for example `speedbreakerprojec
 | `gameCovers` | Cover links for a multi-game project's other games, by title, such as `{"Mario Kart Arcade GP 2": "https://…"}`. Set them from each game's tab in Port Watch; a `cover` inside a `games` entry works too. |
 | `hideScreens` | Screenshot links to leave out. |
 | `region` | Which region's libretro box art, in-game shot and title screen to use, such as `Japan`. Useful when a game is listed under its Japanese name, as with the King's Field series. |
+| `hack` | The name of a ROM hack or mod, such as `"Star Road"`, when the project changes another game. Keep `title` as the game it changes: the project is then listed in that game's entry as its own tab, using the game's cover and screenshots, and searching for the hack's name finds the game. |
 | `mirrors` | (Added projects) other places the project is hosted, shown as links in its details, for example a SourceForge mirror of a GitLab project. |
 | `was` | (Added projects) the project's previous keys after a move, such as `["sourceforge.net/cogbox"]`; follows and edits made under an old key move to the new one. |
 | `nsfw` | `true` blurs the project's cover and screenshots as suggestive; `false` stops it being blurred. |

@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -20,6 +20,10 @@
       "_game": "King's Field (kf1-enhanced)",
       "title": "King's Field (1994)",
       "region": "Japan"
+    },
+    "akirahayabusa/ngb-pc-native-port-release": {
+      "title": "Ninja Gaiden Black",
+      "hack": "Hurricane"
     },
     "alekszverr-jpg/cod3pc": {
       "_game": "Call of Duty 3",
@@ -49,6 +53,12 @@
     "anthonybongers/ghostsandgraves": {
       "_game": "Ghosts And Graves",
       "cover": "https://raw.githubusercontent.com/AnthonyBongers/GhostsAndGraves/main/reference/cart.png"
+    },
+    "argeujulio-ship-it/sfz2al-windows": {
+      "cover": "https://cdn2.steamgriddb.com/thumb/4163410edcb1693ebaf682c1091981d3.jpg"
+    },
+    "arieco57/bo3-recomp": {
+      "title": "Call of Duty: Black Ops III"
     },
     "bailifftrimmer/ship-of-harkinian-pc-port": {
       "_game": "The Legend of Zelda: Ocarina of Time",
@@ -83,7 +93,7 @@
     },
     "blsncvs/castlevania-grimoire-of-souls-recomp": {
       "_game": "Castlevania: Grimoire of Souls",
-      "cover": "https://cdn2.steamgriddb.com/thumb/1b6d8f0d5a6046f83e1b84278d365a6f.jpg"
+      "cover": "https://cdn2.steamgriddb.com/thumb/105c4dffbc8f021336f80e0a67c37e08.jpg"
     },
     "bluefirecontrol/spaghettikart-mkdd-port": {
       "_game": "Mario Kart: Double Dash",
@@ -96,7 +106,11 @@
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
     },
     "bmbelo87/decomp-it-up-new-xenesis": {
-      "title": "Pump It Up NX"
+      "title": "Pump It Up NX",
+      "cover": "https://www.arcade-history.com/images/game/11315_1.png"
+    },
+    "bmbelo87/decomp-it-up-the-prexurrection-3": {
+      "cover": "https://www.arcade-history.com/images/game/11309_1.png"
     },
     "bnunu/halo-ce-universal": {
       "title": "Halo: Combat Evolved"
@@ -169,6 +183,9 @@
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
     },
+    "darkuni/trag-recomp": {
+      "title": "Hard Edge"
+    },
     "davidptrssvea/table-tennis-rockstar-pc": {
       "_game": "Rockstar Table Tennis",
       "cover": "https://cdn2.steamgriddb.com/thumb/a5043803fb976050f4c31b55a2962b8e.jpg"
@@ -205,6 +222,9 @@
       "title": "Mario Kart 8 Deluxe",
       "cover": "https://cdn2.steamgriddb.com/thumb/9cd6d894098e748716960bfcf9dbe115.jpg",
       "pcRelease": "Never released on PC"
+    },
+    "drakenabarion/virtualon_pc": {
+      "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3j2f.jpg"
     },
     "drakolordx7/switch2-recomp": {
       "_game": "Pokopia (Pokopia Recomp)",
@@ -299,6 +319,9 @@
       "_game": "Fire Emblem: Fortune's Weave",
       "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
     },
+    "gregorioruiz98/fefw-recomp": {
+      "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
+    },
     "gtteancum/openh3m": {
       "title": "Halo 3"
     },
@@ -320,6 +343,12 @@
     "gustavomorinaga/project-vekta": {
       "_game": "Killzone HD",
       "cover": "https://cdn2.steamgriddb.com/thumb/cd97a1b65a03e2c63c60ad12db864b38.jpg"
+    },
+    "guuzzeji/sneaky-whopper-recomp": {
+      "title": "Sneak King"
+    },
+    "hab3x/biohazard-outbreak-mac": {
+      "title": "Biohazard: Outbreak"
     },
     "hayatog/dusklight": {
       "title": "The Legend of Zelda: Twilight Princess"
@@ -365,6 +394,9 @@
       "_game": "The Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/729ee60ab58fdd04c0e42324cf4741ef.jpg"
     },
+    "ioritree/kyoei_toshi_pc": {
+      "title": "Kyoei Toshi"
+    },
     "itch.io/almost-there-games/azimuth": {
       "_game": "Forza Horizon 2",
       "games": [
@@ -389,6 +421,10 @@
       "_game": "Dragon Ball Z: Super Saiya Densetsu",
       "cover": "https://cdn2.steamgriddb.com/thumb/1c7963844aaa8741078058405db5d5eb.jpg"
     },
+    "jm5557/ailu-puzzle": {
+      "title": "Airou de Puzzle",
+      "cover": "https://images.launchbox-app.com/298691ba-2bee-4dc5-9808-0aeca634e9fa.jpg"
+    },
     "jmars125/xc3-recomp": {
       "_game": "Xenoblade Chronicles 3",
       "cover": "https://cdn2.steamgriddb.com/thumb/852fb91791ba2a97611b92ff16264b2a.jpg"
@@ -404,6 +440,9 @@
     "jotd666/xevious": {
       "title": "Xevious"
     },
+    "junior-jones/sailor-moon-another-story-snes-static-recomp": {
+      "title": "Bishoujo Senshi Sailor Moon: Another Story"
+    },
     "kandowontu2/starfox-enhanced": {
       "title": "Star Fox"
     },
@@ -414,6 +453,12 @@
     "kastieloficial/re-code-veronica-recomp": {
       "_game": "Resident Evil Code: Veronica X",
       "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
+    },
+    "kitaaaaaa/vo-force-recomp": {
+      "title": "Cyber Troopers Virtual-On"
+    },
+    "ludusregard/sbx-recomp": {
+      "title": "Import Tuner Challenge"
     },
     "luisxl15/god-of-war-hd-collection": {
       "_game": "God of War Collection",
@@ -589,6 +634,10 @@
       "_game": "Midnight Club: Los Angeles",
       "cover": "https://cdn2.steamgriddb.com/thumb/39df89088e26527b6113a1bb247ba69a.jpg"
     },
+    "n64hub/dinosaur-planet-recomp": {
+      "title": "Dinosaur Planet",
+      "cover": "https://cdn2.steamgriddb.com/thumb/11738c383581f80d010ca13ac005d763.jpg"
+    },
     "naegoxdev/sm64-scratch": {
       "title": "Super Mario 64"
     },
@@ -617,6 +666,10 @@
       "_game": "Dragon Ball Z Supersonic Warriors 2",
       "cover": "https://cdn2.steamgriddb.com/thumb/24f3f7f630abe81cf2dbf9bdfbfbf13e.jpg"
     },
+    "nyaldee/nanaca-dokuro-ports": {
+      "title": "NANACA†CRASH!!",
+      "cover": "https://cdn2.steamgriddb.com/thumb/efb3249dbc37bc9612d7fca498d40ee7.png"
+    },
     "obaidr1/hercules-recompiled": {
       "_game": "Disney's Hercules",
       "cover": "https://cdn2.steamgriddb.com/thumb/a4256857d2bedfe2545111324296db10.jpg"
@@ -632,6 +685,12 @@
       "_game": "Driver",
       "platform": "PS1",
       "type": "Decompilation"
+    },
+    "omegakatana92/ironclad-recomp": {
+      "title": "Ironclad"
+    },
+    "omegakatana92/ninja-masters-recomp": {
+      "title": "Ninja Master's"
     },
     "opengp-dev/opengp": {
       "_game": "Mario Kart Arcade GP",
@@ -686,6 +745,9 @@
         }
       ]
     },
+    "primetimerer/make-soccer-club-game-project": {
+      "cover": "https://art.gametdb.com/ps3/coverHQ/JA/BLJM61064.jpg?1384201620"
+    },
     "project-holon/eidos": {
       "_game": "Pokemon Black Version",
       "games": [
@@ -735,6 +797,10 @@
       "_game": "Resogun",
       "cover": "https://cdn2.steamgriddb.com/thumb/caa1450e9e14a9f396b238fec035ef09.jpg"
     },
+    "recomp-code/bloody-roar4-recomp": {
+      "title": "Bloody Roar 4",
+      "hack": "Analog Stick Mod"
+    },
     "recompport/pandora-tower-pc": {
       "_game": "Pandora's Tower",
       "cover": "https://cdn2.steamgriddb.com/thumb/8c1bbcea199457b63dc39f7a024591f1.jpg",
@@ -756,6 +822,9 @@
       "_game": "Castlevania (N64)",
       "title": "Castlevania (1999)",
       "note": "The N64 game, not the 1986 NES Castlevania"
+    },
+    "righteousryan1/tanksrebirth": {
+      "title": "Wii Play"
     },
     "robertoaraujo77/mc_la_recompiled": {
       "_game": "Midnight Club: Los Angeles",
@@ -787,6 +856,47 @@
         }
       ]
     },
+    "scriff-marimbo/monsterparty-pc": {
+      "title": "Monster Party"
+    },
+    "shagg88/athelas": {
+      "_game": "The Lord of the Rings: The Return of the King",
+      "games": [
+        {
+          "title": "The Lord of the Rings: The Two Towers",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Return of the King",
+          "platform": "PC"
+        },
+        {
+          "title": "The Lord of the Rings: The Fellowship of the Ring",
+          "platform": "Xbox (original)"
+        },
+        {
+          "title": "The Lord of the Rings: The Third Age",
+          "platform": "Xbox (original)"
+        }
+      ]
+    },
+    "shagg88/cogbox": {
+      "_game": "Gears of War 2",
+      "games": [
+        {
+          "title": "Gears of War 3",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War: Judgement",
+          "platform": "Xbox 360"
+        },
+        {
+          "title": "Gears of War",
+          "platform": "Xbox 360"
+        }
+      ]
+    },
     "shmargus/gsrecomp": {
       "title": "Golden Sun"
     },
@@ -796,6 +906,15 @@
     },
     "sonsegajp/hwder": {
       "title": "Hyrule Warriors"
+    },
+    "sonsegajp/mergeship": {
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "games": [
+        {
+          "title": "The Legend of Zelda: Majora's Mask",
+          "platform": "N64"
+        }
+      ]
     },
     "spacefarergames/cv64-recomp": {
       "_game": "Castlevania 64",
@@ -829,9 +948,16 @@
       "_game": "The Legend of Zelda: Ocarina of Time (2026)",
       "cover": "https://cdn2.steamgriddb.com/thumb/f94be53eb872a59a8e902354ef99ce5a.jpg"
     },
+    "tanookistudios/vpw64deluxerecomp": {
+      "title": "Virtual Pro Wrestling 64"
+    },
     "tekrantgaming/king-kong-recompiled": {
       "_game": "Peter Jackson's King Kong",
       "cover": "https://cdn2.steamgriddb.com/thumb/94e1efbe349498e6c22ad4f42b236631.jpg"
+    },
+    "tekrantgaming/king-kong-recompiled-beta": {
+      "title": "Peter Jackson's King Kong",
+      "cover": "https://cdn2.steamgriddb.com/thumb/95eb83542315080493f9a00e01920fe6.jpg"
     },
     "tekrantgaming/trials-revolution-collection": {
       "_game": "Trials HD",
@@ -931,6 +1057,9 @@
       "platform": "Xbox (original)",
       "pcRelease": "Never released on PC"
     },
+    "thefixinhixon/pacificrimrecomp": {
+      "cover": "https://cdn2.steamgriddb.com/thumb/6f20a6af341afb0845290ee140f07dcf.jpg"
+    },
     "thefixinhixon/ultracombo": {
       "_game": "Killer Instinct",
       "games": [
@@ -969,6 +1098,9 @@
     },
     "tmcleroy/vampire-savior-recomp": {
       "title": "Vampire Savior"
+    },
+    "toshredsyousay/rumblerecomp": {
+      "title": "Pokémon Rumble"
     },
     "tripplyons/pokeemerald-3d": {
       "title": "Pokemon Emerald"
@@ -1013,6 +1145,10 @@
       "_game": "Shin Megami Tensei: Persona 3 FES",
       "cover": "https://cdn2.steamgriddb.com/thumb/5011c560a9233c63cf0e6cb6d06cf22c.jpg"
     },
+    "virtuaquest/doa-xtreme-3rd": {
+      "_game": "DEAD OR ALIVE Xtreme 3 Scarlet",
+      "cover": "https://cdn2.steamgriddb.com/thumb/2e9398b29bf0f84fb1e636bfdb02ac24.jpg"
+    },
     "voicedrew11/holyland": {
       "_game": "King's Field: The Ancient City",
       "title": "King's Field IV (2001)",
@@ -1048,6 +1184,13 @@
     "xandoxan65/segarally95-recomp": {
       "title": "SEGA Rally Championship"
     },
+    "xdivorex-gif/spiderman-2002-pc": {
+      "_game": "Spider-Man",
+      "cover": "https://cdn2.steamgriddb.com/thumb/ab54ae2145b66c0c6400e21f850f4aec.jpg"
+    },
+    "xiondigital/emblemweave": {
+      "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
+    },
     "xzhuofan/cryrecomp": {
       "_game": "The Legend of Zelda: Tears of the Kingdom",
       "platform": "Switch"
@@ -1060,9 +1203,79 @@
       "_game": "Midnight Club: Los Angeles",
       "cover": "https://cdn2.steamgriddb.com/thumb/39df89088e26527b6113a1bb247ba69a.jpg"
     },
+    "zaxaerith/goldensunthebrokensealrecomp": {
+      "title": "Golden Sun"
+    },
     "zdiemer/chrono-trigger-reimplemented": {
       "_game": "Chrono Trigger",
       "type": "Source Port"
+    },
+    "decryptu/pokerecomp": {
+      "title": "Pokémon Red",
+      "platform": "Game Boy",
+      "type": "Reimplementation",
+      "games": [
+        {
+          "title": "Pokémon Blue",
+          "platform": "Game Boy"
+        },
+        {
+          "title": "Pokémon Yellow",
+          "platform": "Game Boy"
+        },
+        {
+          "title": "Pokémon Gold",
+          "platform": "Game Boy Color"
+        },
+        {
+          "title": "Pokémon Silver",
+          "platform": "Game Boy Color"
+        },
+        {
+          "title": "Pokémon Crystal",
+          "platform": "Game Boy Color"
+        }
+      ]
+    },
+    "tekrantgaming/angry-birds-re-hatched-collection": {
+      "title": "Angry Birds",
+      "platform": "XBLA (Xbox 360)",
+      "games": [
+        {
+          "title": "Angry Birds Seasons",
+          "platform": "XBLA (Xbox 360)"
+        },
+        {
+          "title": "Angry Birds Rio",
+          "platform": "XBLA (Xbox 360)"
+        },
+        {
+          "title": "Angry Birds Star Wars",
+          "platform": "XBLA (Xbox 360)"
+        }
+      ]
+    },
+    "aliveteam/alive_reversing": {
+      "title": "Oddworld: Abe's Oddysee",
+      "games": [
+        {
+          "title": "Oddworld: Abe's Exoddus",
+          "platform": "PS1"
+        }
+      ]
+    },
+    "adoregabriel2005/cebola-recompiled": {
+      "_game": "Cebola",
+      "hide": true,
+      "note": "Fan game, not a port of a retail game"
+    },
+    "tiptup300/thenewt64risrecomp": {
+      "_game": "The New T64ris",
+      "hide": true,
+      "note": "Fan game, not a port of a retail game"
+    },
+    "lillypad-14/rotk-recompiled": {
+      "hack": "ROTK Expanded"
     }
   },
   "added": {
@@ -2693,6 +2906,15 @@
       "platform": "Xbox 360",
       "type": "Recompilation",
       "description": "Fable III Xbox 360 static recompilation research with ReXGlue; initial analysis, not yet playable"
+    },
+    "dankzonestudios/cv64recomp": {
+      "link": "https://github.com/DankZoneStudios/CV64Recomp",
+      "title": "Castlevania (1999)",
+      "platform": "N64",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "cover": "https://cdn2.steamgriddb.com/thumb/1d5132d7b72e7c47827b518181343d2b.jpg",
+      "description": "A native Castlevania 64 PC recompilation port featuring unlocked high-framerate performance, stable widescreen support, and custom texture pack modding."
     },
     "darhkfox/supermarioallstars": {
       "link": "https://github.com/Darhkfox/SuperMarioAllStars",

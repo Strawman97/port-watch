@@ -114,6 +114,14 @@ EMU_REPOS = {"hrydgard/ppsspp", "flyinghead/flycast", "cemu-project/cemu", "melo
              "mednafen/mednafen", "mamedev/mame", "vita3k/vita3k", "shadps4-emu/shadps4", "xemu-project/xemu", "cxbx-reloaded/cxbx-reloaded", "ares-emulator/ares",
              "simple64/simple64", "flathub/org.ppsspp.ppsspp", "xlenore/pscoverdl"}
 
+# Fan games (original games made by fans, GB Studio games, homebrew) aren't ports of retail games. "Fan-made recompilation of X"
+# is a fan project of a real game and stays; "Lua mods and fan games" describes features and stays. Kept in sync with isFanGame in index.html.
+FAN_RE = re.compile(r"\b(?:a|an|this|is)\s+(?:[\w.'-]+\s+){0,4}fan[- ]?game\b|\bfan[- ]?games?\s+(?:in|for|of|by|made|using)\b|\bfan (?:browser )?game\)"
+                    r"|\bbased on [\w\s'-]{0,40}fan[- ]?games\b|\bhomebrew\s+(?:game|title|decomp\w*)\b|\bgb\s*studio\b", re.I)
+
+def is_fan_game(title, desc):
+    return bool(FAN_RE.search(" ".join([str(title or ""), str(desc or "")])))
+
 def is_emulator(title, repo, desc):
     if (repo or "").lower() in EMU_REPOS:
         return True
@@ -136,6 +144,8 @@ def awesome_projects():
     for g in d.get("games", []):
         if is_emulator(g.get("title"), g.get("repo"), g.get("description")):
             continue                      # emulators and front ends are not ports
+        if is_fan_game(g.get("title"), g.get("description")):
+            continue                      # nor are fan games
         t = {"static-recomp": "Recompilation", "source-port": "Decompilation"}.get(g.get("type"))
         if g.get("type") == "decompilation" and g.get("release"):
             t = "Decompilation"
@@ -1067,6 +1077,26 @@ def db_clean_title(title):
     t = re.sub(r"\s+", " ", t).strip(" -:\u2013\u2014")
     return (t + "".join(f" ({y})" for y in years[:1])).strip() if t else str(title or "").strip()
 
+HACK_WORD = re.compile(r"\b(?:rom ?hack|romhack|hack|mod|mods|modded|patch|translation|edition|expanded|randomi[sz]er)\b", re.I)
+HACK_DESC = re.compile(r"\b(?:rom ?hack|romhack|hack of|mod of|mod for|modded version|built-in mod|mod built in|with the [\w\s'-]{1,40} mod)\b", re.I)
+
+def db_hack(title, desc, known):
+    """(game title, hack or mod name). A hack is listed under the game it modifies, sharing its cover and screenshots:
+    'Bloody Roar 4 [Analog Stick Mod]' -> ('Bloody Roar 4', 'Analog Stick Mod'); 'Super Mario 64: Star Road' with
+    'ROM hack' in its description -> ('Super Mario 64', 'Star Road') when Super Mario 64 is a game Port Watch knows."""
+    t, hack = str(title or ""), ""
+    for inner in re.findall(r"\[([^\[\]]*)\]", t):
+        if not hack and HACK_WORD.search(inner):
+            hack = inner.strip()
+    t = re.sub(r"\s*\[[^\[\]]*\]", "", t).strip()
+    if not hack and HACK_DESC.search(str(desc or "")):
+        for sep in (": ", " - ", " \u2013 "):
+            if sep in t:
+                base, rest = t.split(sep, 1)
+                if norm(base) in known and norm(t) not in known and rest.strip():
+                    return base.strip(), rest.strip()
+    return t, hack
+
 def db_type(text):
     t = text.lower()
     if re.search(r"recomp", t):
@@ -1079,7 +1109,7 @@ def db_type(text):
         return "Source Port"
     return "Recompilation"
 
-def decompbuddy_projects():
+def decompbuddy_projects(known=frozenset()):
     """Console projects in Decomp Buddy's catalog: [{k, id, g, p, t, pr, ...}], other games of a repo folded into 'games'."""
     src, games = "catalog", []
     try:
@@ -1109,10 +1139,11 @@ def decompbuddy_projects():
             continue
         k = ("gitlab.com/" if host == "gitlab" else "") + repo.lower()
         desc = str(g.get("description") or g.get("notes") or "")
-        if is_emulator(g.get("title"), k, desc):
+        if is_emulator(g.get("title"), k, desc) or is_fan_game(g.get("title"), desc):
             skipped += 1
             continue
         title, proj = db_split_title(g.get("title"), repo, str(g.get("project") or ""))
+        title, hack = db_hack(title, desc, known)
         title = db_clean_title(title)
         if not title:
             continue
@@ -1129,7 +1160,9 @@ def decompbuddy_projects():
                   "pre": g.get("status") == "prerelease", "lc": str(g.get("updatedAt") or ""),
                   "at": str(g.get("addedAt") or g.get("listedAt") or g.get("firstSeen") or ""), "ai": bool(facts.get("aiUse")) if facts.get("aiUse") not in (None, "none", "no") else False,
                   "games": []}
-    log(f"  Decomp Buddy ({src}): {len(games)} listed, {len(out)} console projects kept, {skipped} left out (PC/computer games, emulators, other hosts)")
+        if hack:
+            out[k]["hack"] = hack
+    log(f"  Decomp Buddy ({src}): {len(games)} listed, {len(out)} console projects kept, {skipped} left out (PC/computer games, emulators, fan games, other hosts)")
     return list(out.values())
 
 def refresh_decompbuddy(projects, skip_keys):
@@ -1189,7 +1222,9 @@ def main():
             overrides = {**overrides, p["k"]: {**(overrides.get(p["k"]) or {}), "cover": p["cover"]}}
     log("Decomp Buddy:")
     taken_all = taken | {p["k"] for p in added} | {w.lower() for a in raw_added.values() if isinstance(a, dict) for w in (a.get("was") or [])}
-    dbuddy = refresh_decompbuddy(decompbuddy_projects(), taken_all)
+    known_titles = ({norm(p.get("g") or "") for p in seed + extra + added}
+                    | {norm(str(f.get("title") or "")) for f in overrides.values() if isinstance(f, dict)}) - {""}
+    dbuddy = refresh_decompbuddy(decompbuddy_projects(known_titles), taken_all)
     for p in dbuddy:
         p.setdefault("games", [])
     extra = extra + added + dbuddy
