@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T06:21:52+00:00",
+ "generated": "2026-11-15T08:13:03+00:00",
  "projects": [
   {
    "ai": false,
@@ -1816,7 +1816,8 @@
    "ai": false,
    "at": "2026-10-21",
    "d": "Bloody Roar 4 [Analog Stick Mod] (PS2, PAL) as a native PC program: PS2Recomp + the PCSX2 renderer, 60 fps, 16:9, DLSS and DLSS 5",
-   "g": "Bloody Roar 4 [Analog Stick Mod]",
+   "g": "Bloody Roar 4",
+   "hack": "Analog Stick Mod",
    "id": "db:recomp-code/bloody-roar4-recomp",
    "k": "recomp-code/bloody-roar4-recomp",
    "lc": "2026-10-23T13:20:45Z",
@@ -12604,40 +12605,6 @@
   },
   {
    "ai": false,
-   "at": "2026-10-19",
-   "d": "A psp homebrew decomp for the game neutron. Any help is welcomed. TLDR this is a 3D tron game originally on ios then psp.. Linux port I think is lost to time.",
-   "g": "Neutron",
-   "id": "db:dtpk/neutron-decomp",
-   "k": "dtpk/neutron-decomp",
-   "lc": "2026-10-26T02:45:28Z",
-   "p": "PSP",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Neutron-Decomp",
-   "pre": true,
-   "rel": "Neutron",
-   "t": "Decompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-14",
-   "d": "Windows static recompilation of \"The New Adventures of Sonic the Hedgehog\" GB Studio fangame using GB Recompiled.",
-   "g": "The New Adventures of Sonic the Hedgehog",
-   "id": "db:sonic1908/newadventuresofsonic-recompiled",
-   "k": "sonic1908/newadventuresofsonic-recompiled",
-   "lc": "2026-09-30T23:08:21Z",
-   "p": "Game Boy Color",
-   "po": [
-    "Windows"
-   ],
-   "pr": "NewAdventuresOfSonic-Recompiled",
-   "pre": false,
-   "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-11-14",
    "d": "New Pokémon Snap native recompilation work in progress, based on Astral Chain Recomp and TotK Recomp. Bring your own dump.",
    "g": "New Pokemon Snap",
@@ -20318,24 +20285,6 @@
    "pr": "vampire-savior-recomp",
    "pre": true,
    "rel": "v0.1.0-beta.5",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-19",
-   "d": "A 2D Vib-Ribbon fangame!",
-   "g": "Vib-Ribbon",
-   "id": "db:playnowknux/vibribbonminusrelease",
-   "k": "playnowknux/vibribbonminusrelease",
-   "lc": "2022-08-03T03:30:34Z",
-   "p": "PS1",
-   "po": [
-    "Windows",
-    "macOS"
-   ],
-   "pr": "VibRibbonMinusRelease",
-   "pre": false,
-   "rel": "0.1.1",
    "t": "Recompilation"
   },
   {

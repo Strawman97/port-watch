@@ -1,6 +1,6 @@
 {
  "format": "port-watch-libretro",
- "generated": "2026-11-15T06:21:52Z",
+ "generated": "2026-11-15T08:13:02Z",
  "map": {
   "0bandywirus/dq9-decomp": {
    "checked": "2026-11-15T05:13:39Z",
@@ -298,10 +298,6 @@
    "snap": true,
    "title": false
   },
-  "adoregabriel2005/cebola-recompiled": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "cebola"
-  },
   "adoregabriel2005/monica-no-castelo-do-dragao-recomp": {
    "checked": "2026-11-15T05:13:39Z",
    "file": "Monica no Castelo do Dragao (Brazil).png",
@@ -575,8 +571,12 @@
    "q": "green lantern rise of the manhunters"
   },
   "akirahayabusa/ngb-pc-native-port-release": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "ninja gaiden black hurricane"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Ninja Gaiden Black (USA).png",
+   "q": "ninja gaiden black",
+   "repo": "Microsoft_-_Xbox",
+   "snap": true,
+   "title": true
   },
   "aknavj/scghost-recomp": {
    "checked": "2026-11-06T16:45:37Z",
@@ -1567,8 +1567,20 @@
    "title": true
   },
   "aliveteam/alive_reversing": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "oddworld 1 2"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Oddworld - Abe's Oddysee (USA).png",
+   "q": "oddworld abes oddysee",
+   "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true
+  },
+  "aliveteam/alive_reversing#oddworld abes exoddus": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Oddworld - Abe's Exoddus (USA).png",
+   "q": "oddworld abes exoddus",
+   "repo": "Sony_-_PlayStation",
+   "snap": false,
+   "title": false
   },
   "almost-drowned-rat/orta-recompiled": {
    "checked": "2026-11-15T06:21:52Z",
@@ -1935,8 +1947,8 @@
    "title": true
   },
   "arieco57/bo3-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "call of duty black ops iii multiplayer"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "call of duty black ops iii"
   },
   "arieco57/bo3-recomp#call of duty black ops iii zombies": {
    "checked": "2026-11-15T05:13:39Z",
@@ -3974,6 +3986,14 @@
    "snap": true,
    "title": true
   },
+  "dankzonestudios/cv64recomp": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Castlevania (USA).png",
+   "q": "castlevania 1999",
+   "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true
+  },
   "danny199012/streetfighter-x-tekken-recomp": {
    "checked": "2026-11-15T05:13:39Z",
    "q": "street fighter x tekken"
@@ -4247,8 +4267,12 @@
    "title": false
   },
   "darkuni/trag-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "t r a g tactical rescue assault group"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Hard Edge (Europe) (En,Fr,De).png",
+   "q": "hard edge",
+   "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true
   },
   "darkuni/zak-wiki-recomp": {
    "checked": "2026-11-15T05:13:39Z",
@@ -4327,8 +4351,48 @@
    "title": true
   },
   "decryptu/pokerecomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "pokemon red blue yellow gold silver and crystal"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon - Red Version (USA, Europe) (SGB Enhanced).png",
+   "q": "pokemon red",
+   "repo": "Nintendo_-_Game_Boy",
+   "snap": true,
+   "title": true
+  },
+  "decryptu/pokerecomp#pokemon blue": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon - Blue Version (USA, Europe) (SGB Enhanced).png",
+   "q": "pokemon blue",
+   "repo": "Nintendo_-_Game_Boy",
+   "snap": true,
+   "title": true
+  },
+  "decryptu/pokerecomp#pokemon crystal": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon - Crystal Version (USA).png",
+   "q": "pokemon crystal",
+   "repo": "Nintendo_-_Game_Boy_Color",
+   "snap": true,
+   "title": true
+  },
+  "decryptu/pokerecomp#pokemon gold": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+   "q": "pokemon gold",
+   "repo": "Nintendo_-_Game_Boy_Color",
+   "snap": true,
+   "title": true
+  },
+  "decryptu/pokerecomp#pokemon silver": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon - Silver Version (USA, Europe) (SGB Enhanced) (GB Compatible).png",
+   "q": "pokemon silver",
+   "repo": "Nintendo_-_Game_Boy_Color",
+   "snap": true,
+   "title": true
+  },
+  "decryptu/pokerecomp#pokemon yellow": {
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "pokemon yellow"
   },
   "deivid22srk/dk64-recomp-android": {
    "checked": "2026-10-21T09:52:10Z",
@@ -4801,10 +4865,6 @@
   "drummingbird1/sonic06-recomp": {
    "checked": "2026-11-15T06:21:52Z",
    "q": "sonic the hedgehog 2006"
-  },
-  "dtpk/neutron-decomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "neutron"
   },
   "dubrovskiy-yevhen-stakelogic/gt-2-pc": {
    "checked": "2026-11-15T05:13:39Z",
@@ -6507,8 +6567,12 @@
    "title": true
   },
   "guuzzeji/sneaky-whopper-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "burger king sneak king"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Sneak King (USA).png",
+   "q": "sneak king",
+   "repo": "Microsoft_-_Xbox",
+   "snap": true,
+   "title": false
   },
   "gymzatan/smt-nine-recomp": {
    "checked": "2026-11-15T05:13:39Z",
@@ -6519,8 +6583,12 @@
    "title": false
   },
   "hab3x/biohazard-outbreak-mac": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "biohazard outbreak file 1"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Biohazard - Outbreak (Japan).png",
+   "q": "biohazard outbreak",
+   "repo": "Sony_-_PlayStation_2",
+   "snap": true,
+   "title": true
   },
   "hab3x/biohazard-outbreak-mac#biohazard outbreak file 2": {
    "checked": "2026-11-15T05:13:39Z",
@@ -7127,8 +7195,8 @@
    "q": "earth defense force 2017"
   },
   "ioritree/kyoei_toshi_pc": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "city shrouded in shadow"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "kyoei toshi"
   },
   "ipodtouch0218/nsmb-mariovsluigi": {
    "checked": "2026-11-15T06:21:52Z",
@@ -7679,8 +7747,8 @@
    "title": false
   },
   "jm5557/ailu-puzzle": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "felyne puzzle"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "airou de puzzle"
   },
   "jmafort/castlevaniacod-pc": {
    "checked": "2026-11-02T11:06:19Z",
@@ -8039,8 +8107,12 @@
    "title": true
   },
   "junior-jones/sailor-moon-another-story-snes-static-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "sailor moon another story"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Bishoujo Senshi Sailor Moon - Another Story (Japan).png",
+   "q": "bishoujo senshi sailor moon another story",
+   "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true
   },
   "junior-jones/simcity-snes-static-recomp": {
    "checked": "2026-11-15T06:21:52Z",
@@ -8447,8 +8519,8 @@
    "q": "cyber troopers virtual on oratorio tangram m s b s ver 5 66"
   },
   "kitaaaaaa/vo-force-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "dennou senki virtual on force"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "cyber troopers virtual on"
   },
   "kitocato/bloodborne-linux-arm64": {
    "checked": "2026-11-15T06:21:52Z",
@@ -9047,8 +9119,8 @@
    "title": true
   },
   "ludusregard/sbx-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "shutoko battle x"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "import tuner challenge"
   },
   "luisxl15/gta-iv-recomp-xbox-360": {
    "checked": "2026-10-21T09:52:10Z",
@@ -10975,8 +11047,8 @@
    "title": true
   },
   "n64hub/dinosaur-planet-recomp": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "dinosaur planet prototype"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "dinosaur planet"
   },
   "n64hub/donald-duck-goin-quackers-recomp": {
    "checked": "2026-11-15T05:13:39Z",
@@ -11575,8 +11647,8 @@
    "q": "game ni natta yo dokuro chan kenkou shindan daisakusen"
   },
   "nyaldee/nanaca-dokuro-ports": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "game ni natta yo dokuro chan kenko shindan daisakusen"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "nanaca crash"
   },
   "nycolazs/windwakerhd-android-plus": {
    "checked": "2026-10-21T09:52:10Z",
@@ -12510,14 +12582,6 @@
    "checked": "2026-10-21T09:52:10Z",
    "q": "sonic generations sonic generations recomp android and pc edition"
   },
-  "playnowknux/vibribbonminusrelease": {
-   "checked": "2026-11-15T06:21:52Z",
-   "file": "Vib-Ribbon (Europe) (En,Fr,De,Es,It).png",
-   "q": "vib ribbon",
-   "repo": "Sony_-_PlayStation",
-   "snap": true,
-   "title": true
-  },
   "plinkr/wild9recomp": {
    "checked": "2026-11-06T16:45:37Z",
    "file": "Wild 9 (USA).png",
@@ -13123,8 +13187,12 @@
    "title": true
   },
   "recomp-code/bloody-roar4-recomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "bloody roar 4 analog stick mod"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Bloody Roar 4 (USA).png",
+   "q": "bloody roar 4",
+   "repo": "Sony_-_PlayStation_2",
+   "snap": true,
+   "title": true
   },
   "recomp-code/dbz-bt4-recomp": {
    "checked": "2026-11-10T13:27:13Z",
@@ -13347,8 +13415,12 @@
    "q": "god of war ascension ascension r"
   },
   "righteousryan1/tanksrebirth": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "wii play tanks"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Wii Play (USA).png",
+   "q": "wii play",
+   "repo": "Nintendo_-_Wii",
+   "snap": true,
+   "title": true
   },
   "rinnegatamante/crash-team-racing-high-octane": {
    "checked": "2026-10-21T09:52:10Z",
@@ -13907,8 +13979,12 @@
    "title": true
   },
   "scriff-marimbo/monsterparty-pc": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "monster party lets go again"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Monster Party (USA).png",
+   "q": "monster party",
+   "repo": "Nintendo_-_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true
   },
   "sdiraimondo/ketsuirecomp": {
    "checked": "2026-11-15T06:21:52Z",
@@ -14126,9 +14202,9 @@
    "checked": "2026-11-12T13:26:42Z",
    "q": "gears of war 3"
   },
-  "shagg88/cogbox#gears of war judgment": {
-   "checked": "2026-11-12T13:26:42Z",
-   "q": "gears of war judgment"
+  "shagg88/cogbox#gears of war judgement": {
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "gears of war judgement"
   },
   "shaneomac1337/svr2011-recomp": {
    "checked": "2026-10-21T09:52:10Z",
@@ -14582,10 +14658,6 @@
    "checked": "2026-11-12T13:11:46Z",
    "q": "gears of war gears1"
   },
-  "sonic1908/newadventuresofsonic-recompiled": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "new adventures of sonic the hedgehog"
-  },
   "sonicdcer/dnzhrecomp": {
    "checked": "2026-10-21T09:52:10Z",
    "file": "Duke Nukem - Zero Hour (USA).png",
@@ -14639,8 +14711,20 @@
    "title": true
   },
   "sonsegajp/mergeship": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "legend of zelda ocarina of time and majoras mask"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Legend of Zelda, The - Ocarina of Time (USA).png",
+   "q": "legend of zelda ocarina of time",
+   "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true
+  },
+  "sonsegajp/mergeship#legend of zelda majoras mask": {
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Legend of Zelda, The - Majora's Mask (USA).png",
+   "q": "legend of zelda majoras mask",
+   "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true
   },
   "sonsegajp/pokerecomp": {
    "checked": "2026-10-27T15:20:47Z",
@@ -15247,8 +15331,12 @@
    "title": true
   },
   "tanookistudios/vpw64deluxerecomp": {
-   "checked": "2026-11-15T05:13:39Z",
-   "q": "virtual pro wrestling 64 deluxe"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Virtual Pro Wrestling 64 (Japan).png",
+   "q": "virtual pro wrestling 64",
+   "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true
   },
   "tarball/doax2-recomp-releases": {
    "checked": "2026-11-15T06:21:52Z",
@@ -15467,8 +15555,20 @@
    "title": true
   },
   "tekrantgaming/angry-birds-re-hatched-collection": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "angry birds collection"
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "angry birds"
+  },
+  "tekrantgaming/angry-birds-re-hatched-collection#angry birds rio": {
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "angry birds rio"
+  },
+  "tekrantgaming/angry-birds-re-hatched-collection#angry birds seasons": {
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "angry birds seasons"
+  },
+  "tekrantgaming/angry-birds-re-hatched-collection#angry birds star wars": {
+   "checked": "2026-11-15T08:13:02Z",
+   "q": "angry birds star wars"
   },
   "tekrantgaming/battlefield-1943-reborn": {
    "checked": "2026-11-12T05:50:10Z",
@@ -16154,10 +16254,6 @@
    "snap": true,
    "title": true
   },
-  "tiptup300/thenewt64risrecomp": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "new t64ris"
-  },
   "tk22-26/jetforcegemini-recomp": {
    "checked": "2026-11-15T06:21:52Z",
    "file": "Jet Force Gemini (USA).png",
@@ -16219,8 +16315,12 @@
    "q": "spider man web of shadows"
   },
   "toshredsyousay/rumblerecomp": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "poke rumble"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Pokemon Rumble (USA).png",
+   "q": "pokemon rumble",
+   "repo": "Nintendo_-_Wii",
+   "snap": true,
+   "title": true
   },
   "trev82usa/dorito-s-crash-course-decomp": {
    "checked": "2026-11-15T05:13:39Z",
@@ -17487,8 +17587,12 @@
    "title": true
   },
   "zaxaerith/goldensunthebrokensealrecomp": {
-   "checked": "2026-11-15T06:21:52Z",
-   "q": "golden sun the broken seal"
+   "checked": "2026-11-15T08:13:02Z",
+   "file": "Golden Sun (USA, Europe).png",
+   "q": "golden sun",
+   "repo": "Nintendo_-_Game_Boy_Advance",
+   "snap": true,
+   "title": true
   },
   "zaxaerith/goldensunthelostagerecomp": {
    "checked": "2026-11-15T06:21:52Z",
