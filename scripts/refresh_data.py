@@ -1011,8 +1011,120 @@ def refresh_recompfyi():
     log(f"  recomp.fyi: {len(rows)} rows")
     return write_json_if_changed(path, data, compare_without=("generated", "fetched"))
 
+# ---------------------------------------------------------------- Decomp Buddy (decompbuddy.com, by Tanooki Studios)
+# Its public catalog merges portsdr.com, Alexbeav's PS1 list, community lists and projects its maintainer finds and checks
+# by hand (Reddit, Bluesky, GitHub topics and search, recomphaven, unbaked.games, recomp.fyi). Games whose download a
+# virus scan flagged are held out of catalog.json. If the catalog can't be read, the hand-found list in its GPL repo is used.
+DBUDDY_URL = os.environ.get("PW_DBUDDY_URL", "https://tanookistudios.com/decomp-buddy/catalog.json")
+DBUDDY_FALLBACK = os.environ.get("PW_DBUDDY_FALLBACK", "https://raw.githubusercontent.com/TanookiStudios/decomp-buddy/main/finds.json")
+DB_PLAT = {"Nintendo 64": "N64", "PlayStation": "PS1", "Sony PlayStation": "PS1", "PlayStation 2": "PS2", "PlayStation 3": "PS3", "PlayStation 4": "PS4",
+           "PlayStation Portable": "PSP", "PlayStation Vita": "PS Vita", "Xbox": "Xbox (original)", "Xbox 360": "Xbox 360", "Xbox One": "Xbox One",
+           "GameCube": "GameCube", "Wii": "Wii", "Wii U": "Wii U", "Nintendo Switch": "Switch", "Nintendo Switch 2": "Switch 2", "SNES": "SNES", "NES": "NES",
+           "Game Boy": "Game Boy", "Game Boy Color": "Game Boy Color", "Game Boy Advance": "GBA", "Nintendo DS": "DS", "Nintendo 3DS": "3DS", "Virtual Boy": "Virtual Boy",
+           "Mega Drive": "Mega Drive", "Genesis": "Mega Drive", "Master System": "Master System", "Game Gear": "Game Gear", "Sega CD": "Sega CD", "32X": "32X",
+           "Saturn": "Saturn", "Dreamcast": "Dreamcast", "Arcade": "Arcade", "PC Engine": "PC Engine", "TurboGrafx-16": "PC Engine"}
+DB_OS = {"windows": "Windows", "linux": "Linux", "macos": "macOS", "mac": "macOS", "android": "Android", "ios": "iOS"}
+
+def db_split_title(title, repo, project=""):
+    """'Amped 3 (ReAmped 3)' -> ('Amped 3', 'ReAmped 3') when the brackets name the project rather than the game."""
+    t = (title or "").strip()
+    if project:
+        return t, project
+    m = re.match(r"^(.*\S)\s*\(([^()]+)\)$", t)
+    if not m:
+        return t, ""
+    inner = m.group(2).strip()
+    if re.fullmatch(r"(19|20)\d\d|usa|us|europe|eu|japan|jp|pal|ntsc|ntsc-[uj]|[a-z]{2}", inner, re.I):
+        return t, ""
+    squash = lambda x: re.sub(r"[^a-z0-9]", "", x.lower())
+    rname = squash((repo or "").split("/")[-1])
+    words = [w for w in re.findall(r"[a-z0-9]+", inner.lower()) if len(w) > 2]
+    if (squash(inner) and squash(inner) in rname) or re.search(r"recomp|decomp|\bport\b|-port|reloaded|revamped|\bre[a-z]", inner, re.I) or (words and sum(w in rname for w in words) >= max(1, len(words) // 2)):
+        return m.group(1).strip(), inner
+    return t, ""
+
+def db_type(text):
+    t = text.lower()
+    if re.search(r"recomp", t):
+        return "Recompilation"
+    if re.search(r"decomp", t):
+        return "Decompilation"
+    if re.search(r"re-?implement", t):
+        return "Reimplementation"
+    if re.search(r"source[ -]port", t):
+        return "Source Port"
+    return "Recompilation"
+
+def decompbuddy_projects():
+    """Console projects in Decomp Buddy's catalog: [{k, id, g, p, t, pr, ...}], other games of a repo folded into 'games'."""
+    src, games = "catalog", []
+    try:
+        d = json.loads(http_get(DBUDDY_URL) or b"{}")
+        games = d.get("games") or []
+        if len(games) < 200:
+            raise ValueError(f"only {len(games)} games listed")
+    except Exception as e:
+        log(f"  Decomp Buddy's catalog couldn't be read ({e}); using its hand-found list from GitHub")
+        src = "finds"
+        try:
+            games = (json.loads(http_get(DBUDDY_FALLBACK) or b"{}") or {}).get("games") or []
+        except Exception as e2:
+            log(f"  Decomp Buddy's hand-found list couldn't be read either ({e2})")
+            return None
+    out, skipped = {}, 0
+    for g in games:
+        repo, host = str(g.get("repo") or "").strip(), str(g.get("host") or "github").lower()
+        if repo.startswith("gitlab:"):
+            host, repo = "gitlab", repo[7:]
+        if not repo or "/" not in repo or host not in ("github", "gitlab"):
+            skipped += 1
+            continue
+        p = DB_PLAT.get(str(g.get("console") or "").strip())
+        if not p:
+            skipped += 1              # PC games, DOS, computers and unknown consoles aren't console ports
+            continue
+        k = ("gitlab.com/" if host == "gitlab" else "") + repo.lower()
+        desc = str(g.get("description") or g.get("notes") or "")
+        if is_emulator(g.get("title"), k, desc):
+            skipped += 1
+            continue
+        title, proj = db_split_title(g.get("title"), repo, str(g.get("project") or ""))
+        if not title:
+            continue
+        if k in out:                  # a collection: one entry per game in the catalog, one project here
+            e = out[k]
+            if norm(title) != norm(e["g"]) and all(norm(title) != norm(x["title"]) for x in e["games"]):
+                e["games"].append({"title": title, "platform": p})
+            continue
+        facts = g.get("facts") or {}
+        out[k] = {"k": k, "id": "db:" + k, "g": title, "p": p, "pr": proj or repo.split("/")[-1],
+                  "t": db_type(" ".join([repo, proj])) if re.search(r"recomp|decomp|re-?implement|source[ -]port", repo + " " + proj, re.I) else db_type(desc), "d": desc[:400],
+                  "po": [DB_OS[x.lower()] for x in (g.get("platforms") or []) if isinstance(x, str) and x.lower() in DB_OS],
+                  "rel": "" if g.get("status") in ("none", "unknown", None) and not g.get("version") else str(g.get("latestVersion") or g.get("version") or ""),
+                  "pre": g.get("status") == "prerelease", "lc": str(g.get("updatedAt") or ""),
+                  "at": str(g.get("addedAt") or g.get("listedAt") or g.get("firstSeen") or ""), "ai": bool(facts.get("aiUse")) if facts.get("aiUse") not in (None, "none", "no") else False,
+                  "games": []}
+    log(f"  Decomp Buddy ({src}): {len(games)} listed, {len(out)} console projects kept, {skipped} left out (PC/computer games, emulators, other hosts)")
+    return list(out.values())
+
+def refresh_decompbuddy(projects, skip_keys):
+    """data/decompbuddy.json: what the page adds to the list (projects no other source already has)."""
+    path = os.path.join(DATA, "decompbuddy.json")
+    if projects is None:
+        log("  keeping the previous data/decompbuddy.json")
+        return [p for p in (load_json(path, {}) or {}).get("projects") or [] if p.get("k") not in skip_keys]
+    keep = [p for p in projects if p["k"] not in skip_keys]
+    keep.sort(key=lambda p: (norm(p["g"]), p["k"]))
+    for p in keep:
+        if not p["games"]:
+            del p["games"]
+    write_json_if_changed(path, {"generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+                                 "source": "https://decompbuddy.com/", "projects": keep})
+    log(f"  {len(keep)} not listed by Port Watch's other sources")
+    return keep
+
 # ---------------------------------------------------------------- first seen by Port Watch (for "New" badges)
-def refresh_history(keys):
+def refresh_history(keys, first=None):
     path = os.path.join(DATA, "history.json")
     first_run = not os.path.exists(path)
     data = load_json(path, {"format": "port-watch-history", "version": 1, "seen": {}})
@@ -1020,7 +1132,7 @@ def refresh_history(keys):
     added = 0
     for k in keys:
         if k not in seen:
-            seen[k] = "before" if first_run else NOW   # the first run records what was already there
+            seen[k] = "before" if first_run else (first or {}).get(k) or NOW   # the first run records what was already there
             added += 1
     log(f"  history: {added} newly seen" + (" (first run: all recorded as already there)" if first_run else ""))
     data["generated"] = NOW
@@ -1050,7 +1162,12 @@ def main():
     for p in added:                       # an added project's own cover link works like a pinned cover
         if p["cover"] and not (overrides.get(p["k"]) or {}).get("cover"):
             overrides = {**overrides, p["k"]: {**(overrides.get(p["k"]) or {}), "cover": p["cover"]}}
-    extra = extra + added
+    log("Decomp Buddy:")
+    taken_all = taken | {p["k"] for p in added} | {w.lower() for a in raw_added.values() if isinstance(a, dict) for w in (a.get("was") or [])}
+    dbuddy = refresh_decompbuddy(decompbuddy_projects(), taken_all)
+    for p in dbuddy:
+        p.setdefault("games", [])
+    extra = extra + added + dbuddy
     refresh_covers(with_games(seed + extra, overrides), overrides)
     log("itch.io devlogs:")
     refresh_itch(seed + added)
@@ -1064,7 +1181,9 @@ def main():
     tracked = [p for p in seed + extra if not ((overrides.get(p.get("k") or "") or overrides.get(p["id"]) or {}).get("hide"))]
     refresh_status(tracked)
     log("History:")
-    refresh_history(sorted({p.get("k") or p["id"] for p in tracked}))
+    # Decomp Buddy's projects count as new from the day it listed them, so its back catalogue doesn't all show as new
+    first = {p["k"]: (p.get("at") or "before") for p in dbuddy}
+    refresh_history(sorted({p.get("k") or p["id"] for p in tracked}), first)
 
 if __name__ == "__main__":
     main()

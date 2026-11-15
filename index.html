@@ -369,6 +369,8 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
   <label class="check"><input type="checkbox" id="notify"> Show desktop notifications for new releases and new projects</label>
   <label class="check"><input type="checkbox" id="autoShared"> Keep the list up to date automatically</label>
   <span class="note" style="display:block;margin:-6px 0 10px">Applies Port Watch's shared data when you open the page, every 30 minutes and when you come back to the tab. It uses no GitHub requests. <b>Check for updates</b> is only needed for projects you added yourself.</span>
+  <label class="check"><input type="checkbox" id="dbuddy"> Include projects from Decomp Buddy</label>
+  <span class="note" style="display:block;margin:-6px 0 10px">Adds the console ports listed on <a href="https://decompbuddy.com/games" target="_blank" rel="noopener">decompbuddy.com</a> (by Tanooki Studios) that Port Watch's other sources don't have yet. Its catalog only lists games whose downloads passed a virus scan.</span>
   <label class="check"><input type="checkbox" id="blurNsfw"> Blur suggestive cover art and screenshots</label>
   <span class="note" style="display:block;margin:-6px 0 10px">Covers games tagged "Erotic" on IGDB, a short list of series such as Dead or Alive Xtreme and Rumble Roses, and anything marked in a project's edits.</span>
   <label class="check"><input type="checkbox" id="itchRelay"> Read itch.io devlogs through a relay when itch.io blocks this page</label>
@@ -420,15 +422,16 @@ const LS = "portwatch.v2";
 // Shared data refreshed by the repository's GitHub Actions workflow (data/covers.json, data/itch.json).
 const DATA_REPO = "strawman97/port-watch";
 const DATA_BASE = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/data/";
-const REPO = {covers:{}, itch:{}, status:null, screens:null, lib:null, history:null, over:{}, added:[], coversAt:"", itchAt:"", statusAt:"", loaded:false};
+const REPO = {covers:{}, itch:{}, status:null, screens:null, lib:null, history:null, over:{}, added:[], db:[], dbAt:"", coversAt:"", itchAt:"", statusAt:"", loaded:false};
 const OVERRIDES_URL = "https://raw.githubusercontent.com/" + DATA_REPO + "/main/overrides.json";
 let repoLoading = null;
 function loadRepoData(force){
   if(repoLoading&&!force) return repoLoading;
   repoLoading = (async()=>{
     const get = async f=>{try{const r=await fetch(DATA_BASE+f,{cache:"no-store"});return r.ok?await r.json():null;}catch(e){return null;}};
-    const [c,i,st,sc,lb,hi] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json"),get("libretro.json"),get("history.json")]);
+    const [c,i,st,sc,lb,hi,db] = await Promise.all([get("covers.json"),get("itch.json"),get("status.json"),get("screens.json"),get("libretro.json"),get("history.json"),get("decompbuddy.json")]);
     if(hi&&hi.seen)REPO.history=hi;
+    if(db&&Array.isArray(db.projects)){REPO.db=dbProjects(db.projects);REPO.dbAt=db.generated||"";}
     if(lb&&lb.map)REPO.lib=lb;
     if(sc&&sc.games&&sc.map)REPO.screens=sc;
     try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
@@ -835,6 +838,19 @@ function sharedAddedProjects(added){
       sharedCover:e.cover||"",gameCovers:e.gameCovers&&typeof e.gameCovers==="object"?e.gameCovers:null,mirrors:Array.isArray(e.mirrors)?e.mirrors.filter(u=>/^https?:\/\//.test(u)):[],was:Array.isArray(e.was)?e.was.map(x=>String(x).toLowerCase()):[]});}
   return out;
 }
+// Projects from Decomp Buddy's public catalog (decompbuddy.com, by Tanooki Studios) that no other source lists.
+// Port Watch's refresh job picks the console ones and writes data/decompbuddy.json.
+const DBUDDY_HOME="https://decompbuddy.com/games";
+function dbProjects(list){
+  const out=[];
+  for(const e of list){if(!e||!e.k||typeof e.k!=="string")continue;const k=e.k.toLowerCase();
+    out.push({id:"db:"+k,k,g:String(e.g||k.split("/").pop()),tf:1,p:String(e.p||"Unknown"),t:TYPES.includes(e.t)?e.t:"Recompilation",ps:"Not checked",
+      d:String(e.d||""),n:"",po:Array.isArray(e.po)?e.po.filter(x=>OSLIST.includes(x)).join(", "):"",pr:String(e.pr||k.split("/").pop()),
+      l:(k.startsWith("gitlab.com/")?"https://":"https://github.com/")+k,src:"Decomp Buddy",db:true,rel:String(e.rel||""),rd:"",lc:String(e.lc||""),
+      seededNoRelease:!e.rel,games:Array.isArray(e.games)&&e.games.length?e.games:null,cv:""});}
+  return out;
+}
+function dbOn(){return S.settings.dbuddy!==false;}
 const SEED_KEYS=new Set(SEED.map(p=>p.k).filter(Boolean));
 function allProjects(){if(ACACHE)return ACACHE;return ACACHE=allProjectsRaw();}
 function allProjectsRaw(){
@@ -842,7 +858,8 @@ function allProjectsRaw(){
   const custom=Object.values(S.custom).filter(p=>!(p.k&&sharedKeys.has(p.k))),taken=new Set(custom.map(p=>p.k).filter(Boolean));
   const shared=REPO.added.filter(p=>!(p.k&&(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k))));
   const aw=Object.values(S.aw.added).filter(p=>!isEmulator(p.g,p.k,p.d));   // emulators added before they were excluded
-  return dropRenamed(SEED.concat(aw,custom,shared).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);}));
+  const db=dbOn()?REPO.db.filter(p=>!(SEED_KEYS.has(p.k)||S.aw.added[p.k]||taken.has(p.k)||sharedKeys.has(p.k)||isEmulator(p.g,p.k,p.d))):[];
+  return dropRenamed(SEED.concat(aw,custom,shared,db).filter(p=>{const f=sharedFix(p);return !(f&&f.hide);}));
 }
 // A renamed or moved repository keeps answering at its old address, so it can be listed twice.
 // Keep one entry per actual repository: the one at its current name, or else the first listed.
@@ -855,7 +872,7 @@ function dropRenamed(list){
   return drop.size?list.filter(p=>!drop.has(p.id)):list;
 }
 function adoptRenamed(){
-  const all=SEED.concat(Object.values(S.aw.added),Object.values(S.custom),REPO.added);let n=0;
+  const all=SEED.concat(Object.values(S.aw.added),Object.values(S.custom),REPO.added,dbOn()?REPO.db:[]);let n=0;
   for(const [c,ps] of renamedGroups(all)){if(ps.length<2)continue;const keep=ps.find(p=>p.k===c)||ps[0];
     for(const p of ps){if(p===keep)continue;
       if(S.follow&&S.follow[p.id]&&!S.follow[keep.id]){S.follow[keep.id]=S.follow[p.id];n++;}
@@ -934,7 +951,7 @@ function viewRaw(p){
   let play="unknown";
   if(ov.play)play=ov.play;
   else if(rel&&rel.tag)play="yes";
-  else if(m.noRelease||(aw&&!aw.rel)||(/Awesome/.test(p.src||"")&&!p.rel))play="no";
+  else if(m.noRelease||(aw&&!aw.rel)||((/Awesome/.test(p.src||"")||p.db)&&!p.rel))play="no";
   const risk=lureRiskOf(p.k,m,(m.repo&&m.repo.stars)!=null?m.repo.stars:(p.stars||0));
   return {p,m,aw,ps,psSrc,play,so,risk,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
 }
@@ -1683,7 +1700,7 @@ function detailHTML(v,head){
       <dt>Last commit</dt><dd>${v.lastCommit?esc(fmtDate(v.lastCommit)):"Unknown"}</dd>
       <dt>Repo</dt><dd>${p.l?`<a href="${esc(p.l)}" target="_blank" rel="noopener">${esc(p.l.replace(/^https?:\/\//,""))}</a>`:"None"}</dd>
       ${v.stars?`<dt>Stars</dt><dd>${v.stars.toLocaleString()}</dd>`:""}
-      <dt>Listed by</dt><dd>${esc(p.src||"you")}${S.aw.data[p.k]&&!/Awesome/.test(p.src||"")?" + Awesome Decomp Games":""}</dd></dl>
+      <dt>Listed by</dt><dd>${p.db?`<a href="${DBUDDY_HOME}" target="_blank" rel="noopener">Decomp Buddy</a>`:esc(p.src||"you")}${S.aw.data[p.k]&&!/Awesome/.test(p.src||"")?" + Awesome Decomp Games":""}</dd></dl>
       ${p.d?`<p class="note" style="margin-top:8px">${esc(p.d)}</p>`:""}
       ${p.k&&!HOSTED_UI?`<p style="margin-top:8px"><button class="btn" data-checkone="${esc(p.id)}" style="padding:3px 10px;font-size:12.5px">Check this project now</button></p>`:""}
       ${p.k&&p.k.startsWith("itch.io/")&&m.itchTriedAt?`<p class="note">Devlog last tried ${esc(ago(new Date(m.itchTriedAt).toISOString()))}: ${esc((m.itchTried||[]).join("; "))}${m.itchVia?". Read via "+esc(m.itchVia)+".":"."}</p>`:""}
@@ -2228,13 +2245,13 @@ $("#addSave").addEventListener("click",()=>{
 
 /* settings */
 const dlg=$("#settings");
-$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#autoShared").checked=S.settings.autoShared!==false;$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
+$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#dbuddy").checked=dbOn();$("#autoShared").checked=S.settings.autoShared!==false;$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
 $("#closeSettings").addEventListener("click",()=>dlg.close());
-$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;S.settings.autoShared=$("#autoShared").checked;S.settings.autoMode=$("#autoMode").value;
+$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;const dbWas=dbOn();S.settings.dbuddy=$("#dbuddy").checked;S.settings.autoShared=$("#autoShared").checked;S.settings.autoMode=$("#autoMode").value;
   const want=$("#notify").checked;
   if(want&&"Notification" in window&&Notification.permission!=="granted"){try{const p=await Notification.requestPermission();if(p!=="granted")toast("Desktop notifications are blocked for this page. In-page alerts still work.");}catch(e){}}
   S.settings.notify=want;
-  save();dlg.close();toast("Settings saved.");setStatus();});
+  save();dlg.close();toast("Settings saved.");setStatus();if(dbWas!==dbOn())renderAll();});
 $("#exportBtn").addEventListener("click",()=>{const data=Object.assign({},S,{settings:Object.assign({},S.settings,{token:"",sgdbKey:""})});const blob=new Blob([JSON.stringify(data)],{type:"application/json"});
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="port-watch-backup-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();toast("Backup exported (your API keys are left out).");});
 $("#exportFixes").addEventListener("click",async()=>{

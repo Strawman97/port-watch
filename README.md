@@ -108,7 +108,7 @@ These are warning signs, not proof. Never run downloads from a project you're un
 
 ## Emulators and renamed repositories
 
-Emulators, emulator front ends and small tools listed in Awesome Decomp Games (PPSSPP, Cemu, PCSX2, PSCoverDL and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
+Emulators, emulator front ends and small tools listed in Awesome Decomp Games or Decomp Buddy (PPSSPP, Cemu, PCSX2, PSCoverDL and similar) aren't ports, so Port Watch leaves them out. A renamed or moved repository keeps answering at its old address; Port Watch shows it once, under its current name, and moves any follow or edits from the old entry.
 
 ## Deleted and archived repositories
 
@@ -135,6 +135,7 @@ Port Watch has no server, accounts or analytics. Your data never leaves your bro
 Port Watch builds on the work of these projects and lists. Their data and images belong to their respective owners; check each source's terms and licence before reusing it.
 
 - [Awesome Decomp Games](https://github.com/SubmitGame/awesome-decomp-games): project list, release dates and activity
+- [Decomp Buddy](https://decompbuddy.com/) by Tanooki Studios: console ports from its public catalog that the other sources don't list yet (its catalog merges portsdr.com, Alexbeav's PS1 recomp list, community lists and projects its maintainer finds and checks by hand). Switch off in Settings with **Include projects from Decomp Buddy**.
 - [unbaked.games](https://unbaked.games): the registry behind **Find a game**
 - [libretro-thumbnails](https://github.com/libretro-thumbnails): box art
 - [SteamGridDB](https://www.steamgriddb.com): cover art, made by its community
@@ -157,6 +158,7 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
+| `data/decompbuddy.json` | Written by the workflow: the console projects in Decomp Buddy's catalog that the built-in list, Awesome Decomp Games and `overrides.json` don't already have. PC, DOS and computer games are left out. If decompbuddy.com can't be reached, the hand-found list in its GitHub repository is used; if neither can, the previous copy is kept. |
 | `data/recompfyi.json` | Written by the workflow once a day: a copy of recomp.fyi's table for the Find a game tab |
 | `data/history.json` | Written by the workflow: when each project first appeared in Port Watch (projects present at the first run are marked "before") |
 | `data/libretro.json` | Written by the workflow: each retro game's libretro-thumbnails box art, in-game shot and title screen |
