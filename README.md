@@ -158,6 +158,17 @@ All game titles, trademarks and box art belong to their respective owners. Port 
 
 ## Maintaining the site
 
+### Maintainer mode
+
+Shared fixes and projects can be published from the site itself instead of uploading `overrides.json`:
+
+1. On GitHub, open **Settings › Developer settings › Personal access tokens › Fine-grained tokens** and generate a token. Under **Repository access** choose **Only select repositories** and pick `port-watch`. Under **Permissions › Repository permissions** set **Contents** to **Read and write**, leave everything else at **No access**, and give it an expiry date.
+2. On the site, open **Settings**, paste it into **Maintainer token** and save. Port Watch checks the token with GitHub before turning the mode on.
+3. Edit projects and add projects as usual, then press **Publish for everyone** at the top. It reads the current `overrides.json` from GitHub, merges your edits and added projects into it and commits it to `main`, which also starts the refresh workflow. If the file changed on GitHub in the meantime, it reads it again and redoes the merge rather than overwriting the newer version.
+4. Each project has a **Remove for everyone** button, which commits `"hide": true` with your reason. **Settings › Maintainer mode › Removed for everyone** lists the hidden projects with a **Show again** button.
+
+The token is stored in that browser only, under its own key, so it's never part of an exported backup, and it is sent only to api.github.com. Clear the field and save to turn the mode off. **Export fixes for everyone** is still there when maintainer mode is off.
+
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |

@@ -282,6 +282,7 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <div class="status" id="status" aria-live="polite"></div>
     <button class="btn filters-toggle" id="filtersBtn" aria-expanded="false">Filters</button>
     <button class="btn" id="addBtn">Add project</button>
+    <button class="btn primary" id="publishBtn" hidden title="Maintainer mode: commit your edits and added projects to the shared list">Publish for everyone</button>
     <button class="btn" id="settingsBtn">Settings</button>
     <button class="btn" id="checkFollowBtn" title="Check only the projects you follow">Check followed</button>
     <button class="btn primary" id="checkBtn">Check for updates</button>
@@ -353,6 +354,15 @@ dialog .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
     <input type="password" id="token" autocomplete="off" placeholder="github_pat_…">
     <span class="note">Usually not needed: <b>Check for updates</b> and <b>Check followed</b> use Port Watch's shared data, refreshed every few hours on GitHub. A token only matters for projects you added yourself, for <b>Check this project now</b>, and when the shared data is unavailable. Without one, GitHub allows 60 requests an hour; a fine-grained token with public-repository read access raises this to 5,000. It is sent only to api.github.com.</span>
   </label>
+  <div style="margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:var(--r)">
+    <b>Maintainer mode</b>
+    <p class="note" style="margin:6px 0">For the site's maintainer. With a GitHub token that can write to the <code>port-watch</code> repository, <b>Publish for everyone</b> saves your edits and added projects straight to the shared list, and each project gets a <b>Remove for everyone</b> button. Visitors see the change after the next refresh, usually within a few minutes.</p>
+    <label>Maintainer token
+      <input type="password" id="adminToken" autocomplete="off" placeholder="github_pat_…">
+      <span class="note">Kept in this browser only, apart from your backup, and sent only to api.github.com. Use a fine-grained token limited to the port-watch repository, with only the <b>Contents: Read and write</b> permission and an expiry date.</span>
+    </label>
+    <div id="adminHidden"></div>
+  </div>
   <div style="margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:var(--r)">
     <b>Fill covers from SteamGridDB in bulk</b>
     <p class="note" style="margin:6px 0">SteamGridDB doesn't accept requests from a local page, so its covers come in through this route or by pasting a cover link on a project. Export the games that have no cover, or only a Wikipedia one. Run the <code>sgdb_covers.py</code> helper on the exported file with your SteamGridDB key, then import the file it writes. Imported covers replace Wikipedia ones but not libretro box art or covers you set yourself.</p>
@@ -434,7 +444,8 @@ function loadRepoData(force){
     if(db&&Array.isArray(db.projects)){REPO.db=dbProjects(db.projects);REPO.dbAt=db.generated||"";}
     if(lb&&lb.map)REPO.lib=lb;
     if(sc&&sc.games&&sc.map)REPO.screens=sc;
-    try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
+    // just after a maintainer publish, GitHub's file cache can still serve the old overrides.json for a few minutes
+    try{const r=REPO.pinUntil>Date.now()?null:await fetch(OVERRIDES_URL,{cache:"no-store"});if(r&&r.ok){const o=await r.json();if(o&&o.projects&&typeof o.projects==="object"){REPO.over=o.projects;for(const id in seedAnalysis)delete seedAnalysis[id];}
       if(o&&o.added&&typeof o.added==="object"){REPO.added=sharedAddedProjects(o.added);REPO.addedRaw=o.added;}}}catch(e){}
     if(st&&st.repos){REPO.status=st.repos;REPO.statusAt=st.generated||"";}
     if(c&&c.covers){REPO.covers=c.covers;REPO.coversAt=c.generated||"";}
@@ -1722,6 +1733,7 @@ function detailHTML(v,head){
       <dt>Listed by</dt><dd>${p.db?`<a href="${DBUDDY_HOME}" target="_blank" rel="noopener">Decomp Buddy</a>`:esc(p.src||"you")}${S.aw.data[p.k]&&!/Awesome/.test(p.src||"")?" + Awesome Decomp Games":""}</dd></dl>
       ${p.d?`<p class="note" style="margin-top:8px">${esc(p.d)}</p>`:""}
       ${p.k&&!HOSTED_UI?`<p style="margin-top:8px"><button class="btn" data-checkone="${esc(p.id)}" style="padding:3px 10px;font-size:12.5px">Check this project now</button></p>`:""}
+      ${isAdmin()&&!v.ghost&&(!p.custom||(REPO.addedRaw||{})[p.k||""])?`<p style="margin-top:8px"><button class="btn" data-hideall="${esc(p.id)}" style="padding:3px 10px;font-size:12.5px">Remove for everyone</button></p>`:""}
       ${p.k&&p.k.startsWith("itch.io/")&&m.itchTriedAt?`<p class="note">Devlog last tried ${esc(ago(new Date(m.itchTriedAt).toISOString()))}: ${esc((m.itchTried||[]).join("; "))}${m.itchVia?". Read via "+esc(m.itchVia)+".":"."}</p>`:""}
       ${p.k&&p.k.startsWith("itch.io/")?`<p class="note" style="margin-top:8px">${m.itchBlocked?`itch.io didn't let this page read the devlog on the last check${S.settings.itchRelay?", and the relay didn't answer either":""}. ${S.settings.itchRelay?"":"Turn on the itch.io relay in Settings, or "}<a href="${esc(p.l)}/devlog" target="_blank" rel="noopener">open the devlog</a>${S.settings.itchRelay?" to check by hand":""}.`:m.itchLatest?`Latest devlog post: <a href="${esc(m.itchUrl||p.l)}" target="_blank" rel="noopener">${esc(m.itchLatest)}</a>`:"Devlog not read yet. Run Check for updates."}</p>`:""}
     </section>
@@ -2266,26 +2278,92 @@ $("#addSave").addEventListener("click",()=>{
   save();addDlg.close();toast(pre?"Added and checked.":k?"Added. It's checked on the next update check.":"Added. This kind of link can't be checked automatically, so open it to look for updates.");gotoProject(id);
   if(k&&!pre&&!k.startsWith("gitlab.com/")&&!k.startsWith("itch.io/")&&!k.startsWith("sourceforge.net/"))checkOne(id);});
 
+/* maintainer mode: edits go straight into overrides.json on GitHub */
+const ADMIN_KEY="portwatch.admin";   // kept apart from S so backups never carry it
+function adminToken(){try{return localStorage.getItem(ADMIN_KEY)||"";}catch(e){return "";}}
+function isAdmin(){return !!adminToken();}
+const b64enc=s=>{const b=new TextEncoder().encode(s);let x="";for(let i=0;i<b.length;i+=0x8000)x+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(x);};
+const b64dec=s=>new TextDecoder().decode(Uint8Array.from(atob(String(s).replace(/\s/g,"")),c=>c.charCodeAt(0)));
+function ghRepo(path,opt={},tok=adminToken()){return fetch("https://api.github.com/repos/"+DATA_REPO+path,Object.assign({cache:"no-store"},opt,{headers:Object.assign({"Accept":"application/vnd.github+json","Authorization":"Bearer "+tok,"X-GitHub-Api-Version":"2022-11-28"},opt.headers||{})}));}
+async function setAdmin(tok){
+  if(!tok){try{localStorage.removeItem(ADMIN_KEY);}catch(e){}adminUI();return true;}
+  try{const r=await ghRepo("",{},tok);if(!r.ok)throw new Error(r.status===401?"GitHub didn't accept that token":"GitHub answered "+r.status);
+    const j=await r.json();if(j.permissions&&!j.permissions.push)throw new Error("that token can't write to "+DATA_REPO);
+    localStorage.setItem(ADMIN_KEY,tok);adminUI();toast("Maintainer mode is on in this browser.");return true;}
+  catch(e){toast("Maintainer mode not turned on: "+e.message+".");return false;}
+}
+function adminUI(){$("#publishBtn").hidden=!isAdmin();$("#exportFixes").hidden=isAdmin();}
+async function readShared(){
+  const r=await ghRepo("/contents/overrides.json?ref=main");
+  if(!r.ok)throw new Error(r.status===401?"GitHub didn't accept the maintainer token":"GitHub answered "+r.status);
+  const j=await r.json();let text=j.content&&j.encoding==="base64"?b64dec(j.content):"";
+  if(!text){const r2=await ghRepo("/contents/overrides.json?ref=main",{headers:{"Accept":"application/vnd.github.raw+json"}});if(!r2.ok)throw new Error("GitHub answered "+r2.status);text=await r2.text();}
+  return {doc:JSON.parse(text),sha:j.sha};
+}
+// change(doc) returns the new document, or null for no change; it is run again if someone else committed in between
+async function publishShared(change,message){
+  for(let attempt=0;attempt<3;attempt++){
+    const {doc,sha}=await readShared();const before=JSON.stringify(doc);
+    const next=change(JSON.parse(before));if(!next)return false;
+    next.updated=new Date().toISOString().slice(0,10);
+    if(JSON.stringify(Object.assign({},next,{updated:doc.updated}))===before)return false;
+    const r=await ghRepo("/contents/overrides.json",{method:"PUT",body:JSON.stringify({message,content:b64enc(JSON.stringify(next,null,2)+"\n"),sha,branch:"main"})});
+    if(r.ok){REPO.pinUntil=Date.now()+10*60*1000;REPO.over=next.projects||{};REPO.added=sharedAddedProjects(next.added||{});REPO.addedRaw=next.added||{};for(const id in seedAnalysis)delete seedAnalysis[id];dataChanged();renderAll();return true;}
+    if(r.status===409||r.status===422)continue;
+    throw new Error(r.status===401||r.status===403||r.status===404?"GitHub refused the change; check the token can write to "+DATA_REPO:"GitHub answered "+r.status);
+  }
+  throw new Error("overrides.json kept changing on GitHub; try again");
+}
+$("#publishBtn").addEventListener("click",async e=>{const b=e.currentTarget;b.disabled=true;const was=b.textContent;b.textContent="Publishing…";
+  let info=null;
+  try{const done=await publishShared(doc=>{info=buildSharedDoc(doc);return info.doc;},"Shared fixes and added projects from Port Watch");
+    if(!done)toast("Nothing new to publish: your edits and added projects already match the shared list.");
+    else{const parts=[info.added?info.added+" fix"+(info.added>1?"es":""):"",info.newProjects?info.newProjects+" added project"+(info.newProjects>1?"s":""):""].filter(Boolean);
+      toast("Published"+(parts.length?" "+parts.join(" and "):"")+". Everyone sees it after the next refresh, usually within a few minutes."+(info.skipped?" Left out "+info.skipped+" suspected lure, hidden or deleted project"+(info.skipped>1?"s":"")+".":""));}}
+  catch(err){toast("Not published: "+err.message+".");}
+  b.disabled=false;b.textContent=was;});
+async function hideForEveryone(id){
+  const p=allProjects().find(x=>x.id===id);if(!p)return;const v=view(p),key=p.k||("link:"+p.l);
+  const why=prompt("Remove \""+v.game+"\" for everyone? Add a short reason (it's kept in overrides.json):","");if(why===null)return;
+  try{await publishShared(doc=>{doc.projects=doc.projects||{};const f=doc.projects[key]||{};doc.projects[key]=Object.assign({_game:v.game},f,{hide:true},why.trim()?{hideNote:why.trim()}:{});
+      doc.projects=Object.fromEntries(Object.entries(doc.projects).sort(([a],[b])=>a.localeCompare(b)));return doc;},"Remove "+v.game+" for everyone");
+    if($("#projDlg").open)$("#projDlg").close();toast(v.game+" is removed for everyone. Settings › Maintainer mode lists it if you want it back.");}
+  catch(err){toast("Not removed: "+err.message+".");}
+}
+function renderAdminHidden(){const box=$("#adminHidden");if(!box)return;
+  if(!isAdmin()){box.innerHTML="";return;}
+  const hid=Object.entries(REPO.over||{}).filter(([,f])=>f&&f.hide).sort((a,b)=>String(a[1]._game||a[1].title||a[0]).localeCompare(String(b[1]._game||b[1].title||b[0])));
+  box.innerHTML=`<details style="margin-top:8px"><summary>Removed for everyone (${hid.length})</summary><ul style="margin:6px 0 0;padding-left:18px">${hid.map(([k,f])=>`<li>${esc(f._game||f.title||k)} <small class="hint">${esc(k)}${f.hideNote||f.note?" · "+esc(f.hideNote||f.note):""}</small> <button class="btn" data-unhide="${esc(k)}" style="padding:1px 8px;font-size:12px">Show again</button></li>`).join("")||"<li>None</li>"}</ul></details>`;}
+document.addEventListener("click",async e=>{
+  const h=e.target.closest("[data-hideall]");if(h){hideForEveryone(h.dataset.hideall);return;}
+  const u=e.target.closest("[data-unhide]");if(u){const k=u.dataset.unhide;u.disabled=true;
+    try{await publishShared(doc=>{const f=doc.projects&&doc.projects[k];if(!f||!f.hide)return null;delete f.hide;delete f.hideNote;if(Object.keys(f).every(x=>x==="_game"||x==="note"))delete doc.projects[k];return doc;},"Show "+k+" again");toast("It's back for everyone after the next refresh.");}
+    catch(err){toast("Not changed: "+err.message+".");}
+    renderAdminHidden();}
+});
+adminUI();
+
 /* settings */
 const dlg=$("#settings");
-$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#dbuddy").checked=dbOn();$("#autoShared").checked=S.settings.autoShared!==false;$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
+$("#settingsBtn").addEventListener("click",()=>{$("#token").value=S.settings.token;$("#adminToken").value=adminToken();renderAdminHidden();$("#itchRelay").checked=!!S.settings.itchRelay;$("#blurNsfw").checked=blurOn();$("#dbuddy").checked=dbOn();$("#autoShared").checked=S.settings.autoShared!==false;$("#autoMode").value=S.settings.autoMode||"off";$("#notify").checked=S.settings.notify;dlg.showModal();});
 $("#closeSettings").addEventListener("click",()=>dlg.close());
-$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;const dbWas=dbOn();S.settings.dbuddy=$("#dbuddy").checked;S.settings.autoShared=$("#autoShared").checked;S.settings.autoMode=$("#autoMode").value;
+$("#saveSettings").addEventListener("click",async()=>{S.settings.token=$("#token").value.trim();
+  const at=$("#adminToken").value.trim();if(at!==adminToken()&&!(await setAdmin(at)))return;S.settings.itchRelay=$("#itchRelay").checked;S.settings.blurNsfw=$("#blurNsfw").checked;const dbWas=dbOn();S.settings.dbuddy=$("#dbuddy").checked;S.settings.autoShared=$("#autoShared").checked;S.settings.autoMode=$("#autoMode").value;
   const want=$("#notify").checked;
   if(want&&"Notification" in window&&Notification.permission!=="granted"){try{const p=await Notification.requestPermission();if(p!=="granted")toast("Desktop notifications are blocked for this page. In-page alerts still work.");}catch(e){}}
   S.settings.notify=want;
   save();dlg.close();toast("Settings saved.");setStatus();if(dbWas!==dbOn())renderAll();});
 $("#exportBtn").addEventListener("click",()=>{const data=Object.assign({},S,{settings:Object.assign({},S.settings,{token:"",sgdbKey:""})});const blob=new Blob([JSON.stringify(data)],{type:"application/json"});
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="port-watch-backup-"+new Date().toISOString().slice(0,10)+".json";document.body.appendChild(a);a.click();a.remove();toast("Backup exported (your API keys are left out).");});
-$("#exportFixes").addEventListener("click",async()=>{
-  await loadRepoData();const out=JSON.parse(JSON.stringify(REPO.over||{}));let added=0;
+// The shared overrides.json with this browser's edits and added projects merged in. base = {projects, added}.
+function buildSharedDoc(base){
+  const out=JSON.parse(JSON.stringify(base.projects||{}));let added=0;
   const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
     if(o.game)f.title=o.game;if(o.hack)f.hack=o.hack;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.gameCovers)f.gameCovers=Object.assign({},f.gameCovers||{},o.gameCovers);if(o.nsfw==="yes")f.nsfw=true;else if(o.nsfw==="no")f.nsfw=false;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
-  const addedOut={};
-  try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)Object.assign(addedOut,o.added);}}catch(e){}
+  const addedOut=JSON.parse(JSON.stringify(base.added||{}));
   let newProjects=0;
   let skipped=0;
   for(const key of Object.keys(addedOut)){const f=out[key]||{};const pv=allProjects().find(x=>x.k===key);const vv=pv&&view(pv);if(f.hide||(vv&&vv.risk&&vv.risk.level==="high")){delete addedOut[key];skipped++;}}
@@ -2301,6 +2379,12 @@ $("#exportFixes").addEventListener("click",async()=>{
   for(const [key,f] of Object.entries(out)){const p=byKey.get(key);if(p&&!f.title){const {_game,...rest}=f;out[key]={_game:view(p).game,...rest};}}
   const doc={format:"port-watch-overrides",version:1,updated:new Date().toISOString().slice(0,10),projects:Object.fromEntries(Object.entries(out).sort(([a],[b])=>a.localeCompare(b))),
     added:Object.fromEntries(Object.entries(addedOut).sort(([a],[b])=>a.localeCompare(b)))};
+  return {doc,added,newProjects,skipped};
+}
+$("#exportFixes").addEventListener("click",async()=>{
+  await loadRepoData();let base={projects:REPO.over||{},added:{}};
+  try{const r=await fetch(OVERRIDES_URL,{cache:"no-store"});if(r.ok){const o=await r.json();if(o&&o.added)base.added=o.added;}}catch(e){}
+  const {doc,added,newProjects,skipped}=buildSharedDoc(base);
   const blob=new Blob([JSON.stringify(doc,null,2)+"\n"],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="overrides.json";document.body.appendChild(a);a.click();a.remove();
   const parts=[added?added+" fix"+(added>1?"es":""):"",newProjects?newProjects+" added project"+(newProjects>1?"s":""):""].filter(Boolean);
   toast((parts.length?parts.join(" and ")+" included. Upload the file to the repository as overrides.json to share them with everyone.":"Nothing new: your fixes and added projects already match the shared ones.")+(skipped?" Left out "+skipped+" suspected lure"+(skipped>1?"s":"")+", hidden or deleted project"+(skipped>1?"s":"")+".":""));});
