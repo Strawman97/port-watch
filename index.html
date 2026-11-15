@@ -783,7 +783,8 @@ const PLAY_LABEL={yes:"Playable",no:"No public release",unknown:"Not checked yet
 function playPill(v){return `<span class="pill pl-${v.play==="yes"?"yes":v.play==="no"?"no":"unk"}" title="${v.play==="yes"?"A public release is available to download":v.play==="no"?"No public release found, so it can't be played yet":"Run a check to find out whether a release exists"}">${PLAY_LABEL[v.play]}</span>`;}
 
 /* ---------------- titles ---------------- */
-function stripParens(t){let x=String(t||"").trim(),prev;do{prev=x;x=x.replace(/\s*\((?!\d{4}\))[^()]*\)\s*$/,"").trim();}while(x!==prev&&x);return x||String(t||"");}
+// titles keep a bracketed year that tells releases apart and nothing else in brackets, nested brackets included
+function stripParens(t){return dbCleanTitle(t);}
 const PROJ_SUFFIX=/[\s-]+(re-?compiled|recomp|recompilation|static recomp|pc port|native port|port|pc|decomp|decompilation|native|hd remaster|android|enhanced)$/i;
 function stripSuffix(t){let x=t,prev;do{prev=x;x=x.replace(PROJ_SUFFIX,"").trim();}while(x!==prev&&x);return x||t;}
 const SYS_WORDS="(?:xbox 360|original xbox|xbox|ps[1-5]|playstation(?: [1-5])?|psp|n64|nintendo 64|gamecube|wii u|wii|snes|super nintendo|nes|gba|game boy(?: advance| color)?|dreamcast|genesis|mega drive|saturn|nds|ds|3ds|arcade)";
@@ -1556,7 +1557,8 @@ function filtered(){
 // Projects group by game title across platforms. A year in brackets marks a separate game ("Sonic the Hedgehog (2006)");
 // a project without a year joins a year-marked group only if it shares that group's platform.
 let YIDX=null;
-function titleBase(t){return nrmT(bare(t)).replace(/ 1$/,"");}
+// "Pokémon Red Version" and "Pokémon Red", or "Midnight Club: Los Angeles - Complete Edition" and the plain title, are one game
+function titleBase(t){return nrmT(bare(t)).replace(/ (?:version|complete edition)$/,"").replace(/ 1$/,"");}
 function titleYear(t){const m=/\((?:[^)]*\D)?((?:19|20)\d\d)\)/.exec(String(t||""));return m?m[1]:"";}
 function samePlat(p){return p==="XBLA (Xbox 360)"?"Xbox 360":p;}
 function yearIndex(){
