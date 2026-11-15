@@ -841,13 +841,25 @@ function sharedAddedProjects(added){
 // Projects from Decomp Buddy's public catalog (decompbuddy.com, by Tanooki Studios) that no other source lists.
 // Port Watch's refresh job picks the console ones and writes data/decompbuddy.json.
 const DBUDDY_HOME="https://decompbuddy.com/games";
+// Game titles keep a bracketed year that tells releases apart and nothing else in brackets:
+// "Sonic the Hedgehog (2006) (Soleanna)" -> "Sonic the Hedgehog (2006)". Same rule as db_clean_title in the refresh job.
+const DB_TITLE_FIX={"super mario bros. 2 (japan)":"Super Mario Bros.: The Lost Levels"};
+function dbCleanTitle(title){
+  let t=String(title||"");const fix=DB_TITLE_FIX[t.trim().toLowerCase()];if(fix)return fix;
+  const inner=/\s*\(([^()]*)\)/g;
+  while(/\([^()]*\)/.test(t))t=t.replace(inner,(_,x)=>{const y=x.match(/\b(19[5-9]\d|20[0-4]\d)\b/);return y?" \u0000"+y[1]+"\u0001":"";});
+  t=t.replace(/[()]/g,"");
+  const years=[...new Set([...t.matchAll(/\u0000(\d{4})\u0001/g)].map(m=>m[1]))];
+  t=t.replace(/\s*\u0000\d{4}\u0001/g,"").replace(/\s+/g," ").replace(/^[\s\-:\u2013\u2014]+|[\s\-:\u2013\u2014]+$/g,"");
+  return t?(years.length?t+" ("+years[0]+")":t):String(title||"").trim();
+}
 function dbProjects(list){
   const out=[];
   for(const e of list){if(!e||!e.k||typeof e.k!=="string")continue;const k=e.k.toLowerCase();
-    out.push({id:"db:"+k,k,g:String(e.g||k.split("/").pop()),tf:1,p:String(e.p||"Unknown"),t:TYPES.includes(e.t)?e.t:"Recompilation",ps:"Not checked",
+    out.push({id:"db:"+k,k,g:dbCleanTitle(e.g||k.split("/").pop()),tf:1,p:String(e.p||"Unknown"),t:TYPES.includes(e.t)?e.t:"Recompilation",ps:"Not checked",
       d:String(e.d||""),n:"",po:Array.isArray(e.po)?e.po.filter(x=>OSLIST.includes(x)).join(", "):"",pr:String(e.pr||k.split("/").pop()),
       l:(k.startsWith("gitlab.com/")?"https://":"https://github.com/")+k,src:"Decomp Buddy",db:true,rel:String(e.rel||""),rd:"",lc:String(e.lc||""),
-      seededNoRelease:!e.rel,games:Array.isArray(e.games)&&e.games.length?e.games:null,cv:""});}
+      seededNoRelease:!e.rel,games:Array.isArray(e.games)&&e.games.length?e.games.map(x=>Object.assign({},x,{title:dbCleanTitle(x.title)})):null,cv:""});}
   return out;
 }
 function dbOn(){return S.settings.dbuddy!==false;}

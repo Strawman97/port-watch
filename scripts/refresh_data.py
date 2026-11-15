@@ -1043,6 +1043,30 @@ def db_split_title(title, repo, project=""):
         return m.group(1).strip(), inner
     return t, ""
 
+DB_TITLE_FIX = {"super mario bros. 2 (japan)": "Super Mario Bros.: The Lost Levels"}   # where the bracket is the only thing telling two games apart
+
+def db_clean_title(title):
+    """Drop every bracketed part of a game title except a year that tells releases apart:
+    'Sonic the Hedgehog (2006) (Soleanna)' -> 'Sonic the Hedgehog (2006)', 'Star Wars (Atari, 1983)' -> 'Star Wars (1983)',
+    'Halo: Combat Evolved (ChupathingyCE (OpenCE build))' -> 'Halo: Combat Evolved'."""
+    t = str(title or "")
+    if t.strip().lower() in DB_TITLE_FIX:
+        return DB_TITLE_FIX[t.strip().lower()]
+    inner = re.compile(r"\s*\(([^()]*)\)")
+    def one(m):
+        y = re.search(r"\b(19[5-9]\d|20[0-4]\d)\b", m.group(1))
+        return f" \x00{y.group(1)}\x01" if y else ""
+    while inner.search(t):
+        t = inner.sub(one, t)
+    t = t.replace("(", "").replace(")", "")            # stray unmatched brackets
+    years = []
+    for y in re.findall(r"\x00(\d{4})\x01", t):
+        if y not in years:
+            years.append(y)
+    t = re.sub(r"\s*\x00\d{4}\x01", "", t)
+    t = re.sub(r"\s+", " ", t).strip(" -:\u2013\u2014")
+    return (t + "".join(f" ({y})" for y in years[:1])).strip() if t else str(title or "").strip()
+
 def db_type(text):
     t = text.lower()
     if re.search(r"recomp", t):
@@ -1089,6 +1113,7 @@ def decompbuddy_projects():
             skipped += 1
             continue
         title, proj = db_split_title(g.get("title"), repo, str(g.get("project") or ""))
+        title = db_clean_title(title)
         if not title:
             continue
         if k in out:                  # a collection: one entry per game in the catalog, one project here
