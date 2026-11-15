@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-11-15T08:13:02Z",
+ "generated": "2026-11-15T09:02:50Z",
  "repos": {
   "0bandywirus/dq9-decomp": {
    "assetOs": {
@@ -799,7 +799,7 @@
     "firstRelease": "2026-11-14T19:05:39Z",
     "full": "7v0biscuit/OpenKai2",
     "lang": "C++",
-    "pushed": "2026-11-15T07:25:04Z",
+    "pushed": "2026-11-15T08:37:33Z",
     "size": 40851,
     "stars": 1
    },
@@ -1246,7 +1246,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T04:18:26Z",
     "size": 11021,
-    "stars": 306
+    "stars": 307
    },
    "shots": []
   },
@@ -1849,7 +1849,7 @@
     "lang": "C",
     "pushed": "2026-11-14T00:53:09Z",
     "size": 4736,
-    "stars": 10
+    "stars": 11
    },
    "shots": []
   },
@@ -2023,7 +2023,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T16:05:44Z",
     "size": 37479,
-    "stars": 248
+    "stars": 250
    },
    "shots": [
     "https://raw.githubusercontent.com/adrbn/bo2-mac/HEAD/docs/assets/preview.gif"
@@ -2070,9 +2070,9 @@
     "firstRelease": "2026-11-09T18:20:44Z",
     "full": "adriadam10/mkw-recomp",
     "lang": "C",
-    "pushed": "2026-11-15T08:07:42Z",
+    "pushed": "2026-11-15T08:46:00Z",
     "size": 5665,
-    "stars": 1007
+    "stars": 1021
    },
    "shots": [
     "https://raw.githubusercontent.com/adriadam10/mkw-recomp/HEAD/docs/images/launcher-main.png",
@@ -2142,8 +2142,8 @@
     "firstRelease": "2026-10-30T12:19:27Z",
     "full": "afsenovilla/Tombi-Decomp",
     "lang": "C",
-    "pushed": "2026-11-15T08:07:29Z",
-    "size": 2430623,
+    "pushed": "2026-11-15T08:59:48Z",
+    "size": 2431372,
     "stars": 5
    },
    "shots": []
@@ -3232,7 +3232,7 @@
     "lang": "C++",
     "pushed": "2026-11-12T17:16:38Z",
     "size": 6517,
-    "stars": 1935
+    "stars": 1936
    },
    "shots": [
     "https://raw.githubusercontent.com/AjncSystem/ShadowOfTheColossus-PC/HEAD/docs/images/sotc-menu-f1-en.png"
@@ -3525,7 +3525,7 @@
     "full": "AksharDP/xc2-recomp",
     "lang": "C",
     "pushed": "2026-11-15T08:02:09Z",
-    "size": 3363,
+    "size": 3485,
     "stars": 354
    },
    "shots": []
@@ -3564,7 +3564,7 @@
     "lang": "C",
     "pushed": "2026-11-14T06:01:11Z",
     "size": 5690,
-    "stars": 78
+    "stars": 80
    },
    "shots": []
   },
@@ -8245,7 +8245,7 @@
     "lang": "C",
     "pushed": "2026-11-05T22:45:19Z",
     "size": 4639,
-    "stars": 251
+    "stars": 252
    },
    "shots": []
   },
@@ -8388,7 +8388,7 @@
     "firstRelease": "2026-10-14T11:31:55Z",
     "full": "n64hub/rush-2049-recomp",
     "lang": "C++",
-    "pushed": "2026-11-14T19:45:54Z",
+    "pushed": "2026-11-15T08:51:58Z",
     "size": 5039,
     "stars": 19
    },
@@ -9039,7 +9039,7 @@
     "lang": "C",
     "pushed": "2026-11-04T11:31:40Z",
     "size": 9996,
-    "stars": 87
+    "stars": 88
    },
    "shots": [
     "https://raw.githubusercontent.com/ankushKun/sh23ds/HEAD/site/assets/shots/town-top.jpg",
@@ -9753,7 +9753,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T03:08:14Z",
     "size": 720,
-    "stars": 32
+    "stars": 33
    },
    "shots": []
   },
@@ -10049,7 +10049,7 @@
     "full": "arichmondphoto/DragonWarrior4NESRecomp",
     "lang": "Python",
     "pushed": "2026-11-15T07:57:10Z",
-    "size": 383628,
+    "size": 383630,
     "stars": 7
    },
    "shots": [
@@ -11124,7 +11124,7 @@
     "lang": "C++",
     "pushed": "2026-11-11T04:38:21Z",
     "size": 18938,
-    "stars": 1748
+    "stars": 1751
    },
    "shots": []
   },
@@ -11165,7 +11165,7 @@
     "lang": "C++",
     "pushed": "2026-11-11T04:38:21Z",
     "size": 18938,
-    "stars": 1748
+    "stars": 1751
    },
    "shots": []
   },
@@ -11330,7 +11330,7 @@
     "lang": "C",
     "pushed": "2026-11-13T23:13:07Z",
     "size": 3202,
-    "stars": 26
+    "stars": 27
    },
    "shots": []
   },
@@ -11692,6 +11692,17 @@
    "assetOs": {
     "Windows": true
    },
+   "manifest": {
+    "approach": "Static recompilation of the game code, built from the player's own copy at first start; native Vulkan/Direct3D 12 renderer",
+    "game": "Far Cry Instincts: Predator",
+    "notes": "Both campaigns (Instincts and Evolution) are playable start to finish. 30 to 120 frames/s with frame-rate corrections, free render resolution, Vert+/Hor+, settings menu, save protection, Steam Deck defaults. No game code or data is shipped.",
+    "system": "Xbox 360",
+    "targets": [
+     "Windows",
+     "Steam Deck"
+    ],
+    "type": "Recompilation"
+   },
    "readme": {
     "features": {
      "aa": "yes",
@@ -11707,10 +11718,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-14T21:31:25Z",
+    "date": "2026-11-15T08:36:23Z",
     "pre": false,
-    "tag": "v0.1.2",
-    "url": "https://github.com/bassobr/Far-Cry-Instincts-Predator-Recomp/releases/tag/v0.1.2"
+    "tag": "v0.2.0",
+    "url": "https://github.com/bassobr/Far-Cry-Instincts-Predator-Recomp/releases/tag/v0.2.0"
    },
    "repo": {
     "archived": false,
@@ -11719,7 +11730,7 @@
     "firstRelease": "2026-11-13T18:53:45Z",
     "full": "bassobr/Far-Cry-Instincts-Predator-Recomp",
     "lang": "C++",
-    "pushed": "2026-11-14T21:18:29Z",
+    "pushed": "2026-11-15T08:43:06Z",
     "size": 6218,
     "stars": 11
    },
@@ -13746,7 +13757,7 @@
     "lang": "C++",
     "pushed": "2026-11-11T20:39:28Z",
     "size": 307,
-    "stars": 216
+    "stars": 218
    },
    "shots": []
   },
@@ -14570,7 +14581,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T17:55:47Z",
     "size": 91039,
-    "stars": 49
+    "stars": 50
    },
    "shots": []
   },
@@ -15278,10 +15289,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-14T08:24:28Z",
+    "date": "2026-11-15T08:54:59Z",
     "pre": false,
-    "tag": "v1.0.55",
-    "url": "https://github.com/bryantmh/rush2recompiled/releases/tag/v1.0.55"
+    "tag": "v1.0.56",
+    "url": "https://github.com/bryantmh/rush2recompiled/releases/tag/v1.0.56"
    },
    "repo": {
     "archived": false,
@@ -15290,7 +15301,7 @@
     "firstRelease": "2026-10-04T04:52:02Z",
     "full": "bryantmh/rush2recompiled",
     "lang": "C++",
-    "pushed": "2026-11-15T07:17:35Z",
+    "pushed": "2026-11-15T09:04:18Z",
     "size": 21811,
     "stars": 79
    },
@@ -15445,7 +15456,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T19:03:22Z",
     "size": 1243,
-    "stars": 26
+    "stars": 27
    },
    "shots": []
   },
@@ -16220,7 +16231,7 @@
     "lang": "C",
     "pushed": "2026-11-14T14:55:38Z",
     "size": 6947,
-    "stars": 583
+    "stars": 584
    },
    "shots": []
   },
@@ -16498,7 +16509,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T04:07:23Z",
     "size": 3269,
-    "stars": 185
+    "stars": 186
    },
    "shots": [
     "https://raw.githubusercontent.com/Castlesea/infamous-second-son-pc-port/HEAD/docs/media/forest-checkpoint.jpg",
@@ -17104,7 +17115,7 @@
     "firstRelease": "2026-10-28T21:12:24Z",
     "full": "cerroverb/futari-linux",
     "lang": "C++",
-    "pushed": "2026-11-10T15:11:45Z",
+    "pushed": "2026-11-15T08:45:39Z",
     "size": 20246,
     "stars": 4
    },
@@ -17621,7 +17632,7 @@
     "lang": "C",
     "pushed": "2026-11-13T20:06:36Z",
     "size": 7805,
-    "stars": 112
+    "stars": 113
    },
    "shots": [
     "https://raw.githubusercontent.com/cheviman/tmnt-port/HEAD/docs/screenshots/console_title_menu.png",
@@ -18775,8 +18786,8 @@
     "firstRelease": "2026-10-15T19:20:43Z",
     "full": "CmdrLucid/Project-Friday",
     "lang": "Python",
-    "pushed": "2026-11-15T07:30:14Z",
-    "size": 25975,
+    "pushed": "2026-11-15T09:04:19Z",
+    "size": 27351,
     "stars": 14
    },
    "shots": [
@@ -20170,7 +20181,7 @@
     "lang": "C++",
     "pushed": "2026-10-15T16:07:45Z",
     "size": 93,
-    "stars": 34
+    "stars": 35
    },
    "shots": []
   },
@@ -21561,7 +21572,7 @@
     "lang": "C",
     "pushed": "2026-11-07T16:30:48Z",
     "size": 15022,
-    "stars": 330
+    "stars": 331
    },
    "shots": [
     "https://github.com/daniel-madrid-07/weeping-of-the-empire/releases/download/v0.1.1/screenshot-gliding.jpg",
@@ -21605,7 +21616,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T02:13:50Z",
     "size": 18791,
-    "stars": 199
+    "stars": 200
    },
    "shots": []
   },
@@ -23647,7 +23658,7 @@
     "lang": "C++",
     "pushed": "2026-11-05T15:46:51Z",
     "size": 741,
-    "stars": 76
+    "stars": 77
    },
    "shots": []
   },
@@ -23949,7 +23960,7 @@
     "lang": "C++",
     "pushed": "2026-10-28T23:56:07Z",
     "size": 8937,
-    "stars": 4077
+    "stars": 4078
    },
    "shots": []
   },
@@ -24600,7 +24611,7 @@
     "lang": "C",
     "pushed": "2026-11-14T23:52:05Z",
     "size": 3640,
-    "stars": 71
+    "stars": 72
    },
    "shots": []
   },
@@ -24731,7 +24742,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T06:54:26Z",
     "size": 42323,
-    "stars": 60
+    "stars": 61
    },
    "shots": [
     "https://raw.githubusercontent.com/Destinity13/TimeSplitters-2-Native-Recomp-Windows-Linux-SteamDeck/HEAD/docs/screenshots/compare_11_dam.gif",
@@ -24781,7 +24792,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T06:54:26Z",
     "size": 42323,
-    "stars": 60
+    "stars": 61
    },
    "shots": [
     "https://raw.githubusercontent.com/Destinity13/TimeSplitters-2-Native-Recomp-Windows-Linux-SteamDeck/HEAD/docs/screenshots/compare_11_dam.gif",
@@ -25612,7 +25623,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T06:32:07Z",
     "size": 24090,
-    "stars": 794
+    "stars": 795
    },
    "shots": []
   },
@@ -26463,7 +26474,7 @@
     "lang": "C++",
     "pushed": "2026-11-06T02:26:58Z",
     "size": 13017,
-    "stars": 163
+    "stars": 164
    },
    "shots": []
   },
@@ -26603,7 +26614,7 @@
     "lang": "C++",
     "pushed": "2026-10-24T23:03:57Z",
     "size": 2973,
-    "stars": 159
+    "stars": 160
    },
    "shots": []
   },
@@ -27243,7 +27254,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T04:42:48Z",
     "size": 27725,
-    "stars": 842
+    "stars": 843
    },
    "shots": [
     "https://raw.githubusercontent.com/droogie/bbhost/HEAD/docs/images/cainhurst.jpg",
@@ -27537,7 +27548,7 @@
     "lang": "C++",
     "pushed": "2026-11-08T05:06:49Z",
     "size": 9814,
-    "stars": 397
+    "stars": 398
    },
    "shots": [
     "https://raw.githubusercontent.com/ducvd89/Bloodborne-Android/HEAD/docs/images/ayn-thor-atlas.jpg",
@@ -28083,7 +28094,7 @@
     "full": "FH1-ReImagined/ForzaHorizon1-ReImagined",
     "lang": "Python",
     "pushed": "2026-11-15T07:39:20Z",
-    "size": 15412,
+    "size": 15406,
     "stars": 467
    },
    "shots": [
@@ -28180,7 +28191,7 @@
     "full": "dyzz/srw64-recomp",
     "lang": "C++",
     "pushed": "2026-11-15T07:45:40Z",
-    "size": 146903,
+    "size": 146984,
     "stars": 48
    },
    "shots": [
@@ -31038,7 +31049,7 @@
     "lang": "C",
     "pushed": "2026-11-14T18:01:57Z",
     "size": 40900,
-    "stars": 78
+    "stars": 80
    },
    "shots": []
   },
@@ -31632,7 +31643,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T23:39:29Z",
     "size": 145840,
-    "stars": 4856
+    "stars": 4857
    },
    "shots": [
     "https://raw.githubusercontent.com/FelipePrado0/SpartanPort/HEAD/docs/images/releases/3.0.0/launcher-home.jpg",
@@ -31681,7 +31692,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T23:39:29Z",
     "size": 145840,
-    "stars": 4856
+    "stars": 4857
    },
    "shots": [
     "https://raw.githubusercontent.com/FelipePrado0/SpartanPort/HEAD/docs/images/releases/3.0.0/launcher-home.jpg",
@@ -31766,7 +31777,7 @@
     "full": "FH1-ReImagined/ForzaHorizon1-ReImagined",
     "lang": "Python",
     "pushed": "2026-11-15T07:39:20Z",
-    "size": 15412,
+    "size": 15406,
     "stars": 467
    },
    "shots": [
@@ -31969,7 +31980,7 @@
     "lang": "C++",
     "pushed": "2026-10-30T16:10:04Z",
     "size": 1423,
-    "stars": 84
+    "stars": 85
    },
    "shots": []
   },
@@ -32063,7 +32074,7 @@
     "lang": "C++",
     "pushed": "2026-11-08T00:00:17Z",
     "size": 7232,
-    "stars": 901
+    "stars": 900
    },
    "shots": [
     "https://raw.githubusercontent.com/florinp93/hells-gate-recomp/HEAD/assets/fan_artwork.png"
@@ -32561,7 +32572,7 @@
     "lang": "C++",
     "pushed": "2026-10-21T10:48:32Z",
     "size": 7826,
-    "stars": 429
+    "stars": 430
    },
    "shots": [
     "https://raw.githubusercontent.com/FrankHUN88453/CoD3Recomp/HEAD/preview.png"
@@ -32656,7 +32667,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T03:33:16Z",
     "size": 52336,
-    "stars": 978
+    "stars": 979
    },
    "shots": [
     "https://raw.githubusercontent.com/freefrank/LostOdysseyRecomp/HEAD/docs/images/title-screen.png",
@@ -33214,8 +33225,8 @@
     "firstRelease": "2026-11-07T07:12:06Z",
     "full": "Fwha/Lost-Paradise",
     "lang": "C++",
-    "pushed": "2026-11-15T08:14:57Z",
-    "size": 3414,
+    "pushed": "2026-11-15T08:17:55Z",
+    "size": 3426,
     "stars": 35
    },
    "shots": []
@@ -33356,7 +33367,7 @@
     "lang": "C",
     "pushed": "2026-11-05T17:01:48Z",
     "size": 5657,
-    "stars": 209
+    "stars": 210
    },
    "shots": []
   },
@@ -34442,7 +34453,7 @@
     "lang": "C",
     "pushed": "2026-11-13T21:08:54Z",
     "size": 81119,
-    "stars": 6
+    "stars": 7
    },
    "shots": [
     "https://raw.githubusercontent.com/gerisson1996/RESIDENT-CODE-VERONICA-NX-PORT/HEAD/.github/pix-qr.png"
@@ -34926,7 +34937,7 @@
     "archived": false,
     "desc": "",
     "full": "AndyALRLabs/ReCasted",
-    "pushed": "2026-11-13T23:45:56.240Z",
+    "pushed": "2026-11-15T08:47:46.998Z",
     "stars": 9
    }
   },
@@ -35050,7 +35061,7 @@
     "archived": false,
     "desc": "Tom Clancy's Splinter Cell: Double Agent (Xbox 360) static recompilation: a native Windows x64 port. No game files included.",
     "full": "octagram-labs-group/SCDA360pcport",
-    "pushed": "2026-11-15T07:57:22.161Z",
+    "pushed": "2026-11-15T08:57:35.978Z",
     "stars": 7
    }
   },
@@ -35578,7 +35589,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T03:28:31Z",
     "size": 14156,
-    "stars": 255
+    "stars": 256
    },
    "shots": [
     "https://raw.githubusercontent.com/gminustwo/msr2ds/HEAD/images/title.jpg",
@@ -36785,7 +36796,7 @@
     "full": "Grunttanamo/KarPur",
     "lang": "C",
     "pushed": "2026-11-15T08:05:44Z",
-    "size": 6551,
+    "size": 6559,
     "stars": 68
    },
    "shots": []
@@ -37751,7 +37762,7 @@
     "firstRelease": "2026-10-31T05:35:44Z",
     "full": "gustavomorinaga/project-vekta",
     "lang": "C++",
-    "pushed": "2026-11-15T04:20:24Z",
+    "pushed": "2026-11-15T09:04:34Z",
     "size": 8142,
     "stars": 26
    },
@@ -39043,7 +39054,7 @@
     "lang": "C++",
     "pushed": "2026-06-29T11:05:43Z",
     "size": 3611,
-    "stars": 5378
+    "stars": 5379
    },
    "shots": []
   },
@@ -39973,7 +39984,7 @@
     "firstRelease": "2026-10-26T22:57:44Z",
     "full": "hk21x/007eon-recomp",
     "lang": "C++",
-    "pushed": "2026-11-15T07:15:39Z",
+    "pushed": "2026-11-15T09:00:23Z",
     "size": 1784,
     "stars": 102
    },
@@ -41177,7 +41188,7 @@
     "lang": "C++",
     "pushed": "2026-11-01T10:00:42Z",
     "size": 14182,
-    "stars": 221
+    "stars": 222
    },
    "shots": [
     "https://img.youtube.com/vi/HUpJmWgzhnk/maxresdefault.jpg",
@@ -41549,7 +41560,7 @@
     "firstRelease": "2026-11-05T08:32:54Z",
     "full": "ILFforever/YW4Recomp",
     "lang": "C",
-    "pushed": "2026-11-15T03:21:30Z",
+    "pushed": "2026-11-15T09:01:39Z",
     "size": 125989,
     "stars": 16
    },
@@ -42670,7 +42681,7 @@
     "full": "Ivanprestef2/Monado-Reborn",
     "lang": "C",
     "pushed": "2026-11-15T07:43:54Z",
-    "size": 4833,
+    "size": 4889,
     "stars": 167
    },
    "shots": []
@@ -43297,7 +43308,7 @@
     "firstRelease": "2026-11-01T15:03:48Z",
     "full": "jake-r-r-w/crash_bash_decomp",
     "lang": "C",
-    "pushed": "2026-11-13T12:28:33Z",
+    "pushed": "2026-11-15T08:47:12Z",
     "size": 25031,
     "stars": 25
    },
@@ -44448,7 +44459,7 @@
     "lang": "C",
     "pushed": "2026-11-15T00:21:41Z",
     "size": 16886,
-    "stars": 28
+    "stars": 29
    },
    "shots": [
     "https://raw.githubusercontent.com/jeff-strutb/stuntracefx/HEAD/docs/stuntracefx/img/original-race.png",
@@ -45499,7 +45510,7 @@
     "lang": "C",
     "pushed": "2026-11-15T03:47:45Z",
     "size": 4504,
-    "stars": 185
+    "stars": 186
    },
    "shots": []
   },
@@ -46849,8 +46860,8 @@
     "firstRelease": null,
     "full": "Jovinull/sonicheroes",
     "lang": "C++",
-    "pushed": "2026-11-15T08:16:44Z",
-    "size": 141765,
+    "pushed": "2026-11-15T09:05:24Z",
+    "size": 142174,
     "stars": 45
    },
    "shots": [
@@ -47261,7 +47272,7 @@
     "lang": "C++",
     "pushed": "2026-11-07T20:58:47Z",
     "size": 28925,
-    "stars": 231
+    "stars": 232
    },
    "shots": [
     "https://raw.githubusercontent.com/JulioCacko/The-Order-1886_pc/HEAD/docs/images/v0.2.5/hero.jpg",
@@ -48002,10 +48013,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-15T06:47:03Z",
-    "pre": true,
-    "tag": "Pre-release-GR2port-2026-11-15-e5e34fae4b8c81781aa4a5957ec293c53f318669",
-    "url": "https://github.com/junminlee2004/GR2port/releases/tag/Pre-release-GR2port-2026-11-15-e5e34fae4b8c81781aa4a5957ec293c53f318669"
+    "date": "2026-11-15T08:57:40Z",
+    "pre": false,
+    "tag": "v1.06",
+    "url": "https://github.com/junminlee2004/GR2port/releases/tag/v1.06"
    },
    "repo": {
     "archived": false,
@@ -48014,7 +48025,7 @@
     "firstRelease": "2026-11-11T21:38:04Z",
     "full": "junminlee2004/GR2port",
     "lang": "C++",
-    "pushed": "2026-11-15T07:19:26Z",
+    "pushed": "2026-11-15T08:57:40Z",
     "size": 114025,
     "stars": 93
    },
@@ -48823,7 +48834,7 @@
     "lang": "C++",
     "pushed": "2026-11-07T18:07:02Z",
     "size": 716,
-    "stars": 63
+    "stars": 64
    },
    "shots": []
   },
@@ -49011,7 +49022,7 @@
     "firstRelease": "2026-10-13T16:15:43Z",
     "full": "keepvaibin/nebula",
     "lang": "C++",
-    "pushed": "2026-11-15T08:11:25Z",
+    "pushed": "2026-11-15T08:54:48Z",
     "size": 59532,
     "stars": 603
    },
@@ -51095,7 +51106,7 @@
     "lang": "C",
     "pushed": "2026-11-12T08:12:50Z",
     "size": 9065,
-    "stars": 917
+    "stars": 918
    },
    "shots": []
   },
@@ -51549,10 +51560,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-13T11:20:44Z",
+    "date": "2026-11-15T09:05:44Z",
     "pre": false,
-    "tag": "v1.1.3",
-    "url": "https://github.com/lapothecary/bloodborne-pc-vulkan/releases/tag/v1.1.3"
+    "tag": "v1.1.4",
+    "url": "https://github.com/lapothecary/bloodborne-pc-vulkan/releases/tag/v1.1.4"
    },
    "repo": {
     "archived": false,
@@ -51561,7 +51572,7 @@
     "firstRelease": "2026-11-07T17:24:10Z",
     "full": "lapothecary/bloodborne-pc-vulkan",
     "lang": "C++",
-    "pushed": "2026-11-13T11:20:21Z",
+    "pushed": "2026-11-15T09:05:21Z",
     "size": 164351,
     "stars": 2
    },
@@ -51897,7 +51908,7 @@
     "lang": null,
     "pushed": "2026-11-07T16:23:13Z",
     "size": 808,
-    "stars": 4
+    "stars": 5
    },
    "shots": [
     "https://github.com/user-attachments/assets/4d2871a2-acef-4608-9c50-e9e7cfdaaab5"
@@ -52791,7 +52802,7 @@
     "lang": "C",
     "pushed": "2026-11-14T10:29:55Z",
     "size": 192,
-    "stars": 22
+    "stars": 23
    },
    "shots": []
   },
@@ -53173,7 +53184,7 @@
     "firstRelease": "2026-10-26T18:44:51Z",
     "full": "LLCOOLT/paper-cut",
     "lang": "C",
-    "pushed": "2026-11-15T04:28:45Z",
+    "pushed": "2026-11-15T09:02:14Z",
     "size": 107770,
     "stars": 157
    },
@@ -53234,7 +53245,7 @@
     "lang": "Makefile",
     "pushed": "2026-10-11T18:50:31Z",
     "size": 18,
-    "stars": 12
+    "stars": 13
    },
    "shots": []
   },
@@ -53722,9 +53733,9 @@
     "firstRelease": "2026-11-08T05:22:40Z",
     "full": "Lucas-blip-png/dkb-pc-recomp",
     "lang": "C",
-    "pushed": "2026-11-15T05:17:26Z",
+    "pushed": "2026-11-15T08:52:50Z",
     "size": 6100,
-    "stars": 1015
+    "stars": 1017
    },
    "shots": []
   },
@@ -54268,7 +54279,7 @@
     "lang": "C++",
     "pushed": "2026-10-29T01:29:29Z",
     "size": 6435,
-    "stars": 11
+    "stars": 12
    },
    "shots": []
   },
@@ -54307,7 +54318,7 @@
     "lang": "C",
     "pushed": "2026-11-14T12:07:21Z",
     "size": 209663,
-    "stars": 7830
+    "stars": 7837
    },
    "shots": []
   },
@@ -54471,7 +54482,7 @@
     "lang": "Shell",
     "pushed": "2026-11-07T13:57:51Z",
     "size": 12761,
-    "stars": 135
+    "stars": 136
    },
    "shots": [
     "https://raw.githubusercontent.com/Mabec-games/F-ZERO-GLINUX/HEAD/docs/images/promo.png",
@@ -54835,7 +54846,7 @@
     "firstRelease": null,
     "full": "MaChInEgUn3/God-of-War-Ascension-Recompiled",
     "lang": "C",
-    "pushed": "2026-11-15T08:08:41Z",
+    "pushed": "2026-11-15T08:54:52Z",
     "size": 6027,
     "stars": 31
    },
@@ -55400,7 +55411,7 @@
     "lang": "C",
     "pushed": "2026-11-14T01:03:22Z",
     "size": 34895,
-    "stars": 269
+    "stars": 270
    },
    "shots": []
   },
@@ -55442,7 +55453,7 @@
     "lang": "C",
     "pushed": "2026-11-14T01:03:22Z",
     "size": 34895,
-    "stars": 269
+    "stars": 270
    },
    "shots": []
   },
@@ -56000,7 +56011,7 @@
     "full": "MarkPremier/EvolutionRecomp",
     "lang": "C",
     "pushed": "2026-11-15T07:29:27Z",
-    "size": 1522,
+    "size": 1537,
     "stars": 23
    },
    "shots": []
@@ -56063,8 +56074,8 @@
     "firstRelease": null,
     "full": "Mars7x/echora",
     "lang": "Rust",
-    "pushed": "2026-11-15T08:16:46Z",
-    "size": 8084,
+    "pushed": "2026-11-15T08:46:05Z",
+    "size": 6046,
     "stars": 33
    },
    "shots": []
@@ -56554,7 +56565,7 @@
     "firstRelease": "2026-11-10T23:41:21Z",
     "full": "mathewdouglas/Project-Tourline-5",
     "lang": "C++",
-    "pushed": "2026-11-15T08:11:23Z",
+    "pushed": "2026-11-15T09:04:45Z",
     "size": 15036,
     "stars": 26
    },
@@ -56591,7 +56602,7 @@
     "lang": "Python",
     "pushed": "2026-11-10T19:57:54Z",
     "size": 15890,
-    "stars": 43
+    "stars": 44
    },
    "shots": []
   },
@@ -57253,7 +57264,7 @@
     "full": "MatyMeatBoy/NewSnapRecomp",
     "lang": "Python",
     "pushed": "2026-11-15T07:45:34Z",
-    "size": 2352,
+    "size": 2414,
     "stars": 0
    },
    "shots": [
@@ -57352,7 +57363,7 @@
     "lang": "C",
     "pushed": "2026-11-13T19:54:15Z",
     "size": 2665,
-    "stars": 0
+    "stars": 1
    },
    "shots": [
     "https://raw.githubusercontent.com/MatyMeatBoy/ShiningSource/HEAD/docs/img/game-wide.png",
@@ -58832,7 +58843,7 @@
     "lang": "C",
     "pushed": "2026-11-10T23:46:06Z",
     "size": 4115,
-    "stars": 6
+    "stars": 7
    },
    "shots": []
   },
@@ -59161,8 +59172,8 @@
     "firstRelease": "2026-05-21T22:59:23Z",
     "full": "MikeHazeJr/perfect-dark-2",
     "lang": "C",
-    "pushed": "2026-11-15T07:54:49Z",
-    "size": 1013346,
+    "pushed": "2026-11-15T09:04:07Z",
+    "size": 1013998,
     "stars": 8
    },
    "shots": []
@@ -59975,10 +59986,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-14T23:39:06Z",
+    "date": "2026-11-15T08:18:40Z",
     "pre": false,
-    "tag": "v1.0.9",
-    "url": "https://github.com/misterrageguy-cyber/OoT2026-PC-Recomp/releases/tag/v1.0.9"
+    "tag": "v1.1.1",
+    "url": "https://github.com/misterrageguy-cyber/OoT2026-PC-Recomp/releases/tag/v1.1.1"
    },
    "repo": {
     "archived": false,
@@ -59989,7 +60000,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T08:16:12Z",
     "size": 27009,
-    "stars": 31
+    "stars": 32
    },
    "shots": []
   },
@@ -60078,7 +60089,7 @@
     "lang": "C++",
     "pushed": "2025-12-11T01:33:47Z",
     "size": 21570,
-    "stars": 103
+    "stars": 104
    },
    "shots": []
   },
@@ -60271,7 +60282,7 @@
     "lang": "C",
     "pushed": "2026-10-23T18:34:07Z",
     "size": 36570,
-    "stars": 69
+    "stars": 70
    },
    "shots": []
   },
@@ -61479,7 +61490,7 @@
     "full": "MrWifi1143/LZA-Recomp",
     "lang": "C",
     "pushed": "2026-11-15T08:00:17Z",
-    "size": 23752,
+    "size": 23749,
     "stars": 5
    },
    "shots": [
@@ -61698,7 +61709,7 @@
     "firstRelease": "2026-10-29T22:35:50Z",
     "full": "mstan/BlinxRecomp",
     "lang": "C",
-    "pushed": "2026-11-13T23:28:18Z",
+    "pushed": "2026-11-15T09:05:33Z",
     "size": 8490,
     "stars": 11
    },
@@ -62896,7 +62907,7 @@
     "firstRelease": "2026-05-25T03:20:31Z",
     "full": "mstan/MinishCapRecomp",
     "lang": "C++",
-    "pushed": "2026-11-15T05:11:14Z",
+    "pushed": "2026-11-15T08:21:10Z",
     "size": 2041,
     "stars": 39
    },
@@ -63174,7 +63185,7 @@
     "full": "mstan/Sonic3AndKnucklesRecomp",
     "lang": "C",
     "pushed": "2026-11-15T08:03:15Z",
-    "size": 6431,
+    "size": 6432,
     "stars": 34
    },
    "shots": [
@@ -64999,7 +65010,7 @@
     "firstRelease": "2026-10-14T11:31:55Z",
     "full": "n64hub/rush-2049-recomp",
     "lang": "C++",
-    "pushed": "2026-11-14T19:45:54Z",
+    "pushed": "2026-11-15T08:51:58Z",
     "size": 5039,
     "stars": 19
    },
@@ -65107,7 +65118,7 @@
     "firstRelease": "2026-11-11T22:48:33Z",
     "full": "n64hub/turok-2-recomp",
     "lang": "C++",
-    "pushed": "2026-11-15T07:24:33Z",
+    "pushed": "2026-11-15T08:48:25Z",
     "size": 6132,
     "stars": 3
    },
@@ -65141,7 +65152,7 @@
     "firstRelease": "2026-11-11T23:21:54Z",
     "full": "n64hub/turok-3-recomp",
     "lang": "C++",
-    "pushed": "2026-11-15T07:24:44Z",
+    "pushed": "2026-11-15T08:49:04Z",
     "size": 6142,
     "stars": 2
    },
@@ -65873,7 +65884,7 @@
     "lang": "C++",
     "pushed": "2026-10-27T15:33:26Z",
     "size": 32233,
-    "stars": 19
+    "stars": 20
    },
    "shots": [
     "https://raw.githubusercontent.com/negroISO/doax3-fortune-pc/HEAD/docs/screenshots/comparisons/poolside-camera/native-face.png",
@@ -72844,9 +72855,9 @@
     "firstRelease": "2026-10-13T23:05:34Z",
     "full": "OpenRAC/OpenRAC",
     "lang": "C++",
-    "pushed": "2026-11-15T08:03:12Z",
-    "size": 191526,
-    "stars": 199
+    "pushed": "2026-11-15T08:50:00Z",
+    "size": 191582,
+    "stars": 201
    },
    "shots": [
     "https://raw.githubusercontent.com/OpenRAC/OpenRAC/HEAD/docs/assets/launcher.gif",
@@ -73292,7 +73303,7 @@
     "full": "Oussama268/ShadowOfTheColossus-PC",
     "lang": "C++",
     "pushed": "2026-11-15T07:46:56Z",
-    "size": 6542,
+    "size": 6548,
     "stars": 297
    },
    "shots": [
@@ -73384,7 +73395,7 @@
     "lang": "C++",
     "pushed": "2026-10-11T12:20:26Z",
     "size": 524,
-    "stars": 136
+    "stars": 137
    },
    "shots": []
   },
@@ -74356,6 +74367,7 @@
    "assetOs": {
     "Android": true,
     "Linux": true,
+    "Windows": true,
     "macOS": true
    },
    "readme": {
@@ -74395,9 +74407,9 @@
     "firstRelease": "2026-10-23T23:56:49Z",
     "full": "peiikai/LASRecomp",
     "lang": "C",
-    "pushed": "2026-11-15T08:15:18Z",
-    "size": 17065,
-    "stars": 2418
+    "pushed": "2026-11-15T09:06:56Z",
+    "size": 17079,
+    "stars": 2419
    },
    "shots": [
     "https://raw.githubusercontent.com/peiikai/LASRecomp/HEAD/docs/ultrawide.jpg",
@@ -74906,7 +74918,7 @@
     "lang": "Python",
     "pushed": "2026-11-02T20:55:06Z",
     "size": 1235,
-    "stars": 70
+    "stars": 71
    },
    "shots": [
     "https://github.com/user-attachments/assets/139ac55d-e26a-476b-83ad-5704bdab6acc"
@@ -75170,7 +75182,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T05:49:43Z",
     "size": 5234,
-    "stars": 152
+    "stars": 158
    },
    "shots": [
     "https://raw.githubusercontent.com/pixl27/ProjectReLink/HEAD/docs/launcher.png",
@@ -76199,8 +76211,8 @@
     "firstRelease": "2026-10-23T01:00:07Z",
     "full": "Project-Holon/eidos",
     "lang": "C",
-    "pushed": "2026-11-15T07:39:40Z",
-    "size": 9892,
+    "pushed": "2026-11-15T08:44:44Z",
+    "size": 9922,
     "stars": 113
    },
    "shots": []
@@ -77093,7 +77105,7 @@
     "lang": "C",
     "pushed": "2026-11-13T00:05:23Z",
     "size": 1658,
-    "stars": 0
+    "stars": 1
    },
    "shots": []
   },
@@ -77713,8 +77725,8 @@
     "firstRelease": "2026-11-02T16:06:36Z",
     "full": "Raikaru/Izanagi",
     "lang": "C",
-    "pushed": "2026-11-15T08:15:58Z",
-    "size": 7284,
+    "pushed": "2026-11-15T09:03:55Z",
+    "size": 8309,
     "stars": 7
    },
    "shots": []
@@ -78484,7 +78496,7 @@
     "lang": "C",
     "pushed": "2026-11-15T02:44:56Z",
     "size": 8243,
-    "stars": 42
+    "stars": 43
    },
    "shots": [
     "https://raw.githubusercontent.com/raulzrrs/swsh-recomp/HEAD/docs/shots/title.jpg",
@@ -79576,7 +79588,7 @@
     "firstRelease": "2026-10-25T14:06:28Z",
     "full": "RenanQueiroz/mcla-recomp",
     "lang": "C++",
-    "pushed": "2026-11-14T18:41:21Z",
+    "pushed": "2026-11-15T08:54:01Z",
     "size": 9058,
     "stars": 223
    },
@@ -81063,7 +81075,7 @@
     "firstRelease": "2026-10-22T16:26:00Z",
     "full": "romusan495/Dragon-Quest-IX-Modern",
     "lang": "C",
-    "pushed": "2026-11-15T07:22:16Z",
+    "pushed": "2026-11-15T08:31:04Z",
     "size": 11429,
     "stars": 4
    },
@@ -81218,7 +81230,7 @@
     "firstRelease": "2026-10-29T00:24:46Z",
     "full": "RuiNelson/StreetsOfRageProject",
     "lang": "Python",
-    "pushed": "2026-11-15T08:09:43Z",
+    "pushed": "2026-11-15T08:30:29Z",
     "size": 14242,
     "stars": 39
    },
@@ -82145,7 +82157,7 @@
     "lang": "C",
     "pushed": "2026-11-07T13:12:30Z",
     "size": 22296,
-    "stars": 3
+    "stars": 4
    },
    "shots": []
   },
@@ -82544,10 +82556,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-12T18:55:46Z",
+    "date": "2026-11-15T09:06:33Z",
     "pre": false,
-    "tag": "v0.2.4",
-    "url": "https://github.com/SansNope/MarathonRecomp-Android/releases/tag/v0.2.4"
+    "tag": "v0.2.5",
+    "url": "https://github.com/SansNope/MarathonRecomp-Android/releases/tag/v0.2.5"
    },
    "repo": {
     "archived": false,
@@ -82556,7 +82568,7 @@
     "firstRelease": "2026-10-26T03:36:52Z",
     "full": "SansNope/MarathonRecomp-Android",
     "lang": "C++",
-    "pushed": "2026-11-12T18:55:26Z",
+    "pushed": "2026-11-15T09:04:55Z",
     "size": 18121,
     "stars": 6
    },
@@ -82739,7 +82751,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T20:59:07Z",
     "size": 8895,
-    "stars": 182
+    "stars": 183
    },
    "shots": [
     "https://raw.githubusercontent.com/santiquiroz/gears-of-war-2-pc-port/HEAD/docs/screenshots/title.jpg",
@@ -84641,7 +84653,7 @@
     "lang": "C#",
     "pushed": "2026-11-04T21:35:40Z",
     "size": 19118,
-    "stars": 50
+    "stars": 51
    },
    "shots": []
   },
@@ -84814,7 +84826,7 @@
     "firstRelease": null,
     "full": "Sezzary/SilentEngine",
     "lang": "C++",
-    "pushed": "2026-11-14T15:54:05Z",
+    "pushed": "2026-11-15T08:26:33Z",
     "size": 21701,
     "stars": 223
    },
@@ -84932,7 +84944,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T18:18:43Z",
     "size": 19842,
-    "stars": 206
+    "stars": 207
    },
    "shots": []
   },
@@ -84977,9 +84989,9 @@
     "firstRelease": "2026-11-11T18:19:03Z",
     "full": "Shagg88/COGBox",
     "lang": "C++",
-    "pushed": "2026-11-14T22:30:15Z",
+    "pushed": "2026-11-15T08:28:34Z",
     "size": 9148,
-    "stars": 472
+    "stars": 473
    },
    "shots": []
   },
@@ -85600,7 +85612,7 @@
     "lang": "C",
     "pushed": "2026-11-15T07:06:19Z",
     "size": 9423,
-    "stars": 58
+    "stars": 59
    },
    "shots": []
   },
@@ -85994,7 +86006,7 @@
     "lang": "C",
     "pushed": "2026-11-14T19:47:14Z",
     "size": 3774,
-    "stars": 312
+    "stars": 314
    },
    "shots": [
     "https://raw.githubusercontent.com/Simon3Sarkis/super-odyssey-pc-recomp/HEAD/docs/installer.png"
@@ -87292,7 +87304,7 @@
     "full": "snicolast/StarWarsTrilogyNative",
     "lang": "C++",
     "pushed": "2026-11-15T07:46:50Z",
-    "size": 9988,
+    "size": 9994,
     "stars": 118
    },
    "shots": [
@@ -87985,7 +87997,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T05:00:33Z",
     "size": 6733,
-    "stars": 852
+    "stars": 853
    },
    "shots": []
   },
@@ -88029,7 +88041,7 @@
     "lang": "C",
     "pushed": "2026-11-14T21:20:37Z",
     "size": 42323,
-    "stars": 12
+    "stars": 13
    },
    "shots": []
   },
@@ -88413,7 +88425,7 @@
     "full": "sp-hy/OpenCross",
     "lang": "C++",
     "pushed": "2026-11-15T07:59:36Z",
-    "size": 6379,
+    "size": 7311,
     "stars": 24
    },
    "shots": [
@@ -90770,10 +90782,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-15T01:29:27Z",
+    "date": "2026-11-15T08:20:08Z",
     "pre": false,
-    "tag": "0.1.1",
-    "url": "https://github.com/STS78721/MKW-THWOMP/releases/tag/0.1.1"
+    "tag": "0.1.2",
+    "url": "https://github.com/STS78721/MKW-THWOMP/releases/tag/0.1.2"
    },
    "repo": {
     "archived": false,
@@ -91077,10 +91089,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-09T07:29:13Z",
+    "date": "2026-11-15T08:27:41Z",
     "pre": false,
-    "tag": "v0.3.2",
-    "url": "https://github.com/SuperCatElvis/UntilDawn_PC/releases/tag/v0.3.2"
+    "tag": "v0.4.0",
+    "url": "https://github.com/SuperCatElvis/UntilDawn_PC/releases/tag/v0.4.0"
    },
    "repo": {
     "archived": false,
@@ -91089,9 +91101,9 @@
     "firstRelease": "2026-10-23T22:06:27Z",
     "full": "SuperCatElvis/UntilDawn_PC",
     "lang": "C",
-    "pushed": "2026-11-09T07:29:12Z",
+    "pushed": "2026-11-15T08:29:42Z",
     "size": 4231,
-    "stars": 55
+    "stars": 54
    },
    "shots": []
   },
@@ -91170,7 +91182,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T21:58:22Z",
     "size": 15587,
-    "stars": 5430
+    "stars": 5432
    },
    "shots": []
   },
@@ -91213,7 +91225,7 @@
     "lang": "C++",
     "pushed": "2026-11-07T17:41:31Z",
     "size": 7957,
-    "stars": 2293
+    "stars": 2294
    },
    "shots": []
   },
@@ -91665,7 +91677,7 @@
     "firstRelease": "2026-10-23T00:15:41Z",
     "full": "tabnul/the-last-guardian-definitive",
     "lang": "C++",
-    "pushed": "2026-11-15T07:16:56Z",
+    "pushed": "2026-11-15T08:22:08Z",
     "size": 163420,
     "stars": 34
    },
@@ -91843,7 +91855,7 @@
     "lang": "C",
     "pushed": "2026-11-15T04:53:06Z",
     "size": 17566,
-    "stars": 4146
+    "stars": 4152
    },
    "shots": [
     "https://raw.githubusercontent.com/tangerineturtle1/NX2navi/HEAD/docs/images/navi.png"
@@ -91865,7 +91877,7 @@
     "firstRelease": null,
     "full": "tangosdev/sm64ds-decomp",
     "lang": "C++",
-    "pushed": "2026-11-14T22:12:13Z",
+    "pushed": "2026-11-15T08:59:33Z",
     "size": 347556,
     "stars": 261
    },
@@ -92205,10 +92217,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-13T08:52:34Z",
+    "date": "2026-11-15T08:23:33Z",
     "pre": true,
-    "tag": "v0.1.0-preview5",
-    "url": "https://github.com/tastyrepublic/spikeout-recomp/releases/tag/v0.1.0-preview5"
+    "tag": "v0.1.0-preview5.1",
+    "url": "https://github.com/tastyrepublic/spikeout-recomp/releases/tag/v0.1.0-preview5.1"
    },
    "repo": {
     "archived": false,
@@ -92217,7 +92229,7 @@
     "firstRelease": "2026-11-05T13:02:42Z",
     "full": "tastyrepublic/spikeout-recomp",
     "lang": "C++",
-    "pushed": "2026-11-15T07:15:28Z",
+    "pushed": "2026-11-15T08:23:33Z",
     "size": 7215,
     "stars": 56
    },
@@ -93328,7 +93340,7 @@
     "firstRelease": "2026-11-11T01:28:13Z",
     "full": "TekRantGaming/Battlefield-1943-Reborn",
     "lang": "C++",
-    "pushed": "2026-11-15T08:08:01Z",
+    "pushed": "2026-11-15T08:53:00Z",
     "size": 78224,
     "stars": 135
    },
@@ -94325,7 +94337,7 @@
     "lang": "C++",
     "pushed": "2026-11-05T20:18:02Z",
     "size": 1336,
-    "stars": 149
+    "stars": 150
    },
    "shots": [
     "https://github.com/user-attachments/assets/820f864a-ac8d-4ab6-a5d6-f497eeb799a5"
@@ -94493,8 +94505,8 @@
     "firstRelease": "2026-08-10T07:19:24Z",
     "full": "ThatGuyMcd/DKR-R",
     "lang": "C++",
-    "pushed": "2026-11-15T07:45:50Z",
-    "size": 55726,
+    "pushed": "2026-11-15T09:00:36Z",
+    "size": 55886,
     "stars": 266
    },
    "shots": [
@@ -95080,9 +95092,9 @@
     "firstRelease": "2026-10-15T06:49:34Z",
     "full": "TheDoffman/timesplitters-future-perfect-pc",
     "lang": "C",
-    "pushed": "2026-11-15T08:15:41Z",
-    "size": 41363,
-    "stars": 151
+    "pushed": "2026-11-15T09:06:48Z",
+    "size": 42009,
+    "stars": 152
    },
    "shots": [
     "https://raw.githubusercontent.com/TheDoffman/timesplitters-future-perfect-pc/HEAD/docs/assets/gameplay-story1.jpg",
@@ -95663,7 +95675,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T10:13:39Z",
     "size": 5701,
-    "stars": 14
+    "stars": 15
    },
    "shots": [
     "https://raw.githubusercontent.com/thegh0sts/NHL-21-PS4-PORT/HEAD/docs/screenshot.png"
@@ -96741,7 +96753,7 @@
     "firstRelease": null,
     "full": "thierbig/iwd2r",
     "lang": "C++",
-    "pushed": "2026-11-15T06:33:56Z",
+    "pushed": "2026-11-15T09:03:39Z",
     "size": 25615,
     "stars": 39
    },
@@ -97317,7 +97329,7 @@
     "lang": "C++",
     "pushed": "2026-11-13T17:20:52Z",
     "size": 1715,
-    "stars": 13
+    "stars": 14
    },
    "shots": [
     "https://raw.githubusercontent.com/tmcleroy/fighters-megamix-recomp/HEAD/docs/screenshots/widescreen.jpg",
@@ -98586,7 +98598,7 @@
     "lang": "C++",
     "pushed": "2026-10-26T04:50:53Z",
     "size": 303295,
-    "stars": 6386
+    "stars": 6388
    },
    "shots": [
     "https://raw.githubusercontent.com/TwilitRealm/dusklight/HEAD/assets/aurora-powered.png"
@@ -98870,7 +98882,7 @@
     "firstRelease": "2026-09-26T17:29:57Z",
     "full": "Unchiga/Yu-Gi-Oh-Forbidden-Memories-Recompiled",
     "lang": "C",
-    "pushed": "2026-11-15T03:02:28Z",
+    "pushed": "2026-11-15T08:46:40Z",
     "size": 73792,
     "stars": 313
    },
@@ -99055,7 +99067,7 @@
     "lang": "Python",
     "pushed": "2026-11-13T22:58:14Z",
     "size": 7099,
-    "stars": 23
+    "stars": 24
    },
    "shots": [
     "https://raw.githubusercontent.com/undecuple/qwarks-awakening/HEAD/docs/screenshots/launcher-library.png"
@@ -99485,8 +99497,8 @@
     "full": "valentderah/totk-pc-recomp",
     "lang": "C",
     "pushed": "2026-11-15T07:42:56Z",
-    "size": 4440,
-    "stars": 7280
+    "size": 4530,
+    "stars": 7287
    },
    "shots": []
   },
@@ -100558,7 +100570,7 @@
     "firstRelease": null,
     "full": "Virtual-AK/fes-pc-recomp",
     "lang": "Python",
-    "pushed": "2026-11-04T01:26:43Z",
+    "pushed": "2026-11-15T08:34:46Z",
     "size": 3930,
     "stars": 4
    },
@@ -101005,7 +101017,7 @@
     "firstRelease": null,
     "full": "Voicedrew11/holyland",
     "lang": "C",
-    "pushed": "2026-11-15T07:58:55Z",
+    "pushed": "2026-11-15T09:03:59Z",
     "size": 35910,
     "stars": 25
    },
@@ -103222,7 +103234,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T13:26:35Z",
     "size": 8097,
-    "stars": 305
+    "stars": 306
    },
    "shots": []
   },
@@ -104285,9 +104297,9 @@
     "firstRelease": "2026-11-11T02:15:10Z",
     "full": "XiONDiGiTaL/EmblemWeave",
     "lang": "C++",
-    "pushed": "2026-11-15T08:16:32Z",
-    "size": 34093,
-    "stars": 70
+    "pushed": "2026-11-15T08:56:22Z",
+    "size": 33204,
+    "stars": 73
    },
    "shots": [
     "https://raw.githubusercontent.com/XiONDiGiTaL/EmblemWeave/HEAD/docs/screenshots/overview.png",
@@ -105123,8 +105135,8 @@
     "firstRelease": "2026-10-19T17:28:36Z",
     "full": "YodaMMM/NightfirePort",
     "lang": "Rust",
-    "pushed": "2026-11-15T08:13:28Z",
-    "size": 58508,
+    "pushed": "2026-11-15T09:03:56Z",
+    "size": 57777,
     "stars": 12
    },
    "shots": [
@@ -105271,7 +105283,7 @@
     "lang": "C",
     "pushed": "2026-10-09T20:28:29Z",
     "size": 12741,
-    "stars": 92
+    "stars": 93
    },
    "shots": [
     "https://img.youtube.com/vi/VkbwbXw2tPw/maxresdefault.jpg"
@@ -105434,7 +105446,7 @@
     "full": "YuutaTsubasa/Free-Riders-Recompiled",
     "lang": "C++",
     "pushed": "2026-11-15T07:55:17Z",
-    "size": 34862,
+    "size": 36806,
     "stars": 123
    },
    "shots": [
@@ -106325,8 +106337,8 @@
     "firstRelease": null,
     "full": "zdiemer/chrono-trigger-reimplemented",
     "lang": "C",
-    "pushed": "2026-11-15T07:38:01Z",
-    "size": 27043,
+    "pushed": "2026-11-15T08:36:35Z",
+    "size": 27012,
     "stars": 13
    },
    "shots": []
@@ -106408,7 +106420,7 @@
     "lang": "C",
     "pushed": "2026-09-25T18:57:57Z",
     "size": 8982,
-    "stars": 7695
+    "stars": 7696
    },
    "shots": [
     "https://raw.githubusercontent.com/Zelda64Recomp/Zelda64Recomp/HEAD/docs/deck_gyro_1.jpg"
@@ -106462,7 +106474,7 @@
     "lang": "C++",
     "pushed": "2026-11-15T01:20:48Z",
     "size": 30704,
-    "stars": 1502
+    "stars": 1503
    },
    "shots": []
   },
@@ -106509,7 +106521,7 @@
     "lang": "Rust",
     "pushed": "2026-11-13T21:10:18Z",
     "size": 7911,
-    "stars": 27
+    "stars": 28
    },
    "shots": []
   },
@@ -107063,7 +107075,7 @@
     "lang": "C",
     "pushed": "2026-11-13T16:22:24Z",
     "size": 16840,
-    "stars": 53
+    "stars": 54
    },
    "shots": []
   },
@@ -107145,7 +107157,7 @@
     "lang": "C++",
     "pushed": "2026-11-12T00:56:02Z",
     "size": 12417,
-    "stars": 923
+    "stars": 924
    },
    "shots": [
     "https://github.com/user-attachments/assets/1779fdfd-bc3a-416d-8b6c-38874d8eae93"
