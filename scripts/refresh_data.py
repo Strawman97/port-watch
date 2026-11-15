@@ -309,10 +309,12 @@ def refresh_covers(projects, overrides):
             else:
                 todo.append((ck, covers[ck].get("title") or cover_title(p.get("g", "")), plat))   # matched by the older rules: check once more
                 continue
-        miss = misses.get(ck)
-        if miss and (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(miss.replace("Z", "+00:00"))).days < RETRY_MISSES_DAYS:
-            continue
         title = fixed_title or cover_title(p.get("g", ""))
+        miss = misses.get(ck)                # {"at", "title"} (older runs kept only the date)
+        miss_at, miss_title = (miss.get("at"), miss.get("title")) if isinstance(miss, dict) else (miss, None)
+        if miss_at and (datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(miss_at.replace("Z", "+00:00"))).days < RETRY_MISSES_DAYS \
+                and not (fixed_title and miss_title != fixed_title):   # a corrected title is looked up again straight away
+            continue
         if title:
             todo.append((ck, title, plat))
     log(f"  {len(todo)} games need a cover lookup (max {MAX_LOOKUPS} this run)")
@@ -338,7 +340,7 @@ def refresh_covers(projects, overrides):
             covers[ck] = {**old, "rev": 2}  # the new rules found nothing better: keep a confident older match
         else:
             covers.pop(ck, None)
-            misses[ck] = NOW
+            misses[ck] = {"at": NOW, "title": title}
         time.sleep(0.25)
     data["generated"] = NOW
     return write_json_if_changed(path, data)

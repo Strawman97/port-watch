@@ -223,6 +223,10 @@
     "darkuni/trag-recomp": {
       "title": "Hard Edge"
     },
+    "davidkalil10/heroes-lore-5-covenant-of-darkness-recomp": {
+      "_game": "Heroes Lore 5: Covenant of Darkness",
+      "platform": "Mobile"
+    },
     "davidptrssvea/table-tennis-rockstar-pc": {
       "_game": "Rockstar Table Tennis",
       "cover": "https://cdn2.steamgriddb.com/thumb/a5043803fb976050f4c31b55a2962b8e.jpg"
@@ -291,6 +295,10 @@
       "platform": "Switch 2",
       "note": "Previously featurejosh/pokopia-recomp"
     },
+    "djultra64/clayfighter64": {
+      "_game": "ClayFighter 63⅓",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_64/master/Named_Boxarts/Clay%20Fighter%2063%201-3%20%28USA%29.png"
+    },
     "donovanmontoya/pokemon-xd-decomp": {
       "_game": "Pokémon XD: Gale of Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg"
@@ -352,6 +360,16 @@
       "_game": "Jak and Daxter",
       "hide": true,
       "note": "Look-alike of a real project with a download button and no code; likely malware. Hidden."
+    },
+    "fluffyquack/rexglue-exit": {
+      "_game": "EXIT 1 & 2",
+      "title": "Exit",
+      "games": [
+        {
+          "title": "Exit 2",
+          "platform": "XBLA (Xbox 360)"
+        }
+      ]
     },
     "g-guthrie/mvc2-port-and-decomp": {
       "_game": "Marvel vs. Capcom 2",
@@ -467,6 +485,10 @@
     },
     "hiburn8/futurama-the-game-the-recomp": {
       "title": "Futurama"
+    },
+    "hokagocafe/open-amagami": {
+      "_game": "Amagami ebKore+",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_Vita/master/Named_Boxarts/ebKore%2B%20Amagami%20%28Japan%29%20%28v1.02%29.png"
     },
     "holdmysocks/mcla-recomp": {
       "_game": "Midnight Club: Los Angeles",
@@ -720,6 +742,11 @@
       "title": "The Legend of Zelda: Ocarina of Time (2026)",
       "platform": "Switch 2"
     },
+    "mixidthesilly/kart-recomp": {
+      "_game": "Switch 2 Kart Game",
+      "title": "Mario Kart World",
+      "note": "The repo hides the game's name; it's Mario Kart World"
+    },
     "mkalkhoven-po/nfs-carbon-ce-recomp": {
       "title": "Need for Speed: Carbon"
     },
@@ -740,6 +767,10 @@
     },
     "mpolizel/dk2snsrecomp": {
       "title": "Donkey Kong Country 2: Diddy's Kong Quest"
+    },
+    "mrbaazzman/asphalt5-native": {
+      "_game": "Asphalt 5 HD",
+      "title": "Asphalt 5"
     },
     "mstan/fireredleafgreenrecomp": {
       "_game": "Pokémon FireRed and LeafGreen",
@@ -839,6 +870,16 @@
       "title": "NANACA†CRASH!!",
       "cover": "https://cdn2.steamgriddb.com/thumb/efb3249dbc37bc9612d7fca498d40ee7.png"
     },
+    "oaleex/mojorecomp": {
+      "_game": "Crash of the Titans & Crash: Mind over Mutant",
+      "title": "Crash of the Titans",
+      "games": [
+        {
+          "title": "Crash: Mind over Mutant",
+          "platform": "Xbox 360"
+        }
+      ]
+    },
     "obaidr1/hercules-recompiled": {
       "_game": "Disney's Hercules",
       "cover": "https://cdn2.steamgriddb.com/thumb/a4256857d2bedfe2545111324296db10.jpg"
@@ -861,8 +902,16 @@
     "omegakatana92/ironclad-recomp": {
       "title": "Ironclad"
     },
+    "omegakatana92/macross-do-you-remember-love-recomp": {
+      "_game": "Macross: Do You Remember Love?",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation/master/Named_Boxarts/Chou%20Jikuu%20Yousai%20Macross%20-%20Ai%20Oboete%20Imasu%20ka%20%28Japan%29%20%28Disc%201%29.png"
+    },
     "omegakatana92/ninja-masters-recomp": {
       "title": "Ninja Master's"
+    },
+    "omegakatana92/super-dimension-fortress-macross-scrambled-valkyrie-recomp": {
+      "_game": "Super Dimension Fortress Macross: Scrambled Valkyrie",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Super_Nintendo_Entertainment_System/master/Named_Boxarts/Choujikuu%20Yousai%20Macross%20-%20Scrambled%20Valkyrie%20%28Japan%29%20%28En%29.png"
     },
     "opengp-dev/opengp": {
       "_game": "Mario Kart Arcade GP",
@@ -1102,6 +1151,10 @@
       "_game": "Soldier of Fortune",
       "type": "Reimplementation"
     },
+    "silviodiaz/cadence-pc-recomp": {
+      "_game": "Cadence of Hyrule",
+      "title": "Cadence of Hyrule: Crypt of the NecroDancer Featuring The Legend of Zelda"
+    },
     "sonsegajp/hwder": {
       "title": "Hyrule Warriors"
     },
@@ -1338,7 +1391,9 @@
       "note": "Fan game, not a port of a retail game"
     },
     "tmcleroy/vampire-savior-recomp": {
-      "title": "Vampire Savior"
+      "title": "Vampire Savior: The Lord of Vampire",
+      "_game": "Vampire Savior",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/FBNeo_-_Arcade_Games/master/Named_Boxarts/Vampire%20Savior%20-%20the%20lord%20of%20vampire%20%28970519%20Japan%29.png"
     },
     "toshredsyousay/rumblerecomp": {
       "title": "Pokémon Rumble"
@@ -1434,6 +1489,10 @@
       "_game": "Ragnarok Odyssey ACE",
       "cover": "https://cdn2.steamgriddb.com/thumb/95b93c1666395f087ad11bd6cfd2e7f7.jpg"
     },
+    "vxz-dev/dragon-quest-mori-mori-recompilation-": {
+      "_game": "Dragon Quest: Slime Mori Mori",
+      "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Slime%20Morimori%20Dragon%20Quest%20-%20Shougeki%20no%20Shippo%20Dan%20%28Japan%29.png"
+    },
     "wivi514/dead_rising_2_case_west_xenon_recomp": {
       "_game": "Dead Rising 2: Case West",
       "cover": "https://cdn2.steamgriddb.com/thumb/3de080c153a4d3d431cd08028f17bf1f.jpg"
@@ -1463,6 +1522,16 @@
     "xzhuofan/cryrecomp": {
       "_game": "The Legend of Zelda: Tears of the Kingdom",
       "platform": "Switch"
+    },
+    "yanm1103/mikisworld": {
+      "_game": "Miki's World 1 and 2",
+      "title": "Miki's World",
+      "games": [
+        {
+          "title": "Miki's World 2",
+          "platform": "Mobile"
+        }
+      ]
     },
     "yapel/torchlight-recomp": {
       "_game": "Torchlight",
