@@ -2010,8 +2010,11 @@ function renderActivity(){
 function renderFilters(){
   const all=allProjects().map(view);
   const cnt=(skip,fn)=>{const c={};for(const v of all){if(!passes(v,skip))continue;const k=fn(v);c[k]=(c[k]||0)+1;}return c;};
-  const tc=cnt("type",v=>v.type),pc=cnt("plat",v=>v.platform);
-  const allPlat={};all.forEach(v=>allPlat[v.platform]=1);
+  const tc=cnt("type",v=>v.type);
+  // platforms count games, not projects: each game of a multi-game project counts on its own platform, and
+  // several projects for the same game count once
+  const pset={},allPlat={};for(const v of expandViews(all)){allPlat[v.platform]=1;if(!passes(v,"plat"))continue;(pset[v.platform]=pset[v.platform]||new Set()).add(groupKeyOf(v));}
+  const pc={};for(const k in pset)pc[k]=pset[k].size;
   const order=Object.keys(PCOL).filter(k=>allPlat[k]);Object.keys(allPlat).forEach(k=>{if(!order.includes(k))order.push(k);});
   const opt=(set,val,n,dot,label)=>`<label class="opt">${dot?`<span class="dot" style="--pc:${PCOL[val]||"#888"}"></span>`:""}<input type="checkbox" data-set="${set}" value="${esc(val)}" ${UI[set].has(val)?"checked":""}> ${esc(label||val)}<span class="n">${n||0}</span></label>`;
   $("#fType").innerHTML=TYPES.map(t=>opt("type",t,tc[t])).join("");

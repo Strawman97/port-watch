@@ -1033,6 +1033,43 @@ DB_PLAT = {"Nintendo 64": "N64", "PlayStation": "PS1", "Sony PlayStation": "PS1"
            "Game Boy": "Game Boy", "Game Boy Color": "Game Boy Color", "Game Boy Advance": "GBA", "Nintendo DS": "DS", "Nintendo 3DS": "3DS", "Virtual Boy": "Virtual Boy",
            "Mega Drive": "Mega Drive", "Genesis": "Mega Drive", "Master System": "Master System", "Game Gear": "Game Gear", "Sega CD": "Sega CD", "32X": "32X",
            "Saturn": "Saturn", "Dreamcast": "Dreamcast", "Arcade": "Arcade", "PC Engine": "PC Engine", "TurboGrafx-16": "PC Engine"}
+DB_PLAT["Java ME (J2ME) mobile phone"] = "Mobile"
+# Decomp Buddy files some console projects under "Unknown" or "Others": the platform is read from the title and description
+# (same rules as the page's Add form), or taken from a game Port Watch already lists that the description names.
+GUESS_PLAT = [("XBLA (Xbox 360)", r"\bxbla\b|xbox live arcade"), ("Xbox 360", r"xbox ?360|\bx360\b|rexglue|xenon recomp"), ("PS Vita", r"ps ?vita\b"),
+              ("Xbox One", r"xbox one"), ("Xbox (original)", r"original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))"),
+              ("PS4", r"\bps4\b|playstation 4"), ("PS3", r"\bps3\b|playstation 3"), ("PS2", r"\bps2\b|playstation 2"), ("PSP", r"\bpsp\b|playstation portable"),
+              ("PS1", r"\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))"), ("Wii U", r"wii ?u\b"), ("Wii", r"\bwii\b"),
+              ("GameCube", r"gamecube|\bgcn\b|\bg[a-z0-9]{3}01\b"), ("Switch 2", r"switch ?2\b"), ("Switch", r"nintendo switch|\(switch\)|switch (?:game|version|title|release)"),
+              ("3DS", r"\b3ds\b"), ("DS", r"\bnds\b|nintendo ds\b"), ("N64", r"\bn64\b|nintendo 64"), ("SNES", r"\bsnes\b|super nintendo"), ("NES", r"\bnes\b|famicom"),
+              ("GBA", r"\bgba\b|game ?boy advance"), ("Game Boy Color", r"\bgbc\b|game ?boy colou?r"), ("Game Boy", r"game ?boy\b"), ("Dreamcast", r"dreamcast"),
+              ("Saturn", r"sega saturn|\bsaturn\b"), ("32X", r"\b32x\b"), ("Sega CD", r"sega cd|mega cd"), ("Mega Drive", r"mega ?drive|sega genesis|\bgenesis\b"),
+              ("PC Engine", r"pc[\s-]?engine|turbografx"), ("Arcade", r"\barcade\b"),
+              ("Mobile", r"\b(?:ios|iphone|ipad|android|mobile|phone) (?:game|version|original|release|title)\b|\bapk\b|\bj2me\b|windows phone|\bipod\b|\bipa\b"),
+              ("PC", r"\b(?:pc|windows|dos|ms-dos|mac|amiga|atari st|bbc micro|zx spectrum|c64|cd-i)\b")]
+
+NOT_CONSOLE = re.compile(r"cd-i|\bamiga\b|atari st\b|bbc micro|zx spectrum|\bc64\b|commodore|ms-dos|\bdos game|pico-8|companion app|mod manager|launcher\b", re.I)
+MOBILE = re.compile(r"\b(?:ios|iphone|ipad|android|mobile|phone) (?:game|version|original|release|title)\b|\((?:ios|iphone|ipad|android)\b|\bipad hd\b"
+                    r"|\bapk\b|\bj2me\b|windows phone|\bipod\b|\bipa\b|apple arcade|\bmobile\s*$", re.I)
+
+def db_guess_platform(title, desc, known_plat):
+    text = f"{title or ''} {desc or ''}"
+    if NOT_CONSOLE.search(text):
+        return None
+    if MOBILE.search(text) or MOBILE.search(str(title or "")):
+        return "Mobile"
+    for plat, rx in GUESS_PLAT[:-2]:
+        for m in re.finditer(rx, text, re.I):
+            # "port for 3DS and PC", "runs on Switch" name where it runs, not what it came from
+            if not re.search(r"\b(?:for|to|on|onto|and|or)\s+(?:the\s+)?(?:new\s+)?$", text[max(0, m.start() - 14):m.start()], re.I):
+                return plat
+    # a game Port Watch already lists, named in the title or description ("Conker's Bad Fur Day Recompiled")
+    t, best = f" {norm(text)} ", ""
+    for name in known_plat:
+        if len(name) >= 6 and len(name) > len(best) and f" {name} " in t:
+            best = name
+    return known_plat[best] if best else None
+
 DB_OS = {"windows": "Windows", "linux": "Linux", "macos": "macOS", "mac": "macOS", "android": "Android", "ios": "iOS"}
 
 def db_split_title(title, repo, project=""):
@@ -1109,7 +1146,8 @@ def db_type(text):
         return "Source Port"
     return "Recompilation"
 
-def decompbuddy_projects(known=frozenset()):
+def decompbuddy_projects(known=None):
+    known = known or {}                   # normalized title -> platform of the games Port Watch already lists
     """Console projects in Decomp Buddy's catalog: [{k, id, g, p, t, pr, ...}], other games of a repo folded into 'games'."""
     src, games = "catalog", []
     try:
@@ -1125,7 +1163,7 @@ def decompbuddy_projects(known=frozenset()):
         except Exception as e2:
             log(f"  Decomp Buddy's hand-found list couldn't be read either ({e2})")
             return None
-    out, skipped = {}, 0
+    out, skipped, guessed = {}, 0, 0
     for g in games:
         repo, host = str(g.get("repo") or "").strip(), str(g.get("host") or "github").lower()
         if repo.startswith("gitlab:"):
@@ -1133,7 +1171,13 @@ def decompbuddy_projects(known=frozenset()):
         if not repo or "/" not in repo or host not in ("github", "gitlab"):
             skipped += 1
             continue
-        p = DB_PLAT.get(str(g.get("console") or "").strip())
+        con = str(g.get("console") or "").strip()
+        p = DB_PLAT.get(con)
+        if not p and con in ("Unknown", "Others", ""):
+            p = db_guess_platform(g.get("title"), g.get("description") or g.get("notes"), known)
+            if p and is_emulator(g.get("title"), repo.lower(), str(g.get("description") or g.get("notes") or "")):
+                p = None
+            guessed += 1 if p else 0
         if not p:
             skipped += 1              # PC games, DOS, computers and unknown consoles aren't console ports
             continue
@@ -1162,7 +1206,8 @@ def decompbuddy_projects(known=frozenset()):
                   "games": []}
         if hack:
             out[k]["hack"] = hack
-    log(f"  Decomp Buddy ({src}): {len(games)} listed, {len(out)} console projects kept, {skipped} left out (PC/computer games, emulators, fan games, other hosts)")
+    log(f"  Decomp Buddy ({src}): {len(games)} listed, {len(out)} console projects kept, {skipped} left out (PC/computer games, emulators, fan games, other hosts), "
+        f"{guessed} placed on a platform Decomp Buddy didn't record")
     return list(out.values())
 
 def refresh_decompbuddy(projects, skip_keys):
@@ -1222,8 +1267,12 @@ def main():
             overrides = {**overrides, p["k"]: {**(overrides.get(p["k"]) or {}), "cover": p["cover"]}}
     log("Decomp Buddy:")
     taken_all = taken | {p["k"] for p in added} | {w.lower() for a in raw_added.values() if isinstance(a, dict) for w in (a.get("was") or [])}
-    known_titles = ({norm(p.get("g") or "") for p in seed + extra + added}
-                    | {norm(str(f.get("title") or "")) for f in overrides.values() if isinstance(f, dict)}) - {""}
+    known_titles = {}
+    for p in seed + extra + added:
+        f = overrides.get(p.get("k") or "") or {}
+        t, pl = norm(str(f.get("title") or p.get("g") or "")), f.get("platform") or p.get("p")
+        if t and pl and pl not in ("Unknown", "PC"):
+            known_titles.setdefault(t, pl)
     dbuddy = refresh_decompbuddy(decompbuddy_projects(known_titles), taken_all)
     for p in dbuddy:
         p.setdefault("games", [])
