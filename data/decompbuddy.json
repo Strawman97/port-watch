@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T15:06:06+00:00",
+ "generated": "2026-11-16T19:35:20+00:00",
  "projects": [
   {
    "ai": false,
@@ -181,6 +181,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-06",
+   "d": "Recompilation project for A Certain Magical Virtual-On M.S.B.S. Ver. 55.55 (PS4)",
+   "g": "A Certain Magical Virtual-On M.S.B.S. Ver. 55.55",
+   "id": "db:kitaaaaaa/toarumajutsuvirtualon-recomp",
+   "k": "kitaaaaaa/toarumajutsuvirtualon-recomp",
+   "lc": "2026-11-16T08:27:19Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ToaruMajutsuVirtualOn-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-26",
    "d": "Native x86_64 PC port of Ace Combat 04: Shattered Skies, based on the North American release (NTSC-U SLUS-20152). Requires your own PS2 copy of the game.",
@@ -212,6 +229,23 @@
    "pr": "Ace-Combat-04-PC-Port",
    "pre": false,
    "rel": "v2.2.1-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Ace Combat 04: Shattered Skies PC port (Vulkan), basado en el AC04 PC Port de PresidentRaptor. Sin datos del juego: necesitas tu propia copia.",
+   "g": "Ace Combat 04: Shattered Skies",
+   "id": "db:shana2203/mobius01",
+   "k": "shana2203/mobius01",
+   "lc": "2026-11-16T07:58:49Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Mobius01",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -770,6 +804,23 @@
    "pr": "amped3revamped",
    "pre": false,
    "rel": "launcher-v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Unofficial Windows Xbox static recompilation of Amped: Freestyle Snowboarding",
+   "g": "Amped: Freestyle Snowboarding",
+   "id": "db:ampedup-2001/ampedup",
+   "k": "ampedup-2001/ampedup",
+   "lc": "2026-11-15T20:57:33Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "AMPEDUP",
+   "pre": false,
+   "rel": "v0.5",
    "t": "Recompilation"
   },
   {
@@ -2724,6 +2775,23 @@
    "pr": "OpenCross",
    "pre": false,
    "rel": "v0.4.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "HD-2D-style native port built on ct-recomp (GPL-3.0-or-later). Bring your own ROM: no game data included.",
+   "g": "Chrono Trigger",
+   "id": "db:dittobyte/triggered-chrono-recomphd2d",
+   "k": "dittobyte/triggered-chrono-recomphd2d",
+   "lc": "2026-11-16T14:11:53Z",
+   "p": "SNES",
+   "po": [
+    "Linux"
+   ],
+   "pr": "Triggered-Chrono-RecompHD2D",
+   "pre": true,
+   "rel": "v0.1.0-alpha.1",
    "t": "Recompilation"
   },
   {
@@ -5685,6 +5753,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "Static recompilation of the original Xbox Far Cry Instincts Evolution into a native Windows x64 executable (Direct3D 11). Bring your own copy of the game; no game files included.",
+   "g": "Far Cry Instincts Evolution",
+   "id": "db:bassobr/far-cry-instincts-evolution-recomp",
+   "k": "bassobr/far-cry-instincts-evolution-recomp",
+   "lc": "2026-11-16T10:16:53Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Far-Cry-Instincts-Evolution-Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-13",
    "d": "Unofficial static recompilation of Far Cry Instincts Predator (Xbox 360) for Windows. Bring your own copy of the game.",
    "g": "Far Cry Instincts Predator",
@@ -5734,6 +5819,29 @@
    "pr": "Fatal-Fury-3-Recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-14",
+   "d": "",
+   "g": "Fear Effect",
+   "games": [
+    {
+     "platform": "PS1",
+     "title": "Fear Effect 2: Retro Helix"
+    }
+   ],
+   "id": "db:iva1nn/project-helix",
+   "k": "iva1nn/project-helix",
+   "lc": "2026-11-16T11:49:23Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "project-helix",
+   "pre": false,
+   "rel": "v1.2.0",
    "t": "Recompilation"
   },
   {
@@ -6082,6 +6190,23 @@
    "pr": "FF-Mystic-Quest-Recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Native Android port of Final Fantasy Resonance for the Retroid Pocket Flip 2. Early version. Bring your own extracted game files.",
+   "g": "Final Fantasy Resonance",
+   "id": "db:iamwilmar/resonance-recomp",
+   "k": "iamwilmar/resonance-recomp",
+   "lc": "2026-11-16T05:18:53Z",
+   "p": "Switch",
+   "po": [
+    "Android"
+   ],
+   "pr": "resonance-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -9234,7 +9359,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.2",
    "t": "Recompilation"
   },
   {
@@ -13870,6 +13995,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "Unofficial native Windows recompilation of NBA Unrivaled",
+   "g": "NBA Unrivaled",
+   "id": "db:dalves408/nbaunrivaledrc",
+   "k": "dalves408/nbaunrivaledrc",
+   "lc": "2026-11-16T06:39:30Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "nbaunrivaledrc",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-27",
    "d": "Unofficial native Windows recompilation of NCAA Football 06 for Xbox, built with XboxXBERecomp. Public beta; original game files required.",
    "g": "NCAA Football 06",
@@ -15121,6 +15263,23 @@
    "pr": "PerfectDarkZeroRestored",
    "pre": false,
    "rel": "v0.9.3.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-13",
+   "d": "Unofficial native PC port of Persona 2: Eternal Punishment (PS1) for Windows and Linux via MIPS interpretation and static recompilation. No external emulator. Bring your own copy. (WIP)",
+   "g": "Persona 2: Eternal Punishment",
+   "id": "db:sargon494/personarm",
+   "k": "sargon494/personarm",
+   "lc": "2026-11-16T10:47:38Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "PersonaRM",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -16799,6 +16958,23 @@
    "pr": "red-dead-recompilation",
    "pre": false,
    "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Windows PC recompilation of RedCard 20-03 (Xbox) — version 1.0. Direct3D 11, controller and keyboard, optional 4x hi-res textures, RecompLauncher support. Bring your own USA disc.",
+   "g": "RedCard 20-03",
+   "id": "db:dalves408/redcard2003recomp",
+   "k": "dalves408/redcard2003recomp",
+   "lc": "2026-11-16T05:27:47Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "redcard2003recomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
