@@ -278,6 +278,74 @@ def load_added():
                     "cover": e.get("cover") or "", "games": e.get("games") or []})
     return out
 
+MAX_ART = int(os.environ.get("PW_MAX_ART", "200"))                       # games per run that get hero/logo/icon art looked up
+
+def sgdb_first(kind, game_id, key, query=""):
+    """First image of one kind (heroes, logos, icons, grids) for a SteamGridDB game, or ""."""
+    res = http_get(f"{SGDB_BASE}/{kind}/game/{game_id}?types=static&nsfw=false&humor=false&epilepsy=false{query}", {"Authorization": "Bearer " + key})
+    imgs = (json.loads(res).get("data") if res else None) or []
+    time.sleep(0.2)
+    return (imgs[0].get("url") or "") if imgs else ""
+
+def refresh_art(projects, overrides):
+    """data/art.json: SteamGridDB hero, logo, icon and wide capsule per game, for Port Launcher's Big Picture mode and
+    its Steam shortcuts. Separate from covers.json so the page's covers are untouched. A few hundred games per run."""
+    key = os.environ.get("SGDB_API_KEY", "").strip()
+    path = os.path.join(DATA, "art.json")
+    data = load_json(path, {"format": "port-watch-art", "version": 1, "art": {}, "misses": {}})
+    art, misses = data.setdefault("art", {}), data.setdefault("misses", {})
+    if not key:
+        log("  SGDB_API_KEY isn't set; skipping art")
+        return False
+    now = datetime.datetime.now(datetime.timezone.utc)
+    todo, seen = [], set()
+    for p in projects:
+        ck = p.get("k") or p["id"]
+        fix = overrides.get(ck) or overrides.get(p["id"]) or {}
+        if fix.get("hide") or ck in seen:
+            continue
+        seen.add(ck)
+        title = cover_title(fix["title"]) if fix.get("title") else cover_title(p.get("g", ""))
+        if not title:
+            continue
+        if ck in art and art[ck].get("title") == title:
+            continue
+        miss = misses.get(ck) or {}
+        if miss.get("title") == title and miss.get("at") and (now - datetime.datetime.fromisoformat(miss["at"].replace("Z", "+00:00"))).days < 30:
+            continue
+        todo.append((ck, title, fix.get("platform") or p.get("p") or ""))
+    log(f"  {len(todo)} games need hero, logo and icon art (max {MAX_ART} this run)")
+    for ck, title, plat in todo[:MAX_ART]:
+        try:
+            res = http_get(SGDB_BASE + "/search/autocomplete/" + urllib.parse.quote(bare_title(title), safe=""), {"Authorization": "Bearer " + key})
+            hits = (json.loads(res).get("data") if res else None) or []
+            best = pick_match(title, hits, lambda h: h.get("name"), lambda h: ts_year(h.get("release_date")), plat)
+            time.sleep(0.2)
+            if not best:
+                art.pop(ck, None)
+                misses[ck] = {"at": NOW, "title": title}
+                continue
+            gid = best[1]["id"]
+            found = {"hero": sgdb_first("heroes", gid, key), "logo": sgdb_first("logos", gid, key), "icon": sgdb_first("icons", gid, key),
+                     "wide": sgdb_first("grids", gid, key, "&dimensions=460x215,920x430"),
+                     "capsule": sgdb_first("grids", gid, key, "&dimensions=600x900")}
+        except urllib.error.HTTPError as e:
+            if e.code == 401:
+                log("  SteamGridDB rejected the API key (401); stopping art lookups")
+                break
+            log(f"  {title}: SteamGridDB error {e.code}")
+            continue
+        except Exception as e:
+            log(f"  {title}: {e}")
+            continue
+        art[ck] = {"sgdb": gid, "name": best[1].get("name"), "match": round(best[0], 3), "title": title, "added": NOW, **{k: v for k, v in found.items() if v}}
+        misses.pop(ck, None)
+    data["generated"] = NOW
+    changed = write_json_if_changed(path, data)
+    log(f"  art.json: {len(art)} games with art, {len(misses)} not on SteamGridDB")
+    return changed
+
+
 def refresh_covers(projects, overrides):
     key = os.environ.get("SGDB_API_KEY", "").strip()
     path = os.path.join(DATA, "covers.json")
@@ -1280,6 +1348,11 @@ def main():
         p.setdefault("games", [])
     extra = extra + added + dbuddy
     refresh_covers(with_games(seed + extra, overrides), overrides)
+    log("Art:")
+    try:                                  # hero, logo and icon art for Port Launcher; never fails the refresh
+        refresh_art(with_games(seed + extra, overrides), overrides)
+    except Exception as e:
+        log(f"  art.json couldn't be refreshed ({e})")
     log("itch.io devlogs:")
     refresh_itch(seed + added)
     log("libretro-thumbnails:")

@@ -110,6 +110,8 @@ def build(projects=None):
     status = (load("status.json", {}).get("repos")) or {}
     covers = load("covers.json", {}).get("covers") or {}
     lt = load("libretro.json", {}).get("map") or {}
+    art = load("art.json", {}).get("art") or {}
+    sgdb = lambda key: {x: v for x, v in (art.get(key) or {}).items() if x in ("hero", "logo", "icon", "wide", "capsule")}
     screens = load("screens.json", {})
     smap, sgames = screens.get("map") or {}, screens.get("games") or {}
     seen = load("history.json", {}).get("seen") or {}
@@ -170,7 +172,7 @@ def build(projects=None):
             gk = f"{k}#{R.norm(g['title'])}"
             gs = sgames.get(smap.get(gk) or "") or {}
             gcov = (fix.get("gameCovers") or {}).get(g["title"]) or lt_url(lt.get(gk)) or (covers.get(gk) or {}).get("url") or (igdb(gs["cover"], "cover_big") if gs.get("cover") else "")
-            games.append({"title": g["title"], "platform": g["platform"], "cover": gcov,
+            games.append({"title": g["title"], "platform": g["platform"], "cover": gcov, "sgdb": sgdb(gk),
                           "art": [igdb(i, "1080p") for i in (gs.get("art") or [])[:2]] or [igdb(i, "1080p") for i in (gs.get("shots") or [])[:1]]})
         source = "Port Watch" if p.get("src") or k in added_raw else ("Decomp Buddy" if str(p.get("id") or "").startswith("db:") else "Awesome Decomp Games")
         out.append({
@@ -183,7 +185,7 @@ def build(projects=None):
             "planned": sorted(f for f, v in feats.items() if v == "planned"),
             "release": rel, "playable": bool(rel), "pushed": repo.get("pushed") or p.get("lc") or "",
             "stars": stars, "archived": bool(repo.get("archived")),
-            "cover": cover, "coverThumb": cov.get("thumb") if cover == cov.get("url") else "",
+            "sgdb": sgdb(k), "cover": cover, "coverThumb": cov.get("thumb") if cover == cov.get("url") else "",
             "art": [igdb(i, "1080p") for i in (sg.get("art") or [])[:2]] or [igdb(i, "1080p") for i in (sg.get("shots") or [])[:1]],
             "shots": {"port": (st.get("shots") or [])[:8], "original": [igdb(i, "screenshot_big") for i in (sg.get("shots") or [])[:6]]},
             "genres": sg.get("genres") or [], "series": sg.get("series") or [],
