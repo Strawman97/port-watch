@@ -174,9 +174,11 @@ The token is stored in that browser only, under its own key, so it's never part 
 | `index.html` | The whole site, served by GitHub Pages from the `main` branch |
 | `scripts/refresh_data.py` | Fetches SteamGridDB covers, itch.io devlogs and every project's status (standard library only) |
 | `data/decompbuddy.json` | Written by the workflow: the console projects in Decomp Buddy's catalog that the built-in list, Awesome Decomp Games and `overrides.json` don't already have. PC, DOS and computer games are left out. If decompbuddy.com can't be reached, the hand-found list in its GitHub repository is used; if neither can, the previous copy is kept. |
+| `data/catalog.json` | Written by the workflow: every listed project fully resolved (title, platform, type, what it runs on, features, latest release, art, screenshots, other games covered, malware-lure verdict), for programs that can't run the page's JavaScript. [Port Launcher](https://github.com/Strawman97/port-launcher) reads it. Built by `scripts/build_catalog.py` from the other files, with no extra requests. |
 | `data/recompfyi.json` | Written by the workflow once a day: a copy of recomp.fyi's table for the Find a game tab |
 | `data/history.json` | Written by the workflow: when each project first appeared in Port Watch (projects present at the first run are marked "before") |
 | `data/libretro.json` | Written by the workflow: each retro game's libretro-thumbnails box art, in-game shot and title screen |
+| `scripts/build_catalog.py` | Builds `data/catalog.json` at the end of each refresh. Its rules are simpler than the page's, so fix differences in `overrides.json` |
 | `scripts/pw_analysis.py` | The page's README, release-file, `.recomp.json`, malware-lure and README-screenshot rules, ported to Python |
 | `.github/workflows/refresh-data.yml` | Runs the script every three hours and after `overrides.json` or `index.html` changes, and commits `data/` when it changes |
 | `data/` | Written by the workflow; don't edit by hand |

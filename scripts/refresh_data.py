@@ -154,7 +154,7 @@ def awesome_projects():
         k = ("gitlab.com/" if "gitlab.com" in (g.get("url") or "") else "") + g["repo"].lower()
         p = AW_PLAT_FIX.get(k) or AW_PLAT.get(g.get("platform"))
         if p:
-            out.append({"k": k, "id": "aw:" + k, "g": g.get("title") or "", "p": p})
+            out.append({"k": k, "id": "aw:" + k, "g": g.get("title") or "", "p": p, "t": t, "d": g.get("description") or ""})
     return out
 
 # ---------------------------------------------------------------- SteamGridDB covers
@@ -1295,6 +1295,12 @@ def main():
     # Decomp Buddy's projects count as new from the day it listed them, so its back catalogue doesn't all show as new
     first = {p["k"]: (p.get("at") or "before") for p in dbuddy}
     refresh_history(sorted({p.get("k") or p["id"] for p in tracked}), first)
+    log("Catalog:")
+    try:                                  # data/catalog.json for Port Launcher; never fails the refresh
+        import build_catalog
+        build_catalog.build(seed + extra)
+    except Exception as e:
+        log(f"  catalog.json couldn't be built ({e}); keeping the previous one")
 
 if __name__ == "__main__":
     main()
