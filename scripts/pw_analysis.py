@@ -29,28 +29,32 @@ FEATURES = [
 ]
 FEATURES = [(i, re.compile(p, F)) for i, p in FEATURES]
 OS_TEXT = [
-    ("Windows", r"\bwindows\b|\bwin64\b|\.exe\b|direct3d|d3d1[12]|\bpc\b"),
+    ("Windows", r"\bwindows\b|\bwin64\b|\.exe\b|direct3d|\bdirectx ?1[12]\b|d3d1[12]|\bpc\b"),
     ("Linux", r"\blinux\b|appimage|flatpak"),
     ("macOS", r"\bmacos\b|\bmac os\b|apple silicon|\bmac\b"),
     ("Steam Deck", r"steam ?deck|steamos"),
     ("Android", r"\bandroid\b|\.apk\b"),
     ("iOS", r"\bios\b|\bipados\b|\biphone\b|\bipad\b"),
+    ("Browser", r"webassembly|\bwasm\b|\bin (?:the|your|a) (?:web )?browser\b|\bweb ?browser\b|\bbrowser (?:port|version|build)\b|\bplayable (?:online|on the web)\b|\bbuilt in scratch\b"),
 ]
 OS_TEXT = [(i, re.compile(p, F)) for i, p in OS_TEXT]
-BUILD_HEAD = re.compile(r"build|compil|from source|development|developer|contribut|requirements?|prerequisite|dependenc|what you need|toolchain|setup for dev|getting the source", F)
+BUILD_HEAD = re.compile(r"build|(?<!re)compil|from source|development|developer|contribut|requirements?|prerequisite|dependenc|what you need|toolchain|setup for dev|getting the source", F)
 BUILD_LINE = re.compile(r"\b(build(ing|s|er)?|compil\w*|cmake|msvc|visual studio|xcode|devkit\w*|toolchain|wsl|homebrew|brew install|apt(-get)? install|pacman|vcpkg|python3?|\.bat\b|\.command\b|\.sh\b|terminal|command line|clone)\b", F)
 ASSET_SKIP = re.compile(r"(^|[^a-z])(builder|build[-_ ]?tools?|patcher|tools?|sdk|source|src|symbols?|pdb|debug[-_ ]?info|checksums?|sha256|md5)([^a-z]|$)", F)
 ASSET_EXT = [(re.compile(p, F), o) for p, o in [
     (r"\.(exe|msi)$", "Windows"), (r"\.(appimage|deb|rpm|flatpak(ref)?)$", "Linux"), (r"\.(dmg|pkg)$", "macOS"), (r"\.apk$", "Android"), (r"\.ipa$", "iOS"),
-    (r"\.(3dsx|cia)$", "3DS"), (r"\.(nro|nsp|xci)$", "Switch"), (r"\.vpk$", "PS Vita"), (r"\.(wuhb|rpx)$", "Wii U"), (r"eboot\.pbp$|\.pbp$", "PSP")]]
+    (r"\.(3dsx|cia)$", "3DS"), (r"\.(nro|nsp|xci)$", "Switch"), (r"\.vpk$", "PS Vita"), (r"\.(wuhb|rpx)$", "Wii U"), (r"eboot\.pbp$|\.pbp$", "PSP"),
+    (r"\.cdi$", "Dreamcast"), (r"\.nds$", "DS"), (r"\.wasm$", "Browser")]]
 OS_TOKENS = {"windows": "Windows", "win": "Windows", "win64": "Windows", "win32": "Windows", "winx64": "Windows", "msvc": "Windows", "pc": "Windows",
              "linux": "Linux", "appimage": "Linux", "flatpak": "Linux", "steamos": "Linux", "macos": "macOS", "mac": "macOS", "osx": "macOS", "darwin": "macOS",
              "universal2": "macOS", "android": "Android", "ios": "iOS", "iphone": "iOS", "ipad": "iOS", "ipados": "iOS", "3ds": "3DS", "n3ds": "3DS",
-             "switch": "Switch", "vita": "PS Vita", "psvita": "PS Vita", "wiiu": "Wii U", "psp": "PSP", "steamdeck": "Steam Deck"}
-TARGET_ALT = r"(?:nintendo\s+)?(?:new\s+)?(3ds|switch|ps ?vita|vita|wii ?u|psp)"
-TARGET_RES = [re.compile(r"\b(?:ports?|ported|running|runs|playable|plays|native(?:ly)?|homebrew|installs?)\s+(?:natively\s+)?(?:to|for|on)\s+(?:the\s+|your\s+)?" + TARGET_ALT + r"\b", F),
+             "switch": "Switch", "vita": "PS Vita", "psvita": "PS Vita", "wiiu": "Wii U", "psp": "PSP", "steamdeck": "Steam Deck",
+             "ps5": "PS5", "ps4": "PS4", "ps3": "PS3", "dreamcast": "Dreamcast", "kallistios": "Dreamcast", "wasm": "Browser", "webassembly": "Browser"}
+TARGET_ALT = r"(?:nintendo\s+|sega\s+)?(?:new\s+)?(3ds|switch|ps ?vita|vita|wii ?u|psp|ps ?5|playstation ?5|ps ?4|playstation ?4|ps ?3|playstation ?3|original xbox|og xbox|wii|nds|ds|dreamcast|snes|nes)(?![\w-])"
+TARGET_RES = [re.compile(r"\b(?:ports?|ported|running|runs|playable|plays|native(?:ly)?|homebrew|installs?|recompiled|recomp|compiled|built)\s+(?:natively\s+)?(?:to|for|on)\s+(?:the\s+|your\s+|a\s+)?(?:jailbroken\s+|modded\s+)?" + TARGET_ALT, F),
+              re.compile(r"\b(?:port|version|build)\b[^.]{0,60}?\b(?:to|onto|on) (?:the\s+|a\s+)?(?:jailbroken\s+|modded\s+)?" + TARGET_ALT, F),
               re.compile(r"\bnative\s+" + TARGET_ALT + r"\s+(?:port|version|build|homebrew)", F),
-              re.compile(r"\b" + TARGET_ALT + r"\s+(?:port|homebrew)\b", F)]
+              re.compile(r"\b" + TARGET_ALT + r"\s+(?:source\s+)?(?:port|homebrew)\b", F)]
 RJ_SYS = {"Xbox 360": "Xbox 360", "Xbox": "Xbox (original)", "PS3": "PS3", "PS2": "PS2", "PSP": "PSP", "PS Vita": "PS Vita", "PS1": "PS1", "Wii U": "Wii U",
           "Wii": "Wii", "GameCube": "GameCube", "N64": "N64", "Switch": "Switch", "SNES": "SNES", "GBA": "GBA", "GBC": "Game Boy Color", "GB": "Game Boy",
           "NDS": "DS", "3DS": "3DS", "Virtual Boy": "Virtual Boy", "NES": "NES", "Master System": "Master System", "Game Gear": "Game Gear", "32X": "32X",
@@ -76,7 +80,9 @@ def sentences(text):
 
 def target_name(x):
     x = re.sub(r"\s+", "", x.lower())
-    return {"3ds": "3DS", "switch": "Switch", "psvita": "PS Vita", "vita": "PS Vita", "wiiu": "Wii U", "psp": "PSP"}.get(x)
+    return {"3ds": "3DS", "switch": "Switch", "psvita": "PS Vita", "vita": "PS Vita", "wiiu": "Wii U", "psp": "PSP", "ps5": "PS5", "playstation5": "PS5",
+            "ps4": "PS4", "playstation4": "PS4", "ps3": "PS3", "playstation3": "PS3", "originalxbox": "Xbox (original)", "ogxbox": "Xbox (original)",
+            "wii": "Wii", "nds": "DS", "ds": "DS", "dreamcast": "Dreamcast", "snes": "SNES", "nes": "NES"}.get(x)
 
 
 def console_targets(text):
@@ -92,7 +98,7 @@ def console_targets(text):
 
 
 def analyze(text):
-    out = {"features": {}, "os": {}, "targets": {}, "v": 3}
+    out = {"features": {}, "os": {}, "targets": {}, "v": 4}
     kept, skip = [], 0
     for raw in re.split(r"\r?\n", CODE_BLOCK.sub(" ", str(text or ""))):
         h = re.match(r"^\s{0,3}(#{1,6})\s+(.*)$", raw)
@@ -125,7 +131,7 @@ def analyze(text):
 
 def name_tokens(s):
     s = re.sub(r"([a-z])([A-Z])", r"\1 \2", str(s or ""))
-    s = re.sub(r"([A-Za-z])(\d)(?!ds)", r"\1 \2", s)
+    s = re.sub(r"([A-Za-z])(\d)(?!ds)", lambda m: m.group(0) if s[max(0, m.start() - 1):m.start() + 1].lower() == "ps" else m.group(1) + " " + m.group(2), s)  # keep "ps5", "ps4"
     return [t for t in re.split(r"[^a-z0-9]+", s.lower()) if t]
 
 

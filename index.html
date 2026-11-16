@@ -501,28 +501,31 @@ const FEATURES = [
   {id:"aa",label:"Anti-aliasing",re:/\b(msaa|smaa|fxaa|taa)\b|anti-?aliasing/i},
   {id:"single",label:"Single-screen",re:/single[\s-]?screen|one[\s-]screen (mode|layout|setup|view)|\bon (a |one )?single (screen|display)|\bon one (screen|display)\b|merg(e|es|ed|ing) (both|the two|the dual|the top and bottom) screens|both screens (merged|combined) into one/i,only:["DS","3DS"]}   // dual-screen games converted to one screen
 ];
-const OSLIST = ["Windows","Linux","macOS","Android","iOS","Steam Deck","Switch","3DS","PS Vita","Wii U","PSP"];
-const CONSOLE_TARGETS = ["Switch","3DS","PS Vita","Wii U","PSP"];
+// where a project runs: PCs and phones first, then consoles and handhelds (homebrew builds), then the web browser
+const OSLIST = ["Windows","Linux","macOS","Android","iOS","Steam Deck","Switch","3DS","PS Vita","Wii U","PSP","PS5","PS4","PS3","Xbox (original)","Wii","DS","Dreamcast","SNES","NES","Browser"];
+const OS_BASE = ["Windows","Linux","macOS","Android","iOS","Steam Deck"];
+const CONSOLE_TARGETS = ["Switch","3DS","PS Vita","Wii U","PSP","PS5","PS4","PS3","Xbox (original)","Wii","DS","Dreamcast","SNES","NES"];
 const TYPES = ["Recompilation","Decompilation","Source Port","Reimplementation","Compatibility layer"];
 const TYPE_SHORT = {"Recompilation":["Recomp","t-r"],"Decompilation":["Decomp","t-d"],"Reimplementation":["Reimpl","t-d"],"Source Port":["Port","t-p"],"Compatibility layer":["Wrapper","t-c"]};
 const PS = ["Never released on PC","Only a remake or remaster on PC","PC version is a different game","Also on PC (console version ported)","Originally a PC game","Not checked"];
 const PS_HELP = {"Never released on PC":"console exclusive","Only a remake or remaster on PC":"the original never came to PC","PC version is a different game":"the console version differs in content or design","Also on PC (console version ported)":"same game on PC; the port adds features or runs better","Originally a PC game":"a PC game brought to modern systems or a new engine","Not checked":"PC history not recorded yet"};
 const OS_TEXT = [
-  {id:"Windows",re:/\bwindows\b|\bwin64\b|\.exe\b|direct3d|d3d1[12]|\bpc\b/i},
+  {id:"Windows",re:/\bwindows\b|\bwin64\b|\.exe\b|direct3d|\bdirectx ?1[12]\b|d3d1[12]|\bpc\b/i},
   {id:"Linux",re:/\blinux\b|appimage|flatpak/i},
   {id:"macOS",re:/\bmacos\b|\bmac os\b|apple silicon|\bmac\b/i},
   {id:"Steam Deck",re:/steam ?deck|steamos/i},
   {id:"Android",re:/\bandroid\b|\.apk\b/i},
-  {id:"iOS",re:/\bios\b|\bipados\b|\biphone\b|\bipad\b/i}
+  {id:"iOS",re:/\bios\b|\bipados\b|\biphone\b|\bipad\b/i},
+  {id:"Browser",re:/webassembly|\bwasm\b|\bin (?:the|your|a) (?:web )?browser\b|\bweb ?browser\b|\bbrowser (?:port|version|build)\b|\bplayable (?:online|on the web)\b|\bbuilt in scratch\b/i}
 ];
 const ASSET_SKIP=/(^|[^a-z])(builder|build[-_ ]?tools?|patcher|tools?|sdk|source|src|symbols?|pdb|debug[-_ ]?info|checksums?|sha256|md5)([^a-z]|$)/i;
 const ASSET_EXT=[[/\.(exe|msi)$/i,"Windows"],[/\.(appimage|deb|rpm|flatpak(ref)?)$/i,"Linux"],[/\.(dmg|pkg)$/i,"macOS"],[/\.apk$/i,"Android"],[/\.ipa$/i,"iOS"],
-  [/\.(3dsx|cia)$/i,"3DS"],[/\.(nro|nsp|xci)$/i,"Switch"],[/\.vpk$/i,"PS Vita"],[/\.(wuhb|rpx)$/i,"Wii U"],[/eboot\.pbp$|\.pbp$/i,"PSP"]];
+  [/\.(3dsx|cia)$/i,"3DS"],[/\.(nro|nsp|xci)$/i,"Switch"],[/\.vpk$/i,"PS Vita"],[/\.(wuhb|rpx)$/i,"Wii U"],[/eboot\.pbp$|\.pbp$/i,"PSP"],[/\.cdi$/i,"Dreamcast"],[/\.nds$/i,"DS"],[/\.wasm$/i,"Browser"]];
 const OS_TOKENS={windows:"Windows",win:"Windows",win64:"Windows",win32:"Windows",winx64:"Windows",msvc:"Windows",pc:"Windows",
   linux:"Linux",appimage:"Linux",flatpak:"Linux",steamos:"Linux",macos:"macOS",mac:"macOS",osx:"macOS",darwin:"macOS",universal2:"macOS",
   android:"Android",ios:"iOS",iphone:"iOS",ipad:"iOS",ipados:"iOS","3ds":"3DS",n3ds:"3DS",switch:"Switch",vita:"PS Vita",psvita:"PS Vita",
-  wiiu:"Wii U",psp:"PSP",steamdeck:"Steam Deck"};
-function nameTokens(s){return String(s||"").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/([A-Za-z])(\d)(?!ds)/g,"$1 $2").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);}
+  wiiu:"Wii U",psp:"PSP",steamdeck:"Steam Deck",ps5:"PS5",ps4:"PS4",ps3:"PS3",dreamcast:"Dreamcast",kallistios:"Dreamcast",wasm:"Browser",webassembly:"Browser"};
+function nameTokens(s){return String(s||"").replace(/([a-z])([A-Z])/g,"$1 $2").replace(/([A-Za-z])(\d)(?!ds)/g,(m,a,d,off,str)=>/^ps$/i.test(str.slice(off-1,off+1))?m:a+" "+d).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);}
 const OS_ASSET=[];
 
 
@@ -550,10 +553,10 @@ let toastT;function toast(msg){const t=$("#toast");t.textContent=msg;t.classList
 
 /* ---------------- text analysis ---------------- */
 function sentences(text){return String(text||"").replace(/```[\s\S]*?```/g," ").replace(/<[^>]+>/g," ").split(/\n+|(?<=[.!?])\s+(?=[A-Z])/).map(s=>s.replace(/[#*_`>|\[\]]/g," ").replace(/\(https?:[^)]+\)/g,"").replace(/\s+/g," ").trim()).filter(s=>s.length>2);}
-const BUILD_HEAD=/build|compil|from source|development|developer|contribut|requirements?|prerequisite|dependenc|what you need|toolchain|setup for dev|getting the source/i;
+const BUILD_HEAD=/build|(?<!re)compil|from source|development|developer|contribut|requirements?|prerequisite|dependenc|what you need|toolchain|setup for dev|getting the source/i;
 const BUILD_LINE=/\b(build(ing|s|er)?|compil\w*|cmake|msvc|visual studio|xcode|devkit\w*|toolchain|wsl|homebrew|brew install|apt(-get)? install|pacman|vcpkg|python3?|\.bat\b|\.command\b|\.sh\b|terminal|command line|clone)\b/i;
 function analyze(text){
-  const out={features:{},os:{},targets:{},v:3};
+  const out={features:{},os:{},targets:{},v:4};
   const kept=[];let skipLevel=0;
   for(const raw of String(text||"").replace(/```[\s\S]*?```/g," ").split(/\r?\n/)){
     const h=/^\s{0,3}(#{1,6})\s+(.*)$/.exec(raw);
@@ -579,11 +582,15 @@ function osFromAssets(names){const s={};
     if(toks.includes("x86")&&toks.includes("64")&&!Object.keys(s).length){}  // architecture alone says nothing about the OS
   }
   return s;}
-const ORIG_TO_TARGET={"PSP":"PSP","3DS":"3DS","Switch":"Switch","Wii U":"Wii U","PS Vita":"PS Vita"};
-const TARGET_ALT="(?:nintendo\\s+)?(?:new\\s+)?(3ds|switch|ps ?vita|vita|wii ?u|psp)";
-const TARGET_RES=[new RegExp("\\b(?:ports?|ported|running|runs|playable|plays|native(?:ly)?|homebrew|installs?)\\s+(?:natively\\s+)?(?:to|for|on)\\s+(?:the\\s+|your\\s+)?"+TARGET_ALT+"\\b","i"),
-  new RegExp("\\bnative\\s+"+TARGET_ALT+"\\s+(?:port|version|build|homebrew)","i"),new RegExp("\\b"+TARGET_ALT+"\\s+(?:port|homebrew)\\b","i")];
-function targetName(x){x=x.toLowerCase().replace(/\s+/g,"");return x==="3ds"?"3DS":x==="switch"?"Switch":x==="psvita"||x==="vita"?"PS Vita":x==="wiiu"?"Wii U":x==="psp"?"PSP":null;}
+// a game's own platform never counts as where its port runs (a GameCube decomp says "GameCube" because that's the game)
+const ORIG_TO_TARGET={"PSP":"PSP","3DS":"3DS","Switch":"Switch","Wii U":"Wii U","PS Vita":"PS Vita","PS5":"PS5","PS4":"PS4","PS3":"PS3","Xbox (original)":"Xbox (original)","Wii":"Wii","DS":"DS","Dreamcast":"Dreamcast","SNES":"SNES","NES":"NES"};
+const TARGET_ALT="(?:nintendo\\s+|sega\\s+)?(?:new\\s+)?(3ds|switch|ps ?vita|vita|wii ?u|psp|ps ?5|playstation ?5|ps ?4|playstation ?4|ps ?3|playstation ?3|original xbox|og xbox|wii|nds|ds|dreamcast|snes|nes)(?![\\w-])";
+const TARGET_RES=[new RegExp("\\b(?:ports?|ported|running|runs|playable|plays|native(?:ly)?|homebrew|installs?|recompiled|recomp|compiled|built)\\s+(?:natively\\s+)?(?:to|for|on)\\s+(?:the\\s+|your\\s+|a\\s+)?(?:jailbroken\\s+|modded\\s+)?"+TARGET_ALT,"i"),
+  new RegExp("\\b(?:port|version|build)\\b[^.]{0,60}?\\b(?:to|onto|on) (?:the\\s+|a\\s+)?(?:jailbroken\\s+|modded\\s+)?"+TARGET_ALT,"i"),
+  new RegExp("\\bnative\\s+"+TARGET_ALT+"\\s+(?:port|version|build|homebrew)","i"),new RegExp("\\b"+TARGET_ALT+"\\s+(?:source\\s+)?(?:port|homebrew)\\b","i")];
+const TARGET_NAMES={"3ds":"3DS",switch:"Switch",psvita:"PS Vita",vita:"PS Vita",wiiu:"Wii U",psp:"PSP",ps5:"PS5",playstation5:"PS5",ps4:"PS4",playstation4:"PS4",ps3:"PS3",playstation3:"PS3",
+  originalxbox:"Xbox (original)",ogxbox:"Xbox (original)",wii:"Wii",nds:"DS",ds:"DS",dreamcast:"Dreamcast",snes:"SNES",nes:"NES"};
+function targetName(x){return TARGET_NAMES[String(x||"").toLowerCase().replace(/\s+/g,"")]||null;}
 function consoleTargets(text){const out={};for(const line of sentences(text))for(const re of TARGET_RES){const m=re.exec(line);if(m){const t=targetName(m[1]);if(t)out[t]=true;}}return out;}
 function nameDescOS(name,desc){
   const out={};const repoName=String(name||"").split("/").pop();
@@ -1079,7 +1086,7 @@ async function scanGitHub(p,m,force){
     activity=(m.repo&&m.repo.pushed)||activity;
   }
   const changed=!(m.scannedAt&&m.scannedFor&&m.scannedFor===activity);
-  const staleReadme=!!(m.readme&&m.readme.v!==3&&!m.readme.none&&!m.assetOs);
+  const staleReadme=!!(m.readme&&m.readme.v!==4&&!m.readme.none&&!m.assetOs);
   if(!changed&&!force&&!staleReadme){m.checkedAt=Date.now();return;}
   if(!changed&&staleReadme&&!force){const rd=await gh(base+"/readme",{accept:"application/vnd.github.raw",raw:true,useEtag:false});if(rd.status===200)m.readme=analyze(rd.data);m.checkedAt=Date.now();return;}
   const rr=await gh(base+"/releases?per_page=1",{useEtag:!!(m.release||m.noRelease)});
@@ -1717,7 +1724,7 @@ function detailHTML(v,head){
       <a href="https://web.archive.org/web/*/${esc(v.p.l||"https://github.com/"+(v.p.k||""))}" target="_blank" rel="noopener">Wayback Machine</a></div>`;})():"";
   const rankSt={yes:0,planned:1,no:2};
   const FS=featuresFor(v);const feat=FS.slice().sort((x,y)=>rankSt[v.feats[x.id].st]-rankSt[v.feats[y.id].st]).map(f=>{const st=v.feats[f.id];return `<span class="c ${st.st}" title="${st.st==="no"?"Not mentioned":(st.st==="planned"?"Mentioned as planned or missing":"Mentioned as supported")+" in "+st.src}">${esc(f.label)}${st.st==="planned"?" · planned":""}</span>`;}).join("");
-  const os=OSLIST.slice().sort((x,y)=>(v.os[y]?1:0)-(v.os[x]?1:0)).map(o=>`<span class="c ${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
+  const os=OSLIST.filter(o=>v.os[o]||OS_BASE.includes(o)).sort((x,y)=>(v.os[y]?1:0)-(v.os[x]?1:0)).map(o=>`<span class="c ${v.os[o]?"yes":"no"}" title="${v.os[o]?"From "+v.os[o]:"Not detected"}">${o}</span>`).join("");
   const nFeat=FS.filter(f=>v.feats[f.id].st==="yes").length;
   const ovOs=Array.isArray((S.ov[p.id]||{}).os);
   const osEdit=`<details style="margin-top:8px"><summary class="note" style="cursor:pointer">${ovOs?"Runs on is set by you. Change":"Wrong? Set what it runs on"}</summary>

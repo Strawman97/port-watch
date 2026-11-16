@@ -11,7 +11,7 @@ A single-page tracker for native PC (and handheld) ports of console games, made 
 - **Tracks 500+ projects** across Xbox 360, Xbox, PS1–PS4, N64, GameCube, Wii, Wii U, SNES, GBA, DS, 3DS and more.
 - **Shows what each port offers:**
   - Type (recompilation, decompilation, source port, reimplementation or compatibility layer) and original platform, including PC for games that began there.
-  - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, Switch, 3DS, PS Vita, Wii U and PSP.
+  - What it runs on: Windows, Linux, macOS, Steam Deck, Android, iOS, a web browser, and consoles and handhelds through homebrew (Switch, 3DS, PS Vita, Wii U, PSP, PS5, PS4, PS3, original Xbox, Wii, DS, Dreamcast, SNES and NES). It's read from release files, the repo name and description, and the README outside its build instructions. A console counts only when the port runs on it, never because it's the game's own platform.
   - Features: high refresh rate, aspect ratios, HDR, higher resolution, DLSS, FSR, XeSS, frame generation, ray tracing, texture packs, mods, keyboard and mouse, online play, gyro aiming, anti-aliasing and DLC support, plus **Single-screen** for DS and 3DS games converted from their dual-screen layout.
   - Last updated date, latest release, whether it's playable (has a public release), and whether the game was ever released on PC.
 - **Sorting:** by **Last release** (the default), **Last commit**, game name, original platform, GitHub stars or **Recently added**. Platforms are grouped by company (Nintendo, Sony, Microsoft, Sega, then others), home consoles before handhelds.

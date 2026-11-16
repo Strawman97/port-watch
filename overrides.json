@@ -78,7 +78,9 @@
     },
     "anthonybongers/ghostsandgraves": {
       "_game": "Ghosts And Graves",
-      "cover": "https://raw.githubusercontent.com/AnthonyBongers/GhostsAndGraves/main/reference/cart.png"
+      "cover": "https://raw.githubusercontent.com/AnthonyBongers/GhostsAndGraves/main/reference/cart.png",
+      "hide": true,
+      "hideNote": "An NES demake of the puzzle game Tents and Trees, not a port of a console game"
     },
     "argeujulio-ship-it/sfz2al-windows": {
       "cover": "https://cdn2.steamgriddb.com/thumb/4163410edcb1693ebaf682c1091981d3.jpg"
@@ -114,6 +116,12 @@
     "bearhuddleston/lasrecomp": {
       "_game": "The Legend of Zelda: Link's Awakening (2019)",
       "cover": "https://cdn2.steamgriddb.com/thumb/62e42d5128071bb96fc3a269019e0504.png"
+    },
+    "beigeceleron/ssb64-dc": {
+      "_game": "Super Smash Bros.",
+      "runsOn": [
+        "Dreamcast"
+      ]
     },
     "bigmak94/galaxyquest": {
       "title": "Super Mario Galaxy",
@@ -201,6 +209,12 @@
       "_game": "Resident Evil Code: Veronica X",
       "cover": "https://cdn2.steamgriddb.com/thumb/9ab45beb213b81202a330cfa5e99b411.jpg"
     },
+    "carlosexabyte/arceuszada": {
+      "_game": "Pokémon Legends: Arceus",
+      "runsOn": [
+        "Windows"
+      ]
+    },
     "carlsonic/sonic-riders-gc-decompilation": {
       "_game": "Sonic Riders",
       "platform": "GameCube",
@@ -220,6 +234,12 @@
       "title": "Need for Speed: Most Wanted (2005)",
       "note": "The 2005 game, not the 2012 one",
       "cover": "https://cdn2.steamgriddb.com/thumb/a86cc0b404ab003e0badb9ed96b55ace.png"
+    },
+    "crazyriddler/conan2007recomp": {
+      "_game": "Conan",
+      "runsOn": [
+        "Windows"
+      ]
     },
     "dankzonestudios/cv64recomp": {
       "_game": "Castlevania (1999)",
@@ -606,6 +626,12 @@
       "title": "Need for Speed: Most Wanted (2005)",
       "note": "The 2005 game, not the 2012 one"
     },
+    "kernaltrap8/wor-plus": {
+      "_game": "Guitar Hero: Warriors of Rock",
+      "runsOn": [
+        "PS3"
+      ]
+    },
     "kimb4ll/mcla-macos": {
       "title": "Midnight Club: Los Angeles"
     },
@@ -624,6 +650,17 @@
     "larbaco/oot-native-linux": {
       "title": "The Legend of Zelda: Ocarina of Time (2026)",
       "platform": "Switch 2"
+    },
+    "leoetlino/project-restoration": {
+      "_game": "The Legend of Zelda: Majora's Mask 3D",
+      "runsOn": [
+        "3DS"
+      ]
+    },
+    "libsm64/libsm64-unity": {
+      "_game": "Super Mario 64",
+      "hide": true,
+      "hideNote": "Unity demo of libsm64, not a port"
     },
     "lillypad-14/rotk-recompiled": {
       "hack": "ROTK Expanded"
@@ -740,6 +777,11 @@
       "_game": "Resident Evil 2",
       "type": "Decompilation"
     },
+    "meltyplayer/libsm64-sharp": {
+      "_game": "Super Mario 64",
+      "hide": true,
+      "hideNote": "C# bindings for libsm64, not a port"
+    },
     "miroslavdanutalexandru-alt/resistance-fall-of-man-recomp": {
       "_game": "Resistance: Fall of Man",
       "cover": "https://cdn2.steamgriddb.com/thumb/a675cdaaaea6d970edf507f9716e5227.png"
@@ -761,7 +803,12 @@
       "cover": "https://imgs.search.brave.com/4KJQqnvbHrgDeK-nNa0M7aaGquipmsepCyTMDhK0fuI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yb21z/ZnVuLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wOC9F/dm94MjdzLVNwYWNl/LUFkdmVudHVyZXMu/anBn"
     },
     "mkw-sp/mkw-sp": {
-      "title": "Mario Kart Wii"
+      "title": "Mario Kart Wii",
+      "_game": "Mario Kart Wii",
+      "runsOn": [
+        "Wii"
+      ],
+      "hack": "Service Pack"
     },
     "moesuito/gt4-staticrecomp": {
       "_game": "Gran Turismo 4",
@@ -843,6 +890,11 @@
     },
     "nerunsmarts/forzarecomp": {
       "title": "Forza Horizon"
+    },
+    "nickmass/libsm64-rust": {
+      "_game": "Super Mario 64",
+      "hide": true,
+      "hideNote": "A library for embedding Mario in other games, not a port"
     },
     "nikolaygorb/goldeneye007reloadedrecomp": {
       "_game": "GoldenEye 007 Reloaded",
@@ -1164,6 +1216,24 @@
       "_game": "Cadence of Hyrule",
       "title": "Cadence of Hyrule: Crypt of the NecroDancer Featuring The Legend of Zelda"
     },
+    "snesrev/sm": {
+      "_game": "Super Metroid",
+      "runsOn": [
+        "Windows"
+      ]
+    },
+    "snesrev/smw": {
+      "_game": "Super Mario World",
+      "runsOn": [
+        "Windows"
+      ]
+    },
+    "snesrev/zelda3": {
+      "_game": "The Legend of Zelda: A Link to the Past",
+      "runsOn": [
+        "Windows"
+      ]
+    },
     "sonsegajp/hwder": {
       "title": "Hyrule Warriors"
     },
@@ -1357,6 +1427,11 @@
       "platform": "Xbox (original)",
       "pcRelease": "Never released on PC"
     },
+    "theenbywitch/smue5": {
+      "_game": "Super Mario 64",
+      "hide": true,
+      "hideNote": "Unreal Engine 5 plugin for libsm64, not a port"
+    },
     "thefixinhixon/pacificrimrecomp": {
       "cover": "https://cdn2.steamgriddb.com/thumb/6f20a6af341afb0845290ee140f07dcf.jpg"
     },
@@ -1426,6 +1501,12 @@
     "turtlesoupy/opensmash": {
       "title": "Super Smash Bros. Melee"
     },
+    "tvoybro/balloon-fight-vs-for-nes": {
+      "_game": "Balloon Fight",
+      "runsOn": [
+        "NES"
+      ]
+    },
     "undecuple/project-pyrrhus": {
       "_game": "Killzone 2",
       "cover": "https://cdn2.steamgriddb.com/thumb/4d298f562e47760d2a52afb6fc553fb7.jpg"
@@ -1453,7 +1534,10 @@
       "cover": "https://images.gog.com/b45c2a3cdbfe7ecd0665de986d5389949913f4aa23ddb8647602992f30402d47_glx_vertical_cover.webp?namespace=gamesdb"
     },
     "usernamefodder/pmdsky-debug": {
-      "title": "Pokémon Mystery Dungeon: Explorers of Sky"
+      "title": "Pokémon Mystery Dungeon: Explorers of Sky",
+      "_game": "Pokémon Mystery Dungeon: Explorers of Sky",
+      "hide": true,
+      "hideNote": "Debug symbols for reverse engineering, not a port"
     },
     "vasilkovnd/ds1-nx": {
       "title": "Dead Space (2008)",
@@ -1530,6 +1614,12 @@
     },
     "xandoxan65/segarally95-recomp": {
       "title": "SEGA Rally Championship"
+    },
+    "xdanfr/raymanoriginsrecomp": {
+      "_game": "Rayman Origins",
+      "runsOn": [
+        "Switch"
+      ]
     },
     "xdivorex-gif/spiderman-2002-pc": {
       "_game": "Spider-Man",

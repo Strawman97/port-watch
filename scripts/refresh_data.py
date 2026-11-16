@@ -583,7 +583,7 @@ def refresh_status(projects):
             fresh[k] = e
             if e.get("notFound"):
                 continue
-            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev or "readmeLure" not in prev or "shots" not in prev or (prev.get("readme") or {}).get("v") not in (3, None) and not (prev.get("readme") or {}).get("none"):
+            if (prev.get("repo") or {}).get("pushed") != e["repo"]["pushed"] or "readme" not in prev or "readmeLure" not in prev or "shots" not in prev or (prev.get("readme") or {}).get("v") not in (4, None) and not (prev.get("readme") or {}).get("none"):
                 changed.append(k)             # new, pushed since last run, or read before lure signals/screenshots existed
             else:
                 e["readme"], e["manifest"], e["readmeLure"], e["shots"] = prev.get("readme"), prev.get("manifest"), prev.get("readmeLure"), prev.get("shots")
