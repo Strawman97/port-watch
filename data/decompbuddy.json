@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T10:54:44+00:00",
+ "generated": "2026-11-16T12:09:35+00:00",
  "projects": [
   {
    "ai": false,
@@ -614,6 +614,23 @@
    "pr": "alienation-pc",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-14",
+   "d": "A port of AVP Extinction for the PC. ",
+   "g": "Aliens versus Predator: Extinction",
+   "id": "db:adolini1715/avp-extinction-port",
+   "k": "adolini1715/avp-extinction-port",
+   "lc": "2026-11-14T00:21:41Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "AVP-Extinction-Port",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6224,23 +6241,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
-   "at": "2026-11-10",
-   "d": "Native Windows recompilation of Fire Emblem: Fortune's Weave: play from your own dump with no emulator, with save editing, mods, cheats and an in-game menu. AI-assisted development.",
-   "g": "Fire Emblem: Fortune's Weave",
-   "id": "db:xiondigital/emblemweave",
-   "k": "xiondigital/emblemweave",
-   "lc": "2026-11-10T17:30:53Z",
-   "p": "Switch",
-   "po": [
-    "Windows"
-   ],
-   "pr": "EmblemWeave",
-   "pre": false,
-   "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
    "ai": false,
    "at": "2026-11-02",
    "d": "PC port of Fire Emblem: The Sacred Stones (GBA, USA), built from the fireemblem8u decompilation. Bring your own ROM.",
@@ -7521,24 +7521,6 @@
    "pr": "Gr2Recompile",
    "pre": false,
    "rel": "v4.72e",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-11",
-   "d": "An unofficial, genuine native PC port for Gravity Rush 2",
-   "g": "Gravity Rush 2",
-   "id": "db:junminlee2004/gr2port",
-   "k": "junminlee2004/gr2port",
-   "lc": "2026-11-11T21:38:04Z",
-   "p": "PS4",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "GR2port",
-   "pre": false,
-   "rel": "v1.00",
    "t": "Recompilation"
   },
   {
@@ -19957,33 +19939,6 @@
    "pr": "sfz2al-windows",
    "pre": true,
    "rel": "v0.1.0-experimental",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-16",
-   "d": "",
-   "g": "Streets of Rage",
-   "games": [
-    {
-     "platform": "Mega Drive",
-     "title": "Streets of Rage 2"
-    },
-    {
-     "platform": "Mega Drive",
-     "title": "Streets of Rage 3"
-    }
-   ],
-   "id": "db:originalswayze/streets-of-rage-collection-recomp",
-   "k": "originalswayze/streets-of-rage-collection-recomp",
-   "lc": "2026-11-14T21:10:09Z",
-   "p": "Mega Drive",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Streets-of-Rage-Collection-Recomp",
-   "pre": false,
-   "rel": "v2.9.7",
    "t": "Recompilation"
   },
   {
