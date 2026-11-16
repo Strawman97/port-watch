@@ -627,6 +627,7 @@ function awNormalize(g){
 }
 
 /* ---------------- Xbox Live Arcade titles (shown as XBLA when recorded as Xbox 360) ---------------- */
+const XBLA_RE=/\bxbla\b|xbox live arcade/i;
 const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","castlevania symphony of the night","crystal defenders","daytona usa","dead rising 2 case west","dead rising 2 case zero",
   "earthworm jim hd","exit","exit 2","exit 1 and 2","exit exit 2","geometry wars retro evolved","geometry wars retro evolved 2","goldeneye 007","golden eye 007","goldeneye 007 xbla pc recomp","hard corps uprising",
   "metal slug xx","nba jam on fire edition","naughty bear panic in paradise","outpost kaloki x","perfect dark","perfect dark remaster","super street fighter ii turbo hd remix",
@@ -968,7 +969,8 @@ function viewRaw(p){
   const so=sharedFix(p)||{};
   let platform=ov.platform||so.platform||((p.p==="Unknown"||!p.p)&&mf&&mf.system?mf.system:p.p);
   const type=ov.type||so.type||(p.custom&&mf&&mf.type?mf.type:autoType(p.t,platform,[p.d,m.repo&&m.repo.desc,aw&&(aw.d||aw.description)].filter(Boolean).join(" ")));
-  if(platform==="Xbox 360"&&!ov.platform&&!so.platform&&XBLA_TITLES.has(nrmT(bare(ov.game||so.title||displayTitle(p,mf)))))platform="XBLA (Xbox 360)";
+  // an Xbox Live Arcade game: a known XBLA title, or a project that says so ("XBLA", "Xbox Live Arcade") in its description
+  if(platform==="Xbox 360"&&!ov.platform&&!so.platform&&(XBLA_TITLES.has(nrmT(bare(ov.game||so.title||displayTitle(p,mf))))||XBLA_RE.test([p.d,m.repo&&m.repo.desc,aw&&(aw.d||aw.description)].filter(Boolean).join(" "))))platform="XBLA (Xbox 360)";
   const mfa=mf?analyze([mf.notes,mf.approach].join("\n")):null;
   const feats={};for(const f of FEATURES){const r=(ra&&ra.features[f.id]==="yes")||!(mfa&&mfa.features[f.id]==="yes")?(ra?ra.features[f.id]:null):"yes",s=sa.features[f.id];
     feats[f.id]=r==="yes"?{st:"yes",src:"README"}:s==="yes"?{st:"yes",src:"project description"}:(r==="planned"||s==="planned")?{st:"planned",src:r?"README":"project description"}:{st:"no"};}
