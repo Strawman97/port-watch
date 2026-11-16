@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -1507,6 +1507,10 @@
     "vxz-dev/dragon-quest-mori-mori-recompilation-": {
       "_game": "Dragon Quest: Slime Mori Mori",
       "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Game_Boy_Advance/master/Named_Boxarts/Slime%20Morimori%20Dragon%20Quest%20-%20Shougeki%20no%20Shippo%20Dan%20%28Japan%29.png"
+    },
+    "whompay/godfatherreborn": {
+      "_game": "The Godfather: The Don's Edition",
+      "cover": "https://cdn2.steamgriddb.com/thumb/2e597528e055514007a781e74fcdf816.jpg"
     },
     "wivi514/dead_rising_2_case_west_xenon_recomp": {
       "_game": "Dead Rising 2: Case West",
@@ -4516,6 +4520,14 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Experimental Castlevania: Curse of Darkness Xbox recomp project"
+    },
+    "nicowayne95/lcs-ps2-recomp": {
+      "link": "https://github.com/NicoWayne95/lcs-ps2-recomp",
+      "title": "Grand Theft Auto: Liberty City Stories",
+      "platform": "PS2",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Experimental PS2-to-Windows recompilation project focused on compatibility, graphics rendering and performance."
     },
     "nikolaygorb/fuserecomp": {
       "link": "https://github.com/nikolaygorb/FuseRecomp",
