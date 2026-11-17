@@ -1484,7 +1484,7 @@ function ltList(repo){if(ltLists[repo])return ltLists[repo];
     const r=await gh("https://api.github.com/repos/libretro-thumbnails/"+repo+"/contents/?ref="+br,{useEtag:false});if(r.status!==200)return null;
     const d=(r.data||[]).find(x=>x.name==="Named_Boxarts");if(!d)return null;
     const t=await gh("https://api.github.com/repos/libretro-thumbnails/"+repo+"/git/trees/"+d.sha,{useEtag:false});if(t.status!==200)return null;
-    return ltIndex(t.data.tree.map(x=>x.path));})().catch(()=>{delete ltLists[repo];return null;});
+    return ltIndex(t.data.tree.filter(x=>x.mode!=="120000").map(x=>x.path));})()   // symlinks aren't images on raw.githubusercontent.com.catch(()=>{delete ltLists[repo];return null;});
   return ltLists[repo];}
 function aliasFor(title,platform){return LT_ALIAS[platform+"|"+nrmA(title)]||null;}
 function nrmA(t){return stripParens(t).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim();}
@@ -1549,13 +1549,17 @@ async function lookupCover(key,title,platform){
   document.querySelectorAll('[data-ck="'+CSS.escape(key)+'"]').forEach(el=>paintCover(el,S.covers[key]));
 }
 function pumpCovers(){while(coverActive<4&&coverQ.length){const [key,title,plat]=coverQ.shift();coverActive++;lookupCover(key,title,plat).finally(()=>{coverActive--;coverPending.delete(key);pumpCovers();});}}
-function imgPair(u){return `<img class="bg" src="${esc(u)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()"><img class="fg" src="${esc(u)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode&&this.parentNode.querySelectorAll('img').forEach(i=>i.remove())">`;}
-function paintCover(el,c){if(!c||!c.u)return;el.querySelectorAll("img").forEach(i=>i.remove());el.insertAdjacentHTML("afterbegin",imgPair(c.u));}
+// fb: a second cover to try when the first image doesn't load (a dead link, or a file that isn't an image)
+function imgPair(u,fb){const f=fb&&fb!==u?esc(fb):"";
+  const err=f?`if(this.dataset.fb!=='1'){this.dataset.fb='1';this.parentNode.querySelectorAll('img').forEach(i=>{i.dataset.fb='1';i.src='${f}';});}else{this.parentNode&&this.parentNode.querySelectorAll('img').forEach(i=>i.remove());}`:`this.parentNode&&this.parentNode.querySelectorAll('img').forEach(i=>i.remove())`;
+  return `<img class="bg" src="${esc(u)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="${f?"":"this.remove()"}"><img class="fg" src="${esc(u)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="${err}">`;}
+function coverFallback(v,c){const ig=igdbCover(v);if(ig&&ig.u!==c.u)return ig.u;const rc=(v.p.k&&REPO.covers[v.p.k])||REPO.covers[v.p.id];return rc&&rc.url&&rc.url!==c.u&&!v.ghost?rc.url:"";}
+function paintCover(el,c){if(!c||!c.u)return;el.querySelectorAll("img").forEach(i=>i.remove());el.insertAdjacentHTML("afterbegin",imgPair(c.u,c.fb));}
 const coverIO=("IntersectionObserver" in window)?new IntersectionObserver(ents=>{for(const en of ents){if(!en.isIntersecting)continue;coverIO.unobserve(en.target);const key=en.target.dataset.ck;
   const c=S.covers[key];const stale=c&&!c.u&&Date.now()-c.t>14*864e5;if((c&&!stale)||coverPending.has(key))continue;coverPending.add(key);coverQ.push([key,en.target.dataset.ct,en.target.dataset.cp]);}pumpCovers();},{rootMargin:"300px"}):null;
 function typePills(types){return types.map(t=>`<span class="pill ${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[1]}">${(TYPE_SHORT[t]||TYPE_SHORT.Recompilation)[0]}</span>`).join(" ");}
 function coverHTML(v,isNew,withType){const c=coverFor(v);const key=coverKey(v);const tys=Array.isArray(withType)?withType:[v.type];const nb=blurOn()&&isNsfw(v);
-  return `<div class="cover${nb?" nsfw":""}" style="--pc:${PCOL[v.platform]||"#888"}" data-ck="${esc(key)}" data-ct="${esc(coverTitle(v))}" data-cp="${esc(v.platform)}" data-has="${c?1:0}">${c?imgPair(c.u):""}<span class="ph">${esc(v.game)}</span>${withType?`<span class="ty">${typePills(tys)}</span>`:""}${isNew?'<span class="newtag">NEW</span>':""}${nb?'<span class="nsfwtag" title="Blurred because this game has suggestive content. Change this in Settings.">Suggestive</span>':""}</div>`;}
+  return `<div class="cover${nb?" nsfw":""}" style="--pc:${PCOL[v.platform]||"#888"}" data-ck="${esc(key)}" data-ct="${esc(coverTitle(v))}" data-cp="${esc(v.platform)}" data-has="${c?1:0}">${c?imgPair(c.u,coverFallback(v,c)):""}<span class="ph">${esc(v.game)}</span>${withType?`<span class="ty">${typePills(tys)}</span>`:""}${isNew?'<span class="newtag">NEW</span>':""}${nb?'<span class="nsfwtag" title="Blurred because this game has suggestive content. Change this in Settings.">Suggestive</span>':""}</div>`;}
 function observeCovers(root){if(!coverIO)return;root.querySelectorAll('.cover[data-ck][data-has="0"]').forEach(el=>{if(!S.covers[el.dataset.ck])coverIO.observe(el);});}
 
 /* ---------------- rendering ---------------- */

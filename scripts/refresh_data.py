@@ -952,8 +952,11 @@ def lt_lists(repo, token):
     for d in top:
         if d.get("name") in ("Named_Boxarts", "Named_Snaps", "Named_Titles") and d.get("sha"):
             tree = json.loads(http_get(f"{API}/repos/libretro-thumbnails/{repo}/git/trees/{d['sha']}", hdr) or b"{}")
-            out[d["name"]] = {e["path"] for e in tree.get("tree", []) if e.get("type") == "blob"}
+            # mode 120000 is a symlink: GitHub serves its target's name as text, not the image, so only real files count
+            out[d["name"]] = {e["path"] for e in tree.get("tree", []) if e.get("type") == "blob" and e.get("mode") != "120000"}
     return out
+
+LT_MATCH_V = 2   # 2: symlinked thumbnails are skipped; matches from before are made again
 
 def refresh_libretro(projects, overrides):
     token = (os.environ.get("PW_GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "").strip()
@@ -983,7 +986,7 @@ def refresh_libretro(projects, overrides):
     todo = {}
     for key, (repo, title, cv, region) in wanted.items():
         e = mp.get(key)
-        if e and e.get("q") == norm(title) + ("|" + region if region else "") and (e.get("file") or (now - datetime.datetime.fromisoformat(e.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
+        if e and e.get("v") == LT_MATCH_V and e.get("q") == norm(title) + ("|" + region if region else "") and (e.get("file") or (now - datetime.datetime.fromisoformat(e.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days < 30):
             continue
         todo.setdefault(repo, []).append((key, title, cv, region))
     log(f"  {sum(len(v) for v in todo.values())} games to match on libretro-thumbnails, across {len(todo)} consoles")
@@ -996,13 +999,15 @@ def refresh_libretro(projects, overrides):
             continue
         idx = lt_index(sorted(lists.get("Named_Boxarts", set())))
         for key, title, cv, region in items:
-            f = cv.split("|", 1)[1] if cv and "|" in cv else lt_match(idx, title, region)
+            f = cv.split("|", 1)[1] if cv and "|" in cv else None
+            if not f or f not in lists.get("Named_Boxarts", set()):
+                f = lt_match(idx, title, region)
             if f:
                 mp[key] = {"repo": repo, "file": f, "snap": f in lists.get("Named_Snaps", set()), "title": f in lists.get("Named_Titles", set()),
-                           "q": norm(title) + ("|" + region if region else ""), "checked": NOW}
+                           "q": norm(title) + ("|" + region if region else ""), "checked": NOW, "v": LT_MATCH_V}
                 hits += 1
             else:
-                mp[key] = {"q": norm(title) + ("|" + region if region else ""), "checked": NOW}
+                mp[key] = {"q": norm(title) + ("|" + region if region else ""), "checked": NOW, "v": LT_MATCH_V}
     log(f"  libretro-thumbnails: matched {hits}")
     data["generated"] = NOW
     return write_json_if_changed(path, data)
