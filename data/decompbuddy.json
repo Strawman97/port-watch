@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16T19:35:20+00:00",
+ "generated": "2026-11-17T03:51:50+00:00",
  "projects": [
   {
    "ai": false,
@@ -669,6 +669,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-11",
+   "d": "AVP: Extinction PC port",
+   "g": "Aliens vs Predator: Extinction",
+   "id": "db:starlingk/extinction",
+   "k": "starlingk/extinction",
+   "lc": "2026-11-11T02:06:14Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "extinction",
+   "pre": true,
+   "rel": "alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-27",
    "d": "Native x64 static recompilation of Alisia Dragoon (Sega Mega Drive) for Windows — 68K and Z80 run generated C. No ROM included.",
    "g": "Alisia Dragoon",
@@ -839,6 +856,23 @@
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-06",
+   "d": "HaniwaBridge — Experimental ACGC x86 Decompilation Host + 64-Bit Godot 4 Forward+ Hybrid Engine (Zero Proprietary Assets / BYO-ROM)",
+   "g": "Animal Crossing",
+   "id": "db:jaluradev/haniwa-bridge",
+   "k": "jaluradev/haniwa-bridge",
+   "lc": "2026-11-09T04:41:48Z",
+   "p": "GameCube",
+   "po": [
+    "Windows"
+   ],
+   "pr": "haniwa-bridge",
+   "pre": false,
+   "rel": "v0.1.2",
+   "t": "Decompilation"
   },
   {
    "ai": true,
@@ -1120,6 +1154,24 @@
    "pr": "AstroBoy-OmegaFactor-Recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Unofficial native PC port of Asura’s Wrath (PS3) via static recompilation. No emulator or PS3 firmware: build it from your own EU copy (BLES01227). Any resolution up to 4K, 30-120 fps, gamepad or keyboard, update + DLC, trophies, launcher. Windows; Linux and Steam Deck experimental. No game files include",
+   "g": "Asura's Wrath",
+   "id": "db:recompport/asura-wrath-pc",
+   "k": "recompport/asura-wrath-pc",
+   "lc": "2026-11-16T18:08:59Z",
+   "p": "PS3",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "asura-wrath-pc",
+   "pre": false,
+   "rel": "asura",
    "t": "Recompilation"
   },
   {
@@ -3746,7 +3798,7 @@
    ],
    "pr": "Dave-Mirra-Recomp",
    "pre": false,
-   "rel": "v1.1.0",
+   "rel": "v1.1.2",
    "t": "Recompilation"
   },
   {
@@ -3919,6 +3971,23 @@
    "pr": "dead-space-mobile-pc",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-13",
+   "d": "PS4 recompilation project: your own PS4 game's code lifted to C (Mosaic) and played natively on Windows. Built on shadPS4.",
+   "g": "Deadpool",
+   "id": "db:genrythefox0/orbisglue",
+   "k": "genrythefox0/orbisglue",
+   "lc": "2026-10-21T23:26:40Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "OrbisGlue",
+   "pre": false,
+   "rel": "v0.9.0",
    "t": "Recompilation"
   },
   {
@@ -4315,6 +4384,40 @@
    "pr": "digdug-native",
    "pre": false,
    "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-16",
+   "d": "Sources-only Windows x64 static recompilation of Digimon Story: Sunburst (NDS) - bring your own ROM, builds on first start",
+   "g": "Digimon Story: Sunburst",
+   "id": "db:aoxzh/digimon-story-sunburst-recomp",
+   "k": "aoxzh/digimon-story-sunburst-recomp",
+   "lc": "2026-11-16T18:49:11Z",
+   "p": "DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "digimon-story-sunburst-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-16",
+   "d": "Native PC port of Digimon Story: Super Xros Wars Red (Nintendo DS) by static recompilation — not an emulator. Bring your own ROM; the game builds on your PC on first start. デジモンストーリー スーパークロスウォーズ レッド PC移植 / 数码宝贝物语 超级合体战争 红 PC 移植",
+   "g": "Digimon Story: Super Xros Wars Red",
+   "id": "db:aoxzh/digimon-super-xros-wars-recomp",
+   "k": "aoxzh/digimon-super-xros-wars-recomp",
+   "lc": "2026-11-16T18:01:44Z",
+   "p": "DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "digimon-super-xros-wars-recomp",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5178,6 +5281,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Driveclub (PS4) native port running on Apple Silicon Macs under Rosetta 2 - fork of BlackLineInteractive/Driveclub-Port with GPU fixes and performance work",
+   "g": "Driveclub",
+   "id": "db:fladnag86/driveclub-port-applesilicon",
+   "k": "fladnag86/driveclub-port-applesilicon",
+   "lc": "2026-11-02T17:42:54Z",
+   "p": "PS4",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Driveclub-Port-AppleSilicon",
+   "pre": false,
+   "rel": "v0.2.20-apple-silicon",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-21",
    "d": "Driveclub PS4 PC Port",
@@ -5841,7 +5961,7 @@
    ],
    "pr": "project-helix",
    "pre": false,
-   "rel": "v1.2.0",
+   "rel": "v1.2.2",
    "t": "Recompilation"
   },
   {
@@ -7754,6 +7874,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "Native PC port of GUARDIAN HEROES (Sega Saturn) via static recompilation — widescreen, HD art, 5 languages. Not an emulator. Work in progress.",
+   "g": "Guardian Heroes",
+   "id": "db:faligame/guardian-heroes-hd-remaster",
+   "k": "faligame/guardian-heroes-hd-remaster",
+   "lc": "2026-11-16T18:09:13Z",
+   "p": "Saturn",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "Guardian-Heroes-HD-Remaster",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-14",
    "d": "XBLA game ",
    "g": "Guardian Heroes",
@@ -8762,6 +8901,21 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "The House of the Dead (1996 arcade) recompiled for Meta Quest 3 VR: immersive and cabinet views, light guns, online co-op with voice. Bring your own ROM.",
+   "g": "The House of the Dead",
+   "id": "db:mrsco/house-of-the-dead-vr",
+   "k": "mrsco/house-of-the-dead-vr",
+   "lc": "2026-11-16T18:51:15Z",
+   "p": "Arcade",
+   "po": [],
+   "pr": "house-of-the-dead-vr",
+   "pre": false,
+   "rel": "v0.3.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-02",
    "d": "The House of the Dead: ReWrithe - a rewrite of the arcade game and its 1998 PC port combined",
@@ -9129,6 +9283,23 @@
    "pr": "inFAMOUS-First-Light-PC-Edition",
    "pre": false,
    "rel": "v2026.10.28.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Native Linux port of inFAMOUS Second Son (PS4): the game's x86-64 code runs on the CPU, rendering goes to Vulkan. Bring your own game.",
+   "g": "inFAMOUS Second Son",
+   "id": "db:aliveoutside/infamous-second-son-linux",
+   "k": "aliveoutside/infamous-second-son-linux",
+   "lc": "2026-10-26T16:26:31Z",
+   "p": "PS4",
+   "po": [
+    "Linux"
+   ],
+   "pr": "infamous-second-son-linux",
+   "pre": false,
+   "rel": "v2026.10.26-linux",
    "t": "Recompilation"
   },
   {
@@ -9580,6 +9751,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "An unofficial native Windows version of Justice League Heroes (2006), built on your PC from your own Xbox and PSP discs.",
+   "g": "Justice League Heroes",
+   "id": "db:ghostducky13/speed-force-justice-league-heroes-windows-recompilation",
+   "k": "ghostducky13/speed-force-justice-league-heroes-windows-recompilation",
+   "lc": "2026-11-15T16:36:38Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Speed-Force-Justice-League-Heroes-Windows-Recompilation",
+   "pre": false,
+   "rel": "v2.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-10",
    "d": "Unofficial native Windows recompilation of Justice League Heroes for Xbox. Requires your own matching game dump.",
    "g": "Justice League Heroes",
@@ -9681,6 +9869,23 @@
    "pr": "KetsuiRecomp",
    "pre": false,
    "rel": "v1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-14",
+   "d": "A static recompilation of the NES game Kickle Cubicle.",
+   "g": "Kickle Cubicle",
+   "id": "db:b1ggiantb8by/bickle-kicklecubiclenes",
+   "k": "b1ggiantb8by/bickle-kicklecubiclenes",
+   "lc": "2026-10-09T00:57:45Z",
+   "p": "NES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Bickle-KickleCubicleNES",
+   "pre": false,
+   "rel": "v0.0.4",
    "t": "Recompilation"
   },
   {
@@ -10015,6 +10220,23 @@
    "pr": "KirbysDreamLand3Recomp",
    "pre": false,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-14",
+   "d": "Native Linux x86-64 recompilation prototype for Kirby's Epic Yarn (RK5E01). Requires your own game dump.",
+   "g": "Kirby's Epic Yarn",
+   "id": "db:riviergrullon/kirby-epic-yarn-recomp",
+   "k": "riviergrullon/kirby-epic-yarn-recomp",
+   "lc": "2026-11-16T19:20:25Z",
+   "p": "Wii",
+   "po": [
+    "Linux"
+   ],
+   "pr": "kirby-epic-yarn-recomp",
+   "pre": true,
+   "rel": "v0.1.0-alpha.1",
    "t": "Recompilation"
   },
   {
@@ -11171,6 +11393,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "Native Switch port of LEGO Star Wars: The Complete Saga (Xbox 360)",
+   "g": "LEGO Star Wars: The Complete Saga",
+   "id": "db:lswtcs-nx/lswtcs-nx",
+   "k": "lswtcs-nx/lswtcs-nx",
+   "lc": "2026-11-16T19:12:39Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "lswtcs-nx",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-10",
    "d": "Unofficial native PC and Steam Deck port of Lifeline (PS2), featuring original voice recognition, enhanced graphics, and full gameplay support.",
    "g": "Lifeline",
@@ -11886,6 +12123,25 @@
   {
    "ai": false,
    "at": "2026-11-16",
+   "d": "MARIO KART 7 RECOMPILED (includes mod support, CTGP 7 support not confirmed)",
+   "g": "Mario Kart 7",
+   "id": "db:nvd123-yt/mk7recomp",
+   "k": "nvd123-yt/mk7recomp",
+   "lc": "2026-11-16T16:08:58Z",
+   "p": "3DS",
+   "po": [
+    "macOS",
+    "Linux",
+    "Windows"
+   ],
+   "pr": "MK7Recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
    "d": "Tailored PC runtime for your own copy of Mario Kart 8 Deluxe: a tuned emulator, the game recompiled for your CPU (DLSS, FSR 3.1, frame generation, HDR10) and online races on the Nextendo Network. No Nintendo files included.",
    "g": "Mario Kart 8 Deluxe",
    "id": "db:icosisenpai/deluxe8",
@@ -11937,6 +12193,23 @@
    "pre": false,
    "rel": "v0.1.1",
    "t": "Reimplementation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-16",
+   "d": "Compila tu disco PAL de Mario Kart Wii para Windows: opciones nativas, idioma en vivo y Retro WFC. No incluye ROM.",
+   "g": "Mario Kart Wii",
+   "id": "db:marcpique/mario-kart-wii-pc-builder",
+   "k": "marcpique/mario-kart-wii-pc-builder",
+   "lc": "2026-11-04T19:02:06Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mario-kart-wii-pc-builder",
+   "pre": false,
+   "rel": "v1.2.0",
+   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -12583,6 +12856,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "The 1998 PlayStation stealth classic, rebuilt for the browser and VR. Bring your own discs. Fan project, not affiliated with Konami.",
+   "g": "Metal Gear Solid",
+   "id": "db:vjravenlight/shadow-moses-web",
+   "k": "vjravenlight/shadow-moses-web",
+   "lc": "2026-11-11T22:36:31Z",
+   "p": "PS1",
+   "po": [
+    "Android",
+    "macOS",
+    "Linux"
+   ],
+   "pr": "shadow-moses-web",
+   "pre": false,
+   "rel": "v2.11",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-21",
    "d": "Metal Gear Solid 2 HD (NVIDIA SHIELD) para Android ARM64 — recompilação estática ARM32→ARM64, Adreno e Mali, LSFG, menus em 7 idiomas. Traga sua própria cópia do jogo. / Static recompilation port, bring your own game files.",
    "g": "Metal Gear Solid 2: Sons of Liberty",
@@ -13036,6 +13328,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-09",
+   "d": "Experimental native Android ARM64 port of MCLA Recomp (C++23, SDL3, Vulkan); user-supplied game files required",
+   "g": "Midnight Club: Los Angeles Complete Edition",
+   "id": "db:gabrielbskk/mcla-recomp-rv",
+   "k": "gabrielbskk/mcla-recomp-rv",
+   "lc": "2026-11-08T12:04:58Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "mcla-recomp-rv",
+   "pre": true,
+   "rel": "android-arm64-2026-11-08",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "Native Apple Silicon macOS Metal port of Midnight Club: Los Angeles Complete Edition. Source and build tools only; bring your own game data.",
    "g": "Midnight Club: Los Angeles Complete Edition",
@@ -13139,6 +13448,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Mizzurna Falls rebuilt: a C engine (SDL3, OpenGL 4.6) with the game in Forth as actors. Bring your own disc.",
+   "g": "Mizzurna Falls",
+   "id": "db:arnautdaniel/openmizzurna",
+   "k": "arnautdaniel/openmizzurna",
+   "lc": "2026-11-16T03:17:45Z",
+   "p": "PS1",
+   "po": [
+    "Linux"
+   ],
+   "pr": "OpenMizzurna",
+   "pre": true,
+   "rel": "latest",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-17",
    "d": "Native recompilation of MLB Power Pros 2008 (Wii) on Wiicompiled. No game data included.",
@@ -13239,6 +13565,23 @@
    "pr": "MaxiboostPort",
    "pre": false,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "ModNation Racers PC, made from your own copy of the game",
+   "g": "ModNation Racers",
+   "id": "db:quackmeansquack/mnr-pc-public",
+   "k": "quackmeansquack/mnr-pc-public",
+   "lc": "2026-11-15T04:51:45Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mnr-pc-public",
+   "pre": false,
+   "rel": "v2026.11.14.2349",
    "t": "Recompilation"
   },
   {
@@ -15233,6 +15576,23 @@
   },
   {
    "ai": false,
+   "at": "2026-10-18",
+   "d": "Perfect Dark PC port with server-authoritative multiplayer, dynamic mod loader, and AllInOneMods integration",
+   "g": "Perfect Dark",
+   "id": "db:mikehazejr/perfect-dark-2",
+   "k": "mikehazejr/perfect-dark-2",
+   "lc": "2026-06-18T02:48:42Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "perfect-dark-2",
+   "pre": false,
+   "rel": "v0.1.102",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-21",
    "d": "A native Android port of the Perfect Dark decompilation, with on-screen touch controls.",
    "g": "Perfect Dark",
@@ -16835,6 +17195,23 @@
    "pr": "rac-j2me-remastered",
    "pre": true,
    "rel": "goingmobile-v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-10",
+   "d": "Ratchet and Clank: Into the Nexus PC recomp",
+   "g": "Ratchet & Clank: Into the Nexus",
+   "id": "db:vagenam/nexus-recomp",
+   "k": "vagenam/nexus-recomp",
+   "lc": "2026-11-10T13:50:54Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "nexus-recomp",
+   "pre": true,
+   "rel": "v0.1",
    "t": "Recompilation"
   },
   {
@@ -19393,6 +19770,23 @@
    "pr": "sorcerers-maze-psx-pc-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "A native PC port of Soul Sacrifice Delta (PS Vita, US PCSA00152, v1.30)",
+   "g": "Soul Sacrifice Delta",
+   "id": "db:vita-recomps/ss-delta",
+   "k": "vita-recomps/ss-delta",
+   "lc": "2026-11-16T19:18:50Z",
+   "p": "PS Vita",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ss-delta",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -22052,6 +22446,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-16",
+   "d": "Reconstructed source of the Nintendo 64 game Top Gear Rally.",
+   "g": "Top Gear Rally",
+   "id": "db:tatsh/coastline",
+   "k": "tatsh/coastline",
+   "lc": "2026-11-11T09:25:27Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "macOS",
+    "Linux"
+   ],
+   "pr": "coastline",
+   "pre": false,
+   "rel": "v0.0.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-16",
    "d": "Top Gun: Fire at Will (PS1) rebuilt as a native Mac, Windows and Linux program. Free; bring your own disc.",
    "g": "Top Gun: Fire at Will",
@@ -23695,6 +24108,23 @@
    "pr": "Weltall",
    "pre": false,
    "rel": "v0.8.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "",
+   "g": "Yakuza",
+   "id": "db:ivanbarbosafilho/yakuza-pc-port",
+   "k": "ivanbarbosafilho/yakuza-pc-port",
+   "lc": "2026-11-16T16:38:48Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Yakuza-Pc-Port",
+   "pre": false,
+   "rel": "0.01",
    "t": "Recompilation"
   },
   {
