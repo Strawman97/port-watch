@@ -539,7 +539,20 @@ function loadState(){
     const old=localStorage.getItem("portwatch.v1");if(old){const o=JSON.parse(old);const d=defaults();if(o.settings){d.settings.token=o.settings.token||"";d.settings.notify=!!o.settings.notify;if(o.settings.topics)d.settings.topics=o.settings.topics;}if(o.disc&&o.disc.ignored)d.disc.ignored=o.disc.ignored;return d;}
   }catch(e){}return defaults();}
 let saveFailed=false;
-function save(){dataChanged();try{localStorage.setItem(LS,JSON.stringify(S));saveFailed=false;}catch(e){if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}}
+// What's saved in the browser. Check results that came from Port Watch's shared data (status.json) are loaded again on
+// every visit, so they aren't stored: with ~3,000 projects they filled the 5 MB that browsers give a site.
+const SHARED_META=["repo","release","assetOs","readme","readmeLure","shots","manifest"];
+function storedState(lean){
+  const meta={};
+  for(const k in S.meta){const m=S.meta[k];if(!m||!m.shared){meta[k]=m;continue;}const c={};for(const f in m)if(!SHARED_META.includes(f))c[f]=m[f];meta[k]=c;}
+  const out=Object.assign({},S,{meta});
+  if(lean){out.log=(S.log||[]).slice(0,150);out.aw=Object.assign({},S.aw,{data:{}});}   // last resort: the awesome list is fetched again
+  return JSON.stringify(out);
+}
+function save(){dataChanged();
+  try{localStorage.setItem(LS,storedState(false));saveFailed=false;return;}catch(e){}
+  try{localStorage.setItem(LS,storedState(true));saveFailed=false;return;}catch(e){}
+  if(!saveFailed)toast("Changes can't be saved: this browser blocks or has filled local storage. Export a backup from Settings.");saveFailed=true;}
 
 const UI={q:"",followed:false,showRisky:false,showGone:false,recentNew:false,recentPlay:false,genres:new Set(),series:"",noCover:false,sel:{},play:new Set(),ps:new Set(),type:new Set(),plat:new Set(),os:new Set(),feat:new Set(),age:"",sort:"release",tab:"projects",open:null,limit:150};
 
