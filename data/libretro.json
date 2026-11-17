@@ -1,6 +1,6 @@
 {
  "format": "port-watch-libretro",
- "generated": "2026-11-17T11:55:02Z",
+ "generated": "2026-11-17T15:57:56Z",
  "map": {
   "0bandywirus/dq9-decomp": {
    "checked": "2026-11-17T11:55:02Z",
@@ -68,8 +68,8 @@
    "v": 2
   },
   "1nsec/naruto-the-broken-bond-android-port": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "naruto the broken bond",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "naruto the broken bond naruto the broken bond android port",
    "v": 2
   },
   "1vs100/1vs100-reborn-pc": {
@@ -729,6 +729,15 @@
    "file": "Naruto Shippuden - Ultimate Ninja 5 (Europe) (En,Fr,De,Es,It).png",
    "q": "naruto shippuden ultimate ninja 5",
    "repo": "Sony_-_PlayStation_2",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "alejandro-estrada-1/crash2-native": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Crash Bandicoot 2 - Cortex Strikes Back (USA).png",
+   "q": "crash bandicoot 2 cortex strikes back",
+   "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
    "v": 2
@@ -2060,9 +2069,9 @@
    "v": 2
   },
   "almost-drowned-rat/orta-recompiled": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Panzer Dragoon Orta (USA).png",
-   "q": "panzer dragoon orta",
+   "q": "panzer dragoon orta orta recompiled",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -2168,6 +2177,20 @@
    "title": true,
    "v": 2
   },
+  "amritadyne/gallian-chronicles": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Valkyria Chronicles II (USA).png",
+   "q": "valkyria chronicles ii",
+   "repo": "Sony_-_PlayStation_Portable",
+   "snap": true,
+   "title": false,
+   "v": 2
+  },
+  "amritadyne/gallian-chronicles#valkyria chronicles 3": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "valkyria chronicles 3",
+   "v": 2
+  },
   "an1n-dya/kururin": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Kurukuru Kururin (Europe).png",
@@ -2256,6 +2279,11 @@
    "title": true,
    "v": 2
   },
+  "angband/angband": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "angband",
+   "v": 2
+  },
   "angeldev07/ninja-gaiden-black-port": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Ninja Gaiden Black (USA).png",
@@ -2303,11 +2331,29 @@
    "q": "cars",
    "v": 2
   },
+  "ant0-blase/gekkoaot": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Harry Potter and the Sorcerer's Stone (USA).png",
+   "q": "harry potter and the sorcerers stone gekkoaot target",
+   "repo": "Nintendo_-_GameCube",
+   "snap": false,
+   "title": false,
+   "v": 2
+  },
   "ant0-blase/hpcos-gc-recomp": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Harry Potter and the Chamber of Secrets (USA).png",
    "q": "harry potter and the chamber of secrets hpcos gc recomp",
    "repo": "Nintendo_-_GameCube",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "ant0-blase/mohfrontline-gc-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Medal of Honor - Frontline (USA).png",
+   "q": "medal of honor frontline mohfrontline gc recomp",
+   "repo": "Sony_-_PlayStation_2",
    "snap": true,
    "title": true,
    "v": 2
@@ -2401,6 +2447,15 @@
    "repo": "Sony_-_PlayStation_Portable",
    "snap": true,
    "title": false,
+   "v": 2
+  },
+  "apexjcl/automodellista-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Auto Modellista (USA).png",
+   "q": "auto modellista automodellista recomp",
+   "repo": "Microsoft_-_Xbox",
+   "snap": true,
+   "title": true,
    "v": 2
   },
   "apexjcl/blinx1-recomp": {
@@ -2688,8 +2743,8 @@
    "v": 2
   },
   "awakenchan/lanternengine": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "bloodborne lantern engine",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "lantern engine",
    "v": 2
   },
   "awis13/liberty-pro-max": {
@@ -3059,9 +3114,9 @@
    "v": 2
   },
   "bigsnek9/shadowrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Shadow the Hedgehog (USA) (En,Ja,Fr,De,Es,It).png",
-   "q": "shadow the hedgehog shadowrecomp",
+   "q": "shadow the hedgehog",
    "repo": "Nintendo_-_GameCube",
    "snap": true,
    "title": true,
@@ -3958,6 +4013,11 @@
    "title": false,
    "v": 2
   },
+  "chaostheory1075/mgr-ps5": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "metal gear rising revengeance metal gear rising revengeance replatinum",
+   "v": 2
+  },
   "chaostheory1075/mp3-ps5": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "max payne 3 max payne 3 represcribed",
@@ -4669,8 +4729,8 @@
    "v": 2
   },
   "csrpfivem/ps3nhllegacyrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "nhl legacy edition",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "nhl legacy edition nhl legacy native",
    "v": 2
   },
   "ctr-tools/ctr-modsdk": {
@@ -5519,9 +5579,9 @@
    "v": 2
   },
   "destinity13/timesplitters-2-native-recomp-windows-linux-steamdeck": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "TimeSplitters 2 (USA).png",
-   "q": "timesplitters 2 timesplitters 2 native pc port",
+   "q": "timesplitters 2 timesplitters 2 recomp",
    "repo": "Sony_-_PlayStation_2",
    "snap": true,
    "title": true,
@@ -5541,6 +5601,15 @@
    "file": "Frogger's Adventures - Temple of the Frog (USA) (En,Fr,De,Es,It).png",
    "q": "froggers adventures temple of the frog",
    "repo": "Nintendo_-_Game_Boy_Advance",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "devall96/unchained": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Whiplash (USA).png",
+   "q": "whiplash",
+   "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
    "v": 2
@@ -5861,8 +5930,8 @@
    "v": 2
   },
   "dotgrx/tna-impact-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "tna impact",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "tna impact tna impact recompiled",
    "v": 2
   },
   "dotgrx/wcw-mayhem-recomp": {
@@ -5872,6 +5941,11 @@
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
+   "v": 2
+  },
+  "dothacktranslate/dothack-decompilation": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "hack infection decompilation",
    "v": 2
   },
   "dothacktranslate/dothack-recompilation": {
@@ -6570,6 +6644,15 @@
    "title": true,
    "v": 2
   },
+  "ethannicholas/prime-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Metroid Prime (USA).png",
+   "q": "metroid prime prime recomp ethannicholas",
+   "repo": "Nintendo_-_GameCube",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
   "ethannicholas/revolt-recomp": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Re-Volt (USA).png",
@@ -6618,6 +6701,11 @@
    "repo": "Nintendo_-_Nintendo_64",
    "snap": true,
    "title": true,
+   "v": 2
+  },
+  "evil84/ninja-s-dawn---a-ninja-gaiden-2-recompilation-project": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "ninja gaiden ii ninjas dawn ng2recomp",
    "v": 2
   },
   "expansionpak/moderngekko": {
@@ -6724,12 +6812,8 @@
    "v": 2
   },
   "faligame/parasite-eve-2-hd-remaster": {
-   "checked": "2026-11-17T11:55:02Z",
-   "file": "Parasite Eve II (USA).png",
-   "q": "parasite eve ii parasite eve 2 hd remaster",
-   "repo": "Sony_-_PlayStation",
-   "snap": true,
-   "title": true,
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "parasite eve 2 hd remaster",
    "v": 2
   },
   "faligame/parasite-eve-hd-remaster": {
@@ -6951,9 +7035,9 @@
    "v": 2
   },
   "foxworkshop/shadowrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Shadow the Hedgehog (USA).png",
-   "q": "shadow the hedgehog",
+   "q": "shadow the hedgehog shadow recompiled",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -7384,9 +7468,9 @@
    "v": 2
   },
   "geno55/kigold-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Killer Instinct Gold (USA).png",
-   "q": "killer instinct gold",
+   "q": "killer instinct gold kigold recomp",
    "repo": "Nintendo_-_Nintendo_64",
    "snap": true,
    "title": true,
@@ -8579,6 +8663,15 @@
    "q": "2014 fifa world cup brazil 2014 fifa world cup brazil recompiled",
    "v": 2
   },
+  "hoyajavis/ogre-battle-pc": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Ogre Battle - The March of the Black Queen (USA).png",
+   "q": "ogre battle the march of the black queen",
+   "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
   "hubbydebs/nfs-nitro-ds-port": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Need for Speed - Nitro (USA) (En,Fr,De,Es,It,Nl).png",
@@ -8707,6 +8800,11 @@
   "igoraugustohh/the-order-1886-pc-port": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "order 1886",
+   "v": 2
+  },
+  "ihaideez/mgr-ps4": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "metal gear rising revengeance mgr ps4",
    "v": 2
   },
   "ihaideez/mp3-pc": {
@@ -8889,9 +8987,9 @@
    "v": 2
   },
   "itouchdennis/scda-nx": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Tom Clancy's - Splinter Cell - Double Agent (USA).png",
-   "q": "tom clancys splinter cell double agent",
+   "q": "tom clancys splinter cell double agent scda nx",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -8910,6 +9008,15 @@
   "itseniy/pvz-console-edition": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "plants vs zombies console edition",
+   "v": 2
+  },
+  "itsinspector/nsmbwii-3ds-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "New Super Mario Bros. Wii (USA).png",
+   "q": "new super mario bros wii nsmbwii 3ds recomp",
+   "repo": "Nintendo_-_Wii",
+   "snap": true,
+   "title": true,
    "v": 2
   },
   "itsvolkee/nba2k18-recomp": {
@@ -9355,9 +9462,9 @@
    "v": 2
   },
   "jeffsteelflex/nightfire-port": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "007 - Nightfire (USA).png",
-   "q": "007 nightfire",
+   "q": "007 nightfire 007 nightfire native pc port",
    "repo": "Sony_-_PlayStation_2",
    "snap": true,
    "title": true,
@@ -9593,12 +9700,21 @@
    "v": 2
   },
   "jonathandc64/soulbrandt": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Demon's Souls (USA).png",
-   "q": "demons souls",
+   "q": "demons souls soulbrandt",
    "repo": "Sony_-_PlayStation_3",
    "snap": true,
    "title": false,
+   "v": 2
+  },
+  "jonb-dev/oot-recompiled": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Legend of Zelda, The - Ocarina of Time (USA).png",
+   "q": "legend of zelda ocarina of time oot recompiled",
+   "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true,
    "v": 2
   },
   "jonnisvibes/jvppbport": {
@@ -9975,8 +10091,8 @@
    "v": 2
   },
   "junminlee2004/gr2port": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "gravity rush 2 gr2port",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "gravity rush 2",
    "v": 2
   },
   "jvipond/super_mario_kart_recompilation": {
@@ -10113,6 +10229,11 @@
    "title": true,
    "v": 2
   },
+  "katzert/neverdeth": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "neverdead neverdeth",
+   "v": 2
+  },
   "kawaiibunga/mkvdcu-recomp": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "mortal kombat vs dc universe",
@@ -10231,9 +10352,9 @@
    "v": 2
   },
   "khasinski/parasite-eve-ii-pc": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Parasite Eve II (USA).png",
-   "q": "parasite eve ii",
+   "q": "parasite eve ii parasite eve ii native pc port",
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
@@ -10330,6 +10451,11 @@
    "title": true,
    "v": 2
   },
+  "kiltedkernel/cogbox-trilogy": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "gears of war 3 gears of war 3 pc port",
+   "v": 2
+  },
   "kima1810/ch2k8-decomp": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "college hoops 2k8",
@@ -10341,10 +10467,10 @@
    "v": 2
   },
   "kinduff/tlkrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "file": "Lion King, The (USA).png",
-   "q": "lion king",
-   "repo": "Nintendo_-_Super_Nintendo_Entertainment_System",
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Lion King, The (Europe).png",
+   "q": "lion king tlkrecomp",
+   "repo": "Nintendo_-_Nintendo_Entertainment_System",
    "snap": true,
    "title": true,
    "v": 2
@@ -10400,9 +10526,9 @@
    "v": 2
   },
   "kirby1237/parappatherapperrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "PaRappa the Rapper (USA) (En,Fr,De,Es,It).png",
-   "q": "parappatherapper",
+   "q": "parappa the rapper parappatherapper recomp",
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
@@ -10569,6 +10695,15 @@
    "title": true,
    "v": 2
   },
+  "krystalgamer/yu-gi-oh-forbidden-memories-recompiled": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Yu-Gi-Oh! Forbidden Memories (USA).png",
+   "q": "yu gi oh forbidden memories yu gi oh forbidden memories recompiled",
+   "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
   "kumapauz/project-reignition": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Sonic and the Secret Rings (USA).png",
@@ -10638,9 +10773,9 @@
    "v": 2
   },
   "lakshya16157/midtown-madness-3-pc-native": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Midtown Madness 3 (USA).png",
-   "q": "midtown madness 3",
+   "q": "midtown madness 3 midtown madness 3 recomp",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -11322,8 +11457,8 @@
    "v": 2
   },
   "macprotips/peggle2-mac": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "peggle 2",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "peggle 2 peggle 2 for mac",
    "v": 2
   },
   "maddog847/mvp-06-ncaa-baseball-xberecomp": {
@@ -13072,6 +13207,11 @@
    "title": true,
    "v": 2
   },
+  "mstan/pokemonyellowrecomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "pokemon yellow pokemonyellowrecomp",
+   "v": 2
+  },
   "mstan/rocketknightadventuresrecomp": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Rocket Knight Adventures (USA).png",
@@ -13330,6 +13470,15 @@
    "file": "GoldenEye 007 (USA).png",
    "q": "goldeneye 007 project midas",
    "repo": "Nintendo_-_Nintendo_64",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "musicmonstermod/duke-nukem-time-to-kill-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Duke Nukem - Time to Kill (USA).png",
+   "q": "duke nukem time to kill duke nukem time to kill recomp",
+   "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
    "v": 2
@@ -13613,6 +13762,15 @@
    "file": "Ico (USA).png",
    "q": "ico",
    "repo": "Sony_-_PlayStation_2",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "nathanknet/duskonvita": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Legend of Zelda, The - Twilight Princess (USA).png",
+   "q": "legend of zelda twilight princess duskonvita",
+   "repo": "Nintendo_-_GameCube",
    "snap": true,
    "title": true,
    "v": 2
@@ -13967,9 +14125,9 @@
    "v": 2
   },
   "norain211/doa3-re": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Dead or Alive 3 (USA).png",
-   "q": "dead or alive 3",
+   "q": "dead or alive 3 doa3 recomp",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -14859,12 +15017,8 @@
    "v": 2
   },
   "originalswayze/streets-of-rage-collection-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "file": "Streets of Rage (USA).png",
-   "q": "streets of rage streets of rage collection",
-   "repo": "Sega_-_Mega_Drive_-_Genesis",
-   "snap": false,
-   "title": false,
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "streets of rage collection",
    "v": 2
   },
   "orkosoftware/tje3-recomp": {
@@ -14910,15 +15064,6 @@
    "q": "god of war sons of sparta",
    "v": 2
   },
-  "overkilllabs3/vice-city-stories-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "file": "Grand Theft Auto - Vice City Stories (USA).png",
-   "q": "grand theft auto vice city stories vice city stories recomp",
-   "repo": "Sony_-_PlayStation_Portable",
-   "snap": true,
-   "title": true,
-   "v": 2
-  },
   "owaissseeee/godhandandroidport": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "God Hand (USA).png",
@@ -14959,6 +15104,11 @@
    "repo": "Nintendo_-_Nintendo_3DS",
    "snap": true,
    "title": true,
+   "v": 2
+  },
+  "pacific-city-recompiled/crackdown-2-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "crackdown 2 crackdown 2 recomp",
    "v": 2
   },
   "palaceswitcher/smw-nes-disassembly": {
@@ -15266,6 +15416,15 @@
   "plasteredcrab/gw2-rs": {
    "checked": "2026-11-17T11:55:02Z",
    "q": "geometry wars retro evolved 2",
+   "v": 2
+  },
+  "plaught-armor/bof4-recomp": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Breath of Fire IV (USA).png",
+   "q": "breath of fire iv breath of fire iv recomp",
+   "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true,
    "v": 2
   },
   "player124413/sonic-generations-recomp-android-and-pc-edition": {
@@ -16473,9 +16632,9 @@
    "v": 2
   },
   "roz1077/true-crime-new-york-city-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "True Crime - New York City (USA).png",
-   "q": "true crime new york city",
+   "q": "true crime new york city true crime new york city xbox recomp",
    "repo": "Microsoft_-_Xbox",
    "snap": true,
    "title": true,
@@ -18195,13 +18354,8 @@
    "v": 2
   },
   "springah/daytona_recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "daytona usa",
-   "v": 2
-  },
-  "springah/futari_recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "mushihimesama futari",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "daytona usa daytona usa rexglue recompilation",
    "v": 2
   },
   "springah/zuma_recomp": {
@@ -18872,6 +19026,15 @@
    "title": true,
    "v": 2
   },
+  "techprogabe/prime-x": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Metroid Prime (USA).png",
+   "q": "metroid prime prime x",
+   "repo": "Nintendo_-_GameCube",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
   "teclilla18/sonic-heroes-recomp": {
    "checked": "2026-11-17T11:55:02Z",
    "file": "Sonic Heroes (USA).png",
@@ -19041,7 +19204,16 @@
    "v": 2
   },
   "tetrisgm/ridgeracertype4recomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "R4 - Ridge Racer Type 4 (USA).png",
+   "q": "ridge racer type 4",
+   "repo": "Sony_-_PlayStation",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "tetrisgm/ridgeracertype4remaster": {
+   "checked": "2026-11-17T15:57:56Z",
    "file": "R4 - Ridge Racer Type 4 (USA).png",
    "q": "r4 ridge racer type 4 ridgeracertype4recomp",
    "repo": "Sony_-_PlayStation",
@@ -19380,8 +19552,8 @@
    "v": 2
   },
   "thefixinhixon/splosionmanrecomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "splosion man splosionmanrecomp",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "splosion man",
    "v": 2
   },
   "thefixinhixon/themawrecomp": {
@@ -19735,9 +19907,9 @@
    "v": 2
   },
   "tmcleroy/fighters-megamix-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
+   "checked": "2026-11-17T15:57:56Z",
    "file": "Fighters Megamix (USA).png",
-   "q": "fighters megamix",
+   "q": "fighters megamix fighters megamix recomp",
    "repo": "Sega_-_Saturn",
    "snap": true,
    "title": true,
@@ -19814,8 +19986,8 @@
    "v": 2
   },
   "trev82usa/trialshd-recomp": {
-   "checked": "2026-11-17T11:55:02Z",
-   "q": "trials hd",
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "trials hd trials hd recomp",
    "v": 2
   },
   "tripplyons/pokeemerald-3d": {
@@ -19950,6 +20122,15 @@
    "file": "Killzone - Liberation (USA) (En,Fr,De,Es,It,Nl,Pl,Ru).png",
    "q": "killzone liberation",
    "repo": "Sony_-_PlayStation_Portable",
+   "snap": true,
+   "title": true,
+   "v": 2
+  },
+  "u0rhs/burnout3-native": {
+   "checked": "2026-11-17T15:57:56Z",
+   "file": "Burnout 3 - Takedown (USA).png",
+   "q": "burnout 3 takedown",
+   "repo": "Sony_-_PlayStation_2",
    "snap": true,
    "title": true,
    "v": 2
@@ -20603,6 +20784,11 @@
    "repo": "Sony_-_PlayStation",
    "snap": true,
    "title": true,
+   "v": 2
+  },
+  "whompay/fable2reborn": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "fable ii",
    "v": 2
   },
   "whompay/fncreborn": {
@@ -21485,6 +21671,11 @@
    "repo": "Sony_-_PlayStation_Portable",
    "snap": true,
    "title": true,
+   "v": 2
+  },
+  "zippingrocks/destroy-all-humans-2005-static-recompilation": {
+   "checked": "2026-11-17T15:57:56Z",
+   "q": "destroy all humans destroy all humans 2005 recompilation",
    "v": 2
   },
   "zjanny/legocityundercover-thechasebegins-pc-port": {
