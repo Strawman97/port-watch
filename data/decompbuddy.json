@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T03:51:50+00:00",
+ "generated": "2026-11-17T10:44:13+00:00",
  "projects": [
   {
    "ai": false,
@@ -6453,6 +6453,40 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Fire Emblem Awakening, recompiled for Android handhelds: set up on the device from your own copy, with turn and action rewinding, built for AYN Thor",
+   "g": "Fire Emblem Awakening",
+   "id": "db:teton-dev/exaltds",
+   "k": "teton-dev/exaltds",
+   "lc": "2026-11-17T07:01:27Z",
+   "p": "3DS",
+   "po": [
+    "Android"
+   ],
+   "pr": "ExaltDS",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Fire Emblem Fates, statically recompiled to a native Windows program. Contains no game files: you build it from your own dump.",
+   "g": "Fire Emblem Fates",
+   "id": "db:tyle-beep/haiku",
+   "k": "tyle-beep/haiku",
+   "lc": "2026-11-17T00:59:49Z",
+   "p": "3DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Haiku",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "A recomp project for Fire Emblem Fates Special Edition. No game files are present, everything is built from your game files.",
    "g": "Fire Emblem Fates: Special Edition",
@@ -6896,6 +6930,23 @@
    "pr": "Fenix-Reborn",
    "pre": false,
    "rel": "V0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Native Windows PC port of Geist (GameCube) via static recompilation. Build it from your own disc: F1 settings, up to 8x resolution, texture packs, cheats, controller and keyboard/mouse support.",
+   "g": "Geist",
+   "id": "db:legendarysavagegamer/geist-recomp",
+   "k": "legendarysavagegamer/geist-recomp",
+   "lc": "2026-11-17T04:29:40Z",
+   "p": "GameCube",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Geist-Recomp",
+   "pre": false,
+   "rel": "v1.0.7",
    "t": "Recompilation"
   },
   {
@@ -7985,7 +8036,7 @@
    ],
    "pr": "prj-gd-engine",
    "pre": false,
-   "rel": "gdul/v1.1.15",
+   "rel": "gdul/v1.1.16",
    "t": "Reimplementation"
   },
   {
@@ -9530,7 +9581,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.2",
+   "rel": "v0.1.4",
    "t": "Recompilation"
   },
   {
@@ -10521,7 +10572,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
+   "ai": false,
    "at": "2026-10-20",
    "d": "Reverse-engineering Legend of Legaia (PSX, 1999): Ghidra-traced format documentation, Rust extractors for every asset on the disc, and an engine reimplementation targeting wgpu/SDL3 with optional WASM.  BYO-disc model, no assets distributed.",
    "g": "Legend of Legaia",
@@ -15988,6 +16039,31 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Pokémon Colosseum Native PC Port Launcher",
+   "g": "Pokémon Colosseum",
+   "games": [
+    {
+     "platform": "GameCube",
+     "title": "Pokémon XD: Gale of Darkness"
+    }
+   ],
+   "id": "db:chasem-dev/orre-launcher",
+   "k": "chasem-dev/orre-launcher",
+   "lc": "2026-11-17T01:49:58Z",
+   "p": "GameCube",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "orre-launcher",
+   "pre": true,
+   "rel": "v0.5.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-04",
    "d": "Source-only Pokemon Colosseum static recompilation with optional ultrawide, HD text, minimap, and 60 FPS modes",
    "g": "Pokemon Colosseum",
@@ -16218,7 +16294,7 @@
    ],
    "pr": "LZA-Recomp",
    "pre": true,
-   "rel": "LegendsA-v1.3.2",
+   "rel": "LegendsA-v1.3.3",
    "t": "Recompilation"
   },
   {
@@ -17352,6 +17428,23 @@
    "pr": "redcard2003recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "REFLORA: static recompilation of the game 040015100B514001 for Windows (NVN 2 on Vulkan). No game files included.",
+   "g": "REFLORA",
+   "id": "db:zchady/reflora",
+   "k": "zchady/reflora",
+   "lc": "2026-11-17T02:42:17Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "reflora",
+   "pre": true,
+   "rel": "alpha-03",
    "t": "Recompilation"
   },
   {
@@ -20183,6 +20276,23 @@
    "pr": "SSX-Tricky-PC",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "3D edition of SerenityG4K's SpaceAnimalsRecomp: native per-eye stereoscopic 3D (interlaced, SBS, TAB, Leia SR) and all shaders translated.",
+   "g": "Star Fox",
+   "id": "db:agrofubris/spaceanimalsrecomp-3d",
+   "k": "agrofubris/spaceanimalsrecomp-3d",
+   "lc": "2026-11-17T04:02:38Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SpaceAnimalsRecomp-3D",
+   "pre": false,
+   "rel": "v1.1.2",
    "t": "Recompilation"
   },
   {
