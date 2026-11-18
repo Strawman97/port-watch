@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T06:27:31+00:00",
+ "generated": "2026-11-18T09:56:36+00:00",
  "projects": [
   {
    "ai": false,
@@ -1846,6 +1846,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "An unofficial native Android port of the original Xbox version of Black, featuring touch controls, gyroscope aiming, controller support, and enhanced graphics options. Powered by XboxXBE-Recomp and Vulkan.",
+   "g": "Black",
+   "id": "db:unknuwprojects/black-continue",
+   "k": "unknuwprojects/black-continue",
+   "lc": "2026-11-08T03:07:22Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "Black-Continue",
+   "pre": false,
+   "rel": "v5.8",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-02",
    "d": "A native Windows x64 and Linux/Steam Deck port of Blast Wind (Japan) for the Sega Saturn, built by static recompilation with satrecomp. The SH-2 code is translated to C++ and runs on a custom machine with CD-DA and SCSP audio, launcher, saves and full controller support. No emulator, no BIOS and no game data: players supply their own disc. GPL-3.0.",
    "g": "Blast Wind",
@@ -3033,6 +3050,25 @@
    "pre": false,
    "rel": "v1.0c",
    "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "ChuChu Rocket! Re-Nyastered: a source-only, best-of-all-versions reimplementation (bring your own game files). Not affiliated with SEGA.",
+   "g": "ChuChu Rocket!",
+   "id": "db:tidegear/chuchu-rocket-re-nyastered",
+   "k": "tidegear/chuchu-rocket-re-nyastered",
+   "lc": "2026-11-18T01:21:34Z",
+   "p": "Dreamcast",
+   "po": [
+    "Windows",
+    "macOS",
+    "Linux"
+   ],
+   "pr": "ChuChu-Rocket-Re-Nyastered",
+   "pre": false,
+   "rel": "v2026.11.20",
+   "t": "Reimplementation"
   },
   {
    "ai": false,
@@ -4316,6 +4352,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Experimental native Android ARM64 port of Def Jam: Fight for NY. Requires your own original Xbox disc/ISO; original game data is not included.",
+   "g": "Def Jam: Fight for NY",
+   "id": "db:contatg/def-jam-android-native-port",
+   "k": "contatg/def-jam-android-native-port",
+   "lc": "2026-11-17T09:21:04Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "Def-Jam-Android-Native-Port",
+   "pre": false,
+   "rel": "v1.5-build138",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Recompiled version of Def Jam from Gamecube with some new features (Like online multiplayer)",
    "g": "Def Jam: Fight for NY",
@@ -4852,6 +4905,25 @@
    "pr": "Ratatouille-PC",
    "pre": false,
    "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Unofficial native PC port of Disney's Aladdin (SNES, 1993) built with SNESRecomp — No ROM or copyrighted assets included.",
+   "g": "Disney's Aladdin",
+   "id": "db:testsenvergonha-sys/agrabahport",
+   "k": "testsenvergonha-sys/agrabahport",
+   "lc": "2026-11-18T05:21:48Z",
+   "p": "SNES",
+   "po": [
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "AgrabahPort",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -5799,6 +5871,29 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Experimental native AOT port of Dyna Brothers 1 and 2 Special for Windows x64. Partial English translations, shared launcher and controller profiles.",
+   "g": "Dyna Brothers",
+   "games": [
+    {
+     "platform": "Mega Drive",
+     "title": "Dyna Brothers 2 Special"
+    }
+   ],
+   "id": "db:matymeatboy/dynabrothers1-2",
+   "k": "matymeatboy/dynabrothers1-2",
+   "lc": "2026-11-18T06:27:33Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DynaBrothers1-2",
+   "pre": true,
+   "rel": "v0.1.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-17",
    "d": "An unofficial Android (arm64) port of the original Xbox version of Dynasty Warriors 5, made with the XboxXBE-Recomp SDK.",
    "g": "Dynasty Warriors 5",
@@ -6085,6 +6180,23 @@
    "pr": "2K5Remade",
    "pre": true,
    "rel": "v0.1.0-preview",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Eternal Darkness: Sanity's Requiem Bound Souls. Static recompilation: Single and Two-player split-screen co-op. Includes 34 characters to choose from. Built on and appreciation to Griches’s Eternal Darkness Recomp. (DolRecomp + GXRuntime) tested only on Windows. Bring your own PAL disc.",
+   "g": "Eternal Darkness: Sanity's Requiem",
+   "id": "db:the-stone-and-rock/eternaldarknessboundsouls",
+   "k": "the-stone-and-rock/eternaldarknessboundsouls",
+   "lc": "2026-11-18T03:49:01Z",
+   "p": "GameCube",
+   "po": [
+    "Windows"
+   ],
+   "pr": "EternalDarknessBoundSouls",
+   "pre": true,
+   "rel": "v0.1.6",
    "t": "Recompilation"
   },
   {
@@ -6510,6 +6622,23 @@
    "pr": "fifa-street-2-pc",
    "pre": false,
    "rel": "v1.0.14",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-09",
+   "d": "Fight Night Champion Venom: Xbox recompilation research and native-to-browser SBS tooling. No proprietary game data.",
+   "g": "Fight Night Champion",
+   "id": "db:syenar/fight-night-champion-venom",
+   "k": "syenar/fight-night-champion-venom",
+   "lc": "2026-11-18T05:43:21Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "fight-night-champion-venom",
+   "pre": true,
+   "rel": "v0.1.0-preview.1",
    "t": "Recompilation"
   },
   {
@@ -6978,6 +7107,24 @@
    "pr": "FE-Fates-SE-recomp",
    "pre": false,
    "rel": "Release",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "Native Windows PC port of Fire Emblem: Fortune's Weave by static recompilation. Bring your own dump; no game files included.",
+   "g": "Fire Emblem: Fortune's Weave",
+   "id": "db:xinthefreefallxai/obeliskchamber",
+   "k": "xinthefreefallxai/obeliskchamber",
+   "lc": "2026-11-17T21:06:12Z",
+   "p": "Switch",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "ObeliskChamber",
+   "pre": true,
+   "rel": "v0.2.4t",
    "t": "Recompilation"
   },
   {
@@ -8510,6 +8657,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Static recompilation of Greendog: The Beached Surfer Dude! (Mega Drive) to native PC, with HD and widescreen extras",
+   "g": "Greendog: The Beached Surfer Dude!",
+   "id": "db:originalswayze/greendog-recomp",
+   "k": "originalswayze/greendog-recomp",
+   "lc": "2026-11-18T05:28:59Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows"
+   ],
+   "pr": "greendog-recomp",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-30",
    "d": "Port nativo para PC de The Grim Adventures of Billy & Mandy (PS2), a 60 fps. O launcher prepara o jogo a partir da sua própria ISO. Projeto de fã: não contém o jogo.",
    "g": "The Grim Adventures of Billy & Mandy",
@@ -8986,6 +9150,25 @@
    "pr": "gunslingers-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "",
+   "g": "Gunstar Heroes",
+   "id": "db:1nputs/gunstars",
+   "k": "1nputs/gunstars",
+   "lc": "2026-10-21T12:11:49Z",
+   "p": "Mega Drive",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "gunstars",
+   "pre": false,
+   "rel": "v0.2.2",
    "t": "Recompilation"
   },
   {
@@ -9957,6 +10140,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-06",
+   "d": "Native PC port of inFamous (PS3, US Release BCUS98119) via static recompilation",
+   "g": "inFamous",
+   "id": "db:woofahrayetcode/infamous-us",
+   "k": "woofahrayetcode/infamous-us",
+   "lc": "2026-11-18T06:14:23Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "inFAMOUS-US",
+   "pre": false,
+   "rel": "v20261118.060842Z",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "",
    "g": "inFamous 2",
@@ -10503,6 +10703,23 @@
    "pre": false,
    "rel": "v0.3.1",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Native Windows recompilation of Jurassic: The Hunted (Xbox 360) with ReXGlue. Code only; bring your own game.",
+   "g": "Jurassic: The Hunted",
+   "id": "db:popsmokethe2nd/jurassic-the-hunted-recompiled",
+   "k": "popsmokethe2nd/jurassic-the-hunted-recompiled",
+   "lc": "2026-11-18T01:54:37Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "jurassic-the-hunted-recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -11281,14 +11498,14 @@
    "g": "Legend of Doom",
    "id": "db:estebanpdn/legend-of-doom-3ds",
    "k": "estebanpdn/legend-of-doom-3ds",
-   "lc": "2026-09-13T03:27:35Z",
+   "lc": "2026-09-13T03:18:08Z",
    "p": "3DS",
    "po": [
     "Windows"
    ],
    "pr": "legend-of-doom-3ds",
    "pre": false,
-   "rel": "v1.1",
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -13030,6 +13247,21 @@
    "pre": false,
    "rel": "v0.1.1",
    "t": "Reimplementation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "A native Nintendo 3DS port of Mario Kart Wii",
+   "g": "Mario Kart Wii",
+   "id": "db:ethanseagull/mariokartwiids",
+   "k": "ethanseagull/mariokartwiids",
+   "lc": "2026-11-15T02:56:57Z",
+   "p": "Wii",
+   "po": [],
+   "pr": "MarioKartWiiDS",
+   "pre": false,
+   "rel": "v1.1.1",
+   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -16859,6 +17091,21 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Port of the Android version of Plague Inc. for PS Vita",
+   "g": "Plague Inc.",
+   "id": "db:danroxn/plague_vita",
+   "k": "danroxn/plague_vita",
+   "lc": "2026-10-20T20:42:11Z",
+   "p": "Mobile",
+   "po": [],
+   "pr": "plague_vita",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-17",
    "d": "Unofficial Windows port of the Xbox 360 Plants vs. Zombies, statically recompiled with ReXGlue, with full mouse controls. Bring your own game copy.",
@@ -16948,7 +17195,7 @@
    ],
    "pr": "orre-launcher",
    "pre": true,
-   "rel": "v0.5.0",
+   "rel": "v0.5.1",
    "t": "Recompilation"
   },
   {
@@ -17192,7 +17439,7 @@
    ],
    "pr": "LZA-Recomp",
    "pre": true,
-   "rel": "LegendsA-v1.3.3",
+   "rel": "LegendsA-v1.3.4",
    "t": "Recompilation"
   },
   {
@@ -17408,6 +17655,25 @@
    "pr": "switch2-recomp",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "A native C port of the Poke RBY Generation 1 engine. Supply your own ROM.",
+   "g": "Pokemon Red/Blue",
+   "id": "db:spiritsnails/oldamber",
+   "k": "spiritsnails/oldamber",
+   "lc": "2026-09-03T14:46:08Z",
+   "p": "Game Boy",
+   "po": [
+    "Windows",
+    "macOS",
+    "Linux"
+   ],
+   "pr": "oldamber",
+   "pre": false,
+   "rel": "v0.0.4",
    "t": "Recompilation"
   },
   {
@@ -19941,6 +20207,21 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "Silent Hill 3 (PC) for PS Vita - unofficial fan port by static recompilation. Bring your own copy of the game.",
+   "g": "Silent Hill 3",
+   "id": "db:matfsouza/sh3vita",
+   "k": "matfsouza/sh3vita",
+   "lc": "2026-11-18T03:44:58Z",
+   "p": "PS2",
+   "po": [],
+   "pr": "sh3vita",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Climax Silent Hill Engine Toolkit",
@@ -20273,6 +20554,23 @@
    "pr": "skate-3-rust-engine",
    "pre": true,
    "rel": "experimental",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "A native VR port of EA's Skate 3",
+   "g": "Skate 3",
+   "id": "db:whachuvr/skate3vr",
+   "k": "whachuvr/skate3vr",
+   "lc": "2026-10-06T03:35:57Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Skate3VR",
+   "pre": true,
+   "rel": "alpha",
    "t": "Recompilation"
   },
   {
@@ -21089,6 +21387,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": " Splinter Cell Chaos Theory (Xbox) Recomp for Nintendo Switch ",
+   "g": "Splinter Cell: Chaos Theory",
+   "id": "db:itouchdennis/scct-nx",
+   "k": "itouchdennis/scct-nx",
+   "lc": "2026-11-11T08:17:33Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "scct-nx",
+   "pre": false,
+   "rel": "v0.3.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-09-17",
    "d": "Xbox 360 titles recompiled to native Linux - launchers only. You import your own copy of each game; releases carry no game data.",
@@ -21238,6 +21553,21 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "",
+   "g": "Spyro the Dragon",
+   "id": "db:shayvd/spyro-vita",
+   "k": "shayvd/spyro-vita",
+   "lc": "2026-11-17T10:45:43Z",
+   "p": "PS1",
+   "po": [],
+   "pr": "spyro-vita",
+   "pre": false,
+   "rel": "v1.2.2",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-17",
    "d": "Native PC port of Spyro the Dragon (PS1), built on the psxport static-recompilation framework. Supply your own disc.",
@@ -21379,6 +21709,24 @@
    "pre": false,
    "rel": "1.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Static recompilation of Star Fox: Assault (GameCube, USA) to native Windows and Linux / Steam Deck. Bring your own disc image.",
+   "g": "Star Fox: Assault",
+   "id": "db:elroy1995/starfox-assault-recomp",
+   "k": "elroy1995/starfox-assault-recomp",
+   "lc": "2026-11-18T01:53:09Z",
+   "p": "GameCube",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "starfox-assault-recomp",
+   "pre": true,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -22775,6 +23123,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Syphon Filter: The Omega Strain native PC/Vita port - play-test build (no game data)",
+   "g": "Syphon Filter: The Omega Strain",
+   "id": "db:zm2283145/syphon-filter-omega-strain-playtest",
+   "k": "zm2283145/syphon-filter-omega-strain-playtest",
+   "lc": "2026-11-01T18:03:03Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "syphon-filter-omega-strain-playtest",
+   "pre": true,
+   "rel": "playtest-68-4971ac5c",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-09",
    "d": "System Shock 2: 25th Anniversary Remaster (PS4) running natively on Windows 10/11. Windows fork of SacredFire, built on bbport and shadPS4. No game files included.",
    "g": "System Shock 2: 25th Anniversary Remaster",
@@ -24030,6 +24395,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Un port nativo para PC de **TSUKIHIME -A piece of blue glass moon-** (PlayStation 4, CUSA47999, versión 01.00) para Linux y Windows.",
+   "g": "TSUKIHIME -A piece of blue glass moon",
+   "id": "db:waffle631/project-blue-moon",
+   "k": "waffle631/project-blue-moon",
+   "lc": "2026-11-01T23:32:41Z",
+   "p": "PS4",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Project-Blue-Moon",
+   "pre": false,
+   "rel": "v0.1.0-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "Turok 2: Seeds of Evil — N64Recomp static PC port",
    "g": "Turok 2: Seeds of Evil",
@@ -24752,6 +25135,21 @@
    "pr": "WarioWareGoldRecomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Meta Quest 3 / 3S OpenXR VR static recompilation of WarioWare: Twisted! with Touch Plus wrist-twist gyro, rumble haptics, MR passthrough, and 5-plane 3D Layered Depth Mode",
+   "g": "WarioWare: Twisted!",
+   "id": "db:mrchrisster/wariowaretwistedrecomp",
+   "k": "mrchrisster/wariowaretwistedrecomp",
+   "lc": "2026-11-16T06:37:08Z",
+   "p": "GBA",
+   "po": [],
+   "pr": "WarioWareTwistedRecomp",
+   "pre": false,
+   "rel": "v0.1.1-quest",
    "t": "Recompilation"
   },
   {
@@ -25491,6 +25889,23 @@
    "pr": "legends-classic",
    "pre": false,
    "rel": "v0.6.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Native Android port of Xenoblade Chronicles 3 for the Retroid Pocket Flip 2. Early version. Bring your own extracted game files.",
+   "g": "Xenoblade Chronicles 3",
+   "id": "db:iamwilmar/xenoblade3-recomp",
+   "k": "iamwilmar/xenoblade3-recomp",
+   "lc": "2026-11-18T02:36:30Z",
+   "p": "Switch",
+   "po": [
+    "Android"
+   ],
+   "pr": "xenoblade3-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
