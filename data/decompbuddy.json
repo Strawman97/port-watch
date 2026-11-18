@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T15:57:57+00:00",
+ "generated": "2026-11-18T00:56:40+00:00",
  "projects": [
   {
    "ai": false,
@@ -896,6 +896,23 @@
    "pre": false,
    "rel": "v1.8.4",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": " Launcher e instalador para PC do ACNL-Recomp - recompilacão estatica de Animal Crossing: New Leaf. Sem ROM ou assets",
+   "g": "Animal Crossing: New Leaf",
+   "id": "db:lucas4411/acnl-recomp",
+   "k": "lucas4411/acnl-recomp",
+   "lc": "2026-11-11T15:09:11Z",
+   "p": "3DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ACNL-Recomp",
+   "pre": false,
+   "rel": "v2.0",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -1883,6 +1900,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Bloodborne running natively on Apple Silicon: the macOS app. Built on bbport and shadPS4.",
+   "g": "Bloodborne",
+   "id": "db:bloodborne-native/bloodborne-mac",
+   "k": "bloodborne-native/bloodborne-mac",
+   "lc": "2026-11-10T17:08:25Z",
+   "p": "PS4",
+   "po": [
+    "macOS"
+   ],
+   "pr": "bloodborne-mac",
+   "pre": false,
+   "rel": "v0.10.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Bloodborne for Android: GSR2/FSR 3.1 + LSFG, on-screen controller. Tested on Snapdragon 8 Gen 2 and 8 Elite.",
    "g": "Bloodborne",
@@ -2003,6 +2037,23 @@
    "pr": "bloody-roar4-recomp",
    "pre": false,
    "rel": "v1.0.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Blue Dragon (re:Blue) recompilado de forma nativa para Android ARM64, con panel para consolas de doble pantalla",
+   "g": "Blue Dragon",
+   "id": "db:zackfairestar-debug/reblue-android",
+   "k": "zackfairestar-debug/reblue-android",
+   "lc": "2026-11-14T02:15:52Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "reblue-android",
+   "pre": true,
+   "rel": "v0.7.0",
    "t": "Recompilation"
   },
   {
@@ -2343,7 +2394,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-17",
    "d": "Burnout 3: Takedown, native on every platform",
    "g": "Burnout 3: Takedown",
@@ -2710,6 +2761,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Castlevania: Symphony of the Night",
+   "id": "db:pettersdark/symphonyrecomp-ultimate",
+   "k": "pettersdark/symphonyrecomp-ultimate",
+   "lc": "2026-10-31T15:57:13Z",
+   "p": "PS1",
+   "po": [
+    "Android"
+   ],
+   "pr": "SymphonyRecomp-Ultimate",
+   "pre": false,
+   "rel": "v0.6",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-26",
    "d": "Cebola - RECOMPILED: projeto experimental de recompilação Z80 para Windows. O jogador fornece a ROM compatível.",
@@ -2985,6 +3053,23 @@
    "pr": "conan-recomp",
    "pre": false,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Conker's Bad Fur Day (N64, 2001) on PC in stereoscopic 3D: side-by-side, top-and-bottom, cross-view, interlaced and Leia SR lenticular panels. Community build of the CBFD-Recompiled port; no game data.",
+   "g": "Conker's Bad Fur Day",
+   "id": "db:agrofubris/conker-3d-stereo",
+   "k": "agrofubris/conker-3d-stereo",
+   "lc": "2026-11-17T17:25:13Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "conker-3d-stereo",
+   "pre": false,
+   "rel": "v0.1.4-stereo",
    "t": "Recompilation"
   },
   {
@@ -3783,7 +3868,7 @@
    ],
    "pr": "Dave-Mirra-Recomp",
    "pre": false,
-   "rel": "v1.1.2",
+   "rel": "v1.1.3",
    "t": "Recompilation"
   },
   {
@@ -3873,6 +3958,57 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Dead Or Alive 4 (Xbox360) native recompilation for Win64 targets",
+   "g": "Dead or Alive 4",
+   "id": "db:lmaogoodcodenotreally/doa4-recomp",
+   "k": "lmaogoodcodenotreally/doa4-recomp",
+   "lc": "2026-11-10T14:03:05Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DOA4-recomp",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Dead or Alive 4",
+   "id": "db:tarball/doa4-recomp",
+   "k": "tarball/doa4-recomp",
+   "lc": "2026-10-31T05:02:50Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "doa4-recomp",
+   "pre": false,
+   "rel": "v2026.10.31.050149-5baadeb",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Dead or Alive Xtreme 2",
+   "id": "db:tarball/doax2-recomp",
+   "k": "tarball/doax2-recomp",
+   "lc": "2026-11-05T19:59:02Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "doax2-recomp",
+   "pre": false,
+   "rel": "v2026.11.05.195802-313fc22",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-31",
    "d": "",
@@ -3938,6 +4074,23 @@
    "pr": "dead-space-mobile-pc",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Work-in-progress native PC port of Dead Space Ignition via static recompilation of the Xbox 360 executable (ReXGlue). Bring your own game files. Unofficial; not affiliated with EA.",
+   "g": "Dead Space Ignition",
+   "id": "db:killersheaven/ds-ignition-recomp",
+   "k": "killersheaven/ds-ignition-recomp",
+   "lc": "2026-11-17T18:09:48Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ds-ignition-recomp",
+   "pre": true,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -4236,6 +4389,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Diablo III (Switch) native ARM64 port to Android: HLE nn::, NVN to Vulkan (derived from d2r-mobile, MIT)",
+   "g": "Diablo III: Eternal Collection",
+   "id": "db:desm0nt/diablo3-port",
+   "k": "desm0nt/diablo3-port",
+   "lc": "2026-11-16T13:41:12Z",
+   "p": "Switch",
+   "po": [
+    "Android"
+   ],
+   "pr": "diablo3-port",
+   "pre": false,
+   "rel": "v0.2.22",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-14",
    "d": "Experimental native recompilation of Diddy Kong Racing using N64: Recompiled and RT64. Requires a user-supplied US Rev 1 ROM.",
@@ -4421,6 +4591,25 @@
    "pre": false,
    "rel": "v1.0.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Static recompilation of Digimon World 3 (PS1) for Windows, Linux and macOS. Widescreen, HD backgrounds, modern settings and gamepad support. Requires your own copy of the game.",
+   "g": "Digimon World 3",
+   "id": "db:armducks/digimonworld3-recomp",
+   "k": "armducks/digimonworld3-recomp",
+   "lc": "2026-10-22T00:44:40Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "Windows",
+    "macOS"
+   ],
+   "pr": "DigimonWorld3-Recomp",
+   "pre": false,
+   "rel": "v0.0.1",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -5210,6 +5399,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Static Recompilation of Drakengard (PS2, USA, SLUS-20732)",
+   "g": "Drakengard",
+   "id": "db:berry-wilson/drakengard-pc",
+   "k": "berry-wilson/drakengard-pc",
+   "lc": "2026-11-06T18:56:18Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Drakengard-PC",
+   "pre": true,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-19",
    "d": "Dream: Land of Giants (SNES prototype, Rare 1995) disassembly and recomp",
@@ -5355,6 +5561,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "An unofficial Android (arm64) port of the original Xbox version of Dynasty Warriors 5, made with the XboxXBE-Recomp SDK.",
+   "g": "Dynasty Warriors 5",
+   "id": "db:datfooldive/dw5-android",
+   "k": "datfooldive/dw5-android",
+   "lc": "2026-10-27T09:30:05Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "DW5-Android",
+   "pre": false,
+   "rel": "v1.7",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-27",
    "d": "",
    "g": "Dynasty Warriors 5: Empires",
@@ -5404,6 +5627,24 @@
    "pr": "NHL-20-PS4-PORT",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "EA SPORTS UFC 3 (PS4) native port for Linux and Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
+   "g": "EA SPORTS UFC 3",
+   "id": "db:xandromedaxr/portheon",
+   "k": "xandromedaxr/portheon",
+   "lc": "2026-10-28T13:27:17Z",
+   "p": "PS4",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "PORTHEON",
+   "pre": false,
+   "rel": "4.2.0",
    "t": "Recompilation"
   },
   {
@@ -5662,6 +5903,24 @@
    "pr": "ExcitebikeNESRecompiled",
    "pre": false,
    "rel": "build-20-1-c7c8a93dd210719846821a3d1676f3655878a598",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "F-Zero",
+   "id": "db:retroportingtoolkit/fzerosnesrecomp",
+   "k": "retroportingtoolkit/fzerosnesrecomp",
+   "lc": "2026-09-22T03:42:21Z",
+   "p": "SNES",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "FZeroSNESRecomp",
+   "pre": false,
+   "rel": "v1.8.3",
    "t": "Recompilation"
   },
   {
@@ -5996,6 +6255,23 @@
    "pr": "fifa-street-arm64",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "FIFA Street 2 (Xbox) recompilado para rodar nativo no PC: 120 fps, widescreen, 4K, DLSS/FSR/XeSS e mods. Traga a sua cópia do jogo.",
+   "g": "FIFA Street 2",
+   "id": "db:otavix010/fifa-street-2-pc",
+   "k": "otavix010/fifa-street-2-pc",
+   "lc": "2026-11-02T04:12:45Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "fifa-street-2-pc",
+   "pre": false,
+   "rel": "v1.0.14",
    "t": "Recompilation"
   },
   {
@@ -6416,6 +6692,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Experimental native Linux recompilation of Fire Emblem Engage 2.0.0 for Steam Deck. Requires your own game files.",
+   "g": "Fire Emblem Engage",
+   "id": "db:rio77/engage-recomp",
+   "k": "rio77/engage-recomp",
+   "lc": "2026-11-17T17:18:19Z",
+   "p": "Switch",
+   "po": [
+    "Linux"
+   ],
+   "pr": "engage-recomp",
+   "pre": true,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-17",
    "d": "Fire Emblem Fates, statically recompiled to a native Windows program. Contains no game files: you build it from your own dump.",
@@ -6537,6 +6830,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "RetroRemakes PS3 ports for Windows – download the zip from Releases. You need your own copy of the game and your own PS3 firmware.",
+   "g": "Folklore",
+   "id": "db:remakergamee/retroremakes-ps3-ports",
+   "k": "remakergamee/retroremakes-ps3-ports",
+   "lc": "2026-11-14T20:29:00Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "RetroRemakes-PS3-Ports",
+   "pre": false,
+   "rel": "folklore-1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "Formula One 06 (PS2) statically recompiled into a native Windows PC port. Bring your own disc. Fan project.",
    "g": "Formula One 06",
@@ -6605,6 +6915,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Forza Horizon",
+   "id": "db:sm1jjj/fh1_rewrite",
+   "k": "sm1jjj/fh1_rewrite",
+   "lc": "2026-10-09T16:21:54Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "fh1_rewrite",
+   "pre": false,
+   "rel": "v0.1.3",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-12",
    "d": "",
@@ -6636,6 +6964,24 @@
    "pr": "fh2-recompiled-android",
    "pre": false,
    "rel": "v0.4.3-android",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-10",
+   "d": "W.I.P. recomp of Forza Motorsport 3 using ReGPU and Xenonrecomp based off of the FM2 and FM4 projects thereof",
+   "g": "Forza Motorsport 3",
+   "id": "db:braaap-stututu/fm3-regpu",
+   "k": "braaap-stututu/fm3-regpu",
+   "lc": "2026-11-17T11:19:51Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "FM3-ReGPU",
+   "pre": true,
+   "rel": "v0.41.0-beta",
    "t": "Recompilation"
   },
   {
@@ -7146,6 +7492,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "God of War: Betrayal (Java ME) — port nativo para Windows, Linux e SteamOS. Requer o seu próprio .jar do jogo.",
+   "g": "God of War: Betrayal",
+   "id": "db:otavix010/gow-betrayal-pc",
+   "k": "otavix010/gow-betrayal-pc",
+   "lc": "2026-10-27T15:00:55Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "gow-betrayal-pc",
+   "pre": false,
+   "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "God of War: Betrayal, remastered for Windows. A native PC port of the 2007 J2ME phone game with widescreen, high frame rates and gamepad support. Bring your own .jar.",
    "g": "God of War: Betrayal",
@@ -7561,6 +7924,23 @@
   },
   {
    "ai": true,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Gran Turismo 4",
+   "id": "db:vgs499p/gt4-recomp-mac",
+   "k": "vgs499p/gt4-recomp-mac",
+   "lc": "2026-11-01T03:12:45Z",
+   "p": "PS2",
+   "po": [
+    "macOS"
+   ],
+   "pr": "gt4-recomp-mac",
+   "pre": false,
+   "rel": "v1.2.5-mac.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-11",
    "d": "Gran Turismo 5: unofficial PC port (static recompilation), split from the GT5P repo gt5 branch",
    "g": "Gran Turismo 5",
@@ -7574,6 +7954,23 @@
    "pr": "Project-Tourline-5",
    "pre": true,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Mirror of https://gitlab.com/rygt-team/rygt7",
+   "g": "Gran Turismo 7",
+   "id": "db:rygt-team/rygt7",
+   "k": "rygt-team/rygt7",
+   "lc": "2026-11-17T00:29:43Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "rygt7",
+   "pre": false,
+   "rel": "gt7-2026-11-16",
    "t": "Recompilation"
   },
   {
@@ -7746,6 +8143,25 @@
    "pr": "vcs-recomp",
    "pre": false,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Grand Theft Auto: Vice City Stories",
+   "id": "db:vancevcs/vcspc",
+   "k": "vancevcs/vcspc",
+   "lc": "2026-10-15T14:55:37Z",
+   "p": "PSP",
+   "po": [
+    "Windows",
+    "Android",
+    "macOS"
+   ],
+   "pr": "VCSPC",
+   "pre": false,
+   "rel": "v2026.10.15",
    "t": "Recompilation"
   },
   {
@@ -8752,6 +9168,23 @@
    "t": "Decompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Open-source static recompilation of Head Hunter (Dreamcast, SH-4) into native Windows x64 C++20. No game data: builds from your own discs.",
+   "g": "Head Hunter",
+   "id": "db:dcrecomp/headhunterrecomp",
+   "k": "dcrecomp/headhunterrecomp",
+   "lc": "2026-11-02T01:11:11Z",
+   "p": "Dreamcast",
+   "po": [
+    "Windows"
+   ],
+   "pr": "HeadHunterRecomp",
+   "pre": true,
+   "rel": "v0.11.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-14",
    "d": "Hell Night: Dark Messiah Recompiled - native PC build of Hellnight (PS1, SLES-01562) via PSXRecomp static recompilation. Bring your own disc.",
@@ -8946,6 +9379,23 @@
    "pr": "The-House-of-the-Dead-ReWrithe",
    "pre": false,
    "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A recomp of The House of The Dead 4 Arcade version with thropies, Chapter selection, Sinden and mouse support, 4k and more.",
+   "g": "The House of the Dead 4",
+   "id": "db:davidptrssvea/hotd4-recomp",
+   "k": "davidptrssvea/hotd4-recomp",
+   "lc": "2026-11-17T14:04:27Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "HOTD4-recomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -9442,6 +9892,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A native Windows runtime for Iron Phoenix, the Original Xbox game.",
+   "g": "Iron Phoenix",
+   "id": "db:godspirit00/ironphoenix_port",
+   "k": "godspirit00/ironphoenix_port",
+   "lc": "2026-11-08T13:57:03Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "IronPhoenix_port",
+   "pre": false,
+   "rel": "nightly",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-11",
    "d": "J-Stars Victory VS-EX: Fan Revival. Unofficial PC port of J-Stars Victory VS+ (PS3) by static recompilation. Work in progress. Needs your own copy of the game.",
@@ -9474,6 +9941,23 @@
    "pre": false,
    "rel": "build-44",
    "t": "Reimplementation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Windows Native host for Jackie Chan - Stuntmaster, Playstation 1 game",
+   "g": "Jackie Chan Stuntmaster",
+   "id": "db:neonoxd/psyx-stuntmaster",
+   "k": "neonoxd/psyx-stuntmaster",
+   "lc": "2026-08-15T11:56:46Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "psyx-stuntmaster",
+   "pre": false,
+   "rel": "0.0.9",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -9546,7 +10030,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.4",
+   "rel": "v0.1.5",
    "t": "Recompilation"
   },
   {
@@ -10293,6 +10777,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Konami BEMANI arcade games as native Linux programs: Firebeat recompiled from PowerPC, plus DJ Main, System 573, Twinkle and Python cores behind one launcher. e-AMUSEMENT and NET TAISEN included. Bring your own dumps.",
+   "g": "Konami BEMANI Arcade Games",
+   "id": "db:roganis/hiraku",
+   "k": "roganis/hiraku",
+   "lc": "2026-10-18T11:13:00Z",
+   "p": "Arcade",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "HIRAKU",
+   "pre": false,
+   "rel": "v0.1.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-30",
    "d": "Functional decompilation of Kuru Kuru Kururin (GBA, Europe) with a native PC port. No game data included.",
    "g": "Kuru Kuru Kururin",
@@ -10509,14 +11011,14 @@
    "g": "Legend of Doom",
    "id": "db:estebanpdn/legend-of-doom-3ds",
    "k": "estebanpdn/legend-of-doom-3ds",
-   "lc": "2026-09-13T03:18:08Z",
+   "lc": "2026-09-13T03:27:35Z",
    "p": "3DS",
    "po": [
     "Windows"
    ],
    "pr": "legend-of-doom-3ds",
    "pre": false,
-   "rel": "v1.0",
+   "rel": "v1.1",
    "t": "Recompilation"
   },
   {
@@ -11169,6 +11671,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "The Legend of Zelda: The Minish Cap (GBA) native port via gba-recomp. No ROM included.",
+   "g": "The Legend of Zelda: The Minish Cap",
+   "id": "db:alekaydevs/minishcap-recomp",
+   "k": "alekaydevs/minishcap-recomp",
+   "lc": "2026-11-17T19:41:25Z",
+   "p": "GBA",
+   "po": [
+    "Android"
+   ],
+   "pr": "minishcap-recomp",
+   "pre": false,
+   "rel": "v0.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-27",
    "d": "Native arm64 macOS port of The Minish Cap decompilation (Metal, GameController)",
    "g": "The Legend of Zelda: The Minish Cap",
@@ -11661,6 +12180,23 @@
    "pr": "LmCoop",
    "pre": false,
    "rel": "v1.1.11",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Port No Oficial para PC de Luigi Mansion 2! 4k hasta 120FPS",
+   "g": "Luigi's Mansion 2 HD",
+   "id": "db:luisdevgaming/mansion2recomp",
+   "k": "luisdevgaming/mansion2recomp",
+   "lc": "2026-11-10T01:56:06Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Mansion2Recomp",
+   "pre": false,
+   "rel": "Sistemas",
    "t": "Recompilation"
   },
   {
@@ -12174,6 +12710,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-09",
+   "d": "Mario Kart World (Switch 2) running natively on Windows PC: a static recompilation, not an emulator. Races at 60 fps, a Switch-2-style settings menu and a one-step Setup. Built on mkw-recomp. No game files included.",
+   "g": "Mario Kart World",
+   "id": "db:sts78721/mkw-thwomp",
+   "k": "sts78721/mkw-thwomp",
+   "lc": "2026-11-15T11:54:42Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MKW-THWOMP",
+   "pre": false,
+   "rel": "0.2.1b",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-09",
    "d": "Mario Party 1-3 (USA) recompiled for PC using n64recomp",
@@ -12286,6 +12839,24 @@
    "pr": "MarioTennisRecomp",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A recompilation of a Wii game.",
+   "g": "Martian Panic",
+   "id": "db:darkuni/martian-panic-recomp",
+   "k": "darkuni/martian-panic-recomp",
+   "lc": "2026-11-07T23:37:46Z",
+   "p": "Wii",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "martian-panic-recomp",
+   "pre": false,
+   "rel": "v0.1",
    "t": "Recompilation"
   },
   {
@@ -12797,6 +13368,37 @@
    "pr": "psx-mega-man-x4",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Mega Man Zero 1-4 — Native Recompilation (PC)  Native (static-recomp) ports of Mega Man Zero 1 , Mega Man Zero 2, Mega Man Zero 3, Mega Man Zero 4",
+   "g": "Mega Man Zero",
+   "games": [
+    {
+     "platform": "GBA",
+     "title": "Mega Man Zero 2"
+    },
+    {
+     "platform": "GBA",
+     "title": "Mega Man Zero 3"
+    },
+    {
+     "platform": "GBA",
+     "title": "Mega Man Zero 4"
+    }
+   ],
+   "id": "db:andrew-2435/mega-man-zero-1-4-native-recompilation",
+   "k": "andrew-2435/mega-man-zero-1-4-native-recompilation",
+   "lc": "2026-11-17T19:52:27Z",
+   "p": "GBA",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Mega-Man-Zero-1-4-native-recompilation",
+   "pre": false,
+   "rel": "0.1.0",
    "t": "Recompilation"
   },
   {
@@ -13320,6 +13922,23 @@
    "pr": "mcla-macos",
    "pre": true,
    "rel": "v0.8.0-beta.8",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Midnight Club Street Racing PS2 Recomp built using ps2-native-recomp",
+   "g": "Midnight Club: Street Racing",
+   "id": "db:jcoker85/mc1recomp",
+   "k": "jcoker85/mc1recomp",
+   "lc": "2026-11-12T22:08:04Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MC1Recomp",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14485,6 +15104,23 @@
    "pr": "new-poke-snap-switch-recomp",
    "pre": false,
    "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "New Pokémon Snap Switch Recomp: native Windows PC static recompilation (recomp) that works with your own copy of the game, version 2.0.1. 4K, 144 fps, DLSS/FSR, HD texture upscaling and mods. Code only: no game files included.",
+   "g": "New Pokémon Snap",
+   "id": "db:finalpantasy/new-pokemon-snap-recomp",
+   "k": "finalpantasy/new-pokemon-snap-recomp",
+   "lc": "2026-11-17T12:34:41Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "new-pokemon-snap-recomp",
+   "pre": false,
+   "rel": "v1.2.0",
    "t": "Recompilation"
   },
   {
@@ -16140,6 +16776,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Native Linux and Steam Deck static recompilation of Pokemon Mystery Dungeon: Red Rescue Team (GBA) on gbarecomp",
+   "g": "Pokemon Mystery Dungeon: Red Rescue Team",
+   "id": "db:spacekillerz/pmdredrescueteamrecomp",
+   "k": "spacekillerz/pmdredrescueteamrecomp",
+   "lc": "2026-10-27T15:01:56Z",
+   "p": "GBA",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "PMDRedRescueTeamRecomp",
+   "pre": true,
+   "rel": "v0.1.0-beta.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "test to see just how fast a fully playable recomp can be created! game boy color game POKEMON PINBALL",
    "g": "Pokémon Pinball",
@@ -16251,19 +16905,19 @@
   },
   {
    "ai": false,
-   "at": "2026-11-12",
-   "d": "Native Apple silicon port of Recompia (Pokémon Pokopia static recompilation). Based on Recompia by Dittobyte.",
+   "at": "2026-11-05",
+   "d": "Nintendo Switch 2 games recompiled to run natively on PC. Pokémon Pokopia is playable now.",
    "g": "Pokémon Pokopia",
-   "id": "db:chaos192/pokomac",
-   "k": "chaos192/pokomac",
-   "lc": "2026-11-11T21:42:18Z",
-   "p": "Switch 2",
+   "id": "db:drakolordx7/switch2-recomp",
+   "k": "drakolordx7/switch2-recomp",
+   "lc": "2026-11-04T20:05:33Z",
+   "p": "Switch",
    "po": [
-    "macOS"
+    "Windows"
    ],
-   "pr": "PokoMac",
+   "pr": "switch2-recomp",
    "pre": false,
-   "rel": "v1.0.0",
+   "rel": "v0.2.0",
    "t": "Recompilation"
   },
   {
@@ -16475,6 +17129,23 @@
    "pr": "pes2013-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "An unofficial Android (arm64) port of the original Xbox version of Pro Evolution Soccer 5",
+   "g": "Pro Evolution Soccer 5",
+   "id": "db:datfooldive/pes5-android",
+   "k": "datfooldive/pes5-android",
+   "lc": "2026-10-29T13:16:27Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "PES5-Android",
+   "pre": false,
+   "rel": "v1.1",
    "t": "Recompilation"
   },
   {
@@ -17366,6 +18037,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "Resident Evil Survivor 2 - Code: Veronica in VR. Single-player NAOMI World port for Meta Quest and PC OpenXR, based on Flycast and hotd2-vr. Your own game and BIOS required.",
+   "g": "Resident Evil Survivor 2: Code: Veronica",
+   "id": "db:vr4all-standalone/survivor2-code-veronica-vr",
+   "k": "vr4all-standalone/survivor2-code-veronica-vr",
+   "lc": "2026-10-29T03:45:46Z",
+   "p": "Arcade",
+   "po": [],
+   "pr": "survivor2-code-veronica-vr",
+   "pre": false,
+   "rel": "v1.0.6",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "A recompilation of a Wii game.",
    "g": "Resident Evil: The Darkside Chronicles",
@@ -17812,6 +18498,23 @@
    "pr": "rollcage-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Rolo to the Rescue",
+   "id": "db:tiberiandark/rolo_revisited",
+   "k": "tiberiandark/rolo_revisited",
+   "lc": "2026-10-31T22:06:51Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows"
+   ],
+   "pr": "rolo_revisited",
+   "pre": true,
+   "rel": "v0.1.11-beta",
    "t": "Recompilation"
   },
   {
@@ -18892,6 +19595,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Retail Skate 3 recompilation with native graphics, profiles, online play, split screen and SteamVR integration.",
+   "g": "Skate 3",
+   "id": "db:5c8/skate3recomp",
+   "k": "5c8/skate3recomp",
+   "lc": "2026-10-29T20:17:44Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "skate3recomp",
+   "pre": false,
+   "rel": "v1.0.1-skate3.20261029",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-19",
    "d": "Play Skate 3 natively on Android. Download one APK, select your own ISO, and skate. ARM64 recompilation with Vulkan rendering.",
@@ -18906,6 +19626,23 @@
    "pr": "Skate3-Mobile",
    "pre": true,
    "rel": "v2.1.0-qa1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Skate 3 running natively on ARM64 without emulators",
+   "g": "Skate 3",
+   "id": "db:darchap/skate3-port",
+   "k": "darchap/skate3-port",
+   "lc": "2026-09-22T20:22:30Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "Skate3-Port",
+   "pre": true,
+   "rel": "v1.3.4-rc1",
    "t": "Recompilation"
   },
   {
@@ -19049,7 +19786,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-10-26",
    "d": "Unofficial native Windows port of Skylanders: SuperChargers (Xbox 360) via ReXGlue static recompilation",
    "g": "Skylanders: SuperChargers",
@@ -19691,6 +20428,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Spider-Man 2: Enter Electro",
+   "id": "db:cloudstrife29/sm2-recomp",
+   "k": "cloudstrife29/sm2-recomp",
+   "lc": "2026-11-05T19:34:15Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SM2-Recomp",
+   "pre": false,
+   "rel": "v0.11",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Native ROM-free recompilation of Sega's 1991 arcade Spider-Man: The Videogame (System 32, 4-player). The NEC V60 program is translated to native C/x86-64 and verified frame-for-frame against MAME; the board, video, input and EEPROM are modelled in C. Windows x64 and Steam Deck AppImage. Supply your spidman.zip; sound uses a reference Z80 fallback.",
    "g": "Spider-Man: The Videogame",
@@ -20305,6 +21059,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "A barebones port of the CPS3 version of Street Fighter 3: 2nd Impact (970930) for PC and 3DS",
+   "g": "Street Fighter III 2nd Impact: Giant Attack",
+   "id": "db:gibletto/sfiii2-cps3-port",
+   "k": "gibletto/sfiii2-cps3-port",
+   "lc": "2026-11-04T07:59:50Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "sfIII2-cps3-port",
+   "pre": false,
+   "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-20",
    "d": "x86-64 port of Street Fighter III: 3rd Strike from the original Xbox. SDL3, Vulkan, OpenGL, OpenAL.",
@@ -20320,6 +21091,40 @@
    "pr": "SF33RDSXBRecompo",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "A barebones port of the CPS3 version of Street Fighter 3: Third Strike (990512) for PC and 3DS",
+   "g": "Street Fighter III 3rd Strike: Fight for the Future",
+   "id": "db:gibletto/sfiii3-cps3-port",
+   "k": "gibletto/sfiii3-cps3-port",
+   "lc": "2026-11-04T07:59:53Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "sfiii3-cps3-port",
+   "pre": false,
+   "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "A barebones port of the CPS3 version of Street Fighter 3: New Generation (970204) for PC and 3DS",
+   "g": "Street Fighter III: New Generation",
+   "id": "db:gibletto/sfiii-cps3-port",
+   "k": "gibletto/sfiii-cps3-port",
+   "lc": "2026-11-04T07:59:51Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "sfIII-cps3-port",
+   "pre": false,
+   "rel": "v1.1.0",
    "t": "Recompilation"
   },
   {
@@ -20497,6 +21302,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Super Mario 3D Land recompiled. Native Windows x64 port built from a local European 3DS ROM.",
+   "g": "Super Mario 3D Land",
+   "id": "db:okxmir/super-mario-3d-land-recompiled",
+   "k": "okxmir/super-mario-3d-land-recompiled",
+   "lc": "2026-11-17T15:57:17Z",
+   "p": "3DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "super-mario-3d-land-recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-18",
    "d": "Native standalone SM64 Co-Op DX VR port for Meta Quest, with motion controls and physical climbing.",
@@ -20629,6 +21451,21 @@
    "pr": "yoshi-island-macos",
    "pre": true,
    "rel": "v0.1.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Super Mario All-Stars port for Xbox 360",
+   "g": "Super Mario All-Stars",
+   "id": "db:oktanon/smas-xbox-360",
+   "k": "oktanon/smas-xbox-360",
+   "lc": "2026-11-12T23:58:22Z",
+   "p": "SNES",
+   "po": [],
+   "pr": "SMAS-Xbox-360",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -20851,14 +21688,14 @@
    "g": "Super Mario Maker 2",
    "id": "db:sometimes-steve/smm2-dx",
    "k": "sometimes-steve/smm2-dx",
-   "lc": "2026-11-10T03:29:14Z",
+   "lc": "2026-11-17T20:24:06Z",
    "p": "Switch",
    "po": [
     "Windows"
    ],
    "pr": "smm2-dx",
    "pre": false,
-   "rel": "v0.5.5",
+   "rel": "v0.7.1",
    "t": "Recompilation"
   },
   {
@@ -20928,6 +21765,23 @@
    "pr": "Strikers-Android-Port",
    "pre": false,
    "rel": "v1.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Super Mario Sunshine PC port launcher for ARM64 Android handhelds",
+   "g": "Super Mario Sunshine",
+   "id": "db:chasem-dev/sms-android",
+   "k": "chasem-dev/sms-android",
+   "lc": "2026-10-16T16:26:58Z",
+   "p": "GameCube",
+   "po": [
+    "Android"
+   ],
+   "pr": "sms-android",
+   "pre": true,
+   "rel": "v0.2.0-preview.9",
    "t": "Recompilation"
   },
   {
@@ -21130,6 +21984,25 @@
     "Linux"
    ],
    "pr": "SmashRecomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A faithful Rust port and research tooling for Super Smash Bros. Melee.",
+   "g": "Super Smash Bros. Melee",
+   "id": "db:itsarahtonin/ssbm-rs",
+   "k": "itsarahtonin/ssbm-rs",
+   "lc": "2026-10-06T02:53:56Z",
+   "p": "GameCube",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "ssbm-rs",
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
@@ -21558,6 +22431,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "The definitive modern remaster of Test Drive: Eve of Destruction. Recompiled natively for Apple Silicon & PC delivering 4K+ supersampling, uncapped draw distances, persistent track wreckage, new vehicles, new game modes, custom soundtrack streaming, and (soon )instant online netplay.",
+   "g": "Test Drive: Eve of Destruction",
+   "id": "db:catsandsoup/eod-recomp",
+   "k": "catsandsoup/eod-recomp",
+   "lc": "2026-11-08T12:28:29Z",
+   "p": "PS2",
+   "po": [
+    "macOS",
+    "Windows"
+   ],
+   "pr": "eod-recomp",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-17",
    "d": "",
    "g": "Test Drive: Eve of Destruction",
@@ -21592,6 +22483,23 @@
    "pre": false,
    "rel": "nightly_776845b",
    "t": "Source Port"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Tetris",
+   "id": "db:aschaeffer9/greenscreen-89",
+   "k": "aschaeffer9/greenscreen-89",
+   "lc": "2026-10-30T03:55:53Z",
+   "p": "Game Boy",
+   "po": [
+    "Android"
+   ],
+   "pr": "greenscreen-89",
+   "pre": false,
+   "rel": "3.2",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -22045,6 +22953,21 @@
   },
   {
    "ai": true,
+   "at": "2026-11-17",
+   "d": "Tony Hawk's Pro Skater (PS1 decomp) ported to PS Vita",
+   "g": "Tony Hawk's Pro Skater",
+   "id": "db:darthsully/tony-hawk-slop-skater",
+   "k": "darthsully/tony-hawk-slop-skater",
+   "lc": "2026-11-03T18:38:22Z",
+   "p": "PS1",
+   "po": [],
+   "pr": "Tony-Hawk-Slop-Skater",
+   "pre": false,
+   "rel": "v0.30",
+   "t": "Decompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-10-19",
    "d": "THPS1 64: Recompiled: a native PC port of Tony Hawk's Pro Skater (N64) for macOS and Windows. Bring your own ROM.",
    "g": "Tony Hawk's Pro Skater",
@@ -22384,6 +23307,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-17",
+   "d": "A Trap Gunner Recomp for the PS1 game.",
+   "g": "Trap Gunner",
+   "id": "db:hatdagger/trap_gunner",
+   "k": "hatdagger/trap_gunner",
+   "lc": "2026-11-12T18:34:37Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Trap_Gunner",
+   "pre": false,
+   "rel": "v0.0.10",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-16",
    "d": "Unofficial native PC port of Trauma Team (Wii, 2010) via static recompilation. No game data included: requires your own copy.",
    "g": "Trauma Team",
@@ -22397,6 +23339,23 @@
    "pr": "TraumaTeam-Resuscitated",
    "pre": true,
    "rel": "v0.1.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "An unofficial Xbox PC Port of True Crime: Streets of LA via Static Recompilation",
+   "g": "True Crime: Streets of LA",
+   "id": "db:technicrain0/streets-of-la-recomp",
+   "k": "technicrain0/streets-of-la-recomp",
+   "lc": "2026-11-17T15:36:55Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Streets-of-LA-Recomp",
+   "pre": false,
+   "rel": "0.1.0",
    "t": "Recompilation"
   },
   {
@@ -22699,6 +23658,23 @@
    "pr": "Uniracers-Recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A game based on K-Shoot MANIA and Sound Voltex",
+   "g": "Unnamed SDVX Clone",
+   "id": "db:drewol/unnamed-sdvx-clone",
+   "k": "drewol/unnamed-sdvx-clone",
+   "lc": "2024-06-22T06:42:34Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "unnamed-sdvx-clone",
+   "pre": false,
+   "rel": "v0.6.0",
    "t": "Recompilation"
   },
   {
@@ -23428,6 +24404,26 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "",
+   "g": "Wipeout Pulse",
+   "id": "db:topaxi/openantigrav",
+   "k": "topaxi/openantigrav",
+   "lc": "2026-10-07T19:13:58Z",
+   "p": "PSP",
+   "po": [
+    "Linux",
+    "Android",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "OpenAntiGrav",
+   "pre": true,
+   "rel": "nightly",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-20",
    "d": "Fan-made Wolf Fang: Kuuga 2001 PlayStation recompilation project. Requires your own legally obtained game disc. No copyrighted game disc images or assets are distributed. Work in progress.",
@@ -23531,6 +24527,23 @@
    "pr": "wwe12-pc",
    "pre": false,
    "rel": "v0.8.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-12",
+   "d": "Native Windows x64 recompilation of WWE 2K17 (Xbox 360) with ReXGlue. Bring your own game.",
+   "g": "WWE 2K17",
+   "id": "db:imrburn/wwe2k17-pc",
+   "k": "imrburn/wwe2k17-pc",
+   "lc": "2026-11-17T16:51:35Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "wwe2k17-pc",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -23907,6 +24920,43 @@
    "pr": "Yakuza-Pc-Port",
    "pre": false,
    "rel": "0.01",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Native PC versions of the Yo-kai Watch 3DS games by static recompilation",
+   "g": "Yo-kai Watch",
+   "games": [
+    {
+     "platform": "3DS",
+     "title": "Yo-kai Watch 2"
+    },
+    {
+     "platform": "3DS",
+     "title": "Yo-kai Watch Blasters"
+    },
+    {
+     "platform": "3DS",
+     "title": "Yo-kai Watch 3"
+    },
+    {
+     "platform": "3DS",
+     "title": "Yo-kai Watch Busters 2"
+    }
+   ],
+   "id": "db:watchmakerers/clockwork",
+   "k": "watchmakerers/clockwork",
+   "lc": "2026-10-30T19:44:06Z",
+   "p": "3DS",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "clockwork",
+   "pre": false,
+   "rel": "0.5.1",
    "t": "Recompilation"
   },
   {
