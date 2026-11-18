@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T11:38:49+00:00",
+ "generated": "2026-11-18T20:29:17+00:00",
  "projects": [
   {
    "ai": false,
@@ -653,6 +653,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-14",
+   "d": "A port of AVP Extinction for the PC. ",
+   "g": "Aliens versus Predator: Extinction",
+   "id": "db:adolini1715/avp-extinction-port",
+   "k": "adolini1715/avp-extinction-port",
+   "lc": "2026-11-14T00:21:41Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "AVP-Extinction-Port",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "AVP: Extinction PC port",
    "g": "Aliens vs Predator: Extinction",
@@ -875,25 +892,6 @@
    "pr": "suitcase",
    "pre": true,
    "rel": "v0.1.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-12",
-   "d": "Animal Crossing: City Folk PC port (static recompilation, needs your own disc)",
-   "g": "Animal Crossing: City Folk",
-   "id": "db:rob646464/city-folk-recompiled",
-   "k": "rob646464/city-folk-recompiled",
-   "lc": "2026-11-12T08:21:17Z",
-   "p": "Wii",
-   "po": [
-    "Windows",
-    "macOS",
-    "Linux"
-   ],
-   "pr": "city-folk-recompiled",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -2160,6 +2158,21 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Blur (Xbox 360, 2010) on the Nintendo Switch: static recompilation with ReXGlue and reNut's Direct3D-level renderer on deko3d. Needs your own disc and title update 2.",
+   "g": "Blur",
+   "id": "db:chanseyisthebest/blur-nx",
+   "k": "chanseyisthebest/blur-nx",
+   "lc": "2026-11-18T12:35:16Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "blur-nx",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-26",
    "d": "",
@@ -2796,6 +2809,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-09",
+   "d": "Unofficial native PC port of Castlevania: Curse of Darkness (PS2) by static recompilation: up to 4x resolution, widescreen, texture filtering, minimap, sprint and more. Requires your own copy of the game.",
+   "g": "Castlevania: Curse of Darkness",
+   "id": "db:fasipe/castlevania-cod-qol",
+   "k": "fasipe/castlevania-cod-qol",
+   "lc": "2026-11-08T21:49:51Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Castlevania-COD-QOL",
+   "pre": false,
+   "rel": "v1.3.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-17",
    "d": "Native recompilation development: host integration, runtime patches, build tools and regression tests; no game assets",
@@ -3297,7 +3327,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-14",
    "d": "A Recompilation of Conker's Bad Fur Day for the 3DS",
    "g": "Conker's Bad Fur Day",
@@ -3380,6 +3410,23 @@
    "pr": "CounterStrikeXB",
    "pre": false,
    "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-09",
+   "d": "Courier Crisis (PlayStation, 1997) recompiled for Windows: widescreen, 60 FPS, increased resolution and gamepad support",
+   "g": "Courier Crisis",
+   "id": "db:cesarboss2022/couriercrisisrecomp",
+   "k": "cesarboss2022/couriercrisisrecomp",
+   "lc": "2026-11-09T01:05:23Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "CourierCrisisRecomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -3644,23 +3691,6 @@
     "macOS"
    ],
    "pr": "psx-crash-bash",
-   "pre": false,
-   "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-14",
-   "d": "Static recompilation of Crash: Mind over Mutant (Wii) for Windows. Build and play from your own disc.",
-   "g": "Crash: Mind over Mutant",
-   "id": "db:jaylikesbunda/mindovermutant-wiicompiled",
-   "k": "jaylikesbunda/mindovermutant-wiicompiled",
-   "lc": "2026-11-14T11:40:08Z",
-   "p": "Wii",
-   "po": [
-    "Windows"
-   ],
-   "pr": "MindOverMutant-Wiicompiled",
    "pre": false,
    "rel": "v0.1.1",
    "t": "Recompilation"
@@ -10293,24 +10323,6 @@
   },
   {
    "ai": false,
-   "at": "2026-10-26",
-   "d": "Port nativo de inFAMOUS Second Son para PC (Windows, Vulkan), com FSR 4, DLSS, mouse 1:1 e suporte a controle. Não inclui arquivos do jogo: use seu próprio dump. / Native PC port of inFAMOUS Second Son (Windows, Vulkan). No game files included.",
-   "g": "inFAMOUS Second Son",
-   "id": "db:liondarkz/issn_pc",
-   "k": "liondarkz/issn_pc",
-   "lc": "2026-10-24T23:56:14Z",
-   "p": "PS4",
-   "po": [
-    "Windows",
-    "Linux"
-   ],
-   "pr": "issn_pc",
-   "pre": false,
-   "rel": "windows-v0.3.4",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-11-02",
    "d": "macOS port (private)",
    "g": "inFAMOUS Second Son",
@@ -11757,23 +11769,6 @@
    "pr": "Z3R",
    "pre": false,
    "rel": "v0.2.4",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-11-09",
-   "d": "Static recompilation of Link's Awakening (Switch) to native Android",
-   "g": "The Legend of Zelda: Link's Awakening",
-   "id": "db:mamcjr/lasrecompandroid",
-   "k": "mamcjr/lasrecompandroid",
-   "lc": "2026-11-01T12:41:27Z",
-   "p": "Switch",
-   "po": [
-    "Android"
-   ],
-   "pr": "LASRecompAndroid",
-   "pre": true,
-   "rel": "v0.5.10",
    "t": "Recompilation"
   },
   {
@@ -14038,7 +14033,7 @@
    ],
    "pr": "Mega-Man-Zero-1-4-native-recompilation",
    "pre": false,
-   "rel": "0.1.0",
+   "rel": "v0.1.2",
    "t": "Recompilation"
   },
   {
@@ -15819,6 +15814,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Native Windows port of Need for Speed: Undercover (Xbox 360) via ReXGlue static recompilation. No game data included.",
+   "g": "Need for Speed: Undercover",
+   "id": "db:alienes2/nfsuc-recomp",
+   "k": "alienes2/nfsuc-recomp",
+   "lc": "2026-11-18T06:56:11Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "nfsuc-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "Need for Speed Underground 2 (original Xbox) native on Apple Silicon Macs: steady 60 fps, 4x resolution, HD textures. Bring your own disc; no emulator.",
    "g": "Need for Speed: Underground 2",
@@ -16461,6 +16473,23 @@
     "Linux"
    ],
    "pr": "Omega-Boost-Recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "Onimusha 2 nativo para Android y PC: PAL espanol y NTSC. Requiere tu propio ISO. / Native Onimusha 2 for Android and PC.",
+   "g": "Onimusha 2: Samurai's Destiny",
+   "id": "db:joseestebanmarinrincones-dot/oni2comp",
+   "k": "joseestebanmarinrincones-dot/oni2comp",
+   "lc": "2026-11-18T11:58:56Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "oni2comp",
    "pre": false,
    "rel": "v1.0.0",
    "t": "Recompilation"
@@ -17724,23 +17753,6 @@
    "pr": "platinum",
    "pre": false,
    "rel": "0.3",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-05",
-   "d": "Nintendo Switch 2 games recompiled to run natively on PC. Pokémon Pokopia is playable now.",
-   "g": "Pokémon Pokopia",
-   "id": "db:drakolordx7/switch2-recomp",
-   "k": "drakolordx7/switch2-recomp",
-   "lc": "2026-11-04T20:05:33Z",
-   "p": "Switch",
-   "po": [
-    "Windows"
-   ],
-   "pr": "switch2-recomp",
-   "pre": false,
-   "rel": "v0.2.0",
    "t": "Recompilation"
   },
   {
@@ -20589,23 +20601,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
-   "at": "2026-10-19",
-   "d": "Play Skate 3 natively on Android. Download one APK, select your own ISO, and skate. ARM64 recompilation with Vulkan rendering.",
-   "g": "Skate 3",
-   "id": "db:buku313/skate3-mobile",
-   "k": "buku313/skate3-mobile",
-   "lc": "2026-09-15T04:05:28Z",
-   "p": "Xbox 360",
-   "po": [
-    "Android"
-   ],
-   "pr": "Skate3-Mobile",
-   "pre": true,
-   "rel": "v2.1.0-qa1",
-   "t": "Recompilation"
-  },
-  {
    "ai": false,
    "at": "2026-11-17",
    "d": "Skate 3 running natively on ARM64 without emulators",
@@ -21778,23 +21773,6 @@
   },
   {
    "ai": true,
-   "at": "2026-10-14",
-   "d": "Unofficial native PC port of SSX Tricky (Xbox), statically recompiled with xboxrecomp. Bring your own disc.",
-   "g": "SSX Tricky",
-   "id": "db:matiasriverac/ssx-tricky-pc",
-   "k": "matiasriverac/ssx-tricky-pc",
-   "lc": "2026-09-30T13:59:49Z",
-   "p": "Xbox (original)",
-   "po": [
-    "Windows"
-   ],
-   "pr": "SSX-Tricky-PC",
-   "pre": false,
-   "rel": "v0.2.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
    "at": "2026-11-17",
    "d": "3D edition of SerenityG4K's SpaceAnimalsRecomp: native per-eye stereoscopic 3D (interlaced, SBS, TAB, Leia SR) and all shaders translated.",
    "g": "Star Fox",
@@ -21917,6 +21895,23 @@
    "pr": "starwars-arcade-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "Unofficial PC recompilation of Star Wars Battlefront: Elite Squadron (PSP). Bring your own ISO.",
+   "g": "Star Wars Battlefront: Elite Squadron",
+   "id": "db:revgith/swbes-recomp",
+   "k": "revgith/swbes-recomp",
+   "lc": "2026-11-18T12:00:33Z",
+   "p": "PSP",
+   "po": [
+    "Windows"
+   ],
+   "pr": "swbes-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
