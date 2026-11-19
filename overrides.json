@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -4038,6 +4038,18 @@
       "type": "Recompilation",
       "pcRelease": "Never released on PC",
       "description": "Enhanced inFamous PS3 PC port (fork of inFAMOUSreborn): full launcher, NVIDIA DLSS/DLAA, DualSense / DS4 / Steam Controller, cheat mods. No game files - bring your own dump."
+    },
+    "imnotsharingmyname/pcportastrobot": {
+      "link": "https://github.com/imnotsharingmyname/pcportastrobot",
+      "title": "Astro Bot",
+      "platform": "PS5",
+      "type": "Compatibility layer",
+      "pcRelease": "Never released on PC",
+      "runsOn": [
+        "Windows"
+      ],
+      "description": "AstroHybrid: Astro Bot's own x86-64 code relinked into a Windows program, with the PS5 system libraries reimplemented and its GPU work translated to Vulkan (KytyPS5), plus DLSS, frame generation and Reflex. Bring your own decrypted dump.",
+      "note": "Hybrid port: the game's code runs as it is, it isn't recompiled. Only version 01.019.000 is tested."
     },
     "imyourhuckleberryponcho/pokemon-xd-pc-port": {
       "link": "https://github.com/imyourhuckleberryponcho/Pokemon-XD-PC-Port",

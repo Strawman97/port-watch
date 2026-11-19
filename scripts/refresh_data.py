@@ -102,7 +102,7 @@ def seed_projects():
 
 AW_PLAT = {"PC Engine": "PC Engine", "TurboGrafx-16": "PC Engine", "PC Engine CD": "PC Engine", "switch2": "Switch 2", "Switch 2": "Switch 2", "N64": "N64", "N64 / GameCube": "N64", "Xbox 360": "Xbox 360", "xbox360": "Xbox 360", "PS1": "PS1", "ps": "PS1", "GameCube": "GameCube",
            "GBA": "GBA", "PS2": "PS2", "NES": "NES", "Wii": "Wii", "DS": "DS", "SNES": "SNES", "Game Boy Color": "Game Boy Color", "Game Boy": "Game Boy",
-           "Genesis": "Mega Drive", "Xbox": "Xbox (original)", "og xbox": "Xbox (original)", "Switch": "Switch", "Wii U": "Wii U", "PS3": "PS3", "PS4": "PS4",
+           "Genesis": "Mega Drive", "Xbox": "Xbox (original)", "og xbox": "Xbox (original)", "Switch": "Switch", "Wii U": "Wii U", "PS3": "PS3", "PS4": "PS4", "PS5": "PS5", "ps5": "PS5",
            "Arcade": "Arcade", "3DS": "3DS", "Dreamcast": "Dreamcast", "PSP": "PSP", "32X": "32X", "Virtual Boy": "Virtual Boy", "Game Gear": "Game Gear",
            "Saturn": "Saturn", "Master System": "Master System"}
 AW_PLAT_FIX = {"supermedo/bloodborne_pc": "PS4", "chasem-dev/sms-launcher": "GameCube", "wurlyfox/c1": "PS1", "999sian/melee-pc": "GameCube"}
@@ -159,7 +159,7 @@ def awesome_projects():
 
 # ---------------------------------------------------------------- SteamGridDB covers
 # Years each console's games came out, used to pick between same-named games ("FIFA Street" 2005 vs 2012).
-PLATFORM_ERA = {"PS1": (1994, 2006), "PS2": (2000, 2013), "PS3": (2006, 2017), "PS4": (2013, 2023), "PSP": (2004, 2014), "PS Vita": (2011, 2019),
+PLATFORM_ERA = {"PS1": (1994, 2006), "PS2": (2000, 2013), "PS3": (2006, 2017), "PS4": (2013, 2023), "PS5": (2020, 2030), "PSP": (2004, 2014), "PS Vita": (2011, 2019),
                 "Xbox (original)": (2001, 2008), "Xbox 360": (2005, 2016), "XBLA (Xbox 360)": (2004, 2016), "Xbox One": (2013, 2022),
                 "NES": (1983, 1995), "SNES": (1990, 1999), "N64": (1996, 2002), "GameCube": (2001, 2007), "Wii": (2006, 2014), "Wii U": (2012, 2017),
                 "Switch": (2017, 2030), "Switch 2": (2025, 2035), "PC Engine": (1987, 1999), "Game Boy": (1989, 2001), "Game Boy Color": (1998, 2003), "GBA": (2001, 2008), "DS": (2004, 2014),
@@ -700,7 +700,7 @@ def refresh_status(projects):
 # ---------------------------------------------------------------- IGDB screenshots
 TWITCH_TOKEN_URL = os.environ.get("PW_TWITCH_TOKEN_URL", "https://id.twitch.tv/oauth2/token")
 IGDB_URL = os.environ.get("PW_IGDB_URL", "https://api.igdb.com/v4")
-IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12, "Xbox (original)": 11, "PS1": 7, "PS2": 8, "PS3": 9, "PS4": 48, "PSP": 38,
+IGDB_PLATFORMS = {"PC": 6, "Xbox One": 49, "Xbox 360": 12, "XBLA (Xbox 360)": 12, "Xbox (original)": 11, "PS1": 7, "PS2": 8, "PS3": 9, "PS4": 48, "PS5": 167, "PSP": 38,
                   "PS Vita": 46, "GameCube": 21, "Wii": 5, "Wii U": 41, "Switch": 130, "N64": 4, "SNES": 19, "NES": 18, "Mega Drive": 29, "32X": 30,
                   "Saturn": 32, "Dreamcast": 23, "Master System": 64, "Game Gear": 35, "GBA": 24, "Game Boy": 33, "Game Boy Color": 22, "DS": 20,
                   "3DS": 37, "Virtual Boy": 87, "Arcade": 52, "Sega CD": 78, "Mobile": "39,34", "Switch 2": "508,130", "PC Engine": "86,150"}
@@ -1102,7 +1102,7 @@ def refresh_recompfyi():
 # virus scan flagged are held out of catalog.json. If the catalog can't be read, the hand-found list in its GPL repo is used.
 DBUDDY_URL = os.environ.get("PW_DBUDDY_URL", "https://tanookistudios.com/decomp-buddy/catalog.json")
 DBUDDY_FALLBACK = os.environ.get("PW_DBUDDY_FALLBACK", "https://raw.githubusercontent.com/TanookiStudios/decomp-buddy/main/finds.json")
-DB_PLAT = {"Nintendo 64": "N64", "PlayStation": "PS1", "Sony PlayStation": "PS1", "PlayStation 2": "PS2", "PlayStation 3": "PS3", "PlayStation 4": "PS4",
+DB_PLAT = {"Nintendo 64": "N64", "PlayStation": "PS1", "Sony PlayStation": "PS1", "PlayStation 2": "PS2", "PlayStation 3": "PS3", "PlayStation 4": "PS4", "PlayStation 5": "PS5",
            "PlayStation Portable": "PSP", "PlayStation Vita": "PS Vita", "Xbox": "Xbox (original)", "Xbox 360": "Xbox 360", "Xbox One": "Xbox One",
            "GameCube": "GameCube", "Wii": "Wii", "Wii U": "Wii U", "Nintendo Switch": "Switch", "Nintendo Switch 2": "Switch 2", "SNES": "SNES", "NES": "NES",
            "Game Boy": "Game Boy", "Game Boy Color": "Game Boy Color", "Game Boy Advance": "GBA", "Nintendo DS": "DS", "Nintendo 3DS": "3DS", "Virtual Boy": "Virtual Boy",
@@ -1113,7 +1113,7 @@ DB_PLAT["Java ME (J2ME) mobile phone"] = "Mobile"
 # (same rules as the page's Add form), or taken from a game Port Watch already lists that the description names.
 GUESS_PLAT = [("XBLA (Xbox 360)", r"\bxbla\b|xbox live arcade"), ("Xbox 360", r"xbox ?360|\bx360\b|rexglue|xenon recomp"), ("PS Vita", r"ps ?vita\b"),
               ("Xbox One", r"xbox one"), ("Xbox (original)", r"original xbox|\bog xbox\b|\bxbox\b(?! ?(360|one|series|live|game ?pass))"),
-              ("PS4", r"\bps4\b|playstation 4"), ("PS3", r"\bps3\b|playstation 3"), ("PS2", r"\bps2\b|playstation 2"), ("PSP", r"\bpsp\b|playstation portable"),
+              ("PS5", r"\bps5\b|playstation 5"), ("PS4", r"\bps4\b|playstation 4"), ("PS3", r"\bps3\b|playstation 3"), ("PS2", r"\bps2\b|playstation 2"), ("PSP", r"\bpsp\b|playstation portable"),
               ("PS1", r"\bps1\b|\bpsx\b|playstation 1|\bplaystation\b(?! ?([2-5]|portable|vita|plus|network))"), ("Wii U", r"wii ?u\b"), ("Wii", r"\bwii\b"),
               ("GameCube", r"gamecube|\bgcn\b|\bg[a-z0-9]{3}01\b"), ("Switch 2", r"switch ?2\b"), ("Switch", r"nintendo switch|\(switch\)|switch (?:game|version|title|release)"),
               ("3DS", r"\b3ds\b"), ("DS", r"\bnds\b|nintendo ds\b"), ("N64", r"\bn64\b|nintendo 64"), ("SNES", r"\bsnes\b|super nintendo"), ("NES", r"\bnes\b|famicom"),
