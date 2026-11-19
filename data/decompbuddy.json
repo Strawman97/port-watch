@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T20:29:17+00:00",
+ "generated": "2026-11-19T02:32:53+00:00",
  "projects": [
   {
    "ai": false,
@@ -5936,6 +5936,29 @@
   {
    "ai": false,
    "at": "2026-11-18",
+   "d": "DynaBroCollection - Dyna Brothers 1 + 2: native Windows x64 recompilation and English fan translation (alpha)",
+   "g": "Dyna Brothers",
+   "games": [
+    {
+     "platform": "Mega Drive",
+     "title": "Dyna Brothers 2 Special"
+    }
+   ],
+   "id": "db:matymeatboy/dynabrocollection",
+   "k": "matymeatboy/dynabrocollection",
+   "lc": "2026-11-18T12:56:52Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DynaBroCollection",
+   "pre": true,
+   "rel": "v0.1.9",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
    "d": "Experimental native AOT port of Dyna Brothers 1 and 2 Special for Windows x64. Partial English translations, shared launcher and controller profiles.",
    "g": "Dyna Brothers",
    "games": [
@@ -5953,7 +5976,7 @@
    ],
    "pr": "DynaBrothers1-2",
    "pre": true,
-   "rel": "v0.1.5",
+   "rel": "v0.1.9",
    "t": "Recompilation"
   },
   {
@@ -7181,7 +7204,7 @@
    "id": "db:xinthefreefallxai/obeliskchamber",
    "k": "xinthefreefallxai/obeliskchamber",
    "lc": "2026-11-17T21:06:12Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows",
     "Linux"
@@ -7192,14 +7215,14 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
+   "ai": false,
    "at": "2026-11-10",
    "d": "Native Windows recompilation of Fire Emblem: Fortune's Weave: play from your own dump with no emulator, with save editing, mods, cheats and an in-game menu. AI-assisted development.",
    "g": "Fire Emblem: Fortune's Weave",
    "id": "db:xiondigital/emblemweave",
    "k": "xiondigital/emblemweave",
    "lc": "2026-11-10T17:30:53Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -10531,7 +10554,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.5",
+   "rel": "v0.1.6",
    "t": "Recompilation"
   },
   {
@@ -11982,7 +12005,7 @@
    "id": "db:larbaco/oot-native-linux",
    "k": "larbaco/oot-native-linux",
    "lc": "2026-11-08T01:50:09Z",
-   "p": "N64",
+   "p": "Switch 2",
    "po": [
     "Linux"
    ],
@@ -12016,7 +12039,7 @@
    "id": "db:novaoot/oot-pc",
    "k": "novaoot/oot-pc",
    "lc": "2026-11-15T21:31:25Z",
-   "p": "N64",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -12033,7 +12056,7 @@
    "id": "db:sacrappy/heylisten",
    "k": "sacrappy/heylisten",
    "lc": "2026-11-12T02:39:55Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -12067,7 +12090,7 @@
    "id": "db:techhookdev/ocarune",
    "k": "techhookdev/ocarune",
    "lc": "2026-11-10T04:56:21Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -12084,7 +12107,7 @@
    "id": "db:unkn0wnali4n/toot-r",
    "k": "unkn0wnali4n/toot-r",
    "lc": "2026-11-08T08:58:08Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows",
     "Linux"
@@ -12136,7 +12159,7 @@
    "id": "db:pixl27/projectrelink",
    "k": "pixl27/projectrelink",
    "lc": "2026-11-13T15:07:19Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -13334,7 +13357,7 @@
    "id": "db:sts78721/mkw-thwomp",
    "k": "sts78721/mkw-thwomp",
    "lc": "2026-11-15T11:54:42Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -21510,7 +21533,7 @@
    "id": "db:elie-0066/spr-recomp-project",
    "k": "elie-0066/spr-recomp-project",
    "lc": "2026-11-14T15:04:29Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -21779,7 +21802,7 @@
    "id": "db:agrofubris/spaceanimalsrecomp-3d",
    "k": "agrofubris/spaceanimalsrecomp-3d",
    "lc": "2026-11-17T04:02:38Z",
-   "p": "Switch",
+   "p": "Switch 2",
    "po": [
     "Windows"
    ],
@@ -22058,6 +22081,25 @@
    "pr": "sfa2-recomp",
    "pre": true,
    "rel": "v0.1.0-beta.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Third of the first greek alphabet, maximised",
+   "g": "Street Fighter Alpha 3 MAX",
+   "id": "db:theweathervane/a3mx",
+   "k": "theweathervane/a3mx",
+   "lc": "2026-11-17T03:36:02Z",
+   "p": "PSP",
+   "po": [
+    "Linux",
+    "Windows",
+    "macOS"
+   ],
+   "pr": "a3mx",
+   "pre": true,
+   "rel": "nightly",
    "t": "Recompilation"
   },
   {
