@@ -4535,6 +4535,26 @@
       "pcRelease": "Never released on PC",
       "description": "Gran Turismo 6 on PC (Linux & Windows): GT6-tuned Launcher, one-click setup, modern graphics, wheels, mods, LAN and more."
     },
+    "macielrecomp/triunit-recomp": {
+      "link": "https://github.com/macielrecomp/triunit-recomp",
+      "title": "Mortal Kombat",
+      "platform": "Arcade",
+      "type": "Recompilation",
+      "runsOn": [
+        "Windows"
+      ],
+      "description": "TriUnit: static recompilation of Midway's TMS34010 arcade boards (Y-Unit, T-Unit, Wolf Unit) into native C++ for Windows, with Arcade Original and Remastered editions. Bring your own ROMs.",
+      "games": [
+        {
+          "title": "Mortal Kombat II",
+          "platform": "Arcade"
+        },
+        {
+          "title": "Mortal Kombat 3",
+          "platform": "Arcade"
+        }
+      ]
+    },
     "mango77x/mhforever": {
       "link": "https://github.com/Mango77x/MHForever",
       "title": "Monster Hunter Freedom Unite",
