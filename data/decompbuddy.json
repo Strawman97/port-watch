@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T07:44:48+00:00",
+ "generated": "2026-11-19T11:37:11+00:00",
  "projects": [
   {
    "ai": false,
@@ -7232,7 +7232,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-10",
    "d": "Native Windows recompilation of Fire Emblem: Fortune's Weave: play from your own dump with no emulator, with save editing, mods, cheats and an in-game menu. AI-assisted development.",
    "g": "Fire Emblem: Fortune's Weave",
@@ -11193,6 +11193,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-19",
+   "d": "",
+   "g": "Kirby and the Forgotten Land",
+   "id": "db:mario-ttide/inhale",
+   "k": "mario-ttide/inhale",
+   "lc": "2026-11-18T23:26:31Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Inhale",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-14",
    "d": "A static recompilation of Kirby and the Forgotten Land (Nintendo Switch) for Windows. Not an emulator. No game files included: you need your own copy.",
    "g": "Kirby and the Forgotten Land",
@@ -14150,23 +14168,6 @@
   },
   {
    "ai": false,
-   "at": "2026-10-17",
-   "d": "",
-   "g": "Metal Slug",
-   "id": "db:correo415415/mslug-decompiled",
-   "k": "correo415415/mslug-decompiled",
-   "lc": "2026-10-18T16:55:53Z",
-   "p": "Arcade",
-   "po": [
-    "Linux"
-   ],
-   "pr": "mslug-decompiled",
-   "pre": true,
-   "rel": "matcher-genspark_ai_developer-374-50cc627",
-   "t": "Decompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-10-14",
    "d": "Metal Slug (1996) statically recompiled to native C on the neogeorecomp Neo Geo toolkit. Bring your own ROMs.",
    "g": "Metal Slug",
@@ -14773,23 +14774,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-16",
-   "d": "NoisyFairy is a port of Code Fairy for PC. Based on PS4RT.",
-   "g": "Mobile Suit Gundam Battle Operation Code Fairy",
-   "id": "db:rhobiusvoid/noisyfairy-gbocf-ps4rt-windows",
-   "k": "rhobiusvoid/noisyfairy-gbocf-ps4rt-windows",
-   "lc": "2026-11-14T12:04:54Z",
-   "p": "PS4",
-   "po": [
-    "Windows"
-   ],
-   "pr": "NoisyFairy-GBOCF-PS4RT-Windows",
-   "pre": false,
-   "rel": "0.5",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-10-20",
    "d": "Fan-made Mobile Suit Gundam: Char's Counterattack PlayStation recompilation project. Requires your own legally obtained game disc. No copyrighted game disc images or assets are distributed. Work in progress.",
    "g": "Mobile Suit Gundam: Char's Counterattack",
@@ -15056,7 +15040,7 @@
    ],
    "pr": "MK-3D-rollback",
    "pre": true,
-   "rel": "v1.0.11",
+   "rel": "v1.0.13",
    "t": "Recompilation"
   },
   {
@@ -19689,7 +19673,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-18",
    "d": "",
    "g": "Scarface: The World Is Yours",
