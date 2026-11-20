@@ -19,7 +19,7 @@
   "xess": "XeSS"
  },
  "format": "port-watch-catalog",
- "generated": "2026-11-20T07:30:39Z",
+ "generated": "2026-11-20T07:35:16Z",
  "projects": [
   {
    "archived": false,
@@ -13114,71 +13114,6 @@
   },
   {
    "archived": false,
-   "art": [],
-   "cover": "",
-   "coverThumb": "",
-   "desc": "Native PC ports of Battlefield 1943 and Bad Company (Xbox 360) via static recompilation",
-   "features": [
-    "dlss",
-    "fg",
-    "fsr",
-    "hdr",
-    "kbm",
-    "online",
-    "res",
-    "rt",
-    "tex"
-   ],
-   "firstSeen": "2026-11-19T20:33:54Z",
-   "games": [],
-   "genres": [],
-   "hack": "",
-   "k": "papand7/battlefield-recompilation-project",
-   "link": "https://github.com/papand7/Battlefield-Recompilation-Project",
-   "mirrors": [],
-   "note": "",
-   "nsfw": false,
-   "pcRelease": "",
-   "planned": [
-    "aspect"
-   ],
-   "platform": "Xbox 360",
-   "playable": true,
-   "pushed": "2026-11-19T19:19:50Z",
-   "release": {
-    "date": "2026-11-19T19:19:51Z",
-    "pre": false,
-    "tag": "v0.4.1",
-    "url": "https://github.com/papand7/Battlefield-Recompilation-Project/releases/tag/v0.4.1"
-   },
-   "risk": null,
-   "runsOn": [
-    "Linux",
-    "Windows",
-    "macOS",
-    "Steam Deck"
-   ],
-   "runsOnFrom": "release",
-   "series": [],
-   "sgdb": {},
-   "shots": {
-    "original": [],
-    "port": [
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/launcher.png",
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_wake_original.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_wake_ultra.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_coral_original.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_coral_ultra.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_iwo_original.jpg"
-    ]
-   },
-   "source": "Awesome Decomp Games",
-   "stars": 28,
-   "title": "Battlefield 1943 / Battlefield: Bad Company",
-   "type": "Recompilation"
-  },
-  {
-   "archived": false,
    "art": [
     "https://images.igdb.com/igdb/image/upload/t_1080p/v1uvdcg2dmkryb4p92mg.jpg"
    ],
@@ -13307,6 +13242,108 @@
    },
    "source": "Port Watch",
    "stars": 36,
+   "title": "Battlefield: Bad Company",
+   "type": "Recompilation"
+  },
+  {
+   "archived": false,
+   "art": [
+    "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kk.jpg"
+   ],
+   "cover": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
+   "coverThumb": "https://cdn2.steamgriddb.com/thumb/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
+   "desc": "Native PC ports of Battlefield 1943 and Bad Company (Xbox 360) via static recompilation",
+   "features": [
+    "dlss",
+    "fg",
+    "fsr",
+    "hdr",
+    "kbm",
+    "online",
+    "res",
+    "rt",
+    "tex"
+   ],
+   "firstSeen": "2026-11-19T20:33:54Z",
+   "games": [
+    {
+     "art": [
+      "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kj.jpg"
+     ],
+     "cover": "https://cdn2.steamgriddb.com/grid/b6f206c4a8cfb44c9923d8730a4dd7f5.png",
+     "platform": "XBLA (Xbox 360)",
+     "sgdb": {
+      "capsule": "https://cdn2.steamgriddb.com/grid/b6f206c4a8cfb44c9923d8730a4dd7f5.png",
+      "hero": "https://cdn2.steamgriddb.com/hero/aa826555e21b7c95a06600456effd501.png",
+      "icon": "https://cdn2.steamgriddb.com/icon/36f5857ec9928b02555944a19a896fe5.ico",
+      "logo": "https://cdn2.steamgriddb.com/logo/b603b90de5814128c67da52b3dc672c4.png",
+      "wide": "https://cdn2.steamgriddb.com/grid/1298349153e82f14d0794612be3be40c.png"
+     },
+     "title": "Battlefield 1943"
+    }
+   ],
+   "genres": [
+    "First-person shooter",
+    "Shooter"
+   ],
+   "hack": "",
+   "k": "papand7/battlefield-recompilation-project",
+   "link": "https://github.com/papand7/Battlefield-Recompilation-Project",
+   "mirrors": [],
+   "note": "",
+   "nsfw": false,
+   "pcRelease": "",
+   "planned": [
+    "aspect"
+   ],
+   "platform": "Xbox 360",
+   "playable": true,
+   "pushed": "2026-11-19T19:19:50Z",
+   "release": {
+    "date": "2026-11-19T19:19:51Z",
+    "pre": false,
+    "tag": "v0.4.1",
+    "url": "https://github.com/papand7/Battlefield-Recompilation-Project/releases/tag/v0.4.1"
+   },
+   "risk": null,
+   "runsOn": [
+    "Linux",
+    "Windows",
+    "macOS",
+    "Steam Deck"
+   ],
+   "runsOnFrom": "release",
+   "series": [
+    "Battlefield Bad Company",
+    "Battlefield"
+   ],
+   "sgdb": {
+    "capsule": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
+    "hero": "https://cdn2.steamgriddb.com/hero/ef4fc148f9ea60330eb0df54b1349a2d.png",
+    "icon": "https://cdn2.steamgriddb.com/icon/2edfb49eafd8d8946543d4504bf90c38.png",
+    "logo": "https://cdn2.steamgriddb.com/logo/340a6f4bcc9a615f71135855e2a5599a.png",
+    "wide": "https://cdn2.steamgriddb.com/grid/49dfa81eb7ed26cfeb82cc3feb0f9b6c.png"
+   },
+   "shots": {
+    "original": [
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/qzyey30ic2a9yk7onup6.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkp.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fki.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkj.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkk.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkl.jpg"
+    ],
+    "port": [
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/launcher.png",
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_wake_original.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_wake_ultra.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_coral_original.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_coral_ultra.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-Recompilation-Project/HEAD/docs/images/cmp_iwo_original.jpg"
+    ]
+   },
+   "source": "Awesome Decomp Games",
+   "stars": 28,
    "title": "Battlefield: Bad Company",
    "type": "Recompilation"
   },
@@ -22849,7 +22886,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 273,
+   "stars": 272,
    "title": "Call of Duty: Black Ops II (bo2-mac)",
    "type": "Recompilation"
   },
@@ -32824,7 +32861,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 759,
+   "stars": 760,
    "title": "Crash Team Racing: Nitro-Fueled",
    "type": "Recompilation"
   },
@@ -44003,7 +44040,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 183,
+   "stars": 184,
    "title": "Donkey Kong Bananza (BananaNative)",
    "type": "Decompilation"
   },
@@ -50883,7 +50920,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 53,
+   "stars": 54,
    "title": "Driveclub",
    "type": "Recompilation"
   },
@@ -67775,7 +67812,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": false,
-   "pushed": "2026-11-20T06:08:56Z",
+   "pushed": "2026-11-20T07:32:26Z",
    "release": null,
    "risk": null,
    "runsOn": [
@@ -79298,7 +79335,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 45,
+   "stars": 46,
    "title": "Halo: Fireteam Raven",
    "type": "Recompilation"
   },
@@ -80520,7 +80557,7 @@
    "planned": [],
    "platform": "Wii",
    "playable": true,
-   "pushed": "2026-11-20T07:27:21Z",
+   "pushed": "2026-11-20T07:31:30Z",
    "release": {
     "date": "2026-11-15T04:10:34Z",
     "pre": true,
@@ -81450,7 +81487,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-20T07:08:27Z",
+   "pushed": "2026-11-20T07:29:00Z",
    "release": {
     "date": "2026-11-20T06:42:47Z",
     "pre": true,
@@ -81526,7 +81563,7 @@
    ],
    "platform": "GameCube",
    "playable": true,
-   "pushed": "2026-11-20T06:19:47Z",
+   "pushed": "2026-11-20T07:30:10Z",
    "release": {
     "date": "2026-11-20T06:09:05Z",
     "pre": false,
@@ -89801,7 +89838,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-20T07:22:00Z",
+   "pushed": "2026-11-20T07:28:13Z",
    "release": {
     "date": "2026-11-19T08:34:16Z",
     "pre": true,
@@ -91590,7 +91627,7 @@
    "planned": [],
    "platform": "DS",
    "playable": true,
-   "pushed": "2026-11-20T02:26:46Z",
+   "pushed": "2026-11-20T07:30:37Z",
    "release": {
     "date": "2026-11-06T01:11:21Z",
     "pre": false,
@@ -99447,7 +99484,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 222,
+   "stars": 223,
    "title": "Mario Kart 8 Deluxe (MK8-online)",
    "type": "Recompilation"
   },
@@ -99530,7 +99567,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 113,
+   "stars": 114,
    "title": "Mario Kart 8 Deluxe (Racing 8 DX Recomp)",
    "type": "Recompilation"
   },
@@ -100160,7 +100197,7 @@
    "planned": [],
    "platform": "Wii",
    "playable": true,
-   "pushed": "2026-11-20T07:25:43Z",
+   "pushed": "2026-11-20T07:29:47Z",
    "release": {
     "date": "2026-11-20T07:08:42Z",
     "pre": false,
@@ -129883,8 +129920,8 @@
    "art": [
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar8a1.jpg"
    ],
-   "cover": "https://cdn2.steamgriddb.com/grid/2e5efb1b0b859eca6742dcd2a3aa459a.png",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/2e5efb1b0b859eca6742dcd2a3aa459a.jpg",
+   "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2yib.jpg",
+   "coverThumb": "",
    "desc": "Perfect Dark Remaster 2010 [Xbox360] game static recompilation project based on RexGlue-SDK",
    "features": [
     "kbm"
@@ -130023,8 +130060,8 @@
    "art": [
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar8a1.jpg"
    ],
-   "cover": "https://cdn2.steamgriddb.com/grid/2e5efb1b0b859eca6742dcd2a3aa459a.png",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/2e5efb1b0b859eca6742dcd2a3aa459a.jpg",
+   "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2yib.jpg",
+   "coverThumb": "",
    "desc": "Native Windows PC recompilation of the Perfect Dark Xbox 360/XBLA remaster using ReXGlue. Requires your own copy.",
    "features": [
     "fsr",
@@ -133100,7 +133137,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 1694,
+   "stars": 1693,
    "title": "Pokémon Crystal Version",
    "type": "Decompilation"
   },
@@ -142147,7 +142184,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-20T07:22:29Z",
+   "pushed": "2026-11-20T07:30:01Z",
    "release": {
     "date": "2026-10-29T05:34:49Z",
     "pre": true,
@@ -150277,7 +150314,7 @@
    ],
    "platform": "Saturn",
    "playable": true,
-   "pushed": "2026-11-20T07:27:37Z",
+   "pushed": "2026-11-20T07:32:54Z",
    "release": {
     "date": "2026-11-20T06:51:51Z",
     "pre": true,
@@ -150352,7 +150389,7 @@
    ],
    "platform": "Saturn",
    "playable": true,
-   "pushed": "2026-11-20T07:27:37Z",
+   "pushed": "2026-11-20T07:32:54Z",
    "release": {
     "date": "2026-11-20T06:51:51Z",
     "pre": true,
@@ -161705,7 +161742,7 @@
    "planned": [],
    "platform": "GameCube",
    "playable": true,
-   "pushed": "2026-11-20T07:18:19Z",
+   "pushed": "2026-11-20T07:32:44Z",
    "release": {
     "date": "2026-11-19T00:23:25Z",
     "pre": true,
@@ -194842,7 +194879,7 @@
    "planned": [],
    "platform": "Switch",
    "playable": true,
-   "pushed": "2026-11-19T23:48:46Z",
+   "pushed": "2026-11-20T07:32:17Z",
    "release": {
     "date": "2026-11-19T23:48:46Z",
     "pre": true,
@@ -197316,7 +197353,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 6482,
+   "stars": 6483,
    "title": "The Legend of Zelda: Twilight Princess",
    "type": "Decompilation"
   },
@@ -207162,7 +207199,7 @@
    "planned": [],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-20T07:24:10Z",
+   "pushed": "2026-11-20T07:33:24Z",
    "release": {
     "date": "2026-11-18T13:16:13Z",
     "pre": false,
@@ -207234,7 +207271,7 @@
    ],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-20T07:24:07Z",
+   "pushed": "2026-11-20T07:31:02Z",
    "release": {
     "date": "2026-11-19T05:58:57Z",
     "pre": false,
