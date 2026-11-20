@@ -641,7 +641,10 @@ function awNormalize(g){
 
 /* ---------------- Xbox Live Arcade titles (shown as XBLA when recorded as Xbox 360) ---------------- */
 const XBLA_RE=/\bxbla\b|xbox live arcade/i;
-const XBLA_TITLES=new Set(["3 on 3 nhl arcade","banjo kazooie","banjo tooie","castlevania symphony of the night","crystal defenders","daytona usa","dead rising 2 case west","dead rising 2 case zero",
+const XBLA_TITLES=new Set(["after burner climax","bionic commando rearmed 2","castlevania harmony of despair","dead space ignition","doritos crash course 2",
+  "fable ii pub games","geometry wars 3 dimensions","happy wars","king of fighters 2002 unlimited match","mad riders","marble blast ultra","mlb bobblehead battle",
+  "mlb bobblehead pros","peggle 2","plants vs zombies console edition","plants vs zombies","shadow complex remastered","snoopy flying ace","soulcalibur ii hd online",
+  "space giraffe","virtua fighter 2","cyber troopers virtual on oratorio tangram m s b s ver 5 66","battlefield 1943","3 on 3 nhl arcade","banjo kazooie","banjo tooie","castlevania symphony of the night","crystal defenders","daytona usa","dead rising 2 case west","dead rising 2 case zero",
   "earthworm jim hd","exit","exit 2","exit 1 and 2","exit exit 2","geometry wars retro evolved","geometry wars retro evolved 2","goldeneye 007","golden eye 007","goldeneye 007 xbla pc recomp","hard corps uprising",
   "metal slug xx","nba jam on fire edition","naughty bear panic in paradise","outpost kaloki x","perfect dark","perfect dark remaster","super street fighter ii turbo hd remix",
   "dishwasher dead samurai","rayman 3 hd","dishwasher vampire smile","simpsons arcade","simpsons arcade game","vigilante 8 arcade","burnout crash","minecraft xbox 360 edition","sonic the fighters","rez hd",
@@ -1634,7 +1637,9 @@ function parseGames(x){
 }
 function gamesOf(v){
   const lo=S.ov[v.p.id]||{},so=v.so||{};const list=parseGames(lo.games!=null?lo.games:(so.games||v.p.games));
-  return list.map(g=>({title:g.title,platform:PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform,pcRelease:g.pcRelease||"",cover:g.cover||""})).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
+  return list.map(g=>{let pl=PCOL[g.platform]||g.platform==="Unknown"?g.platform:v.platform;
+      if(pl==="Xbox 360"&&XBLA_TITLES.has(nrmT(bare(g.title))))pl="XBLA (Xbox 360)";   // a collection's XBLA games
+      return {title:g.title,platform:pl,pcRelease:g.pcRelease||"",cover:g.cover||""};}).filter(g=>!(nrmT(bare(g.title))===nrmT(bare(v.game))&&g.platform===v.platform));
 }
 function ghostView(v,g){const gv=Object.assign({},v,{_hayO:undefined,_hayA:undefined,game:g.title,platform:g.platform,ghost:{title:g.title,platform:g.platform,cover:g.cover||"",primary:v.game,primaryPlatform:v.platform}});
   // each other game has its own PC history: its own value if set, otherwise IGDB's; never the main game's
