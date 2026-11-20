@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -470,6 +470,7 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
     },
     "gregorioruiz98/fefw-recomp": {
+      "_game": "Fire Emblem: Fortune's Weave",
       "cover": "https://cdn2.steamgriddb.com/thumb/5b5e26b3ca72e2f8ea8bf8bdea28d048.jpg"
     },
     "gtteancum/openh3m": {
@@ -705,6 +706,12 @@
       "_game": "Midnight Club: Los Angeles",
       "cover": "https://cdn2.steamgriddb.com/thumb/39df89088e26527b6113a1bb247ba69a.jpg"
     },
+    "luufen/nativ---updated-30-games-120-widescreen": {
+      "_game": "Killzone: Mercenary",
+      "gameCovers": {
+        "Call of Duty: Black Ops Declassified": "https://cdn2.steamgriddb.com/thumb/5b553f986037c0396b34dda4bf5ea437.jpg"
+      }
+    },
     "luukasr1/disgaea-d2-recomp-windows": {
       "_game": "Disgaea D2: A Brighter Darkness",
       "cover": "https://cdn2.steamgriddb.com/thumb/ec0b1da51349ce637967534cd9e26f16.jpg"
@@ -773,6 +780,15 @@
         }
       ],
       "note": "One launcher for 14 Pokémon games, running them through a built-in melonDS emulator core with widescreen patches."
+    },
+    "mango77x/mhforever": {
+      "_game": "Monster Hunter Freedom Unite",
+      "games": [
+        {
+          "title": "Monster Hunter Freedom",
+          "platform": "PSP"
+        }
+      ]
     },
     "manoharpadul/uncharted_nathan_drake_collection_pc": {
       "_game": "Uncharted: The Nathan Drake Collection",
@@ -1511,7 +1527,8 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/88524e6327a0bd5ff7cc03f86846a15e.jpg"
     },
     "thegh0sts/nhl-20-ps4-port": {
-      "title": "NHL 20"
+      "title": "NHL 20",
+      "cover": "https://cdn2.steamgriddb.com/thumb/dd2384b0a3772d8ccb964af2da871ef1.jpg"
     },
     "thelastant/kz2-port-devlog": {
       "_game": "Killzone 2",
@@ -3064,6 +3081,14 @@
       "pcRelease": "Never released on PC",
       "description": "inFamous 2 (PS3) statically recompiled to a native Windows PC port, with a launcher that builds it from your own game files. No game files included."
     },
+    "birabittoh/dq9recompiled": {
+      "link": "https://github.com/birabittoh/DQ9Recompiled",
+      "title": "Dragon Quest IX: Sentinels of the Starry Skies",
+      "platform": "DS",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Static recompilation of Dragon Quest IX: Sentinels of the Starry Skies."
+    },
     "blsncvs/castlevania-grimoire-of-souls-recomp": {
       "link": "https://github.com/BLSNCVS/Castlevania-Grimoire-of-Souls-Recomp",
       "title": "Castlevania: Grimoire of Souls",
@@ -3338,6 +3363,13 @@
       "type": "Reimplementation",
       "description": "Clean room remake of Bejeweled 3",
       "pcRelease": "Originally a PC game"
+    },
+    "cuesta4/gow3rehooked": {
+      "link": "https://github.com/cuesta4/GOW3rehooked",
+      "title": "God of War III: Remastered",
+      "platform": "PS4",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC"
     },
     "cultofblue/mktrilogyn64recomp": {
       "link": "https://github.com/cultofblue/MKTrilogyN64Recomp",
@@ -5035,6 +5067,14 @@
       "type": "Decompilation",
       "pcRelease": "Never released on PC",
       "description": "Native PC port of Pokemon Black and White, built on aletheia"
+    },
+    "ps4star/whiterecomp": {
+      "link": "https://github.com/ps4star/WhiteRecomp",
+      "title": "FINAL FANTASY XIII",
+      "platform": "PC",
+      "type": "Recompilation",
+      "pcRelease": "Originally a PC game",
+      "description": "WhiteRecomp: builds a native port of FINAL FANTASY XIII from your own Steam copy"
     },
     "qnfn/grport": {
       "link": "https://github.com/qnfn/GRport",
