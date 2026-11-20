@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T07:24:29+00:00",
+ "generated": "2026-11-20T20:14:54+00:00",
  "projects": [
   {
    "ai": false,
@@ -16,6 +16,23 @@
    "pr": "007-Project-Russia",
    "pre": false,
    "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "007: NightFire (Xbox) PC port played online: multiplayer and co-op over the internet. Built on Harry's nightfire-recomp.",
+   "g": "007: NightFire",
+   "id": "db:billfoldes/nightfire-online",
+   "k": "billfoldes/nightfire-online",
+   "lc": "2026-11-20T03:49:23Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "nightfire-online",
+   "pre": false,
+   "rel": "v2.0.1",
    "t": "Recompilation"
   },
   {
@@ -332,6 +349,24 @@
    "pr": "eagle_five_recomp",
    "pre": false,
    "rel": "v0.3.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Native PC port of Ace Combat 6: Fires of Liberation using XenonRecomp",
+   "g": "Ace Combat 6: Fires of Liberation",
+   "id": "db:dipshet/gracemeriarecomp",
+   "k": "dipshet/gracemeriarecomp",
+   "lc": "2026-11-18T00:10:07Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "GracemeriaRecomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -2763,6 +2798,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Call of Duty: Modern Warfare 2 (2009) natively on Android, recompiled from your own Xbox 360 disc. Campaign, Special Ops and multiplayer in one auto-updating app. No game files included.",
+   "g": "Call of Duty: Modern Warfare 2",
+   "id": "db:yassinsolim/mw2-recomp",
+   "k": "yassinsolim/mw2-recomp",
+   "lc": "2026-11-20T07:31:10Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "mw2-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-09",
    "d": "Captain America: Super Soldier (Xbox 360) native PC port via static recompilation (ReXGlue). Port by BilalReloaded. Bring your own game.",
    "g": "Captain America: Super Soldier",
@@ -4709,6 +4761,23 @@
    "pre": true,
    "rel": "latest",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Wrecked Metal 64 DX: an ambitious customization project built on the best racing and destruction physics the 64 ever delivered. Native Android port (touch + gamepad), bring your own ROM.",
+   "g": "Destruction Derby 64",
+   "id": "db:dedecidao/wrecked-metal-64-dx",
+   "k": "dedecidao/wrecked-metal-64-dx",
+   "lc": "2026-11-20T14:49:04Z",
+   "p": "N64",
+   "po": [
+    "Android"
+   ],
+   "pr": "Wrecked-Metal-64-DX",
+   "pre": true,
+   "rel": "nightly",
+   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -11071,6 +11140,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-20",
+   "d": "Jet Set Radio Future for Linux and Windows, with various enhancements and bug fixes.",
+   "g": "Jet Set Radio Future",
+   "id": "db:spriteice/jsrf-pc",
+   "k": "spriteice/jsrf-pc",
+   "lc": "2026-11-15T03:46:33Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "JSRF-PC",
+   "pre": false,
+   "rel": "b2.1-hotfix",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-18",
    "d": "Port of Jetpack Joyride for Switch.",
@@ -13643,6 +13730,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "",
+   "g": "Makaimura Recomp",
+   "id": "db:alexgbor/makaimura-recomp",
+   "k": "alexgbor/makaimura-recomp",
+   "lc": "2026-11-20T14:48:21Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Makaimura-Recomp",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-10",
    "d": "Open-source C++/Vulkan engine for Rockstar North's 2003 stealth-horror game (PC). Requires your own copy of the game.",
    "g": "Manhunt",
@@ -13730,7 +13834,7 @@
    ],
    "pr": "MBHaxe",
    "pre": false,
-   "rel": "2.0.4",
+   "rel": "1.1.15",
    "t": "Recompilation"
   },
   {
@@ -15676,7 +15780,7 @@
    ],
    "pr": "MK-3D-rollback",
    "pre": true,
-   "rel": "v1.0.13",
+   "rel": "v1.0.15",
    "t": "Recompilation"
   },
   {
@@ -16820,40 +16924,6 @@
    "pr": "bardown",
    "pre": false,
    "rel": "v0.3.3",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-10",
-   "d": "EA SPORTS NHL 19 (PS4) native port for Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
-   "g": "NHL 19",
-   "id": "db:thegh0sts/nhl-19-ps4-port-windows",
-   "k": "thegh0sts/nhl-19-ps4-port-windows",
-   "lc": "2026-11-10T07:36:36Z",
-   "p": "PS4",
-   "po": [
-    "Windows"
-   ],
-   "pr": "NHL-19-PS4-PORT-WINDOWS",
-   "pre": false,
-   "rel": "v0.2.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-11",
-   "d": "EA SPORTS NHL 21 (PS4) native port for Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
-   "g": "NHL 21",
-   "id": "db:thegh0sts/nhl-21-ps4-port",
-   "k": "thegh0sts/nhl-21-ps4-port",
-   "lc": "2026-11-11T09:57:18Z",
-   "p": "PS4",
-   "po": [
-    "Windows"
-   ],
-   "pr": "NHL-21-PS4-PORT",
-   "pre": false,
-   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -18700,6 +18770,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Unofficial bring-your-own-files build kit for Prince of Persia Classic on Linux and Windows.",
+   "g": "Prince of Persia Classic",
+   "id": "db:willisit-sudo/pop-classic-recomp",
+   "k": "willisit-sudo/pop-classic-recomp",
+   "lc": "2026-11-20T09:37:44Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "pop-classic-recomp",
+   "pre": true,
+   "rel": "v0.1.0-preview",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-06",
    "d": "Recompilação estática do Pro Evolution Soccer 2013 (PS3, BLUS31029 01.04) para macOS nativo com ps3recomp",
    "g": "Pro Evolution Soccer 2013",
@@ -18712,6 +18800,23 @@
    ],
    "pr": "pes2013-recomp",
    "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "A recomp of PES 17 PS4 edition for Windows PC derived from the bbport recomp for Windows.",
+   "g": "Pro Evolution Soccer 2017",
+   "id": "db:makkary-rov/pes17-ps4-recomp",
+   "k": "makkary-rov/pes17-ps4-recomp",
+   "lc": "2026-11-20T12:27:16Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "pes17-ps4-recomp",
+   "pre": true,
    "rel": "v0.1.0",
    "t": "Recompilation"
   },
@@ -19572,6 +19677,41 @@
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-20",
+   "d": "Unofficial Android port of Resident Evil 4 Wii edition (RB4E08): PowerPC statically recompiled to C++, no emulator on the phone. Port made by xu@shiinobu.",
+   "g": "Resident Evil 4",
+   "id": "db:potatorecomp/re4wii-android",
+   "k": "potatorecomp/re4wii-android",
+   "lc": "2026-11-20T03:01:46Z",
+   "p": "Wii",
+   "po": [
+    "Android"
+   ],
+   "pr": "RE4Wii-Android",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Nightjar: Resident Evil 4 (GameCube) 100% native source port, byte-matching decompilation & standalone engine runtime for Android (32/64-bit), iOS (Metal), Windows, and Linux.",
+   "g": "Resident Evil 4",
+   "id": "db:st4rwhx/resident-evil-4-native-port",
+   "k": "st4rwhx/resident-evil-4-native-port",
+   "lc": "2026-11-20T02:55:11Z",
+   "p": "GameCube",
+   "po": [
+    "Windows",
+    "Android"
+   ],
+   "pr": "Resident-Evil-4-Native-Port",
+   "pre": false,
+   "rel": "nightly",
+   "t": "Decompilation"
   },
   {
    "ai": true,
@@ -20598,6 +20738,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Second Sight Recompiled is an unofficial fan-made native PC port of the 2004 GameCube classic, developed by ThyHeroOfTime. Featuring modern PC enhancements, widescreen support, customizable controls, improved graphics, and a custom launcher. Players must provide their own legally dumped copy of Second Sight. No game files included.",
+   "g": "Second Sight",
+   "id": "db:legendarysavagegamer/secondsight-recompiled",
+   "k": "legendarysavagegamer/secondsight-recompiled",
+   "lc": "2026-11-20T05:26:34Z",
+   "p": "GameCube",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SecondSight-Recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "",
    "g": "Secret of Evermore",
@@ -21291,32 +21448,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
-   "at": "2026-11-14",
-   "d": "The port: both games from the player's ROM set on Windows, Linux, macOS, the Switch, Android, iOS and the Anbernic, and The Simpsons' console: the Konami presentation, the menu on the TV, the character choice, WIDE, the Konami code, STEREO and Bart's orange shirt",
-   "g": "The Simpsons Arcade",
-   "games": [
-    {
-     "platform": "Arcade",
-     "title": "The Simpsons"
-    }
-   ],
-   "id": "db:cheviman/simpsons-port",
-   "k": "cheviman/simpsons-port",
-   "lc": "2026-11-14T01:04:46Z",
-   "p": "Arcade",
-   "po": [
-    "Windows",
-    "macOS",
-    "Linux",
-    "Android"
-   ],
-   "pr": "simpsons-port",
-   "pre": false,
-   "rel": "v1.0.1",
-   "t": "Recompilation"
-  },
-  {
    "ai": true,
    "at": "2026-11-18",
    "d": "The Simpsons - Bart's Nightmare",
@@ -21596,6 +21727,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Skylanders: Spyro's Adventure (Wii) statically recompiled to run natively on jailbroken PS4 (GoldHEN): GX on Vulkan/RADV, DSP audio, emulated Wii Remote, Nunchuk and Portal of Power",
+   "g": "Skylanders: Spyro's Adventure",
+   "id": "db:ihaideez/skylanders-ps4",
+   "k": "ihaideez/skylanders-ps4",
+   "lc": "2026-11-20T03:26:44Z",
+   "p": "Wii",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Skylanders-PS4",
+   "pre": false,
+   "rel": "v00.23",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-09",
    "d": "Android port of SSARecomp",
@@ -21647,7 +21795,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
+   "ai": false,
    "at": "2026-10-26",
    "d": "Unofficial native Windows port of Skylanders: SuperChargers (Xbox 360) via ReXGlue static recompilation",
    "g": "Skylanders: SuperChargers",
@@ -22044,6 +22192,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Native PC recompilation of Sonic Colors (Wii)",
+   "g": "Sonic Colors",
+   "id": "db:volttmc/soniccolorsrecomp",
+   "k": "volttmc/soniccolorsrecomp",
+   "lc": "2026-11-20T15:46:35Z",
+   "p": "Wii",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "SonicColorsRecomp",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "Sonic Heroes (GameCube) native port by static recompilation: Switch first, then PC, Android, Linux, iOS. Work in progress, no release yet. Bring your own disc.",
    "g": "Sonic Heroes",
@@ -22281,6 +22447,23 @@
    "pr": "south-park-tenormans-revenge-recompiled",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Recompilation of Spartan: Total Warrior for MacOS",
+   "g": "Spartan: Total Warrior",
+   "id": "db:ze-castro/spartan-total-warrior-recomp",
+   "k": "ze-castro/spartan-total-warrior-recomp",
+   "lc": "2026-11-20T11:39:14Z",
+   "p": "Xbox (original)",
+   "po": [
+    "macOS"
+   ],
+   "pr": "spartan-total-warrior-recomp",
+   "pre": false,
+   "rel": "v1.0.2",
    "t": "Recompilation"
   },
   {
@@ -22607,6 +22790,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Spyro 1/2/3 Recompilation",
+   "g": "Spyro Trilogy",
+   "id": "db:tyscorp/openpete",
+   "k": "tyscorp/openpete",
+   "lc": "2026-11-20T02:28:46Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "openpete",
+   "pre": false,
+   "rel": "v0.4.3",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-09",
    "d": "A native PC port of SSX (2012), decoded with help from Claude from the Xbox 360 disc and rebuilt in Rust on Bevy.",
@@ -22835,26 +23036,6 @@
    "pr": "RogueSquadronRecomp",
    "pre": false,
    "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-13",
-   "d": "Native port of StarCraft 64",
-   "g": "StarCraft 64",
-   "id": "db:n0madic/starcraft64-recomp",
-   "k": "n0madic/starcraft64-recomp",
-   "lc": "2026-10-13T19:54:14Z",
-   "p": "N64",
-   "po": [
-    "Android",
-    "Linux",
-    "macOS",
-    "Windows"
-   ],
-   "pr": "StarCraft64-recomp",
-   "pre": false,
-   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -23590,7 +23771,7 @@
    "g": "Super Mario Bros. Remastered",
    "id": "db:mircowuffwuff/super-mario-bros.-remastered-android",
    "k": "mircowuffwuff/super-mario-bros.-remastered-android",
-   "lc": "2026-07-23T20:37:54Z",
+   "lc": "2026-07-23T20:31:15Z",
    "p": "NES",
    "po": [
     "Android",
@@ -24677,6 +24858,24 @@
    "pr": "TimePilot",
    "pre": false,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-26",
+   "d": "A recomp of the PS2 game Timesplitters",
+   "g": "TimeSplitters",
+   "id": "db:gtteancum/timesplitters",
+   "k": "gtteancum/timesplitters",
+   "lc": "2026-10-23T16:14:23Z",
+   "p": "PS2",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Timesplitters",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -26581,6 +26780,24 @@
    "pre": false,
    "rel": "v1.0.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-10-19",
+   "d": "Native PC port of Wonder Project J2 (ワープロジェクトJ2), Enix/Givro, 1996, N64. Built using the N64Recomp methodology with RT64 hardware-accelerated renderer.",
+   "g": "Wonder Project J2",
+   "id": "db:vmarcelo49/wpj2-recomp",
+   "k": "vmarcelo49/wpj2-recomp",
+   "lc": "2026-11-20T12:14:38Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "wpj2-recomp",
+   "pre": false,
+   "rel": "0.1.0-rc2",
+   "t": "Recompilation"
   },
   {
    "ai": false,
