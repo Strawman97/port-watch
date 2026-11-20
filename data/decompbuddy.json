@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19T20:33:55+00:00",
+ "generated": "2026-11-20T07:24:29+00:00",
  "projects": [
   {
    "ai": false,
@@ -1037,6 +1037,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-20",
+   "d": "",
+   "g": "Arkedo Series - 03 PIXEL!",
+   "id": "db:gabrielofavero/pixel-recompilation",
+   "k": "gabrielofavero/pixel-recompilation",
+   "lc": "2026-11-19T23:54:10Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "pixel-recompilation",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-14",
    "d": "Experimental native PC runtime and launcher for Armored Core PSP titles. Bring your own game dump.",
@@ -1313,6 +1330,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-19",
+   "d": "Static recompilation of Backbreaker (Xbox 360) for native Linux via XenonRecomp",
+   "g": "Backbreaker",
+   "id": "db:owmyback/backbreaker-recomp",
+   "k": "owmyback/backbreaker-recomp",
+   "lc": "2026-11-19T17:45:19Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux"
+   ],
+   "pr": "backbreaker-recomp",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "Native Windows x64 port of Bakugan: Battle Brawlers (PS3, BLES00758) built by static PPU+SPU recompilation - no emulator. Menus, FMVs and the narrative intro work; 3D models, gameplay and SFX are next.",
    "g": "Bakugan: Battle Brawlers",
@@ -1504,6 +1538,25 @@
    "pr": "Baroque-SaturnRecomp",
    "pre": false,
    "rel": "v0.1.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-19",
+   "d": "Native PC build of Baroque (PlayStation, SLPM-86328, English v1.02) with PSXRecomp. Bring your own disc.",
+   "g": "Baroque: Yuganda Mousou",
+   "id": "db:goodshepherd23/baroque-ps1-recompiled",
+   "k": "goodshepherd23/baroque-ps1-recompiled",
+   "lc": "2026-11-19T21:58:25Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Baroque-PS1-Recompiled",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -5538,6 +5591,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Dragon Ball: Raging Blast 2 native Android port (static recompilation, ReXGlue). Bring your own disc.",
+   "g": "Dragon Ball: Raging Blast 2",
+   "id": "db:dfdx047/dragonblast",
+   "k": "dfdx047/dragonblast",
+   "lc": "2026-11-19T22:56:25Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "DragonBlast",
+   "pre": false,
+   "rel": "v0.3.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Android (arm64) port of RB2 Recompiled - Dragon Ball: Raging Blast 2. No game data: bring your own legally dumped copy.",
    "g": "Dragon Ball: Raging Blast 2",
@@ -5655,6 +5725,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-19",
+   "d": "Dragon Ball Z: The Legacy of Goku I - Android native recompilation for AYN Thor dual screen",
+   "g": "Dragon Ball Z: The Legacy of Goku",
+   "id": "db:erpiopio/dragonballzlegacyofgokui-thor",
+   "k": "erpiopio/dragonballzlegacyofgokui-thor",
+   "lc": "2026-11-19T18:27:32Z",
+   "p": "GBA",
+   "po": [
+    "Android"
+   ],
+   "pr": "DragonBallZLegacyOfGokuI-Thor",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-17",
    "d": "A static recompilation project bringing Psikyo's classic arcade shoot 'em up Dragon Blaze to modern hardware. Designed for native Windows gameplay and Steam Deck/Linux support through an AppImage package, offering a new way to experience this classic vertical-scrolling shooter.",
    "g": "Dragon Blaze",
@@ -5704,26 +5791,6 @@
    "pr": "dq9Recomp-releases",
    "pre": false,
    "rel": "v0.1.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-18",
-   "d": "Static recompilation of Dragon Quest IX: Sentinels of the Starry Skies.",
-   "g": "Dragon Quest IX: Sentinels of the Starry Skies",
-   "id": "db:birabittoh/dq9recompiled",
-   "k": "birabittoh/dq9recompiled",
-   "lc": "2026-11-18T20:57:18Z",
-   "p": "DS",
-   "po": [
-    "macOS",
-    "Linux",
-    "Windows",
-    "Android"
-   ],
-   "pr": "DQ9Recompiled",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -6066,7 +6133,7 @@
    ],
    "pr": "DynaBroCollection",
    "pre": true,
-   "rel": "v0.4.1",
+   "rel": "v0.4.3",
    "t": "Recompilation"
   },
   {
@@ -6089,7 +6156,7 @@
    ],
    "pr": "DynaBrothers1-2",
    "pre": true,
-   "rel": "v0.4.1",
+   "rel": "v0.4.3",
    "t": "Recompilation"
   },
   {
@@ -6453,6 +6520,24 @@
    "pr": "ExcitebikeNESRecompiled",
    "pre": false,
    "rel": "build-20-1-c7c8a93dd210719846821a3d1676f3655878a598",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-18",
+   "d": "AI-written static recompilation of Excitebike 64 (N64, USA) for PC and the web. Bring your own ROM.",
+   "g": "Excitebike 64",
+   "id": "db:n64hub/excitebike-64-recomp",
+   "k": "n64hub/excitebike-64-recomp",
+   "lc": "2026-11-19T19:28:28Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "excitebike-64-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -8490,6 +8575,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-19",
+   "d": "Gran Turismo 3 Decompiled, ported to Windows, and enhanced.",
+   "g": "Gran Turismo 3 A-Spec",
+   "id": "db:silentwarior112/gt3-pc-enhanced",
+   "k": "silentwarior112/gt3-pc-enhanced",
+   "lc": "2026-11-19T03:49:29Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "GT3-PC-ENHANCED",
+   "pre": false,
+   "rel": "1.0.1",
+   "t": "Decompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-27",
    "d": "",
    "g": "Gran Turismo 4",
@@ -9046,6 +9148,23 @@
   },
   {
    "ai": true,
+   "at": "2026-11-20",
+   "d": "Guitar Hero 5 para PC (recompilación con ReXGlue). Sin datos del juego.",
+   "g": "Guitar Hero 5",
+   "id": "db:br1anelsnow/guitar-hero-5-recomp",
+   "k": "br1anelsnow/guitar-hero-5-recomp",
+   "lc": "2026-11-19T23:35:42Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Guitar-Hero-5-Recomp",
+   "pre": true,
+   "rel": "v0.1.0-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-09",
    "d": "Guitar Hero 5 (Xbox 360) recompiled to run natively on PC. Xbox 360 guitars, up to 240 FPS, ultrawide, achievements, DLC, and a launcher that installs the game from your own ISO.",
    "g": "Guitar Hero 5",
@@ -9498,6 +9617,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-19",
+   "d": "Runs Xbox One games natively on Windows by rebinding the game's own executable to a PC system layer. Main target: Halo 5: Guardians. No game files included.",
+   "g": "Halo 5: Guardians",
+   "id": "db:drakolordx7/durangoruntime",
+   "k": "drakolordx7/durangoruntime",
+   "lc": "2026-11-19T20:01:56Z",
+   "p": "Xbox One",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DurangoRuntime",
+   "pre": true,
+   "rel": "v0.1.0-preview",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "Halo: Combat Evolved for the PS Vita (decomp port)",
    "g": "Halo: Combat Evolved",
@@ -9790,6 +9926,23 @@
    "pr": "HMMMGC",
    "pre": false,
    "rel": "v0.4.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "Experimental native recompilation of Hatsune Miku: Project DIVA (PSP, ULJM05472) for Windows x64 - prototype, bring your own ISO",
+   "g": "Hatsune Miku: Project DIVA",
+   "id": "db:gorigamia/divarecompsp",
+   "k": "gorigamia/divarecompsp",
+   "lc": "2026-11-19T18:22:43Z",
+   "p": "PSP",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DIVARECOMPSP",
+   "pre": false,
+   "rel": "NEWW",
    "t": "Recompilation"
   },
   {
@@ -10594,6 +10747,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "J-Stars Victory VS+ PC — Standalone Windows x64 Vulkan Port, Launcher, FSR 3.1 FrameGen & Low-Latency Wrapper",
+   "g": "J-Stars Victory VS+",
+   "id": "db:krixsan/j-stars-victory-vs-pc",
+   "k": "krixsan/j-stars-victory-vs-pc",
+   "lc": "2026-11-18T15:46:03Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "J-Stars-Victory-VS-PC",
+   "pre": false,
+   "rel": "v1.5.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-11",
    "d": "J-Stars Victory VS-EX: Fan Revival. Unofficial PC port of J-Stars Victory VS+ (PS3) by static recompilation. Work in progress. Needs your own copy of the game.",
@@ -10715,7 +10885,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.7",
+   "rel": "v0.1.8",
    "t": "Recompilation"
   },
   {
@@ -11086,6 +11256,23 @@
    "pr": "mikazuki-x3",
    "pre": true,
    "rel": "v0.1.1-android-test",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-12",
+   "d": "Native PC port of Kamen Rider: Battride War Genesis (PS4) - fork of bbport. No game files included.",
+   "g": "Kamen Rider: Battride War Genesis",
+   "id": "db:robertoqimin/battride-war-sousei-port",
+   "k": "robertoqimin/battride-war-sousei-port",
+   "lc": "2026-11-19T20:16:49Z",
+   "p": "PS4",
+   "po": [
+    "Linux"
+   ],
+   "pr": "battride-war-sousei-port",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -12451,6 +12638,23 @@
    "pr": "Shipwright-Android",
    "pre": false,
    "rel": "v9.0.2P2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Ahead of Time recompiler for the Ocarina of Time Remake",
+   "g": "The Legend of Zelda: Ocarina of Time 3D",
+   "id": "db:hookedbehemoth/ouncerecomp",
+   "k": "hookedbehemoth/ouncerecomp",
+   "lc": "2026-11-19T16:26:12Z",
+   "p": "3DS",
+   "po": [
+    "Linux"
+   ],
+   "pr": "OunceRecomp",
+   "pre": true,
+   "rel": "v0.9",
    "t": "Recompilation"
   },
   {
@@ -14467,6 +14671,23 @@
    "pr": "Mega-Man-Zero-1-4-native-recompilation",
    "pre": false,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-19",
+   "d": "Megami Ibunroku Persona (PS1, 1996) recompiled as a native Windows program with psxrecomp, in English with Redeted’s fan translation. No game data included – bring your own disc.",
+   "g": "Megami Ibunroku Persona",
+   "id": "db:ztz909/megami-ibunroku-persona-pc-recompile",
+   "k": "ztz909/megami-ibunroku-persona-pc-recompile",
+   "lc": "2026-11-19T18:01:19Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "megami-ibunroku-persona-pc-recompile",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -18819,6 +19040,30 @@
    "t": "Decompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "POW: Recompiled!! - a fan-made PC recompilation of Punch-Out!! (Wii, 2009). Bring your own disc. Controller support, resolution multiplier, built-in Archipelago. Not affiliated with Nintendo.",
+   "g": "Punch-Out!!",
+   "games": [
+    {
+     "platform": "Wii",
+     "title": "Doc Louis's Punch-Out!!"
+    }
+   ],
+   "id": "db:gitlab.com/fist-in/pow-recompiled",
+   "k": "gitlab.com/fist-in/pow-recompiled",
+   "lc": "",
+   "p": "Wii",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "POW-Recompiled",
+   "pre": false,
+   "rel": "v0.3.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-17",
    "d": "",
@@ -20178,6 +20423,26 @@
   },
   {
    "ai": true,
+   "at": "2026-11-20",
+   "d": "",
+   "g": "Saturn Bomberman",
+   "id": "db:callumjenkins/pc-saturnbomberman",
+   "k": "callumjenkins/pc-saturnbomberman",
+   "lc": "2026-10-10T12:42:08Z",
+   "p": "Saturn",
+   "po": [
+    "Windows",
+    "macOS",
+    "Linux",
+    "Android"
+   ],
+   "pr": "pc-saturnbomberman",
+   "pre": true,
+   "rel": "playtest-20261010-8547fb94",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-10-27",
    "d": "Unofficial native PC recompilation of Saw II: Flesh & Blood (Xbox 360) using ReXGlue — BYO ISO.",
    "g": "Saw II: Flesh & Blood",
@@ -20933,6 +21198,25 @@
    "pr": "Climax_Game_Engine_Toolkit",
    "pre": false,
    "rel": "SilentHill_Origins_pre-alpha_0.0.1.2_&_CGE_Toolkit_v0.6",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "A PlayStation 1 recompilation of Silhouette Mirage, built with PSXRecomp, with optional cheat support",
+   "g": "Silhouette Mirage",
+   "id": "db:ijezabella/silhouette-mirage-recomp",
+   "k": "ijezabella/silhouette-mirage-recomp",
+   "lc": "2026-11-19T19:16:27Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "silhouette-mirage-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -26067,6 +26351,23 @@
    "pr": "Unchained",
    "pre": false,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Builds your own copy of Wii Party into a native Windows program. Contains no game code or assets.",
+   "g": "Wii Party",
+   "id": "db:hottuck71/partyrecomp",
+   "k": "hottuck71/partyrecomp",
+   "lc": "2026-11-20T01:14:20Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "PartyRecomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
