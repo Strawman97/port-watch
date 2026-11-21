@@ -4430,8 +4430,8 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/385cc545400c1fd8ae301308b5401834.png",
       "description": "Ω God of War Collection (PS Vita) recompilado para PC — demonstração / prova de conceito da VitaRT. Espere por bugs."
     },
-    "luufen/nativ---updated-30-games-120-widescreen": {
-      "link": "https://github.com/Luufen/nativ---Updated-30-games-120-widescreen",
+    "luufen/nativ-sp": {
+      "link": "https://github.com/Luufen/nativ-SP",
       "title": "Killzone: Mercenary",
       "platform": "PS Vita",
       "type": "Recompilation",
@@ -4439,11 +4439,11 @@
       "runsOn": [
         "Windows",
         "Linux",
-        "macOS",
-        "Steam Deck"
+        "Steam Deck",
+        "Android"
       ],
-      "description": "Fork of Project Nativ with packs for 30 more PS Vita games, up to 120 fps and 21:9 widescreen; you bring your own games and firmware",
-      "note": "Fork of TheLostPantheon/nativ. Persona 3 and 5: Dancing are listed as untested.",
+      "description": "Fork of Project Nativ with packs for 35 more PS Vita games, up to 120 fps and 21:9 widescreen, and builds for Windows, Linux, Steam Deck and Android; you bring your own games and firmware",
+      "note": "Fork of TheLostPantheon/nativ, renamed from nativ---Updated-30-games-120-widescreen. Persona 3 and 5: Dancing are listed as untested.",
       "games": [
         {
           "title": "Uncharted: Golden Abyss",
@@ -4572,7 +4572,22 @@
         {
           "title": "Rayman Legends",
           "platform": "PS Vita"
+        },
+        {
+          "title": "Minecraft: PlayStation Vita Edition",
+          "platform": "PS Vita"
+        },
+        {
+          "title": "Phantasy Star Nova",
+          "platform": "PS Vita"
+        },
+        {
+          "title": "Gundam Breaker 3",
+          "platform": "PS Vita"
         }
+      ],
+      "was": [
+        "luufen/nativ---updated-30-games-120-widescreen"
       ]
     },
     "luukasr1/disgaea-d2-recomp-windows": {
