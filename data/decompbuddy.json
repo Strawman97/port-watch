@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T10:08:44+00:00",
+ "generated": "2026-11-21T13:46:49+00:00",
  "projects": [
   {
    "ai": false,
@@ -157,23 +157,6 @@
    "pr": "2Xtreme-recomp",
    "pre": true,
    "rel": "v0.1.0-preview",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-11-05",
-   "d": "Native PC port (Windows/Linux) of the US PS3 version of 3D Dot Game Heroes via static recompilation. Bring your own legally acquired disc; no game data included.",
-   "g": "3D Dot Game Heroes",
-   "id": "db:irnutsmurt/cubic.heroes",
-   "k": "irnutsmurt/cubic.heroes",
-   "lc": "2026-11-18T21:39:40Z",
-   "p": "PS3",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Cubic.Heroes",
-   "pre": true,
-   "rel": "v0.2.0-beta.2",
    "t": "Recompilation"
   },
   {
@@ -349,24 +332,6 @@
    "pr": "eagle_five_recomp",
    "pre": false,
    "rel": "v0.3.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-18",
-   "d": "Native PC port of Ace Combat 6: Fires of Liberation using XenonRecomp",
-   "g": "Ace Combat 6: Fires of Liberation",
-   "id": "db:dipshet/gracemeriarecomp",
-   "k": "dipshet/gracemeriarecomp",
-   "lc": "2026-11-18T00:10:07Z",
-   "p": "Xbox 360",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "GracemeriaRecomp",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -1050,6 +1015,23 @@
    "pr": "ACNL-Recomp",
    "pre": false,
    "rel": "v2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "Static recompilation of APB - All Points Bulletin (Atari Games, 1987 arcade) to portable C++23 with Vulkan 1.3, for Windows, Linux and macOS. No game data included.",
+   "g": "APB - All Points Bulletin",
+   "id": "db:qilin1066/apbarcade-qilinrecomp",
+   "k": "qilin1066/apbarcade-qilinrecomp",
+   "lc": "2026-11-21T01:55:25Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ApbArcade-QilinRecomp",
+   "pre": false,
+   "rel": "v0.16.0",
    "t": "Recompilation"
   },
   {
@@ -2832,6 +2814,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "Call of Duty: Modern Warfare 2 for the Nintendo Switch, recompiled from the Xbox 360.",
+   "g": "Call of Duty: Modern Warfare 2",
+   "id": "db:kyokoxdev/mw2nx",
+   "k": "kyokoxdev/mw2nx",
+   "lc": "2026-11-21T07:19:55Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "mw2nx",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-20",
    "d": "Call of Duty: Modern Warfare 2 (2009) natively on Android, recompiled from your own Xbox 360 disc. Campaign, Special Ops and multiplayer in one auto-updating app. No game files included.",
    "g": "Call of Duty: Modern Warfare 2",
@@ -4378,6 +4375,23 @@
    "pr": "Dave-Mirra-Recomp",
    "pre": false,
    "rel": "v1.1.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Early work in progress: PC static recompilation of Dave Mirra Freestyle BMX 2 (PS2). No game data included; bring your own disc.",
+   "g": "Dave Mirra Freestyle BMX 2",
+   "id": "db:adhd-tism/dave-mirra-2-recomp",
+   "k": "adhd-tism/dave-mirra-2-recomp",
+   "lc": "2026-11-21T07:53:48Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Dave-Mirra-2-Recomp",
+   "pre": true,
+   "rel": "v0.1.2",
    "t": "Recompilation"
   },
   {
@@ -8670,6 +8684,23 @@
    "pr": "grabbed-by-the-ghoulies-pc",
    "pre": false,
    "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "Static recompilation of Grabbed by the Ghoulies (original Xbox, 2003) to portable C++23 with Vulkan 1.3, for Windows, Linux and macOS. No game data included.",
+   "g": "Grabbed by the Ghoulies",
+   "id": "db:qilin1066/gbtghoulies-qilinrecomp",
+   "k": "qilin1066/gbtghoulies-qilinrecomp",
+   "lc": "2026-11-21T01:58:07Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "GBTGhoulies-QilinRecomp",
+   "pre": false,
+   "rel": "v0.40.2",
    "t": "Recompilation"
   },
   {
@@ -17063,6 +17094,40 @@
   },
   {
    "ai": false,
+   "at": "2026-11-10",
+   "d": "EA SPORTS NHL 19 (PS4) native port for Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
+   "g": "NHL 19",
+   "id": "db:thegh0sts/nhl-19-ps4-port-windows",
+   "k": "thegh0sts/nhl-19-ps4-port-windows",
+   "lc": "2026-11-10T07:36:36Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "NHL-19-PS4-PORT-WINDOWS",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-11",
+   "d": "EA SPORTS NHL 21 (PS4) native port for Windows — SacredFire/bbport runtime + shadPS4-derived Vulkan renderer",
+   "g": "NHL 21",
+   "id": "db:thegh0sts/nhl-21-ps4-port",
+   "k": "thegh0sts/nhl-21-ps4-port",
+   "lc": "2026-11-11T09:57:18Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "NHL-21-PS4-PORT",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-18",
    "d": "Experimental PS4-to-PC port of NHL 24. Community source project; game files are not included.",
    "g": "NHL 24",
@@ -18940,6 +19005,24 @@
   {
    "ai": false,
    "at": "2026-11-20",
+   "d": "Native Windows/Linux static-recompilation port of arcade Primal Rage (Atari GT). Bring-your-own MAME ROMs.",
+   "g": "Primal Rage",
+   "id": "db:thefixinhixon/ragerecomp",
+   "k": "thefixinhixon/ragerecomp",
+   "lc": "2026-11-21T03:47:33Z",
+   "p": "Arcade",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "RageRecomp",
+   "pre": false,
+   "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
    "d": "Unofficial bring-your-own-files build kit for Prince of Persia Classic on Linux and Windows.",
    "g": "Prince of Persia Classic",
    "id": "db:willisit-sudo/pop-classic-recomp",
@@ -19335,6 +19418,23 @@
    "pr": "POW-Recompiled",
    "pre": false,
    "rel": "v0.3.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "Static recompilation of Punch-Out!! (Wii, 2009) to portable C++23 with Vulkan 1.3, for Windows, Linux and macOS. No game data included.",
+   "g": "Punch-Out!!",
+   "id": "db:qilin1066/punchoutwii-qilinrecomp",
+   "k": "qilin1066/punchoutwii-qilinrecomp",
+   "lc": "2026-11-21T01:56:28Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "PunchOutWii-QilinRecomp",
+   "pre": false,
+   "rel": "v0.20.0",
    "t": "Recompilation"
   },
   {
@@ -23571,6 +23671,23 @@
    "t": "Decompilation"
   },
   {
+   "ai": false,
+   "at": "2026-10-21",
+   "d": "Stunt Race FX — Static Recompilation",
+   "g": "Stunt Race FX",
+   "id": "db:sp00nznet/stuntrace",
+   "k": "sp00nznet/stuntrace",
+   "lc": "2026-11-21T02:59:56Z",
+   "p": "SNES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "stuntrace",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-30",
    "d": "Unofficial native Windows port of Stuntman (PS2, 2002) - bring your own disc",
@@ -24122,6 +24239,23 @@
    "pr": "sms-android",
    "pre": true,
    "rel": "v0.2.0-preview.9",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Super Mario Sunshine Linux ARM64 + GLES 3.1+ port & PortMaster package for Anbernic RG351P (ArkOS / RK3326), adapted from chasem-dev/sms-pc-port",
+   "g": "Super Mario Sunshine",
+   "id": "db:eldandelion/arkos-sms",
+   "k": "eldandelion/arkos-sms",
+   "lc": "2026-11-21T05:58:48Z",
+   "p": "GameCube",
+   "po": [
+    "Linux"
+   ],
+   "pr": "arkos-sms",
+   "pre": false,
+   "rel": "v0.1.0-rg351p",
    "t": "Recompilation"
   },
   {
