@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T20:14:54+00:00",
+ "generated": "2026-11-21T01:38:36+00:00",
  "projects": [
   {
    "ai": false,
@@ -3979,6 +3979,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Crazy Taxi 2 (Dreamcast) - Windows port via static recompilation",
+   "g": "Crazy Taxi 2",
+   "id": "db:thiago86/ct2_recomp_crazy_taxi_2_dreamcast_static_recompilation_e_sh4",
+   "k": "thiago86/ct2_recomp_crazy_taxi_2_dreamcast_static_recompilation_e_sh4",
+   "lc": "2026-11-20T20:33:15Z",
+   "p": "Dreamcast",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ct2_recomp_Crazy_Taxi_2_Dreamcast_static_recompilation_e_sh4",
+   "pre": false,
+   "rel": "v15zzn",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-18",
    "d": "A Full Decompile Recomp PC port of the GBA Crazy Taxi game with enhanced resolution, framerate, music, and overall presentation",
    "g": "Crazy Taxi: Catch a Ride",
@@ -4761,23 +4778,6 @@
    "pre": true,
    "rel": "latest",
    "t": "Decompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-20",
-   "d": "Wrecked Metal 64 DX: an ambitious customization project built on the best racing and destruction physics the 64 ever delivered. Native Android port (touch + gamepad), bring your own ROM.",
-   "g": "Destruction Derby 64",
-   "id": "db:dedecidao/wrecked-metal-64-dx",
-   "k": "dedecidao/wrecked-metal-64-dx",
-   "lc": "2026-11-20T14:49:04Z",
-   "p": "N64",
-   "po": [
-    "Android"
-   ],
-   "pr": "Wrecked-Metal-64-DX",
-   "pre": true,
-   "rel": "nightly",
-   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -5790,6 +5790,23 @@
    "pr": "ExtremeFighters",
    "pre": false,
    "rel": "v0.5.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "DBZ TTT Recomp C++",
+   "g": "Dragon Ball Z: Tenkaichi Tag Team",
+   "id": "db:marquitok/tttrecomp",
+   "k": "marquitok/tttrecomp",
+   "lc": "2026-11-18T19:57:10Z",
+   "p": "PSP",
+   "po": [
+    "Windows"
+   ],
+   "pr": "TTTRecomp",
+   "pre": true,
+   "rel": "0.1.2-alpha",
    "t": "Recompilation"
   },
   {
@@ -10417,6 +10434,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Static recompilation of Hyrule Warriors: Age of Calamity 1.3.0 for PC (Vulkan)",
+   "g": "Hyrule Warriors: Age of Calamity",
+   "id": "db:eliasm4r/ageofcalamityrecomp",
+   "k": "eliasm4r/ageofcalamityrecomp",
+   "lc": "2026-11-20T16:27:32Z",
+   "p": "Switch",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "AgeOfCalamityRecomp",
+   "pre": false,
+   "rel": "v0.1.0-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-19",
    "d": "Native Windows/Linux build of your own Hyrule Warriors: Age of Imprisonment (Switch 2): static recompilation, step-by-step setup, full settings, native controllers, RecompLauncher-ready. No game files included.",
    "g": "Hyrule Warriors: Age of Imprisonment",
@@ -11187,6 +11222,23 @@
    "pr": "JoJo-EoH-pc-port",
    "pre": false,
    "rel": "Launcher",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "JoJo's Bizarre Adventure: Eyes of Heaven PC port - proof of concept only, not maintained",
+   "g": "JoJo's Bizarre Adventure: Eyes of Heaven",
+   "id": "db:mevlock/jojo-eoh-pc-poc",
+   "k": "mevlock/jojo-eoh-pc-poc",
+   "lc": "2026-11-20T22:18:05Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "jojo-eoh-pc-poc",
+   "pre": false,
+   "rel": "v0.0.1",
    "t": "Recompilation"
   },
   {
@@ -14230,6 +14282,23 @@
    "pr": "Marvel-Super-Heroes-vs-Street-Fighter-Recomp",
    "pre": true,
    "rel": "v0.3.0-beta.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Marvel Ultimate Alliance 3 running natively on Windows: up to 4K, high frame rates, mods. Bring your own game.",
+   "g": "Marvel Ultimate Alliance 3: The Black Order",
+   "id": "db:kaikoclanworth1/mua3-native",
+   "k": "kaikoclanworth1/mua3-native",
+   "lc": "2026-11-20T05:19:04Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mua3-native",
+   "pre": false,
+   "rel": "v0.3.9",
    "t": "Recompilation"
   },
   {
@@ -17592,6 +17661,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Paprium on PC: turns your own, legally obtained Paprium game file into a game that runs on Windows. No game included.",
+   "g": "Paprium",
+   "id": "db:thekoalakoa/paprium-pc",
+   "k": "thekoalakoa/paprium-pc",
+   "lc": "2026-11-16T19:46:10Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows"
+   ],
+   "pr": "paprium-pc",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "native pc port of parasite eve 1 for the ps1",
    "g": "Parasite Eve",
@@ -18518,6 +18604,23 @@
    "pr": "platinum",
    "pre": false,
    "rel": "0.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Pokopia PS5 Port: Pokémon Pokopia recompiled to run natively on the PS5 (homebrew) and on Windows. No game files included.",
+   "g": "Pokemon Pokopia",
+   "id": "db:kongatime/pokopia-ps5-port",
+   "k": "kongatime/pokopia-ps5-port",
+   "lc": "2026-11-20T17:20:54Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "pokopia-ps5-port",
+   "pre": false,
+   "rel": "v1.1",
    "t": "Recompilation"
   },
   {
@@ -23771,7 +23874,7 @@
    "g": "Super Mario Bros. Remastered",
    "id": "db:mircowuffwuff/super-mario-bros.-remastered-android",
    "k": "mircowuffwuff/super-mario-bros.-remastered-android",
-   "lc": "2026-07-23T20:31:15Z",
+   "lc": "2026-07-23T20:37:54Z",
    "p": "NES",
    "po": [
     "Android",
@@ -24212,6 +24315,23 @@
    "t": "Decompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Play Super Smash Bros. Melee natively on PC against AI opponents: slippi-ai's Phillip, the 2017 Phillip agents, or an LLM player. Built on the melee-pc decompilation.",
+   "g": "Super Smash Bros. Melee",
+   "id": "db:zurgace/aimelee",
+   "k": "zurgace/aimelee",
+   "lc": "2026-11-20T20:08:05Z",
+   "p": "GameCube",
+   "po": [
+    "Windows"
+   ],
+   "pr": "aimelee",
+   "pre": false,
+   "rel": "ai-melee-v0.10",
+   "t": "Decompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-13",
    "d": "Static recompilation of Super Smash Bros. Ultimate 13.0.4 to a native Windows program: tools and runtime only, bring your own dump",
@@ -24384,6 +24504,26 @@
    "pr": "trag-recomp",
    "pre": false,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "A recomp project for Tactics Ogre: The Knight of Lodis, enhanced with modern features. Android only for now.",
+   "g": "Tactics Ogre: The Knight of Lodis",
+   "id": "db:lucdubois/knightoflodisrecomp",
+   "k": "lucdubois/knightoflodisrecomp",
+   "lc": "2026-11-20T18:15:59Z",
+   "p": "GBA",
+   "po": [
+    "Android",
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "KnightOfLodisRecomp",
+   "pre": false,
+   "rel": "v1.1",
    "t": "Recompilation"
   },
   {
@@ -25544,6 +25684,23 @@
    "pr": "TraumaTeam-Resuscitated",
    "pre": true,
    "rel": "v0.1.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-20",
+   "d": "Native port of three SNES action platformers, recompiled from your own ROMs",
+   "g": "Trio",
+   "id": "db:y4my4my4m/trio",
+   "k": "y4my4my4m/trio",
+   "lc": "2026-11-20T18:18:28Z",
+   "p": "SNES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "trio",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
