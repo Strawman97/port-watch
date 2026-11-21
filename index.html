@@ -811,9 +811,19 @@ function riskPill(v){return !v.risk?"":v.risk.level==="high"?`<span class="pill 
 
 /* ---------------- follow + playability ---------------- */
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.6-4.7-9.4-9.3C1.3 7.9 3.4 4.8 6.7 4.8c2 0 3.5 1.1 4.3 2.6.8-1.5 2.3-2.6 4.3-2.6 3.3 0 5.4 3.1 4.1 6.4-1.8 4.6-9.4 9.3-9.4 9.3z" fill="FILL" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+// Each game of a multi-game project is followed on its own: the project's main game under the project's id, every
+// other game under "<id>#<game>". Following Soul Sacrifice Delta doesn't follow the other 32 games of its project.
+function followKey(v){return v.ghost?v.p.id+"#"+nrmT(bare(v.game)):v.p.id;}
 function isFollowed(id){return !!(S.follow&&S.follow[id]);}
-function heartHTML(v){const f=isFollowed(v.p.id);return `<button class="heart" data-follow="${esc(v.p.id)}" aria-pressed="${f}" aria-label="${f?"Unfollow":"Follow"} ${esc(v.game)}" title="${f?"Following: click to unfollow":"Follow this project"}">${HEART.replace("FILL",f?"currentColor":"none")}</button>`;}
-function followedCount(){return Object.keys(S.follow||{}).filter(id=>allProjects().some(p=>p.id===id)).length;}
+function isFollowedV(v){return isFollowed(followKey(v));}
+function projectFollowed(id){if(!S.follow)return false;if(S.follow[id])return true;const pre=id+"#";for(const k in S.follow)if(k.startsWith(pre))return true;return false;}
+// move every follow of a project (its main game and its other games) to another id; true when something moved
+function moveFollows(from,to,keepOld){if(!S.follow||from===to)return false;let moved=false;
+  for(const k of Object.keys(S.follow)){if(k!==from&&!k.startsWith(from+"#"))continue;const nk=to+k.slice(from.length);
+    if(!S.follow[nk]){S.follow[nk]=S.follow[k];moved=true;}if(!keepOld)delete S.follow[k];}
+  return moved;}
+function heartHTML(v){const f=isFollowedV(v);return `<button class="heart" data-follow="${esc(followKey(v))}" aria-pressed="${f}" aria-label="${f?"Unfollow":"Follow"} ${esc(v.game)}" title="${f?"Following: click to unfollow":v.ghost?"Follow this game":"Follow this project"}">${HEART.replace("FILL",f?"currentColor":"none")}</button>`;}
+function followedCount(){const ids=new Set(allProjects().map(p=>p.id));return Object.keys(S.follow||{}).filter(k=>ids.has(k.split("#")[0])).length;}
 const PLAY_LABEL={yes:"Playable",no:"No public release",unknown:"Not checked yet"};
 function playPill(v){return `<span class="pill pl-${v.play==="yes"?"yes":v.play==="no"?"no":"unk"}" title="${v.play==="yes"?"A public release is available to download":v.play==="no"?"No public release found, so it can't be played yet":"Run a check to find out whether a release exists"}">${PLAY_LABEL[v.play]}</span>`;}
 
@@ -926,7 +936,7 @@ function adoptRenamed(){
   const all=SEED.concat(Object.values(S.aw.added),Object.values(S.custom),REPO.added,dbOn()?REPO.db:[]);let n=0;
   for(const [c,ps] of renamedGroups(all)){if(ps.length<2)continue;const keep=ps.find(p=>p.k===c)||ps[0];
     for(const p of ps){if(p===keep)continue;
-      if(S.follow&&S.follow[p.id]&&!S.follow[keep.id]){S.follow[keep.id]=S.follow[p.id];n++;}
+      if(moveFollows(p.id,keep.id,true))n++;
       if(S.ov[p.id]&&!S.ov[keep.id]){S.ov[keep.id]=S.ov[p.id];n++;}}}
   if(n)save();
 }
@@ -934,7 +944,7 @@ function adoptRenamed(){
 // follows and edits made under the old key move to the new one
 function adoptMoved(){
   let n=0;for(const p of REPO.added){for(const old of p.was||[]){for(const oid of ["shared:"+old,"custom:"+old,"aw:"+old,old]){
-    if(oid===p.id)continue;if(S.follow&&S.follow[oid]&&!S.follow[p.id]){S.follow[p.id]=S.follow[oid];delete S.follow[oid];n++;}
+    if(oid===p.id)continue;if(moveFollows(oid,p.id))n++;
     if(S.ov[oid]&&!S.ov[p.id]){S.ov[p.id]=S.ov[oid];delete S.ov[oid];n++;}}}}
   if(n)save();
 }
@@ -942,7 +952,7 @@ function adoptShared(){
   let moved=0;const byKey=new Map(REPO.added.filter(p=>p.k).map(p=>[p.k,p]));
   for(const [cid,c] of Object.entries(S.custom)){const sp=c.k&&byKey.get(c.k);if(!sp)continue;
     if(S.ov[cid]&&!S.ov[sp.id])S.ov[sp.id]=S.ov[cid];delete S.ov[cid];
-    if(S.follow&&S.follow[cid]){S.follow[sp.id]=S.follow[cid];delete S.follow[cid];}
+    moveFollows(cid,sp.id);
     S.sharedSeen=S.sharedSeen||{};S.sharedSeen[sp.id]=1;delete S.custom[cid];moved++;}
   if(moved)save();return moved;
 }
@@ -1199,7 +1209,7 @@ async function syncAwesome(){
   const listed=new Set();for(const g of d.games||[]){const e=awNormalize(g);if(e)listed.add(e.k);}
   if(listed.size>100){
     for(const k of Object.keys(S.aw.added)){if(listed.has(k))continue;const p=S.aw.added[k];
-      if(S.follow&&S.follow[p.id]){if(!S.aw.dropped||!S.aw.dropped[k]){(S.aw.dropped=S.aw.dropped||{})[k]=1;logEv("gone",p,"No longer listed by Awesome Decomp Games; it may have been renamed, moved or removed");}continue;}
+      if(projectFollowed(p.id)){if(!S.aw.dropped||!S.aw.dropped[k]){(S.aw.dropped=S.aw.dropped||{})[k]=1;logEv("gone",p,"No longer listed by Awesome Decomp Games; it may have been renamed, moved or removed");}continue;}
       delete S.aw.added[k];delete S.aw.data[k];}
   }
   S.aw.gen=d.generated_at||"";S.aw.syncedAt=Date.now();
@@ -1252,7 +1262,7 @@ function purgeUnrelated(){
   for(const [id,p] of Object.entries(S.custom)){
     const from=(/Added by you from (.*)$/.exec(p.src||"")||[])[1];if(!from||!needsGameCheck(from))continue;
     if(gameSignal(p.pr,[p.d,p.g].join(" "),[]))continue;
-    removedProjects.push(p.g||p.pr);names.add(p.pr);delete S.custom[id];delete S.ov[id];if(S.follow)delete S.follow[id];if(p.k)S.disc.filtered[p.k]=true;}
+    removedProjects.push(p.g||p.pr);names.add(p.pr);delete S.custom[id];delete S.ov[id];if(S.follow)for(const fk of Object.keys(S.follow))if(fk===id||fk.startsWith(id+"#"))delete S.follow[fk];if(p.k)S.disc.filtered[p.k]=true;}
   if(names.size)S.log=S.log.filter(e=>!(e.type==="new"&&names.has(e.game)));
   return {inboxN,removedProjects};
 }
@@ -1391,7 +1401,7 @@ function flushAuto(){if(autoPending&&!userBusy()){autoPending=false;renderAll();
 async function runCheck(mode){
   mode=mode==="followed"?"followed":"all";
   if(running)return;
-  const all=allProjects().filter(p=>p.k&&(mode==="all"||isFollowed(p.id)));
+  const all=allProjects().filter(p=>p.k&&(mode==="all"||projectFollowed(p.id)));
   if(mode==="followed"&&!all.length){toast("You're not following any projects yet. Click the heart on a project to follow it.");return;}
   running=true;newThisRun=0;discErr=false;
   const btn=mode==="followed"?$("#checkFollowBtn"):$("#checkBtn");$("#checkBtn").disabled=true;$("#checkFollowBtn").disabled=true;btn.textContent="Checking…";
@@ -1592,7 +1602,7 @@ function passes(v,skip,own){
   if(skip!=="series"&&UI.series){const so=seriesOf(v),[kind,name]=[UI.series.slice(0,2),UI.series.slice(2)];if(kind==="t:"?!so.tops.has(name):!so.subs.has(name))return false;}
   if(UI.noCover&&coverFor(v))return false;
   if(skip!=="recent"&&(UI.recentNew||UI.recentPlay)){const ri=recentInfo(v);if(!((UI.recentNew&&ri.isNew)||(UI.recentPlay&&ri.nowPlayable)))return false;}
-  if(UI.followed&&!isFollowed(v.p.id))return false;
+  if(UI.followed&&!(own||v.ghost?isFollowedV(v):projectFollowed(v.p.id)))return false;   // the project passes if any of its games is followed; each game is then checked on its own
   if(skip!=="play"&&UI.play.size&&!UI.play.has(v.play))return false;
   if(skip!=="type"&&UI.type.size&&!UI.type.has(v.type))return false;
   if(skip!=="ps"&&UI.ps.size&&!UI.ps.has(v.ps))return false;
@@ -1666,7 +1676,7 @@ function repoLabel(v){if(v.hack)return v.hack;return v.p.pr||(v.p.k||"").replace
 function tabsHTML(g,cur,where){
   if(g.items.length<2)return "";
   return `<div class="ptabs" role="tablist" aria-label="Projects for ${esc(g.game)}">${g.items.map(v=>{const oss=OSLIST.filter(o=>v.os[o]);
-    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowed(v.p.id)?" ♥":""}${gamesOf(v.ghost?view(v.p):v).length?' <span title="Covers several games">⧉</span>':""}<small>${v.hack?"Hack or mod · ":""}${new Set(g.items.map(x=>x.platform)).size>1?`<b class="tabplat">${esc(v.platform)}</b> · `:""}${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
+    return `<button class="ptab" role="tab" aria-selected="${v.p.id===cur.p.id}" data-gtab="${esc(v.p.id)}" data-gk="${esc(g.key)}" data-where="${where}">${esc(repoLabel(v))}${isFollowedV(v)?" ♥":""}${gamesOf(v.ghost?view(v.p):v).length?' <span title="Covers several games">⧉</span>':""}<small>${v.hack?"Hack or mod · ":""}${new Set(g.items.map(x=>x.platform)).size>1?`<b class="tabplat">${esc(v.platform)}</b> · `:""}${esc((TYPE_SHORT[v.type]||TYPE_SHORT.Recompilation)[0])} · ${esc(PLAY_LABEL[v.play])}${oss.length?" · "+esc(oss.slice(0,3).join(", ")):""}${v.risk?" · ⚠":""}</small></button>`;}).join("")}</div>`;
 }
 function groupDetailHTML(g){const cur=selectedIn(g);
   const head=g.items.length>1?`<div class="phead">${heartHTML(cur)}<a href="${esc(cur.p.l||"#")}" target="_blank" rel="noopener">${esc(repoLabel(cur))}</a>${riskPill(cur)}</div>`:"";
@@ -1677,7 +1687,7 @@ function groupRowHTML(g,nid){
   const types=[...new Set(items.map(v=>v.type))];const oss=OSLIST.filter(o=>items.some(v=>v.os[o]));
   const on=FEATURES.filter(f=>items.some(v=>v.feats[f.id].st==="yes"));const show=on.slice(0,4);
   const best=items.some(v=>v.play==="yes")?"yes":items.every(v=>v.play==="no")?"no":"unknown";
-  const fol=items.filter(v=>isFollowed(v.p.id)).length;const risky=items.find(v=>v.risk);
+  const fol=items.filter(v=>isFollowedV(v)).length;const risky=items.find(v=>v.risk);
   const relLead=items.slice().sort((a,b)=>(b.updated||"").localeCompare(a.updated||""))[0];
   return `<div class="row" role="button" tabindex="0" style="--pc:${PCOL[g.platform]||"#888"}" data-gk="${esc(g.key)}" aria-expanded="${UI.open===g.key}">
     <span class="bar"></span>

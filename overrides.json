@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -781,9 +781,33 @@
         {
           "title": "Pokémon LeafGreen Version",
           "platform": "GBA"
+        },
+        {
+          "title": "Pokémon Omega Ruby",
+          "platform": "3DS"
+        },
+        {
+          "title": "Pokémon Alpha Sapphire",
+          "platform": "3DS"
+        },
+        {
+          "title": "Pokémon X",
+          "platform": "3DS"
+        },
+        {
+          "title": "Pokémon Y",
+          "platform": "3DS"
+        },
+        {
+          "title": "Pokémon Ultra Sun",
+          "platform": "3DS"
+        },
+        {
+          "title": "Pokémon Ultra Moon",
+          "platform": "3DS"
         }
       ],
-      "note": "One launcher for 14 Pokémon games, running them through a built-in melonDS emulator core with widescreen patches."
+      "note": "One launcher for 20 Pokémon games: DS and GBA games through a built-in melonDS core with widescreen patches, and 3DS games (Omega Ruby, Alpha Sapphire, and in beta X, Y, Ultra Sun and Ultra Moon) from your own .3ds dumps. 3DS games are not on Mac, iPhone/iPad or ARM Linux yet."
     },
     "mango77x/mhforever": {
       "_game": "Monster Hunter Freedom Unite",
