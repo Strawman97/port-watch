@@ -19,7 +19,7 @@
   "xess": "XeSS"
  },
  "format": "port-watch-catalog",
- "generated": "2026-11-21T13:52:07Z",
+ "generated": "2026-11-21T13:56:21Z",
  "projects": [
   {
    "archived": false,
@@ -595,7 +595,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-21T13:43:57Z",
+   "pushed": "2026-11-21T13:55:47Z",
    "release": {
     "date": "2026-11-20T04:04:14Z",
     "pre": false,
@@ -17207,7 +17207,7 @@
    "planned": [],
    "platform": "PS4",
    "playable": true,
-   "pushed": "2026-11-21T12:55:32Z",
+   "pushed": "2026-11-21T13:53:12Z",
    "release": {
     "date": "2026-11-20T17:11:45Z",
     "pre": false,
@@ -43301,7 +43301,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-21T13:14:53Z",
+   "pushed": "2026-11-21T13:53:31Z",
    "release": {
     "date": "2026-11-21T05:02:40Z",
     "pre": false,
@@ -50225,7 +50225,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 539,
+   "stars": 540,
    "title": "Dragon's Crown Pro (Dragon's Crown Pro PC Port)",
    "type": "Decompilation"
   },
@@ -50815,7 +50815,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 16,
+   "stars": 17,
    "title": "Drakan: The Ancients' Gates",
    "type": "Recompilation"
   },
@@ -71423,7 +71423,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 339,
+   "stars": 340,
    "title": "GoldenEye 007 (N64)",
    "type": "Decompilation"
   },
@@ -75834,7 +75834,7 @@
    ],
    "hack": "",
    "k": "adriansyah101/gtracingmotoracademyrecomp",
-   "link": "https://github.com/Adriansyah101/GTRacingMotorAcademyRecomp",
+   "link": "https://github.com/Adriansyah101/GTRacingMotorAcademy-PC-Port",
    "mirrors": [],
    "note": "",
    "nsfw": false,
@@ -75847,7 +75847,7 @@
     "date": "2026-11-19T13:30:42Z",
     "pre": false,
     "tag": "V1.0.0",
-    "url": "https://github.com/Adriansyah101/GTRacingMotorAcademyRecomp/releases/tag/V1.0.0"
+    "url": "https://github.com/Adriansyah101/GTRacingMotorAcademy-PC-Port/releases/tag/V1.0.0"
    },
    "risk": null,
    "runsOn": [
@@ -83063,7 +83063,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 48,
+   "stars": 49,
    "title": "Hyrule Warriors: Age of Calamity",
    "type": "Recompilation"
   },
@@ -92334,7 +92334,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-21T12:36:34Z",
+   "pushed": "2026-11-21T13:55:08Z",
    "release": {
     "date": "2026-11-21T10:58:50Z",
     "pre": true,
@@ -100269,7 +100269,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 175,
+   "stars": 176,
    "title": "Mario Kart 8 Deluxe",
    "type": "Recompilation"
   },
@@ -136179,7 +136179,7 @@
    ],
    "platform": "Switch 2",
    "playable": true,
-   "pushed": "2026-11-21T13:46:41Z",
+   "pushed": "2026-11-21T13:50:56Z",
    "release": {
     "date": "2026-11-21T12:47:33Z",
     "pre": true,
@@ -143816,7 +143816,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-21T13:15:50Z",
+   "pushed": "2026-11-21T13:52:18Z",
    "release": {
     "date": "2026-10-29T05:34:49Z",
     "pre": true,
@@ -146392,7 +146392,7 @@
    "planned": [],
    "platform": "Dreamcast",
    "playable": true,
-   "pushed": "2026-11-21T13:49:22Z",
+   "pushed": "2026-11-21T13:51:22Z",
    "release": {
     "date": "2026-11-11T05:19:15Z",
     "pre": true,
@@ -156841,7 +156841,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-21T13:45:29Z",
+   "pushed": "2026-11-21T13:52:30Z",
    "release": {
     "date": "2026-11-20T10:52:12Z",
     "pre": true,
@@ -171316,6 +171316,77 @@
    "source": "Port Watch",
    "stars": 198,
    "title": "Star Wars: Rogue Squadron II – Rogue Leader",
+   "type": "Recompilation"
+  },
+  {
+   "archived": false,
+   "art": [
+    "https://images.igdb.com/igdb/image/upload/t_1080p/yrruseem1fdhjcfj4z78.jpg"
+   ],
+   "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_GameCube/master/Named_Boxarts/Star%20Wars%20Rogue%20Squadron%20III_%20Rebel%20Strike%20%28USA%29.png",
+   "coverThumb": "",
+   "desc": "Red Three: static recompilation of Rebel Strike (GameCube, USA) into a native Windows or Linux program, built from your own disc. Fork of Red Two (Rogue Leader); boots, plays cinematics and runs missions at 60 fps, including two-player co-op.",
+   "features": [
+    "aa",
+    "aspect",
+    "hfr",
+    "kbm",
+    "mods",
+    "online",
+    "res",
+    "tex"
+   ],
+   "firstSeen": "2026-11-21T13:52:19Z",
+   "games": [],
+   "genres": [
+    "Adventure",
+    "Sci-fi",
+    "Shooter",
+    "Third-person shooter"
+   ],
+   "hack": "",
+   "k": "typingturtle/red_three",
+   "link": "https://github.com/TypingTurtle/red_three",
+   "mirrors": [],
+   "note": "Early but playable; no release yet, you build it yourself. Needs the USA disc (GLRE64).",
+   "nsfw": false,
+   "pcRelease": "Never released on PC",
+   "planned": [],
+   "platform": "GameCube",
+   "playable": false,
+   "pushed": "2026-11-21T11:24:56Z",
+   "release": null,
+   "risk": null,
+   "runsOn": [
+    "Windows",
+    "Linux"
+   ],
+   "runsOnFrom": "fix",
+   "series": [
+    "Star Wars: Rogue Squadron",
+    "Star Wars"
+   ],
+   "sgdb": {
+    "capsule": "https://cdn2.steamgriddb.com/grid/cdb895d9b33985892dc17901dd73aca1.png",
+    "hero": "https://cdn2.steamgriddb.com/hero/758934953550c4e4f1725ec4b917f366.png",
+    "icon": "https://cdn2.steamgriddb.com/icon/3cc697419ea18cc98d525999665cb94a.png",
+    "logo": "https://cdn2.steamgriddb.com/logo/a12f69495f41bb3b637ba1b6238884d6.png",
+    "wide": "https://cdn2.steamgriddb.com/grid/86cc47b3b6a24418d25146dafa532547.png"
+   },
+   "shots": {
+    "original": [
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/yrruseem1fdhjcfj4z78.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/iwsqt24br7bysyfjgbv8.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/msitsimvqtrafzdrf144.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/qqsijmn6fryxxarlbe5a.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/o5zezw7cn0granvr63l1.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/lvsbl4bqn2hmojw2vepj.jpg"
+    ],
+    "port": []
+   },
+   "source": "Port Watch",
+   "stars": 2,
+   "title": "Star Wars: Rogue Squadron III – Rebel Strike",
    "type": "Recompilation"
   },
   {
@@ -210560,7 +210631,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 11,
+   "stars": 12,
    "title": "Twisted Metal 2",
    "type": "Recompilation"
   },
