@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22T10:10:00+00:00",
+ "generated": "2026-11-22T13:22:02+00:00",
  "projects": [
   {
    "ai": false,
@@ -2316,24 +2316,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-14",
-   "d": "Bloodborne (v1.09) on Windows & Linux with a decompiled C++20 graphics engine & direct Vulkan 1.3 renderer (built on bbport): native GLSL shaders, ~3–5 GB VRAM, draw batching/culling, in-game PC menus, DLSS 4.5 / FSR 4. Bring your own dump.",
-   "g": "Bloodborne",
-   "id": "db:lapothecary/bloodborne-pc-vulkan",
-   "k": "lapothecary/bloodborne-pc-vulkan",
-   "lc": "2026-11-13T11:20:44Z",
-   "p": "PS4",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "bloodborne-pc-vulkan",
-   "pre": false,
-   "rel": "v1.1.3",
-   "t": "Decompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-10-14",
    "d": "WIP macOS (Apple Silicon) port of the native Bloodborne PC port — Rosetta 2 + MoltenVK/Metal",
    "g": "Bloodborne",
@@ -3596,6 +3578,21 @@
    "pr": "Conker-PS4",
    "pre": false,
    "rel": "v00.13",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-14",
+   "d": "A Recompilation of Conker's Bad Fur Day for the 3DS",
+   "g": "Conker's Bad Fur Day",
+   "id": "db:raihwy3/conker3dsrecomp",
+   "k": "raihwy3/conker3dsrecomp",
+   "lc": "2026-11-13T20:59:33Z",
+   "p": "N64",
+   "po": [],
+   "pr": "Conker3DSRecomp",
+   "pre": false,
+   "rel": "v0.1.5",
    "t": "Recompilation"
   },
   {
@@ -15811,20 +15808,20 @@
   },
   {
    "ai": true,
-   "at": "2026-11-22",
-   "d": "Native PC port of Midtown Madness 3 (Xbox) via static recompilation. Windows x64 playable, Linux x64 in testing. Bring your own disc. Experimental, AI-assisted.",
+   "at": "2026-10-13",
+   "d": "Experimental, largely AI-written static recompilation of Midtown Madness 3 for Windows. Expect rough edges; fixes and PRs welcome.",
    "g": "Midtown Madness 3",
-   "id": "db:mattsg/midtown-madness-3-recomp",
-   "k": "mattsg/midtown-madness-3-recomp",
-   "lc": "2026-11-21T23:57:23Z",
+   "id": "db:mattsg/mm3-recomp",
+   "k": "mattsg/mm3-recomp",
+   "lc": "2026-10-26T22:34:49Z",
    "p": "Xbox (original)",
    "po": [
     "Windows",
     "Linux"
    ],
-   "pr": "midtown-madness-3-recomp",
+   "pr": "mm3-recomp",
    "pre": false,
-   "rel": "v2026.11.21.27.1",
+   "rel": "v2026.10.26.1.1",
    "t": "Recompilation"
   },
   {
