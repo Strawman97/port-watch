@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -720,6 +720,12 @@
       "cover": "https://cdn2.steamgriddb.com/thumb/39df89088e26527b6113a1bb247ba69a.jpg"
     },
     "luufen/nativ---updated-30-games-120-widescreen": {
+      "_game": "Killzone: Mercenary",
+      "gameCovers": {
+        "Call of Duty: Black Ops Declassified": "https://cdn2.steamgriddb.com/thumb/5b553f986037c0396b34dda4bf5ea437.jpg"
+      }
+    },
+    "luufen/nativ-sp": {
       "_game": "Killzone: Mercenary",
       "gameCovers": {
         "Call of Duty: Black Ops Declassified": "https://cdn2.steamgriddb.com/thumb/5b553f986037c0396b34dda4bf5ea437.jpg"
@@ -1572,7 +1578,7 @@
       ]
     },
     "thegh0sts/bourne-conspiracy-x360-recomp": {
-      "_game": "The Bourne Conspiracy",
+      "_game": "Robert Ludlum's The Bourne Conspiracy",
       "cover": "https://cdn2.steamgriddb.com/thumb/88524e6327a0bd5ff7cc03f86846a15e.jpg"
     },
     "thegh0sts/nhl-20-ps4-port": {
@@ -4140,6 +4146,14 @@
       "pcRelease": "Never released on PC",
       "cover": "https://cdn2.steamgriddb.com/thumb/1f7e1150692e876c7418f2e7183b69b5.jpg",
       "description": "Native PC Port for Pokemon XD: Gale of Darkness"
+    },
+    "irnutsmurt/cubic.heroes": {
+      "link": "https://github.com/irnutsmurt/Cubic.Heroes",
+      "title": "3D Dot Game Heroes",
+      "platform": "PS3",
+      "type": "Recompilation",
+      "pcRelease": "Never released on PC",
+      "description": "Native PC port (Windows/Linux) of the US PS3 version of 3D Dot Game Heroes via static recompilation. Bring your own legally acquired disc; no game data included."
     },
     "jackrushante/dbz-super-saiya-densetsu-rust": {
       "link": "https://github.com/JackRushante/DBZ-Super-Saiya-Densetsu-Rust",
