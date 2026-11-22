@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22T01:16:57+00:00",
+ "generated": "2026-11-22T10:10:00+00:00",
  "projects": [
   {
    "ai": false,
@@ -5309,6 +5309,21 @@
    "pre": false,
    "rel": "v2.0.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Unofficial PS Vita port of Dinosaur Planet: Recompiled, made with AI assistance; not affiliated with the upstream project",
+   "g": "Dinosaur Planet",
+   "id": "db:vitaslop/dinosaurplanetrecomp-vita",
+   "k": "vitaslop/dinosaurplanetrecomp-vita",
+   "lc": "2026-11-21T23:27:48Z",
+   "p": "N64",
+   "po": [],
+   "pr": "DinosaurPlanetRecomp-Vita",
+   "pre": false,
+   "rel": "v0.8.0",
+   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -15795,6 +15810,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Native PC port of Midtown Madness 3 (Xbox) via static recompilation. Windows x64 playable, Linux x64 in testing. Bring your own disc. Experimental, AI-assisted.",
+   "g": "Midtown Madness 3",
+   "id": "db:mattsg/midtown-madness-3-recomp",
+   "k": "mattsg/midtown-madness-3-recomp",
+   "lc": "2026-11-21T23:57:23Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "midtown-madness-3-recomp",
+   "pre": false,
+   "rel": "v2026.11.21.27.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-17",
    "d": "Unofficial PC recompilation project of Mighty Morphin Power Rangers: The Movie (SNES), bringing the classic game to Windows with modern enhancements, controller support, and improved graphics. Original ROM required.",
@@ -17318,6 +17351,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "",
+   "g": "The New Tetris",
+   "id": "db:seveerj/tnt64-recomp",
+   "k": "seveerj/tnt64-recomp",
+   "lc": "2026-10-23T08:45:32Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "tnt64-recomp",
+   "pre": false,
+   "rel": "V1.00_PC",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Native Windows/Linux PC port of NFL Blitz 2003 (GameCube) by static recompilation. Bring your own disc; no game data included.",
    "g": "NFL Blitz 2003",
@@ -18814,7 +18864,7 @@
    ],
    "pr": "LZA-Recomp",
    "pre": true,
-   "rel": "LegendsA-v1.3.4",
+   "rel": "LegendsA-v1.4.0",
    "t": "Recompilation"
   },
   {
@@ -19155,6 +19205,21 @@
    "pr": "plethron",
    "pre": false,
    "rel": "v0.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Pokémon Stadium 2 (N64) rodando nativo no New Nintendo 3DS — recompilação estática. ROM não incluída.",
+   "g": "Pokémon Stadium 2",
+   "id": "db:leonzordhue/pokemonstadium2-3ds",
+   "k": "leonzordhue/pokemonstadium2-3ds",
+   "lc": "2026-11-21T23:18:22Z",
+   "p": "N64",
+   "po": [],
+   "pr": "PokemonStadium2-3DS",
+   "pre": false,
+   "rel": "v0.7i",
    "t": "Recompilation"
   },
   {
@@ -22770,7 +22835,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-20",
    "d": "Native PC recompilation of Sonic Colors (Wii)",
    "g": "Sonic Colors",
@@ -27395,6 +27460,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Native Windows port of the unreleased N64 WildWaters (Looking Glass Studios, June 1999 prototype)",
+   "g": "WildWaters",
+   "id": "db:kingzmanh/wildwaters-n64-pc-port",
+   "k": "kingzmanh/wildwaters-n64-pc-port",
+   "lc": "2026-11-21T23:19:38Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "wildwaters-n64-pc-port",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-02",
    "d": "Native PC port of WinBack: Covert Operations (N64) via static recompilation. ROM not included.",
@@ -28297,6 +28379,24 @@
    "pre": false,
    "rel": "v0.8.0",
    "t": "Reimplementation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Static recompilation of Zone of the Enders (PS2, USA) to native PC code with a Vulkan renderer - your own disc is translated on the first start.",
+   "g": "Zone of the Enders",
+   "id": "db:almost-drowned-rat/zoneoftheenders-recompiled",
+   "k": "almost-drowned-rat/zoneoftheenders-recompiled",
+   "lc": "2026-11-21T23:49:43Z",
+   "p": "PS2",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "ZoneOfTheEnders-Recompiled",
+   "pre": false,
+   "rel": "v0.8.4",
+   "t": "Recompilation"
   },
   {
    "ai": true,
