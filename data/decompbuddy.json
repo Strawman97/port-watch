@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T19:13:33+00:00",
+ "generated": "2026-11-22T01:16:57+00:00",
  "projects": [
   {
    "ai": false,
@@ -664,6 +664,23 @@
    "pr": "alien-crush-returns-recomp",
    "pre": false,
    "rel": "v0.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-21",
+   "d": "Alien Trilogy: Remastered - a native Windows port of Alien Trilogy (1996) with new modes. Bring your own PS1 disc; no game files included.",
+   "g": "Alien Trilogy",
+   "id": "db:atlantean98/alien-trilogy-remastered",
+   "k": "atlantean98/alien-trilogy-remastered",
+   "lc": "2026-11-21T18:33:15Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Alien-Trilogy-Remastered",
+   "pre": true,
+   "rel": "v0.9.1-beta",
    "t": "Recompilation"
   },
   {
@@ -2035,6 +2052,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "A native PC recompilation of Black & Bruised (PS2, PAL). Bring your own disc.",
+   "g": "Black & Bruised",
+   "id": "db:hotwire114/rebruised",
+   "k": "hotwire114/rebruised",
+   "lc": "2026-11-21T20:04:58Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ReBruised",
+   "pre": false,
+   "rel": "v0.5.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-02",
    "d": "A native Windows x64 and Linux/Steam Deck port of Blast Wind (Japan) for the Sega Saturn, built by static recompilation with satrecomp. The SH-2 code is translated to C++ and runs on a custom machine with CD-DA and SCSP audio, launcher, saves and full controller support. No emulator, no BIOS and no game data: players supply their own disc. GPL-3.0.",
    "g": "Blast Wind",
@@ -2140,6 +2174,42 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-21",
+   "d": "Native Windows & Linux port of Blitz: The League (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
+   "g": "Blitz: The League",
+   "id": "db:nacholuver1/blitz-theleague-recomp",
+   "k": "nacholuver1/blitz-theleague-recomp",
+   "lc": "2026-11-21T12:16:09Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Blitz-TheLeague-Recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-21",
+   "d": "Native Windows & Linux port of Blitz: The League II (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
+   "g": "Blitz: The League II",
+   "id": "db:nacholuver1/blitz-theleague-ii-recomp",
+   "k": "nacholuver1/blitz-theleague-ii-recomp",
+   "lc": "2026-11-21T19:05:38Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Blitz-TheLeague-II-Recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-18",
    "d": "Bloodborne on Windows in one package: launcher and engine. Bring your own game dump.",
@@ -2155,6 +2225,23 @@
    "pre": true,
    "rel": "v0.9.34-beta.4",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-10",
+   "d": "Bloodborne decomp - native Linux, from scratch",
+   "g": "Bloodborne",
+   "id": "db:bhuaysan/bloodborne-linux",
+   "k": "bhuaysan/bloodborne-linux",
+   "lc": "2026-11-21T20:48:31Z",
+   "p": "PS4",
+   "po": [
+    "Linux"
+   ],
+   "pr": "bloodborne-linux",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Decompilation"
   },
   {
    "ai": false,
@@ -2610,6 +2697,23 @@
    "pr": "burgertime-arcade-landscape-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-21",
+   "d": "Buriki One (SNK, 1999, Hyper Neo Geo 64) rebuilt for Windows: an unofficial native PC version. Bring your own ROMs.",
+   "g": "Buriki One",
+   "id": "db:quietclubgames/reburiki",
+   "k": "quietclubgames/reburiki",
+   "lc": "2026-11-11T03:01:27Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ReBuriki",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -5099,6 +5203,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "Native Android port of Digimon World (PS1) via static recompilation; the app translates your own disc on-device",
+   "g": "Digimon World",
+   "id": "db:cogential/digimon-world-android",
+   "k": "cogential/digimon-world-android",
+   "lc": "2026-09-29T01:43:04Z",
+   "p": "PS1",
+   "po": [
+    "Android"
+   ],
+   "pr": "digimon-world-android",
+   "pre": false,
+   "rel": "v1.1.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-02",
    "d": "",
    "g": "Digimon World",
@@ -6654,6 +6775,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-18",
+   "d": "Everybody's Golf (Hot Shots Golf) PS4 port for Windows PC, playable: a full 9-hole round plays start to finish. Runs the original x86-64 game code on a PS4 HLE and Vulkan runtime. Goals: DLC unlocked, community-server online multiplayer, restored event gear, higher frame rates. Bring your own dump.",
+   "g": "Everybody's Golf",
+   "id": "db:finalpantasy/everybodys-golf-ps4-pc-port",
+   "k": "finalpantasy/everybodys-golf-ps4-pc-port",
+   "lc": "2026-11-21T21:40:42Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "everybodys-golf-ps4-pc-port",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-09",
    "d": "A highly WIP static recompilation of the Dreamcast version of Hail to the King/",
    "g": "Evil Dead: Hail to the King",
@@ -7614,6 +7752,25 @@
   },
   {
    "ai": true,
+   "at": "2026-11-21",
+   "d": "Native libmGBA frontend with extended rendering for FE8 and ROM hacks; derived from the FireEmblemUniverse/fireemblem8u decompilation",
+   "g": "Fire Emblem: The Sacred Stones",
+   "id": "db:stephenjayakar/fe8-ui",
+   "k": "stephenjayakar/fe8-ui",
+   "lc": "2026-10-10T14:57:47Z",
+   "p": "GBA",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "FE8-UI",
+   "pre": false,
+   "rel": "v0.2.2",
+   "t": "Decompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-16",
    "d": "FE3H Deck Recomp: native Linux / Steam Deck adaptation of FE3H Recomp, based on LASRecomp. Requires your own game files.",
    "g": "Fire Emblem: Three Houses",
@@ -8551,6 +8708,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "Golden Sun (2001 GBA) Recompiled Android Port",
+   "g": "Golden Sun",
+   "id": "db:wootbeer/gsrandroid",
+   "k": "wootbeer/gsrandroid",
+   "lc": "2026-10-10T01:29:55Z",
+   "p": "GBA",
+   "po": [
+    "Android"
+   ],
+   "pr": "gsrandroid",
+   "pre": false,
+   "rel": "v0.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Static recompilation of Golden Sun: The Broken Seal (GBA) to native PC, powered by gbarecomp. Work in progress — no ROMs or copyrighted assets included.",
    "g": "Golden Sun: The Broken Seal",
@@ -9198,6 +9372,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "Unofficial PC port of GT Racing: Motor Academy HD (iPad) by static recompilation: ARMv7 → C → x86. Widescreen, keyboard/mouse/gamepad, LAN and online multiplayer. No game files included; bring your own copy.",
+   "g": "GT Racing: Motor Academy HD",
+   "id": "db:adriansyah101/gtracingmotoracademy-pc-port",
+   "k": "adriansyah101/gtracingmotoracademy-pc-port",
+   "lc": "2026-11-19T13:30:42Z",
+   "p": "Mobile",
+   "po": [
+    "Windows"
+   ],
+   "pr": "GTRacingMotorAcademy-PC-Port",
+   "pre": false,
+   "rel": "V1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-19",
    "d": "Unofficial PC port of GT Racing: Motor Academy HD (iPad) by static recompilation: ARMv7 → C → x86. Widescreen, keyboard/mouse/gamepad, LAN and online multiplayer. No game files included; bring your own copy.",
    "g": "GT Racing: Motor Academy HD",
@@ -9501,6 +9692,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "Static PC recompilation of Guitar Hero World Tour (Xbox 360) on ReXGlue SDK",
+   "g": "Guitar Hero: World Tour",
+   "id": "db:zenthora/ghworldtourrecomp",
+   "k": "zenthora/ghworldtourrecomp",
+   "lc": "2026-11-21T18:09:20Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "GHWorldTourRecomp",
+   "pre": false,
+   "rel": "v0.2.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-05",
    "d": "Gumshoe recompiled for the NES using nesrecomp · Part of the R.A.I.D. community",
    "g": "Gumshoe",
@@ -9779,6 +9987,23 @@
    "pr": "openhalo2",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Original Xbox Halo 2 (title update 1.5) statically recompiled to native Windows x64. D3D11 at 60 fps, true widescreen (4:3 in Xbox Live), mouse and keyboard, Xbox Live through Insignia with your own console's identity, System Link, in-game DLC downloader, hi-res texture packs. Bring your own disc.",
+   "g": "Halo 2",
+   "id": "db:dalves408/halo2-recomp",
+   "k": "dalves408/halo2-recomp",
+   "lc": "2026-11-21T19:22:47Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "halo2-recomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -12144,6 +12369,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Native Linux port of Rage's unreleased Xbox racer Lamborghini via static recompilation (xboxrecomp). Bring your own game files.",
+   "g": "Lamborghini",
+   "id": "db:trev82usa/lamborghini-static-recomp",
+   "k": "trev82usa/lamborghini-static-recomp",
+   "lc": "2026-11-21T15:21:58Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Linux"
+   ],
+   "pr": "Lamborghini-static-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-26",
    "d": "",
@@ -12283,6 +12525,23 @@
    "pr": "L4D2-PC-Port",
    "pre": false,
    "rel": "v1.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-21",
+   "d": "Open source PC port of Soul Reaver, which reincorporates originally planned features for the game.",
+   "g": "Legacy of Kain: Soul Reaver",
+   "id": "db:fmil95/rewraithed",
+   "k": "fmil95/rewraithed",
+   "lc": "2026-11-21T13:18:58Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "rewraithed",
+   "pre": false,
+   "rel": "v0.99j",
    "t": "Recompilation"
   },
   {
@@ -12427,6 +12686,24 @@
    "pre": false,
    "rel": "v0.1.4",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Native Linux port of A Link Between Worlds built from decompiled code (bring your own ROM; no game data included)",
+   "g": "The Legend of Zelda: A Link Between Worlds",
+   "id": "db:spacestate1/albw-native",
+   "k": "spacestate1/albw-native",
+   "lc": "2026-11-21T13:44:48Z",
+   "p": "3DS",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "albw-native",
+   "pre": false,
+   "rel": "v0.2.3",
+   "t": "Decompilation"
   },
   {
    "ai": false,
@@ -17267,15 +17544,16 @@
   {
    "ai": false,
    "at": "2026-10-19",
-   "d": "",
+   "d": "The project took its downloads down. It comes back the moment a new one is posted.",
    "g": "Nightmare Creatures",
    "id": "db:kirby-letsgo/nightmare-creatures-decomp",
    "k": "kirby-letsgo/nightmare-creatures-decomp",
-   "lc": "2026-10-03T20:36:03Z",
+   "lc": "2026-11-21T22:35:56Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "macOS",
+    "Android",
+    "Linux",
     "Windows"
    ],
    "pr": "nightmare-creatures-decomp",
@@ -19248,6 +19526,21 @@
    "pr": "prototype-pc-slop",
    "pre": false,
    "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Prototype 2 native port for Nintendo Switch (homebrew NRO + NSP forwarder), static recompilation of the Xbox 360 version. Нативный порт Prototype 2 на Nintendo Switch. Telegram: https://t.me/naigrovomdvije · Boosty: https://boosty.to/itgenius",
+   "g": "Prototype 2",
+   "id": "db:penettrator/prototype2-nx",
+   "k": "penettrator/prototype2-nx",
+   "lc": "2026-11-20T13:54:25Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "prototype2-nx",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -22873,6 +23166,24 @@
    "pr": "SPR-Recomp-Project",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "",
+   "g": "Splatterhouse",
+   "id": "db:gabo-mdev/sh-arcade-recomp",
+   "k": "gabo-mdev/sh-arcade-recomp",
+   "lc": "2026-11-21T20:38:49Z",
+   "p": "Arcade",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "sh-arcade-recomp",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -26585,6 +26896,23 @@
    "pr": "virtuaracing",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Play Virtua Striker 4 Ver.2006 on a Windows PC, from your own disc image. Fan project, not affiliated with SEGA.",
+   "g": "Virtua Striker 4 Ver.2006 (2006)",
+   "id": "db:letsplaymaker/vs4-2006-enhanced",
+   "k": "letsplaymaker/vs4-2006-enhanced",
+   "lc": "2026-11-20T07:11:51Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "vs4-2006-enhanced",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
