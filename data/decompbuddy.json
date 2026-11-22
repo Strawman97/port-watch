@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22T13:22:02+00:00",
+ "generated": "2026-11-22T19:36:58+00:00",
  "projects": [
   {
    "ai": false,
@@ -2629,6 +2629,40 @@
   },
   {
    "ai": false,
+   "at": "2026-11-21",
+   "d": "",
+   "g": "Buffy the Vampire Slayer",
+   "id": "db:fallenazazel/btvs_recomp",
+   "k": "fallenazazel/btvs_recomp",
+   "lc": "2026-11-22T01:06:01Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "BtVS_recomp",
+   "pre": false,
+   "rel": "v0.9.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Unofficial native PC port of Buffy the Vampire Slayer (Xbox, 2002). Bring your own disc.",
+   "g": "Buffy the Vampire Slayer",
+   "id": "db:kaikoclanworth1/buffy-tvs-xbox-pc",
+   "k": "kaikoclanworth1/buffy-tvs-xbox-pc",
+   "lc": "2026-11-22T11:29:20Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "buffy-tvs-xbox-pc",
+   "pre": false,
+   "rel": "v0.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-18",
    "d": "Bugs Bunny: Lost in Time (USA, SLUS-00838) statically recompiled to a native PC executable with PSXRecomp.",
    "g": "Bugs Bunny: Lost in Time",
@@ -2984,6 +3018,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "An unofficial native Windows x64 port of Cars 3: Driven to Win (PS4).",
+   "g": "Cars 3: Driven to Win",
+   "id": "db:afkarxyz/pistonport",
+   "k": "afkarxyz/pistonport",
+   "lc": "2026-11-22T03:46:15Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "PistonPort",
+   "pre": false,
+   "rel": "v1.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-30",
    "d": "Native PC port of Cartoon Network Racing (PlayStation 2, USA and Europe) via static recompilation, with the TRG launcher: 16:9, up to 4K, up to 165 FPS. Bring your own disc.",
@@ -3024,7 +3075,7 @@
    ],
    "pr": "MickeyAndDonaldCollection",
    "pre": false,
-   "rel": "v1.2",
+   "rel": "v1.3",
    "t": "Recompilation"
   },
   {
@@ -3129,6 +3180,23 @@
    "pr": "cv3-pc-port",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-20",
+   "d": "Port experimental nativo de Castlevania Symphony of the Night Saturn: motor, recompilador, ferramentas e testes; sem arquivos do jogo.",
+   "g": "Castlevania: Symphony of the Night",
+   "id": "db:neguchads/csotn-saturn-recomp",
+   "k": "neguchads/csotn-saturn-recomp",
+   "lc": "2026-11-22T00:22:13Z",
+   "p": "Saturn",
+   "po": [
+    "Windows"
+   ],
+   "pr": "csotn-saturn-recomp",
+   "pre": true,
+   "rel": "v0.1.0-preview",
    "t": "Recompilation"
   },
   {
@@ -4158,6 +4226,23 @@
    "pr": "Crazy-Taxi-Catch-A-Ride-PC-Port",
    "pre": true,
    "rel": "prototype-1edc1f7a9f7e",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Native Windows port of Crimson Skies: High Road to Revenge (original Xbox) via static recompilation with Xbox XBE Recomp. 30-240 fps, launcher, FXAA. No emulator, no game data: bring your own disc.",
+   "g": "Crimson Skies: High Road to Revenge",
+   "id": "db:nacholuver1/crimson-skies-high-road-to-revenge-repo",
+   "k": "nacholuver1/crimson-skies-high-road-to-revenge-repo",
+   "lc": "2026-11-22T12:58:06Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Crimson-Skies-High-Road-To-Revenge-Repo",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -5568,6 +5653,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "",
+   "g": "Donkey Kong Country Returns HD",
+   "id": "db:williamlavant7-dev/dkcr-recomp",
+   "k": "williamlavant7-dev/dkcr-recomp",
+   "lc": "2026-11-22T08:11:25Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DKCR-Recomp",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-13",
    "d": "A recomp of the original DonPachi",
@@ -6821,6 +6923,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "Unofficial native PC port of Excite Truck (Wii), built from the matching decompilation. Bring your own disc: no game files included.",
+   "g": "Excite Truck",
+   "id": "db:ablindingnight/nice-crash",
+   "k": "ablindingnight/nice-crash",
+   "lc": "2026-11-22T08:10:23Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "nice-crash",
+   "pre": false,
+   "rel": "v0.1-preview",
+   "t": "Decompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-12",
    "d": "I love excited bikes... EXCITEBIKE recompilation for windows mac and linux",
    "g": "Excitebike",
@@ -7875,6 +7994,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "Native Windows port of Formula One 05 (PS2, PAL) by static recompilation. Coming soon: work in progress, no download yet. Free fan project, not affiliated; bring your own disc.",
+   "g": "Formula One 05",
+   "id": "db:kevinl50-sysadmin/f1-05-pc",
+   "k": "kevinl50-sysadmin/f1-05-pc",
+   "lc": "2026-11-21T23:39:35Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "F1-05-PC",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-11",
    "d": "Formula One 06 (PS2) statically recompiled into a native Windows PC port. Bring your own disc. Fan project.",
    "g": "Formula One 06",
@@ -8617,6 +8753,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "Sparta Recomp (Orbs SDK Based)",
+   "g": "God of War: Sons of Sparta",
+   "id": "db:edeegg/sparta-recomp",
+   "k": "edeegg/sparta-recomp",
+   "lc": "2026-11-22T16:09:12Z",
+   "p": "PS4",
+   "po": [
+    "Android"
+   ],
+   "pr": "Sparta-Recomp",
+   "pre": true,
+   "rel": "0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-29",
    "d": "Unofficial PC port of Godzilla (2014), focused on native Windows compatibility and game preservation.",
    "g": "Godzilla",
@@ -9151,7 +9304,7 @@
    ],
    "pr": "gta-stories-recompiled",
    "pre": false,
-   "rel": "v0.3.1",
+   "rel": "v0.3.2",
    "t": "Recompilation"
   },
   {
@@ -10470,6 +10623,23 @@
    "pr": "badman_recompiled",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Hot Shots Golf: World Invitational (Everybody's Golf 6) native PC port by PS3 static recompilation. Work in progress: boots, does not render yet. Bring your own game files.",
+   "g": "Hot Shots Golf: World Invitational",
+   "id": "db:finalpantasy/hot-shots-golf-ps3-recomp",
+   "k": "finalpantasy/hot-shots-golf-ps3-recomp",
+   "lc": "2026-11-22T15:46:42Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "hot-shots-golf-ps3-recomp",
+   "pre": true,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -13234,6 +13404,23 @@
    "t": "Reimplementation"
   },
   {
+   "ai": false,
+   "at": "2026-11-16",
+   "d": "Work-in-progress Skyward Sword HD static recompilation (Windows/Vulkan). Unofficial, not affiliated with Nintendo.",
+   "g": "The Legend of Zelda: Skyward Sword HD",
+   "id": "db:ramasanjaya22/skywardrecomp",
+   "k": "ramasanjaya22/skywardrecomp",
+   "lc": "2026-11-22T04:39:45Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SkywardRecomp",
+   "pre": false,
+   "rel": "v0.8.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-19",
    "d": "Zonith: a native Windows and Linux recompilation of Tears of the Kingdom, aiming for a stable 60 fps. No game files.",
@@ -14601,6 +14788,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "",
+   "g": "Mario Tennis Fever",
+   "id": "db:rafael-fj/mtf-recompiled",
+   "k": "rafael-fj/mtf-recompiled",
+   "lc": "2026-11-22T13:57:27Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mtf-recompiled",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-17",
    "d": "A recompilation of a Wii game.",
    "g": "Martian Panic",
@@ -14856,6 +15060,23 @@
    "pr": "MP3-PC",
    "pre": false,
    "rel": "v1.00",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Native Windows PC recompilation of MechAssault (original Xbox, 2002) using XboxXBE-Recomp. Requires your own copy.",
+   "g": "MechAssault",
+   "id": "db:caiuscodes/mechassault-xbox-pc-recomp",
+   "k": "caiuscodes/mechassault-xbox-pc-recomp",
+   "lc": "2026-11-22T13:39:58Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MechAssault-Xbox-PC-Recomp",
+   "pre": false,
+   "rel": "v0.6.2",
    "t": "Recompilation"
   },
   {
@@ -15932,6 +16153,23 @@
    "pr": "MLBPowerPros2008Recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "MLB The Show 26 Recompiled For PC",
+   "g": "MLB The Show 26",
+   "id": "db:sam110411/fastball",
+   "k": "sam110411/fastball",
+   "lc": "2026-11-22T11:54:05Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "fastball",
+   "pre": false,
+   "rel": "v0.2.0",
    "t": "Recompilation"
   },
   {
@@ -20665,6 +20903,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-10",
+   "d": "Unofficial native PC port of Road Rash: Jailbreak (PS1) by static recompilation. Bring your own disc image.",
+   "g": "Road Rash: Jailbreak",
+   "id": "db:hotwire114/jailbreak-recomp",
+   "k": "hotwire114/jailbreak-recomp",
+   "lc": "2026-11-21T23:11:32Z",
+   "p": "PS1",
+   "po": [
+    "Linux"
+   ],
+   "pr": "jailbreak-recomp",
+   "pre": false,
+   "rel": "v1.2.6",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Robotech Battlecry Recomp is a native PlayStation 2 recompilation project using exoteric33's PS2 Native Recomp tool. Developed and tested for Steam Deck, it supports playable gameplay, graphics, audio, controller input, and memory card saves. Includes Linux AppImage support and is distributed under the PolyForm Noncommercial License.",
@@ -21774,6 +22029,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "A Static Recompilation of Shin Megami Tensei: Nocturne, built with Opus 5.5 and 6.1 Sol",
+   "g": "Shin Megami Tensei: Nocturne",
+   "id": "db:bittahbandit1/magatama",
+   "k": "bittahbandit1/magatama",
+   "lc": "2026-11-22T09:09:41Z",
+   "p": "PS2",
+   "po": [
+    "Android",
+    "macOS"
+   ],
+   "pr": "Magatama",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-02",
    "d": "Native PC port of Persona 4 (PS2) — bring your own ISO. Playable, work in progress.",
    "g": "Shin Megami Tensei: Persona 4",
@@ -21980,6 +22253,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "",
+   "g": "Silent Hill: Book of Memories",
+   "id": "db:aphixe/silenthill-bookofmemories-pc",
+   "k": "aphixe/silenthill-bookofmemories-pc",
+   "lc": "2026-11-04T23:01:18Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SilentHill-BookOfMemories-PC",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Climax Silent Hill Engine Toolkit",
@@ -21996,6 +22286,24 @@
    "pr": "Climax_Game_Engine_Toolkit",
    "pre": false,
    "rel": "SilentHill_Origins_pre-alpha_0.0.1.2_&_CGE_Toolkit_v0.6",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "",
+   "g": "Silent Hill: Origins",
+   "id": "db:sirbraga/silent-hill-origins-recomp",
+   "k": "sirbraga/silent-hill-origins-recomp",
+   "lc": "2026-10-17T02:54:00Z",
+   "p": "PSP",
+   "po": [
+    "Windows",
+    "macOS"
+   ],
+   "pr": "silent-hill-origins-recomp",
+   "pre": false,
+   "rel": "v1.0-windows",
    "t": "Recompilation"
   },
   {
@@ -25712,6 +26020,23 @@
    "pr": "toca-2-touring-cars-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Experimental native recompilation of the PlayStation 2 release of TOCA Race Driver 3.",
+   "g": "TOCA Race Driver 3",
+   "id": "db:pipeknight/toca-race-driver-3",
+   "k": "pipeknight/toca-race-driver-3",
+   "lc": "2026-11-22T15:55:57Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "toca-race-driver-3",
+   "pre": true,
+   "rel": "v0.1.0-preview.1",
    "t": "Recompilation"
   },
   {
