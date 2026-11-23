@@ -1034,7 +1034,10 @@ function viewRaw(p){
   const risk=lureRiskOf(p.k,m,(m.repo&&m.repo.stars)!=null?m.repo.stars:(p.stars||0));
   // a ROM hack or mod is listed under the game it changes (title = that game), so it shares the game's entry, cover and screenshots
   const hack=String(ov.hack||so.hack||p.hack||"");
-  return {p,m,aw,ps,psSrc,play,so,risk,hack,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
+  // "separate": a different game that shares its title with one on another platform (the Game Boy Battle Arena Toshinden,
+  // the NES Tetris), so it isn't grouped with it
+  const separate=!!(ov.separate||so.separate);
+  return {p,m,aw,ps,psSrc,play,so,risk,hack,separate,game:ov.game||so.title||displayTitle(p,mf),platform,type,feats,os,rel,lastCommit,updated,stars,gone,archived:(m.repo&&m.repo.archived)||(aw&&aw.archived)};
 }
 
 /* ---------------- GitHub / GitLab ---------------- */
@@ -1637,6 +1640,7 @@ function yearIndex(){
 function groupKeyOf(v){
   if(S.settings.ungroup)return "p:"+v.p.id;
   const b=titleBase(v.game),y=titleYear(v.game);if(y)return b+"|"+y;
+  if(v.separate&&!v.ghost)return b+"|@"+samePlat(v.platform);
   const ym=yearIndex().get(b);if(ym){const hits=[...ym].filter(([,ps])=>ps.has(samePlat(v.platform)));if(hits.length===1)return b+"|"+hits[0][0];}
   return b;
 }
