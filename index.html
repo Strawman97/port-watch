@@ -869,7 +869,7 @@ function displayTitle(p,mf){
 const seedAnalysis={};
 // Shared fixes for a project. If you added a project to the shared list and another source (the built-in list,
 // the awesome list) lists it too, the other source's entry is shown, so your shared details apply to it as fixes.
-const ADDED_AS_FIX=["title","platform","type","pcRelease","runsOn","cover","games","note","region","mirrors","gameCovers","hack"];
+const ADDED_AS_FIX=["title","platform","type","pcRelease","runsOn","cover","games","note","region","mirrors","gameCovers","hack","groupCover"];
 function sharedFix(p){
   const f=(p.k&&REPO.over[p.k])||REPO.over[p.id]||null;
   const a=!p.shared&&p.k&&REPO.addedRaw?REPO.addedRaw[p.k]:null;
@@ -971,7 +971,17 @@ function analysisOf(p){if(!seedAnalysis[p.id]){const aw=S.aw.data[p.k];seedAnaly
 // Working out a project's details is the expensive part, and a single redraw used to repeat it many times
 // over. Results are kept until the data changes: any save(), a shared-data load, or a full redraw.
 let VCACHE=new WeakMap(),ACACHE=null;
-function dataChanged(){VCACHE=new WeakMap();ACACHE=null;YIDX=null;SIDX=null;}
+function dataChanged(){VCACHE=new WeakMap();ACACHE=null;YIDX=null;SIDX=null;GCOVERS=null;}
+// Covers set "for every project of this game": groupKey -> cover. A project's own cover link still wins on that project.
+let GCOVERS=null;
+function groupCovers(){
+  if(GCOVERS)return GCOVERS;GCOVERS=new Map();
+  for(const p of allProjects()){const lo=S.ov[p.id]||{},so=sharedFix(p)||{};
+    const mine=lo.cover&&lo.groupCover==="yes",shared=so.cover&&so.groupCover;
+    if(!mine&&!shared)continue;const v=view(p),k=groupKeyOf(v);
+    if(mine)GCOVERS.set(k,{u:lo.cover,s:"you, for every project of this game"});
+    else if(!GCOVERS.has(k))GCOVERS.set(k,{u:so.cover,s:"Port Watch's shared fixes, for every project of this game"});}
+  return GCOVERS;}
 // Types the sources often get wrong, read from how the project describes itself (a maintainer fix always wins):
 // - Reimplementation: a new engine for the game ("replacement game engine", "engine reimplementation", "rewritten in Rust")
 // - Compatibility layer: PS4, PS5 and Xbox One games share the PC's x86-64 CPU, so most "native ports" of them run the
@@ -1520,6 +1530,7 @@ function gameCoverFor(v){   // a cover link set for one of a project's other gam
   const u=pick(lo);if(u)return {u,s:"you"};const sh=pick(so)||pick(pa)||v.ghost.cover;return sh?{u:sh,s:"Port Watch's shared fixes"}:null;
 }
 function coverFor(v){
+  {const own=!v.ghost&&(S.ov[v.p.id]||{});const g=groupCovers().get(groupKeyOf(v));if(g&&!(own&&own.cover&&own.groupCover!=="yes"))return g;}
   if(v.ghost){const gc=gameCoverFor(v);if(gc)return gc;const lg=libFor(v);if(lg)return {u:ltURL(lg.repo,lg.file),s:"libretro box art"};const rc=REPO.covers[(v.p.k||v.p.id)+"#"+nrmT(v.ghost.title)];if(rc&&rc.url)return {u:rc.url,s:"SteamGridDB",page:rc.name||""};const ig=igdbCover(v);if(ig)return ig;const c=S.covers[coverKey(v)];return c&&c.u?c:null;}
   const lo=S.ov[v.p.id]||{},so=sharedFix(v.p)||{};
   if(lo.cover)return {u:lo.cover,s:"you"};
@@ -1628,7 +1639,9 @@ function filtered(){
 // a project without a year joins a year-marked group only if it shares that group's platform.
 let YIDX=null;
 // "Pokémon Red Version" and "Pokémon Red", or "Midnight Club: Los Angeles - Complete Edition" and the plain title, are one game
-function titleBase(t){return nrmT(bare(t)).replace(/ (?:version|complete edition)$/,"").replace(/ 1$/,"");}
+// regional names of the same game group together ("Philosopher's Stone" in Europe is "Sorcerer's Stone" in the US)
+const TITLE_ALIASES=[[/\bphilosophers stone\b/,"sorcerers stone"]];
+function titleBase(t){let b=nrmT(bare(t)).replace(/ (?:version|complete edition)$/,"").replace(/ 1$/,"");for(const [re,to] of TITLE_ALIASES)b=b.replace(re,to);return b;}
 function titleYear(t){const m=/\((?:[^)]*\D)?((?:19|20)\d\d)\)/.exec(String(t||""));return m?m[1]:"";}
 function samePlat(p){return p==="XBLA (Xbox 360)"?"Xbox 360":p;}
 function yearIndex(){
@@ -1815,6 +1828,7 @@ function detailHTML(v,head){
       <div class="ef wide"><label for="cv-${esc(p.id)}"><span>Cover image link</span></label>
         <div class="efrow"><input id="cv-${esc(p.id)}" type="text" data-f="cover" placeholder="Paste an image link to use your own cover" value="${esc((S.ov[p.id]||{}).cover||"")}">
           <button class="btn sm" data-recover="${esc(coverKey(v))}">Look up again</button><a class="btn sm" href="${esc(sgdbSearchURL(v))}" target="_blank" rel="noopener">Find on SteamGridDB</a></div>
+        <label class="efrow" style="margin-top:4px"><span class="hint" style="flex:none">Use it for</span><select data-f="groupCover"><option value="">This project only</option><option value="yes" ${(S.ov[p.id]||{}).groupCover==="yes"||(!(S.ov[p.id]||{}).cover&&(v.so||{}).groupCover)?"selected":""}>Every project of this game</option></select></label>
         <small class="hint">${(()=>{const c=coverFor(v);return c?"Now from "+esc(c.s||"cache")+(c.page?" ("+esc(c.page)+")":"")+". ":"No cover found yet. ";})()}On SteamGridDB, open a cover and copy its image link.</small></div>
       <label class="ef wide"><span>Other games this project covers <small class="hint">one per line, as Title | Platform</small></span><textarea data-f="games" rows="2" placeholder="The Lord of the Rings: The Two Towers | Xbox (original)">${esc(((S.ov[p.id]||{}).games!=null?parseGames(S.ov[p.id].games):parseGames((v.so||{}).games||p.games)).map(g=>g.title+(g.platform?" | "+g.platform:"")).join("\n"))}</textarea></label>
       ${p.custom?`<div class="ef wide efend"><button class="btn sm" data-remove="${esc(p.id)}">Remove from tracker</button></div>`:""}
@@ -2423,7 +2437,7 @@ function buildSharedDoc(base){
   const byKey=new Map();for(const p of SEED.concat(Object.values(S.aw.added),REPO.added))byKey.set(p.k||p.id,p);
   for(const [id,o] of Object.entries(S.ov)){const p=allProjects().find(x=>x.id===id)||SEED.find(x=>x.id===id);if(!p||p.custom)continue;
     const key=p.k||p.id,f=out[key]||{},before=JSON.stringify(f);
-    if(o.game)f.title=o.game;if(o.hack)f.hack=o.hack;if(o.cover)f.cover=o.cover;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.gameCovers)f.gameCovers=Object.assign({},f.gameCovers||{},o.gameCovers);if(o.nsfw==="yes")f.nsfw=true;else if(o.nsfw==="no")f.nsfw=false;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
+    if(o.game)f.title=o.game;if(o.hack)f.hack=o.hack;if(o.cover)f.cover=o.cover;if(o.cover&&o.groupCover==="yes")f.groupCover=true;if(o.platform)f.platform=o.platform;if(o.type)f.type=o.type;if(o.ps)f.pcRelease=o.ps;if(Array.isArray(o.os))f.runsOn=o.os;if(o.gameCovers)f.gameCovers=Object.assign({},f.gameCovers||{},o.gameCovers);if(o.nsfw==="yes")f.nsfw=true;else if(o.nsfw==="no")f.nsfw=false;if(o.games!=null){const gl=parseGames(o.games);if(gl.length)f.games=gl;else delete f.games;}if(Array.isArray(o.hideScreens)&&o.hideScreens.length)f.hideScreens=[...new Set([...(f.hideScreens||[]),...o.hideScreens])];
     if(Object.keys(f).length){out[key]=f;if(JSON.stringify(f)!==before)added++;}}
   const addedOut=JSON.parse(JSON.stringify(base.added||{}));
   let newProjects=0;
