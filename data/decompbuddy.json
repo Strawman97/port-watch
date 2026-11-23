@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T01:40:41+00:00",
+ "generated": "2026-11-23T12:34:12+00:00",
  "projects": [
   {
    "ai": false,
@@ -157,6 +157,47 @@
    "pr": "2Xtreme-recomp",
    "pre": true,
    "rel": "v0.1.0-preview",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "6-in-1 Recompilation of Nintendo 3DS 3D classics line! so fucking stupid xDDDDDD",
+   "g": "3D Classics: Excitebike",
+   "games": [
+    {
+     "platform": "3DS",
+     "title": "3D Classics: Kid Icarus"
+    },
+    {
+     "platform": "3DS",
+     "title": "3D Classics: Kirby's Adventure"
+    },
+    {
+     "platform": "3DS",
+     "title": "3D Classics: TwinBee"
+    },
+    {
+     "platform": "3DS",
+     "title": "3D Classics: Urban Champion"
+    },
+    {
+     "platform": "3DS",
+     "title": "3D Classics: Xevious"
+    }
+   ],
+   "id": "db:nvd123-yt/3dsclassicsrecompiled",
+   "k": "nvd123-yt/3dsclassicsrecompiled",
+   "lc": "2026-11-23T03:50:19Z",
+   "p": "3DS",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "3DSClassicsRecompiled",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -3149,6 +3190,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "Static AOT recompilation of Castlevania: Dawn of Sorrow (Nintendo DS / ACVE) with Direct3D 12 & Vulkan GPU shaders, Dear ImGui menu, in-memory PT-BR patch, and RecompLauncher support.",
+   "g": "Castlevania: Dawn of Sorrow",
+   "id": "db:neguchads/cdos-nintendods-recomp",
+   "k": "neguchads/cdos-nintendods-recomp",
+   "lc": "2026-11-22T19:47:25Z",
+   "p": "DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "cdos-nintendods-recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-17",
    "d": "Castlevania: Harmony of Despair (Xbox 360) on Nintendo Switch: static recompilation (ReXGlue) + deko3d renderer. Experimental, ~40 fps, no multiplayer. No game data included.",
    "g": "Castlevania: Harmony of Despair",
@@ -4141,6 +4199,23 @@
    "pr": "Crash-Team-Racing-Recomp",
    "pre": false,
    "rel": "v0.2.6",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "A port of the Crash Team Racing Nitro Fueled for MacOS! Based after the PC port https://github.com/Ryu7w7/OCTR-NitroFueled-PC",
+   "g": "Crash Team Racing Nitro-Fueled",
+   "id": "db:redtreerat/crash-team-racing-nitro-fueled-macos",
+   "k": "redtreerat/crash-team-racing-nitro-fueled-macos",
+   "lc": "2026-11-22T22:26:46Z",
+   "p": "PS4",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Crash-Team-Racing-Nitro-Fueled-MacOS",
+   "pre": false,
+   "rel": "Alpha",
    "t": "Recompilation"
   },
   {
@@ -6443,6 +6518,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "A native PC port of DuckTales (NES), powered by NESRecomp.",
+   "g": "DuckTales",
+   "id": "db:formae-group/ducktales-recompiled",
+   "k": "formae-group/ducktales-recompiled",
+   "lc": "2026-11-23T04:30:15Z",
+   "p": "NES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ducktales-recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-16",
    "d": "Static recompilation of Duke Nukem: Total Meltdown (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
@@ -6777,7 +6869,7 @@
    ],
    "pr": "ebaouendan_musiclives",
    "pre": true,
-   "rel": "v1.2.1",
+   "rel": "v1.3.0",
    "t": "Recompilation"
   },
   {
@@ -8470,6 +8562,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "Genma Onimusha Android ARM64 (API 29+, Vulkan 1.0+) static recompilation port & APK release pipeline",
+   "g": "Genma Onimusha",
+   "id": "db:ekosaputro14/genma-recomp-android",
+   "k": "ekosaputro14/genma-recomp-android",
+   "lc": "2026-11-22T21:07:52Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "genma-recomp-android",
+   "pre": true,
+   "rel": "v0.8.0-android.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-28",
    "d": "Genma Xcorcised: a native Windows port of Genma Onimusha (Xbox). The game's own code, no emulator. Bring your own disc.",
    "g": "Genma Onimusha",
@@ -9161,6 +9270,23 @@
    "pr": "Project-Tourline-5",
    "pre": true,
    "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Native Windows PC port of Gran Turismo 6 (EU BCES01893, update 1.22): static recompilation and a one-click setup launcher. The game is not included.",
+   "g": "Gran Turismo 6",
+   "id": "db:primetimerer/project-grand-tourer-advanced",
+   "k": "primetimerer/project-grand-tourer-advanced",
+   "lc": "2026-11-23T05:30:25Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Project-Grand-Tourer-Advanced",
+   "pre": false,
+   "rel": "v20261123-1429",
    "t": "Recompilation"
   },
   {
@@ -11372,6 +11498,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "Native PC port of Islands of Wakfu (Xbox 360 XBLA) by static recompilation. A fan of the Wakfu series since childhood, I wanted to play it natively on my PC instead of through an emulator. No game files included.",
+   "g": "Islands of Wakfu",
+   "id": "db:omeynu/wakfu-recomp",
+   "k": "omeynu/wakfu-recomp",
+   "lc": "2026-11-23T04:28:31Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "wakfu-recomp",
+   "pre": false,
+   "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-20",
    "d": "J-Stars Victory VS+ PC — Standalone Windows x64 Vulkan Port, Launcher, FSR 3.1 FrameGen & Low-Latency Wrapper",
@@ -11726,6 +11870,23 @@
    "pr": "jetpackjoyride_nx",
    "pre": false,
    "rel": "1.0.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "One-click Windows builder for a native PC port of Jetpack Joyride Deluxe (US, v1.02) for PS3, made from your own game files with ps3recomp.",
+   "g": "Jetpack Joyride Deluxe",
+   "id": "db:scandro1d/jetpackjoyride-pc-recomp",
+   "k": "scandro1d/jetpackjoyride-pc-recomp",
+   "lc": "2026-11-23T05:10:12Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "JetpackJoyride-PC-recomp",
+   "pre": false,
+   "rel": "v0.1-test",
    "t": "Recompilation"
   },
   {
@@ -16362,6 +16523,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Monster Hunter 3 Ultimate recompiled to native code for Android and PC. Bring your own copy of the game.",
+   "g": "Monster Hunter 3 Ultimate",
+   "id": "db:khorne-hub/3u-native",
+   "k": "khorne-hub/3u-native",
+   "lc": "2026-11-23T03:03:41Z",
+   "p": "3DS",
+   "po": [
+    "Windows",
+    "Android"
+   ],
+   "pr": "3u-native",
+   "pre": false,
+   "rel": "v1.0.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-16",
    "d": "4u-native with the 32-bit (armeabi-v7a) app: MH4U recompiled for Android ARMv7",
    "g": "Monster Hunter 4 Ultimate",
@@ -17497,6 +17676,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-22",
+   "d": "Linux build of the New Super Mario Bros. 2 recompiled port (European 3DS release): cross-compiles the Windows x64 game with LLVM-MinGW and plays it through Proton or Wine. Bring your own cartridge — no game files included.",
+   "g": "New Super Mario Bros. 2",
+   "id": "db:hassanb48/nsmb2-linux-recompiled",
+   "k": "hassanb48/nsmb2-linux-recompiled",
+   "lc": "2026-11-22T21:34:56Z",
+   "p": "3DS",
+   "po": [
+    "Linux"
+   ],
+   "pr": "nsmb2-linux-recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-13",
    "d": "Native Windows x64 recompilation of New Super Mario Bros. 2 from a local European 3DS cartridge image.",
    "g": "New Super Mario Bros. 2",
@@ -17755,6 +17951,23 @@
    "pr": "nhlhitzpro-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "A static recompilation of Nickelodeon SpongeBob's Truth or Square (USA) for the Xbox 360 on PC",
+   "g": "Nickelodeon SpongeBob's Truth or Square",
+   "id": "db:therealchosen8ball/spongebob-s-truth-or-square-recomp",
+   "k": "therealchosen8ball/spongebob-s-truth-or-square-recomp",
+   "lc": "2026-11-23T06:54:35Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Spongebob-s-Truth-or-Square-Recomp",
+   "pre": false,
+   "rel": "BETA",
    "t": "Recompilation"
   },
   {
@@ -18643,6 +18856,23 @@
    "pr": "p5r-android",
    "pre": false,
    "rel": "v0.5.8",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Native Android port of Persona 5 Royal for the Retroid Pocket Flip 2. Early version. Bring your own extracted game files.",
+   "g": "Persona 5 Royal",
+   "id": "db:iamwilmar/p5r-recomp",
+   "k": "iamwilmar/p5r-recomp",
+   "lc": "2026-11-23T02:33:57Z",
+   "p": "PS4",
+   "po": [
+    "Android"
+   ],
+   "pr": "p5r-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -22519,6 +22749,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "Private source and documentation for Sin & Punishment: Star Successor static recompilation",
+   "g": "Sin & Punishment: Star Successor",
+   "id": "db:meathax/sinandpun",
+   "k": "meathax/sinandpun",
+   "lc": "2026-11-23T00:55:22Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "sinandpun",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-13",
    "d": "Skate 2 PC (Xbox 360 recompilation) with a one-file ISO setup and a PowerShell-free launcher for Proton / Steam Deck. Fork of christianortel/skate2-recompile-pc.",
@@ -23123,6 +23370,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Sonic & All-Stars Racing Transformed (Xbox 360) on the Nintendo Switch (homebrew): a ReXGlue static recompilation with the Renut renderer on deko3d",
+   "g": "Sonic & All-Stars Racing Transformed",
+   "id": "db:chanseyisthebest/sasrt-nx",
+   "k": "chanseyisthebest/sasrt-nx",
+   "lc": "2026-11-23T01:02:05Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "sasrt-nx",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "Sonic Blast recompiled for the Sega Game Gear using smsggrecomp · Part of the R.A.I.D. community",
    "g": "Sonic Blast",
@@ -23360,6 +23622,23 @@
    "pr": "ss-delta",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-17",
+   "d": "Soul Blade PSX Recomp",
+   "g": "SoulBlade",
+   "id": "db:drproteus/soul-blade-recomp",
+   "k": "drproteus/soul-blade-recomp",
+   "lc": "2026-11-05T02:34:15Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "soul-blade-recomp",
+   "pre": false,
+   "rel": "v0.0.2",
    "t": "Recompilation"
   },
   {
@@ -24404,6 +24683,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Unofficial Original Xbox to Native Windows (D3D12) & Linux / Steam Deck (Vulkan + SDL3) static recompilation of The Suffering (USA)",
+   "g": "The Suffering",
+   "id": "db:anthonyp85/thesuffering-recomp",
+   "k": "anthonyp85/thesuffering-recomp",
+   "lc": "2026-11-23T08:13:43Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "TheSuffering-Recomp",
+   "pre": false,
+   "rel": "v1.4.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Unofficial Super Bomberman 5 Windows prototype using SNESRecomp. Partial recompilation, ROM-free setup releases, English and Portuguese docs.",
    "g": "Super Bomberman 5",
@@ -24902,6 +25199,24 @@
    "pr": "PowerfulMoon",
    "pre": false,
    "rel": "v0.2.0-powerfulmoon.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "SMRPG Recomp: recompilación estática para PC y Android, sobre LASRecomp. No incluye archivos del juego.",
+   "g": "Super Mario RPG",
+   "id": "db:elkiro1311/smrpg-recompiled",
+   "k": "elkiro1311/smrpg-recompiled",
+   "lc": "2026-11-23T02:07:24Z",
+   "p": "Switch",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "smrpg-recompiled",
+   "pre": false,
+   "rel": "0.51.0-beta",
    "t": "Recompilation"
   },
   {
@@ -27357,7 +27672,7 @@
    ],
    "pr": "Virtua-Tennis---Recompilation",
    "pre": false,
-   "rel": "v2026.11.07",
+   "rel": "2026.11.23",
    "t": "Recompilation"
   },
   {
@@ -28574,6 +28889,41 @@
    ],
    "pr": "ykw4recomp",
    "pre": true,
+   "rel": "0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Yo! Noid (NES) recompiled for PC: 240 Hz smooth motion, no flicker. Bring your own ROM.",
+   "g": "Yo! Noid",
+   "id": "db:gabbycat4/yonoidrecomp",
+   "k": "gabbycat4/yonoidrecomp",
+   "lc": "2026-11-23T01:30:43Z",
+   "p": "NES",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "YoNoidRecomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Yoshi and the Mysterious Book, running natively on Windows PC — static recompilation (Early Release)",
+   "g": "Yoshi and the Mysterious Book",
+   "id": "db:sts78721/yatmb",
+   "k": "sts78721/yatmb",
+   "lc": "2026-11-23T07:18:56Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "YATMB",
+   "pre": false,
    "rel": "0.1.0",
    "t": "Recompilation"
   },
