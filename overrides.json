@@ -1,7 +1,7 @@
 {
   "format": "port-watch-overrides",
   "version": 1,
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "projects": {
     "2ez4gcx/yugioh-fm-3d-monsters": {
       "_game": "Yu-Gi-Oh! Forbidden Memories",
@@ -1738,6 +1738,11 @@
           "platform": "Switch"
         }
       ]
+    },
+    "voicedrew11/darker-reality": {
+      "_game": "King's Field: The Ancient City",
+      "hide": true,
+      "hideNote": "repo redirects to another existing project"
     },
     "voicedrew11/holyland": {
       "_game": "King's Field: The Ancient City",
