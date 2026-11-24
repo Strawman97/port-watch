@@ -19,7 +19,7 @@
   "xess": "XeSS"
  },
  "format": "port-watch-catalog",
- "generated": "2026-11-24T09:59:34Z",
+ "generated": "2026-11-24T10:04:59Z",
  "projects": [
   {
    "archived": false,
@@ -10587,7 +10587,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1136,
+   "stars": 1137,
    "title": "Astro Bot",
    "type": "Compatibility layer"
   },
@@ -23079,7 +23079,7 @@
    ],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-24T09:45:43Z",
+   "pushed": "2026-11-24T09:59:48Z",
    "release": {
     "date": "2026-11-23T23:10:28Z",
     "pre": false,
@@ -58731,7 +58731,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 531,
+   "stars": 532,
    "title": "Fable II",
    "type": "Recompilation"
   },
@@ -59023,7 +59023,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 531,
+   "stars": 532,
    "title": "Fable II (Fable2Recomp)",
    "type": "Recompilation"
   },
@@ -65288,7 +65288,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1094,
+   "stars": 1093,
    "title": "Forza Horizon",
    "type": "Recompilation"
   },
@@ -66810,7 +66810,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 174,
+   "stars": 175,
    "title": "Forza Motorsport 4 (fm4-static-recomp)",
    "type": "Recompilation"
   },
@@ -75431,7 +75431,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 211,
+   "stars": 212,
    "title": "Gran Turismo 2",
    "type": "Recompilation"
   },
@@ -87347,7 +87347,7 @@
    "planned": [],
    "platform": "PC",
    "playable": false,
-   "pushed": "2026-11-17T16:16:34Z",
+   "pushed": "2026-11-24T10:03:36Z",
    "release": null,
    "risk": null,
    "runsOn": [
@@ -89651,12 +89651,12 @@
    ],
    "platform": "PS4",
    "playable": true,
-   "pushed": "2026-11-24T09:38:36Z",
+   "pushed": "2026-11-24T09:57:41Z",
    "release": {
-    "date": "2026-11-12T14:03:15Z",
+    "date": "2026-11-24T09:57:41Z",
     "pre": true,
-    "tag": "sunny-beta-2026.11.12",
-    "url": "https://github.com/HayatoG/iss_pc/releases/tag/sunny-beta-2026.11.12"
+    "tag": "beta-2026.11.24-161f2b9",
+    "url": "https://github.com/HayatoG/iss_pc/releases/tag/beta-2026.11.24-161f2b9"
    },
    "risk": null,
    "runsOn": [
@@ -99983,7 +99983,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 5065,
+   "stars": 5066,
    "title": "Legend of Zelda: Breath of the Wild",
    "type": "Recompilation"
   },
@@ -102976,7 +102976,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-24T09:40:50Z",
+   "pushed": "2026-11-24T09:59:19Z",
    "release": {
     "date": "2026-11-23T17:50:00Z",
     "pre": false,
@@ -105790,7 +105790,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 766,
+   "stars": 765,
    "title": "Mario Kart Wii",
    "type": "Recompilation"
   },
@@ -106440,7 +106440,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1746,
+   "stars": 1747,
    "title": "Mario Kart World",
    "type": "Recompilation"
   },
@@ -107011,7 +107011,7 @@
    "planned": [],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-24T09:56:58Z",
+   "pushed": "2026-11-24T09:57:29Z",
    "release": {
     "date": "2026-11-24T09:56:59Z",
     "pre": false,
@@ -115924,7 +115924,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 477,
+   "stars": 478,
    "title": "Metroid Dread (Metroid Dread Recomp)",
    "type": "Recompilation"
   },
@@ -131548,9 +131548,9 @@
    "planned": [],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T09:54:36Z",
+   "pushed": "2026-11-24T10:00:27Z",
    "release": {
-    "date": "2026-11-24T00:11:15Z",
+    "date": "2026-11-24T09:56:57Z",
     "pre": true,
     "tag": "latest",
     "url": "https://github.com/kirby-letsgo/nightmare-creatures-decomp/releases/tag/latest"
@@ -139259,18 +139259,34 @@
      "title": "Pokémon White"
     },
     {
-     "art": [],
-     "cover": "",
+     "art": [
+      "https://images.igdb.com/igdb/image/upload/t_1080p/u5c348wzqslvpa4poi5q.jpg"
+     ],
+     "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_DS/master/Named_Boxarts/Pokemon%20-%20Black%20Version%202%20%28USA%2C%20Europe%29%20%28NDSi%20Enhanced%29.png",
      "platform": "DS",
-     "sgdb": {},
-     "title": "Pokémon Black 2"
+     "sgdb": {
+      "capsule": "https://cdn2.steamgriddb.com/grid/72568a7a2d08578a55a17cd420488d12.png",
+      "hero": "https://cdn2.steamgriddb.com/hero/0adbfc15ded7e9d183c206ecf5681b15.png",
+      "icon": "https://cdn2.steamgriddb.com/icon/f4cbadcb99fd2c1fc88b97adfae24854.png",
+      "logo": "https://cdn2.steamgriddb.com/logo/d9b1655c134b831076d6c45620a78c33.png",
+      "wide": "https://cdn2.steamgriddb.com/grid/badd19632187c6ce058e95cd04cb85fe.png"
+     },
+     "title": "Pokémon Black Version 2"
     },
     {
-     "art": [],
-     "cover": "",
+     "art": [
+      "https://images.igdb.com/igdb/image/upload/t_1080p/axkv6dutzqykdwgzig8u.jpg"
+     ],
+     "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Nintendo_-_Nintendo_DS/master/Named_Boxarts/Pokemon%20-%20White%20Version%202%20%28USA%2C%20Europe%29%20%28NDSi%20Enhanced%29.png",
      "platform": "DS",
-     "sgdb": {},
-     "title": "Pokémon White 2"
+     "sgdb": {
+      "capsule": "https://cdn2.steamgriddb.com/grid/d9eb8ff0d5c6282ce19937572762ac60.png",
+      "hero": "https://cdn2.steamgriddb.com/hero/a1668ffc4a96b650355d86b7d70fe59a.png",
+      "icon": "https://cdn2.steamgriddb.com/icon/d72a7ed33514158ae5e68ed6d80177b9.png",
+      "logo": "https://cdn2.steamgriddb.com/logo/3ec0e2c7f4536e7ce9e9ce183b1de9e8.png",
+      "wide": "https://cdn2.steamgriddb.com/grid/fa4e2de0ae96f80fa419c5957154a49c.png"
+     },
+     "title": "Pokémon White Version 2"
     },
     {
      "art": [
@@ -142206,7 +142222,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 1008,
+   "stars": 1009,
    "title": "Pokémon Pokopia",
    "type": "Recompilation"
   },
@@ -166409,7 +166425,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1841,
+   "stars": 1842,
    "title": "Skate 3",
    "type": "Recompilation"
   },
@@ -174594,7 +174610,7 @@
    "planned": [],
    "platform": "Wii U",
    "playable": true,
-   "pushed": "2026-11-23T23:35:39Z",
+   "pushed": "2026-11-24T09:58:55Z",
    "release": {
     "date": "2026-11-23T17:52:18Z",
     "pre": false,
@@ -185627,7 +185643,7 @@
    "planned": [],
    "platform": "Wii",
    "playable": true,
-   "pushed": "2026-11-24T09:38:09Z",
+   "pushed": "2026-11-24T09:58:40Z",
    "release": {
     "date": "2026-11-23T23:15:40Z",
     "pre": false,
@@ -222523,7 +222539,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": false,
-   "pushed": "2026-11-24T05:34:01Z",
+   "pushed": "2026-11-24T10:00:28Z",
    "release": null,
    "risk": null,
    "runsOn": [
@@ -222591,7 +222607,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": false,
-   "pushed": "2026-11-24T05:34:01Z",
+   "pushed": "2026-11-24T10:00:28Z",
    "release": null,
    "risk": null,
    "runsOn": [
@@ -227685,7 +227701,7 @@
    "planned": [],
    "platform": "PSP",
    "playable": true,
-   "pushed": "2026-11-24T08:07:17Z",
+   "pushed": "2026-11-24T10:03:07Z",
    "release": {
     "date": "2026-10-07T19:13:58Z",
     "pre": true,
