@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T08:21:50+00:00",
+ "generated": "2026-11-24T09:53:02+00:00",
  "projects": [
   {
    "ai": false,
@@ -125,7 +125,7 @@
    "t": "Decompilation"
   },
   {
-   "ai": true,
+   "ai": false,
    "at": "2026-11-23",
    "d": "13 Sentinels: Aegis Rim (Switch) static recompilation for PC",
    "g": "13 Sentinels: Aegis Rim",
@@ -1383,6 +1383,23 @@
    "pr": "Asuras_wrath_recomp",
    "pre": false,
    "rel": "v0.9.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "A recompilation of a game about the angriest guy to ever exist. No, not Kratos.",
+   "g": "Asura's Wrath",
+   "id": "db:raddspencer/devasjoy",
+   "k": "raddspencer/devasjoy",
+   "lc": "2026-11-24T02:25:18Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DevasJoy",
+   "pre": false,
+   "rel": "v0.1.0-beta.1",
    "t": "Recompilation"
   },
   {
@@ -3192,6 +3209,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "Static GBA-to-Windows x86_64 recompiler for Castlevania: Aria of Sorrow with Direct3D 11 rendering, cycle-locked audio, and an in-game Dear ImGui config menu (F10) with keyboard & gamepad rebinding.",
+   "g": "Castlevania: Aria of Sorrow",
+   "id": "db:znriver/ariaofsorrowrecomp",
+   "k": "znriver/ariaofsorrowrecomp",
+   "lc": "2026-11-24T00:52:43Z",
+   "p": "GBA",
+   "po": [
+    "Windows"
+   ],
+   "pr": "AriaOfSorrowRecomp",
+   "pre": false,
+   "rel": "v0.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-13",
    "d": "Native Android port of Castlevania: Belmont's Curse for the Retroid Pocket Flip 2. Early version. Bring your own extracted game files.",
    "g": "Castlevania: Belmont's Curse",
@@ -4688,7 +4722,7 @@
    ],
    "pr": "Dave-Mirra-Recomp",
    "pre": false,
-   "rel": "v1.2.0",
+   "rel": "v1.2.1",
    "t": "Recompilation"
   },
   {
@@ -5240,6 +5274,23 @@
    "pr": "DetanaTwinBeeRecomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "Native PC port of Devil's Third (Wii U) by static recompilation. Requires your own legally obtained copy of the game.",
+   "g": "Devil's Third",
+   "id": "db:sidekickspam/devils-third-recomp",
+   "k": "sidekickspam/devils-third-recomp",
+   "lc": "2026-11-24T03:47:50Z",
+   "p": "Wii U",
+   "po": [
+    "Windows"
+   ],
+   "pr": "devils-third-recomp",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -12466,6 +12517,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "Kid Icarus: Uprising for Nintendo Switch: a native self-bootstrapping AOT recompilation & Vulkan port built on Zakuro. Compiles from your own US ROM directly on the console.",
+   "g": "Kid Icarus: Uprising",
+   "id": "db:angle-brackets/uprisingnx",
+   "k": "angle-brackets/uprisingnx",
+   "lc": "2026-11-24T04:31:00Z",
+   "p": "3DS",
+   "po": [],
+   "pr": "UprisingNX",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "Data-free PSXRecomp project for Kileak: The DNA Imperative (USA, SCUS-94102), with OpenBIOS and optional modern enhancements.",
    "g": "Kileak: The DNA Imperative",
@@ -12931,6 +12997,21 @@
    "pr": "knife-edge-recomp",
    "pre": false,
    "rel": "v0.0.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "A static recompilation of the Sega 32X game Knuckles' Chaotix into native C++. This is not an emulator: the 68000 and both SH-2 CPUs' game code is translated ahead of time into C++ that is compiled for the host. A small hardware compatibility layer (32X and Mega Drive registers)",
+   "g": "Knuckles' Chaotix",
+   "id": "db:thorhax/chaotixrecompiled",
+   "k": "thorhax/chaotixrecompiled",
+   "lc": "2026-11-24T00:24:09Z",
+   "p": "32X",
+   "po": [],
+   "pr": "ChaotixRecompiled",
+   "pre": false,
+   "rel": "v1.0.3",
    "t": "Recompilation"
   },
   {
@@ -13481,6 +13562,43 @@
    "pr": "EoWRecomp-Windows",
    "pre": true,
    "rel": "v0.1.0-rc.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "Static recompilation of The Legend of Zelda: Echoes of Wisdom (Switch) to native PC - work in progress, no game files included",
+   "g": "The Legend of Zelda: Echoes of Wisdom",
+   "id": "db:patrickksmdev/eowrecomp",
+   "k": "patrickksmdev/eowrecomp",
+   "lc": "2026-11-20T05:20:13Z",
+   "p": "Switch",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "EoWRecomp",
+   "pre": false,
+   "rel": "v0.5.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "Static recompilation of Echoes of Wisdom (Switch) to native macOS, Windows, Linux, iOS and Android.",
+   "g": "The Legend of Zelda: Echoes of Wisdom",
+   "id": "db:peiikai/retri",
+   "k": "peiikai/retri",
+   "lc": "2026-11-21T20:20:28Z",
+   "p": "Switch",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "ReTri",
+   "pre": true,
+   "rel": "nightly",
    "t": "Recompilation"
   },
   {
@@ -16292,6 +16410,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "Metroid: Other M (Wii) statically recompiled to run natively on PC and Steam Deck. Bring your own disc image.",
+   "g": "Metroid: Other M",
+   "id": "db:gminustwo/otherm-recomp",
+   "k": "gminustwo/otherm-recomp",
+   "lc": "2026-11-24T04:13:12Z",
+   "p": "Wii",
+   "po": [
+    "Linux"
+   ],
+   "pr": "otherm-recomp",
+   "pre": true,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-13",
    "d": "Native VR port of Metroid Prime (GameCube) for Windows and Meta Quest, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image.",
@@ -17101,7 +17236,7 @@
    ],
    "pr": "MK-3D-rollback",
    "pre": true,
-   "rel": "v1.0.15",
+   "rel": "v1.0.16",
    "t": "Recompilation"
   },
   {
@@ -22419,6 +22554,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "A static recompilation of Scooby-Doo! Mystery Mayhem for the original Xbox.",
+   "g": "Scooby-Doo! Mystery Mayhem",
+   "id": "db:timftw21/scoobymm-recompilation",
+   "k": "timftw21/scoobymm-recompilation",
+   "lc": "2026-11-24T01:51:29Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "scoobymm-recompilation",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-19",
    "d": "Project: Mystery Machine - a native PC port of Scooby-Doo! Night of 100 Frights (no game data included)",
@@ -24960,7 +25112,7 @@
    ],
    "pr": "ATARI-STAR-WARS-Arcade-RECOMP-edition",
    "pre": false,
-   "rel": "v1.6",
+   "rel": "v1.8",
    "t": "Recompilation"
   },
   {
@@ -26526,6 +26678,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-22",
+   "d": "Static recompilation of Tales of Symphonia (GameCube). Bring your own dump.",
+   "g": "Tales of Symphonia",
+   "id": "db:to-recomp/tos-recomp",
+   "k": "to-recomp/tos-recomp",
+   "lc": "2026-11-23T22:05:01Z",
+   "p": "GameCube",
+   "po": [
+    "Linux"
+   ],
+   "pr": "tos-recomp",
+   "pre": true,
+   "rel": "v0.1.0-rc.3",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-02",
    "d": "A recompilation of a Wii game.",
@@ -28031,6 +28200,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "UCMR: unofficial PC port of Uncharted: The Nathan Drake Collection with the Uncharted 2 and 3 multiplayer restoration",
+   "g": "Uncharted: The Nathan Drake Collection",
+   "id": "db:uc-resurrected/ucmr",
+   "k": "uc-resurrected/ucmr",
+   "lc": "2026-11-24T03:05:41Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "UCMR",
+   "pre": false,
+   "rel": "v0.10.156",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-21",
    "d": "",
@@ -28400,6 +28586,23 @@
    "pr": "virtuaracing",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "Virtua Striker 2 (Step 1.5) — Native PC Static Recompilation (Windows x64)",
+   "g": "Virtua Striker 2",
+   "id": "db:matiasak47/vs2-recomp",
+   "k": "matiasak47/vs2-recomp",
+   "lc": "2026-11-24T03:39:29Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "vs2-recomp",
+   "pre": false,
+   "rel": "1.0",
    "t": "Recompilation"
   },
   {
