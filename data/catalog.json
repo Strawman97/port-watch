@@ -19,7 +19,7 @@
   "xess": "XeSS"
  },
  "format": "port-watch-catalog",
- "generated": "2026-11-24T10:04:59Z",
+ "generated": "2026-11-24T10:22:07Z",
  "projects": [
   {
    "archived": false,
@@ -724,7 +724,7 @@
    ],
    "platform": "Xbox 360",
    "playable": true,
-   "pushed": "2026-11-24T09:50:48Z",
+   "pushed": "2026-11-24T10:17:51Z",
    "release": {
     "date": "2026-11-23T07:55:14Z",
     "pre": false,
@@ -1033,7 +1033,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 136,
+   "stars": 137,
    "title": "13 Sentinels: Aegis Rim",
    "type": "Recompilation"
   },
@@ -1235,7 +1235,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 54,
+   "stars": 53,
    "title": "2010 FIFA World Cup South Africa",
    "type": "Recompilation"
   },
@@ -6525,7 +6525,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 1589,
+   "stars": 1590,
    "title": "Angband",
    "type": "Decompilation"
   },
@@ -18116,7 +18116,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 5660,
+   "stars": 5661,
    "title": "Bloodborne",
    "type": "Recompilation"
   },
@@ -23079,12 +23079,12 @@
    ],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-24T09:59:48Z",
+   "pushed": "2026-11-24T10:16:54Z",
    "release": {
-    "date": "2026-11-23T23:10:28Z",
+    "date": "2026-11-24T10:14:04Z",
     "pre": false,
-    "tag": "v0.3.2",
-    "url": "https://github.com/mario910/buzz-quizworld-recomp/releases/tag/v0.3.2"
+    "tag": "v0.3.3",
+    "url": "https://github.com/mario910/buzz-quizworld-recomp/releases/tag/v0.3.3"
    },
    "risk": null,
    "runsOn": [
@@ -26242,6 +26242,7 @@
    "coverThumb": "",
    "desc": "Static AOT recompilation of Castlevania: Dawn of Sorrow (Nintendo DS / ACVE) with Direct3D 12 & Vulkan GPU shaders, Dear ImGui menu, in-memory PT-BR patch, and RecompLauncher support.",
    "features": [
+    "aspect",
     "hfr",
     "kbm",
     "mods",
@@ -26268,7 +26269,7 @@
    "planned": [],
    "platform": "DS",
    "playable": true,
-   "pushed": "2026-11-24T04:28:45Z",
+   "pushed": "2026-11-24T10:19:36Z",
    "release": {
     "date": "2026-11-23T17:33:28Z",
     "pre": false,
@@ -27035,7 +27036,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 1167,
+   "stars": 1168,
    "title": "Castlevania: Symphony of the Night",
    "type": "Recompilation"
   },
@@ -28370,7 +28371,7 @@
    "planned": [],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T09:56:09Z",
+   "pushed": "2026-11-24T10:10:22Z",
    "release": {
     "date": "2026-11-23T06:09:49Z",
     "pre": false,
@@ -30599,10 +30600,10 @@
    "playable": true,
    "pushed": "2026-11-24T09:53:49Z",
    "release": {
-    "date": "2026-11-19T23:14:20Z",
+    "date": "2026-11-24T10:17:17Z",
     "pre": true,
-    "tag": "v0.1.1-beta.1",
-    "url": "https://github.com/DevOldSchool/conkers-bfd-recomp/releases/tag/v0.1.1-beta.1"
+    "tag": "v0.1.2-beta.1",
+    "url": "https://github.com/DevOldSchool/conkers-bfd-recomp/releases/tag/v0.1.2-beta.1"
    },
    "risk": null,
    "runsOn": [
@@ -36493,7 +36494,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 944,
+   "stars": 946,
    "title": "Dante's Inferno",
    "type": "Recompilation"
   },
@@ -41202,7 +41203,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 530,
+   "stars": 531,
    "title": "Demon's Souls",
    "type": "Recompilation"
   },
@@ -41281,7 +41282,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 215,
+   "stars": 216,
    "title": "Demon's Souls",
    "type": "Recompilation"
   },
@@ -41434,7 +41435,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 530,
+   "stars": 531,
    "title": "Demon's Souls (Soulbrandt)",
    "type": "Recompilation"
   },
@@ -42844,10 +42845,12 @@
    "desc": "",
    "features": [
     "aa",
+    "aspect",
     "dlc",
     "fsr",
     "hfr",
     "kbm",
+    "mods",
     "online",
     "res"
    ],
@@ -42871,12 +42874,12 @@
    "planned": [],
    "platform": "Switch",
    "playable": true,
-   "pushed": "2026-11-18T13:53:44Z",
+   "pushed": "2026-11-24T10:17:20Z",
    "release": {
-    "date": "2026-11-18T10:42:17Z",
+    "date": "2026-11-24T10:17:20Z",
     "pre": false,
-    "tag": "v2026.11.18",
-    "url": "https://github.com/retrogameworld/Diablo-III-Switch-Recomp/releases/tag/v2026.11.18"
+    "tag": "v2026.11.24",
+    "url": "https://github.com/retrogameworld/Diablo-III-Switch-Recomp/releases/tag/v2026.11.24"
    },
    "risk": null,
    "runsOn": [
@@ -45658,7 +45661,7 @@
    "planned": [],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T09:38:24Z",
+   "pushed": "2026-11-24T10:08:18Z",
    "release": {
     "date": "2026-11-21T16:11:14Z",
     "pre": false,
@@ -45804,7 +45807,7 @@
    "planned": [],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T09:38:24Z",
+   "pushed": "2026-11-24T10:08:18Z",
    "release": {
     "date": "2026-11-21T16:11:14Z",
     "pre": false,
@@ -45874,7 +45877,7 @@
    "planned": [],
    "platform": "PSP",
    "playable": true,
-   "pushed": "2026-11-23T05:02:27Z",
+   "pushed": "2026-11-24T10:09:25Z",
    "release": {
     "date": "2026-11-23T05:03:17Z",
     "pre": false,
@@ -46319,7 +46322,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 597,
+   "stars": 596,
    "title": "Donkey Kong 64",
    "type": "Recompilation"
   },
@@ -46393,7 +46396,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 1386,
+   "stars": 1388,
    "title": "Donkey Kong Bananza",
    "type": "Recompilation"
   },
@@ -49597,7 +49600,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-24T09:20:03Z",
+   "pushed": "2026-11-24T10:11:03Z",
    "release": {
     "date": "2026-11-24T09:20:00Z",
     "pre": true,
@@ -55400,7 +55403,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 209,
+   "stars": 210,
    "title": "EA SPORTS UFC 3",
    "type": "Recompilation"
   },
@@ -57443,12 +57446,12 @@
    "planned": [],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-24T09:39:44Z",
+   "pushed": "2026-11-24T10:15:10Z",
    "release": {
-    "date": "2026-11-24T09:30:32Z",
+    "date": "2026-11-24T10:15:11Z",
     "pre": false,
-    "tag": "v0.1.20",
-    "url": "https://github.com/n64hub/excitebike-64-recomp/releases/tag/v0.1.20"
+    "tag": "v0.1.21",
+    "url": "https://github.com/n64hub/excitebike-64-recomp/releases/tag/v0.1.21"
    },
    "risk": null,
    "runsOn": [
@@ -58731,7 +58734,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 532,
+   "stars": 533,
    "title": "Fable II",
    "type": "Recompilation"
   },
@@ -59023,7 +59026,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 532,
+   "stars": 533,
    "title": "Fable II (Fable2Recomp)",
    "type": "Recompilation"
   },
@@ -65371,7 +65374,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 492,
+   "stars": 493,
    "title": "Forza Horizon",
    "type": "Recompilation"
   },
@@ -66160,7 +66163,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 492,
+   "stars": 493,
    "title": "Forza Horizon (Forza Horizon 1: ReImagined)",
    "type": "Recompilation"
   },
@@ -70870,7 +70873,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-24T09:35:36Z",
+   "pushed": "2026-11-24T10:14:41Z",
    "release": {
     "date": "2026-11-19T15:27:14Z",
     "pre": true,
@@ -72025,7 +72028,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 279,
+   "stars": 278,
    "title": "God of War (GOW Native PC)",
    "type": "Recompilation"
   },
@@ -75642,7 +75645,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 366,
+   "stars": 365,
    "title": "Gran Turismo 3: A-Spec",
    "type": "Recompilation"
   },
@@ -76352,7 +76355,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 34,
+   "stars": 35,
    "title": "Gran Turismo 6",
    "type": "Recompilation"
   },
@@ -77895,7 +77898,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 322,
+   "stars": 323,
    "title": "Grand Theft Auto V (gtav-recomp)",
    "type": "Recompilation"
   },
@@ -79994,7 +79997,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-24T09:43:20Z",
+   "pushed": "2026-11-24T10:06:25Z",
    "release": {
     "date": "2026-11-21T10:21:49Z",
     "pre": false,
@@ -89819,7 +89822,7 @@
    ],
    "platform": "PS4",
    "playable": true,
-   "pushed": "2026-11-24T09:54:51Z",
+   "pushed": "2026-11-24T10:20:38Z",
    "release": {
     "date": "2026-11-23T17:39:22Z",
     "pre": false,
@@ -91370,7 +91373,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 34,
+   "stars": 35,
    "title": "Jak and Daxter: The Precursor Legacy",
    "type": "Recompilation"
   },
@@ -102976,7 +102979,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-24T09:59:19Z",
+   "pushed": "2026-11-24T10:12:34Z",
    "release": {
     "date": "2026-11-23T17:50:00Z",
     "pre": false,
@@ -106440,7 +106443,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1747,
+   "stars": 1748,
    "title": "Mario Kart World",
    "type": "Recompilation"
   },
@@ -107011,7 +107014,7 @@
    "planned": [],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-24T09:57:29Z",
+   "pushed": "2026-11-24T10:19:11Z",
    "release": {
     "date": "2026-11-24T09:56:59Z",
     "pre": false,
@@ -114316,7 +114319,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 148,
+   "stars": 149,
    "title": "Metal Gear Rising: Revengeance (Zandatsu)",
    "type": "Recompilation"
   },
@@ -116366,7 +116369,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 52,
+   "stars": 53,
    "title": "Metroid Prime 4: Beyond (Metroid Prime 4 PC Recomp)",
    "type": "Recompilation"
   },
@@ -117211,7 +117214,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 279,
+   "stars": 280,
    "title": "Metroid: Samus Returns",
    "type": "Recompilation"
   },
@@ -121350,7 +121353,7 @@
    "planned": [],
    "platform": "Switch",
    "playable": true,
-   "pushed": "2026-11-24T09:26:20Z",
+   "pushed": "2026-11-24T10:05:14Z",
    "release": {
     "date": "2026-11-23T19:30:51Z",
     "pre": false,
@@ -127414,7 +127417,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 74,
+   "stars": 73,
    "title": "Need for Speed: Carbon (Speedbreaker: Carbon)",
    "type": "Recompilation"
   },
@@ -131548,9 +131551,9 @@
    "planned": [],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T10:00:27Z",
+   "pushed": "2026-11-24T10:16:11Z",
    "release": {
-    "date": "2026-11-24T09:56:57Z",
+    "date": "2026-11-24T10:16:12Z",
     "pre": true,
     "tag": "latest",
     "url": "https://github.com/kirby-letsgo/nightmare-creatures-decomp/releases/tag/latest"
@@ -142222,7 +142225,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 1009,
+   "stars": 1010,
    "title": "Pokémon Pokopia",
    "type": "Recompilation"
   },
@@ -144328,7 +144331,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 131,
+   "stars": 132,
    "title": "Pokemon Black Version",
    "type": "Decompilation"
   },
@@ -145412,7 +145415,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 13,
+   "stars": 14,
    "title": "Pokemon Shield",
    "type": "Recompilation"
   },
@@ -150194,7 +150197,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-24T09:54:24Z",
+   "pushed": "2026-11-24T10:13:21Z",
    "release": {
     "date": "2026-10-29T05:34:49Z",
     "pre": true,
@@ -150234,7 +150237,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 235,
+   "stars": 236,
    "title": "Ratchet & Clank",
    "type": "Decompilation"
   },
@@ -162014,7 +162017,7 @@
    ],
    "cover": "https://raw.githubusercontent.com/libretro-thumbnails/Sony_-_PlayStation_2/master/Named_Boxarts/Shadow%20of%20the%20Colossus%20%28USA%29.png",
    "coverThumb": "",
-   "desc": "Native Linux and Windows port of Shadow of the Colossus (PS2 USA), based on Celosia/PS2Recomp; requires your own ROM.",
+   "desc": "Native Linux, Windows and Android port of Shadow of the Colossus (PS2 USA), based on Celosia/PS2Recomp; requires your own ROM.",
    "features": [
     "aa",
     "aspect",
@@ -168109,12 +168112,12 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-24T09:45:41Z",
+   "pushed": "2026-11-24T10:07:25Z",
    "release": {
-    "date": "2026-11-22T13:47:19Z",
+    "date": "2026-11-24T10:07:25Z",
     "pre": false,
-    "tag": "v0.2.144",
-    "url": "https://github.com/FridiNaTor1/SafeHouse/releases/tag/v0.2.144"
+    "tag": "v0.2.146",
+    "url": "https://github.com/FridiNaTor1/SafeHouse/releases/tag/v0.2.146"
    },
    "risk": null,
    "runsOn": [
@@ -169897,7 +169900,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 29,
+   "stars": 30,
    "title": "Sonic Adventure 2: Battle (sa2-nx)",
    "type": "Recompilation"
   },
@@ -174610,7 +174613,7 @@
    "planned": [],
    "platform": "Wii U",
    "playable": true,
-   "pushed": "2026-11-24T09:58:55Z",
+   "pushed": "2026-11-24T10:16:38Z",
    "release": {
     "date": "2026-11-23T17:52:18Z",
     "pre": false,
@@ -176011,7 +176014,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 94,
+   "stars": 95,
    "title": "SSX",
    "type": "Recompilation"
   },
@@ -176599,8 +176602,8 @@
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttl.jpg",
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttm.jpg"
    ],
-   "cover": "https://cdn2.steamgriddb.com/grid/59b1f821289f6c9d5780419bc58c81e9.png",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/59b1f821289f6c9d5780419bc58c81e9.jpg",
+   "cover": "https://cdn2.steamgriddb.com/thumb/da8dbda3a42ff0ddc61f20d97e4ac07c.jpg",
+   "coverThumb": "",
    "desc": "Star Fox (Nintendo Switch 2) on PC in native stereoscopic 3D: per-eye cameras, with interlaced, SBS, TaB, cross-view and Leia SR output. 3D edition of SerenityG4K's SpaceAnimalsRecomp recompilation; no game files included.",
    "features": [
     "aa",
@@ -176920,8 +176923,8 @@
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttl.jpg",
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttm.jpg"
    ],
-   "cover": "https://cdn2.steamgriddb.com/grid/59b1f821289f6c9d5780419bc58c81e9.png",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/59b1f821289f6c9d5780419bc58c81e9.jpg",
+   "cover": "https://cdn2.steamgriddb.com/thumb/da8dbda3a42ff0ddc61f20d97e4ac07c.jpg",
+   "coverThumb": "",
    "desc": "Star Fox, running natively on Windows PC — static recompilation (Early Release)",
    "features": [
     "aa",
@@ -177802,8 +177805,8 @@
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttl.jpg",
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar5ttm.jpg"
    ],
-   "cover": "https://cdn2.steamgriddb.com/grid/59b1f821289f6c9d5780419bc58c81e9.png",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/59b1f821289f6c9d5780419bc58c81e9.jpg",
+   "cover": "https://cdn2.steamgriddb.com/thumb/da8dbda3a42ff0ddc61f20d97e4ac07c.jpg",
+   "coverThumb": "",
    "desc": "StarFox Remake [recompiled]: static recompilation of Star Fox (Nintendo Switch 2) into a native Windows app, built on your PC from your own copy. No game files included.",
    "features": [
     "dlss",
@@ -185643,7 +185646,7 @@
    "planned": [],
    "platform": "Wii",
    "playable": true,
-   "pushed": "2026-11-24T09:58:40Z",
+   "pushed": "2026-11-24T10:19:24Z",
    "release": {
     "date": "2026-11-23T23:15:40Z",
     "pre": false,
@@ -196806,7 +196809,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 55,
+   "stars": 56,
    "title": "The House of the Dead 4",
    "type": "Recompilation"
   },
@@ -204109,7 +204112,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 4356,
+   "stars": 4355,
    "title": "The Legend of Zelda: Ocarina of Time (2026)",
    "type": "Recompilation"
   },
@@ -204273,7 +204276,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 752,
+   "stars": 753,
    "title": "The Legend of Zelda: Ocarina of Time 3D",
    "type": "Recompilation"
   },
@@ -207718,7 +207721,7 @@
     "port": []
    },
    "source": "Port Watch",
-   "stars": 1675,
+   "stars": 1676,
    "title": "The Legend of Zelda: The Wind Waker HD",
    "type": "Recompilation"
   },
@@ -209647,10 +209650,10 @@
    "playable": true,
    "pushed": "2026-11-24T09:10:15Z",
    "release": {
-    "date": "2026-11-24T09:46:13Z",
+    "date": "2026-11-24T10:12:00Z",
     "pre": false,
-    "tag": "v0.2.55",
-    "url": "https://github.com/DivinusX/a-port-of-the-order-1886-thats-actually-alive/releases/tag/v0.2.55"
+    "tag": "v0.2.49",
+    "url": "https://github.com/DivinusX/a-port-of-the-order-1886-thats-actually-alive/releases/tag/v0.2.49"
    },
    "risk": null,
    "runsOn": [
@@ -214938,7 +214941,7 @@
    ],
    "platform": "PS1",
    "playable": true,
-   "pushed": "2026-11-24T09:23:43Z",
+   "pushed": "2026-11-24T10:10:35Z",
    "release": {
     "date": "2026-11-18T19:47:15Z",
     "pre": false,
@@ -219614,7 +219617,7 @@
    "planned": [],
    "platform": "PS2",
    "playable": true,
-   "pushed": "2026-11-23T23:21:59Z",
+   "pushed": "2026-11-24T10:16:55Z",
    "release": {
     "date": "2026-11-11T12:20:47Z",
     "pre": false,
@@ -220598,12 +220601,12 @@
    "planned": [],
    "platform": "PS4",
    "playable": true,
-   "pushed": "2026-11-24T08:21:46Z",
+   "pushed": "2026-11-24T10:13:03Z",
    "release": {
-    "date": "2026-11-24T08:26:42Z",
+    "date": "2026-11-24T10:18:08Z",
     "pre": false,
-    "tag": "v0.10.159",
-    "url": "https://github.com/UC-Resurrected/UCMR/releases/tag/v0.10.159"
+    "tag": "v0.10.160",
+    "url": "https://github.com/UC-Resurrected/UCMR/releases/tag/v0.10.160"
    },
    "risk": null,
    "runsOn": [
@@ -223535,7 +223538,7 @@
    "planned": [],
    "platform": "Arcade",
    "playable": true,
-   "pushed": "2026-11-24T09:47:04Z",
+   "pushed": "2026-11-24T10:19:03Z",
    "release": {
     "date": "2026-11-20T04:18:25Z",
     "pre": true,
@@ -223964,7 +223967,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 50,
+   "stars": 51,
    "title": "Virtua Striker 4 Ver.2006 (2006)",
    "type": "Recompilation"
   },
@@ -226988,7 +226991,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 0,
+   "stars": 1,
    "title": "Wii Sports Resort",
    "type": "Recompilation"
   },
