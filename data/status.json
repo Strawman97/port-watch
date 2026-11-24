@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-11-24T08:21:49Z",
+ "generated": "2026-11-24T08:28:31Z",
  "repos": {
   "0bandywirus/dq9-decomp": {
    "assetOs": {
@@ -10079,8 +10079,8 @@
     "firstRelease": "2026-11-20T14:14:57Z",
     "full": "alexgbor/Makaimura-Recomp",
     "lang": "C++",
-    "pushed": "2026-11-24T07:27:39Z",
-    "size": 1398,
+    "pushed": "2026-11-24T08:25:42Z",
+    "size": 1460,
     "stars": 2
    },
    "shots": []
@@ -11381,10 +11381,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-24T06:56:07Z",
+    "date": "2026-11-24T08:28:59Z",
     "pre": false,
-    "tag": "v0.1.19",
-    "url": "https://github.com/andersfischernielsen/ssx3-decomp/releases/tag/v0.1.19"
+    "tag": "v0.1.20",
+    "url": "https://github.com/andersfischernielsen/ssx3-decomp/releases/tag/v0.1.20"
    },
    "repo": {
     "archived": false,
@@ -11393,7 +11393,7 @@
     "firstRelease": "2026-11-22T19:27:42Z",
     "full": "andersfischernielsen/ssx3-decomp",
     "lang": "Rust",
-    "pushed": "2026-11-24T06:56:07Z",
+    "pushed": "2026-11-24T08:28:43Z",
     "size": 216044,
     "stars": 49
    },
@@ -11679,7 +11679,7 @@
     "firstRelease": "2026-11-02T06:06:44Z",
     "full": "andrewnakas/gtav-recomp",
     "lang": "C++",
-    "pushed": "2026-11-24T08:07:35Z",
+    "pushed": "2026-11-24T08:25:36Z",
     "size": 2912,
     "stars": 322
    },
@@ -19955,7 +19955,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T21:32:20Z",
     "size": 67550,
-    "stars": 163
+    "stars": 164
    },
    "shots": []
   },
@@ -22376,7 +22376,7 @@
     "lang": "JavaScript",
     "pushed": "2026-11-23T22:37:27Z",
     "size": 29283,
-    "stars": 632
+    "stars": 633
    },
    "shots": [
     "https://raw.githubusercontent.com/chasem-dev/sms-launcher/HEAD/docs/launcher-ready.png"
@@ -29996,7 +29996,7 @@
     "lang": "C++",
     "pushed": "2026-10-28T23:56:07Z",
     "size": 8937,
-    "stars": 4190
+    "stars": 4189
    },
    "shots": []
   },
@@ -32034,7 +32034,12 @@
    ]
   },
   "dittobyte/recompia": {
-   "assetOs": {},
+   "assetOs": {
+    "Android": true,
+    "Linux": true,
+    "Windows": true,
+    "macOS": true
+   },
    "readme": {
     "features": {
      "aspect": "planned",
@@ -32071,8 +32076,8 @@
     "firstRelease": "2026-11-03T19:03:40Z",
     "full": "Dittobyte/Recompia",
     "lang": "C++",
-    "pushed": "2026-11-24T08:12:46Z",
-    "size": 35381,
+    "pushed": "2026-11-24T08:26:14Z",
+    "size": 35364,
     "stars": 1005
    },
    "shots": []
@@ -32167,7 +32172,7 @@
     "firstRelease": "2026-11-07T03:54:28Z",
     "full": "DivinusX/a-port-of-the-order-1886-thats-actually-alive",
     "lang": "Python",
-    "pushed": "2026-11-24T08:09:54Z",
+    "pushed": "2026-11-24T08:28:48Z",
     "size": 81598,
     "stars": 71
    },
@@ -50719,7 +50724,7 @@
     "firstRelease": "2026-10-23T01:34:09Z",
     "full": "Hyant4/Knack-II-pc-port",
     "lang": "C++",
-    "pushed": "2026-11-24T08:18:52Z",
+    "pushed": "2026-11-24T08:27:54Z",
     "size": 29570,
     "stars": 76
    },
@@ -52200,7 +52205,7 @@
     "lang": "C#",
     "pushed": "2026-11-24T03:50:03Z",
     "size": 14198,
-    "stars": 1134
+    "stars": 1135
    },
    "shots": [
     "https://raw.githubusercontent.com/imnotsharingmyname/pcportastrobot/HEAD/docs/screenshots/gameplay-skygarden.png",
@@ -60856,7 +60861,7 @@
     "firstRelease": "2026-10-13T16:15:43Z",
     "full": "keepvaibin/nebula",
     "lang": "C++",
-    "pushed": "2026-11-24T08:07:06Z",
+    "pushed": "2026-11-24T08:27:32Z",
     "size": 210490,
     "stars": 631
    },
@@ -60894,7 +60899,7 @@
     "firstRelease": "2026-11-08T00:30:40Z",
     "full": "kelvynzucco/majistic-recomp",
     "lang": "JavaScript",
-    "pushed": "2026-11-23T21:25:32Z",
+    "pushed": "2026-11-24T08:27:37Z",
     "size": 15902,
     "stars": 10
    },
@@ -66935,7 +66940,7 @@
     "lang": "C",
     "pushed": "2026-11-24T07:42:32Z",
     "size": 11197,
-    "stars": 1384
+    "stars": 1385
    },
    "shots": []
   },
@@ -71020,7 +71025,7 @@
     "lang": "C",
     "pushed": "2026-11-19T13:31:26Z",
     "size": 7048,
-    "stars": 17
+    "stars": 18
    },
    "shots": []
   },
@@ -72277,7 +72282,7 @@
     "firstRelease": "2026-10-23T14:13:40Z",
     "full": "mbracali/prj-gd-engine",
     "lang": "C++",
-    "pushed": "2026-11-24T08:23:33Z",
+    "pushed": "2026-11-24T08:30:58Z",
     "size": 38630,
     "stars": 99
    },
@@ -75196,7 +75201,7 @@
     "lang": "C",
     "pushed": "2026-11-23T19:30:50Z",
     "size": 16223,
-    "stars": 737
+    "stars": 738
    },
    "shots": []
   },
@@ -80092,7 +80097,7 @@
     "firstRelease": "2026-11-19T19:28:28Z",
     "full": "n64hub/excitebike-64-recomp",
     "lang": "C++",
-    "pushed": "2026-11-24T06:26:32Z",
+    "pushed": "2026-11-24T08:28:40Z",
     "size": 6588,
     "stars": 3
    },
@@ -80331,7 +80336,7 @@
     "firstRelease": "2026-10-29T21:55:10Z",
     "full": "n64hub/mario-party-recomp",
     "lang": "C",
-    "pushed": "2026-11-24T08:23:24Z",
+    "pushed": "2026-11-24T08:28:12Z",
     "size": 6713,
     "stars": 49
    },
@@ -89808,7 +89813,7 @@
     "firstRelease": "2026-10-24T17:57:03Z",
     "full": "openkumite/openkumite",
     "lang": "Rust",
-    "pushed": "2026-11-24T08:19:56Z",
+    "pushed": "2026-11-24T08:31:27Z",
     "size": 4490,
     "stars": 34
    },
@@ -89895,7 +89900,7 @@
     "firstRelease": "2026-10-13T23:05:34Z",
     "full": "OpenRAC/OpenRAC",
     "lang": "C++",
-    "pushed": "2026-11-24T08:25:22Z",
+    "pushed": "2026-11-24T08:27:02Z",
     "size": 210373,
     "stars": 234
    },
@@ -100530,7 +100535,8 @@
     "features": {
      "aspect": "yes",
      "kbm": "yes",
-     "mods": "yes"
+     "mods": "yes",
+     "res": "yes"
     },
     "os": {
      "Android": true,
@@ -100555,8 +100561,8 @@
     "firstRelease": "2026-11-15T04:10:34Z",
     "full": "RodoLy/HarvestMoonAnimalParadeRecomp",
     "lang": "Python",
-    "pushed": "2026-11-24T08:24:16Z",
-    "size": 5695,
+    "pushed": "2026-11-24T08:30:19Z",
+    "size": 5780,
     "stars": 8
    },
    "shots": [
@@ -100569,7 +100575,10 @@
    ]
   },
   "rodoly/hmmmgc": {
-   "assetOs": {},
+   "assetOs": {
+    "Android": true,
+    "Windows": true
+   },
    "readme": {
     "features": {
      "aspect": "yes",
@@ -100601,7 +100610,7 @@
     "firstRelease": "2026-11-12T03:15:47Z",
     "full": "RodoLy/HMMMGC",
     "lang": "Python",
-    "pushed": "2026-11-24T08:25:50Z",
+    "pushed": "2026-11-24T08:28:55Z",
     "size": 9805,
     "stars": 10
    },
@@ -103293,7 +103302,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T11:31:21Z",
     "size": 28283,
-    "stars": 561
+    "stars": 562
    },
    "shots": [
     "https://github.com/user-attachments/assets/984433e5-1bd8-498a-949c-68815e73b901",
@@ -105615,7 +105624,7 @@
     "lang": "C++",
     "pushed": "2026-10-30T17:08:50Z",
     "size": 9735,
-    "stars": 181
+    "stars": 182
    },
    "shots": []
   },
@@ -106305,7 +106314,7 @@
     "lang": "C++",
     "pushed": "2026-11-24T04:46:23Z",
     "size": 17055,
-    "stars": 255
+    "stars": 256
    },
    "shots": [
     "https://raw.githubusercontent.com/Silentwarior112/GT3-PC-ENHANCED/main/ss1.PNG",
@@ -112819,7 +112828,7 @@
     "lang": "Rust",
     "pushed": "2026-11-24T03:14:54Z",
     "size": 157661,
-    "stars": 198
+    "stars": 199
    },
    "shots": []
   },
@@ -118257,7 +118266,7 @@
     "firstRelease": "2026-11-22T06:15:15Z",
     "full": "thegh0sts/007-QOS-X360-PORT",
     "lang": "Python",
-    "pushed": "2026-11-24T08:06:22Z",
+    "pushed": "2026-11-24T08:30:16Z",
     "size": 1895,
     "stars": 28
    },
@@ -121165,7 +121174,7 @@
     "full": "topaxi/OpenAntiGrav",
     "lang": "Rust",
     "pushed": "2026-11-24T08:07:17Z",
-    "size": 79632,
+    "size": 80484,
     "stars": 39
    },
    "shots": []
@@ -121897,7 +121906,7 @@
     "full": "tsapZ/TrapTeamRecomp",
     "lang": "C++",
     "pushed": "2026-11-24T07:31:58Z",
-    "size": 2514,
+    "size": 2516,
     "stars": 5
    },
    "shots": [
@@ -123497,8 +123506,8 @@
     "full": "valentderah/totk-pc-recomp",
     "lang": "C",
     "pushed": "2026-11-24T07:27:11Z",
-    "size": 7594,
-    "stars": 8165
+    "size": 10212,
+    "stars": 8166
    },
    "shots": []
   },
@@ -125357,7 +125366,7 @@
     "firstRelease": "2026-11-23T01:13:21Z",
     "full": "Voicedrew11/holyland",
     "lang": "C",
-    "pushed": "2026-11-23T22:44:20Z",
+    "pushed": "2026-11-24T08:31:15Z",
     "size": 61741,
     "stars": 78
    },
@@ -132055,7 +132064,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T18:20:27Z",
     "size": 33956,
-    "stars": 1674
+    "stars": 1675
    },
    "shots": []
   },
