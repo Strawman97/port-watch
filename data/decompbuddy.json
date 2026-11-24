@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-23T12:34:12+00:00",
+ "generated": "2026-11-24T02:12:08+00:00",
  "projects": [
   {
    "ai": false,
@@ -50,6 +50,23 @@
    "pr": "NightfirePort",
    "pre": false,
    "rel": "v0.1.21",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "a pc recomp of 007 Quantum of Solace (X360) using Rexglue",
+   "g": "007: Quantum of Solace",
+   "id": "db:thegh0sts/007-qos-x360-port",
+   "k": "thegh0sts/007-qos-x360-port",
+   "lc": "2026-11-23T07:55:14Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "007-QOS-X360-PORT",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -106,6 +123,23 @@
    "pre": false,
    "rel": "1.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "13 Sentinels: Aegis Rim (Switch) static recompilation for PC",
+   "g": "13 Sentinels: Aegis Rim",
+   "id": "db:wenvil/13sentinelsrecomp",
+   "k": "wenvil/13sentinelsrecomp",
+   "lc": "2026-11-23T14:07:38Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "13SentinelsRecomp",
+   "pre": true,
+   "rel": "v1.0.0-beta1",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -236,23 +270,6 @@
    "pr": "720_Degrees-PC_Port",
    "pre": false,
    "rel": "v0.3.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-06",
-   "d": "Recompilation project for A Certain Magical Virtual-On M.S.B.S. Ver. 55.55 (PS4)",
-   "g": "A Certain Magical Virtual-On M.S.B.S. Ver. 55.55",
-   "id": "db:kitaaaaaa/toarumajutsuvirtualon-recomp",
-   "k": "kitaaaaaa/toarumajutsuvirtualon-recomp",
-   "lc": "2026-11-16T08:27:19Z",
-   "p": "PS4",
-   "po": [
-    "Windows"
-   ],
-   "pr": "ToaruMajutsuVirtualOn-recomp",
-   "pre": false,
-   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -1387,6 +1404,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Asura's Wrath PS3 static recompilation",
+   "g": "Asura's Wrath",
+   "id": "db:redgrave961/vajra",
+   "k": "redgrave961/vajra",
+   "lc": "2026-11-23T16:16:02Z",
+   "p": "PS3",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Vajra",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-19",
    "d": "Native Windows PC port of Azure Dreams (PS1) via static recompilation with psxrecomp: HD rendering, 16:9 widescreen, fast loading. Bring your own disc.",
@@ -1435,23 +1470,6 @@
    "pr": "backbreaker-recomp",
    "pre": false,
    "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-26",
-   "d": "Native Windows x64 port of Bakugan: Battle Brawlers (PS3, BLES00758) built by static PPU+SPU recompilation - no emulator. Menus, FMVs and the narrative intro work; 3D models, gameplay and SFX are next.",
-   "g": "Bakugan: Battle Brawlers",
-   "id": "db:mauryln/bakugan-battle-brawlers-ps3-recomp",
-   "k": "mauryln/bakugan-battle-brawlers-ps3-recomp",
-   "lc": "2026-11-09T23:36:56Z",
-   "p": "PS3",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Bakugan-Battle-Brawlers-PS3-recomp",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -2004,6 +2022,24 @@
    "pr": "BioShock360ProductRelease",
    "pre": false,
    "rel": "v0.4.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Static recompilation launchers for BioShock 1 on Windows and Android - real ReXGlue runtime, guest-presented title screen, no game data in the APK",
+   "g": "BioShock",
+   "id": "db:eddygamedev/bioshock1-native-recomp",
+   "k": "eddygamedev/bioshock1-native-recomp",
+   "lc": "2026-11-22T15:25:51Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android",
+    "Windows"
+   ],
+   "pr": "bioshock1-native-recomp",
+   "pre": false,
+   "rel": "v0.0.7.2-experimental",
    "t": "Recompilation"
   },
   {
@@ -3169,6 +3205,23 @@
    "pr": "castlevania-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "An unofficial native Android port of the original Xbox version of Castlevania: Curse of Darkness.",
+   "g": "Castlevania: Curse of Darkness",
+   "id": "db:akanetfs/castlevania-cod-android",
+   "k": "akanetfs/castlevania-cod-android",
+   "lc": "2026-11-22T18:10:31Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "Castlevania-Cod-Android",
+   "pre": false,
+   "rel": "last-version",
    "t": "Recompilation"
   },
   {
@@ -4635,7 +4688,7 @@
    ],
    "pr": "Dave-Mirra-Recomp",
    "pre": false,
-   "rel": "v1.1.5",
+   "rel": "v1.2.0",
    "t": "Recompilation"
   },
   {
@@ -5001,6 +5054,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Def Jam Icon recomp for PC.",
+   "g": "Def Jam: Icon",
+   "id": "db:percangle312/icon-recomp",
+   "k": "percangle312/icon-recomp",
+   "lc": "2026-11-14T20:24:03Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Icon-Recomp",
+   "pre": true,
+   "rel": "playtest-1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "A modern, endless remake of the classic arcade game Defender",
    "g": "Defender",
@@ -5031,6 +5101,23 @@
     "Windows"
    ],
    "pr": "deja-vu",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Unofficial Windows PC port of Demon's Souls (2020), Bluepoint's PS5 remake. Runs your own copy of the PS5 game (PPSA01341, version 1.07). No game files included.",
+   "g": "Demon's Souls",
+   "id": "db:sulphurs16/regaliant",
+   "k": "sulphurs16/regaliant",
+   "lc": "2026-11-23T12:15:24Z",
+   "p": "PS5",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Regaliant",
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
@@ -5466,6 +5553,23 @@
    "pre": false,
    "rel": "v2.0.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Experimental Digimon World 4 PS2 USA native recompilation for Windows, based on Grandia3-PC.",
+   "g": "Digimon World 4",
+   "id": "db:gorigamia/digicomp4",
+   "k": "gorigamia/digicomp4",
+   "lc": "2026-11-23T18:38:22Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "DIGICOMP4",
+   "pre": true,
+   "rel": "v0.2.0-preview",
+   "t": "Recompilation"
   },
   {
    "ai": true,
@@ -6378,6 +6482,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Play Dragon's Crown Pro natively on Apple Silicon Macs from your own PS4 dump: a macOS contribution to OpenCrown PC, with a static recompiler, launcher, controllers and online co-op.",
+   "g": "Dragon's Crown Pro",
+   "id": "db:alountk/opencrown-mac",
+   "k": "alountk/opencrown-mac",
+   "lc": "2026-11-23T14:44:47Z",
+   "p": "PS4",
+   "po": [
+    "macOS"
+   ],
+   "pr": "OpenCrown-MAC",
+   "pre": false,
+   "rel": "v1.2-mac.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-03",
    "d": "A recompilation of a Wii game.",
    "g": "Dragon's Lair Trilogy",
@@ -6869,7 +6990,7 @@
    ],
    "pr": "ebaouendan_musiclives",
    "pre": true,
-   "rel": "v1.3.0",
+   "rel": "v1.3.1",
    "t": "Recompilation"
   },
   {
@@ -7306,6 +7427,24 @@
     "Linux"
    ],
    "pr": "MioPan",
+   "pre": true,
+   "rel": "nightly",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "PC Port Of Fatal Frame 3 Based On AI Code Recreation",
+   "g": "Fatal Frame III: The Tormented",
+   "id": "db:mikompilation/reipan",
+   "k": "mikompilation/reipan",
+   "lc": "2026-11-23T06:13:08Z",
+   "p": "PS2",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "ReiPan",
    "pre": true,
    "rel": "nightly",
    "t": "Recompilation"
@@ -7940,18 +8079,20 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
-   "at": "2026-11-10",
-   "d": "Native Windows recompilation of Fire Emblem: Fortune's Weave: play from your own dump with no emulator, with save editing, mods, cheats and an in-game menu. AI-assisted development.",
-   "g": "Fire Emblem: Fortune's Weave",
-   "id": "db:xiondigital/emblemweave",
-   "k": "xiondigital/emblemweave",
-   "lc": "2026-11-10T17:30:53Z",
-   "p": "Switch 2",
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Static recompilation of Fire Emblem: Path of Radiance (GameCube, GFEP01). Read-only mirror of the Gitea repository.",
+   "g": "Fire Emblem: Path of Radiance",
+   "id": "db:haegemonia76/fepor-recomp",
+   "k": "haegemonia76/fepor-recomp",
+   "lc": "2026-11-23T11:04:30Z",
+   "p": "GameCube",
    "po": [
-    "Windows"
+    "macOS",
+    "Windows",
+    "Linux"
    ],
-   "pr": "EmblemWeave",
+   "pr": "fepor-recomp",
    "pre": false,
    "rel": "v0.1.1",
    "t": "Recompilation"
@@ -8310,6 +8451,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Futurama (2003) on Meta Quest 3 in a stereoscopic 3D OpenXR window over passthrough (Quest 3 & macOS port of hiburn8/Futurama-The-Game-The-Recomp). Bring your own Xbox .iso.",
+   "g": "Futurama",
+   "id": "db:mrchrisster/futurama-quest",
+   "k": "mrchrisster/futurama-quest",
+   "lc": "2026-11-18T16:50:02Z",
+   "p": "Xbox (original)",
+   "po": [],
+   "pr": "futurama-quest",
+   "pre": false,
+   "rel": "v0.1.6",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-21",
    "d": "An unofficial native PC port of the original Xbox release of Fuzion Frenzy (USA), produced by statically recompiling the game's x86 XBE with the XboxXBERecomp SDK. Windows uses Direct3D 12 and XAudio2; Linux is a native Vulkan and SDL3 build, no Wine. No game code or assets: bring your own disc.",
    "g": "Fuzion Frenzy",
@@ -8368,7 +8524,7 @@
    ],
    "pr": "Galaxy-Ange-II-PC",
    "pre": false,
-   "rel": "v0.11.0",
+   "rel": "v0.12.0",
    "t": "Recompilation"
   },
   {
@@ -8396,7 +8552,7 @@
    ],
    "pr": "galaxy-angel-2-pc",
    "pre": false,
-   "rel": "v0.11.0",
+   "rel": "v0.12.0",
    "t": "Recompilation"
   },
   {
@@ -8490,6 +8646,24 @@
    "pr": "gauntlet-rust",
    "pre": false,
    "rel": "v0.2.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "An unofficial PC port of Gauntlet IV for the SEGA Genesis, complete with online multiplayer, custom soundtrack and addon support. ",
+   "g": "Gauntlet IV",
+   "id": "db:reesekaine/ghost",
+   "k": "reesekaine/ghost",
+   "lc": "2026-11-23T20:00:05Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Ghost",
+   "pre": true,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -8789,6 +8963,23 @@
    "pr": "gogoackman1recomp",
    "pre": false,
    "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-26",
+   "d": "A native Android port of the God Hand PS2, utilizing static recompilation for optimized mobile performance, unlocked framerates, custom touch controls, and mores",
+   "g": "God Hand",
+   "id": "db:owaissseeee/godhandandroidport",
+   "k": "owaissseeee/godhandandroidport",
+   "lc": "2026-10-25T20:28:59Z",
+   "p": "PS2",
+   "po": [
+    "Android"
+   ],
+   "pr": "GodHandAndroidPort",
+   "pre": false,
+   "rel": "Beta",
    "t": "Recompilation"
   },
   {
@@ -9206,20 +9397,20 @@
   },
   {
    "ai": false,
-   "at": "2026-11-19",
-   "d": "Gran Turismo 3 Decompiled, ported to Windows, and enhanced.",
-   "g": "Gran Turismo 3 A-Spec",
-   "id": "db:silentwarior112/gt3-pc-enhanced",
-   "k": "silentwarior112/gt3-pc-enhanced",
-   "lc": "2026-11-19T03:49:29Z",
-   "p": "PS2",
+   "at": "2026-11-23",
+   "d": "Unofficial native Android port of Gran Turismo 2 with touch controls (bring your own disc)",
+   "g": "Gran Turismo 2",
+   "id": "db:phantasmproject/gt2-android",
+   "k": "phantasmproject/gt2-android",
+   "lc": "2026-11-23T08:41:44Z",
+   "p": "PS1",
    "po": [
-    "Windows"
+    "Android"
    ],
-   "pr": "GT3-PC-ENHANCED",
+   "pr": "gt2-android",
    "pre": false,
-   "rel": "1.0.1",
-   "t": "Decompilation"
+   "rel": "0.9.5.4",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -9236,6 +9427,21 @@
    "pr": "GT4-Recomp",
    "pre": true,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "GT4 VR for Meta Quest / Pico - based on snuri00/ps2-web-recomp",
+   "g": "Gran Turismo 4",
+   "id": "db:sgtbilko76/gt4-vr",
+   "k": "sgtbilko76/gt4-vr",
+   "lc": "2026-11-13T08:19:09Z",
+   "p": "PS2",
+   "po": [],
+   "pr": "gt4-vr",
+   "pre": true,
+   "rel": "v0.3.2-beta-specii",
    "t": "Recompilation"
   },
   {
@@ -9767,6 +9973,24 @@
    "pre": false,
    "rel": "v1.0.0",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Matching decompilation of Guilty Gear X Plus (PS2): 3,615/3,615 functions, byte-identical on SLPS-20137 and SLPM-64525",
+   "g": "Guilty Gear X Plus",
+   "id": "db:devin-thomas/guilty-gear-x-plus",
+   "k": "devin-thomas/guilty-gear-x-plus",
+   "lc": "2026-11-21T05:39:11Z",
+   "p": "PS2",
+   "po": [
+    "macOS",
+    "Windows"
+   ],
+   "pr": "guilty-gear-x-plus",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Decompilation"
   },
   {
    "ai": false,
@@ -10892,6 +11116,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Recomp of HOTD EX - A spin off from the main HOTD-games",
+   "g": "The House of the Dead EX",
+   "id": "db:davidptrssvea/hotd-ex-recomp",
+   "k": "davidptrssvea/hotd-ex-recomp",
+   "lc": "2026-11-23T12:02:56Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "HOTD-EX-recomp",
+   "pre": false,
+   "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "Six experimental Chihiro standalone ports for Linux and Android, with source, APKs, releases and screenshots.",
    "g": "The House of the Dead III",
@@ -11654,7 +11895,7 @@
    ],
    "pr": "JakAndDaxter-Quest-VR",
    "pre": false,
-   "rel": "v0.1.8",
+   "rel": "v0.1.9",
    "t": "Recompilation"
   },
   {
@@ -11938,6 +12179,23 @@
    "pr": "eoh-pc-releases",
    "pre": true,
    "rel": "v0.1.0-beta.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "ReSqueezed is a recompilation project for the Xbox version of Juiced, as the PC version has been historically hard to run and prone to crashing.",
+   "g": "Juiced",
+   "id": "db:davidisownage/resqueezed",
+   "k": "davidisownage/resqueezed",
+   "lc": "2026-11-23T19:24:00Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ReSqueezed",
+   "pre": false,
+   "rel": "launcher",
    "t": "Recompilation"
   },
   {
@@ -12956,7 +13214,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
+   "ai": false,
    "at": "2026-10-20",
    "d": "Reverse-engineering Legend of Legaia (PSX, 1999): Ghidra-traced format documentation, Rust extractors for every asset on the disc, and an engine reimplementation targeting wgpu/SDL3 with optional WASM.  BYO-disc model, no assets distributed.",
    "g": "Legend of Legaia",
@@ -13171,6 +13429,23 @@
    "pr": "Z3R",
    "pre": false,
    "rel": "v0.2.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Native Windows port of EoWRecomp. Players provide their own game files.",
+   "g": "The Legend of Zelda: Echoes of Wisdom",
+   "id": "db:ivofehn/eowrecomp-windows",
+   "k": "ivofehn/eowrecomp-windows",
+   "lc": "2026-11-14T22:53:53Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "EoWRecomp-Windows",
+   "pre": true,
+   "rel": "v0.1.0-rc.1",
    "t": "Recompilation"
   },
   {
@@ -13395,6 +13670,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Unofficial Linux builds of Triforce (Ocarina of Time Switch 2 native port), with Linux additions. Fork of git.triforceproject.com/triforce/source (GPL-3.0).",
+   "g": "The Legend of Zelda: Ocarina of Time",
+   "id": "db:loteran/triforce",
+   "k": "loteran/triforce",
+   "lc": "2026-11-22T03:25:51Z",
+   "p": "Switch 2",
+   "po": [
+    "Linux"
+   ],
+   "pr": "Triforce",
+   "pre": false,
+   "rel": "v0.6.0-linux.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-05",
    "d": "Ocarina of Time — PC Native Build. Website moved to ocarina-pc-native-build.github.io. Development progress and reported test results; no playable release yet.",
    "g": "The Legend of Zelda: Ocarina of Time",
@@ -13408,6 +13700,24 @@
    "pr": "OoT2026-PC-Recomp",
    "pre": false,
    "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "A native PC build of The Legend of Zelda: Ocarina of Time (Switch 2) from your own copy of the game. No game files included.",
+   "g": "The Legend of Zelda: Ocarina of Time",
+   "id": "db:mr-renegade/dekoonut",
+   "k": "mr-renegade/dekoonut",
+   "lc": "2026-11-16T04:05:23Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "DekooNut",
+   "pre": true,
+   "rel": "v0.2.1-windows-preview1",
    "t": "Recompilation"
   },
   {
@@ -14413,6 +14723,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Magic Carpet (PS1, PAL) in VR on PC: the original game code, the world redrawn in stereoscopic 3D, spells cast from your hands. Bring your own disc.",
+   "g": "Magic Carpet",
+   "id": "db:migcar69/mcpsxvr",
+   "k": "migcar69/mcpsxvr",
+   "lc": "2026-11-15T14:26:07Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mcpsxvr",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-09",
    "d": "Static recompilation of the SNES game Magical Pop'n into a native Windows game, built from your own ROM. Motion smoothing, native widescreen.",
@@ -14568,6 +14895,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Mouse/keyboard play, menus and filters for the Maniac Mansion NES prototype (NESRecomp). Bring your own ROM.",
+   "g": "Maniac Mansion",
+   "id": "db:meteormessgames/maniacmansion_nes_pc",
+   "k": "meteormessgames/maniacmansion_nes_pc",
+   "lc": "2026-11-18T07:25:35Z",
+   "p": "NES",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "ManiacMansion_NES_PC",
+   "pre": false,
+   "rel": "v1.3.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-10",
    "d": "Native port of MapleStory Thief Edition (iOS, 2010) to macOS/Windows/iOS",
    "g": "MapleStory Thief Edition",
@@ -14637,7 +14982,7 @@
    ],
    "pr": "MBHaxe",
    "pre": false,
-   "rel": "1.1.15",
+   "rel": "1.4.1-mbu",
    "t": "Recompilation"
   },
   {
@@ -14965,7 +15310,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-22",
    "d": "",
    "g": "Mario Tennis Fever",
@@ -15312,6 +15657,23 @@
    "pr": "MOHRecomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Medal of Honor (PS1, PAL) in VR on PC: the original game code, the world redrawn in stereoscopic 3D, motion-controller aiming. Bring your own disc.",
+   "g": "Medal of Honor",
+   "id": "db:migcar69/mohpsxvr",
+   "k": "migcar69/mohpsxvr",
+   "lc": "2026-11-14T16:11:19Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mohpsxvr",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -16835,6 +17197,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "MotorStorm: Pacific Rift native PC recompilation (project, docs, tools). Private.",
+   "g": "MotorStorm: Pacific Rift",
+   "id": "db:papand7/motorstorm-pacific-rift-native",
+   "k": "papand7/motorstorm-pacific-rift-native",
+   "lc": "2026-11-23T19:03:05Z",
+   "p": "PS3",
+   "po": [
+    "Windows"
+   ],
+   "pr": "motorstorm-pacific-rift-native",
+   "pre": true,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Tengen Ms. Pac-Man (Genesis) static recompilation for PC, with a full-maze view. Bring your own ROM.",
    "g": "Ms. Pac-Man",
@@ -17555,6 +17934,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Unofficial native Android port of Need for Speed: Underground 2, built through static recompilation. Requires your own legally obtained game files.",
+   "g": "Need for Speed: Underground 2",
+   "id": "db:potatorecomp/underground-2-android",
+   "k": "potatorecomp/underground-2-android",
+   "lc": "2026-11-23T11:36:57Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Android"
+   ],
+   "pr": "Underground-2-Android",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-19",
    "d": "Need for Speed: Underground 2 (Xbox) on Apple Silicon Macs: a static recompilation built on your Mac from your own disc",
    "g": "Need for Speed: Underground 2",
@@ -17815,6 +18211,26 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "New Blitz 2027: NFL Blitz 2000 rebuilt to run natively (N64Recomp). Bring your own cartridge.",
+   "g": "NFL Blitz 2000 (2027)",
+   "id": "db:blitzrecomp/newblitz",
+   "k": "blitzrecomp/newblitz",
+   "lc": "2026-11-17T22:32:19Z",
+   "p": "N64",
+   "po": [
+    "Linux",
+    "Windows",
+    "Android",
+    "macOS"
+   ],
+   "pr": "newblitz",
+   "pre": false,
+   "rel": "v1.0.2",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Native Windows/Linux PC port of NFL Blitz 2003 (GameCube) by static recompilation. Bring your own disc; no game data included.",
@@ -17985,6 +18401,23 @@
    "pr": "nicktoons-racing-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Experimental Windows x64 compatibility runtime for Nidhogg (PS4): original-code execution, Direct3D 11 rendering, audio and synchronized-input netplay.",
+   "g": "Nidhogg",
+   "id": "db:japerstar1/nidhogg-win64",
+   "k": "japerstar1/nidhogg-win64",
+   "lc": "2026-11-13T02:07:22Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Nidhogg-Win64",
+   "pre": true,
+   "rel": "v1.1.0-rc.2",
    "t": "Recompilation"
   },
   {
@@ -18302,6 +18735,23 @@
    "pr": "TimberlineRecompiled",
    "pre": true,
    "rel": "WIP",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Orbitals, running natively on Windows PC — static recompilation (Early Release)",
+   "g": "Orbitals",
+   "id": "db:sts78721/orbit",
+   "k": "sts78721/orbit",
+   "lc": "2026-11-23T19:59:11Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ORBIT",
+   "pre": false,
+   "rel": "0.1.0",
    "t": "Recompilation"
   },
   {
@@ -19049,6 +19499,24 @@
   },
   {
    "ai": true,
+   "at": "2026-11-21",
+   "d": "",
+   "g": "Planet Harriers",
+   "id": "db:pocketlucho/planet-harriers---recompilation",
+   "k": "pocketlucho/planet-harriers---recompilation",
+   "lc": "2026-11-23T12:17:02Z",
+   "p": "Arcade",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Planet-Harriers---Recompilation",
+   "pre": false,
+   "rel": "0.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-10-17",
    "d": "Unofficial Windows port of the Xbox 360 Plants vs. Zombies, statically recompiled with ReXGlue, with full mouse controls. Bring your own game copy.",
    "g": "Plants vs. Zombies: Console Edition",
@@ -19097,6 +19565,26 @@
    "pre": true,
    "rel": "v0.8.1-beta",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Decompiled Nintendo DS games rebuilt as native apps. Bring your own ROM.",
+   "g": "Pokemon Black, White, Black 2, White 2, Platinum, HeartGold and SoulSilver",
+   "id": "db:somefosterkid/ntrnative",
+   "k": "somefosterkid/ntrnative",
+   "lc": "2026-11-22T08:13:44Z",
+   "p": "DS",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux",
+    "Android"
+   ],
+   "pr": "ntrnative",
+   "pre": false,
+   "rel": "v0.2.3",
+   "t": "Decompilation"
   },
   {
    "ai": false,
@@ -19271,24 +19759,6 @@
    "pr": "pokefirered-dualscreen",
    "pre": false,
    "rel": "v0.2.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-10-27",
-   "d": "Single-screen decompilation build of Pokemon HeartGold/SoulSilver (pokeheartgold), the source for the ssrecomp single-screen recomp.",
-   "g": "Pokemon HeartGold/SoulSilver",
-   "id": "db:clickingmaster/pokeheartgold-single-screen",
-   "k": "clickingmaster/pokeheartgold-single-screen",
-   "lc": "2026-10-21T22:33:42Z",
-   "p": "DS",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "pokeheartgold-single-screen",
-   "pre": false,
-   "rel": "v0.1.4",
    "t": "Recompilation"
   },
   {
@@ -20219,6 +20689,24 @@
    "t": "Decompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "Open-source reimplementation of the Pump It Up: The 2nd Dance Floor engine. No game files included.",
+   "g": "Pump It Up: The 2nd Dance Floor",
+   "id": "db:astralexceed/open-it-up-2nd",
+   "k": "astralexceed/open-it-up-2nd",
+   "lc": "2026-11-17T04:23:14Z",
+   "p": "Arcade",
+   "po": [
+    "Windows",
+    "macOS"
+   ],
+   "pr": "open-it-up-2nd",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Reimplementation"
+  },
+  {
    "ai": false,
    "at": "2026-10-14",
    "d": "",
@@ -20237,7 +20725,7 @@
    "t": "Decompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-20",
    "d": "POW: Recompiled!! - a fan-made PC recompilation of Punch-Out!! (Wii, 2009). Bring your own disc. Controller support, resolution multiplier, built-in Archipelago. Not affiliated with Nintendo.",
    "g": "Punch-Out!!",
@@ -20554,6 +21042,23 @@
    "pr": "nexus-recomp",
    "pre": true,
    "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "A native PC engine for Ratchet & Clank: Size Matters (PS2) that reads your own disc image. No emulator, no game data included.",
+   "g": "Ratchet & Clank: Size Matters",
+   "id": "db:quasar30-dev/sm_pc",
+   "k": "quasar30-dev/sm_pc",
+   "lc": "2026-11-16T10:50:08Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "sm_pc",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -20959,6 +21464,23 @@
    "pr": "resident-evil-darkside-chronicles-recomp",
    "pre": false,
    "rel": "1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Native PC port of RE: The Mercenaries VS. (iOS), recompiled from your own .ipa. No game content included.",
+   "g": "Resident Evil: The Mercenaries VS.",
+   "id": "db:albertoha94/rust.recomp.revs",
+   "k": "albertoha94/rust.recomp.revs",
+   "lc": "2026-11-23T09:14:59Z",
+   "p": "Mobile",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Rust.Recomp.ReVS",
+   "pre": true,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -21442,6 +21964,24 @@
    "pr": "rose-recompiled",
    "pre": true,
    "rel": "v0.3.0-beta.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "A native PC port of the cult classic survival horror game Rule of Rose",
+   "g": "Rule of Rose",
+   "id": "db:ptfpinho23/rule-of-rose-recomp",
+   "k": "ptfpinho23/rule-of-rose-recomp",
+   "lc": "2026-11-23T14:34:09Z",
+   "p": "PS2",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "rule-of-rose-recomp",
+   "pre": false,
+   "rel": "v0.1.2",
    "t": "Recompilation"
   },
   {
@@ -22362,6 +22902,23 @@
    "pr": "ninja-master",
    "pre": false,
    "rel": "v0.1.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "Native Windows port of Shinobido 2: Revenge of Zen (PS Vita, US PCSE00015) by static recompilation — not an emulator. 60 fps at original speed, up to 5760×3264 with DirectX 11, F9 settings menu, cheats, skins, free camera and full keyboard/mouse/controller support. No game data included: bring your own copy.",
+   "g": "Shinobido 2: Revenge of Zen",
+   "id": "db:umagamer83182/shinobido-2-revenge-of-zen-native-pc-port",
+   "k": "umagamer83182/shinobido-2-revenge-of-zen-native-pc-port",
+   "lc": "2026-11-23T16:21:01Z",
+   "p": "PS Vita",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Shinobido-2-Revenge-of-Zen-Native-PC-Port",
+   "pre": false,
+   "rel": "1.0.25",
    "t": "Recompilation"
   },
   {
@@ -23472,6 +24029,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Sonic Shuffle recompiled for macOS Apple Silicon, Windows x64 and Android arm64. Linux support planned.",
+   "g": "Sonic Shuffle",
+   "id": "db:ch1ppyone/shuffle-recomp",
+   "k": "ch1ppyone/shuffle-recomp",
+   "lc": "2026-11-23T14:56:10Z",
+   "p": "Dreamcast",
+   "po": [
+    "Windows",
+    "macOS",
+    "Android"
+   ],
+   "pr": "shuffle-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-05",
    "d": "A modification of the 2013 mobile port, based on the 2021 decompilation",
    "g": "Sonic the Hedgehog",
@@ -23588,6 +24164,23 @@
    "pr": "UnleashedRecomp-NX2",
    "pre": false,
    "rel": "1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "",
+   "g": "Sonic Unleashed",
+   "id": "db:neiove/sonic-unleashed-recompiled-ps4",
+   "k": "neiove/sonic-unleashed-recompiled-ps4",
+   "lc": "2026-11-02T03:00:45Z",
+   "p": "Xbox 360",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Sonic-Unleashed-Recompiled-Ps4",
+   "pre": false,
+   "rel": "v0.84",
    "t": "Recompilation"
   },
   {
@@ -24160,6 +24753,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Star Fox, running natively on Windows PC — static recompilation (Early Release)",
+   "g": "Star Fox",
+   "id": "db:sts78721/sunhound",
+   "k": "sts78721/sunhound",
+   "lc": "2026-11-23T21:01:06Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SUNHOUND",
+   "pre": false,
+   "rel": "0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-12",
    "d": "PROJECT ARWING - StarFox 2 decomp with quality of life improvements",
    "g": "Star Fox 2",
@@ -24227,6 +24837,29 @@
    "pr": "starfox-command-native",
    "pre": false,
    "rel": "v1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "ATARI Star Wars Arcade — Recomp Edition: Atari's Star Wars (1983) and The Empire Strikes Back (1985) recompiled for PC - true 16:9, vector options menu, 120 Hz+, autofire, yoke support. Bring your own MAME ROMs.",
+   "g": "Star Wars",
+   "games": [
+    {
+     "platform": "Arcade",
+     "title": "The Empire Strikes Back"
+    }
+   ],
+   "id": "db:zerdarker/atari-star-wars-arcade-recomp-edition",
+   "k": "zerdarker/atari-star-wars-arcade-recomp-edition",
+   "lc": "2026-11-23T16:27:03Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ATARI-STAR-WARS-Arcade-RECOMP-edition",
+   "pre": false,
+   "rel": "v1.6",
    "t": "Recompilation"
   },
   {
@@ -24701,6 +25334,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-23",
+   "d": "Experimental native Windows port of Summon Night 6: Lost Borders (PS4 CUSA04105 Chinese 1.00) — the game executable runs on x86-64 with an HLE PS4 runtime and vendored shadPS4 GPU core. Boots to title, menu works.",
+   "g": "Summon Night 6: Lost Borders",
+   "id": "db:acgnnsj/summon-night-6-pc",
+   "k": "acgnnsj/summon-night-6-pc",
+   "lc": "2026-11-15T03:06:13Z",
+   "p": "PS4",
+   "po": [
+    "Windows"
+   ],
+   "pr": "summon-night-6-pc",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Unofficial Super Bomberman 5 Windows prototype using SNESRecomp. Partial recompilation, ROM-free setup releases, English and Portuguese docs.",
    "g": "Super Bomberman 5",
@@ -24768,23 +25418,6 @@
    "pr": "SuperHangOn-MD-Recomp",
    "pre": false,
    "rel": "v0.2.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-17",
-   "d": "Super Mario 3D Land recompiled. Native Windows x64 port built from a local European 3DS ROM.",
-   "g": "Super Mario 3D Land",
-   "id": "db:okxmir/super-mario-3d-land-recompiled",
-   "k": "okxmir/super-mario-3d-land-recompiled",
-   "lc": "2026-11-17T15:57:17Z",
-   "p": "3DS",
-   "po": [
-    "Windows"
-   ],
-   "pr": "super-mario-3d-land-recompiled",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -25151,7 +25784,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-10",
    "d": "SMM2 DX - the Super Mario Maker 2 recomp",
    "g": "Super Mario Maker 2",
@@ -25217,6 +25850,23 @@
    "pr": "smrpg-recompiled",
    "pre": false,
    "rel": "0.51.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "SMRPG Recomp for Android: an unofficial static recompilation of Super Mario RPG (Switch, 2023), built on LASRecomp. No game files included.",
+   "g": "Super Mario RPG",
+   "id": "db:elkiro1311/smrpg-recompiled-android",
+   "k": "elkiro1311/smrpg-recompiled-android",
+   "lc": "2026-11-23T14:45:43Z",
+   "p": "Switch",
+   "po": [
+    "Android"
+   ],
+   "pr": "smrpg-recompiled-android",
+   "pre": false,
+   "rel": "0.10.0-alpha",
    "t": "Recompilation"
   },
   {
@@ -26389,6 +27039,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "Tokyo Mirage Sessions #FE Encore, recompiled to run natively on Windows (static recompilation, Vulkan, no emulator). Bring your own game.",
+   "g": "Tokyo Mirage Sessions #FE Encore",
+   "id": "db:godofknife/tmsrecomp",
+   "k": "godofknife/tmsrecomp",
+   "lc": "2026-11-23T17:51:27Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "TMSRecomp",
+   "pre": false,
+   "rel": "v0.1.0-beta",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-16",
    "d": "Complete matching decompilation of Tokyo Xtreme Racer Advance (GBA): C and assembly that rebuild the cartridge byte for byte, plus a native PC recompiler. No ROM included.",
@@ -27457,7 +28124,7 @@
    ],
    "pr": "gallian-chronicles",
    "pre": false,
-   "rel": "v0.9.0",
+   "rel": "v0.9.1",
    "t": "Recompilation"
   },
   {
@@ -28663,6 +29330,24 @@
   },
   {
    "ai": true,
+   "at": "2026-11-23",
+   "d": "X-Men 2: Clone Wars (Genesis) remastered in HD: native PC and Android port with redrawn graphics, widescreen, 60 fps and up to four players",
+   "g": "X-Men 2: Clone Wars",
+   "id": "db:theomega-hash/x-men-2-remastered",
+   "k": "theomega-hash/x-men-2-remastered",
+   "lc": "2026-11-23T01:08:44Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows",
+    "Android"
+   ],
+   "pr": "X-Men-2-Remastered",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-21",
    "d": "Unofficial native PC port of X-Men: Destiny (Xbox 360). Bring your own disc.",
    "g": "X-Men: Destiny",
@@ -29085,6 +29770,23 @@
    "pre": false,
    "rel": "v0.8.0",
    "t": "Reimplementation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-23",
+   "d": "Zone of the Enders Recompiled for Android - built on your device from your own disc",
+   "g": "Zone of the Enders",
+   "id": "db:almost-drowned-rat/zoe-recompiled-android",
+   "k": "almost-drowned-rat/zoe-recompiled-android",
+   "lc": "2026-11-23T16:50:58Z",
+   "p": "PS2",
+   "po": [
+    "Android"
+   ],
+   "pr": "ZOE-Recompiled-Android",
+   "pre": false,
+   "rel": "v0.8.5-android",
+   "t": "Recompilation"
   },
   {
    "ai": true,
