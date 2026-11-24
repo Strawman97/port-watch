@@ -1640,7 +1640,7 @@ function filtered(){
 let YIDX=null;
 // "Pokémon Red Version" and "Pokémon Red", or "Midnight Club: Los Angeles - Complete Edition" and the plain title, are one game
 // regional names of the same game group together ("Philosopher's Stone" in Europe is "Sorcerer's Stone" in the US)
-const TITLE_ALIASES=[[/\bphilosophers stone\b/,"sorcerers stone"]];
+const TITLE_ALIASES=[[/\bphilosophers stone\b/,"sorcerers stone"],[/^pokemon (black|white) 2$/,"pokemon $1 version 2"]];
 function titleBase(t){let b=nrmT(bare(t)).replace(/ (?:version|complete edition)$/,"").replace(/ 1$/,"");for(const [re,to] of TITLE_ALIASES)b=b.replace(re,to);return b;}
 function titleYear(t){const m=/\((?:[^)]*\D)?((?:19|20)\d\d)\)/.exec(String(t||""));return m?m[1]:"";}
 function samePlat(p){return p==="XBLA (Xbox 360)"?"Xbox 360":p;}
