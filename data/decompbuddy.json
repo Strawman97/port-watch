@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T02:12:08+00:00",
+ "generated": "2026-11-24T08:21:50+00:00",
  "projects": [
   {
    "ai": false,
@@ -7013,6 +7013,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "",
+   "g": "Eragon",
+   "id": "db:bigevilmods/eragon-ps2-recomp",
+   "k": "bigevilmods/eragon-ps2-recomp",
+   "lc": "2026-11-23T22:45:43Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Eragon-PS2-Recomp",
+   "pre": false,
+   "rel": "1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-02",
    "d": "",
    "g": "ESP Ra.De.",
@@ -9006,15 +9023,15 @@
    "g": "God of War III Remastered",
    "id": "db:felipeprado0/gow3_pc",
    "k": "felipeprado0/gow3_pc",
-   "lc": "2026-11-16T02:41:14Z",
+   "lc": "2026-11-23T22:28:04Z",
    "p": "PS4",
    "po": [
     "Windows",
     "Linux"
    ],
    "pr": "SpartanPort",
-   "pre": false,
-   "rel": "windows-v3.2.1",
+   "pre": true,
+   "rel": "windows-v3.2.1-issue1422-test1",
    "t": "Recompilation"
   },
   {
@@ -9428,6 +9445,24 @@
    "pre": true,
    "rel": "v0.1",
    "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "Unofficial native PC port of Gran Turismo 4, reimplemented in C. Bring your own disc.",
+   "g": "Gran Turismo 4",
+   "id": "db:jonhline/moonengine",
+   "k": "jonhline/moonengine",
+   "lc": "2026-11-23T22:33:19Z",
+   "p": "PS2",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "MoonEngine",
+   "pre": true,
+   "rel": "v0.4.0-dev",
+   "t": "Reimplementation"
   },
   {
    "ai": false,
@@ -16029,6 +16064,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "Clean-room .NET 8.0 static recompilation cartridge module (IronFrame OuterFortress Cart 01) for reCart and reEngine",
+   "g": "Metal Gear",
+   "id": "db:streamitallgit/ironframe-outerfortress-cart-01-recomp",
+   "k": "streamitallgit/ironframe-outerfortress-cart-01-recomp",
+   "lc": "2026-11-23T21:19:51Z",
+   "p": "NES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "IronFrame-OuterFortress-Cart-01-Recomp",
+   "pre": true,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-16",
    "d": "The 1998 PlayStation stealth classic, rebuilt for the browser and VR. Bring your own discs. Fan project, not affiliated with Konami.",
    "g": "Metal Gear Solid",
@@ -18438,6 +18490,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "NieR Gestalt (Xbox 360) native port for PC and Android, built on ReXGlue / Renut. Bring your own disc.",
+   "g": "NieR Gestalt",
+   "id": "db:kijenp/nier-gestalt-port",
+   "k": "kijenp/nier-gestalt-port",
+   "lc": "2026-11-23T19:22:55Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Android"
+   ],
+   "pr": "nier-gestalt-port",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-02",
    "d": "Night Slashers Recomp is a native recompilation of Data East's 1994 arcade beat-'em-up for Windows, Linux, and Steam Deck. Features include a DECO32 runtime, enhanced arcade audio, SDL2 frontend, save states, rewind, controller support, customizable graphics, and modern quality-of-life improvements. Requires a user-supplied ROM.",
@@ -20172,6 +20242,37 @@
    "pr": "PokemonStadium2-3DS",
    "pre": false,
    "rel": "v0.7i",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "Static recompilation toolkit + PC frontend for 2016-2017 3DS titles. Bring your own dump: no game code, assets or keys included.",
+   "g": "Pokémon Sun",
+   "games": [
+    {
+     "platform": "3DS",
+     "title": "Pokémon Moon"
+    },
+    {
+     "platform": "3DS",
+     "title": "Pokémon Ultra Sun"
+    },
+    {
+     "platform": "3DS",
+     "title": "Pokémon Ultra Moon"
+    }
+   ],
+   "id": "db:1iokjamfdjoiasd/alolahawaicpp",
+   "k": "1iokjamfdjoiasd/alolahawaicpp",
+   "lc": "2026-11-23T21:17:59Z",
+   "p": "3DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "AlolaHawaiCpp",
+   "pre": true,
+   "rel": "v0.1.0-alpha",
    "t": "Recompilation"
   },
   {
@@ -29453,7 +29554,7 @@
    "t": "Decompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-09",
    "d": "Native PC port of Xenogears (Linux, Windows), built from the matching decompilation's C",
    "g": "Xenogears",
