@@ -83,6 +83,12 @@
         }
       ]
     },
+    "alountk/opencrown-mac": {
+      "runsOn": [
+        "macOS"
+      ],
+      "note": "macOS fork of OpenCrown PC for Apple Silicon; the README's Windows/Linux/Steam Deck list is upstream's."
+    },
     "andrebrumdev/gow2-recomp": {
       "title": "God of War II"
     },
@@ -937,6 +943,9 @@
     "maryncrt/ultimate-mortal-kombat-3-ios-decompiled": {
       "title": "Ultimate Mortal Kombat 3"
     },
+    "matymeatboy/saturntaisen": {
+      "igdbTitle": "Sakura Taisen"
+    },
     "mayhemdotcpp/nfs4-recomp": {
       "_game": "Need for Speed: High Stakes",
       "platform": "PS1",
@@ -1331,6 +1340,15 @@
     "rcostanza/resogun-recomp": {
       "_game": "Resogun",
       "cover": "https://cdn2.steamgriddb.com/thumb/caa1450e9e14a9f396b238fec035ef09.jpg"
+    },
+    "recoi1/re-dex": {
+      "title": "Pokémon X",
+      "games": [
+        {
+          "title": "Pokémon Y",
+          "platform": "3DS"
+        }
+      ]
     },
     "recomp-code/bloody-roar4-recomp": {
       "title": "Bloody Roar 4",

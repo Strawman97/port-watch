@@ -794,7 +794,8 @@ def refresh_screens(projects, overrides):
         fix = overrides.get(key) or overrides.get(p["id"]) or {}
         if fix.get("hide"):
             continue
-        title = cover_title(fix.get("title") or p.get("g", ""))
+        # igdbTitle: the name IGDB lists the game under, when it differs ("Sakura Taisen" for the 1996 Saturn "Sakura Wars")
+        title = cover_title(fix.get("igdbTitle") or fix.get("title") or p.get("g", ""))
         plat = fix.get("platform") or p.get("p") or ""
         pid = IGDB_PLATFORMS.get(plat)
         if not title or not pid:
@@ -815,6 +816,8 @@ def refresh_screens(projects, overrides):
             queues[1].append(item); continue        # missed under older matching rules: one more try
         if g.get("id") and g.get("rev", 0) < 2 and len(g.get("shots") or []) < 3:
             queues[2].append(item); continue        # thin results from before other versions were added
+        if g.get("id") and g.get("other") and "year" not in g:
+            queues[3].append(item); continue        # other-platform match from before the era check
         if g.get("id") and ("nsfw" not in g or "cover" not in g or "pc" not in g or "genres" not in g):
             queues[3].append(item); continue        # found before the theme check, covers or PC release existed
         if not g.get("id") and (now - datetime.datetime.fromisoformat(g.get("checked", "2000-01-01T00:00:00Z").replace("Z", "+00:00"))).days >= 30:
@@ -841,6 +844,12 @@ def refresh_screens(projects, overrides):
                 time.sleep(0.3)
                 m = pick_match(title, anyres, lambda g: g.get("name"), lambda g: ts_year(g.get("first_release_date")), plat, 0.95)
                 other_platform = bool(m)
+                # a same-named game from another era is a different game (the 2019 "Sakura Wars" for the 1996 Saturn one)
+                era = PLATFORM_ERA.get(plat)
+                my = m and ts_year(m[1].get("first_release_date"))
+                if m and era and my and not title_year(title) and not (era[0] - 2 <= my <= era[1] + 2):
+                    log(f"  {title}: skipped {m[1].get('name')} ({my}) on another platform, outside the {plat} era")
+                    m, other_platform = None, False
             except Exception as e:
                 log(f"  {title}: IGDB error on the any-platform search ({e})")
         if m:
@@ -854,6 +863,7 @@ def refresh_screens(projects, overrides):
                      "vids": [x["video_id"] for x in (g.get("videos") or []) if x.get("video_id")][:4]}
             if other_platform:
                 entry["other"] = True
+                entry["year"] = ts_year(g.get("first_release_date")) or 0
             if len(shots) < 3:
                 # thin results: add screenshots from the same game's other platform versions
                 n0 = len(shots)
