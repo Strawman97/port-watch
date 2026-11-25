@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T08:30:17+00:00",
+ "generated": "2026-11-25T19:14:23+00:00",
  "projects": [
   {
    "ai": false,
@@ -37,6 +37,26 @@
   },
   {
    "ai": false,
+   "at": "2026-11-09",
+   "d": "Remastered fork of hk21x/nightfire-recomp (007: NightFire PC port): Vulkan, ray tracing, LAN play, key bindings",
+   "g": "007: NightFire",
+   "id": "db:papand7/nightfire-recomp",
+   "k": "papand7/nightfire-recomp",
+   "lc": "2026-11-09T12:27:10Z",
+   "p": "Xbox (original)",
+   "po": [
+    "macOS",
+    "Windows",
+    "Android",
+    "Linux"
+   ],
+   "pr": "nightfire-recomp",
+   "pre": false,
+   "rel": "v1.5.8",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-26",
    "d": "Nightfire Rust: a native Windows PC port of 007: Nightfire (PS2), written in Rust",
    "g": "007: Nightfire",
@@ -50,6 +70,25 @@
    "pr": "NightfirePort",
    "pre": false,
    "rel": "v0.1.21",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of 007 Racing (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "007 Racing",
+   "id": "db:alexbeavs-ps1-ports/007-racing-recomp",
+   "k": "alexbeavs-ps1-ports/007-racing-recomp",
+   "lc": "2026-11-25T13:20:46Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Linux",
+    "Windows"
+   ],
+   "pr": "007-racing-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -68,6 +107,25 @@
    "pr": "twine-pc",
    "pre": false,
    "rel": "v0.1.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of 007: Tomorrow Never Dies (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "007: Tomorrow Never Dies",
+   "id": "db:alexbeavs-ps1-ports/007-tomorrow-never-dies-recomp",
+   "k": "alexbeavs-ps1-ports/007-tomorrow-never-dies-recomp",
+   "lc": "2026-11-25T14:39:44Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "007-tomorrow-never-dies-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -215,6 +273,25 @@
    "pr": "3DSClassicsRecompiled",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of 40 Winks (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "40 Winks",
+   "id": "db:alexbeavs-ps1-ports/40-winks-recomp",
+   "k": "alexbeavs-ps1-ports/40-winks-recomp",
+   "lc": "2026-11-25T14:28:53Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Linux",
+    "Windows"
+   ],
+   "pr": "40-winks-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -671,6 +748,25 @@
    "pr": "air-hockey-psx-pc-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of Akuji the Heartless (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Akuji the Heartless",
+   "id": "db:alexbeavs-ps1-ports/akuji-the-heartless-recomp",
+   "k": "alexbeavs-ps1-ports/akuji-the-heartless-recomp",
+   "lc": "2026-11-25T14:49:33Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "akuji-the-heartless-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -1562,6 +1658,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "renut-nx: Banjo-Kazooie: Nuts & Bolts on the Nintendo Switch (homebrew), a port of reNut on deko3d",
+   "g": "Banjo-Kazooie: Nuts & Bolts",
+   "id": "db:chanseyisthebest/renut-nx",
+   "k": "chanseyisthebest/renut-nx",
+   "lc": "2026-11-24T13:01:35Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "renut-nx",
+   "pre": false,
+   "rel": "v1.0.4",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "Banjo-Kazzoie Nuts and Bolts Recompilation with Rexglue",
    "g": "Banjo-Kazooie: Nuts & Bolts",
@@ -1723,6 +1834,29 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-09",
+   "d": "Native PC ports of Battlefield 1943 and Bad Company (Xbox 360) via static recompilation",
+   "g": "Battlefield 1943",
+   "games": [
+    {
+     "platform": "Xbox 360",
+     "title": "Battlefield: Bad Company"
+    }
+   ],
+   "id": "db:papand7/battlefield-recompilation-project",
+   "k": "papand7/battlefield-recompilation-project",
+   "lc": "2026-11-10T05:08:29Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Battlefield-Recompilation-Project",
+   "pre": false,
+   "rel": "v0.4.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-10",
    "d": "Battlefield 2 : modern combat Recomp",
@@ -1755,6 +1889,24 @@
    "pr": "btrecomp",
    "pre": false,
    "rel": "0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "  Unofficial static recompilation of Bayonetta 2. Builds the game on your PC from your own legally dumped copy. No game files, keys or SDK code included. ",
+   "g": "Bayonetta 2",
+   "id": "db:zexyen/moon-river",
+   "k": "zexyen/moon-river",
+   "lc": "2026-11-25T06:27:44Z",
+   "p": "Switch",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Moon-River",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -2355,6 +2507,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-14",
+   "d": "Bloodborne (v1.09) on Windows & Linux with a decompiled C++20 graphics engine & direct Vulkan 1.3 renderer (built on bbport): native GLSL shaders, ~3–5 GB VRAM, draw batching/culling, in-game PC menus, DLSS 4.5 / FSR 4. Bring your own dump.",
+   "g": "Bloodborne",
+   "id": "db:lapothecary/bloodborne-pc-vulkan",
+   "k": "lapothecary/bloodborne-pc-vulkan",
+   "lc": "2026-11-13T11:20:44Z",
+   "p": "PS4",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "bloodborne-pc-vulkan",
+   "pre": false,
+   "rel": "v1.1.3",
+   "t": "Decompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "WIP macOS (Apple Silicon) port of the native Bloodborne PC port — Rosetta 2 + MoltenVK/Metal",
    "g": "Bloodborne",
@@ -2454,6 +2624,21 @@
    "pr": "BluesAlphabetBookRecomp",
    "pre": false,
    "rel": "Release",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Blur (Xbox 360, 2010) on the Nintendo Switch: static recompilation with ReXGlue and reNut's Direct3D-level renderer on deko3d. Needs your own disc and title update 2.",
+   "g": "Blur",
+   "id": "db:chanseyisthebest/blur-nx",
+   "k": "chanseyisthebest/blur-nx",
+   "lc": "2026-11-18T12:35:16Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "blur-nx",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -2826,6 +3011,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "Burnout 3: Takedown, native on every platform",
+   "g": "Burnout 3: Takedown",
+   "id": "db:u0rhs/burnout3-native",
+   "k": "u0rhs/burnout3-native",
+   "lc": "2026-11-17T10:41:51Z",
+   "p": "PS2",
+   "po": [
+    "Linux",
+    "Windows",
+    "macOS"
+   ],
+   "pr": "burnout3-native",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-18",
    "d": "A fan-made project to bring the classic PS1 rhythm game Bust a Groove to modern platforms through static recompilation, preserving its original gameplay and iconic style.",
@@ -2927,6 +3131,24 @@
    "pr": "project-1944",
    "pre": false,
    "rel": "v2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Call of Duty: Black Ops (Xbox 360, 2010), statically recompiled to native PC code and rewritten step by step onto Any360: no emulation left at the end. Progress and roadmap inside; no game data.",
+   "g": "Call of Duty: Black Ops",
+   "id": "db:gaetanvigner/codborewrite",
+   "k": "gaetanvigner/codborewrite",
+   "lc": "2026-11-16T18:40:03Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "CoDBoRewrite",
+   "pre": false,
+   "rel": "v2026.11.16",
    "t": "Recompilation"
   },
   {
@@ -3097,7 +3319,7 @@
    ],
    "pr": "MickeyAndDonaldCollection",
    "pre": false,
-   "rel": "v1.3",
+   "rel": "v1.3.1",
    "t": "Recompilation"
   },
   {
@@ -3218,6 +3440,23 @@
    "pr": "cdos-nintendods-recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "A modern recompilation of the original Harmony of Despair with added features and custom content.",
+   "g": "Castlevania: Harmony of Despair",
+   "id": "db:cvhodr2026dev-ai/harmony-of-despair-resurrected",
+   "k": "cvhodr2026dev-ai/harmony-of-despair-resurrected",
+   "lc": "2026-11-25T07:42:09Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Harmony-of-Despair-Resurrected",
+   "pre": false,
+   "rel": "v0.45.108",
    "t": "Recompilation"
   },
   {
@@ -3722,21 +3961,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": true,
-   "at": "2026-11-14",
-   "d": "A Recompilation of Conker's Bad Fur Day for the 3DS",
-   "g": "Conker's Bad Fur Day",
-   "id": "db:raihwy3/conker3dsrecomp",
-   "k": "raihwy3/conker3dsrecomp",
-   "lc": "2026-11-13T20:59:33Z",
-   "p": "N64",
-   "po": [],
-   "pr": "Conker3DSRecomp",
-   "pre": false,
-   "rel": "v0.1.5",
-   "t": "Recompilation"
-  },
-  {
    "ai": false,
    "at": "2026-11-16",
    "d": "Native PC port of Contra (NES) with 240 Hz smooth motion. Bring your own ROM.",
@@ -3840,6 +4064,24 @@
    "pr": "courier-crisis-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-10",
+   "d": "Crackdown (Xbox 360, 2007), statically recompiled to native PC code and rewritten step by step onto Any360: no emulation left at the end. Progress and roadmap inside; no game data.",
+   "g": "Crackdown",
+   "id": "db:gaetanvigner/crackdownrewrite",
+   "k": "gaetanvigner/crackdownrewrite",
+   "lc": "2026-11-16T18:39:50Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "CrackdownRewrite",
+   "pre": false,
+   "rel": "v2026.11.16",
    "t": "Recompilation"
   },
   {
@@ -4034,6 +4276,23 @@
    "pr": "CrashWarpedRecomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "PC Port of Crash Bandicoot XS / The Huge Adventure",
+   "g": "Crash Bandicoot XS",
+   "id": "db:nitorikoskye/n-larged-xs",
+   "k": "nitorikoskye/n-larged-xs",
+   "lc": "2026-11-18T07:37:46Z",
+   "p": "GBA",
+   "po": [
+    "Windows"
+   ],
+   "pr": "N-Larged-XS",
+   "pre": false,
+   "rel": "v0.39",
    "t": "Recompilation"
   },
   {
@@ -4336,6 +4595,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of Crusaders of Might and Magic (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Crusaders of Might and Magic",
+   "id": "db:alexbeavs-ps1-ports/crusaders-of-might-and-magic-recomp",
+   "k": "alexbeavs-ps1-ports/crusaders-of-might-and-magic-recomp",
+   "lc": "2026-11-25T14:38:14Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Linux",
+    "Windows"
+   ],
+   "pr": "crusaders-of-might-and-magic-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-21",
    "d": "Culdcept Saga (Xbox 360, 2008) on the Nintendo Switch: static recompilation with ReXGlue and reNut's Direct3D-level renderer on deko3d. Needs your own disc.",
@@ -4489,23 +4767,6 @@
    "pr": "DarkRiftRecomp",
    "pre": false,
    "rel": "v0.1.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-19",
-   "d": "Static recompilation of Dark Souls II: Scholar of the First Sin (Xbox 360) for Android arm64",
-   "g": "Dark Souls II: Scholar of the First Sin",
-   "id": "db:lazaer-yzy/ds2-sotfs-recomp",
-   "k": "lazaer-yzy/ds2-sotfs-recomp",
-   "lc": "2026-11-19T00:59:51Z",
-   "p": "Xbox 360",
-   "po": [
-    "Android"
-   ],
-   "pr": "ds2-sotfs-recomp",
-   "pre": false,
-   "rel": "v0.1.4",
    "t": "Recompilation"
   },
   {
@@ -5585,6 +5846,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of Disney-Pixar Toy Story Racer (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Disney-Pixar Toy Story Racer",
+   "id": "db:alexbeavs-ps1-ports/disney-pixar-toy-story-racer-recomp",
+   "k": "alexbeavs-ps1-ports/disney-pixar-toy-story-racer-recomp",
+   "lc": "2026-11-25T14:27:53Z",
+   "p": "PS1",
+   "po": [
+    "macOS",
+    "Windows",
+    "Linux"
+   ],
+   "pr": "disney-pixar-toy-story-racer-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-18",
    "d": "Unofficial native PC port of Disney's Aladdin (SNES, 1993) built with SNESRecomp — No ROM or copyrighted assets included.",
@@ -5706,6 +5986,29 @@
    "pr": "DK94-SGB",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-17",
+   "d": "nxnative for Android: NVN on Vulkan, no system emulation. Unofficial and experimental.",
+   "g": "Donkey Kong Bananza",
+   "games": [
+    {
+     "platform": "Switch 2",
+     "title": "Mario Kart World"
+    }
+   ],
+   "id": "db:raphix91/banananative",
+   "k": "raphix91/banananative",
+   "lc": "2026-11-05T18:25:07Z",
+   "p": "Switch 2",
+   "po": [
+    "Android"
+   ],
+   "pr": "BananaNative",
+   "pre": true,
+   "rel": "v0.1.4-pokopia.1",
    "t": "Recompilation"
   },
   {
@@ -5850,25 +6153,6 @@
    "pr": "DoomSNESRecomp",
    "pre": false,
    "rel": "v0.03",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-19",
-   "d": "An improved modern version of Doom64EX.",
-   "g": "Doom 64",
-   "id": "db:atsb/doom64ex-plus",
-   "k": "atsb/doom64ex-plus",
-   "lc": "2025-10-20T05:26:15Z",
-   "p": "N64",
-   "po": [
-    "Windows",
-    "macOS",
-    "Linux"
-   ],
-   "pr": "Doom64EX-Plus",
-   "pre": false,
-   "rel": "5.2.0.0",
    "t": "Recompilation"
   },
   {
@@ -6714,6 +6998,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-25",
+   "d": "Warriors of the Eternal Sun (Genesis) for Linux: 240 Hz smooth motion, easy on the eyes. AppImage. Bring your own ROM.",
+   "g": "Dungeons & Dragons: Warriors of the Eternal Sun",
+   "id": "db:gabbycat4/warriorsoftheeternalsunrecomp",
+   "k": "gabbycat4/warriorsoftheeternalsunrecomp",
+   "lc": "2026-11-25T10:09:31Z",
+   "p": "Mega Drive",
+   "po": [
+    "Linux"
+   ],
+   "pr": "WarriorsOfTheEternalSunRecomp",
+   "pre": false,
+   "rel": "V1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-18",
    "d": "DynaBroCollection - Dyna Brothers 1 + 2: native Windows x64 recompilation and English fan translation (alpha)",
    "g": "Dyna Brothers",
@@ -7476,6 +7777,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of Felony 11-79 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Felony 11-79",
+   "id": "db:alexbeavs-ps1-ports/felony-11-79-recomp",
+   "k": "alexbeavs-ps1-ports/felony-11-79-recomp",
+   "lc": "2026-11-25T15:09:45Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "macOS",
+    "Windows"
+   ],
+   "pr": "felony-11-79-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-18",
    "d": "Experimental/WIP static recompilation of Felyne Puzzle for PSP",
@@ -7819,6 +8139,25 @@
    "pr": "FF-Mystic-Quest-Recomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Static recompilation of Final Fantasy Origins (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Final Fantasy Origins",
+   "id": "db:alexbeavs-ps1-ports/final-fantasy-origins-recomp",
+   "k": "alexbeavs-ps1-ports/final-fantasy-origins-recomp",
+   "lc": "2026-11-25T15:10:08Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "final-fantasy-origins-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -8938,6 +9277,40 @@
   },
   {
    "ai": false,
+   "at": "2026-10-17",
+   "d": "God of War: Chains of Olympus (PSP), recompiled to run natively on macOS and Android, from your own copy of the game. Built on PortableKit.",
+   "g": "God of War: Chains of Olympus",
+   "id": "db:arnaldolima1/gow-chains-of-olympus-pc",
+   "k": "arnaldolima1/gow-chains-of-olympus-pc",
+   "lc": "2026-10-15T20:53:53Z",
+   "p": "PSP",
+   "po": [
+    "macOS"
+   ],
+   "pr": "gow-chains-of-olympus-pc",
+   "pre": true,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-14",
+   "d": "Native port of God of War: Ghost of Sparta (PSP) by static recompilation, on PortableKit. Vulkan, macOS first. Bring your own disc image.",
+   "g": "God of War: Ghost of Sparta",
+   "id": "db:arnaldolima1/gow-ghost-of-sparta-pc",
+   "k": "arnaldolima1/gow-ghost-of-sparta-pc",
+   "lc": "2026-10-14T20:57:43Z",
+   "p": "PSP",
+   "po": [
+    "macOS"
+   ],
+   "pr": "gow-ghost-of-sparta-pc",
+   "pre": true,
+   "rel": "v0.1.5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-12",
    "d": "Windows port of God of War III Remastered (PS4). Original x86-64 code runs directly on the CPU with a custom runtime; graphics on shadPS4's video core (Vulkan) with cuesta4's GoW3 fixes. Playable start to finish, 240 FPS patch, launcher, in-game menu. Bring your own dump (CUSA01623 v1.02).",
    "g": "God of War III Remastered",
@@ -9244,6 +9617,23 @@
    "pre": false,
    "rel": "v0.2.0",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-13",
+   "d": "GoldenEye Metal is an experimental, source-only static recompilation project focused on a native Apple Silicon and Metal rendering path. This repository contains the runtime, toolchain, Metal backend, and game integration in one tree.",
+   "g": "GoldenEye 007",
+   "id": "db:ysrdevs/goldeneye-metal",
+   "k": "ysrdevs/goldeneye-metal",
+   "lc": "2026-10-09T20:28:29Z",
+   "p": "N64",
+   "po": [
+    "macOS"
+   ],
+   "pr": "goldeneye-metal",
+   "pre": false,
+   "rel": "v0.5.1",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -10003,6 +10393,23 @@
     "Windows"
    ],
    "pr": "GH5Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "",
+   "g": "Guitar Hero: Aerosmith",
+   "id": "db:elguslml/ghaerorecomp",
+   "k": "elguslml/ghaerorecomp",
+   "lc": "2026-11-25T07:28:12Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "GHAeroRecomp",
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
@@ -12820,6 +13227,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-24",
+   "d": "Static recompilation of Kula World (PAL, SCES-01000) to native Linux, Windows and macOS using psxrecomp. No game data included – please bring your own disc image.",
+   "g": "Kula World",
+   "id": "db:zap0xfce2/kula-world-rerolled",
+   "k": "zap0xfce2/kula-world-rerolled",
+   "lc": "2026-11-25T09:30:31Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "Kula-World-Rerolled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-30",
    "d": "Functional decompilation of Kuru Kuru Kururin (GBA, Europe) with a native PC port. No game data included.",
@@ -14042,6 +14468,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-19",
+   "d": "Source-only Windows x86-64 and Vulkan preview of Twilight Princess HD Recompiled.",
+   "g": "The Legend of Zelda: Twilight Princess HD",
+   "id": "db:buasfe/twilight-princess-hd-recomp-windows",
+   "k": "buasfe/twilight-princess-hd-recomp-windows",
+   "lc": "2026-11-25T03:43:51Z",
+   "p": "Wii U",
+   "po": [
+    "Windows"
+   ],
+   "pr": "twilight-princess-hd-recomp-windows",
+   "pre": true,
+   "rel": "v0.1.0-windows-setup.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-18",
    "d": "A native Windows port of Legendary Wings with revamped artwork and faithful gameplay. Requires your own compatible NES ROM; no ROM or extracted ROM assets included.",
@@ -14124,6 +14567,23 @@
    "pr": "lego-dimensions-pc",
    "pre": false,
    "rel": "v1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "LEGO Marvel Super Heroes (BLUS-31161) Native Android ARM64 Static Recompilation Port (ps3recomp + Vulkan + Lossless Scaling + Zero-Copy OBB) — Credit by ArifGans (t.me/Apa_Itu_Telegram)",
+   "g": "LEGO Marvel Super Heroes",
+   "id": "db:ikehkimci/lego-marvel-ps3-android-obb",
+   "k": "ikehkimci/lego-marvel-ps3-android-obb",
+   "lc": "2026-11-25T14:34:33Z",
+   "p": "PS3",
+   "po": [
+    "Android"
+   ],
+   "pr": "lego-marvel-ps3-android-obb",
+   "pre": false,
+   "rel": "v0.2.0-obb",
    "t": "Recompilation"
   },
   {
@@ -16042,23 +16502,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-24",
-   "d": "Metroid: Other M (Wii) statically recompiled to run natively on PC and Steam Deck. Bring your own disc image.",
-   "g": "Metroid: Other M",
-   "id": "db:gminustwo/otherm-recomp",
-   "k": "gminustwo/otherm-recomp",
-   "lc": "2026-11-24T04:13:12Z",
-   "p": "Wii",
-   "po": [
-    "Linux"
-   ],
-   "pr": "otherm-recomp",
-   "pre": true,
-   "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-11-13",
    "d": "Native VR port of Metroid Prime (GameCube) for Windows and Meta Quest, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image.",
    "g": "Metroid Prime",
@@ -16320,6 +16763,23 @@
   },
   {
    "ai": false,
+   "at": "2026-10-26",
+   "d": "Midnight Club: Los Angeles para PC — PT-BR, ultrawide automático, AMD FSR e instalador/configurador. Base mcla-recomp/ReXGlue.",
+   "g": "Midnight Club: Los Angeles",
+   "id": "db:robertoaraujo77/mc_la_recompiled",
+   "k": "robertoaraujo77/mc_la_recompiled",
+   "lc": "2026-10-24T23:04:50Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MC_LA_Recompiled",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-09",
    "d": "Experimental native Android ARM64 port of MCLA Recomp (C++23, SDL3, Vulkan); user-supplied game files required",
    "g": "Midnight Club: Los Angeles Complete Edition",
@@ -16419,6 +16879,23 @@
    "pr": "Mighty-Morphin-Power-Rangers---The-Movie-Recomp",
    "pre": false,
    "rel": "v0.2.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Mirror's Edge (Xbox 360, 2008), statically recompiled to native PC code and rewritten step by step onto Any360: no emulation left at the end. Progress and roadmap inside; no game data.",
+   "g": "Mirror's Edge",
+   "id": "db:gaetanvigner/mirrorsedgerewrite",
+   "k": "gaetanvigner/mirrorsedgerewrite",
+   "lc": "2026-11-23T18:59:26Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MirrorsEdgeRewrite",
+   "pre": false,
+   "rel": "v2026.11.23",
    "t": "Recompilation"
   },
   {
@@ -16851,7 +17328,7 @@
    ],
    "pr": "MK-3D-rollback",
    "pre": true,
-   "rel": "v1.0.16",
+   "rel": "v1.0.20",
    "t": "Recompilation"
   },
   {
@@ -17593,23 +18070,6 @@
    "pr": "nfshp2-macos",
    "pre": false,
    "rel": "v1.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-13",
-   "d": "Need for Speed: Hot Pursuit 2 Blackbox version ported to Windows",
-   "g": "Need for Speed: Hot Pursuit 2",
-   "id": "db:zloikiller/nfshp2-port-win",
-   "k": "zloikiller/nfshp2-port-win",
-   "lc": "2026-11-11T04:32:41Z",
-   "p": "PS2",
-   "po": [
-    "Windows"
-   ],
-   "pr": "nfshp2-port-win",
-   "pre": false,
-   "rel": "0.12",
    "t": "Recompilation"
   },
   {
@@ -19357,7 +19817,7 @@
    ],
    "pr": "orre-launcher",
    "pre": true,
-   "rel": "v0.6.0",
+   "rel": "v0.6.1",
    "t": "Recompilation"
   },
   {
@@ -20510,6 +20970,30 @@
    "pr": "POW-Recompiled",
    "pre": false,
    "rel": "v0.3.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Punch-Out!! and Doc Louis's Punch-Out!! (Wii) recompiled for Windows, Linux and Steam Deck. Unofficial fan project; no game files.",
+   "g": "Punch-Out!!",
+   "games": [
+    {
+     "platform": "Wii",
+     "title": "Doc Louis's Punch-Out!!"
+    }
+   ],
+   "id": "db:mr-shizzy/punch-drunk",
+   "k": "mr-shizzy/punch-drunk",
+   "lc": "2026-11-25T15:05:09Z",
+   "p": "Wii",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Punch-Drunk",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -22986,6 +23470,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "The Simpsons Game (Xbox 360, 2007), statically recompiled to native PC code and rewritten step by step onto Any360: no emulation left at the end. Progress and roadmap inside; no game data.",
+   "g": "The Simpsons Game",
+   "id": "db:gaetanvigner/thesimpsonsgamerewrite",
+   "k": "gaetanvigner/thesimpsonsgamerewrite",
+   "lc": "2026-11-16T18:39:54Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "TheSimpsonsGameRewrite",
+   "pre": false,
+   "rel": "v2026.11.16",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "A native PC port of The Simpsons Road Rage of the Xbox port from 2001 for Windows enhaunced features and quality of life updates",
@@ -24393,24 +24895,6 @@
    "pr": "openpete",
    "pre": false,
    "rel": "v0.4.3",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-11-09",
-   "d": "A native PC port of SSX (2012), decoded with help from Claude from the Xbox 360 disc and rebuilt in Rust on Bevy.",
-   "g": "SSX",
-   "id": "db:mnkyarts/projectavalanche",
-   "k": "mnkyarts/projectavalanche",
-   "lc": "2026-11-08T16:57:10Z",
-   "p": "Xbox 360",
-   "po": [
-    "Windows",
-    "Linux"
-   ],
-   "pr": "ProjectAvalanche",
-   "pre": false,
-   "rel": "v0.3.0",
    "t": "Recompilation"
   },
   {
@@ -26476,6 +26960,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Test Drive Unlimited (Xbox 360, 2006), statically recompiled to native PC code and rewritten step by step onto Any360: no emulation left at the end. Progress and roadmap inside; no game data.",
+   "g": "Test Drive Unlimited",
+   "id": "db:gaetanvigner/tdurewrite",
+   "k": "gaetanvigner/tdurewrite",
+   "lc": "2026-11-16T18:39:59Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "TDURewrite",
+   "pre": false,
+   "rel": "v2026.11.16",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-17",
    "d": "",
@@ -28483,6 +28985,24 @@
    "pr": "WCW-Mayhem-RECOMP",
    "pre": false,
    "rel": "recomp",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "Static x86-to-x64 recompilation of Whacked! (Original Xbox, 2002) for Windows and Linux (Bring Your Own Game)",
+   "g": "Whacked!",
+   "id": "db:sageajnz-create/whackedrecomp",
+   "k": "sageajnz-create/whackedrecomp",
+   "lc": "2026-11-25T11:20:50Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "WhackedRecomp",
+   "pre": false,
+   "rel": "v1.0.1",
    "t": "Recompilation"
   },
   {
