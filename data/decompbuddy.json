@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T23:53:01+00:00",
+ "generated": "2026-11-25T08:30:17+00:00",
  "projects": [
   {
    "ai": false,
@@ -1976,14 +1976,14 @@
    "g": "BioShock",
    "id": "db:duckynerdball/bioshock360productrelease",
    "k": "duckynerdball/bioshock360productrelease",
-   "lc": "2026-11-07T20:07:16Z",
+   "lc": "2026-11-25T03:55:59Z",
    "p": "Xbox 360",
    "po": [
     "Windows"
    ],
    "pr": "BioShock360ProductRelease",
    "pre": false,
-   "rel": "v0.4.1",
+   "rel": "v0.1.2",
    "t": "Recompilation"
   },
   {
@@ -2594,6 +2594,40 @@
     "Linux"
    ],
    "pr": "Breakers-Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "PSX static recompilation of Breath of Fire III (EU) with 16:9 widescreen. No game data included.",
+   "g": "Breath of Fire III",
+   "id": "db:benexdrake/breathoffire3-recomp",
+   "k": "benexdrake/breathoffire3-recomp",
+   "lc": "2026-11-24T19:19:31Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "BreathOfFire3-Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "PSX static recompilation of Breath of Fire IV (EU). No game data included.",
+   "g": "Breath of Fire IV",
+   "id": "db:benexdrake/breathoffire4-recomp",
+   "k": "benexdrake/breathoffire4-recomp",
+   "lc": "2026-11-24T19:19:33Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "BreathOfFire4-Recomp",
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
@@ -5483,6 +5517,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "Digimon World 4 PC port — static recompilation of the original Xbox game into a native Linux program (Vulkan / OpenGL). Windows and macOS planned. Bring your own game dump.",
+   "g": "Digimon World 4",
+   "id": "db:lorransouzaaguiar/digimon-world-4-recomp",
+   "k": "lorransouzaaguiar/digimon-world-4-recomp",
+   "lc": "2026-11-24T23:19:47Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Linux"
+   ],
+   "pr": "Digimon-World-4-Recomp",
+   "pre": false,
+   "rel": "v0.3.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-22",
    "d": "Unofficial PS Vita port of Dinosaur Planet: Recompiled, made with AI assistance; not affiliated with the upstream project",
@@ -5757,6 +5808,29 @@
    "pr": "DKCR-Recomp",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "",
+   "g": "Donkey Kong Country Returns HD",
+   "games": [
+    {
+     "platform": "Switch",
+     "title": "Donkey Kong Country: Tropical Freeze"
+    }
+   ],
+   "id": "db:zwalt01/country-box",
+   "k": "zwalt01/country-box",
+   "lc": "2026-11-22T19:00:41Z",
+   "p": "Switch",
+   "po": [
+    "Linux"
+   ],
+   "pr": "Country-Box",
+   "pre": false,
+   "rel": "v1.0.8",
    "t": "Recompilation"
   },
   {
@@ -9111,7 +9185,7 @@
    "g": "GoldenEye 007",
    "id": "db:coockie1173/janus-project",
    "k": "coockie1173/janus-project",
-   "lc": "2026-11-14T20:54:37Z",
+   "lc": "2026-11-25T00:21:39Z",
    "p": "Wii",
    "po": [
     "Linux",
@@ -13008,6 +13082,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "PSX static recompilation of Legend of Dragoon (DE) with 16:9 battles. No game data included.",
+   "g": "The Legend of Dragoon",
+   "id": "db:benexdrake/legendofdragoon-recomp",
+   "k": "benexdrake/legendofdragoon-recomp",
+   "lc": "2026-11-24T19:19:35Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "LegendOfDragoon-Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-19",
    "d": "Legend of Hero Tonma (Irem, 1989) statically recompiled to run natively on Windows. Bring your own ROM - no game data included.",
@@ -14086,6 +14177,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "Unofficial native PC port of Ryu ga Gotoku Kenzan! (PS3, BLJM60064) for Linux and Windows. Statically recompiled with ps3recomp and rendered with Vulkan, with the English fan translation, 30/60/120 FPS options and a launcher that installs from your own copy of the game. No game files included.",
+   "g": "Like a Dragon: Kenzan!",
+   "id": "db:ivanbarbosafilho/yakuza-kenzan-recomp",
+   "k": "ivanbarbosafilho/yakuza-kenzan-recomp",
+   "lc": "2026-11-24T21:44:54Z",
+   "p": "PS3",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Yakuza-Kenzan-Recomp",
+   "pre": false,
+   "rel": "V1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-09",
    "d": "A recompilation of Links 2004 for Xbox using the XBERecomp Tool",
    "g": "Links 2004",
@@ -14530,6 +14639,24 @@
    "pr": "MagicalQuest-SNES-Recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "a static recomp of Magical Tetris Challenge for the n64",
+   "g": "Magical Tetris Challenge",
+   "id": "db:depressobbq/mtc-recomp",
+   "k": "depressobbq/mtc-recomp",
+   "lc": "2026-11-24T22:57:02Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "mtc-recomp",
+   "pre": false,
+   "rel": "0.1.0",
    "t": "Recompilation"
   },
   {
@@ -19230,7 +19357,7 @@
    ],
    "pr": "orre-launcher",
    "pre": true,
-   "rel": "v0.5.1",
+   "rel": "v0.6.0",
    "t": "Recompilation"
   },
   {
@@ -19460,6 +19587,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Native PC port of Pokemon Mystery Dungeon: Explorers of Sky (recompilation + melonDS). Contains no game data.",
+   "g": "Pokemon Mystery Dungeon: Explorers of Sky",
+   "id": "db:aiodillen/skypc",
+   "k": "aiodillen/skypc",
+   "lc": "2026-11-25T00:17:04Z",
+   "p": "DS",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "SkyPC",
+   "pre": true,
+   "rel": "v0.4.0-alpha",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Native PC Port of Pokemon Mystery Dungeon: Red Rescue Team (USA, Australia)",
@@ -19637,6 +19782,24 @@
    "pr": "pokopia-ps5-port",
    "pre": false,
    "rel": "v1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "Experimental native Pokémon Puzzle League builds for Linux and Windows. Requires your own USA ROM. Includes offline play and private online lobbies.",
+   "g": "Pokemon Puzzle League",
+   "id": "db:brandongillespie17-jpg/puzzle-league-recomp",
+   "k": "brandongillespie17-jpg/puzzle-league-recomp",
+   "lc": "2026-11-24T21:38:28Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "puzzle-league-recomp",
+   "pre": true,
+   "rel": "v0.1.1-preview.20261124",
    "t": "Recompilation"
   },
   {
@@ -21674,6 +21837,25 @@
   },
   {
    "ai": false,
+   "at": "2026-11-24",
+   "d": "A native Windows, Linux, Android and iOS port of Sakura Wars: So Long, My Love - Rebloom, built from the PS2 game through static recompilation.",
+   "g": "Sakura Wars: So Long, My Love",
+   "id": "db:dea7hsmiless/sakura-wars-so-long-my-love-rebloom",
+   "k": "dea7hsmiless/sakura-wars-so-long-my-love-rebloom",
+   "lc": "2026-11-24T21:30:11Z",
+   "p": "PS2",
+   "po": [
+    "Android",
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Sakura-Wars-So-Long-My-Love-Rebloom",
+   "pre": false,
+   "rel": "v0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-28",
    "d": "Native recompilation of Samurai Shodown (Neo Geo MVS/AES) built with NeoGeoRecomp. The 68000 program runs as generated C, not an emulator wrapper. Includes Windows x64 and Steam Deck AppImage builds, real MVS BIOS boot, SDL2 video/audio/gamepad support, 100% measured native coverage, and verification with 0 CPU mismatches. ROMs/BIOS not included.",
    "g": "Samurai Shodown",
@@ -22892,6 +23074,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "Experimental native Windows port of Sin and Punishment: Star Successor",
+   "g": "Sin and Punishment: Star Successor",
+   "id": "db:vininhosannzx/starsuccessorrecomp",
+   "k": "vininhosannzx/starsuccessorrecomp",
+   "lc": "2026-11-25T00:36:44Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "StarSuccessorRecomp",
+   "pre": true,
+   "rel": "v0.2",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-13",
    "d": "Skate 2 PC (Xbox 360 recompilation) with a one-file ISO setup and a PowerShell-free launcher for Proton / Steam Deck. Fork of christianortel/skate2-recompile-pc.",
@@ -23652,6 +23851,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-25",
+   "d": "A custom built recompilation of sonic unleashed using xenonreconp",
+   "g": "Sonic the Hedgehog 4: Episode I",
+   "id": "db:neiove/sonic-4-recompiled-ps4",
+   "k": "neiove/sonic-4-recompiled-ps4",
+   "lc": "2026-11-24T22:50:05Z",
+   "p": "Xbox 360",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Sonic-4-Recompiled-ps4",
+   "pre": false,
+   "rel": "0.53",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-12",
    "d": "Sonic the Hedgehog CD decompilation",
    "g": "Sonic the Hedgehog CD",
@@ -23767,6 +23983,23 @@
    "pr": "soul-blade-recomp",
    "pre": false,
    "rel": "v0.0.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "South Park (N64) static recompilation for PC: N64Recomp + N64ModernRuntime + RT64",
+   "g": "South Park",
+   "id": "db:marikkaratist/southparkrecomp",
+   "k": "marikkaratist/southparkrecomp",
+   "lc": "2026-11-24T21:37:19Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "SouthParkRecomp",
+   "pre": false,
+   "rel": "v0.9.0",
    "t": "Recompilation"
   },
   {
@@ -24431,6 +24664,23 @@
    "pr": "RogueSquadronRecomp",
    "pre": false,
    "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "",
+   "g": "Star Wars: The Force Unleashed - Ultimate Sith Edition",
+   "id": "db:duckynerdball/tfu-recomp-release",
+   "k": "duckynerdball/tfu-recomp-release",
+   "lc": "2026-11-25T03:06:32Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "tfu-recomp-release",
+   "pre": false,
+   "rel": "v0.2.1",
    "t": "Recompilation"
   },
   {
@@ -25366,6 +25616,23 @@
    "pr": "smrpg-recompiled-android",
    "pre": false,
    "rel": "0.10.0-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-24",
+   "d": "",
+   "g": "Super Mario RPG",
+   "id": "db:nit3h8wk/smrpg-recompiled-linux",
+   "k": "nit3h8wk/smrpg-recompiled-linux",
+   "lc": "2026-11-24T18:33:55Z",
+   "p": "Switch",
+   "po": [
+    "Linux"
+   ],
+   "pr": "smrpg-recompiled-linux",
+   "pre": false,
+   "rel": "v0.52.0",
    "t": "Recompilation"
   },
   {
@@ -28186,6 +28453,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-25",
+   "d": "Native Windows x64 recompilation of WCW Backstage Assault (PS1), using PSXRecomp and technical research from WCW-Mayhem-RECOMP. Features controller support, FPS diagnostics, enhanced graphics and experimental widescreen/ultrawide modes. Planned improvements include free camera control, faster HDD loading and enhanced MDEC video playback.",
+   "g": "WCW Backstage Assault",
+   "id": "db:khant735/wcw-backstage-assault-recomp",
+   "k": "khant735/wcw-backstage-assault-recomp",
+   "lc": "2026-11-25T00:21:08Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "WCW-Backstage-Assault-RECOMP",
+   "pre": true,
+   "rel": "v0.15B.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-10",
    "d": "",
    "g": "WCW Mayhem",
@@ -28517,6 +28801,23 @@
    "pre": true,
    "rel": "v0.1.6-canary",
    "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "My Worms 3D GameCube PAL decompilation, function tracker and native macOS port.",
+   "g": "Worms 3D",
+   "id": "db:estebanpdn/worms-3d-decomp",
+   "k": "estebanpdn/worms-3d-decomp",
+   "lc": "2026-11-25T04:41:19Z",
+   "p": "GameCube",
+   "po": [
+    "macOS"
+   ],
+   "pr": "worms-3d-decomp",
+   "pre": true,
+   "rel": "macos-preview-01",
+   "t": "Decompilation"
   },
   {
    "ai": false,
