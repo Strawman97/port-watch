@@ -1,6 +1,6 @@
 {
  "format": "port-watch-status",
- "generated": "2026-11-26T03:32:47Z",
+ "generated": "2026-11-26T05:28:50Z",
  "repos": {
   "0bandywirus/dq9-decomp": {
    "assetOs": {
@@ -2135,8 +2135,8 @@
     "firstRelease": "2026-11-21T06:07:25Z",
     "full": "ADHD-TISM/Dave-Mirra-2-Recomp",
     "lang": "C",
-    "pushed": "2026-11-25T14:03:14Z",
-    "size": 1869,
+    "pushed": "2026-11-26T04:24:10Z",
+    "size": 1914,
     "stars": 2
    },
    "shots": []
@@ -2175,7 +2175,7 @@
     "firstRelease": "2026-11-15T05:11:55Z",
     "full": "ADHD-TISM/Dave-Mirra-Recomp",
     "lang": "C++",
-    "pushed": "2026-11-25T21:33:54Z",
+    "pushed": "2026-11-26T05:19:58Z",
     "size": 1374,
     "stars": 2
    },
@@ -2344,7 +2344,7 @@
     "lang": "C",
     "pushed": "2026-11-25T16:34:44Z",
     "size": 14202,
-    "stars": 1811
+    "stars": 1812
    },
    "shots": [
     "https://raw.githubusercontent.com/adriadam10/mkw-recomp/HEAD/docs/images/launcher-main.png",
@@ -2542,6 +2542,34 @@
    "shots": [
     "https://raw.githubusercontent.com/afsenovilla/Tombi-Decomp/HEAD/docs/qr_3ds_cia.png"
    ]
+  },
+  "aggc01/phantasy-star-nova-recomp": {
+   "noRelease": true,
+   "readme": {
+    "features": {
+     "hfr": "yes",
+     "kbm": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Windows": true
+    },
+    "targets": {},
+    "v": 4
+   },
+   "readmeLure": [],
+   "repo": {
+    "archived": false,
+    "created": "2026-11-25T15:26:44Z",
+    "desc": "Fork of Project Nativ (TheLostPantheon/nativ) focused on Phantasy Star Nova: the Japanese PS Vita game recompiled as a native Windows program, with English, 60 FPS and HD. Bring your own game.",
+    "firstRelease": null,
+    "full": "aggc01/phantasy-star-nova-recomp",
+    "lang": "C",
+    "pushed": "2026-11-26T01:40:21Z",
+    "size": 8210,
+    "stars": 5
+   },
+   "shots": []
   },
   "agitationskeleton/boat_of_daphnes": {
    "assetOs": {
@@ -3862,7 +3890,7 @@
     "lang": "C++",
     "pushed": "2026-11-26T01:54:09Z",
     "size": 8225,
-    "stars": 2067
+    "stars": 2068
    },
    "shots": [
     "https://raw.githubusercontent.com/AjncSystem/ShadowOfTheColossus-PC/HEAD/docs/images/sotc-menu-f1-en.png"
@@ -4358,7 +4386,7 @@
    "readmeLure": [],
    "release": {
     "date": "2026-11-26T03:28:00Z",
-    "pre": true,
+    "pre": false,
     "tag": "v0.2.0",
     "url": "https://github.com/albertoha94/Rust.Recomp.ReVS/releases/tag/v0.2.0"
    },
@@ -4370,7 +4398,7 @@
     "full": "albertoha94/Rust.Recomp.ReVS",
     "lang": "Rust",
     "pushed": "2026-11-26T03:24:20Z",
-    "size": 489,
+    "size": 492,
     "stars": 3
    },
    "shots": [
@@ -4677,6 +4705,7 @@
    "readme": {
     "features": {
      "kbm": "yes",
+     "online": "yes",
      "res": "yes"
     },
     "os": {
@@ -4689,10 +4718,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-14T12:20:09Z",
+    "date": "2026-11-26T03:47:13Z",
     "pre": false,
-    "tag": "v0.6.0",
-    "url": "https://github.com/alex61194/twin-embers/releases/tag/v0.6.0"
+    "tag": "v0.7.0",
+    "url": "https://github.com/alex61194/twin-embers/releases/tag/v0.7.0"
    },
    "repo": {
     "archived": false,
@@ -4701,8 +4730,8 @@
     "firstRelease": "2026-10-09T20:55:02Z",
     "full": "alex61194/twin-embers",
     "lang": "C",
-    "pushed": "2026-11-25T22:55:47Z",
-    "size": 32631,
+    "pushed": "2026-11-26T03:47:13Z",
+    "size": 32837,
     "stars": 69
    },
    "shots": [
@@ -9695,7 +9724,7 @@
     "lang": "Python",
     "pushed": "2026-11-15T23:24:00Z",
     "size": 68,
-    "stars": 5
+    "stars": 6
    },
    "shots": []
   },
@@ -11805,10 +11834,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T01:15:41Z",
+    "date": "2026-11-26T03:49:37Z",
     "pre": false,
-    "tag": "v0.1.62",
-    "url": "https://github.com/andersfischernielsen/ssx3-decomp/releases/tag/v0.1.62"
+    "tag": "v0.1.63",
+    "url": "https://github.com/andersfischernielsen/ssx3-decomp/releases/tag/v0.1.63"
    },
    "repo": {
     "archived": false,
@@ -11817,8 +11846,8 @@
     "firstRelease": "2026-11-22T19:27:42Z",
     "full": "andersfischernielsen/ssx3-decomp",
     "lang": "Rust",
-    "pushed": "2026-11-26T01:15:41Z",
-    "size": 226121,
+    "pushed": "2026-11-26T03:49:37Z",
+    "size": 227422,
     "stars": 51
    },
    "shots": [
@@ -13710,7 +13739,7 @@
     "lang": "Python",
     "pushed": "2026-11-20T02:06:35Z",
     "size": 34145,
-    "stars": 1097
+    "stars": 1098
    },
    "shots": [
     "https://raw.githubusercontent.com/arcanite24/pinyon-shift/HEAD/.github/launcher-ready.png"
@@ -15098,7 +15127,7 @@
     "full": "AurelioB/totk-android",
     "lang": "C",
     "pushed": "2026-11-26T02:54:48Z",
-    "size": 21579,
+    "size": 21642,
     "stars": 245
    },
    "shots": [
@@ -15260,10 +15289,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-25T15:38:55Z",
+    "date": "2026-11-26T03:51:59Z",
     "pre": false,
-    "tag": "v0.9.11",
-    "url": "https://github.com/ausnick2001/OpenFF3-Enhanced/releases/tag/v0.9.11"
+    "tag": "v0.9.12",
+    "url": "https://github.com/ausnick2001/OpenFF3-Enhanced/releases/tag/v0.9.12"
    },
    "repo": {
     "archived": false,
@@ -15272,8 +15301,8 @@
     "firstRelease": "2026-11-19T10:07:39Z",
     "full": "ausnick2001/OpenFF3-Enhanced",
     "lang": "C#",
-    "pushed": "2026-11-25T15:27:08Z",
-    "size": 25477,
+    "pushed": "2026-11-26T03:43:06Z",
+    "size": 25513,
     "stars": 55
    },
    "shots": [
@@ -15723,7 +15752,7 @@
     "lang": "C",
     "pushed": "2026-09-25T18:57:08Z",
     "size": 3946,
-    "stars": 2152
+    "stars": 2153
    },
    "shots": []
   },
@@ -16088,7 +16117,7 @@
     "lang": "C++",
     "pushed": "2026-11-16T12:21:20Z",
     "size": 5723,
-    "stars": 64
+    "stars": 63
    },
    "shots": []
   },
@@ -16278,7 +16307,7 @@
     "lang": "C++",
     "pushed": "2026-10-31T08:09:47Z",
     "size": 3160,
-    "stars": 22
+    "stars": 23
    },
    "shots": []
   },
@@ -16366,7 +16395,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T16:44:10Z",
     "size": 6680,
-    "stars": 874
+    "stars": 873
    },
    "shots": []
   },
@@ -17019,9 +17048,9 @@
     "firstRelease": "2026-11-03T19:36:13Z",
     "full": "BevelTipDrip/medievil_2019_pc_port",
     "lang": "C++",
-    "pushed": "2026-11-26T02:14:03Z",
-    "size": 55784,
-    "stars": 102
+    "pushed": "2026-11-26T04:00:35Z",
+    "size": 56021,
+    "stars": 103
    },
    "shots": [
     "https://raw.githubusercontent.com/BevelTipDrip/medievil_2019_pc_port/HEAD/docs/screenshots/graveyard-gate.jpg",
@@ -18424,10 +18453,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T03:32:53Z",
+    "date": "2026-11-26T05:12:01Z",
     "pre": false,
-    "tag": "bfm-desktop-dcfded774",
-    "url": "https://github.com/Blizz127/Brave-Fencer-Musashi-decomp-port/releases/tag/bfm-desktop-dcfded774"
+    "tag": "bfm-desktop-456074bf7",
+    "url": "https://github.com/Blizz127/Brave-Fencer-Musashi-decomp-port/releases/tag/bfm-desktop-456074bf7"
    },
    "repo": {
     "archived": false,
@@ -18436,8 +18465,8 @@
     "firstRelease": "2026-09-30T03:08:58Z",
     "full": "Blizz127/Brave-Fencer-Musashi-decomp-port",
     "lang": "C",
-    "pushed": "2026-11-26T03:32:46Z",
-    "size": 8049,
+    "pushed": "2026-11-26T05:16:06Z",
+    "size": 5234,
     "stars": 14
    },
    "shots": []
@@ -20162,7 +20191,7 @@
     "full": "brianblakely/xenogears-ex-machina",
     "lang": "C",
     "pushed": "2026-11-26T02:45:57Z",
-    "size": 28305,
+    "size": 28290,
     "stars": 54
    },
    "shots": [
@@ -21541,7 +21570,7 @@
     "full": "CapsLock4284/DonPachi-Recomp",
     "lang": "C",
     "pushed": "2026-11-26T03:07:47Z",
-    "size": 1509,
+    "size": 1510,
     "stars": 21
    },
    "shots": [
@@ -22810,7 +22839,7 @@
     "lang": "C++",
     "pushed": "2026-11-24T13:05:16Z",
     "size": 100770,
-    "stars": 25
+    "stars": 26
    },
    "shots": []
   },
@@ -23705,7 +23734,7 @@
     "lang": "Objective-C++",
     "pushed": "2026-11-20T14:18:09Z",
     "size": 1989,
-    "stars": 28
+    "stars": 29
    },
    "shots": []
   },
@@ -23829,7 +23858,7 @@
     "lang": "Python",
     "pushed": "2026-11-20T16:40:45Z",
     "size": 24447,
-    "stars": 101
+    "stars": 102
    },
    "shots": []
   },
@@ -24143,7 +24172,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T21:50:23Z",
     "size": 840,
-    "stars": 23
+    "stars": 24
    },
    "shots": []
   },
@@ -24312,8 +24341,8 @@
     "firstRelease": "2026-10-01T14:58:01Z",
     "full": "ChupathingyCE/chupathingyce",
     "lang": "C",
-    "pushed": "2026-11-26T03:01:45Z",
-    "size": 89678,
+    "pushed": "2026-11-26T05:25:39Z",
+    "size": 89855,
     "stars": 149
    },
    "shots": [
@@ -25805,7 +25834,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T18:33:44Z",
     "size": 2659,
-    "stars": 22
+    "stars": 25
    },
    "shots": []
   },
@@ -27064,8 +27093,8 @@
     "full": "cuesta4/GOW3rehooked",
     "lang": "C++",
     "pushed": "2026-11-26T03:02:14Z",
-    "size": 51125,
-    "stars": 361
+    "size": 51355,
+    "stars": 362
    },
    "shots": [
     "https://raw.githubusercontent.com/cuesta4/GOW3rehooked/HEAD/assets/screenshots/title-menu.png",
@@ -27439,7 +27468,7 @@
     "lang": "C",
     "pushed": "2026-11-24T07:56:11Z",
     "size": 74866,
-    "stars": 2041
+    "stars": 2040
    },
    "shots": [
     "https://github.com/user-attachments/assets/0a4412e1-f6d3-48ed-8e17-0a374c2122f1"
@@ -27786,7 +27815,7 @@
     "lang": "C",
     "pushed": "2026-11-18T01:55:39Z",
     "size": 4180,
-    "stars": 4
+    "stars": 5
    },
    "shots": [
     "https://img.youtube.com/vi/3C-nZWY-0F4/hqdefault.jpg"
@@ -28638,7 +28667,7 @@
     "lang": "C++",
     "pushed": "2026-10-14T11:05:05Z",
     "size": 3735,
-    "stars": 112
+    "stars": 113
    },
    "shots": []
   },
@@ -29071,7 +29100,7 @@
     "lang": "C++",
     "pushed": "2026-10-31T19:25:11Z",
     "size": 13618,
-    "stars": 25
+    "stars": 26
    },
    "shots": []
   },
@@ -30579,7 +30608,7 @@
    "readmeLure": [],
    "release": {
     "date": "2026-11-25T20:34:04Z",
-    "pre": true,
+    "pre": false,
     "tag": "0.2a",
     "url": "https://github.com/DavidisOwnage/ReSqueezed/releases/tag/0.2a"
    },
@@ -30993,7 +31022,7 @@
     "lang": "C",
     "pushed": "2026-11-25T05:35:52Z",
     "size": 22184,
-    "stars": 14
+    "stars": 15
    },
    "shots": [
     "https://raw.githubusercontent.com/dea7hsmiless/Midnight-Club-3-ReDUB/HEAD/launcher/art/hero.jpg",
@@ -31103,7 +31132,7 @@
     "lang": "C++",
     "pushed": "2026-10-28T23:56:07Z",
     "size": 8937,
-    "stars": 4209
+    "stars": 4210
    },
    "shots": []
   },
@@ -31315,7 +31344,7 @@
     "lang": "C",
     "pushed": "2026-11-21T13:43:02Z",
     "size": 4142,
-    "stars": 100
+    "stars": 99
    },
    "shots": []
   },
@@ -31706,7 +31735,7 @@
     "lang": "C",
     "pushed": "2026-11-13T14:13:46Z",
     "size": 5688,
-    "stars": 629
+    "stars": 630
    },
    "shots": [
     "https://raw.githubusercontent.com/OpenSmash-Ultimate/ssbu-recomp/HEAD/media/og-image.png"
@@ -34912,7 +34941,7 @@
     "lang": "C++",
     "pushed": "2026-11-04T20:05:33Z",
     "size": 5410,
-    "stars": 535
+    "stars": 534
    },
    "shots": []
   },
@@ -36277,8 +36306,8 @@
     "firstRelease": "2026-10-07T14:35:31Z",
     "full": "dyzz/srw64-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T01:16:09Z",
-    "size": 169525,
+    "pushed": "2026-11-26T04:41:58Z",
+    "size": 169978,
     "stars": 52
    },
    "shots": [
@@ -37876,7 +37905,7 @@
     "lang": "C",
     "pushed": "2026-11-23T18:21:45Z",
     "size": 8157,
-    "stars": 27
+    "stars": 28
    },
    "shots": []
   },
@@ -38174,7 +38203,7 @@
     "lang": "C++",
     "pushed": "2026-11-22T11:28:14Z",
     "size": 24101,
-    "stars": 316
+    "stars": 317
    },
    "shots": []
   },
@@ -39529,7 +39558,7 @@
     "lang": "C",
     "pushed": "2026-11-25T05:01:10Z",
     "size": 291697,
-    "stars": 814
+    "stars": 815
    },
    "shots": [
     "https://raw.githubusercontent.com/EstebanPdN/zelda-alttp-3ds/HEAD/docs/images/showcase-rounded.webp"
@@ -39612,7 +39641,7 @@
     "lang": "C++",
     "pushed": "2026-10-28T15:58:15Z",
     "size": 1349,
-    "stars": 15
+    "stars": 16
    },
    "shots": []
   },
@@ -39756,10 +39785,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T00:39:13Z",
+    "date": "2026-11-26T03:37:01Z",
     "pre": false,
-    "tag": "v2026.11.28",
-    "url": "https://github.com/EtherAura/xenogears-pc/releases/tag/v2026.11.28"
+    "tag": "v2026.11.29",
+    "url": "https://github.com/EtherAura/xenogears-pc/releases/tag/v2026.11.29"
    },
    "repo": {
     "archived": false,
@@ -39769,8 +39798,8 @@
     "full": "EtherAura/xenogears-pc",
     "lang": "C",
     "pushed": "2026-11-26T03:24:22Z",
-    "size": 25934,
-    "stars": 8
+    "size": 26213,
+    "stars": 9
    },
    "shots": [
     "https://raw.githubusercontent.com/EtherAura/xenogears-pc/HEAD/docs/img/clip-readme.webp",
@@ -40367,7 +40396,7 @@
     "lang": "C#",
     "pushed": "2026-11-25T12:28:20Z",
     "size": 619263,
-    "stars": 606
+    "stars": 608
    },
    "shots": []
   },
@@ -40409,7 +40438,7 @@
     "lang": "C#",
     "pushed": "2026-11-25T12:28:20Z",
     "size": 619263,
-    "stars": 606
+    "stars": 608
    },
    "shots": []
   },
@@ -40762,7 +40791,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T23:05:00Z",
     "size": 12884,
-    "stars": 14
+    "stars": 15
    },
    "shots": []
   },
@@ -41147,7 +41176,7 @@
     "lang": "Common Lisp",
     "pushed": "2026-11-23T20:42:24Z",
     "size": 404713,
-    "stars": 36
+    "stars": 37
    },
    "shots": []
   },
@@ -42070,7 +42099,7 @@
     "full": "formae-group/ducktales-recompiled",
     "lang": "C",
     "pushed": "2026-11-26T03:00:12Z",
-    "size": 2847,
+    "size": 2887,
     "stars": 18
    },
    "shots": []
@@ -42429,7 +42458,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T17:34:42Z",
     "size": 123550,
-    "stars": 210
+    "stars": 211
    },
    "shots": [
     "https://raw.githubusercontent.com/FridiNaTor1/SafeHouse/HEAD/docs/images/launcher.png",
@@ -42488,8 +42517,8 @@
     "firstRelease": "2026-11-01T05:13:12Z",
     "full": "FrightWorks/FrightWorks-no100f",
     "lang": "C++",
-    "pushed": "2026-11-26T03:15:11Z",
-    "size": 34891,
+    "pushed": "2026-11-26T05:30:04Z",
+    "size": 34855,
     "stars": 12
    },
    "shots": [
@@ -42528,7 +42557,7 @@
     "lang": "C++",
     "pushed": "2026-11-21T19:21:10Z",
     "size": 185114,
-    "stars": 4524
+    "stars": 4525
    },
    "shots": []
   },
@@ -42985,7 +43014,7 @@
     "firstRelease": "2026-11-07T07:12:06Z",
     "full": "Fwha/Lost-Paradise",
     "lang": "C++",
-    "pushed": "2026-11-25T22:42:34Z",
+    "pushed": "2026-11-26T05:29:30Z",
     "size": 4173,
     "stars": 42
    },
@@ -44008,7 +44037,7 @@
     "lang": "Rust",
     "pushed": "2026-10-18T14:32:42Z",
     "size": 4148,
-    "stars": 15
+    "stars": 16
    },
    "shots": [
     "https://raw.githubusercontent.com/gage-marshall/lp-engine/HEAD/docs/screenshots/title.webp",
@@ -44060,7 +44089,7 @@
     "lang": "C++",
     "pushed": "2026-11-22T22:35:46Z",
     "size": 4943,
-    "stars": 123
+    "stars": 124
    },
    "shots": []
   },
@@ -44131,7 +44160,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T16:46:30Z",
     "size": 3769,
-    "stars": 343
+    "stars": 344
    },
    "shots": []
   },
@@ -44899,8 +44928,8 @@
     "firstRelease": "2026-11-23T01:39:36Z",
     "full": "george0815/halo-3-recomp",
     "lang": "C++",
-    "pushed": "2026-11-24T14:41:45Z",
-    "size": 15206,
+    "pushed": "2026-11-26T03:54:39Z",
+    "size": 15287,
     "stars": 29
    },
    "shots": [
@@ -45704,7 +45733,7 @@
     "archived": false,
     "desc": "",
     "full": "AndyALRLabs/ReCasted",
-    "pushed": "2026-11-26T00:19:19.486Z",
+    "pushed": "2026-11-26T05:29:47.001Z",
     "stars": 11
    }
   },
@@ -46455,7 +46484,7 @@
     "firstRelease": "2026-10-25T18:28:16Z",
     "full": "gminustwo/primerecomp",
     "lang": "C",
-    "pushed": "2026-11-24T01:57:29Z",
+    "pushed": "2026-11-26T04:57:08Z",
     "size": 7847,
     "stars": 342
    },
@@ -46466,6 +46495,7 @@
   },
   "gminustwo/red_two": {
    "assetOs": {
+    "Android": true,
     "Linux": true,
     "Windows": true,
     "macOS": true
@@ -46482,6 +46512,7 @@
      "tex": "yes"
     },
     "os": {
+     "Android": true,
      "Linux": true,
      "Steam Deck": true,
      "Windows": true,
@@ -46492,10 +46523,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-24T05:38:47Z",
+    "date": "2026-11-26T04:01:04Z",
     "pre": false,
-    "tag": "v1.3",
-    "url": "https://github.com/gminustwo/red_two/releases/tag/v1.3"
+    "tag": "v1.4",
+    "url": "https://github.com/gminustwo/red_two/releases/tag/v1.4"
    },
    "repo": {
     "archived": false,
@@ -46504,8 +46535,8 @@
     "firstRelease": "2026-11-18T05:32:17Z",
     "full": "gminustwo/red_two",
     "lang": "C++",
-    "pushed": "2026-11-26T03:27:59Z",
-    "size": 843,
+    "pushed": "2026-11-26T04:01:04Z",
+    "size": 998,
     "stars": 257
    },
    "shots": []
@@ -46543,8 +46574,8 @@
     "firstRelease": "2026-11-10T02:12:52Z",
     "full": "gminustwo/RondoRecomp",
     "lang": "C",
-    "pushed": "2026-11-24T04:26:41Z",
-    "size": 1558,
+    "pushed": "2026-11-26T04:26:31Z",
+    "size": 1932,
     "stars": 94
    },
    "shots": []
@@ -46841,9 +46872,9 @@
     "firstRelease": "2026-11-19T09:51:44Z",
     "full": "God-Hand-Rearmed/God-Hand-Rearmed",
     "lang": "C++",
-    "pushed": "2026-11-25T22:58:55Z",
+    "pushed": "2026-11-26T05:24:12Z",
     "size": 121356,
-    "stars": 243
+    "stars": 246
    },
    "shots": [
     "https://raw.githubusercontent.com/God-Hand-Rearmed/God-Hand-Rearmed/HEAD/assets/platforms.webp",
@@ -48216,7 +48247,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T20:29:11Z",
     "size": 21230,
-    "stars": 1376
+    "stars": 1377
    },
    "shots": []
   },
@@ -48619,7 +48650,7 @@
     "firstRelease": "2026-08-19T18:52:22Z",
     "full": "GTTeancum/Vigilante-8-recomp",
     "lang": "C",
-    "pushed": "2026-11-26T00:29:38Z",
+    "pushed": "2026-11-26T05:25:43Z",
     "size": 162358,
     "stars": 24
    },
@@ -48848,10 +48879,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T01:54:31Z",
+    "date": "2026-11-26T03:54:06Z",
     "pre": true,
-    "tag": "vr-2026.11.25.10",
-    "url": "https://github.com/guideahon/BOTW-VR-RECOMP/releases/tag/vr-2026.11.25.10"
+    "tag": "vr-2026.11.25.11",
+    "url": "https://github.com/guideahon/BOTW-VR-RECOMP/releases/tag/vr-2026.11.25.11"
    },
    "repo": {
     "archived": false,
@@ -48860,8 +48891,8 @@
     "firstRelease": "2026-11-12T12:48:58Z",
     "full": "guideahon/BOTW-VR-RECOMP",
     "lang": "C",
-    "pushed": "2026-11-26T03:32:53Z",
-    "size": 16600,
+    "pushed": "2026-11-26T03:54:05Z",
+    "size": 17312,
     "stars": 15
    },
    "shots": [
@@ -49036,8 +49067,8 @@
     "firstRelease": "2026-08-20T23:54:11Z",
     "full": "guimaraf/plusalpha-recomp",
     "lang": "C",
-    "pushed": "2026-11-26T02:57:04Z",
-    "size": 30095,
+    "pushed": "2026-11-26T05:11:30Z",
+    "size": 30257,
     "stars": 50
    },
    "shots": []
@@ -50799,10 +50830,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T01:19:34Z",
+    "date": "2026-11-26T05:04:06Z",
     "pre": false,
-    "tag": "v1.0.28",
-    "url": "https://github.com/Hero88go/melee-unlocked/releases/tag/v1.0.28"
+    "tag": "v1.0.29",
+    "url": "https://github.com/Hero88go/melee-unlocked/releases/tag/v1.0.29"
    },
    "repo": {
     "archived": false,
@@ -50811,9 +50842,9 @@
     "firstRelease": "2026-09-12T01:54:33Z",
     "full": "Hero88go/melee-unlocked",
     "lang": "C++",
-    "pushed": "2026-11-26T01:19:34Z",
+    "pushed": "2026-11-26T05:04:06Z",
     "size": 137527,
-    "stars": 211
+    "stars": 212
    },
    "shots": [
     "https://raw.githubusercontent.com/Hero88go/melee-unlocked/HEAD/docs/screenshots/gameplay-jungle-japes.jpg",
@@ -51341,7 +51372,7 @@
     "firstRelease": "2026-10-27T18:16:46Z",
     "full": "HighDrexler/RACiT",
     "lang": "C++",
-    "pushed": "2026-11-26T02:00:04Z",
+    "pushed": "2026-11-26T04:42:22Z",
     "size": 4154,
     "stars": 189
    },
@@ -51686,7 +51717,7 @@
     "lang": "C++",
     "pushed": "2026-11-18T12:49:31Z",
     "size": 3381,
-    "stars": 97
+    "stars": 98
    },
    "shots": [
     "https://raw.githubusercontent.com/hk21x/nightfire-recomp/HEAD/docs/img/nightfire-hero.webp",
@@ -52684,7 +52715,7 @@
     "lang": "C#",
     "pushed": "2026-11-21T16:19:14Z",
     "size": 2966,
-    "stars": 187
+    "stars": 188
    },
    "shots": [
     "https://img.youtube.com/vi/Kf01UV4NT_Y/maxresdefault.jpg",
@@ -53067,8 +53098,8 @@
     "firstRelease": "2026-11-18T22:51:43Z",
     "full": "iCosiSenpai/age-of-decomp",
     "lang": "C",
-    "pushed": "2026-11-24T03:30:58Z",
-    "size": 14863,
+    "pushed": "2026-11-26T04:18:16Z",
+    "size": 15073,
     "stars": 34
    },
    "shots": [
@@ -53250,7 +53281,7 @@
     "full": "iExplosiveRage/DBZ-Burst-Limit-Recompiled",
     "lang": "C++",
     "pushed": "2026-11-26T02:38:37Z",
-    "size": 4919,
+    "size": 5024,
     "stars": 130
    },
    "shots": [
@@ -53375,12 +53406,11 @@
     "firstRelease": "2026-10-24T16:10:57Z",
     "full": "ignzio/CB2-Online",
     "lang": "C++",
-    "pushed": "2026-11-05T12:39:13Z",
+    "pushed": "2026-11-26T04:52:27Z",
     "size": 3984,
     "stars": 5
    },
    "shots": [
-    "https://github.com/user-attachments/assets/00de4f20-eb95-4d5d-8eef-6776029f7bf2",
     "https://raw.githubusercontent.com/ignzio/CB2-Online/HEAD/docs/img/multiplayer.gif",
     "https://raw.githubusercontent.com/ignzio/CB2-Online/HEAD/docs/img/lobby.jpg",
     "https://raw.githubusercontent.com/ignzio/CB2-Online/HEAD/docs/img/menu-sound.jpg",
@@ -53920,7 +53950,7 @@
     "lang": "C",
     "pushed": "2026-11-25T05:11:12Z",
     "size": 2094,
-    "stars": 1
+    "stars": 2
    },
    "shots": []
   },
@@ -53988,10 +54018,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-22T14:44:51Z",
+    "date": "2026-11-26T04:48:14Z",
     "pre": false,
-    "tag": "launcher-v1.6.2",
-    "url": "https://github.com/ILFforever/YW4Recomp/releases/tag/launcher-v1.6.2"
+    "tag": "launcher-v1.7.0",
+    "url": "https://github.com/ILFforever/YW4Recomp/releases/tag/launcher-v1.7.0"
    },
    "repo": {
     "archived": false,
@@ -54000,8 +54030,8 @@
     "firstRelease": "2026-11-05T08:32:54Z",
     "full": "ILFforever/YW4Recomp",
     "lang": "C",
-    "pushed": "2026-11-25T03:19:03Z",
-    "size": 137293,
+    "pushed": "2026-11-26T04:24:56Z",
+    "size": 137661,
     "stars": 50
    },
    "shots": [
@@ -54198,7 +54228,7 @@
     "lang": "C#",
     "pushed": "2026-11-25T03:41:26Z",
     "size": 16023,
-    "stars": 1192
+    "stars": 1194
    },
    "shots": [
     "https://raw.githubusercontent.com/imnotsharingmyname/pcportastrobot/HEAD/docs/screenshots/gameplay-skygarden.png",
@@ -56112,8 +56142,8 @@
     "firstRelease": "2026-09-05T16:30:20Z",
     "full": "JackandBeans/Snap64Recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T02:20:44Z",
-    "size": 43429,
+    "pushed": "2026-11-26T03:36:49Z",
+    "size": 43524,
     "stars": 142
    },
    "shots": [
@@ -57998,8 +58028,8 @@
     "firstRelease": "2026-10-31T01:00:52Z",
     "full": "JEschete/VS-NativePort",
     "lang": "C++",
-    "pushed": "2026-11-26T03:29:53Z",
-    "size": 56932,
+    "pushed": "2026-11-26T05:05:49Z",
+    "size": 57078,
     "stars": 101
    },
    "shots": []
@@ -58773,7 +58803,7 @@
     "lang": "C",
     "pushed": "2026-11-01T22:37:26Z",
     "size": 282869,
-    "stars": 344
+    "stars": 345
    },
    "shots": [
     "https://raw.githubusercontent.com/jkdansereau/goldeneye-pc-port/HEAD/docs/media/goldeneye-gh-preview.gif"
@@ -58801,10 +58831,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T03:24:33Z",
+    "date": "2026-11-26T04:00:34Z",
     "pre": true,
-    "tag": "v0.3.0-beta.3",
-    "url": "https://github.com/JLAgamer/Godzilla-Save-the-Earth-Xbox-static-recompilation/releases/tag/v0.3.0-beta.3"
+    "tag": "v0.3.0-beta.4",
+    "url": "https://github.com/JLAgamer/Godzilla-Save-the-Earth-Xbox-static-recompilation/releases/tag/v0.3.0-beta.4"
    },
    "repo": {
     "archived": false,
@@ -58813,8 +58843,8 @@
     "firstRelease": "2026-11-11T14:04:58Z",
     "full": "JLAgamer/Godzilla-Save-the-Earth-Xbox-static-recompilation",
     "lang": "C",
-    "pushed": "2026-11-26T03:24:29Z",
-    "size": 1495,
+    "pushed": "2026-11-26T04:00:28Z",
+    "size": 1571,
     "stars": 6
    },
    "shots": []
@@ -59303,8 +59333,8 @@
     "firstRelease": "2026-10-23T11:08:33Z",
     "full": "JonathanDC64/Soulbrandt",
     "lang": "C++",
-    "pushed": "2026-11-26T03:34:11Z",
-    "size": 12721,
+    "pushed": "2026-11-26T03:40:36Z",
+    "size": 12735,
     "stars": 545
    },
    "shots": [
@@ -59411,8 +59441,8 @@
     "firstRelease": "2026-10-23T11:08:33Z",
     "full": "JonathanDC64/Soulbrandt",
     "lang": "C++",
-    "pushed": "2026-11-26T03:34:11Z",
-    "size": 12721,
+    "pushed": "2026-11-26T03:40:36Z",
+    "size": 12735,
     "stars": 545
    },
    "shots": [
@@ -60613,7 +60643,7 @@
     "lang": "C",
     "pushed": "2026-11-24T01:25:31Z",
     "size": 1293,
-    "stars": 1
+    "stars": 2
    },
    "shots": []
   },
@@ -60634,10 +60664,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T03:26:38Z",
+    "date": "2026-11-26T03:46:20Z",
     "pre": false,
-    "tag": "v1.0.21",
-    "url": "https://github.com/Jstackzz/MK-3D-rollback/releases/tag/v1.0.21"
+    "tag": "v1.0.22",
+    "url": "https://github.com/Jstackzz/MK-3D-rollback/releases/tag/v1.0.22"
    },
    "repo": {
     "archived": false,
@@ -60646,9 +60676,9 @@
     "firstRelease": "2026-10-26T00:03:24Z",
     "full": "Jstackzz/MK-3D-rollback",
     "lang": "C++",
-    "pushed": "2026-11-26T03:26:38Z",
-    "size": 15748,
-    "stars": 60
+    "pushed": "2026-11-26T03:46:20Z",
+    "size": 15825,
+    "stars": 61
    },
    "shots": []
   },
@@ -62187,7 +62217,7 @@
     "lang": "C++",
     "pushed": "2026-11-20T14:32:36Z",
     "size": 68610,
-    "stars": 194
+    "stars": 195
    },
    "shots": [
     "https://raw.githubusercontent.com/KaikoClanworth1/wwe-svr2011-pc/HEAD/docs/screenshots/title.jpg",
@@ -63045,8 +63075,8 @@
     "firstRelease": "2026-10-13T16:15:43Z",
     "full": "keepvaibin/nebula",
     "lang": "C++",
-    "pushed": "2026-11-26T00:49:54Z",
-    "size": 212867,
+    "pushed": "2026-11-26T04:16:24Z",
+    "size": 212501,
     "stars": 639
    },
    "shots": []
@@ -63461,7 +63491,7 @@
     "full": "kerokline/BreathOfFire3PCPort",
     "lang": "C++",
     "pushed": "2026-11-26T03:22:59Z",
-    "size": 85361,
+    "size": 86344,
     "stars": 33
    },
    "shots": [
@@ -63620,8 +63650,8 @@
     "firstRelease": "2026-11-25T00:21:08Z",
     "full": "khant735/WCW-Backstage-Assault-RECOMP",
     "lang": "C",
-    "pushed": "2026-11-26T03:03:39Z",
-    "size": 19859,
+    "pushed": "2026-11-26T04:48:09Z",
+    "size": 19886,
     "stars": 0
    },
    "shots": [
@@ -63992,7 +64022,7 @@
     "lang": "C",
     "pushed": "2026-11-21T01:38:25Z",
     "size": 7237,
-    "stars": 290
+    "stars": 291
    },
    "shots": []
   },
@@ -64237,7 +64267,7 @@
     "lang": "C",
     "pushed": "2026-11-22T23:09:06Z",
     "size": 1825,
-    "stars": 5
+    "stars": 6
    },
    "shots": []
   },
@@ -65930,7 +65960,7 @@
     "firstRelease": "2026-11-08T10:11:28Z",
     "full": "kvse/dsr-native",
     "lang": "C++",
-    "pushed": "2026-11-25T16:41:59Z",
+    "pushed": "2026-11-26T05:17:39Z",
     "size": 2105,
     "stars": 176
    },
@@ -67596,8 +67626,8 @@
     "firstRelease": null,
     "full": "lifewillbeokay/moh-rising-sun",
     "lang": "C++",
-    "pushed": "2026-11-14T19:08:05Z",
-    "size": 6893,
+    "pushed": "2026-11-26T04:36:30Z",
+    "size": 7035,
     "stars": 12
    },
    "shots": []
@@ -68252,7 +68282,7 @@
     "lang": "C++",
     "pushed": "2026-11-12T15:12:11Z",
     "size": 15975,
-    "stars": 231
+    "stars": 230
    },
    "shots": []
   },
@@ -68505,7 +68535,7 @@
     "lang": "C++",
     "pushed": "2026-10-26T04:43:51Z",
     "size": 538,
-    "stars": 34
+    "stars": 35
    },
    "shots": []
   },
@@ -68778,8 +68808,8 @@
     "firstRelease": "2026-11-01T05:13:12Z",
     "full": "FrightWorks/FrightWorks-no100f",
     "lang": "C++",
-    "pushed": "2026-11-26T03:15:11Z",
-    "size": 34891,
+    "pushed": "2026-11-26T05:30:04Z",
+    "size": 34855,
     "stars": 12
    },
    "shots": [
@@ -69002,7 +69032,7 @@
     "full": "lorransouzaaguiar/Digimon-World-4-Recomp",
     "lang": "C",
     "pushed": "2026-11-26T02:44:58Z",
-    "size": 6888,
+    "size": 6907,
     "stars": 0
    },
    "shots": [
@@ -69331,7 +69361,7 @@
     "lang": "C",
     "pushed": "2026-11-26T02:19:32Z",
     "size": 9606,
-    "stars": 1429
+    "stars": 1431
    },
    "shots": []
   },
@@ -69371,7 +69401,7 @@
     "lang": "C",
     "pushed": "2026-11-24T14:03:14Z",
     "size": 7316,
-    "stars": 220
+    "stars": 221
    },
    "shots": [
     "https://raw.githubusercontent.com/lucas-martinic/mario64mr/HEAD/media/mario-out-of-the-game.gif"
@@ -70133,7 +70163,7 @@
     "lang": "C",
     "pushed": "2026-11-25T12:44:03Z",
     "size": 313152,
-    "stars": 8316
+    "stars": 8319
    },
    "shots": []
   },
@@ -70788,7 +70818,7 @@
     "firstRelease": "2026-11-17T04:18:35Z",
     "full": "macielrecomp/triunit-recomp",
     "lang": "Python",
-    "pushed": "2026-11-26T00:59:22Z",
+    "pushed": "2026-11-26T04:58:34Z",
     "size": 5344,
     "stars": 7
    },
@@ -71346,7 +71376,7 @@
     "lang": "C",
     "pushed": "2026-11-25T15:11:17Z",
     "size": 24346,
-    "stars": 1135
+    "stars": 1139
    },
    "shots": [
     "https://raw.githubusercontent.com/mamcjr/BOTWRecompAndroid/HEAD/docs/images/touch-controls-overhaul.jpg",
@@ -71543,7 +71573,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T00:38:02Z",
     "size": 75619,
-    "stars": 1266
+    "stars": 1269
    },
    "shots": [
     "https://raw.githubusercontent.com/mamesj/pokemon-fulldex/HEAD/docs/screenshots/game-list.gif",
@@ -72259,7 +72289,7 @@
     "full": "MarkPremier/EvolutionRecomp",
     "lang": "C",
     "pushed": "2026-11-26T03:01:41Z",
-    "size": 1522,
+    "size": 1686,
     "stars": 25
    },
    "shots": []
@@ -72332,8 +72362,8 @@
     "firstRelease": "2026-11-18T04:13:53Z",
     "full": "MarquitoK/TTTRecomp",
     "lang": "C++",
-    "pushed": "2026-11-26T00:05:28Z",
-    "size": 11993,
+    "pushed": "2026-11-26T03:53:48Z",
+    "size": 12214,
     "stars": 7
    },
    "shots": []
@@ -73062,7 +73092,7 @@
     "full": "mathewdouglas/Project-Tourline-5",
     "lang": "C++",
     "pushed": "2026-11-26T02:47:46Z",
-    "size": 29755,
+    "size": 31494,
     "stars": 63
    },
    "shots": []
@@ -73407,9 +73437,9 @@
     "firstRelease": "2026-10-18T19:18:46Z",
     "full": "matt-pulsipher/GT3-revisited",
     "lang": "C++",
-    "pushed": "2026-11-25T23:15:00Z",
+    "pushed": "2026-11-26T05:00:06Z",
     "size": 10729,
-    "stars": 376
+    "stars": 377
    },
    "shots": []
   },
@@ -73450,8 +73480,8 @@
     "firstRelease": "2026-07-23T17:20:55Z",
     "full": "Matteo842/CrashBandicoot-Launcher",
     "lang": "C#",
-    "pushed": "2026-11-26T03:30:05Z",
-    "size": 9814,
+    "pushed": "2026-11-26T03:45:16Z",
+    "size": 6647,
     "stars": 356
    },
    "shots": [
@@ -73927,7 +73957,7 @@
     "firstRelease": "2026-10-24T02:58:34Z",
     "full": "MatyMeatBoy/ReKHCoM",
     "lang": "C",
-    "pushed": "2026-11-26T01:54:45Z",
+    "pushed": "2026-11-26T04:34:59Z",
     "size": 470645,
     "stars": 93
    },
@@ -74013,11 +74043,7 @@
    "shots": []
   },
   "matymeatboy/shiningsource": {
-   "assetOs": {
-    "Android": true,
-    "Linux": true,
-    "Windows": true
-   },
+   "assetOs": {},
    "readme": {
     "features": {
      "aspect": "yes",
@@ -74034,10 +74060,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-25T05:40:15Z",
-    "pre": false,
-    "tag": "v0.9.4",
-    "url": "https://github.com/MatyMeatBoy/ShiningSource/releases/tag/v0.9.4"
+    "date": "2026-11-26T05:18:43Z",
+    "pre": true,
+    "tag": "v0.1.6-ga36",
+    "url": "https://github.com/MatyMeatBoy/ShiningSource/releases/tag/v0.1.6-ga36"
    },
    "repo": {
     "archived": false,
@@ -74046,7 +74072,7 @@
     "firstRelease": "2026-11-13T00:34:04Z",
     "full": "MatyMeatBoy/ShiningSource",
     "lang": "C",
-    "pushed": "2026-11-25T05:39:48Z",
+    "pushed": "2026-11-26T05:18:38Z",
     "size": 8662,
     "stars": 24
    },
@@ -75076,7 +75102,7 @@
     "lang": "C++",
     "pushed": "2026-11-26T02:11:14Z",
     "size": 19797,
-    "stars": 29
+    "stars": 30
    },
    "shots": [
     "https://raw.githubusercontent.com/meathax/sinandpun/HEAD/docs/screenshots/gameplay.png",
@@ -75554,9 +75580,9 @@
     "firstRelease": "2026-11-10T12:14:42Z",
     "full": "metrist38/fefw-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:31:21Z",
-    "size": 10280,
-    "stars": 438
+    "pushed": "2026-11-26T05:30:10Z",
+    "size": 10322,
+    "stars": 440
    },
    "shots": []
   },
@@ -76275,7 +76301,7 @@
     "lang": "C++",
     "pushed": "2026-11-18T04:54:05Z",
     "size": 4044,
-    "stars": 9
+    "stars": 10
    },
    "shots": []
   },
@@ -76320,9 +76346,9 @@
     "firstRelease": null,
     "full": "MikeSemicolonD/RogueSquadron64Recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:29:45Z",
-    "size": 220219,
-    "stars": 48
+    "pushed": "2026-11-26T03:47:29Z",
+    "size": 220254,
+    "stars": 49
    },
    "shots": [
     "https://raw.githubusercontent.com/MikeSemicolonD/RogueSquadron64Recomp/HEAD/screenshots/Capture1.png",
@@ -76857,8 +76883,8 @@
     "firstRelease": "2026-10-27T23:19:08Z",
     "full": "Minuteworld94/Dawn-of-the-dragon-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T01:10:04Z",
-    "size": 726,
+    "pushed": "2026-11-26T04:30:25Z",
+    "size": 733,
     "stars": 26
    },
    "shots": []
@@ -76895,7 +76921,7 @@
     "lang": "GDScript",
     "pushed": "2026-07-29T16:33:18Z",
     "size": 69460,
-    "stars": 218
+    "stars": 219
    },
    "shots": [
     "https://github.com/user-attachments/assets/9789b502-579c-435d-939a-1643f7540c04"
@@ -77391,7 +77417,7 @@
     "lang": "C++",
     "pushed": "2026-11-17T23:55:39Z",
     "size": 40988,
-    "stars": 654
+    "stars": 656
    },
    "shots": [
     "https://raw.githubusercontent.com/moesuito/gt4-staticrecomp/HEAD/docs/images/night-race-hires.webp"
@@ -77800,7 +77826,7 @@
     "lang": "C",
     "pushed": "2026-11-25T20:39:12Z",
     "size": 16640,
-    "stars": 761
+    "stars": 762
    },
    "shots": []
   },
@@ -77833,10 +77859,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-24T21:33:50Z",
+    "date": "2026-11-26T03:48:20Z",
     "pre": false,
-    "tag": "v0.1.116",
-    "url": "https://github.com/MormonFTP-hub/gt5-recomp/releases/tag/v0.1.116"
+    "tag": "v0.1.117",
+    "url": "https://github.com/MormonFTP-hub/gt5-recomp/releases/tag/v0.1.117"
    },
    "repo": {
     "archived": false,
@@ -77844,9 +77870,9 @@
     "desc": "Unofficial PC port of Gran Turismo 5 on ps3recomp. Needs your own GT5 disc, EBOOT v1.00, no update: Europe BCES00569 (tested) or US BCUS98114 (untested). Code and tools only: no game files, keys or firmware.",
     "firstRelease": "2026-11-10T16:29:22Z",
     "full": "MormonFTP-hub/gt5-recomp",
-    "lang": "C",
-    "pushed": "2026-11-25T06:48:26Z",
-    "size": 7609,
+    "lang": "C++",
+    "pushed": "2026-11-26T03:48:17Z",
+    "size": 7668,
     "stars": 87
    },
    "shots": [
@@ -78562,8 +78588,8 @@
     "firstRelease": "2026-10-10T22:14:04Z",
     "full": "mr-finster/vf1-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:12:26Z",
-    "size": 6672,
+    "pushed": "2026-11-26T04:16:36Z",
+    "size": 6674,
     "stars": 96
    },
    "shots": [
@@ -78614,8 +78640,8 @@
     "firstRelease": "2026-10-12T21:33:00Z",
     "full": "mr-finster/vf2-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:12:23Z",
-    "size": 9550,
+    "pushed": "2026-11-26T04:16:33Z",
+    "size": 9552,
     "stars": 108
    },
    "shots": [
@@ -78663,8 +78689,8 @@
     "firstRelease": "2026-10-19T03:46:33Z",
     "full": "mr-finster/vf3-recomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:12:19Z",
-    "size": 7532,
+    "pushed": "2026-11-26T04:16:30Z",
+    "size": 7534,
     "stars": 126
    },
    "shots": [
@@ -78786,7 +78812,7 @@
     "lang": "JavaScript",
     "pushed": "2026-11-25T15:08:17Z",
     "size": 2454,
-    "stars": 7
+    "stars": 8
    },
    "shots": [
     "https://raw.githubusercontent.com/Mr-Shizzy/Punch-Drunk/HEAD/docs/screenshots/home.png"
@@ -80592,7 +80618,7 @@
     "firstRelease": "2026-05-23T19:12:44Z",
     "full": "mstan/MegaManXSNESRecomp",
     "lang": "C",
-    "pushed": "2026-11-26T02:44:46Z",
+    "pushed": "2026-11-26T05:27:22Z",
     "size": 23633,
     "stars": 243
    },
@@ -81622,10 +81648,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T03:03:42Z",
+    "date": "2026-11-26T04:07:38Z",
     "pre": false,
-    "tag": "v0.15.12",
-    "url": "https://github.com/mstan/SuperMarioWorldRecomp/releases/tag/v0.15.12"
+    "tag": "v0.15.13",
+    "url": "https://github.com/mstan/SuperMarioWorldRecomp/releases/tag/v0.15.13"
    },
    "repo": {
     "archived": false,
@@ -81634,8 +81660,8 @@
     "firstRelease": "2026-04-29T22:23:25Z",
     "full": "mstan/SuperMarioWorldRecomp",
     "lang": "C",
-    "pushed": "2026-11-26T03:01:54Z",
-    "size": 8701,
+    "pushed": "2026-11-26T04:05:03Z",
+    "size": 8733,
     "stars": 193
    },
    "shots": [
@@ -82109,10 +82135,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-24T01:38:35Z",
+    "date": "2026-11-26T03:59:14Z",
     "pre": false,
-    "tag": "v0.2.2",
-    "url": "https://github.com/MTG9T4/strikers-recomp/releases/tag/v0.2.2"
+    "tag": "v0.2.3",
+    "url": "https://github.com/MTG9T4/strikers-recomp/releases/tag/v0.2.3"
    },
    "repo": {
     "archived": false,
@@ -82121,8 +82147,8 @@
     "firstRelease": "2026-11-14T22:56:47Z",
     "full": "MTG9T4/strikers-recomp",
     "lang": "C",
-    "pushed": "2026-11-24T01:38:34Z",
-    "size": 1806,
+    "pushed": "2026-11-26T03:59:14Z",
+    "size": 1898,
     "stars": 13
    },
    "shots": [
@@ -82583,7 +82609,7 @@
     "lang": "C++",
     "pushed": "2026-11-26T01:57:58Z",
     "size": 46514,
-    "stars": 368
+    "stars": 369
    },
    "shots": []
   },
@@ -83019,7 +83045,7 @@
     "firstRelease": "2026-10-29T21:55:16Z",
     "full": "n64hub/mario-party-2-recomp",
     "lang": "C",
-    "pushed": "2026-11-25T23:26:36Z",
+    "pushed": "2026-11-26T05:19:49Z",
     "size": 6929,
     "stars": 35
    },
@@ -83996,7 +84022,7 @@
     "lang": "C",
     "pushed": "2026-11-25T19:28:33Z",
     "size": 81186,
-    "stars": 582
+    "stars": 584
    },
    "shots": []
   },
@@ -84110,7 +84136,7 @@
     "full": "NauTaro/DBZ-BT4-Tag-Team-Decomp",
     "lang": "C",
     "pushed": "2026-11-26T03:03:49Z",
-    "size": 89250,
+    "size": 89251,
     "stars": 137
    },
    "shots": [
@@ -84650,7 +84676,7 @@
     "lang": "Python",
     "pushed": "2026-11-25T22:12:30Z",
     "size": 9331,
-    "stars": 23
+    "stars": 28
    },
    "shots": [
     "https://raw.githubusercontent.com/Neguchads/cdos-nintendods-recomp/HEAD/assets/recomplauncher/hero.jpg",
@@ -87677,7 +87703,7 @@
     "lang": "C++",
     "pushed": "2026-11-17T12:46:15Z",
     "size": 5399,
-    "stars": 402
+    "stars": 403
    },
    "shots": []
   },
@@ -88632,7 +88658,7 @@
     "lang": "Python",
     "pushed": "2026-11-25T17:05:20Z",
     "size": 2621,
-    "stars": 154
+    "stars": 155
    },
    "shots": []
   },
@@ -92454,7 +92480,7 @@
     "lang": "Common Lisp",
     "pushed": "2026-11-24T02:45:03Z",
     "size": 416979,
-    "stars": 3675
+    "stars": 3676
    },
    "shots": [
     "https://raw.githubusercontent.com/open-goal/jak-project/HEAD/docs/img/promosmall1.png",
@@ -92544,7 +92570,7 @@
     "lang": "C",
     "pushed": "2026-11-24T07:56:11Z",
     "size": 74866,
-    "stars": 2041
+    "stars": 2040
    },
    "shots": [
     "https://github.com/user-attachments/assets/0a4412e1-f6d3-48ed-8e17-0a374c2122f1"
@@ -92681,8 +92707,8 @@
     "firstRelease": "2026-10-24T17:57:03Z",
     "full": "openkumite/openkumite",
     "lang": "Rust",
-    "pushed": "2026-11-26T03:33:41Z",
-    "size": 5296,
+    "pushed": "2026-11-26T05:16:23Z",
+    "size": 5416,
     "stars": 34
    },
    "shots": []
@@ -92767,8 +92793,8 @@
     "firstRelease": "2026-10-13T23:05:34Z",
     "full": "OpenRAC/OpenRAC",
     "lang": "C++",
-    "pushed": "2026-11-26T03:33:55Z",
-    "size": 215897,
+    "pushed": "2026-11-26T05:28:06Z",
+    "size": 215957,
     "stars": 239
    },
    "shots": [
@@ -92860,7 +92886,7 @@
     "lang": "C",
     "pushed": "2026-11-13T14:13:46Z",
     "size": 5688,
-    "stars": 629
+    "stars": 630
    },
    "shots": [
     "https://raw.githubusercontent.com/OpenSmash-Ultimate/ssbu-recomp/HEAD/media/og-image.png"
@@ -93290,7 +93316,7 @@
     "firstRelease": "2026-10-25T04:12:02Z",
     "full": "otavix010/gow-ascension-pc",
     "lang": "C",
-    "pushed": "2026-11-25T02:58:30Z",
+    "pushed": "2026-11-26T04:51:43Z",
     "size": 14475,
     "stars": 116
    },
@@ -93816,7 +93842,7 @@
     "full": "PabloVSouza/typex2-recomp",
     "lang": "C",
     "pushed": "2026-11-26T03:07:43Z",
-    "size": 8463,
+    "size": 8626,
     "stars": 18
    },
    "shots": [
@@ -94886,7 +94912,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T22:28:17Z",
     "size": 72025,
-    "stars": 147
+    "stars": 148
    },
    "shots": []
   },
@@ -95057,8 +95083,8 @@
     "full": "peiikai/LASRecomp",
     "lang": "C",
     "pushed": "2026-11-26T03:07:52Z",
-    "size": 21621,
-    "stars": 2597
+    "size": 21695,
+    "stars": 2600
    },
    "shots": [
     "https://raw.githubusercontent.com/peiikai/LASRecomp/HEAD/docs/ultrawide.jpg",
@@ -95106,7 +95132,7 @@
     "full": "peiikai/ReTri",
     "lang": "C",
     "pushed": "2026-11-26T02:36:37Z",
-    "size": 22929,
+    "size": 22930,
     "stars": 11
    },
    "shots": [
@@ -95496,7 +95522,7 @@
     "full": "Petexy/Golden-Fist-Launcher",
     "lang": "Python",
     "pushed": "2026-11-26T02:50:17Z",
-    "size": 12713,
+    "size": 15765,
     "stars": 164
    },
    "shots": [
@@ -96389,7 +96415,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T03:14:59Z",
     "size": 6333,
-    "stars": 570
+    "stars": 571
    },
    "shots": [
     "https://raw.githubusercontent.com/pixl27/ProjectReLink/HEAD/docs/launcher.png",
@@ -96651,7 +96677,7 @@
     "lang": "C++",
     "pushed": "2026-10-12T11:45:43Z",
     "size": 68,
-    "stars": 13
+    "stars": 14
    },
    "shots": [
     "https://img.youtube.com/vi/cT2P-EIpZzY/0.jpg"
@@ -97249,7 +97275,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T11:16:05Z",
     "size": 6836,
-    "stars": 33
+    "stars": 34
    },
    "shots": []
   },
@@ -97776,10 +97802,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-25T17:37:12Z",
+    "date": "2026-11-26T05:25:32Z",
     "pre": false,
-    "tag": "v20261126-0229",
-    "url": "https://github.com/PrimeTimerer/Project-Grand-Tourer-Advanced/releases/tag/v20261126-0229"
+    "tag": "v20261126-1421",
+    "url": "https://github.com/PrimeTimerer/Project-Grand-Tourer-Advanced/releases/tag/v20261126-1421"
    },
    "repo": {
     "archived": false,
@@ -97788,7 +97814,7 @@
     "firstRelease": "2026-11-23T05:30:25Z",
     "full": "PrimeTimerer/Project-Grand-Tourer-Advanced",
     "lang": "C#",
-    "pushed": "2026-11-25T17:37:12Z",
+    "pushed": "2026-11-26T05:25:32Z",
     "size": 2587,
     "stars": 66
    },
@@ -98072,7 +98098,7 @@
     "lang": "Odin",
     "pushed": "2026-11-25T18:57:19Z",
     "size": 2784,
-    "stars": 132
+    "stars": 133
    },
    "shots": []
   },
@@ -99805,8 +99831,8 @@
     "firstRelease": "2026-11-02T16:06:36Z",
     "full": "Raikaru/Izanagi",
     "lang": "C",
-    "pushed": "2026-11-26T02:50:12Z",
-    "size": 10786,
+    "pushed": "2026-11-26T05:23:32Z",
+    "size": 11706,
     "stars": 15
    },
    "shots": []
@@ -100183,8 +100209,8 @@
     "full": "Ramasanjaya22/SkywardRecomp",
     "lang": "C",
     "pushed": "2026-11-26T02:55:06Z",
-    "size": 9011,
-    "stars": 15
+    "size": 9151,
+    "stars": 16
    },
    "shots": [
     "https://raw.githubusercontent.com/Ramasanjaya22/SkywardRecomp/HEAD/docs/media/screenshot-1.jpg",
@@ -100482,7 +100508,7 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-26T00:44:19Z",
+    "date": "2026-11-26T04:15:40Z",
     "pre": true,
     "tag": "do-not-checkout",
     "url": "https://github.com/Rangi42/polishedcrystal/releases/tag/do-not-checkout"
@@ -100494,8 +100520,8 @@
     "firstRelease": "2017-07-25T22:54:17Z",
     "full": "Rangi42/polishedcrystal",
     "lang": "Assembly",
-    "pushed": "2026-11-26T00:44:14Z",
-    "size": 92905,
+    "pushed": "2026-11-26T04:15:35Z",
+    "size": 92906,
     "stars": 1699
    },
    "shots": [
@@ -100542,7 +100568,7 @@
     "lang": "C",
     "pushed": "2026-11-05T18:25:06Z",
     "size": 148964,
-    "stars": 232
+    "stars": 233
    },
    "shots": [
     "https://raw.githubusercontent.com/Raphix91/BananaNative/HEAD/docs/images/donkey-kong-bananza.jpg",
@@ -101574,10 +101600,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-25T21:30:02Z",
+    "date": "2026-11-26T04:46:42Z",
     "pre": false,
-    "tag": "v0.1.5",
-    "url": "https://github.com/Recoi1/RE-DEX/releases/tag/v0.1.5"
+    "tag": "v0.1.6",
+    "url": "https://github.com/Recoi1/RE-DEX/releases/tag/v0.1.6"
    },
    "repo": {
     "archived": false,
@@ -101586,7 +101612,7 @@
     "firstRelease": "2026-11-24T08:14:02Z",
     "full": "Recoi1/RE-DEX",
     "lang": "Rust",
-    "pushed": "2026-11-25T21:29:39Z",
+    "pushed": "2026-11-26T04:46:23Z",
     "size": 4162,
     "stars": 0
    },
@@ -102140,7 +102166,7 @@
     "lang": "C",
     "pushed": "2026-11-19T01:10:39Z",
     "size": 2013,
-    "stars": 7
+    "stars": 8
    },
    "shots": []
   },
@@ -102484,7 +102510,7 @@
     "lang": "C",
     "pushed": "2026-11-25T23:36:14Z",
     "size": 9349,
-    "stars": 80
+    "stars": 81
    },
    "shots": []
   },
@@ -102522,7 +102548,7 @@
     "lang": "C++",
     "pushed": "2026-11-24T11:47:11Z",
     "size": 349,
-    "stars": 1
+    "stars": 2
    },
    "shots": []
   },
@@ -102944,9 +102970,9 @@
     "firstRelease": "2026-10-17T05:45:49Z",
     "full": "Revivedx/SavageWindRecomp",
     "lang": "C",
-    "pushed": "2026-11-25T22:48:16Z",
-    "size": 13412,
-    "stars": 5177
+    "pushed": "2026-11-26T04:27:20Z",
+    "size": 13951,
+    "stars": 5182
    },
    "shots": [
     "https://i.imgur.com/BaTJyr9.jpg",
@@ -103264,9 +103290,9 @@
     "firstRelease": "2026-11-10T08:05:19Z",
     "full": "rigaz29/Ascension-R",
     "lang": "C++",
-    "pushed": "2026-11-26T03:07:15Z",
-    "size": 5495,
-    "stars": 198
+    "pushed": "2026-11-26T05:12:23Z",
+    "size": 5538,
+    "stars": 199
    },
    "shots": []
   },
@@ -103605,10 +103631,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-24T16:37:25Z",
+    "date": "2026-11-26T04:31:00Z",
     "pre": false,
-    "tag": "v0.2.6",
-    "url": "https://github.com/RivierGrullon/kirby-epic-yarn-recomp/releases/tag/v0.2.6"
+    "tag": "v0.2.7",
+    "url": "https://github.com/RivierGrullon/kirby-epic-yarn-recomp/releases/tag/v0.2.7"
    },
    "repo": {
     "archived": false,
@@ -103617,7 +103643,7 @@
     "firstRelease": "2026-11-17T17:43:15Z",
     "full": "RivierGrullon/kirby-epic-yarn-recomp",
     "lang": "C++",
-    "pushed": "2026-11-24T23:22:29Z",
+    "pushed": "2026-11-26T04:30:59Z",
     "size": 4386,
     "stars": 49
    },
@@ -104426,7 +104452,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T17:35:29Z",
     "size": 7575,
-    "stars": 75
+    "stars": 76
    },
    "shots": []
   },
@@ -104601,7 +104627,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T20:55:09Z",
     "size": 39956,
-    "stars": 70
+    "stars": 71
    },
    "shots": [
     "https://raw.githubusercontent.com/RussoPhone/tomodachi-ltd-recomp/HEAD/docs/images/how-it-works.png"
@@ -104649,7 +104675,7 @@
     "lang": "C",
     "pushed": "2026-11-22T14:53:32Z",
     "size": 5155,
-    "stars": 115
+    "stars": 116
    },
    "shots": [
     "https://raw.githubusercontent.com/rwwo8/OdysseyRecomp/HEAD/docs/screenshots/cascade.jpg",
@@ -106790,7 +106816,7 @@
     "lang": "C",
     "pushed": "2026-11-20T02:41:39Z",
     "size": 15030,
-    "stars": 29
+    "stars": 30
    },
    "shots": [
     "https://github.com/user-attachments/assets/b110fe21-432e-4950-bfeb-752fd683168a",
@@ -106907,7 +106933,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T19:55:11Z",
     "size": 38397,
-    "stars": 582
+    "stars": 584
    },
    "shots": [
     "https://github.com/user-attachments/assets/984433e5-1bd8-498a-949c-68815e73b901",
@@ -107033,6 +107059,66 @@
     "https://github.com/user-attachments/assets/13a3fc2f-6281-4170-95db-bd62a82cd1d7"
    ]
   },
+  "saulob/god-of-war-sons-of-sparta-pc": {
+   "assetOs": {
+    "Linux": true,
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Original PS4 x86-64 game code running natively on Windows and Linux through replacement PS4 system libraries and a Vulkan renderer derived from shadPS4",
+    "game": "God of War: Sons of Sparta",
+    "notes": "Public native PC release v0.1.0. Windows x64 is the primary target. Experimental Linux and Steam Deck AppImage: Linux and Steam Deck support is experimental and has not yet been runtime-tested on real hardware. True Ultrawide Hor+ for 21:9 and 32:9. Rendering up to 4K. Frame rates up to 240 FPS and Unlimited. The Pit of Agonies and Hermes Mode are unlockable from the beginning. Original local two-player co-op with Kratos and Deimos in The Pit. Skip Intro. Xbox and PlayStation controller support. TRG launcher with direct installation from the user's own compatible PS4 package. No game files are",
+    "system": "PS4",
+    "targets": [
+     "Windows",
+     "Linux",
+     "Steam Deck"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "dlc": "yes",
+     "fsr": "yes",
+     "hfr": "yes",
+     "online": "yes",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Steam Deck": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 4
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-25T20:57:42Z",
+    "pre": false,
+    "tag": "v0.1.0",
+    "url": "https://github.com/saulob/god-of-war-sons-of-sparta-pc/releases/tag/v0.1.0"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-17T05:12:45Z",
+    "desc": "",
+    "firstRelease": "2026-11-25T20:57:42Z",
+    "full": "saulob/god-of-war-sons-of-sparta-pc",
+    "lang": "C++",
+    "pushed": "2026-11-25T21:35:31Z",
+    "size": 12312,
+    "stars": 37
+   },
+   "shots": [
+    "https://github.com/user-attachments/assets/a2f109ac-be18-44a5-89b5-9ad51de1db1d",
+    "https://github.com/user-attachments/assets/251dd2f8-5ff0-417a-ad4e-231f2e249efb",
+    "https://github.com/user-attachments/assets/08df1988-706b-437a-bb17-773cad726463",
+    "https://github.com/user-attachments/assets/9dfbd707-bdf2-45b6-8176-74500ece230d"
+   ]
+  },
   "saulob/hard-corps-uprising-recompiled": {
    "assetOs": {
     "Linux": true,
@@ -107145,7 +107231,7 @@
     "lang": "C++",
     "pushed": "2026-10-29T03:45:19Z",
     "size": 3364,
-    "stars": 118
+    "stars": 119
    },
    "shots": [
     "https://github.com/user-attachments/assets/698fc8fc-23c1-4b56-9309-6330b743f5d0",
@@ -107422,8 +107508,8 @@
     "firstRelease": "2026-11-14T06:20:06Z",
     "full": "scarxity/kirby-forgotten-land-recompiled",
     "lang": "C",
-    "pushed": "2026-11-20T13:09:24Z",
-    "size": 13337,
+    "pushed": "2026-11-26T04:12:33Z",
+    "size": 11988,
     "stars": 23
    },
    "shots": []
@@ -108775,7 +108861,7 @@
     "firstRelease": null,
     "full": "Sezzary/SilentEngine",
     "lang": "C++",
-    "pushed": "2026-11-24T08:20:00Z",
+    "pushed": "2026-11-26T04:33:34Z",
     "size": 21305,
     "stars": 225
    },
@@ -109043,7 +109129,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T03:26:40Z",
     "size": 15458,
-    "stars": 584
+    "stars": 587
    },
    "shots": []
   },
@@ -109291,8 +109377,8 @@
     "firstRelease": "2026-10-31T19:37:20Z",
     "full": "ShayVD/spyro-vita",
     "lang": "C",
-    "pushed": "2026-11-26T03:23:24Z",
-    "size": 9515,
+    "pushed": "2026-11-26T04:26:47Z",
+    "size": 9694,
     "stars": 11
    },
    "shots": []
@@ -109585,7 +109671,7 @@
     "lang": "C++",
     "pushed": "2026-11-24T22:12:34Z",
     "size": 13560,
-    "stars": 130
+    "stars": 131
    },
    "shots": []
   },
@@ -110061,7 +110147,7 @@
     "lang": "C++",
     "pushed": "2026-11-24T04:46:23Z",
     "size": 17055,
-    "stars": 278
+    "stars": 280
    },
    "shots": [
     "https://raw.githubusercontent.com/Silentwarior112/GT3-PC-ENHANCED/main/ss1.PNG",
@@ -110278,7 +110364,7 @@
     "lang": "C",
     "pushed": "2026-11-25T22:57:45Z",
     "size": 44979,
-    "stars": 26
+    "stars": 27
    },
    "shots": []
   },
@@ -111100,8 +111186,8 @@
     "firstRelease": "2026-03-10T02:30:11Z",
     "full": "SlickAmogus/silent-hill-decomp",
     "lang": "C",
-    "pushed": "2026-11-26T03:08:10Z",
-    "size": 122979,
+    "pushed": "2026-11-26T04:00:02Z",
+    "size": 123046,
     "stars": 910
    },
    "shots": [
@@ -111383,7 +111469,7 @@
     "lang": "C",
     "pushed": "2024-11-15T00:58:50Z",
     "size": 19294,
-    "stars": 1342
+    "stars": 1343
    },
    "shots": []
   },
@@ -111898,8 +111984,8 @@
     "firstRelease": null,
     "full": "snicolast/SegaRally2Native",
     "lang": "C++",
-    "pushed": "2026-11-26T03:26:07Z",
-    "size": 113062,
+    "pushed": "2026-11-26T03:49:11Z",
+    "size": 113124,
     "stars": 207
    },
    "shots": [
@@ -111940,7 +112026,7 @@
     "lang": "C++",
     "pushed": "2026-11-25T21:21:13Z",
     "size": 12502,
-    "stars": 141
+    "stars": 142
    },
    "shots": [
     "https://raw.githubusercontent.com/snicolast/StarWarsTrilogyNative/HEAD/docs/img/death_star.jpg",
@@ -113081,8 +113167,8 @@
     "firstRelease": "2026-11-14T16:18:12Z",
     "full": "sonicnext-dev/MarathonRecomp",
     "lang": "C++",
-    "pushed": "2026-11-26T03:31:13Z",
-    "size": 6874,
+    "pushed": "2026-11-26T04:14:05Z",
+    "size": 6931,
     "stars": 1001
    },
    "shots": []
@@ -113461,7 +113547,7 @@
     "lang": "C",
     "pushed": "2026-11-11T19:20:58Z",
     "size": 6188,
-    "stars": 1259
+    "stars": 1258
    },
    "shots": []
   },
@@ -115154,10 +115240,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-25T06:57:10Z",
+    "date": "2026-11-26T04:32:45Z",
     "pre": false,
-    "tag": "v1.1.2",
-    "url": "https://github.com/spitzdano/AidynReChronicled/releases/tag/v1.1.2"
+    "tag": "v1.1.3",
+    "url": "https://github.com/spitzdano/AidynReChronicled/releases/tag/v1.1.3"
    },
    "repo": {
     "archived": false,
@@ -115166,8 +115252,8 @@
     "firstRelease": "2026-11-01T16:34:26Z",
     "full": "spitzdano/AidynReChronicled",
     "lang": "C++",
-    "pushed": "2026-11-25T06:55:46Z",
-    "size": 11426,
+    "pushed": "2026-11-26T04:31:23Z",
+    "size": 11441,
     "stars": 13
    },
    "shots": [
@@ -115407,7 +115493,7 @@
     "full": "spy-jam/MVP05-Plus",
     "lang": "C++",
     "pushed": "2026-11-26T02:47:49Z",
-    "size": 21866,
+    "size": 22144,
     "stars": 10
    },
    "shots": []
@@ -115570,7 +115656,7 @@
     "lang": "Assembly",
     "pushed": "2026-11-25T11:18:05Z",
     "size": 228315,
-    "stars": 329
+    "stars": 330
    },
    "shots": []
   },
@@ -115618,7 +115704,7 @@
     "lang": "Assembly",
     "pushed": "2026-11-25T11:18:05Z",
     "size": 228315,
-    "stars": 329
+    "stars": 330
    },
    "shots": []
   },
@@ -115710,6 +115796,60 @@
     "https://raw.githubusercontent.com/st4rwhx/Resident-Evil-4-Native-Port/HEAD/images/oracle_bit_for_bit.png",
     "https://raw.githubusercontent.com/st4rwhx/Resident-Evil-4-Native-Port/HEAD/images/vs_dolphin_lake_8x.png"
    ]
+  },
+  "starkindustriesfinest/ultimatealliancepc": {
+   "assetOs": {
+    "Windows": true
+   },
+   "manifest": {
+    "approach": "Static recompilation of the Xbox 360 version to native PC code using ReXGlue",
+    "game": "Marvel: Ultimate Alliance",
+    "notes": "Part of a three-game bundle with Marvel Ultimate Alliance Gold Edition and Marvel Ultimate Alliance 2, featuring high-refresh support, up to 4x render resolution, ultrawide, HD Text and experimental Linux/Steam Deck builds.",
+    "system": "Xbox 360",
+    "targets": [
+     "Windows",
+     "Linux",
+     "Steam Deck"
+    ],
+    "type": "Recompilation"
+   },
+   "readme": {
+    "features": {
+     "aa": "yes",
+     "aspect": "yes",
+     "dlss": "yes",
+     "fg": "planned",
+     "fsr": "yes",
+     "kbm": "yes",
+     "online": "planned",
+     "res": "yes"
+    },
+    "os": {
+     "Linux": true,
+     "Windows": true
+    },
+    "targets": {},
+    "v": 4
+   },
+   "readmeLure": [],
+   "release": {
+    "date": "2026-11-26T03:52:28Z",
+    "pre": true,
+    "tag": "v0.3.0-dev.74",
+    "url": "https://github.com/StarkIndustriesFinest/UltimateAlliancePC/releases/tag/v0.3.0-dev.74"
+   },
+   "repo": {
+    "archived": false,
+    "created": "2026-11-23T16:31:25Z",
+    "desc": "Marvel Ultimate Alliance 1 Gold Edition & Marvel Ultimate Alliance 2 native PC ports via static recompilation, in one launcher with pre-compilation of shaders, high frame rates (60, 120, 144, 240 or Uncapped), DLSS, 4k Rendering and Ultrawide. Windows only. No game files are provided.",
+    "firstRelease": "2026-11-23T22:51:12Z",
+    "full": "StarkIndustriesFinest/UltimateAlliancePC",
+    "lang": "C++",
+    "pushed": "2026-11-26T03:52:28Z",
+    "size": 4930,
+    "stars": 7
+   },
+   "shots": []
   },
   "starkka15/skylanders-sa-pc": {
    "assetOs": {
@@ -116743,7 +116883,7 @@
     "lang": "Rust",
     "pushed": "2026-11-25T19:14:15Z",
     "size": 160327,
-    "stars": 427
+    "stars": 430
    },
    "shots": []
   },
@@ -116999,7 +117139,7 @@
     "lang": "C++",
     "pushed": "2026-11-14T21:58:22Z",
     "size": 15587,
-    "stars": 5689
+    "stars": 5690
    },
    "shots": []
   },
@@ -117115,7 +117255,7 @@
     "full": "SuperSenad/Ultra-Instinct-Tears",
     "lang": "C",
     "pushed": "2026-11-26T02:45:36Z",
-    "size": 8584,
+    "size": 9286,
     "stars": 30
    },
    "shots": []
@@ -117785,7 +117925,7 @@
     "lang": "C",
     "pushed": "2026-11-16T02:02:29Z",
     "size": 13223,
-    "stars": 4366
+    "stars": 4365
    },
    "shots": [
     "https://git.triforceproject.com/triforce/source/raw/branch/main/assets/triforce.png"
@@ -118368,7 +118508,7 @@
     "lang": "HLSL",
     "pushed": "2026-11-25T21:16:10Z",
     "size": 16110,
-    "stars": 71
+    "stars": 72
    },
    "shots": []
   },
@@ -119524,8 +119664,8 @@
     "firstRelease": "2026-11-12T22:38:06Z",
     "full": "teclilla18/sonic-riders-recomp",
     "lang": "C",
-    "pushed": "2026-11-26T03:18:22Z",
-    "size": 15749,
+    "pushed": "2026-11-26T05:25:11Z",
+    "size": 15914,
     "stars": 85
    },
    "shots": [
@@ -120412,8 +120552,8 @@
     "firstRelease": "2026-10-27T18:28:33Z",
     "full": "tekulvw/mag-recomp",
     "lang": "Rust",
-    "pushed": "2026-11-26T03:34:08Z",
-    "size": 4025,
+    "pushed": "2026-11-26T05:21:34Z",
+    "size": 4112,
     "stars": 4
    },
    "shots": []
@@ -120451,7 +120591,7 @@
     "firstRelease": "2026-11-03T11:58:38Z",
     "full": "telltaleatheist/mw3-re",
     "lang": "C++",
-    "pushed": "2026-11-26T01:05:08Z",
+    "pushed": "2026-11-26T04:56:00Z",
     "size": 137594,
     "stars": 69
    },
@@ -120925,7 +121065,7 @@
     "lang": "C++",
     "pushed": "2026-11-11T16:15:08Z",
     "size": 1115,
-    "stars": 171
+    "stars": 172
    },
    "shots": [
     "https://github.com/user-attachments/assets/88e4cb18-6560-4736-86dd-b3e03b1cd5b0"
@@ -121646,7 +121786,7 @@
     "lang": "C++",
     "pushed": "2026-10-22T08:06:07Z",
     "size": 106251,
-    "stars": 401
+    "stars": 402
    },
    "shots": []
   },
@@ -121719,8 +121859,8 @@
     "firstRelease": "2026-10-15T06:49:34Z",
     "full": "TheDoffman/timesplitters-future-perfect-pc",
     "lang": "C",
-    "pushed": "2026-11-25T23:24:19Z",
-    "size": 52308,
+    "pushed": "2026-11-26T04:55:47Z",
+    "size": 46864,
     "stars": 162
    },
    "shots": [
@@ -123571,8 +123711,7 @@
   "theweathervane/a3mx": {
    "assetOs": {
     "Linux": true,
-    "Windows": true,
-    "macOS": true
+    "Windows": true
    },
    "manifest": {
     "approach": "Hand-written C replacing a static recompilation one function at a time, each verified frame for frame against the original",
@@ -123598,10 +123737,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-20T20:16:46Z",
-    "pre": false,
-    "tag": "v0.102.5",
-    "url": "https://github.com/theweathervane/a3mx/releases/tag/v0.102.5"
+    "date": "2026-11-26T03:43:35Z",
+    "pre": true,
+    "tag": "nightly",
+    "url": "https://github.com/theweathervane/a3mx/releases/tag/nightly"
    },
    "repo": {
     "archived": false,
@@ -123610,7 +123749,7 @@
     "firstRelease": "2026-11-13T11:55:09Z",
     "full": "theweathervane/a3mx",
     "lang": "C",
-    "pushed": "2026-11-25T10:24:39Z",
+    "pushed": "2026-11-26T03:43:35Z",
     "size": 13306,
     "stars": 4
    },
@@ -124311,8 +124450,8 @@
     "firstRelease": "2026-11-17T02:20:00Z",
     "full": "TideGear/ChuChu-Rocket-Re-Nyastered",
     "lang": "Python",
-    "pushed": "2026-11-26T03:17:42Z",
-    "size": 8927,
+    "pushed": "2026-11-26T05:31:37Z",
+    "size": 6399,
     "stars": 4
    },
    "shots": [
@@ -124460,8 +124599,8 @@
     "firstRelease": "2026-11-08T05:34:38Z",
     "full": "timbo722/ZLAA",
     "lang": "C",
-    "pushed": "2026-11-26T03:22:41Z",
-    "size": 12053,
+    "pushed": "2026-11-26T05:17:45Z",
+    "size": 12105,
     "stars": 3
    },
    "shots": [
@@ -125034,7 +125173,7 @@
     "lang": "C++",
     "pushed": "2026-11-26T02:07:29Z",
     "size": 23142,
-    "stars": 183
+    "stars": 184
    },
    "shots": [
     "https://raw.githubusercontent.com/tmcleroy/soulcalibur2-recomp/HEAD/docs/screenshots/select-link-heihachi.jpg",
@@ -125364,8 +125503,8 @@
     "firstRelease": "2026-10-07T19:13:58Z",
     "full": "topaxi/OpenAntiGrav",
     "lang": "Rust",
-    "pushed": "2026-11-26T03:28:25Z",
-    "size": 86632,
+    "pushed": "2026-11-26T04:16:40Z",
+    "size": 87423,
     "stars": 40
    },
    "shots": []
@@ -126344,7 +126483,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T22:01:00Z",
     "size": 307179,
-    "stars": 6549
+    "stars": 6550
    },
    "shots": [
     "https://raw.githubusercontent.com/TwilitRealm/dusklight/HEAD/assets/aurora-powered.png"
@@ -126544,7 +126683,7 @@
     "lang": "C",
     "pushed": "2026-11-26T00:05:29Z",
     "size": 175239,
-    "stars": 21
+    "stars": 22
    },
    "shots": []
   },
@@ -126793,8 +126932,8 @@
     "firstRelease": "2026-11-24T03:05:41Z",
     "full": "UC-Resurrected/UCMR",
     "lang": "C++",
-    "pushed": "2026-11-26T03:29:32Z",
-    "size": 15147,
+    "pushed": "2026-11-26T03:46:53Z",
+    "size": 15170,
     "stars": 6
    },
    "shots": [
@@ -127779,7 +127918,7 @@
     "lang": "C",
     "pushed": "2026-11-25T19:28:43Z",
     "size": 10979,
-    "stars": 8297
+    "stars": 8304
    },
    "shots": []
   },
@@ -128380,7 +128519,7 @@
     "lang": "C++",
     "pushed": "2026-11-26T00:37:47Z",
     "size": 5397,
-    "stars": 236
+    "stars": 237
    },
    "shots": []
   },
@@ -130510,6 +130649,12 @@
    },
    "shots": []
   },
+  "vxz-dev/ps-nova-recomp": {
+   "notFound": true
+  },
+  "vxz-dev/ps-nova-recompilation": {
+   "notFound": true
+  },
   "vyanhursky/defjamffny-recomp": {
    "assetOs": {
     "Linux": true,
@@ -131274,8 +131419,8 @@
     "firstRelease": "2026-11-16T16:00:11Z",
     "full": "weile10000/xc2-ns2-recomp",
     "lang": "Python",
-    "pushed": "2026-11-25T07:04:20Z",
-    "size": 13720,
+    "pushed": "2026-11-26T05:28:17Z",
+    "size": 14052,
     "stars": 167
    },
    "shots": [
@@ -131907,8 +132052,8 @@
     "firstRelease": "2026-11-22T07:03:55Z",
     "full": "williamlavant7-dev/DKCR-Recomp",
     "lang": "C",
-    "pushed": "2026-11-25T23:58:34Z",
-    "size": 19118,
+    "pushed": "2026-11-26T03:52:44Z",
+    "size": 19315,
     "stars": 1
    },
    "shots": []
@@ -132085,7 +132230,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T16:19:36Z",
     "size": 8619,
-    "stars": 244
+    "stars": 245
    },
    "shots": [
     "https://raw.githubusercontent.com/WitherBlitz/NSMB-Wii-Recompilation/HEAD/docs/screenshots/android-title.webp",
@@ -132135,7 +132280,7 @@
     "lang": "C++",
     "pushed": "2026-11-23T16:19:36Z",
     "size": 8619,
-    "stars": 244
+    "stars": 245
    },
    "shots": [
     "https://raw.githubusercontent.com/WitherBlitz/NSMB-Wii-Recompilation/HEAD/docs/screenshots/android-title.webp",
@@ -133414,7 +133559,7 @@
     "lang": "C++",
     "pushed": "2026-11-20T02:16:27Z",
     "size": 4579,
-    "stars": 223
+    "stars": 225
    },
    "shots": [
     "https://github.com/XAndromedaXR.png?size=300"
@@ -133939,8 +134084,8 @@
     "firstRelease": "2026-11-11T02:15:10Z",
     "full": "XiONDiGiTaL/EmblemWeave",
     "lang": "C++",
-    "pushed": "2026-11-26T03:35:54Z",
-    "size": 98963,
+    "pushed": "2026-11-26T04:38:56Z",
+    "size": 99710,
     "stars": 197
    },
    "shots": [
@@ -134267,7 +134412,7 @@
     "lang": "C",
     "pushed": "2026-10-03T10:04:30Z",
     "size": 2120,
-    "stars": 180
+    "stars": 181
    },
    "shots": []
   },
@@ -134994,9 +135139,9 @@
     "firstRelease": "2026-10-16T12:23:17Z",
     "full": "Yokimitsuro/khdays-port",
     "lang": "C",
-    "pushed": "2026-11-20T14:45:02Z",
+    "pushed": "2026-11-26T04:40:01Z",
     "size": 33279,
-    "stars": 249
+    "stars": 250
    },
    "shots": []
   },
@@ -135448,8 +135593,8 @@
     "firstRelease": "2026-08-30T19:30:23Z",
     "full": "z2442/oot-PSP",
     "lang": "C",
-    "pushed": "2026-11-20T00:28:11Z",
-    "size": 165837,
+    "pushed": "2026-11-26T03:42:34Z",
+    "size": 165931,
     "stars": 117
    },
    "shots": []
@@ -135530,7 +135675,7 @@
     "lang": "C",
     "pushed": "2026-11-03T07:14:15Z",
     "size": 16029,
-    "stars": 794
+    "stars": 793
    },
    "shots": []
   },
@@ -136542,8 +136687,8 @@
     "full": "ZeldaWWHDRecomp/ZeldaWWHDRecomp",
     "lang": "C++",
     "pushed": "2026-11-26T03:31:56Z",
-    "size": 33446,
-    "stars": 1691
+    "size": 33459,
+    "stars": 1692
    },
    "shots": []
   },
@@ -137082,8 +137227,8 @@
     "firstRelease": "2026-11-13T06:27:33Z",
     "full": "Zexyen/Hotel-Luigi",
     "lang": "C",
-    "pushed": "2026-11-26T02:25:37Z",
-    "size": 6282,
+    "pushed": "2026-11-26T04:33:48Z",
+    "size": 4577,
     "stars": 47
    },
    "shots": []
@@ -137312,10 +137457,10 @@
    },
    "readmeLure": [],
    "release": {
-    "date": "2026-11-17T21:51:36Z",
+    "date": "2026-11-26T05:15:42Z",
     "pre": false,
-    "tag": "0.14",
-    "url": "https://github.com/ZloiKILLER/nfshp2-port-win/releases/tag/0.14"
+    "tag": "0.15",
+    "url": "https://github.com/ZloiKILLER/nfshp2-port-win/releases/tag/0.15"
    },
    "repo": {
     "archived": false,
@@ -137324,7 +137469,7 @@
     "firstRelease": "2026-11-06T01:46:57Z",
     "full": "ZloiKILLER/nfshp2-port-win",
     "lang": "C++",
-    "pushed": "2026-11-17T21:51:36Z",
+    "pushed": "2026-11-26T05:15:42Z",
     "size": 17449,
     "stars": 107
    },
@@ -138124,7 +138269,7 @@
     "lang": "C",
     "pushed": "2026-11-26T01:34:53Z",
     "size": 4892,
-    "stars": 27
+    "stars": 30
    },
    "shots": [
     "https://raw.githubusercontent.com/zWalt01/Country-Box/HEAD/docs/images/launcher.webp"
