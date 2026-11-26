@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-25T19:14:23+00:00",
+ "generated": "2026-11-26T03:32:48+00:00",
  "projects": [
   {
    "ai": false,
@@ -7861,6 +7861,24 @@
    "pr": "fifa-street-2-pc",
    "pre": false,
    "rel": "v1.0.14",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "FIFA Street 3 (Xbox 360) barebone PC port: native Windows and Linux / Steam Deck builds (ReXGlue static recompilation). Bring your own copy of the game.",
+   "g": "FIFA Street 3",
+   "id": "db:simon3sarkis/fifa-street-3-pc-recomp",
+   "k": "simon3sarkis/fifa-street-3-pc-recomp",
+   "lc": "2026-11-25T15:15:28Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "fifa-street-3-pc-recomp",
+   "pre": true,
+   "rel": "v0.0.1",
    "t": "Recompilation"
   },
   {
@@ -20386,7 +20404,7 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
+   "ai": true,
    "at": "2026-11-24",
    "d": "Static recompilation toolkit + PC frontend for 2016-2017 3DS titles. Bring your own dump: no game code, assets or keys included.",
    "g": "Pokémon Sun",
@@ -22894,6 +22912,23 @@
    "pr": "ShadowComplex-Recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-25",
+   "d": "PC static recompilation of Shadow Man: 2econd Coming (PS2). Bring your own disc - no game assets included.",
+   "g": "Shadow Man: 2econd Coming",
+   "id": "db:dreamsofdecay/shadowman2-recomp",
+   "k": "dreamsofdecay/shadowman2-recomp",
+   "lc": "2026-11-25T14:52:09Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "shadowman2-recomp",
+   "pre": true,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
