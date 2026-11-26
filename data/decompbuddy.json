@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26T05:28:51+00:00",
+ "generated": "2026-11-26T16:51:59+00:00",
  "projects": [
   {
    "ai": false,
@@ -2627,21 +2627,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
-   "at": "2026-11-18",
-   "d": "Blur (Xbox 360, 2010) on the Nintendo Switch: static recompilation with ReXGlue and reNut's Direct3D-level renderer on deko3d. Needs your own disc and title update 2.",
-   "g": "Blur",
-   "id": "db:chanseyisthebest/blur-nx",
-   "k": "chanseyisthebest/blur-nx",
-   "lc": "2026-11-18T12:35:16Z",
-   "p": "Xbox 360",
-   "po": [],
-   "pr": "blur-nx",
-   "pre": false,
-   "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
    "ai": true,
    "at": "2026-10-26",
    "d": "",
@@ -3191,21 +3176,6 @@
    "pr": "mw2-crossplay",
    "pre": true,
    "rel": "v0.1.0-alpha.13",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-21",
-   "d": "Call of Duty: Modern Warfare 2 for the Nintendo Switch, recompiled from the Xbox 360.",
-   "g": "Call of Duty: Modern Warfare 2",
-   "id": "db:kyokoxdev/mw2nx",
-   "k": "kyokoxdev/mw2nx",
-   "lc": "2026-11-21T07:19:55Z",
-   "p": "Xbox 360",
-   "po": [],
-   "pr": "mw2nx",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -3958,6 +3928,21 @@
    "pr": "Conker-PS4",
    "pre": false,
    "rel": "v00.13",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-14",
+   "d": "A Recompilation of Conker's Bad Fur Day for the 3DS",
+   "g": "Conker's Bad Fur Day",
+   "id": "db:raihwy3/conker3dsrecomp",
+   "k": "raihwy3/conker3dsrecomp",
+   "lc": "2026-11-13T20:59:33Z",
+   "p": "N64",
+   "po": [],
+   "pr": "Conker3DSRecomp",
+   "pre": false,
+   "rel": "v0.1.5",
    "t": "Recompilation"
   },
   {
@@ -4767,6 +4752,23 @@
    "pr": "DarkRiftRecomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "Static recompilation of Dark Souls II: Scholar of the First Sin (Xbox 360) for Android arm64",
+   "g": "Dark Souls II: Scholar of the First Sin",
+   "id": "db:lazaer-yzy/ds2-sotfs-recomp",
+   "k": "lazaer-yzy/ds2-sotfs-recomp",
+   "lc": "2026-11-19T00:59:51Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "ds2-sotfs-recomp",
+   "pre": false,
+   "rel": "v0.1.4",
    "t": "Recompilation"
   },
   {
@@ -18211,6 +18213,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-10-29",
+   "d": "A static recompilation of Neon Genesis Evangelion (新世紀エヴァンゲリオン) into a native Windows program, built with N64Recomp.",
+   "g": "Neon Genesis Evangelion",
+   "id": "db:evaa-01/adam",
+   "k": "evaa-01/adam",
+   "lc": "2026-10-13T16:30:30Z",
+   "p": "N64",
+   "po": [
+    "Windows"
+   ],
+   "pr": "adam",
+   "pre": false,
+   "rel": "0.1.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-19",
    "d": "Static recompilation of New Legends (original Xbox) into a native Windows program. You need your own copy of the game.",
@@ -26461,6 +26480,23 @@
    "pre": true,
    "rel": "v0.1.0-linux.1",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-28",
+   "d": "Super Smash Bros. Melee on your Mac's desktop: fighters on the Dock, screen edges as blastzones. Built on the Melee decompilation via melee-pc. Bring your own disc.",
+   "g": "Super Smash Bros. Melee",
+   "id": "db:mwrnk/desktop-melee",
+   "k": "mwrnk/desktop-melee",
+   "lc": "2026-10-28T22:23:02Z",
+   "p": "GameCube",
+   "po": [
+    "macOS"
+   ],
+   "pr": "desktop-melee",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Decompilation"
   },
   {
    "ai": false,
