@@ -19,7 +19,7 @@
   "xess": "XeSS"
  },
  "format": "port-watch-catalog",
- "generated": "2026-11-26T12:46:04Z",
+ "generated": "2026-11-26T12:51:06Z",
  "projects": [
   {
    "archived": false,
@@ -11126,7 +11126,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 1197,
+   "stars": 1198,
    "title": "Astro Bot",
    "type": "Compatibility layer"
   },
@@ -14269,6 +14269,108 @@
    "art": [
     "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kj.jpg"
    ],
+   "cover": "https://cdn2.steamgriddb.com/grid/b6f206c4a8cfb44c9923d8730a4dd7f5.png",
+   "coverThumb": "https://cdn2.steamgriddb.com/thumb/b6f206c4a8cfb44c9923d8730a4dd7f5.jpg",
+   "desc": "Native PC ports of Battlefield 1943 and Bad Company (Xbox 360) via static recompilation",
+   "features": [
+    "dlss",
+    "fg",
+    "fsr",
+    "hdr",
+    "kbm",
+    "online",
+    "res",
+    "rt",
+    "tex"
+   ],
+   "firstSeen": "2026-11-25T19:14:21Z",
+   "games": [
+    {
+     "art": [
+      "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kk.jpg"
+     ],
+     "cover": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
+     "platform": "Xbox 360",
+     "sgdb": {
+      "capsule": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
+      "hero": "https://cdn2.steamgriddb.com/hero/ef4fc148f9ea60330eb0df54b1349a2d.png",
+      "icon": "https://cdn2.steamgriddb.com/icon/2edfb49eafd8d8946543d4504bf90c38.png",
+      "logo": "https://cdn2.steamgriddb.com/logo/340a6f4bcc9a615f71135855e2a5599a.png",
+      "wide": "https://cdn2.steamgriddb.com/grid/49dfa81eb7ed26cfeb82cc3feb0f9b6c.png"
+     },
+     "title": "Battlefield: Bad Company"
+    }
+   ],
+   "genres": [
+    "First-person shooter",
+    "Shooter",
+    "War"
+   ],
+   "hack": "",
+   "k": "papand7/battlefield-1943-bc-recompilation",
+   "link": "https://github.com/papand7/Battlefield-1943-BC-Recompilation",
+   "mirrors": [],
+   "note": "Battlefield: Bad Company is in progress (USA disc only).",
+   "nsfw": false,
+   "pcRelease": "",
+   "planned": [
+    "aspect"
+   ],
+   "platform": "Xbox 360",
+   "playable": true,
+   "pushed": "2026-11-25T20:01:16Z",
+   "release": {
+    "date": "2026-11-19T19:19:51Z",
+    "pre": false,
+    "tag": "v0.4.1",
+    "url": "https://github.com/papand7/Battlefield-1943-BC-Recompilation/releases/tag/v0.4.1"
+   },
+   "risk": null,
+   "runsOn": [
+    "Linux",
+    "Windows",
+    "macOS",
+    "Steam Deck"
+   ],
+   "runsOnFrom": "release",
+   "series": [
+    "Battlefield"
+   ],
+   "sgdb": {
+    "capsule": "https://cdn2.steamgriddb.com/grid/b6f206c4a8cfb44c9923d8730a4dd7f5.png",
+    "hero": "https://cdn2.steamgriddb.com/hero/aa826555e21b7c95a06600456effd501.png",
+    "icon": "https://cdn2.steamgriddb.com/icon/36f5857ec9928b02555944a19a896fe5.ico",
+    "logo": "https://cdn2.steamgriddb.com/logo/b603b90de5814128c67da52b3dc672c4.png",
+    "wide": "https://cdn2.steamgriddb.com/grid/1298349153e82f14d0794612be3be40c.png"
+   },
+   "shots": {
+    "original": [
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fjp.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fjq.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fjr.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fjs.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fjt.jpg",
+     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fju.jpg"
+    ],
+    "port": [
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/launcher.png",
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_wake_original.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_wake_ultra.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_coral_original.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_coral_ultra.jpg",
+     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_iwo_original.jpg"
+    ]
+   },
+   "source": "Awesome Decomp Games",
+   "stars": 39,
+   "title": "Battlefield 1943",
+   "type": "Recompilation"
+  },
+  {
+   "archived": false,
+   "art": [
+    "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kj.jpg"
+   ],
    "cover": "https://cdn2.steamgriddb.com/thumb/5343cf42e055f6e2b030a7f62b65100a.jpg",
    "coverThumb": "",
    "desc": "Battlefield 1943 Reborn: the Xbox 360 game running natively on PC, with its online multiplayer restored. Releases and server packages.",
@@ -14725,92 +14827,6 @@
    "source": "Awesome Decomp Games",
    "stars": 61,
    "title": "Battlefield: Bad Company (Battlefield: Bad Company PC (ReXGlue recompilation))",
-   "type": "Recompilation"
-  },
-  {
-   "archived": false,
-   "art": [
-    "https://images.igdb.com/igdb/image/upload/t_1080p/ar8kk.jpg"
-   ],
-   "cover": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
-   "coverThumb": "https://cdn2.steamgriddb.com/thumb/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
-   "desc": "Native PC ports of Battlefield 1943 and Bad Company (Xbox 360) via static recompilation",
-   "features": [
-    "dlss",
-    "fg",
-    "fsr",
-    "hdr",
-    "kbm",
-    "online",
-    "res",
-    "rt",
-    "tex"
-   ],
-   "firstSeen": "2026-11-25T19:14:21Z",
-   "games": [],
-   "genres": [
-    "First-person shooter",
-    "Shooter"
-   ],
-   "hack": "",
-   "k": "papand7/battlefield-1943-bc-recompilation",
-   "link": "https://github.com/papand7/Battlefield-1943-BC-Recompilation",
-   "mirrors": [],
-   "note": "",
-   "nsfw": false,
-   "pcRelease": "",
-   "planned": [
-    "aspect"
-   ],
-   "platform": "Xbox 360",
-   "playable": true,
-   "pushed": "2026-11-25T20:01:16Z",
-   "release": {
-    "date": "2026-11-19T19:19:51Z",
-    "pre": false,
-    "tag": "v0.4.1",
-    "url": "https://github.com/papand7/Battlefield-1943-BC-Recompilation/releases/tag/v0.4.1"
-   },
-   "risk": null,
-   "runsOn": [
-    "Linux",
-    "Windows",
-    "macOS",
-    "Steam Deck"
-   ],
-   "runsOnFrom": "release",
-   "series": [
-    "Battlefield Bad Company",
-    "Battlefield"
-   ],
-   "sgdb": {
-    "capsule": "https://cdn2.steamgriddb.com/grid/c9fd7a90e9a62c6fb2ec4ad91fa9dc1c.jpg",
-    "hero": "https://cdn2.steamgriddb.com/hero/ef4fc148f9ea60330eb0df54b1349a2d.png",
-    "icon": "https://cdn2.steamgriddb.com/icon/2edfb49eafd8d8946543d4504bf90c38.png",
-    "logo": "https://cdn2.steamgriddb.com/logo/340a6f4bcc9a615f71135855e2a5599a.png",
-    "wide": "https://cdn2.steamgriddb.com/grid/49dfa81eb7ed26cfeb82cc3feb0f9b6c.png"
-   },
-   "shots": {
-    "original": [
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/qzyey30ic2a9yk7onup6.jpg",
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkp.jpg",
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fki.jpg",
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkj.jpg",
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkk.jpg",
-     "https://images.igdb.com/igdb/image/upload/t_screenshot_big/sc9fkl.jpg"
-    ],
-    "port": [
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/launcher.png",
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_wake_original.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_wake_ultra.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_coral_original.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_coral_ultra.jpg",
-     "https://raw.githubusercontent.com/papand7/Battlefield-1943-BC-Recompilation/HEAD/docs/images/cmp_iwo_original.jpg"
-    ]
-   },
-   "source": "Awesome Decomp Games",
-   "stars": 39,
-   "title": "Battlefield: Bad Company (Battlefield Recompilation Project)",
    "type": "Recompilation"
   },
   {
@@ -19322,7 +19338,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 4219,
+   "stars": 4220,
    "title": "Bloodborne (bbport)",
    "type": "Decompilation"
   },
@@ -24274,6 +24290,7 @@
    "coverThumb": "https://cdn2.steamgriddb.com/thumb/ea46ddfb30f6f8a51d90ce9fa816a8cb.jpg",
    "desc": "Recompilation project for Buzz Quiz World game",
    "features": [
+    "dlc",
     "fsr",
     "hfr",
     "kbm",
@@ -24294,12 +24311,10 @@
    "note": "",
    "nsfw": false,
    "pcRelease": "",
-   "planned": [
-    "dlc"
-   ],
+   "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-26T12:34:21Z",
+   "pushed": "2026-11-26T12:47:35Z",
    "release": {
     "date": "2026-11-25T10:59:47Z",
     "pre": false,
@@ -47575,7 +47590,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 111,
+   "stars": 112,
    "title": "Dissidia 012 Duodecim Final Fantasy",
    "type": "Recompilation"
   },
@@ -48295,7 +48310,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 6,
+   "stars": 7,
    "title": "Donkey Kong Country",
    "type": "Recompilation"
   },
@@ -48531,7 +48546,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 4,
+   "stars": 5,
    "title": "Donkey Kong Country 2: Diddy's Kong Quest",
    "type": "Recompilation"
   },
@@ -48622,7 +48637,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 2,
+   "stars": 3,
    "title": "Donkey Kong Country 3",
    "type": "Recompilation"
   },
@@ -98079,7 +98094,7 @@
    "planned": [],
    "platform": "PS3",
    "playable": true,
-   "pushed": "2026-11-26T12:39:57Z",
+   "pushed": "2026-11-26T12:47:25Z",
    "release": {
     "date": "2026-11-24T03:11:52Z",
     "pre": true,
@@ -105042,7 +105057,7 @@
    "planned": [],
    "platform": "SNES",
    "playable": true,
-   "pushed": "2026-11-26T00:42:47Z",
+   "pushed": "2026-11-26T12:44:03Z",
    "release": {
     "date": "2026-09-17T14:06:36Z",
     "pre": true,
@@ -109840,7 +109855,7 @@
    ],
    "platform": "Switch 2",
    "playable": true,
-   "pushed": "2026-11-26T12:33:53Z",
+   "pushed": "2026-11-26T12:43:40Z",
    "release": {
     "date": "2026-11-23T16:50:18Z",
     "pre": false,
@@ -110451,7 +110466,7 @@
    "planned": [],
    "platform": "N64",
    "playable": true,
-   "pushed": "2026-11-26T12:34:49Z",
+   "pushed": "2026-11-26T12:48:50Z",
    "release": {
     "date": "2026-11-24T23:10:17Z",
     "pre": false,
@@ -114674,7 +114689,7 @@
     ]
    },
    "source": "Decomp Buddy",
-   "stars": 22,
+   "stars": 23,
    "title": "Medal of Honor: Underground",
    "type": "Recompilation"
   },
@@ -137848,7 +137863,7 @@
    "planned": [],
    "platform": "GameCube",
    "playable": true,
-   "pushed": "2026-11-26T12:33:21Z",
+   "pushed": "2026-11-26T12:49:51Z",
    "release": {
     "date": "2026-11-24T13:50:11Z",
     "pre": false,
@@ -148735,7 +148750,7 @@
     "port": []
    },
    "source": "Awesome Decomp Games",
-   "stars": 26,
+   "stars": 27,
    "title": "PokéPark 2: Wonders Beyond (WondersBeyondRecomp)",
    "type": "Recompilation"
   },
@@ -178105,12 +178120,12 @@
    "planned": [],
    "platform": "PS Vita",
    "playable": true,
-   "pushed": "2026-11-26T12:09:07Z",
+   "pushed": "2026-11-26T12:48:39Z",
    "release": {
-    "date": "2026-11-25T11:15:36Z",
+    "date": "2026-11-26T12:47:40Z",
     "pre": false,
-    "tag": "v0.5.3",
-    "url": "https://github.com/vita-recomps/ss-delta/releases/tag/v0.5.3"
+    "tag": "v0.6.0",
+    "url": "https://github.com/vita-recomps/ss-delta/releases/tag/v0.6.0"
    },
    "risk": null,
    "runsOn": [
@@ -184971,7 +184986,7 @@
    "planned": [],
    "platform": "N64",
    "playable": false,
-   "pushed": "2026-11-26T12:20:05Z",
+   "pushed": "2026-11-26T12:43:12Z",
    "release": null,
    "risk": null,
    "runsOn": [
@@ -197447,7 +197462,7 @@
    "planned": [],
    "platform": "Switch",
    "playable": true,
-   "pushed": "2026-11-26T12:42:59Z",
+   "pushed": "2026-11-26T12:44:23Z",
    "release": {
     "date": "2026-11-25T17:11:03Z",
     "pre": false,
@@ -198565,7 +198580,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 47,
+   "stars": 48,
    "title": "Tactics Ogre: The Knight of Lodis",
    "type": "Recompilation"
   },
@@ -207100,7 +207115,7 @@
     ]
    },
    "source": "Awesome Decomp Games",
-   "stars": 1150,
+   "stars": 1151,
    "title": "The Legend of Zelda: Breath of the Wild (BOTWRecompAndroid)",
    "type": "Recompilation"
   },
@@ -210459,7 +210474,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 4366,
+   "stars": 4365,
    "title": "The Legend of Zelda: Ocarina of Time (2026)",
    "type": "Recompilation"
   },
@@ -213925,7 +213940,7 @@
     ]
    },
    "source": "Port Watch",
-   "stars": 600,
+   "stars": 601,
    "title": "The Legend of Zelda: The Wind Waker",
    "type": "Recompilation"
   },
@@ -218579,7 +218594,7 @@
     "port": []
    },
    "source": "Decomp Buddy",
-   "stars": 26,
+   "stars": 27,
    "title": "Theatrhythm Final Bar Line",
    "type": "Recompilation"
   },
