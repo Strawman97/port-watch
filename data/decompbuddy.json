@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T12:15:11+00:00",
+ "generated": "2026-11-27T21:20:36+00:00",
  "projects": [
   {
    "ai": false,
@@ -70,6 +70,23 @@
    "pr": "NightfirePort",
    "pre": false,
    "rel": "v0.1.21",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-23",
+   "d": "a pc recomp of 007 Quantum of Solace (X360) using Rexglue",
+   "g": "007: Quantum of Solace",
+   "id": "db:thegh0sts/007-qos-x360-port",
+   "k": "thegh0sts/007-qos-x360-port",
+   "lc": "2026-11-23T07:55:14Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "007-QOS-X360-PORT",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -468,23 +485,6 @@
    "pre": true,
    "rel": "v1.7-alfa",
    "t": "Decompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-14",
-   "d": "recompilation of Ace Combat 5: The Unsung War (USA) for Linux",
-   "g": "Ace Combat 5: The Unsung War",
-   "id": "db:harold0777/eagle_five_recomp",
-   "k": "harold0777/eagle_five_recomp",
-   "lc": "2026-10-06T01:04:18Z",
-   "p": "PS2",
-   "po": [
-    "Linux"
-   ],
-   "pr": "eagle_five_recomp",
-   "pre": false,
-   "rel": "v0.3.0",
-   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -1652,24 +1652,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-23",
-   "d": "Asura's Wrath PS3 static recompilation",
-   "g": "Asura's Wrath",
-   "id": "db:redgrave961/vajra",
-   "k": "redgrave961/vajra",
-   "lc": "2026-11-23T16:16:02Z",
-   "p": "PS3",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "Vajra",
-   "pre": false,
-   "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-11-25",
    "d": "Avatar - the Last Airbender - GBA - Recomp",
    "g": "Avatar: The Last Airbender",
@@ -1683,23 +1665,6 @@
    "pr": "The_Last_Airbender_Recomp",
    "pre": false,
    "rel": "v0.0.2",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-10-19",
-   "d": "Native Windows PC port of Azure Dreams (PS1) via static recompilation with psxrecomp: HD rendering, 16:9 widescreen, fast loading. Bring your own disc.",
-   "g": "Azure Dreams",
-   "id": "db:potiondweller/azure-dreams-hd-recompilation",
-   "k": "potiondweller/azure-dreams-hd-recompilation",
-   "lc": "2026-10-19T08:56:22Z",
-   "p": "PS1",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Azure-Dreams-HD-Recompilation",
-   "pre": false,
-   "rel": "v0.9.1",
    "t": "Recompilation"
   },
   {
@@ -2630,24 +2595,6 @@
   {
    "ai": true,
    "at": "2026-11-21",
-   "d": "Native Windows & Linux port of Blitz: The League (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
-   "g": "Blitz: The League",
-   "id": "db:nacholuver1/blitz-theleague-recomp",
-   "k": "nacholuver1/blitz-theleague-recomp",
-   "lc": "2026-11-21T12:16:09Z",
-   "p": "Xbox 360",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "Blitz-TheLeague-Recomp",
-   "pre": false,
-   "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-11-21",
    "d": "Native Windows & Linux port of Blitz: The League II (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
    "g": "Blitz: The League II",
    "id": "db:nacholuver1/blitz-theleague-ii-recomp",
@@ -2770,24 +2717,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-14",
-   "d": "Bloodborne (v1.09) on Windows & Linux with a decompiled C++20 graphics engine & direct Vulkan 1.3 renderer (built on bbport): native GLSL shaders, ~3–5 GB VRAM, draw batching/culling, in-game PC menus, DLSS 4.5 / FSR 4. Bring your own dump.",
-   "g": "Bloodborne",
-   "id": "db:lapothecary/bloodborne-pc-vulkan",
-   "k": "lapothecary/bloodborne-pc-vulkan",
-   "lc": "2026-11-13T11:20:44Z",
-   "p": "PS4",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "bloodborne-pc-vulkan",
-   "pre": false,
-   "rel": "v1.1.3",
-   "t": "Decompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-10-14",
    "d": "WIP macOS (Apple Silicon) port of the native Bloodborne PC port — Rosetta 2 + MoltenVK/Metal",
    "g": "Bloodborne",
@@ -2887,6 +2816,21 @@
    "pr": "BluesAlphabetBookRecomp",
    "pre": false,
    "rel": "Release",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-18",
+   "d": "Blur (Xbox 360, 2010) on the Nintendo Switch: static recompilation with ReXGlue and reNut's Direct3D-level renderer on deko3d. Needs your own disc and title update 2.",
+   "g": "Blur",
+   "id": "db:chanseyisthebest/blur-nx",
+   "k": "chanseyisthebest/blur-nx",
+   "lc": "2026-11-18T12:35:16Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "blur-nx",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -3154,23 +3098,6 @@
    "pr": "Hellmouth",
    "pre": false,
    "rel": "v0.1.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-21",
-   "d": "",
-   "g": "Buffy the Vampire Slayer",
-   "id": "db:fallenazazel/btvs_recomp",
-   "k": "fallenazazel/btvs_recomp",
-   "lc": "2026-11-22T01:06:01Z",
-   "p": "Xbox (original)",
-   "po": [
-    "Windows"
-   ],
-   "pr": "BtVS_recomp",
-   "pre": false,
-   "rel": "v0.9.0",
    "t": "Recompilation"
   },
   {
@@ -3557,19 +3484,17 @@
   },
   {
    "ai": false,
-   "at": "2026-11-20",
-   "d": "Call of Duty: Modern Warfare 2 (2009) natively on Android, recompiled from your own Xbox 360 disc. Campaign, Special Ops and multiplayer in one auto-updating app. No game files included.",
+   "at": "2026-11-21",
+   "d": "Call of Duty: Modern Warfare 2 for the Nintendo Switch, recompiled from the Xbox 360.",
    "g": "Call of Duty: Modern Warfare 2",
-   "id": "db:yassinsolim/mw2-recomp",
-   "k": "yassinsolim/mw2-recomp",
-   "lc": "2026-11-20T07:31:10Z",
+   "id": "db:kyokoxdev/mw2nx",
+   "k": "kyokoxdev/mw2nx",
+   "lc": "2026-11-21T07:19:55Z",
    "p": "Xbox 360",
-   "po": [
-    "Android"
-   ],
-   "pr": "mw2-recomp",
+   "po": [],
+   "pr": "mw2nx",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -3788,23 +3713,6 @@
    "pr": "noble-archimedes",
    "pre": true,
    "rel": "v0.2.1-alpha",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-22",
-   "d": "Static AOT recompilation of Castlevania: Dawn of Sorrow (Nintendo DS / ACVE) with Direct3D 12 & Vulkan GPU shaders, Dear ImGui menu, in-memory PT-BR patch, and RecompLauncher support.",
-   "g": "Castlevania: Dawn of Sorrow",
-   "id": "db:neguchads/cdos-nintendods-recomp",
-   "k": "neguchads/cdos-nintendods-recomp",
-   "lc": "2026-11-22T19:47:25Z",
-   "p": "DS",
-   "po": [
-    "Windows"
-   ],
-   "pr": "cdos-nintendods-recomp",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -6238,6 +6146,23 @@
     "Linux"
    ],
    "pr": "destruction-derby-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "Destruction Derby 2 (PS1) statically recompiled for Windows: 1440p widescreen, HD HUD and menus, modern controllers. Bring your own disc.",
+   "g": "Destruction Derby 2",
+   "id": "db:stormy1701/dd2enhanced",
+   "k": "stormy1701/dd2enhanced",
+   "lc": "2026-11-27T11:59:42Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "dd2enhanced",
    "pre": false,
    "rel": "v0.1.0",
    "t": "Recompilation"
@@ -8847,7 +8772,7 @@
    ],
    "pr": "project-helix",
    "pre": false,
-   "rel": "v1.2.4",
+   "rel": "v1.2.5",
    "t": "Recompilation"
   },
   {
@@ -9626,6 +9551,24 @@
    "pr": "fe3h-deck-recomp",
    "pre": false,
    "rel": "v0.2.3-linux-opt5",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "Fire Emblem Warriors Recomp ",
+   "g": "Fire Emblem Warriors",
+   "id": "db:azzulin/few-recomp",
+   "k": "azzulin/few-recomp",
+   "lc": "2026-11-27T13:19:22Z",
+   "p": "Switch",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "FEW-Recomp",
+   "pre": false,
+   "rel": "v0.3.0",
    "t": "Recompilation"
   },
   {
@@ -12631,6 +12574,23 @@
   {
    "ai": false,
    "at": "2026-11-27",
+   "d": "Harry Potter and the Half-Blood Prince (Xbox 360) as a native macOS app for Apple Silicon: static recompilation, installer builds it from your own disc",
+   "g": "Harry Potter and the Half-Blood Prince",
+   "id": "db:sanyokkua/hp6-hbp-x360-port",
+   "k": "sanyokkua/hp6-hbp-x360-port",
+   "lc": "2026-11-27T10:54:22Z",
+   "p": "Xbox 360",
+   "po": [
+    "macOS"
+   ],
+   "pr": "hp6-hbp-x360-port",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
    "d": "Harry Potter and the Order of the Phoenix (Xbox 360) as a native macOS app for Apple Silicon: static recompilation, installer builds it from your own disc",
    "g": "Harry Potter and the Order of the Phoenix",
    "id": "db:sanyokkua/hp5-ootp-x360-port",
@@ -13874,6 +13834,33 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-10-26",
+   "d": "Precursor: unofficial Android (ARM64) port of the Jak and Daxter trilogy, powered by OpenGOAL (AI-assisted)",
+   "g": "Jak and Daxter: The Precursor Legacy",
+   "games": [
+    {
+     "platform": "PS2",
+     "title": "Jak II"
+    },
+    {
+     "platform": "PS2",
+     "title": "Jak 3"
+    }
+   ],
+   "id": "db:thebardockgames/precursor",
+   "k": "thebardockgames/precursor",
+   "lc": "2026-10-25T02:07:52Z",
+   "p": "PS2",
+   "po": [
+    "Android"
+   ],
+   "pr": "Precursor",
+   "pre": false,
+   "rel": "v0.2.1-beta",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-02",
    "d": "Recomp of the Megadrive / Genesis game James Pond 3",
@@ -14816,6 +14803,23 @@
    "pr": "kirby-amazing-mirror-recomp",
    "pre": true,
    "rel": "v0.5.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "Kirby & The Amazing Mirror, native on Windows, macOS and Linux, with online co-op for up to four players. Unofficial fan project; bring your own ROM.",
+   "g": "Kirby & The Amazing Mirror",
+   "id": "db:jhonnyedm/kamo",
+   "k": "jhonnyedm/kamo",
+   "lc": "2026-11-27T14:03:55Z",
+   "p": "GBA",
+   "po": [
+    "Windows"
+   ],
+   "pr": "KAMO",
+   "pre": true,
+   "rel": "v0.1.1-alpha",
    "t": "Recompilation"
   },
   {
@@ -17569,6 +17573,40 @@
    "pr": "Mario-Party-4-PC-Download-Play-Edition",
    "pre": true,
    "rel": "dev-2026-10-18-ae3300c2-texture-lifetime",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "Builds your own copy of Mario Party 9 into a native Windows program. Contains no game code or assets.",
+   "g": "Mario Party 9",
+   "id": "db:hottuck71/party9recomp",
+   "k": "hottuck71/party9recomp",
+   "lc": "2026-11-26T03:24:27Z",
+   "p": "Wii",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Party9Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-27",
+   "d": "Native Windows port of Mario Party Superstars (v1.0.0) by static recompilation. Bring your own extracted game files: no game code or assets included.",
+   "g": "Mario Party Superstars",
+   "id": "db:sumeriangod/mpsrecomp",
+   "k": "sumeriangod/mpsrecomp",
+   "lc": "2026-11-27T12:51:27Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "mpsrecomp",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -21330,6 +21368,25 @@
   },
   {
    "ai": true,
+   "at": "2026-11-22",
+   "d": "A recompilation toolchain for the Wii game \"One Piece Unlimited Cruise Episode 1\".",
+   "g": "One Piece: Unlimited Cruise Episode 1",
+   "id": "db:one-piece-unlimited-cruise-episode-1/opuc1-recomp",
+   "k": "one-piece-unlimited-cruise-episode-1/opuc1-recomp",
+   "lc": "2026-11-27T16:20:09Z",
+   "p": "Wii",
+   "po": [
+    "Windows",
+    "macOS",
+    "Linux"
+   ],
+   "pr": "opuc1-recomp",
+   "pre": false,
+   "rel": "v0.9.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-18",
    "d": "Onimusha 2 nativo para Android y PC: PAL espanol y NTSC. Requiere tu propio ISO. / Native Onimusha 2 for Android and PC.",
    "g": "Onimusha 2: Samurai's Destiny",
@@ -22716,6 +22773,23 @@
    "pr": "LZA-Recomp",
    "pre": true,
    "rel": "LegendsA-v1.4.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-02",
+   "d": "",
+   "g": "Pokemon Legends: Z-A",
+   "id": "db:hexveil404/pokez-arecomp",
+   "k": "hexveil404/pokez-arecomp",
+   "lc": "2026-11-01T02:25:33Z",
+   "p": "Switch",
+   "po": [
+    "Windows"
+   ],
+   "pr": "PokeZ-ARecomp",
+   "pre": true,
+   "rel": "test-nvidia-compiler-2",
    "t": "Recompilation"
   },
   {
@@ -24109,6 +24183,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-20",
+   "d": "A Native PC port of Size Matters ",
+   "g": "Ratchet & Clank: Size Matters",
+   "id": "db:neogotya/rac-its-how-you-use-it",
+   "k": "neogotya/rac-its-how-you-use-it",
+   "lc": "2026-11-27T15:50:42Z",
+   "p": "PSP",
+   "po": [
+    "Windows"
+   ],
+   "pr": "RaC-Its-How-You-Use-It",
+   "pre": false,
+   "rel": "1.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-23",
    "d": "A native PC engine for Ratchet & Clank: Size Matters (PS2) that reads your own disc image. No emulator, no game data included.",
    "g": "Ratchet & Clank: Size Matters",
@@ -24784,24 +24875,6 @@
    "pre": false,
    "rel": "0.1",
    "t": "Decompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-27",
-   "d": "R4: Ridge Racer Type 4 (USA) statically recompiled with psxrecomp + recomp-ui",
-   "g": "Ridge Racer Type 4",
-   "id": "db:tetrisgm/ridgeracertype4modernized",
-   "k": "tetrisgm/ridgeracertype4modernized",
-   "lc": "2026-11-19T19:32:50Z",
-   "p": "PS1",
-   "po": [
-    "Windows",
-    "macOS"
-   ],
-   "pr": "RidgeRacerType4Modernized",
-   "pre": false,
-   "rel": "v0.2.4",
-   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -26069,6 +26142,23 @@
    "pr": "shadow-tower-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-27",
+   "d": "A native Windows version of Shadow Tower Abyss (PS2) by static recompilation using your own disc image",
+   "g": "Shadow Tower Abyss",
+   "id": "db:crow15669/star-shadow-tower-abyss-recomp",
+   "k": "crow15669/star-shadow-tower-abyss-recomp",
+   "lc": "2026-11-27T08:47:14Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "STAR-Shadow-Tower-Abyss-Recomp",
+   "pre": false,
+   "rel": "v0.9.0",
    "t": "Recompilation"
   },
   {
@@ -27427,6 +27517,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-27",
+   "d": "A Sonic Riders GameCube Recompilation, Built with Gemini 4 Argon, 5.5 Opus, and 6.1 Sol",
+   "g": "Sonic Riders",
+   "id": "db:bittahbandit1/turbulence",
+   "k": "bittahbandit1/turbulence",
+   "lc": "2026-11-27T08:33:20Z",
+   "p": "GameCube",
+   "po": [
+    "macOS"
+   ],
+   "pr": "Turbulence",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-26",
    "d": "A native PC port of Sonic Riders: Zero Gravity made with static recompilation.",
    "g": "Sonic Riders: Zero Gravity",
@@ -28121,33 +28228,6 @@
   },
   {
    "ai": false,
-   "at": "2026-11-26",
-   "d": "A non-commercial fan project dedicated to recompiling the original PAL versions of all three Spyro the Dragon games for PlayStation 1.",
-   "g": "Spyro the Dragon",
-   "games": [
-    {
-     "platform": "PS1",
-     "title": "Spyro 2: Gateway to Glimmer"
-    },
-    {
-     "platform": "PS1",
-     "title": "Spyro: Year of the Dragon"
-    }
-   ],
-   "id": "db:leoncon99/spyro-trilogy",
-   "k": "leoncon99/spyro-trilogy",
-   "lc": "2026-11-26T15:32:24Z",
-   "p": "PS1",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Spyro-Trilogy",
-   "pre": false,
-   "rel": "v0.5.0",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
    "at": "2026-11-18",
    "d": "",
    "g": "Spyro the Dragon",
@@ -28354,6 +28434,24 @@
    "pr": "star-ocean-the-second-story-recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-27",
+   "d": "A Reverse Engineering of Star Ocean: The Second Story, to be rebuilt and able to played natively on PC with debugging.",
+   "g": "Star Ocean: The Second Story",
+   "id": "db:ironjade/shattered-stars",
+   "k": "ironjade/shattered-stars",
+   "lc": "2026-10-28T18:29:20Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Shattered-Stars",
+   "pre": false,
+   "rel": "v0.03.00",
    "t": "Recompilation"
   },
   {
@@ -30358,6 +30456,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-27",
+   "d": "Tekken 6 (Xbox 360) on the Nintendo Switch: ReXGlue static recompilation with reNut's renderer on deko3d. No game data.",
+   "g": "Tekken 6",
+   "id": "db:xsaja/tekken6-nx",
+   "k": "xsaja/tekken6-nx",
+   "lc": "2026-11-27T17:01:46Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "tekken6-nx",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Native Linux port of Tekken Tag Tournament 2 Wii U Edition by static recompilation. No game files included.",
    "g": "Tekken Tag Tournament 2",
@@ -31768,6 +31881,24 @@
    "pr": "Trap_Gunner",
    "pre": false,
    "rel": "v0.0.10",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "🔫 Static recompilation of Trap Gunner (PS1, SLUS-00679) to native, built on psxrecomp + Zig tooling",
+   "g": "Trap Gunner: Countdown to Oblivion",
+   "id": "db:thomasgroch/trapgunnerrecomp",
+   "k": "thomasgroch/trapgunnerrecomp",
+   "lc": "2026-11-27T10:24:31Z",
+   "p": "PS1",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "TrapGunnerRecomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
