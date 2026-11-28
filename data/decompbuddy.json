@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-28T07:45:04+00:00",
+ "generated": "2026-11-28T17:30:49+00:00",
  "projects": [
   {
    "ai": false,
@@ -70,23 +70,6 @@
    "pr": "NightfirePort",
    "pre": false,
    "rel": "v0.1.21",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-11-23",
-   "d": "a pc recomp of 007 Quantum of Solace (X360) using Rexglue",
-   "g": "007: Quantum of Solace",
-   "id": "db:thegh0sts/007-qos-x360-port",
-   "k": "thegh0sts/007-qos-x360-port",
-   "lc": "2026-11-23T07:55:14Z",
-   "p": "Xbox 360",
-   "po": [
-    "Windows"
-   ],
-   "pr": "007-QOS-X360-PORT",
-   "pre": false,
-   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1705,6 +1688,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-10-19",
+   "d": "Native Windows PC port of Azure Dreams (PS1) via static recompilation with psxrecomp: HD rendering, 16:9 widescreen, fast loading. Bring your own disc.",
+   "g": "Azure Dreams",
+   "id": "db:potiondweller/azure-dreams-hd-recompilation",
+   "k": "potiondweller/azure-dreams-hd-recompilation",
+   "lc": "2026-10-19T08:56:22Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Azure-Dreams-HD-Recompilation",
+   "pre": false,
+   "rel": "v0.9.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-27",
    "d": "Experimental Azurik Xbox recompilation for Windows. Requires your own compatible ISO/XISO or extracted game.",
@@ -1736,23 +1736,6 @@
    "pr": "backbreaker-recomp",
    "pre": false,
    "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-26",
-   "d": "Native Windows x64 port of Bakugan: Battle Brawlers (PS3, BLES00758) built by static PPU+SPU recompilation - no emulator. Menus, FMVs and the narrative intro work; 3D models, gameplay and SFX are next.",
-   "g": "Bakugan: Battle Brawlers",
-   "id": "db:mauryln/bakugan-battle-brawlers-ps3-recomp",
-   "k": "mauryln/bakugan-battle-brawlers-ps3-recomp",
-   "lc": "2026-11-09T23:36:56Z",
-   "p": "PS3",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Bakugan-Battle-Brawlers-PS3-recomp",
-   "pre": false,
-   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -1929,23 +1912,6 @@
    "pr": "TooieRecomp",
    "pre": true,
    "rel": "v0.1.0-p08",
-   "t": "Recompilation"
-  },
-  {
-   "ai": true,
-   "at": "2026-11-02",
-   "d": "Play Baroque (Sega Saturn, 1998) natively on Windows via the SaturnRecomp runtime. Build-from-source kit: bring your own disc and BIOS.",
-   "g": "Baroque",
-   "id": "db:goodshepherd23/baroque-saturnrecomp",
-   "k": "goodshepherd23/baroque-saturnrecomp",
-   "lc": "2026-11-02T04:19:14Z",
-   "p": "Saturn",
-   "po": [
-    "Windows"
-   ],
-   "pr": "Baroque-SaturnRecomp",
-   "pre": false,
-   "rel": "v0.1.3",
    "t": "Recompilation"
   },
   {
@@ -2170,24 +2136,6 @@
    "pr": "bayo3-recomp",
    "pre": false,
    "rel": "v0.1.1",
-   "t": "Recompilation"
-  },
-  {
-   "ai": false,
-   "at": "2026-10-28",
-   "d": "Unofficial static recompilation of Bayonetta 3. Builds the game on your PC from your own legally dumped copy. No game files, keys or SDK code included.",
-   "g": "Bayonetta 3",
-   "id": "db:zexyen/witch-time",
-   "k": "zexyen/witch-time",
-   "lc": "2026-10-28T01:01:16Z",
-   "p": "Switch",
-   "po": [
-    "Linux",
-    "Windows"
-   ],
-   "pr": "Witch-Time",
-   "pre": false,
-   "rel": "v0.2.0",
    "t": "Recompilation"
   },
   {
@@ -2505,6 +2453,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-09-13",
+   "d": "",
+   "g": "Blast Corps",
+   "id": "db:djultra64/power-dozer",
+   "k": "djultra64/power-dozer",
+   "lc": "2026-10-12T04:24:48Z",
+   "p": "N64",
+   "po": [
+    "Windows",
+    "Linux"
+   ],
+   "pr": "Power Dozer",
+   "pre": false,
+   "rel": "v0.84",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-02",
    "d": "A native Windows x64 and Linux/Steam Deck port of Blast Wind (Japan) for the Sega Saturn, built by static recompilation with satrecomp. The SH-2 code is translated to C++ and runs on a custom machine with CD-DA and SCSP audio, launcher, saves and full controller support. No emulator, no BIOS and no game data: players supply their own disc. GPL-3.0.",
@@ -2632,6 +2598,24 @@
   {
    "ai": true,
    "at": "2026-11-21",
+   "d": "Native Windows & Linux port of Blitz: The League (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
+   "g": "Blitz: The League",
+   "id": "db:nacholuver1/blitz-theleague-recomp",
+   "k": "nacholuver1/blitz-theleague-recomp",
+   "lc": "2026-11-21T12:16:09Z",
+   "p": "Xbox 360",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "Blitz-TheLeague-Recomp",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-21",
    "d": "Native Windows & Linux port of Blitz: The League II (Xbox 360) via static recompilation with the ReXGlue SDK. No emulator, no game data included: bring your own disc dump.",
    "g": "Blitz: The League II",
    "id": "db:nacholuver1/blitz-theleague-ii-recomp",
@@ -2751,6 +2735,24 @@
    "pre": false,
    "rel": "v0.4",
    "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-14",
+   "d": "Bloodborne (v1.09) on Windows & Linux with a decompiled C++20 graphics engine & direct Vulkan 1.3 renderer (built on bbport): native GLSL shaders, ~3–5 GB VRAM, draw batching/culling, in-game PC menus, DLSS 4.5 / FSR 4. Bring your own dump.",
+   "g": "Bloodborne",
+   "id": "db:lapothecary/bloodborne-pc-vulkan",
+   "k": "lapothecary/bloodborne-pc-vulkan",
+   "lc": "2026-11-13T11:20:44Z",
+   "p": "PS4",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "bloodborne-pc-vulkan",
+   "pre": false,
+   "rel": "v1.1.3",
+   "t": "Decompilation"
   },
   {
    "ai": false,
@@ -3135,6 +3137,23 @@
    "pr": "Hellmouth",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "",
+   "g": "Buffy the Vampire Slayer",
+   "id": "db:fallenazazel/btvs_recomp",
+   "k": "fallenazazel/btvs_recomp",
+   "lc": "2026-11-22T01:06:01Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "BtVS_recomp",
+   "pre": false,
+   "rel": "v0.9.0",
    "t": "Recompilation"
   },
   {
@@ -3535,21 +3554,6 @@
    "t": "Recompilation"
   },
   {
-   "ai": false,
-   "at": "2026-11-21",
-   "d": "Call of Duty: Modern Warfare 2 for the Nintendo Switch, recompiled from the Xbox 360.",
-   "g": "Call of Duty: Modern Warfare 2",
-   "id": "db:kyokoxdev/mw2nx",
-   "k": "kyokoxdev/mw2nx",
-   "lc": "2026-11-21T07:19:55Z",
-   "p": "Xbox 360",
-   "po": [],
-   "pr": "mw2nx",
-   "pre": false,
-   "rel": "v1.0.0",
-   "t": "Recompilation"
-  },
-  {
    "ai": true,
    "at": "2026-11-24",
    "d": "100% Byte Matching Decompilation and ports of NAOMI Game Capcom Vs. SNK 2",
@@ -3765,6 +3769,23 @@
    "pr": "noble-archimedes",
    "pre": true,
    "rel": "v0.2.1-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Static AOT recompilation of Castlevania: Dawn of Sorrow (Nintendo DS / ACVE) with Direct3D 12 & Vulkan GPU shaders, Dear ImGui menu, in-memory PT-BR patch, and RecompLauncher support.",
+   "g": "Castlevania: Dawn of Sorrow",
+   "id": "db:neguchads/cdos-nintendods-recomp",
+   "k": "neguchads/cdos-nintendods-recomp",
+   "lc": "2026-11-22T19:47:25Z",
+   "p": "DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "cdos-nintendods-recomp",
+   "pre": false,
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -6798,6 +6819,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-22",
+   "d": "Projeto da comunidade, para recompilar nativamente o jogo de **PlayStation 2 Disney's Extreme Skate Adventure**",
+   "g": "Disney's Extreme Skate Adventure",
+   "id": "db:vitoralvesdev/recomp-ps2-pc-disneys-extreme-skate-adventure",
+   "k": "vitoralvesdev/recomp-ps2-pc-disneys-extreme-skate-adventure",
+   "lc": "2026-11-28T02:15:25Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "recomp-ps2-pc-disneys-extreme-skate-adventure",
+   "pre": false,
+   "rel": "0.5.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Disney's Hercules Action Game (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
@@ -8895,6 +8933,23 @@
    "pr": "FIFA-08-X360-PC-PORT",
    "pre": false,
    "rel": "v1.0.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "A static recompilation of the Xbox 360 version of FIFA 10 for Windows",
+   "g": "FIFA Soccer 10",
+   "id": "db:chrs2324/fifa10recomp",
+   "k": "chrs2324/fifa10recomp",
+   "lc": "2026-11-28T07:44:01Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "FIFA10Recomp",
+   "pre": false,
+   "rel": "v1.0",
    "t": "Recompilation"
   },
   {
@@ -11103,6 +11158,26 @@
    "pr": "MoonEngine",
    "pre": true,
    "rel": "v0.4.0-dev",
+   "t": "Reimplementation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Gran Turismo 4 engine reimplementation on GT3 Revisited's engine (bring your own disc)",
+   "g": "Gran Turismo 4",
+   "id": "db:matt-pulsipher/gt4-revisited",
+   "k": "matt-pulsipher/gt4-revisited",
+   "lc": "2026-11-28T03:49:27Z",
+   "p": "PS2",
+   "po": [
+    "Linux",
+    "Windows",
+    "macOS",
+    "Android"
+   ],
+   "pr": "GT4-revisited",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Reimplementation"
   },
   {
@@ -15185,6 +15260,37 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-19",
+   "d": "The complete Émigré Collection reborn on Windows PC: Koudelka, Shadow Hearts, Covenant & From the New World. Native PS1/PS2 static recompilation with Co-op & Mod Engine. Runs from your legally owned disc.iso backups.",
+   "g": "Koudelka",
+   "games": [
+    {
+     "platform": "PS2",
+     "title": "Shadow Hearts"
+    },
+    {
+     "platform": "PS2",
+     "title": "Shadow Hearts: Covenant"
+    },
+    {
+     "platform": "PS2",
+     "title": "Shadow Hearts: From the New World"
+    }
+   ],
+   "id": "db:nfgodin/shadow-hearts-nocturne",
+   "k": "nfgodin/shadow-hearts-nocturne",
+   "lc": "2026-11-28T01:18:20Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Shadow-Hearts-Nocturne",
+   "pre": true,
+   "rel": "engine-nightly",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-24",
    "d": "Static recompilation of Kula World (PAL, SCES-01000) to native Linux, Windows and macOS using psxrecomp. No game data included – please bring your own disc image.",
@@ -16443,6 +16549,23 @@
    "pr": "Triforce-Recompiled",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
+   "at": "2026-11-27",
+   "d": "Unofficial native PS3 port of Twilight Princess, built on Dusklight. AI-assisted (Claude Code) with human review. Bring your own disc image.",
+   "g": "The Legend of Zelda: Twilight Princess",
+   "id": "db:deluca92/duskonps3",
+   "k": "deluca92/duskonps3",
+   "lc": "2026-11-28T01:01:41Z",
+   "p": "GameCube",
+   "po": [
+    "macOS"
+   ],
+   "pr": "DuskOnPS3",
+   "pre": true,
+   "rel": "v0.1.0-m1",
    "t": "Recompilation"
   },
   {
@@ -23016,6 +23139,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Pokémon: Let's Go, recompiled for Android, with traditional wild battles and capture mechanics",
+   "g": "Pokémon: Let's Go, Pikachu!",
+   "id": "db:teton-dev/cerulean",
+   "k": "teton-dev/cerulean",
+   "lc": "2026-11-28T11:17:40Z",
+   "p": "Switch",
+   "po": [
+    "Android"
+   ],
+   "pr": "Cerulean",
+   "pre": false,
+   "rel": "v1.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-25",
    "d": "Native PC port of Pokemon Mystery Dungeon: Explorers of Sky (recompilation + melonDS). Contains no game data.",
@@ -23896,7 +24036,7 @@
    ],
    "pr": "prototype-pc-slop",
    "pre": false,
-   "rel": "v1.1.0",
+   "rel": "v1.2.0",
    "t": "Recompilation"
   },
   {
@@ -25116,6 +25256,24 @@
    "pre": false,
    "rel": "0.1",
    "t": "Decompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "R4: Ridge Racer Type 4 (USA) statically recompiled with psxrecomp + recomp-ui",
+   "g": "Ridge Racer Type 4",
+   "id": "db:tetrisgm/ridgeracertype4modernized",
+   "k": "tetrisgm/ridgeracertype4modernized",
+   "lc": "2026-11-19T19:32:50Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "macOS"
+   ],
+   "pr": "RidgeRacerType4Modernized",
+   "pre": false,
+   "rel": "v0.2.4",
+   "t": "Recompilation"
   },
   {
    "ai": false,
@@ -27415,6 +27573,23 @@
   },
   {
    "ai": true,
+   "at": "2026-11-28",
+   "d": "Native Windows port of Smash TV for the retail L8 ROM set",
+   "g": "Smash T.V.",
+   "id": "db:meathax/smashport",
+   "k": "meathax/smashport",
+   "lc": "2026-11-27T14:21:42Z",
+   "p": "Arcade",
+   "po": [
+    "Windows"
+   ],
+   "pr": "smashport",
+   "pre": false,
+   "rel": "v1.0.9",
+   "t": "Recompilation"
+  },
+  {
+   "ai": true,
    "at": "2026-11-14",
    "d": "Smuggler's Run PS2 Recomp built using ps2-native-recomp",
    "g": "Smuggler's Run",
@@ -27705,6 +27880,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "Sonic & SEGA All-Stars Racing (Xbox 360) on the Nintendo Switch (homebrew): a ReXGlue static recompilation with the Renut renderer on deko3d",
+   "g": "Sonic & SEGA All-Stars Racing",
+   "id": "db:chanseyisthebest/ssasr-nx",
+   "k": "chanseyisthebest/ssasr-nx",
+   "lc": "2026-11-28T09:40:55Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "ssasr-nx",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-19",
    "d": "Sonic Blast recompiled for the Sega Game Gear using smsggrecomp · Part of the R.A.I.D. community",
    "g": "Sonic Blast",
@@ -27893,6 +28083,23 @@
    "pr": "sonic06-recomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-26",
+   "d": "Unofficial Android port of MarathonRecomp, built with Anthropic's Opus 5.5 AI under human direction, device testing and debugging. Artifacts, freezes and audio issues possible. SPECIAL THANKS to everyone testing and reporting.",
+   "g": "Sonic the Hedgehog (2006)",
+   "id": "db:sansnope/marathonrecomp-android",
+   "k": "sansnope/marathonrecomp-android",
+   "lc": "2026-10-26T09:53:37Z",
+   "p": "Xbox 360",
+   "po": [
+    "Android"
+   ],
+   "pr": "MarathonRecomp-Android",
+   "pre": false,
+   "rel": "v0.1.5",
    "t": "Recompilation"
   },
   {
@@ -28137,6 +28344,24 @@
    "pr": "soviet-strike-recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Widescreen scaling, intro fixes, HD text and HUD improvements for Space Station Silicon Valley: Recompiled. Based on Cellenseres/SSSV_Recomp.",
+   "g": "Space Station Silicon Valley",
+   "id": "db:threetoucansinatrenchcoat/spacestationsiliconvalley-pcport",
+   "k": "threetoucansinatrenchcoat/spacestationsiliconvalley-pcport",
+   "lc": "2026-11-26T08:32:53Z",
+   "p": "N64",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "SpaceStationSiliconValley-PCPort",
+   "pre": false,
+   "rel": "v2026.11.26-build7.2",
    "t": "Recompilation"
   },
   {
@@ -29761,6 +29986,26 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "Super Mario Bros. 35 recompiled for PC: Windows, Linux / Steam Deck, Android",
+   "g": "Super Mario Bros. 35",
+   "id": "db:gminustwo/bros35",
+   "k": "gminustwo/bros35",
+   "lc": "2026-11-28T02:18:23Z",
+   "p": "Switch",
+   "po": [
+    "Linux",
+    "Android",
+    "Windows",
+    "macOS"
+   ],
+   "pr": "bros35",
+   "pre": false,
+   "rel": "v1.0.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-09-13",
    "d": "",
    "g": "Super Mario Bros. Remastered",
@@ -30754,6 +30999,23 @@
    "pr": "psx-tekken-3",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-10-20",
+   "d": "Tekken 6 (Xbox 360) native on Windows with rollback netcode - build from your own ISO",
+   "g": "Tekken 6",
+   "id": "db:ekspym/tekken6-native-online",
+   "k": "ekspym/tekken6-native-online",
+   "lc": "2026-11-26T21:38:35Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Tekken6-native-online",
+   "pre": false,
+   "rel": "v3.3.2",
    "t": "Recompilation"
   },
   {
@@ -32116,7 +32378,7 @@
    ],
    "pr": "ToyCommander--QilinRecomp",
    "pre": false,
-   "rel": "toycommander-v0.15.0",
+   "rel": "toycommander-v0.16.0",
    "t": "Recompilation"
   },
   {
@@ -33203,6 +33465,23 @@
    "pr": "VPW64DeluxeRecomp",
    "pre": false,
    "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Play Hudson's Virus (Sega Saturn, 1997) in English on SaturnRecomp. Kit: builds the runtime and makes the English disc from your own disc.",
+   "g": "Virus",
+   "id": "db:goodshepherd23/virus-saturnrecomp",
+   "k": "goodshepherd23/virus-saturnrecomp",
+   "lc": "2026-11-28T06:14:41Z",
+   "p": "Saturn",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Virus-SaturnRecomp",
+   "pre": false,
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -34627,6 +34906,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "Windows launcher and recompiler for Xenoblade Chronicles: Definitive Edition – Switch 2 Edition. Guided setup from your own 2.0.0 NUP, graphics presets, controller prompts, mods and save backups.",
+   "g": "Xenoblade Chronicles: Definitive Edition - Switch 2 Edition",
+   "id": "db:danekon1/monado-next",
+   "k": "danekon1/monado-next",
+   "lc": "2026-11-28T06:22:44Z",
+   "p": "Switch 2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "monado-next",
+   "pre": false,
+   "rel": "v0.1.3",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-10-14",
    "d": "Xenogears decomp, enhanced native client, and modding tools.",
    "g": "Xenogears",
@@ -34701,7 +34997,7 @@
    ],
    "pr": "xenosaga-trilogy-port",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Decompilation"
   },
   {
