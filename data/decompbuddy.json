@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T21:20:36+00:00",
+ "generated": "2026-11-28T07:45:04+00:00",
  "projects": [
   {
    "ai": false,
@@ -99,13 +99,13 @@
    "lc": "2026-11-25T13:20:46Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "007-racing-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -136,13 +136,13 @@
    "lc": "2026-11-25T14:39:44Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "007-tomorrow-never-dies-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -302,13 +302,13 @@
    "lc": "2026-11-25T14:28:53Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "40-winks-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -327,6 +327,24 @@
    "pr": "40-Winks-PC-Port",
    "pre": true,
    "rel": "v0.1.7-alpha",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "An unofficial native PC port of 50 Cent: Bulletproof for Windows and Linux, powered by Vulkan, featuring high-resolution rendering, enhanced controls and automatic game recompilation.",
+   "g": "50 Cent: Bulletproof",
+   "id": "db:atecep/50cent-bulletproof-pc-port",
+   "k": "atecep/50cent-bulletproof-pc-port",
+   "lc": "2026-11-27T22:15:06Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "50Cent-Bulletproof-PC-Port",
+   "pre": false,
+   "rel": "v0.8.0",
    "t": "Recompilation"
   },
   {
@@ -778,13 +796,13 @@
    "lc": "2026-11-25T14:49:33Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "akuji-the-heartless-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -839,6 +857,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-25",
+   "d": "",
+   "g": "Alien Storm",
+   "id": "db:pauloalves86/alien-storm-decomp",
+   "k": "pauloalves86/alien-storm-decomp",
+   "lc": "2026-11-27T23:17:52Z",
+   "p": "Mega Drive",
+   "po": [
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "alien-storm-decomp",
+   "pre": false,
+   "rel": "v0.1.1",
+   "t": "Decompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Alien Trilogy (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
@@ -849,12 +886,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "alien-trilogy-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1263,19 +1300,19 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Arc the Lad Collection - Arc Arena - Monster Tournament (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Arc the Lad Collection: Arc Arena - Monster Tournament",
+   "g": "Arc the Lad Collection: Arc Arena: Monster Tournament",
    "id": "db:alexbeavs-ps1-ports/arc-the-lad-collection-arc-arena-monster-tournament-recomp",
    "k": "alexbeavs-ps1-ports/arc-the-lad-collection-arc-arena-monster-tournament-recomp",
    "lc": "2026-11-25T17:23:42Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "arc-the-lad-collection-arc-arena-monster-tournament-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1288,9 +1325,9 @@
    "lc": "2026-11-26T12:30:51Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "arc-the-lad-collection-arc-the-lad-recomp",
    "pre": false,
@@ -1307,13 +1344,13 @@
    "lc": "2026-11-25T19:20:50Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "arc-the-lad-collection-arc-the-lad-ii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1326,13 +1363,13 @@
    "lc": "2026-11-25T16:55:42Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "arc-the-lad-collection-arc-the-lad-iii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1517,13 +1554,13 @@
    "lc": "2026-11-25T19:26:32Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "asterix-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1537,12 +1574,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "asterix-and-obelix-take-on-caesar-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1561,7 +1598,7 @@
    ],
    "pr": "asterix-mega-madness-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1941,12 +1978,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "batman-and-robin-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -1978,9 +2015,9 @@
    "lc": "2026-11-26T13:35:05Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "battle-arena-toshinden-2-recomp",
    "pre": false,
@@ -1997,13 +2034,13 @@
    "lc": "2026-11-25T16:21:36Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "battle-arena-toshinden-3-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -2495,9 +2532,9 @@
    "lc": "2026-11-26T17:43:13Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "blasto-recomp",
    "pre": false,
@@ -3002,13 +3039,13 @@
    "lc": "2026-11-25T18:22:24Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "breath-of-fire-iv-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -3039,12 +3076,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "broken-sword-ii-the-smoking-mirror-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -3127,13 +3164,13 @@
    "lc": "2026-11-25T20:20:53Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "bugs-bunny-and-taz-time-busters-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -3146,13 +3183,13 @@
    "lc": "2026-11-25T18:26:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "bugs-bunny-lost-in-time-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -3290,9 +3327,9 @@
    "lc": "2026-11-26T18:38:23Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "bust-a-groove-recomp",
    "pre": false,
@@ -3326,9 +3363,9 @@
    "lc": "2026-11-26T12:33:34Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "bust-a-groove-2-recomp",
    "pre": false,
@@ -3420,6 +3457,21 @@
    "pr": "project-1944",
    "pre": false,
    "rel": "v2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Call of Duty: Advanced Warfare on the Nintendo Switch: a native static recompilation built from your own discs (campaign, multiplayer, title update 17, Exo Zombies, crossplay with Android)",
+   "g": "Call of Duty: Advanced Warfare",
+   "id": "db:yassinsolim/aw-nx",
+   "k": "yassinsolim/aw-nx",
+   "lc": "2026-11-28T03:53:41Z",
+   "p": "Xbox 360",
+   "po": [],
+   "pr": "aw-nx",
+   "pre": false,
+   "rel": "v0.1.0",
    "t": "Recompilation"
   },
   {
@@ -3914,13 +3966,13 @@
    "lc": "2026-11-25T19:12:10Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "chaos-break-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4105,13 +4157,13 @@
    "lc": "2026-11-25T16:59:09Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "the-city-of-lost-children-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4158,13 +4210,13 @@
    "lc": "2026-11-25T17:22:36Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "clock-tower-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4177,13 +4229,13 @@
    "lc": "2026-11-25T17:09:11Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "clock-tower-ii-the-struggle-within-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4196,13 +4248,13 @@
    "lc": "2026-11-25T16:58:51Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "clock-tower-the-first-fear-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4320,13 +4372,13 @@
    "lc": "2026-11-25T19:50:04Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "command-and-conquer-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -4339,9 +4391,9 @@
    "lc": "2026-11-26T12:30:05Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "command-and-conquer-red-alert-recomp",
    "pre": false,
@@ -4352,19 +4404,19 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Command & Conquer - Red Alert - Retaliation (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Command & Conquer: Red Alert - Retaliation",
+   "g": "Command & Conquer: Red Alert: Retaliation",
    "id": "db:alexbeavs-ps1-ports/command-and-conquer-red-alert-retaliation-recomp",
    "k": "alexbeavs-ps1-ports/command-and-conquer-red-alert-retaliation-recomp",
    "lc": "2026-11-25T15:34:29Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "command-and-conquer-red-alert-retaliation-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5097,8 +5149,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "croc-2-recomp",
    "pre": false,
@@ -5115,9 +5167,9 @@
    "lc": "2026-11-26T16:35:14Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "croc-legend-of-the-gobbos-recomp",
    "pre": false,
@@ -5151,13 +5203,13 @@
    "lc": "2026-11-25T14:38:14Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "crusaders-of-might-and-magic-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5394,13 +5446,13 @@
    "lc": "2026-11-25T16:31:20Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "darkstalkers-3-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5413,13 +5465,13 @@
    "lc": "2026-11-25T16:59:39Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "darkstalkers-the-night-warriors-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5509,13 +5561,13 @@
    "lc": "2026-11-25T20:20:19Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "dave-mirra-freestyle-bmx-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5580,12 +5632,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "dead-or-alive-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5787,12 +5839,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "deadheat-road-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5839,13 +5891,13 @@
    "lc": "2026-11-25T15:32:04Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "deception-iii-dark-delusion-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -5963,13 +6015,13 @@
    "lc": "2026-11-25T16:59:47Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "defcon-5-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6052,13 +6104,13 @@
    "lc": "2026-11-25T16:32:43Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "descent-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6141,13 +6193,13 @@
    "lc": "2026-11-25T17:19:39Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "destruction-derby-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6416,8 +6468,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "digimon-rumble-arena-recomp",
    "pre": false,
@@ -6644,13 +6696,13 @@
    "lc": "2026-11-25T17:48:10Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "discworld-ii-mortality-bytes-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6663,13 +6715,13 @@
    "lc": "2026-11-25T16:57:30Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "discworld-noir-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6700,13 +6752,13 @@
    "lc": "2026-11-25T14:27:53Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "disney-pixar-toy-story-racer-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -6755,13 +6807,13 @@
    "lc": "2026-11-25T18:09:30Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "disneys-hercules-action-game-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -7587,13 +7639,13 @@
    "lc": "2026-11-25T16:59:56Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "dragon-warrior-vii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -7819,12 +7871,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "dune-2000-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -7971,9 +8023,9 @@
    "lc": "2026-11-26T12:19:34Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "dynasty-warriors-recomp",
    "pre": false,
@@ -8166,9 +8218,9 @@
    "lc": "2026-11-26T17:30:39Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "echo-night-recomp",
    "pre": false,
@@ -8185,9 +8237,9 @@
    "lc": "2026-11-26T17:09:41Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "echo-night-2-nemuri-no-shihaisha-recomp",
    "pre": false,
@@ -8204,9 +8256,9 @@
    "lc": "2026-11-26T13:14:08Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "ehrgeiz-god-bless-the-ring-recomp",
    "pre": false,
@@ -8246,7 +8298,7 @@
    ],
    "pr": "elemental-gearbolt-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -8433,7 +8485,7 @@
    ],
    "pr": "evil-dead-hail-to-the-king-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -8802,13 +8854,13 @@
    "lc": "2026-11-25T15:09:45Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "felony-11-79-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -8932,6 +8984,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Fight Night Round 2 - Recompilation of Xbox to native PC port.",
+   "g": "Fight Night Round 2",
+   "id": "db:hk21x/fightnight2-recomp",
+   "k": "hk21x/fightnight2-recomp",
+   "lc": "2026-11-27T20:05:43Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "fightnight2-recomp",
+   "pre": false,
+   "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-10-21",
    "d": "Fight Night Round 3 Recomp by DJ Ultra 64. Linux beta with native graphics options and local ISO setup; Windows source support.",
@@ -9014,13 +9083,13 @@
    "lc": "2026-11-25T16:53:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "final-doom-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9067,13 +9136,13 @@
    "lc": "2026-11-25T16:59:24Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "final-fantasy-anthology-final-fantasy-v-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9086,13 +9155,13 @@
    "lc": "2026-11-25T21:05:08Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "final-fantasy-anthology-final-fantasy-vi-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9106,12 +9175,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "final-fantasy-chronicles-chrono-trigger-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9124,9 +9193,9 @@
    "lc": "2026-11-26T17:16:24Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "final-fantasy-chronicles-final-fantasy-iv-recomp",
    "pre": false,
@@ -9286,7 +9355,7 @@
    ],
    "pr": "final-fantasy-origins-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9710,12 +9779,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "forsaken-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9901,13 +9970,13 @@
    "lc": "2026-11-25T19:41:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "front-mission-3-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -9964,19 +10033,19 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of G. Darius (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "G Darius",
+   "g": "G. Darius",
    "id": "db:alexbeavs-ps1-ports/g-darius-recomp",
    "k": "alexbeavs-ps1-ports/g-darius-recomp",
    "lc": "2026-11-25T21:12:50Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "g-darius-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -10403,13 +10472,13 @@
    "lc": "2026-11-25T21:47:03Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "gex-3-deep-cover-gecko-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -10938,9 +11007,9 @@
    "lc": "2026-11-26T13:31:04Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "gradius-gaiden-recomp",
    "pre": false,
@@ -11038,6 +11107,21 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "Gran Turismo 4 native port for Nintendo Switch homebrew: recompiled game code, native graphics and video instead of PS2 hardware emulation. Work in progress.",
+   "g": "Gran Turismo 4",
+   "id": "db:micleachristian/gt4-switch-native-port",
+   "k": "micleachristian/gt4-switch-native-port",
+   "lc": "2026-11-28T00:17:25Z",
+   "p": "PS2",
+   "po": [],
+   "pr": "gt4-switch-native-port",
+   "pre": true,
+   "rel": "nx-v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-23",
    "d": "GT4 VR for Meta Quest / Pico - based on snuri00/ps2-web-recomp",
    "g": "Gran Turismo 4",
@@ -11129,13 +11213,13 @@
    "lc": "2026-11-25T16:54:33Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "grand-theft-auto-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -11148,8 +11232,8 @@
    "lc": "2026-11-26T18:44:09Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "grand-theft-auto-2-recomp",
@@ -11288,19 +11372,19 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Grand Theft Auto - Mission Pack 1 - London 1969 (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Grand Theft Auto: Mission Pack #1 London 1969",
+   "g": "Grand Theft Auto: Mission Pack 1: London 1969",
    "id": "db:alexbeavs-ps1-ports/grand-theft-auto-mission-pack-1-london-1969-recomp",
    "k": "alexbeavs-ps1-ports/grand-theft-auto-mission-pack-1-london-1969-recomp",
    "lc": "2026-11-25T20:01:57Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "grand-theft-auto-mission-pack-1-london-1969-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -11384,13 +11468,13 @@
    "lc": "2026-11-25T16:21:34Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "grandia-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -11649,8 +11733,8 @@
    "lc": "2026-11-26T14:14:02Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "guardians-crusade-recomp",
@@ -11962,6 +12046,24 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "A recomp of the original Gun Ball (also known as Nitro Ball in the US)",
+   "g": "Gun Ball",
+   "id": "db:alexgbor/gunball-recomp",
+   "k": "alexgbor/gunball-recomp",
+   "lc": "2026-11-28T01:53:36Z",
+   "p": "Arcade",
+   "po": [
+    "Linux",
+    "Windows"
+   ],
+   "pr": "GunBall-Recomp",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-13",
    "d": "",
    "g": "Gunblade NY",
@@ -12005,8 +12107,8 @@
    "lc": "2026-11-26T12:32:23Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "gundam-battle-assault-recomp",
@@ -12146,13 +12248,13 @@
    "lc": "2026-11-25T21:13:48Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "gunship-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -12700,13 +12802,13 @@
    "lc": "2026-11-25T20:25:18Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "harvest-moon-back-to-nature-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -12791,13 +12893,13 @@
    "lc": "2026-11-25T16:58:56Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "heart-of-darkness-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -12810,9 +12912,9 @@
    "lc": "2026-11-26T13:32:50Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "hellnight-recomp",
    "pre": false,
@@ -12849,12 +12951,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "hercs-adventures-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -13362,6 +13464,23 @@
    "pr": "babel-recomp",
    "pre": false,
    "rel": "v1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Illusion of Gaia as a native PC port: widescreen, area and world maps, retranslation, achievements and optional MSU-1 music. Based on Babel Recomp by mr0ta / mrOt4. Bring your own ROM.",
+   "g": "Illusion of Gaia",
+   "id": "db:rages4calm/babel-recomp-companion",
+   "k": "rages4calm/babel-recomp-companion",
+   "lc": "2026-11-28T02:39:22Z",
+   "p": "SNES",
+   "po": [
+    "Windows"
+   ],
+   "pr": "babel-recomp-companion",
+   "pre": false,
+   "rel": "v0.3.0",
    "t": "Recompilation"
   },
   {
@@ -13888,13 +14007,13 @@
    "lc": "2026-11-25T16:59:33Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "jersey-devil-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14030,9 +14149,9 @@
    "lc": "2026-11-26T15:37:43Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "jet-moto-2-recomp",
    "pre": false,
@@ -14049,13 +14168,13 @@
    "lc": "2026-11-25T19:23:52Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "jet-moto-3-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14202,6 +14321,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-27",
+   "d": "Native Windows x64 static recompilation toolkit & PC Builder for Joy Ride Turbo (Xbox 360 XBLA), powered by ReXGlue SDK and 360sona. No ROMs or copyrighted game files included.",
+   "g": "Joy Ride Turbo",
+   "id": "db:jakehasemeyer/joy-ride-turbo-recompiled",
+   "k": "jakehasemeyer/joy-ride-turbo-recompiled",
+   "lc": "2026-11-27T18:22:27Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "joy-ride-turbo-recompiled",
+   "pre": true,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-23",
    "d": "ReSqueezed is a recompilation project for the Xbox version of Juiced, as the PC version has been historically hard to run and prone to crashing.",
    "g": "Juiced",
@@ -14296,12 +14432,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "kagero-deception-ii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14560,9 +14696,9 @@
    "lc": "2026-11-26T15:43:38Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "king-of-fighters-95-the-recomp",
    "pre": false,
@@ -14579,13 +14715,13 @@
    "lc": "2026-11-25T21:10:06Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "king-of-fighters-96-the-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14617,12 +14753,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "king-of-fighters-97-the-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -14672,8 +14808,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "king-of-fighters-98-the-dream-match-never-ends-recomp",
    "pre": false,
@@ -16543,7 +16679,7 @@
    ],
    "pr": "little-big-adventure-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -16624,13 +16760,13 @@
    "lc": "2026-11-25T16:55:00Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "looney-tunes-racing-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -16749,9 +16885,9 @@
    "lc": "2026-11-26T16:52:05Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "lucky-luke-recomp",
    "pre": false,
@@ -16768,13 +16904,13 @@
    "lc": "2026-11-25T18:23:47Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "lucky-luke-western-fever-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -16872,9 +17008,9 @@
    "lc": "2026-11-26T14:48:33Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "lunar-2-eternal-blue-complete-recomp",
    "pre": false,
@@ -16891,9 +17027,9 @@
    "lc": "2026-11-26T17:34:11Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "lunar-silver-star-story-complete-recomp",
    "pre": false,
@@ -16972,6 +17108,24 @@
    "t": "Recompilation"
   },
   {
+   "ai": false,
+   "at": "2026-11-05",
+   "d": "Modern Macross VF-X2 PSX recompilation with Vulkan, PGXP, fast loading, English localization tooling, and diagnostic support",
+   "g": "Macross VF-X2",
+   "id": "db:tzeentchnet/macross-vfx2-recomp",
+   "k": "tzeentchnet/macross-vfx2-recomp",
+   "lc": "2026-11-27T19:54:13Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "macOS"
+   ],
+   "pr": "Macross-VFX2-Recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": true,
    "at": "2026-11-03",
    "d": "mad-riders-recomp",
@@ -17031,13 +17185,13 @@
    "lc": "2026-11-25T20:12:55Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "magic-carpet-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -17906,6 +18060,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "Unofficial native Windows PC recompilation of MechAssault (Xbox, Rev 1) with ultrawide support, a launcher, and direct XISO loading. Requires your own copy of the game.",
+   "g": "MechAssault",
+   "id": "db:ss7goku2000/mechassault-pc-recomp",
+   "k": "ss7goku2000/mechassault-pc-recomp",
+   "lc": "2026-11-28T00:48:22Z",
+   "p": "Xbox (original)",
+   "po": [
+    "Windows"
+   ],
+   "pr": "MechAssault-PC-Recomp",
+   "pre": false,
+   "rel": "v0.1.2",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-19",
    "d": "Native static recompilation port of Medabots: Rokusho Version for Nintendo Switch",
    "g": "Medabots: Rokusho Version",
@@ -18238,9 +18409,9 @@
    "lc": "2026-11-26T16:10:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "mega-man-x3-recomp",
    "pre": false,
@@ -18318,19 +18489,19 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Men in Black - The Series - Crashdown (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Men in Black: The Series - Crashdown",
+   "g": "Men in Black: The Series: Crashdown",
    "id": "db:alexbeavs-ps1-ports/men-in-black-the-series-crashdown-recomp",
    "k": "alexbeavs-ps1-ports/men-in-black-the-series-crashdown-recomp",
    "lc": "2026-11-25T16:59:59Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "men-in-black-the-series-crashdown-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -18483,13 +18654,13 @@
    "lc": "2026-11-25T21:14:16Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "metal-gear-solid-vr-missions-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -19096,13 +19267,13 @@
    "lc": "2026-11-25T18:17:15Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "missile-command-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -19115,13 +19286,13 @@
    "lc": "2026-11-25T16:24:45Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "mission-impossible-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -19134,9 +19305,9 @@
    "lc": "2026-11-26T18:42:57Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "mizzurna-falls-recomp",
    "pre": false,
@@ -19279,13 +19450,13 @@
    "lc": "2026-11-25T18:54:50Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "mobile-suit-gundam-perfect-one-year-war-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -19298,9 +19469,9 @@
    "lc": "2026-11-26T17:24:50Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "mobile-suit-z-gundam-disc-1-recomp",
    "pre": false,
@@ -19318,8 +19489,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "mobile-suit-z-gundam-disc-2-recomp",
    "pre": false,
@@ -19694,9 +19865,9 @@
    "lc": "2026-11-26T15:34:14Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "motor-toon-grand-prix-recomp",
    "pre": false,
@@ -20341,6 +20512,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-27",
+   "d": "The PS2 version of Need for Speed: Hot Pursuit 2, statically recompiled to run natively on Windows x64, built from your own disc. An AI-assisted project (Claude Code).",
+   "g": "Need for Speed: Hot Pursuit 2",
+   "id": "db:awtocl/hotpursuit2pc",
+   "k": "awtocl/hotpursuit2pc",
+   "lc": "2026-11-27T21:05:59Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "HotPursuit2PC",
+   "pre": false,
+   "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-10-29",
    "d": "Build the PS2 edition of Hot Pursuit 2 locally from your own disc image using ps2-native-recomp. Setup and runtime patches only; no game data.",
@@ -20384,13 +20572,13 @@
    "lc": "2026-11-25T20:20:12Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "need-for-speed-ii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -20403,9 +20591,9 @@
    "lc": "2026-11-26T15:25:38Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "need-for-speed-iii-hot-pursuit-recomp",
    "pre": false,
@@ -20473,9 +20661,9 @@
    "lc": "2026-11-26T13:36:43Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "need-for-speed-porsche-unleashed-recomp",
    "pre": false,
@@ -20560,9 +20748,9 @@
    "lc": "2026-11-26T17:33:16Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "need-for-speed-v-rally-recomp",
    "pre": false,
@@ -20948,13 +21136,13 @@
    "lc": "2026-11-25T21:42:21Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "nickelodeon-rugrats-search-for-reptar-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21246,13 +21434,13 @@
    "lc": "2026-11-25T16:57:41Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "ninja-shadow-of-darkness-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21283,12 +21471,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "nuclear-strike-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21357,13 +21545,13 @@
    "lc": "2026-11-25T22:06:15Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "one-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21585,9 +21773,9 @@
    "lc": "2026-11-26T12:33:14Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "overblood-recomp",
    "pre": false,
@@ -21692,12 +21880,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "pandemonium-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21710,13 +21898,13 @@
    "lc": "2026-11-25T19:31:31Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "pandemonium-2-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -21808,6 +21996,23 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-28",
+   "d": "Experimental native PC port (static recompilation) of Paper Mario: Sticker Star based on XY Project",
+   "g": "Paper Mario: Sticker Star",
+   "id": "db:kaito-shirakumo/project-glitterstar-recompiled",
+   "k": "kaito-shirakumo/project-glitterstar-recompiled",
+   "lc": "2026-11-28T00:58:32Z",
+   "p": "3DS",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Project-Glitterstar-Recompiled",
+   "pre": false,
+   "rel": "v0.5-beta.1",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-27",
    "d": "OrigamiKing Recomp Project",
@@ -21851,9 +22056,9 @@
    "lc": "2026-11-26T16:50:52Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "parappa-the-rapper-recomp",
    "pre": false,
@@ -22007,13 +22212,13 @@
    "lc": "2026-11-25T19:36:40Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "persona-2-eternal-punishment-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -22049,7 +22254,7 @@
    ],
    "pr": "persona-2-innocent-sin-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -22409,13 +22614,13 @@
    "lc": "2026-11-25T19:02:07Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "pitfall-3d-beyond-the-jungle-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -23309,8 +23514,8 @@
    "lc": "2026-11-26T16:01:37Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "policenauts-recomp",
@@ -23346,13 +23551,13 @@
    "lc": "2026-11-25T21:42:40Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "poy-poy-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -23365,9 +23570,9 @@
    "lc": "2026-11-26T13:26:00Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "poy-poy-2-recomp",
    "pre": false,
@@ -23530,6 +23735,25 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-28",
+   "d": "Static recompilation of Pro Pinball: Big Race USA (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
+   "g": "Pro Pinball: Big Race USA",
+   "id": "db:alexbeavs-ps1-ports/pro-pinball-big-race-recomp",
+   "k": "alexbeavs-ps1-ports/pro-pinball-big-race-recomp",
+   "lc": "2026-11-28T00:11:23Z",
+   "p": "PS1",
+   "po": [
+    "Windows",
+    "Linux",
+    "macOS"
+   ],
+   "pr": "pro-pinball-big-race-recomp",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Recompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-27",
    "d": "Windows recompilation of Pro Yakyuu Spirits 3 (Xbox 360) with English and original Japanese modes, powered by ReXGlue.",
@@ -23644,8 +23868,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "project-overkill-recomp",
    "pre": false,
@@ -24183,6 +24407,23 @@
   },
   {
    "ai": false,
+   "at": "2026-11-28",
+   "d": "OpenRAC: Commando - a standalone test build of OpenRAC (Ratchet & Clank: Going Commando PC port) with the RAC 2: Commando Protocol mod. Bring your own disc.",
+   "g": "Ratchet & Clank: Going Commando",
+   "id": "db:mikedesigns101-cell/openrac-commando",
+   "k": "mikedesigns101-cell/openrac-commando",
+   "lc": "2026-11-28T00:05:27Z",
+   "p": "PS2",
+   "po": [
+    "Windows"
+   ],
+   "pr": "OpenRAC-Commando",
+   "pre": true,
+   "rel": "v0.1.0-beta",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
    "at": "2026-11-20",
    "d": "A Native PC port of Size Matters ",
    "g": "Ratchet & Clank: Size Matters",
@@ -24260,9 +24501,9 @@
    "lc": "2026-11-26T13:25:36Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "rayman-recomp",
    "pre": false,
@@ -24485,15 +24726,15 @@
    "ai": true,
    "at": "2026-11-16",
    "d": "Static recompilation of Resident Evil 2: Dual Shock Ver. (Claire disc) (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Resident Evil 2",
+   "g": "Resident Evil 2: Dual Shock Ver.",
    "id": "db:alexbeavs-ps1-ports/resident-evil-2-claire-recomp",
    "k": "alexbeavs-ps1-ports/resident-evil-2-claire-recomp",
    "lc": "2026-11-15T23:29:47Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "resident-evil-2-claire-recomp",
    "pre": false,
@@ -24672,13 +24913,13 @@
    "lc": "2026-11-25T18:51:12Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "resident-evil-survivor-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -24848,9 +25089,9 @@
    "lc": "2026-11-26T16:36:30Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "rhapsody-a-musical-adventure-recomp",
    "pre": false,
@@ -24921,13 +25162,13 @@
    "lc": "2026-11-25T17:58:27Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "road-and-track-presents-the-need-for-speed-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -25297,13 +25538,13 @@
    "lc": "2026-11-25T20:17:24Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "saga-frontier-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -25322,7 +25563,7 @@
    ],
    "pr": "saga-frontier-2-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -26014,13 +26255,13 @@
    "lc": "2026-11-25T21:31:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "shadow-man-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -26136,12 +26377,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "shadow-tower-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -26368,6 +26609,23 @@
    "pr": "rival-schools-nekketsu-seishun-nikki-2-recomp",
    "pre": false,
    "rel": "v0.2.0",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "Unofficial PC port of the Xbox 360 (XBLA) game Shoot Many Robots, made by static recompilation. Bring your own game files.",
+   "g": "Shoot Many Robots",
+   "id": "db:scandro1d/shootmanyrobots-pc-recomp",
+   "k": "scandro1d/shootmanyrobots-pc-recomp",
+   "lc": "2026-11-27T21:31:07Z",
+   "p": "Xbox 360",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ShootManyRobots-PC-recomp",
+   "pre": false,
+   "rel": "v0.1",
    "t": "Recompilation"
   },
   {
@@ -26939,13 +27197,13 @@
    "lc": "2026-11-25T21:44:00Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "skullmonkeys-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -27199,13 +27457,13 @@
    "lc": "2026-11-25T21:04:10Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "smurfs-the-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -27749,9 +28007,9 @@
    "lc": "2026-11-26T14:36:57Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "soul-of-the-samurai-recomp",
    "pre": false,
@@ -27878,7 +28136,7 @@
    ],
    "pr": "soviet-strike-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -27908,13 +28166,13 @@
    "lc": "2026-11-25T22:05:07Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "spice-world-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -28039,6 +28297,23 @@
    "pr": "sh-arcade-recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-28",
+   "d": "A PC Engine / TurboGrafx-16 static recompilation of Splatterhouse, built with PCERecomp",
+   "g": "Splatterhouse",
+   "id": "db:ijezabella/pcesplatterhouse-recomp",
+   "k": "ijezabella/pcesplatterhouse-recomp",
+   "lc": "2026-11-28T02:55:34Z",
+   "p": "PC Engine",
+   "po": [
+    "Windows"
+   ],
+   "pr": "pcesplatterhouse-recomp",
+   "pre": false,
+   "rel": "0.5.0",
    "t": "Recompilation"
   },
   {
@@ -28223,7 +28498,34 @@
    ],
    "pr": "spot-goes-to-hollywood-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-27",
+   "d": "A non-commercial fan project dedicated to recompiling the original PAL versions of all three Spyro the Dragon games for PlayStation 1.",
+   "g": "Spyro the Dragon",
+   "games": [
+    {
+     "platform": "PS1",
+     "title": "Spyro 2: Gateway to Glimmer"
+    },
+    {
+     "platform": "PS1",
+     "title": "Spyro: Year of the Dragon"
+    }
+   ],
+   "id": "db:leoncon99/spyro-recomp-trilogy",
+   "k": "leoncon99/spyro-recomp-trilogy",
+   "lc": "2026-11-27T18:12:17Z",
+   "p": "PS1",
+   "po": [
+    "Windows"
+   ],
+   "pr": "Spyro-Recomp-Trilogy",
+   "pre": false,
+   "rel": "v0.6.1",
    "t": "Recompilation"
   },
   {
@@ -28428,8 +28730,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "star-ocean-the-second-story-recomp",
    "pre": false,
@@ -28464,9 +28766,9 @@
    "lc": "2026-11-26T17:55:50Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "star-trek-invasion-recomp",
    "pre": false,
@@ -28591,15 +28893,15 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Star Wars - Rebel Assault II - The Hidden Empire (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Star Wars: Rebel Assault II - The Hidden Empire",
+   "g": "Star Wars: Rebel Assault II: The Hidden Empire",
    "id": "db:alexbeavs-ps1-ports/star-wars-rebel-assault-ii-the-hidden-empire-recomp",
    "k": "alexbeavs-ps1-ports/star-wars-rebel-assault-ii-the-hidden-empire-recomp",
    "lc": "2026-11-26T15:09:14Z",
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "star-wars-rebel-assault-ii-the-hidden-empire-recomp",
    "pre": false,
@@ -28705,8 +29007,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "street-fighter-alpha-2-recomp",
    "pre": false,
@@ -28780,12 +29082,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "street-fighter-ex-plus-alpha-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -28921,13 +29223,13 @@
    "lc": "2026-11-25T19:56:35Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "street-fighter-the-movie-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30130,7 +30432,7 @@
    ],
    "pr": "syndicate-wars-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30390,12 +30692,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tekken-2-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30569,13 +30871,13 @@
    "lc": "2026-11-25T20:16:06Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "terry-pratchetts-discworld-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30762,9 +31064,9 @@
    "lc": "2026-11-26T12:29:16Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "thunder-force-v-perfect-system-recomp",
    "pre": false,
@@ -30798,13 +31100,13 @@
    "lc": "2026-11-25T21:03:52Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "time-crisis-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30834,9 +31136,9 @@
    "lc": "2026-11-26T14:49:33Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "time-crisis-project-titan-recomp",
    "pre": false,
@@ -30923,13 +31225,13 @@
    "lc": "2026-11-25T21:52:21Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "tintin-destination-adventure-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -30959,9 +31261,9 @@
    "lc": "2026-11-26T15:12:52Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tiny-tank-recomp",
    "pre": false,
@@ -31013,8 +31315,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tiny-toon-adventures-pluckys-big-adventure-recomp",
    "pre": false,
@@ -31032,8 +31334,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tiny-toon-adventures-the-great-beanstalk-recomp",
    "pre": false,
@@ -31044,15 +31346,15 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Tiny Toon Adventures - Toonenstein - Dare to Scare! (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Tiny Toon Adventures: Toonenstein - Dare to Scare!",
+   "g": "Tiny Toon Adventures: Toonenstein: Dare to Scare!",
    "id": "db:alexbeavs-ps1-ports/tiny-toon-adventures-toonenstein-dare-to-scare-recomp",
    "k": "alexbeavs-ps1-ports/tiny-toon-adventures-toonenstein-dare-to-scare-recomp",
    "lc": "2026-11-26T17:30:37Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "tiny-toon-adventures-toonenstein-dare-to-scare-recomp",
    "pre": false,
@@ -31069,13 +31371,13 @@
    "lc": "2026-11-25T20:55:10Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tobal-2-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -31107,13 +31409,13 @@
    "lc": "2026-11-25T19:53:30Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "tobal-no-1-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -31214,9 +31516,9 @@
    "lc": "2026-11-26T17:10:35Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "tom-and-jerry-in-house-trap-recomp",
    "pre": false,
@@ -31320,9 +31622,9 @@
    "lc": "2026-11-26T17:07:00Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "tomb-raider-recomp",
    "pre": false,
@@ -31354,13 +31656,13 @@
    "lc": "2026-11-25T21:51:31Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "tomb-raider-chronicles-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -31373,8 +31675,8 @@
    "lc": "2026-11-26T16:28:01Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "tomb-raider-ii-starring-lara-croft-recomp",
@@ -31393,8 +31695,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tomb-raider-iii-adventures-of-lara-croft-recomp",
    "pre": false,
@@ -31412,12 +31714,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "tomb-raider-the-last-revelation-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -31692,9 +31994,9 @@
    "lc": "2026-11-26T17:06:34Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "top-gun-fire-at-will-recomp",
    "pre": false,
@@ -31785,13 +32087,36 @@
    "lc": "2026-11-26T16:43:52Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "total-eclipse-turbo-recomp",
    "pre": false,
    "rel": "v0.1.1",
+   "t": "Recompilation"
+  },
+  {
+   "ai": false,
+   "at": "2026-11-21",
+   "d": "Static recompilations of Toy Commander (Dreamcast, 1999) and Toy Racer (Dreamcast, 2000) to portable C++23 with Vulkan 1.3, for Windows, Linux and macOS. No game data included.",
+   "g": "Toy Commander",
+   "games": [
+    {
+     "platform": "Dreamcast",
+     "title": "Toy Racer"
+    }
+   ],
+   "id": "db:qilin1066/toycommander--qilinrecomp",
+   "k": "qilin1066/toycommander--qilinrecomp",
+   "lc": "2026-11-28T00:34:55Z",
+   "p": "Dreamcast",
+   "po": [
+    "Windows"
+   ],
+   "pr": "ToyCommander--QilinRecomp",
+   "pre": false,
+   "rel": "toycommander-v0.15.0",
    "t": "Recompilation"
   },
   {
@@ -31928,9 +32253,9 @@
    "lc": "2026-11-26T17:47:27Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "treasures-of-the-deep-recomp",
    "pre": false,
@@ -32126,12 +32451,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "twisted-metal-2-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -32161,13 +32486,13 @@
    "lc": "2026-11-25T19:11:44Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "twisted-metal-iii-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -32365,9 +32690,9 @@
    "lc": "2026-11-26T15:00:29Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "unholy-war-the-recomp",
    "pre": false,
@@ -32453,13 +32778,13 @@
    "lc": "2026-11-25T21:00:35Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "urban-chaos-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -32616,13 +32941,13 @@
    "lc": "2026-11-25T21:24:09Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "vandal-hearts-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -32636,8 +32961,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "vandal-hearts-ii-recomp",
    "pre": false,
@@ -32655,8 +32980,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "vanguard-bandits-recomp",
    "pre": false,
@@ -32673,13 +32998,13 @@
    "lc": "2026-11-25T20:54:11Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "vigilante-8-2nd-offense-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -33101,8 +33426,8 @@
    "lc": "2026-11-26T17:47:23Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "warpath-jurassic-park-recomp",
@@ -33155,8 +33480,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "warzone-2100-recomp",
    "pre": false,
@@ -33468,13 +33793,13 @@
    "lc": "2026-11-25T21:10:24Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "wing-commander-iii-heart-of-the-tiger-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -33488,8 +33813,8 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "wing-commander-iv-the-price-of-freedom-recomp",
    "pre": false,
@@ -33560,8 +33885,8 @@
    "lc": "2026-11-26T16:14:36Z",
    "p": "PS1",
    "po": [
-    "Linux",
     "Windows",
+    "Linux",
     "macOS"
    ],
    "pr": "wizards-harmony-recomp",
@@ -33579,9 +33904,9 @@
    "lc": "2026-11-26T17:53:26Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "wizards-harmony-2-recomp",
    "pre": false,
@@ -33598,13 +33923,13 @@
    "lc": "2026-11-25T20:58:51Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "wizards-harmony-r-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -34040,9 +34365,9 @@
    "lc": "2026-11-26T15:25:59Z",
    "p": "PS1",
    "po": [
-    "macOS",
+    "Windows",
     "Linux",
-    "Windows"
+    "macOS"
    ],
    "pr": "x-com-terror-from-the-deep-recomp",
    "pre": false,
@@ -34059,9 +34384,9 @@
    "lc": "2026-11-26T17:36:33Z",
    "p": "PS1",
    "po": [
+    "Windows",
     "Linux",
-    "macOS",
-    "Windows"
+    "macOS"
    ],
    "pr": "x-com-ufo-defense-recomp",
    "pre": false,
@@ -34134,12 +34459,12 @@
    "p": "PS1",
    "po": [
     "Windows",
-    "macOS",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "x-men-children-of-the-atom-recomp",
    "pre": false,
-   "rel": "v0.1.0",
+   "rel": "v0.1.1",
    "t": "Recompilation"
   },
   {
@@ -34186,9 +34511,9 @@
    "lc": "2026-11-26T18:44:46Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "x-men-mutant-academy-recomp",
    "pre": false,
@@ -34222,9 +34547,9 @@
    "lc": "2026-11-26T17:13:16Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "x-men-vs-street-fighter-recomp",
    "pre": false,
@@ -34357,6 +34682,29 @@
    "t": "Recompilation"
   },
   {
+   "ai": true,
+   "at": "2026-11-28",
+   "d": "Native Linux port of the Xenosaga trilogy (PS2), built from the OpokXeno decompilations with AI assistance (Claude). One launcher and AppImage; bring your own discs. No game data included.",
+   "g": "Xenosaga Episode I: Der Wille zur Macht",
+   "games": [
+    {
+     "platform": "PS2",
+     "title": "Xenosaga Episode II: Jenseits von Gut und Böse"
+    }
+   ],
+   "id": "db:xenosagaport/xenosaga-trilogy-port",
+   "k": "xenosagaport/xenosaga-trilogy-port",
+   "lc": "2026-11-28T01:28:23Z",
+   "p": "PS2",
+   "po": [
+    "Linux"
+   ],
+   "pr": "xenosaga-trilogy-port",
+   "pre": false,
+   "rel": "v0.1.0",
+   "t": "Decompilation"
+  },
+  {
    "ai": false,
    "at": "2026-11-16",
    "d": "",
@@ -34425,7 +34773,7 @@
    ],
    "pr": "clockwork",
    "pre": false,
-   "rel": "0.5.1",
+   "rel": "v1.0.0",
    "t": "Recompilation"
   },
   {
@@ -34659,15 +35007,15 @@
    "ai": true,
    "at": "2026-11-25",
    "d": "Static recompilation of Zen Nihon Joshi Pro Wrestling - Joou Densetsu - Yume no Taikousen (PlayStation). Owned-input kit: you supply your own disc and BIOS.",
-   "g": "Zen Nihon Joshi Pro Wrestling: Joou Densetsu - Yume no Taikousen",
+   "g": "Zen Nihon Joshi Pro Wrestling: Joou Densetsu: Yume no Taikousen",
    "id": "db:alexbeavs-ps1-ports/zen-nihon-joshi-pro-wrestling-joou-densetsu-yume-no-taikousen-recomp",
    "k": "alexbeavs-ps1-ports/zen-nihon-joshi-pro-wrestling-joou-densetsu-yume-no-taikousen-recomp",
    "lc": "2026-11-26T15:24:05Z",
    "p": "PS1",
    "po": [
-    "macOS",
     "Windows",
-    "Linux"
+    "Linux",
+    "macOS"
    ],
    "pr": "zen-nihon-joshi-pro-wrestling-joou-densetsu-yume-no-taikousen-recomp",
    "pre": false,
